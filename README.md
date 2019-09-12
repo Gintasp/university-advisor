@@ -11,5 +11,4 @@
     * `git merge master`;
     * In case of any conflicts, resolve them, `git add` changed files and `git commit`
     * You can now `git push` your work to remote repository.
-6. Check `squash commits` and `delete source branch` boxes when making `Merge request`
-7. After your work is merged into `master`, you can safely `git branch -D branch#<merged-branch-number>` to keep your local branch list clean.
+6. After your work is merged into `master`, you can safely `git branch -D branch#<merged-branch-number>` to keep your local branch list clean.
