@@ -1,4 +1,4 @@
-## university-advisor
+## University Advisor
 #### Git guidelines
 1. We use git flow in this project.
 2. Each time before starting work, `git checkout master` and `git pull`.
