@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using Advisor.Controller;
+using Advisor.Model;
+using Advisor.Service;
 
 namespace Advisor.View
 {
@@ -15,7 +17,8 @@ namespace Advisor.View
 
         private void BtnSignUp_Click(object sender, EventArgs e)
         {
-            AuthController.HandleSignup(txtEmail.Text, txtName.Text, txtPassword.Text, txtConfirmPassword.Text);
+            User user = new User(txtEmail.Text, txtName.Text, txtPassword.Text);
+            AuthController.HandleSignup(user, txtConfirmPassword.Text, new SignupDataValidator());
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)

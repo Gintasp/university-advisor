@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.IO;
 using Advisor.View;
 using Advisor.Model;
+using Advisor.Service;
 
 namespace Advisor.Controller
 {
@@ -57,31 +58,27 @@ namespace Advisor.Controller
             SignupFormView.ShowDialog();
         }
 
-        public void HandleLogin (string email, string password)
+        public bool HandleLogin (string email, string password, LoginDataValidator validator)
         {
-            if (!(string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password)))
-            {
-                if (this.AuthenticateUser(email, password) == true) MessageBox.Show(";))");
-            }
+            if (!validator.Validate(email, password)) return false;
+            if (AuthenticateUser(email, password) == true) MessageBox.Show(";))");
+
+            return false;
         }
 
-        public void HandleSignup (string email, string name, string pass, string passConfirm)
+        public bool HandleSignup (User user, string passConfirm, SignupDataValidator validator)
         {
-            if (
-                !(string.IsNullOrWhiteSpace(email)
-                || string.IsNullOrWhiteSpace(name)
-                || string.IsNullOrWhiteSpace(pass)
-                || string.IsNullOrWhiteSpace(passConfirm)
-                )
-            ) {
-                if (pass.Equals(passConfirm))
-                {
-                    File.AppendAllLines(Directory.GetCurrentDirectory().ToString() + "\\data.txt", new string[] { email, name, pass});
-                    Users.Add(new User(email, name, pass));
-                    SignupFormView.Hide();
-                    LoginFormView.Show();
-                }
-            }
+            if (!validator.Validate(user, passConfirm)) return false;
+
+            File.AppendAllLines(
+                Directory.GetCurrentDirectory().ToString() + "\\data.txt",
+                new string[] { user.Email, user.Name, user.Password }
+            );
+            Users.Add(user);
+            SignupFormView.Hide();
+            LoginFormView.Show();
+
+            return true;
         }
     }
 }

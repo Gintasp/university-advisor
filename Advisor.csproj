@@ -50,6 +50,8 @@
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\SignupDataValidator.cs" />
+    <Compile Include="Service\LoginDataValidator.cs" />
     <Compile Include="View\LoginFormView.cs">
       <SubType>Form</SubType>
     </Compile>
