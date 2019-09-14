@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Advisor
@@ -16,7 +16,22 @@ namespace Advisor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LogInForm());
+
+            List<string> lines = File.ReadAllLines(Directory.GetCurrentDirectory().ToString() + "\\data.txt").ToList();
+            List<User> usersList= new List<User>();
+            while (lines.Count > 0)
+            {
+                usersList.Add(new User(lines.ElementAt(0), lines.ElementAt(1), lines.ElementAt(2)));
+                for (int i = 0; i < 3; i++)
+                {
+                    lines.RemoveAt(0);
+                }
+            }
+
+            LoginFormView loginView = new LoginFormView();
+            LoginController loginController = new LoginController(loginView, usersList);
+            loginController.LoadView();
+            loginView.ShowDialog();
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Advisor
 {
-    class User
+    public class User
     {
         public string Email { get; set; }
         public string Name { get; set; }
@@ -18,7 +18,5 @@ namespace Advisor
             Name = name;
             Password = password;
         }
-
-
     }
 }

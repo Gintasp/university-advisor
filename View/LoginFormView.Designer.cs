@@ -1,6 +1,6 @@
 ﻿namespace Advisor
 {
-    partial class LogInForm
+    partial class LoginFormView
     {
         /// <summary>
         /// Required designer variable.
@@ -117,7 +117,6 @@
             this.Name = "LogInForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LogInForm";
-            this.Load += new System.EventHandler(this.LogInForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

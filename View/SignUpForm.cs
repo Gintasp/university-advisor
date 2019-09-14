@@ -25,7 +25,7 @@ namespace Advisor
 
         private void BtnSignUp_Click(object sender, EventArgs e)
         {
-            string email = txtEmail.Text;
+            /*string email = txtEmail.Text;
             string name = txtName.Text;
             string password = txtPassword.Text;
             string confirmPassword = txtConfirmPassword.Text;
@@ -44,15 +44,15 @@ namespace Advisor
                     this.Close();
                 }
                 else label5.Show();  
-            }
+            }*/
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            /*this.Hide();
             LogInForm log = new LogInForm();
             log.ShowDialog();
-            this.Close();
+            this.Close();*/
         }
     }
 }
