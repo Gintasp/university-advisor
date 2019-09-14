@@ -80,7 +80,8 @@ namespace Advisor
                 {
                     File.AppendAllLines(Directory.GetCurrentDirectory().ToString() + "\\data.txt", new string[] { email, name, pass});
                     Users.Add(new User(email, name, pass));
-                    LoginFormView.ShowDialog();
+                    SignupFormView.Hide();
+                    LoginFormView.Show();
                 }
             }
         }
