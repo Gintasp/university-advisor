@@ -1,22 +1,22 @@
 Various features to be implemented into the project. Features can be somehow marked as: in progress, completed, abandoned, etc.
 Feel free to add, reformat, delete whatever you want.
 
-Features:
-	Core: 
-		Lists of universities, lectures(possibly lecturers)
-		Written reviews views of universities/lectures
-		Scores for universities/lectures
+	Features:
+		Core: 
+			Lists of universities, lectures(possibly lecturers)
+			Written reviews views of universities/lectures
+			Scores for universities/lectures
 
-	Minimum:
-		Login/sign-up system *in progress
-		Database/files for storing info of user profiles/universities/lectures
-		Custom UI
-		Various statistics of universities/lectures
+		Minimum:
+			Login/sign-up system *in progress
+			Database/files for storing info of user profiles/universities/lectures
+			Custom UI
+			Various statistics of universities/lectures
 		
-	Medium:
-		Forum for various discussions
-		About page for universities/lectures
-		Dark Mode
+		Medium:
+			Forum for various discussions
+			About page for universities/lectures
+			Dark Mode
 		
-	Maximum:
-		I dunno lol 
+		Maximum:
+			I dunno lol 
