@@ -4,7 +4,7 @@ Feel free to add, reformat, delete whatever you want.
 	Features:
 		Core: 
 			Lists of universities, lectures(possibly lecturers)
-			Written reviews views of universities/lectures
+			Written reviews of universities/lectures
 			Scores for universities/lectures
 
 		Minimum:
