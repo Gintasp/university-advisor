@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 using System.IO;
+using Advisor.View;
+using Advisor.Model;
 
-namespace Advisor
+namespace Advisor.Controller
 {
     public class AuthController
     {
-        public AuthController (
+        public AuthController(
             LoginFormView loginFormView,
             SignupFormView signupFormView,
             List<User> users

@@ -1,6 +1,6 @@
-﻿namespace Advisor
+﻿namespace Advisor.View
 {
-    partial class SignupFormView
+    public partial class SignupFormView
     {
         /// <summary>
         /// Required designer variable.

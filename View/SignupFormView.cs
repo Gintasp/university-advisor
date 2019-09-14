@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Windows.Forms;
+using Advisor.Controller;
 
-namespace Advisor
+namespace Advisor.View
 {
     public partial class SignupFormView : Form
     {
+        public AuthController AuthController { get; set; }
+
         public SignupFormView()
         {
             InitializeComponent();
         }
-
-        public AuthController AuthController { get; set; }
 
         private void BtnSignUp_Click(object sender, EventArgs e)
         {

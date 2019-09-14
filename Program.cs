@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Advisor.Controller;
+using Advisor.Model;
+using Advisor.View;
 
 namespace Advisor
 {

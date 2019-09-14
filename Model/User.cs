@@ -1,4 +1,4 @@
-﻿namespace Advisor
+﻿namespace Advisor.Model
 {
     public class User
     {
