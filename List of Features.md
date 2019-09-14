@@ -14,9 +14,8 @@ Feel free to add, reformat, delete whatever you want.
 			Various statistics of universities/lectures
 		
 		Medium:
-			Forum for various discussions
 			About page for universities/lectures
 			Dark Mode
 		
 		Maximum:
-			I dunno lol 
+			Forum for various discussions
