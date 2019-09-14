@@ -11,6 +11,7 @@ Features:
 		Login/sign-up system *in progress
 		Database/files for storing info of user profiles/universities/lectures
 		Custom UI
+		Various statistics of universities/lectures
 		
 	Medium:
 		Forum for various discussions
