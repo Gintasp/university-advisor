@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using System.IO;
 using Advisor.View;
 using Advisor.Model;
-using Advisor.Service;
+using Advisor.Validator;
 
 namespace Advisor.Controller
 {
@@ -12,13 +12,19 @@ namespace Advisor.Controller
         public AuthController(
             LoginFormView loginFormView,
             SignupFormView signupFormView,
-            List<User> users
+            List<User> users,
+            LoginDataValidator loginDataValidator,
+            SignupDataValidator signupDataValidator
         ) {
             LoginFormView = loginFormView;
             SignupFormView = signupFormView;
+            LoginDataValidator = loginDataValidator;
+            SignupDataValidator = signupDataValidator;
             Users = users;
         }
 
+        public SignupDataValidator SignupDataValidator { get; set; }
+        public LoginDataValidator LoginDataValidator { get; set; }
         public LoginFormView LoginFormView { get; set; }
 
         public List<User> Users { get; set; }
@@ -58,17 +64,17 @@ namespace Advisor.Controller
             SignupFormView.ShowDialog();
         }
 
-        public bool HandleLogin (string email, string password, LoginDataValidator validator)
+        public bool HandleLogin (string email, string password)
         {
-            if (!validator.Validate(email, password)) return false;
+            if (!LoginDataValidator.Validate(email, password)) return false;
             if (AuthenticateUser(email, password) == true) MessageBox.Show(";))");
 
             return false;
         }
 
-        public bool HandleSignup (User user, string passConfirm, SignupDataValidator validator)
+        public bool HandleSignup (User user, string passConfirm)
         {
-            if (!validator.Validate(user, passConfirm)) return false;
+            if (!SignupDataValidator.Validate(user, passConfirm)) return false;
 
             File.AppendAllLines(
                 Directory.GetCurrentDirectory().ToString() + "\\data.txt",

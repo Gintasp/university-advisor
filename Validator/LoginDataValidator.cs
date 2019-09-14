@@ -1,4 +1,4 @@
-﻿namespace Advisor.Service
+﻿namespace Advisor.Validator
 {
     public class LoginDataValidator
     {

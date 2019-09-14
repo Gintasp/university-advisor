@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Advisor.Controller;
 using Advisor.Model;
 using Advisor.View;
+using Advisor.Validator;
 
 namespace Advisor
 {
@@ -33,7 +34,13 @@ namespace Advisor
 
             LoginFormView loginFormView = new LoginFormView();
             SignupFormView signupFormView = new SignupFormView();
-            AuthController authController = new AuthController(loginFormView, signupFormView, usersList);
+            AuthController authController = new AuthController(
+                loginFormView,
+                signupFormView,
+                usersList,
+                new LoginDataValidator(),
+                new SignupDataValidator()
+                );
             authController.LoadViews();
             loginFormView.ShowDialog();
         }

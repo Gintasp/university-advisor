@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using Advisor.Controller;
-using Advisor.Service;
 
 namespace Advisor.View
 {
@@ -26,7 +25,7 @@ namespace Advisor.View
 
         private void BtnLogIn_Click(object sender, EventArgs e)
         {
-            AuthController.HandleLogin(txtEmail.Text, txtPassword.Text, new LoginDataValidator());
+            AuthController.HandleLogin(txtEmail.Text, txtPassword.Text);
         }
     }
 }
