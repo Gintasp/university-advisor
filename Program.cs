@@ -28,10 +28,11 @@ namespace Advisor
                 }
             }
 
-            LoginFormView loginView = new LoginFormView();
-            LoginController loginController = new LoginController(loginView, usersList);
-            loginController.LoadView();
-            loginView.ShowDialog();
+            LoginFormView loginFormView = new LoginFormView();
+            SignupFormView signupFormView = new SignupFormView();
+            AuthController authController = new AuthController(loginFormView, signupFormView, usersList);
+            authController.LoadViews();
+            loginFormView.ShowDialog();
         }
     }
 }

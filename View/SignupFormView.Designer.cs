@@ -1,6 +1,6 @@
 ﻿namespace Advisor
 {
-    partial class SignUpForm
+    partial class SignupFormView
     {
         /// <summary>
         /// Required designer variable.
@@ -157,7 +157,6 @@
             this.Name = "SignUpForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.SignUpForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

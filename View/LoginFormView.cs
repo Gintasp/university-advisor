@@ -13,6 +13,8 @@ namespace Advisor
 {
     public partial class LoginFormView : Form
     {
+        public AuthController AuthController { get; set; }
+
         public LoginFormView()
         {
             InitializeComponent();
@@ -20,22 +22,17 @@ namespace Advisor
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
-            this.LoginController.CloseView();
+            AuthController.CloseLoginView();
         }
 
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
-            SignUpForm s = new SignUpForm();
-            s.ShowDialog();
-            this.Close();
+            AuthController.HandleSignupLinkClick();
         }
 
         private void BtnLogIn_Click(object sender, EventArgs e)
         {
-            LoginController.HandleLogin(txtEmail.Text, txtPassword.Text);
+            AuthController.HandleLogin(txtEmail.Text, txtPassword.Text);
         }
-
-        public LoginController LoginController { get; set; }
     }
 }
