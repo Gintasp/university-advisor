@@ -11,7 +11,7 @@ Feel free to add, reformat, delete whatever you want.
 			Login/sign-up system *in progress
 			Database/files for storing info of user profiles/universities/lectures
 			Custom UI
-			Various statistics of universities/lectures based on anonymous alumni data
+			Various statistics and comparison of universities/lectures based on anonymous alumni data (average salary, satisfaction, studying experience etc.)
 		
 		Medium:
 			Mode for international students: sort out courses that are in English
@@ -21,7 +21,7 @@ Feel free to add, reformat, delete whatever you want.
 		Maximum:
 			Forum for various discussions
 			
-			Dormitories: if university (or different faculties) has it then how much and how close and how expensive and how hard it is to get a room there and also student reviews and ratings.
+			Dormitories: if university (or different faculties) has it then how much and how close and how expensive and how hard it is to get a room there and also student reviews and ratings. (displaying distance from given address to dormitory).
 			
 			Possibility to view and compare your studies path: like if you want to study game programming and so you look at few universities that have programing studies and you can then see and compare the programs to see what courses you will have to pass step by step to get into the courses you need for specifically games programing. Like a graph tree showing the options.That way you can see in which university the courses will be more on point to what you need and where you will get to specialise sooner.
 			
