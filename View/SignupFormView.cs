@@ -23,13 +23,16 @@ namespace Advisor.View
             }
             else
             {
-                label5.Show();
+                MessageBox.Show("The password and confirmation password do not match.");
             }
+          
+          
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             AuthController.CloseSignupView();
         }
+       
     }
 }

@@ -38,7 +38,6 @@
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.btnSignUp = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -127,23 +126,11 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(584, 262);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(183, 20);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Passwords do not match";
-            this.label5.Visible = false;
-            // 
-            // SignUpForm
+            // SignupFormView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 449);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.txtConfirmPassword);
@@ -154,7 +141,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "SignUpForm";
+            this.Name = "SignupFormView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -174,7 +161,6 @@
         private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.Button btnSignUp;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Label label5;
     }
 }
 

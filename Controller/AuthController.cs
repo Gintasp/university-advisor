@@ -74,7 +74,11 @@ namespace Advisor.Controller
 
         public bool HandleSignup (User user, string passConfirm)
         {
-            if (!SignupDataValidator.Validate(user, passConfirm)) return false;
+            if (!SignupDataValidator.Validate(user, passConfirm))
+            {
+                MessageBox.Show(SignupDataValidator.GetSignupDataVadilatorErrorMessage());
+                return false;
+            }
 
             File.AppendAllLines(
                 Directory.GetCurrentDirectory().ToString() + "\\data.txt",
@@ -86,5 +90,6 @@ namespace Advisor.Controller
 
             return true;
         }
+       
     }
 }
