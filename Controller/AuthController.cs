@@ -12,7 +12,7 @@ namespace Advisor.Controller
         public AuthController(
             LoginFormView loginFormView,
             SignupFormView signupFormView,
-            List<Student> users,
+            List<User> users,
             LoginDataValidator loginDataValidator,
             SignupDataValidator signupDataValidator
         ) {
@@ -27,13 +27,13 @@ namespace Advisor.Controller
         public LoginDataValidator LoginDataValidator { get; set; }
         public LoginFormView LoginFormView { get; set; }
 
-        public List<Student> Users { get; set; }
+        public List<User> Users { get; set; }
 
         public SignupFormView SignupFormView { get; set; }
 
         public bool AuthenticateUser(string email, string password)
         {
-            foreach (Student userFromList in Users)
+            foreach (User userFromList in Users)
             {
                 if (userFromList.Email.Equals(email) && userFromList.Password.Equals(password)) return true;
             }
@@ -72,7 +72,7 @@ namespace Advisor.Controller
             return false;
         }
 
-        public bool HandleSignup (Student user, string passConfirm)
+        public bool HandleSignup (User user, string passConfirm)
         {
             if (!SignupDataValidator.Validate(user, passConfirm))
             {

@@ -21,6 +21,17 @@ namespace Advisor
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            DB.Instance.Students.Add(
+                new User()
+                {
+                    Email = "john@doe.com",
+                    FirstName = "John",
+                    LastName = "Doe",
+                    Password = "Pass"
+                }
+            );
+            DB.Instance.SaveChanges();
+
             List<string> lines = File.ReadAllLines(Directory.GetCurrentDirectory().ToString() + "\\data.txt").ToList();
             List<User> usersList= new List<User>();
             while (lines.Count > 0)

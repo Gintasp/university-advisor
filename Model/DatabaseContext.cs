@@ -5,7 +5,7 @@ namespace Advisor.Model
 {
     public class DatabaseContext : DbContext
     {
-        public DbSet<Student> Students { get; set; }
+        public DbSet<User> Students { get; set; }
         public DbSet<Faculty> Faculties { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<StudyProgram> StudyPrograms { get; set; }
