@@ -13,11 +13,6 @@ namespace Advisor.View
             InitializeComponent();
         }
 
-        private void BtnCancel_Click(object sender, EventArgs e)
-        {
-            AuthController.CloseLoginView();
-        }
-
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             AuthController.HandleSignupLinkClick();
