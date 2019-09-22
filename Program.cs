@@ -25,8 +25,8 @@ namespace Advisor
             List<User> usersList= new List<User>();
             while (lines.Count > 0)
             {
-                usersList.Add(new User(lines.ElementAt(0), lines.ElementAt(1), lines.ElementAt(2)));
-                for (int i = 0; i < 3; i++)
+                usersList.Add(new User(lines.ElementAt(0), lines.ElementAt(1), lines.ElementAt(2), lines.ElementAt(3)));
+                for (int i = 0; i < 4; i++)
                 {
                     lines.RemoveAt(0);
                 }

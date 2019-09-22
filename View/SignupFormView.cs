@@ -18,21 +18,18 @@ namespace Advisor.View
         {
             if (txtPassword.Text.Equals(txtConfirmPassword.Text))
             {
-                User user = new User(txtEmail.Text, txtName.Text, txtPassword.Text);
+                User user = new User(txtEmail.Text, txtFirstName.Text, txtLastName.Text, txtPassword.Text);
                 AuthController.HandleSignup(user, txtConfirmPassword.Text);
             }
             else
             {
                 MessageBox.Show("The password and confirmation password do not match.");
             }
-          
-          
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             AuthController.CloseSignupView();
         }
-       
     }
 }
