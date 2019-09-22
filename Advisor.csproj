@@ -54,6 +54,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AuthController.cs" />
+    <Compile Include="Migrations\201909221435170_CreateUser.cs" />
+    <Compile Include="Migrations\201909221435170_CreateUser.Designer.cs">
+      <DependentUpon>201909221435170_CreateUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\DatabaseContext.cs" />
     <Compile Include="Model\User.cs" />
@@ -73,6 +77,9 @@
     <Compile Include="View\SignupFormView.Designer.cs">
       <DependentUpon>SignupFormView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Migrations\201909221435170_CreateUser.resx">
+      <DependentUpon>201909221435170_CreateUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
