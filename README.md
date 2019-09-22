@@ -10,7 +10,7 @@ The aim of this project is to create a comprehensive, intuitive and most importa
 [Our full list of planned features](https://github.com/Gintasp/university-advisor/blob/master/List%20of%20Features.md)
 
 #### Project members
-- Gintautas Plonis (de facto leader)
+- Gintautas Plonis
 - Gabrielė Širvinskytė
 - Laima Volungevičiūtė
 - Povilas Stašys
