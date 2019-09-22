@@ -6,9 +6,9 @@ namespace Advisor.Validator
     public class SignupDataValidator
     {
         private string errorMessage;
-        private User user;
+        private Student user;
 
-        public bool Validate(User user, string passConfirm)
+        public bool Validate(Student user, string passConfirm)
         {
            this.user = user;
             if ((CheckForEmptyFields(passConfirm) &&

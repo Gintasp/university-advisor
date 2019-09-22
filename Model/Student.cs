@@ -1,6 +1,6 @@
 ﻿namespace Advisor.Model
 {
-    public class User
+    public class Student
     {
         public int Id { get; set; }
         public string Email { get; set; }
@@ -8,9 +8,9 @@
         public string LastName { get; set; }
         public string Password { get; set; }
 
-        public User() { }
+        public Student() { }
 
-        public User(string email, string firstName, string lastName, string password)
+        public Student(string email, string firstName, string lastName, string password)
         {
             Email = email;
             FirstName = firstName;
