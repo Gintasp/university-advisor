@@ -31,5 +31,10 @@ namespace Advisor.View
         {
             AuthController.CloseSignupView();
         }
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
