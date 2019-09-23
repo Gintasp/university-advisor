@@ -33,9 +33,11 @@ namespace Advisor
 
             LoginFormView loginFormView = new LoginFormView();
             SignupFormView signupFormView = new SignupFormView();
+            WhatUniversity whatUniversity = new WhatUniversity();
             AuthController authController = new AuthController(
                 loginFormView,
                 signupFormView,
+                whatUniversity,
                 usersList,
                 new LoginDataValidator(),
                 new SignupDataValidator()
