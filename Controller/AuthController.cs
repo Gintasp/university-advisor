@@ -82,7 +82,7 @@ namespace Advisor.Controller
 
             File.AppendAllLines(
                 Directory.GetCurrentDirectory().ToString() + "\\data.txt",
-                new string[] { user.Email, user.Name, user.Password }
+                new string[] { user.Email, user.FirstName, user.LastName, user.Password }
             );
             Users.Add(user);
             SignupFormView.Hide();
@@ -90,6 +90,5 @@ namespace Advisor.Controller
 
             return true;
         }
-       
     }
 }

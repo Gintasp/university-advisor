@@ -33,7 +33,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.btnSignUp = new System.Windows.Forms.Button();
@@ -57,9 +57,9 @@
             this.label2.Location = new System.Drawing.Point(186, 91);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Name:";
+            this.label2.Text = "First Name:";
             // 
             // label3
             // 
@@ -70,6 +70,7 @@
             this.label3.Size = new System.Drawing.Size(56, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Password:";
+            this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // label4
             // 
@@ -84,23 +85,23 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(189, 69);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(169, 20);
             this.txtEmail.TabIndex = 4;
             // 
-            // txtName
+            // txtFirstName
             // 
-            this.txtName.Location = new System.Drawing.Point(189, 106);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(169, 20);
-            this.txtName.TabIndex = 5;
+            this.txtFirstName.Location = new System.Drawing.Point(189, 106);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(169, 20);
+            this.txtFirstName.TabIndex = 5;
             // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(189, 143);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(169, 20);
@@ -109,7 +110,7 @@
             // txtConfirmPassword
             // 
             this.txtConfirmPassword.Location = new System.Drawing.Point(189, 180);
-            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(169, 20);
@@ -118,7 +119,7 @@
             // btnSignUp
             // 
             this.btnSignUp.Location = new System.Drawing.Point(189, 222);
-            this.btnSignUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSignUp.Margin = new System.Windows.Forms.Padding(2);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(169, 23);
             this.btnSignUp.TabIndex = 8;
@@ -129,7 +130,7 @@
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(189, 249);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(169, 23);
             this.btnCancel.TabIndex = 9;
@@ -158,13 +159,13 @@
             this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.txtConfirmPassword);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SignupFormView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -180,12 +181,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.Button btnSignUp;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label5;
     }
 }
-
