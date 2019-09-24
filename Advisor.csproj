@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201909221555231_MainEntities.Designer.cs">
       <DependentUpon>201909221555231_MainEntities.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909240753298_RemoveLastname.cs" />
+    <Compile Include="Migrations\201909240753298_RemoveLastname.Designer.cs">
+      <DependentUpon>201909240753298_RemoveLastname.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\DatabaseContext.cs" />
     <Compile Include="Model\DB.cs" />
@@ -84,6 +88,9 @@
     </Compile>
     <EmbeddedResource Include="Migrations\201909221555231_MainEntities.resx">
       <DependentUpon>201909221555231_MainEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909240753298_RemoveLastname.resx">
+      <DependentUpon>201909240753298_RemoveLastname.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
