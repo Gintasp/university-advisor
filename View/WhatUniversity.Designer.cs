@@ -37,17 +37,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.label1.Location = new System.Drawing.Point(86, 38);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(43, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(728, 32);
+            this.label1.Size = new System.Drawing.Size(814, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "What university are you interested in at the moment?";
             // 
             // searchBox
             // 
             this.searchBox.BackColor = System.Drawing.SystemColors.Window;
-            this.searchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.searchBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.searchBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.searchBox.HideSelection = false;
             this.searchBox.Location = new System.Drawing.Point(250, 107);
@@ -60,17 +61,18 @@
             // 
             // UniversityList
             // 
-            this.UniversityList.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.UniversityList.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.UniversityList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.UniversityList.FormattingEnabled = true;
-            this.UniversityList.ItemHeight = 29;
+            this.UniversityList.ItemHeight = 23;
             this.UniversityList.Location = new System.Drawing.Point(250, 159);
             this.UniversityList.Name = "UniversityList";
-            this.UniversityList.Size = new System.Drawing.Size(400, 207);
+            this.UniversityList.Size = new System.Drawing.Size(400, 188);
             this.UniversityList.TabIndex = 2;
             // 
             // AddUniversity
             // 
-            this.AddUniversity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.AddUniversity.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.AddUniversity.Location = new System.Drawing.Point(358, 407);
             this.AddUniversity.Name = "AddUniversity";
             this.AddUniversity.Size = new System.Drawing.Size(158, 61);
