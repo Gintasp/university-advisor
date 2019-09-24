@@ -45,8 +45,7 @@ namespace Advisor.Validator
         private bool CheckForEmptyFields(string passConfirm)
         {
             if (!(string.IsNullOrWhiteSpace(user.Email)
-                || string.IsNullOrWhiteSpace(user.FirstName)
-                || string.IsNullOrWhiteSpace(user.LastName)
+                || string.IsNullOrWhiteSpace(user.Name)
                 || string.IsNullOrWhiteSpace(user.Password)
                 || string.IsNullOrWhiteSpace(passConfirm))) return true;
                       

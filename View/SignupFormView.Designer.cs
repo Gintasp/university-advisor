@@ -88,6 +88,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtEmail.Location = new System.Drawing.Point(190, 88);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Multiline = true;
@@ -97,6 +98,7 @@
             // 
             // txtName
             // 
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtName.Location = new System.Drawing.Point(190, 138);
             this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Multiline = true;
@@ -106,6 +108,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtPassword.Location = new System.Drawing.Point(190, 187);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Multiline = true;
@@ -116,6 +119,7 @@
             // 
             // txtConfirmPassword
             // 
+            this.txtConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtConfirmPassword.Location = new System.Drawing.Point(190, 236);
             this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtConfirmPassword.Multiline = true;
@@ -197,7 +201,6 @@
         private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.Button btnSignUp;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label5;
     }
 }

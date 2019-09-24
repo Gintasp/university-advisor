@@ -18,7 +18,7 @@ namespace Advisor.View
         {
             if (txtPassword.Text.Equals(txtConfirmPassword.Text))
             {
-                User user = new User(txtEmail.Text, txtName.Text, txtLastName.Text, txtPassword.Text);
+                User user = new User(txtEmail.Text, txtName.Text, txtPassword.Text);
                 AuthController.HandleSignup(user, txtConfirmPassword.Text);
             }
             else
