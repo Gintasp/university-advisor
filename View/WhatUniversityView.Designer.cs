@@ -1,6 +1,6 @@
 ﻿namespace Advisor.View
 {
-    partial class WhatUniversity
+    partial class WhatUniversityView
     {
         /// <summary>
         /// Required designer variable.

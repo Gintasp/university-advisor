@@ -12,14 +12,14 @@ namespace Advisor.Controller
         public AuthController(
             LoginFormView loginFormView,
             SignupFormView signupFormView,
-            WhatUniversity whatUniversity,
+            WhatUniversityView whatUniversityView,
             List<User> users,
             LoginDataValidator loginDataValidator,
             SignupDataValidator signupDataValidator
         ) {
             LoginFormView = loginFormView;
             SignupFormView = signupFormView;
-            WhatUniversity = whatUniversity;
+            WhatUniversityView = whatUniversityView;
             LoginDataValidator = loginDataValidator;
             SignupDataValidator = signupDataValidator;
             Users = users;
@@ -28,7 +28,7 @@ namespace Advisor.Controller
         public SignupDataValidator SignupDataValidator { get; set; }
         public LoginDataValidator LoginDataValidator { get; set; }
         public LoginFormView LoginFormView { get; set; }
-        public WhatUniversity WhatUniversity { get; set; }
+        public WhatUniversityView WhatUniversityView { get; set; }
         public List<User> Users { get; set; }
 
         public SignupFormView SignupFormView { get; set; }
@@ -47,7 +47,7 @@ namespace Advisor.Controller
         {
             LoginFormView.AuthController = this;
             SignupFormView.AuthController = this;
-            WhatUniversity.AuthController = this;
+            WhatUniversityView.AuthController = this;
         }
 
         public void CloseLoginView()
@@ -73,7 +73,7 @@ namespace Advisor.Controller
             if (AuthenticateUser(email, password) == true)
             {
                 LoginFormView.Hide();
-                WhatUniversity.ShowDialog();
+                WhatUniversityView.ShowDialog();
             }
             return false;
         }

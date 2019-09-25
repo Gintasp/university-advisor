@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace Advisor.View
 {
-    public partial class WhatUniversity : Form
+    public partial class WhatUniversityView : Form
     {
-        public WhatUniversity()
+        public WhatUniversityView()
         {
             InitializeComponent();
         }

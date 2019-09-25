@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Advisor.View
 {
-    public partial class IndividualFaculty : Form
+    public partial class IndividualFacultyView : Form
     {
-        public IndividualFaculty()
+        public IndividualFacultyView()
         {
             InitializeComponent();
         }
