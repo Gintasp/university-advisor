@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnAddFaculty = new System.Windows.Forms.Button();
+            this.PreviousForm = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // FacultiesList
@@ -85,11 +86,24 @@
             this.btnAddFaculty.UseVisualStyleBackColor = true;
             this.btnAddFaculty.Click += new System.EventHandler(this.BtnAddFaculty_Click);
             // 
+            // PreviousForm
+            // 
+            this.PreviousForm.AutoSize = true;
+            this.PreviousForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PreviousForm.Location = new System.Drawing.Point(13, 13);
+            this.PreviousForm.Name = "PreviousForm";
+            this.PreviousForm.Size = new System.Drawing.Size(27, 20);
+            this.PreviousForm.TabIndex = 4;
+            this.PreviousForm.TabStop = true;
+            this.PreviousForm.Text = "<<";
+            this.PreviousForm.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PreviousForm_LinkClicked);
+            // 
             // FacultiesListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 629);
+            this.Controls.Add(this.PreviousForm);
             this.Controls.Add(this.btnAddFaculty);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label1);
@@ -112,5 +126,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnAddFaculty;
+        private System.Windows.Forms.LinkLabel PreviousForm;
     }
 }
