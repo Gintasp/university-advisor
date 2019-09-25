@@ -12,12 +12,14 @@ namespace Advisor.Controller
         public AuthController(
             LoginFormView loginFormView,
             SignupFormView signupFormView,
+            WhatUniversity whatUniversity,
             List<User> users,
             LoginDataValidator loginDataValidator,
             SignupDataValidator signupDataValidator
         ) {
             LoginFormView = loginFormView;
             SignupFormView = signupFormView;
+            WhatUniversity = whatUniversity;
             LoginDataValidator = loginDataValidator;
             SignupDataValidator = signupDataValidator;
             Users = users;
@@ -26,7 +28,7 @@ namespace Advisor.Controller
         public SignupDataValidator SignupDataValidator { get; set; }
         public LoginDataValidator LoginDataValidator { get; set; }
         public LoginFormView LoginFormView { get; set; }
-
+        public WhatUniversity WhatUniversity { get; set; }
         public List<User> Users { get; set; }
 
         public SignupFormView SignupFormView { get; set; }
@@ -45,6 +47,7 @@ namespace Advisor.Controller
         {
             LoginFormView.AuthController = this;
             SignupFormView.AuthController = this;
+            WhatUniversity.AuthController = this;
         }
 
         public void CloseLoginView()
@@ -67,8 +70,11 @@ namespace Advisor.Controller
         public bool HandleLogin (string email, string password)
         {
             if (!LoginDataValidator.Validate(email, password)) return false;
-            if (AuthenticateUser(email, password) == true) MessageBox.Show(";))");
-
+            if (AuthenticateUser(email, password) == true)
+            {
+                LoginFormView.Hide();
+                WhatUniversity.ShowDialog();
+            }
             return false;
         }
 
@@ -89,6 +95,14 @@ namespace Advisor.Controller
             LoginFormView.Show();
 
             return true;
+        }
+        public void HandleAddUniversityClick()
+        {
+            MessageBox.Show(";))");
+        }
+        public void LoadUniversityList(ListBox listBox)
+        {
+            //add data from database
         }
     }
 }
