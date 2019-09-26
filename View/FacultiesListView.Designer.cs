@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnAddFaculty = new System.Windows.Forms.Button();
-            this.PreviousForm = new System.Windows.Forms.LinkLabel();
+            this.PreviousFacultiesListView = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // FacultiesList
@@ -40,12 +40,13 @@
             this.FacultiesList.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FacultiesList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.FacultiesList.FormattingEnabled = true;
-            this.FacultiesList.ItemHeight = 28;
+            this.FacultiesList.ItemHeight = 23;
             this.FacultiesList.Location = new System.Drawing.Point(246, 192);
             this.FacultiesList.Margin = new System.Windows.Forms.Padding(4);
             this.FacultiesList.Name = "FacultiesList";
-            this.FacultiesList.Size = new System.Drawing.Size(492, 312);
+            this.FacultiesList.Size = new System.Drawing.Size(492, 303);
             this.FacultiesList.TabIndex = 0;
+            this.FacultiesList.SelectedIndexChanged += new System.EventHandler(this.SelectedFaculty);
             // 
             // label1
             // 
@@ -55,7 +56,7 @@
             this.label1.Location = new System.Drawing.Point(397, 48);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 60);
+            this.label1.Size = new System.Drawing.Size(162, 50);
             this.label1.TabIndex = 1;
             this.label1.Text = "Faculties";
             // 
@@ -67,7 +68,7 @@
             this.txtSearch.Location = new System.Drawing.Point(246, 141);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(492, 34);
+            this.txtSearch.Size = new System.Drawing.Size(492, 30);
             this.txtSearch.TabIndex = 2;
             this.txtSearch.Text = "Search";
             this.txtSearch.Enter += new System.EventHandler(this.TxtSearch_Enter);
@@ -86,24 +87,24 @@
             this.btnAddFaculty.UseVisualStyleBackColor = true;
             this.btnAddFaculty.Click += new System.EventHandler(this.BtnAddFaculty_Click);
             // 
-            // PreviousForm
+            // PreviousFacultiesListView
             // 
-            this.PreviousForm.AutoSize = true;
-            this.PreviousForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PreviousForm.Location = new System.Drawing.Point(13, 13);
-            this.PreviousForm.Name = "PreviousForm";
-            this.PreviousForm.Size = new System.Drawing.Size(27, 20);
-            this.PreviousForm.TabIndex = 4;
-            this.PreviousForm.TabStop = true;
-            this.PreviousForm.Text = "<<";
-            this.PreviousForm.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PreviousForm_LinkClicked);
+            this.PreviousFacultiesListView.AutoSize = true;
+            this.PreviousFacultiesListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PreviousFacultiesListView.Location = new System.Drawing.Point(13, 13);
+            this.PreviousFacultiesListView.Name = "PreviousFacultiesListView";
+            this.PreviousFacultiesListView.Size = new System.Drawing.Size(24, 17);
+            this.PreviousFacultiesListView.TabIndex = 4;
+            this.PreviousFacultiesListView.TabStop = true;
+            this.PreviousFacultiesListView.Text = "<<";
+            this.PreviousFacultiesListView.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PreviousForm_LinkClicked);
             // 
             // FacultiesListView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 629);
-            this.Controls.Add(this.PreviousForm);
+            this.Controls.Add(this.PreviousFacultiesListView);
             this.Controls.Add(this.btnAddFaculty);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label1);
@@ -126,6 +127,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnAddFaculty;
-        private System.Windows.Forms.LinkLabel PreviousForm;
+        private System.Windows.Forms.LinkLabel PreviousFacultiesListView;
     }
 }

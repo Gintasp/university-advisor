@@ -41,5 +41,10 @@ namespace Advisor.View
         {
             AuthController.LoadUniversityList(UniversityList);
         }
+
+        private void SelectedUniversity(object sender, EventArgs e)
+        {
+            AuthController.HandleSelectedUniversity(UniversityList.GetItemText(UniversityList.SelectedItem));
+        }
     }
 }

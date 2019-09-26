@@ -1,0 +1,154 @@
+﻿namespace Advisor.View
+{
+    partial class IndividualUniversityView
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.UniversityName = new System.Windows.Forms.Label();
+            this.About = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.Faculties = new System.Windows.Forms.Button();
+            this.StudyPrograms = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PreviousIndividualUniversityView = new System.Windows.Forms.LinkLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // UniversityName
+            // 
+            this.UniversityName.AutoSize = true;
+            this.UniversityName.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.UniversityName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.UniversityName.Location = new System.Drawing.Point(187, 60);
+            this.UniversityName.MaximumSize = new System.Drawing.Size(220, 0);
+            this.UniversityName.Name = "UniversityName";
+            this.UniversityName.Size = new System.Drawing.Size(84, 46);
+            this.UniversityName.TabIndex = 0;
+            this.UniversityName.Text = "Title";
+            // 
+            // About
+            // 
+            this.About.AutoSize = true;
+            this.About.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.About.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.About.Location = new System.Drawing.Point(448, 60);
+            this.About.Name = "About";
+            this.About.Size = new System.Drawing.Size(113, 46);
+            this.About.TabIndex = 1;
+            this.About.Text = "About";
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(456, 109);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(346, 327);
+            this.panel1.TabIndex = 2;
+            // 
+            // Faculties
+            // 
+            this.Faculties.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.Faculties.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Faculties.Location = new System.Drawing.Point(76, 294);
+            this.Faculties.Name = "Faculties";
+            this.Faculties.Size = new System.Drawing.Size(292, 44);
+            this.Faculties.TabIndex = 3;
+            this.Faculties.Text = "Faculties";
+            this.Faculties.UseVisualStyleBackColor = true;
+            this.Faculties.Click += new System.EventHandler(this.Faculties_Click);
+            // 
+            // StudyPrograms
+            // 
+            this.StudyPrograms.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.StudyPrograms.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.StudyPrograms.Location = new System.Drawing.Point(76, 358);
+            this.StudyPrograms.Name = "StudyPrograms";
+            this.StudyPrograms.Size = new System.Drawing.Size(292, 44);
+            this.StudyPrograms.TabIndex = 4;
+            this.StudyPrograms.Text = "Study programs";
+            this.StudyPrograms.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(58, 60);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(123, 119);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // PreviousIndividualUniversityView
+            // 
+            this.PreviousIndividualUniversityView.AutoSize = true;
+            this.PreviousIndividualUniversityView.Location = new System.Drawing.Point(12, 9);
+            this.PreviousIndividualUniversityView.Name = "PreviousIndividualUniversityView";
+            this.PreviousIndividualUniversityView.Size = new System.Drawing.Size(24, 17);
+            this.PreviousIndividualUniversityView.TabIndex = 6;
+            this.PreviousIndividualUniversityView.TabStop = true;
+            this.PreviousIndividualUniversityView.Text = "<<";
+            this.PreviousIndividualUniversityView.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PreviousForm_LinkClicked);
+            // 
+            // IndividualUniversityView
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(847, 481);
+            this.Controls.Add(this.PreviousIndividualUniversityView);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.StudyPrograms);
+            this.Controls.Add(this.Faculties);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.About);
+            this.Controls.Add(this.UniversityName);
+            this.Name = "IndividualUniversityView";
+            this.Text = "IndividualUniversityView";
+            this.Load += new System.EventHandler(this.IndividualUniversityView_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Label UniversityName;
+        private System.Windows.Forms.Label About;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button Faculties;
+        private System.Windows.Forms.Button StudyPrograms;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.LinkLabel PreviousIndividualUniversityView;
+    }
+}

@@ -11,36 +11,26 @@ using Advisor.Controller;
 
 namespace Advisor.View
 {
-    public partial class IndividualFacultyView : Form
+    public partial class IndividualUniversityView : Form
     {
         public AuthController AuthController { get; set; }
-
-        public IndividualFacultyView()
+        public IndividualUniversityView()
         {
             InitializeComponent();
         }
-
-        private void IndividualFaculty_Load(object sender, EventArgs e)
+        private void IndividualUniversityView_Load(object sender, EventArgs e)
         {
-            //load StudyProgramList
-            //add text to AboutSection
-
-            AuthController.HandleLoadIndividualFacultyView(FacultyTitle);
+            AuthController.HandleLoadIndividualUniversityView(UniversityName);
         }
 
-        private void BtnLecturers_Click(object sender, EventArgs e)
+        private void Faculties_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void BtnAddStudyProgram_Click(object sender, EventArgs e)
-        {
-
+            AuthController.HandleFacultiesClicked();
         }
 
         private void PreviousForm_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            AuthController.LoadPreviousFormIndividualFacultyView();
+            AuthController.LoadPreviousFormIndividualUniversityView();
         }
     }
 }
