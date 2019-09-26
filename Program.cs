@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 using Advisor.Controller;
-using Advisor.Model;
-using Advisor.View;
-using Advisor.Validator;
+using Ninject;
+using Advisor.DependencyInjection;
 
 namespace Advisor
 {
@@ -20,30 +16,12 @@ namespace Advisor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            List<string> lines = File.ReadAllLines(Directory.GetCurrentDirectory().ToString() + "\\data.txt").ToList();
-            List<User> usersList= new List<User>();
-            while (lines.Count > 0)
-            {
-                usersList.Add(new User(lines.ElementAt(0), lines.ElementAt(1), lines.ElementAt(2)));
-                for (int i = 0; i < 3; i++)
-                {
-                    lines.RemoveAt(0);
-                }
-            }
 
-            LoginFormView loginFormView = new LoginFormView();
-            SignupFormView signupFormView = new SignupFormView();
-            WhatUniversityView whatUniversityView = new WhatUniversityView();
-            AuthController authController = new AuthController(
-                loginFormView,
-                signupFormView,
-                whatUniversityView,
-                usersList,
-                new LoginDataValidator(),
-                new SignupDataValidator()
-                );
+            var kernel = new StandardKernel(new Bindings());
+            AuthController authController = kernel.Get<AuthController>();
+
             authController.LoadViews();
-            loginFormView.ShowDialog();
+            authController.LoginFormView.ShowDialog();
         }
     }
 }
