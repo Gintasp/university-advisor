@@ -12,7 +12,7 @@ namespace Advisor.DependencyInjection
             Bind<IAuthController>().To<AuthController>();
             Bind<ILoginDataValidator>().To<LoginDataValidator>();
             Bind<ISignupDataValidator>().To<SignupDataValidator>();
-            Bind<AbstractLoginFormView>().To<LoginFormView>();
+            Bind<ALoginFormView>().To<LoginFormView>();
         }
     }
 }

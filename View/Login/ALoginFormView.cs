@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Advisor.View
 {
-    public class AbstractLoginFormView : Form
+    public class ALoginFormView : Form
     {
         public IAuthController AuthController { get; set; }
     }

@@ -10,7 +10,7 @@ namespace Advisor.Controller
     public class AuthController : IAuthController
     {
         public AuthController(
-            AbstractLoginFormView loginFormView,
+            ALoginFormView loginFormView,
             ASignupFormView signupFormView,
             WhatUniversityView whatUniversityView,
             List<User> users,
@@ -27,7 +27,7 @@ namespace Advisor.Controller
 
         public ISignupDataValidator SignupDataValidator { get; set; }
         public ILoginDataValidator LoginDataValidator { get; set; }
-        public AbstractLoginFormView LoginFormView { get; set; }
+        public ALoginFormView LoginFormView { get; set; }
         public WhatUniversityView WhatUniversityView { get; set; }
         public List<User> Users { get; set; }
 

@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
-using Advisor.Controller;
 
 namespace Advisor.View
 {
-    public partial class LoginFormView : AbstractLoginFormView
+    public partial class LoginFormView : ALoginFormView
     {
         public LoginFormView()
         {
