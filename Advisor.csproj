@@ -92,6 +92,12 @@
     <Compile Include="View\IndividualStudyProgramView.Designer.cs">
       <DependentUpon>IndividualStudyProgramView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\IndividualUniversityView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\IndividualUniversityView.Designer.cs">
+      <DependentUpon>IndividualUniversityView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginFormView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\IndividualStudyProgramView.resx">
       <DependentUpon>IndividualStudyProgramView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\IndividualUniversityView.resx">
+      <DependentUpon>IndividualUniversityView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoginFormView.resx">
       <DependentUpon>LoginFormView.cs</DependentUpon>

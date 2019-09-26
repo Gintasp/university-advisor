@@ -34,10 +34,16 @@ namespace Advisor
             LoginFormView loginFormView = new LoginFormView();
             SignupFormView signupFormView = new SignupFormView();
             WhatUniversityView whatUniversityView = new WhatUniversityView();
+            IndividualUniversityView individualUniversityView = new IndividualUniversityView();
+            FacultiesListView facultiesListView = new FacultiesListView();
+            IndividualFacultyView individualFacultyView = new IndividualFacultyView();
             AuthController authController = new AuthController(
                 loginFormView,
                 signupFormView,
                 whatUniversityView,
+                individualUniversityView,
+                facultiesListView,
+                individualFacultyView,
                 usersList,
                 new LoginDataValidator(),
                 new SignupDataValidator()

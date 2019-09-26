@@ -7,18 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Advisor.Controller;
 
 namespace Advisor.View
 {
     public partial class FacultiesListView : Form
     {
+        public AuthController AuthController { get; set; }
+
         public FacultiesListView()
         {
             InitializeComponent();
         }
         private void FacultiesListView_Load(object sender, EventArgs e)
         {
-            //load FacultiesList
+            AuthController.LoadFacultiesList(FacultiesList);
         }
 
         private void BtnAddFaculty_Click(object sender, EventArgs e)
@@ -47,7 +50,12 @@ namespace Advisor.View
 
         private void PreviousForm_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //go back to IndividualUniversity Form
+            AuthController.LoadPreviousFormFacultiesListView();
+        }
+
+        private void SelectedFaculty(object sender, EventArgs e)
+        {
+            AuthController.HandleSelectedFaculty(FacultiesList.GetItemText(FacultiesList.SelectedItem));
         }
     }
 }

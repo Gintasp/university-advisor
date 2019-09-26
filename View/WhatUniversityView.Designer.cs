@@ -39,7 +39,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(43, 39);
+            this.label1.Location = new System.Drawing.Point(18, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(814, 46);
             this.label1.TabIndex = 0;
@@ -69,6 +69,7 @@
             this.UniversityList.Name = "UniversityList";
             this.UniversityList.Size = new System.Drawing.Size(400, 188);
             this.UniversityList.TabIndex = 2;
+            this.UniversityList.SelectedIndexChanged += new System.EventHandler(this.SelectedUniversity);
             // 
             // AddUniversity
             // 
@@ -81,7 +82,7 @@
             this.AddUniversity.UseVisualStyleBackColor = true;
             this.AddUniversity.Click += new System.EventHandler(this.AddUniversityClicked);
             // 
-            // WhatUniversity
+            // WhatUniversityView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -90,7 +91,7 @@
             this.Controls.Add(this.UniversityList);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.label1);
-            this.Name = "WhatUniversity";
+            this.Name = "WhatUniversityView";
             this.Text = "WhatUniversity";
             this.Load += new System.EventHandler(this.WhatUniversity_Load);
             this.ResumeLayout(false);

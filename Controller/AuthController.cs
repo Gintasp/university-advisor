@@ -4,15 +4,21 @@ using System.IO;
 using Advisor.View;
 using Advisor.Model;
 using Advisor.Validator;
+using System;
 
 namespace Advisor.Controller
 {
     public class AuthController
     {
+        string UniversityName;
+        string FacultyName;
         public AuthController(
             LoginFormView loginFormView,
             SignupFormView signupFormView,
             WhatUniversityView whatUniversityView,
+            IndividualUniversityView individualUniversityView,
+            FacultiesListView facultiesListView,
+            IndividualFacultyView individualFacultyView,
             List<User> users,
             LoginDataValidator loginDataValidator,
             SignupDataValidator signupDataValidator
@@ -20,15 +26,22 @@ namespace Advisor.Controller
             LoginFormView = loginFormView;
             SignupFormView = signupFormView;
             WhatUniversityView = whatUniversityView;
+            FacultiesListView = facultiesListView;
+            IndividualFacultyView = individualFacultyView;
             LoginDataValidator = loginDataValidator;
             SignupDataValidator = signupDataValidator;
+            IndividualUniversityView = individualUniversityView;
             Users = users;
         }
+
 
         public SignupDataValidator SignupDataValidator { get; set; }
         public LoginDataValidator LoginDataValidator { get; set; }
         public LoginFormView LoginFormView { get; set; }
         public WhatUniversityView WhatUniversityView { get; set; }
+        public IndividualUniversityView IndividualUniversityView { get; set; }
+        public FacultiesListView FacultiesListView { get; set; }
+        public IndividualFacultyView IndividualFacultyView { get; set; }
         public List<User> Users { get; set; }
 
         public SignupFormView SignupFormView { get; set; }
@@ -48,6 +61,9 @@ namespace Advisor.Controller
             LoginFormView.AuthController = this;
             SignupFormView.AuthController = this;
             WhatUniversityView.AuthController = this;
+            IndividualUniversityView.AuthController = this;
+            FacultiesListView.AuthController = this;
+            IndividualFacultyView.AuthController = this;
         }
 
         public void CloseLoginView()
@@ -102,7 +118,63 @@ namespace Advisor.Controller
         }
         public void LoadUniversityList(ListBox listBox)
         {
+            //laikinai
+            listBox.Items.Clear();
+            listBox.Items.Add("University");
+            listBox.Items.Add("University1");
+
+
             //add data from database
+        }
+        public void HandleSelectedUniversity(string name)
+        {
+            WhatUniversityView.Hide();
+            UniversityName = name;
+            IndividualUniversityView.ShowDialog();
+        }
+        public void HandleLoadIndividualUniversityView(Label label)
+        {
+            label.Text = UniversityName;
+        }
+        public void LoadPreviousFormIndividualUniversityView()
+        {
+            IndividualUniversityView.Hide();
+            WhatUniversityView.Show();
+        }
+        public void HandleFacultiesClicked()
+        {
+            IndividualUniversityView.Hide();
+            FacultiesListView.ShowDialog();
+        }
+        public void LoadFacultiesList(ListBox listBox)
+        {
+            //laikinai
+            listBox.Items.Clear();
+            listBox.Items.Add("Faculty");
+            listBox.Items.Add("Faculty1");
+
+
+            //add data from database
+        }
+        public void HandleSelectedFaculty(string name)
+        {
+            FacultiesListView.Hide();
+            FacultyName = name;
+            IndividualFacultyView.ShowDialog();
+        }
+        public void LoadPreviousFormFacultiesListView()
+        {
+            FacultiesListView.Hide();
+            IndividualUniversityView.Show();
+        }
+        public void HandleLoadIndividualFacultyView(Label label)
+        {
+            label.Text = FacultyName;
+        }
+        public void LoadPreviousFormIndividualFacultyView()
+        {
+            IndividualFacultyView.Hide();
+            FacultiesListView.Show();
         }
     }
 }
