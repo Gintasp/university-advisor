@@ -1,18 +1,14 @@
 ﻿using System;
-using Advisor.Controller;
 using System.Drawing;
-using System.Windows.Forms;
 
 namespace Advisor.View
 {
-    public partial class WhatUniversityView : Form
+    public partial class WhatUniversityView : AWhatUniversityView
     {
         public WhatUniversityView()
         {
             InitializeComponent();
         }
-
-        public AuthController AuthController { get; set; }
 
         private void PrimaryTextDeletion(object sender, EventArgs e)
         {

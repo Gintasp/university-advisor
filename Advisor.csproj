@@ -81,6 +81,9 @@
     <Compile Include="Validator\ISignupDataValidator.cs" />
     <Compile Include="Validator\SignupDataValidator.cs" />
     <Compile Include="Validator\LoginDataValidator.cs" />
+    <Compile Include="View\AWhatUniversityView.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\Login\ALoginFormView.cs">
       <SubType>Form</SubType>
     </Compile>

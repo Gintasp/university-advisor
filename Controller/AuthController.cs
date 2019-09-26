@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Windows.Forms;
-using System.IO;
+﻿using System.Windows.Forms;
 using Advisor.View;
 using Advisor.Model;
 using Advisor.Validator;
@@ -12,8 +10,7 @@ namespace Advisor.Controller
         public AuthController(
             ALoginFormView loginFormView,
             ASignupFormView signupFormView,
-            WhatUniversityView whatUniversityView,
-            List<User> users,
+            AWhatUniversityView whatUniversityView,
             ILoginDataValidator loginDataValidator,
             ISignupDataValidator signupDataValidator
         ) {
@@ -22,25 +19,18 @@ namespace Advisor.Controller
             WhatUniversityView = whatUniversityView;
             LoginDataValidator = loginDataValidator;
             SignupDataValidator = signupDataValidator;
-            Users = users;
         }
 
         public ISignupDataValidator SignupDataValidator { get; set; }
         public ILoginDataValidator LoginDataValidator { get; set; }
         public ALoginFormView LoginFormView { get; set; }
-        public WhatUniversityView WhatUniversityView { get; set; }
-        public List<User> Users { get; set; }
+        public AWhatUniversityView WhatUniversityView { get; set; }
 
         public ASignupFormView SignupFormView { get; set; }
 
         public bool AuthenticateUser(string email, string password)
         {
-            foreach (User userFromList in Users)
-            {
-                if (userFromList.Email.Equals(email) && userFromList.Password.Equals(password)) return true;
-            }
-
-            return false;
+            return true;
         }
 
         public void LoadViews()
@@ -86,11 +76,9 @@ namespace Advisor.Controller
                 return false;
             }
 
-            File.AppendAllLines(
-                Directory.GetCurrentDirectory().ToString() + "\\data.txt",
-                new string[] { user.Email, user.Name, user.Password }
-            );
-            Users.Add(user);
+            DB.Instance.Users.Add(user);
+            DB.Instance.SaveChanges();
+
             SignupFormView.Hide();
             LoginFormView.Show();
 
