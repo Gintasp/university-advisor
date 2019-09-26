@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Advisor.View
 {
-    public partial class IndividualFacultyView : Form, IIndivudalFacultyView
+    public partial class IndividualFacultyView : Form, IIndividualFacultyView
     {
         public IndividualFacultyView()
         {
