@@ -7,7 +7,7 @@ using Advisor.Validator;
 
 namespace Advisor.Controller
 {
-    public class AuthController
+    public class AuthController : IAuthController
     {
         public AuthController(
             LoginFormView loginFormView,

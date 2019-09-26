@@ -1,6 +1,6 @@
 ﻿namespace Advisor.Validator
 {
-    public class LoginDataValidator
+    public class LoginDataValidator : ILoginDataValidator
     {
         public bool Validate(string email, string password)
         {

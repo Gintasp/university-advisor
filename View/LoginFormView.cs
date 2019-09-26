@@ -4,7 +4,7 @@ using Advisor.Controller;
 
 namespace Advisor.View
 {
-    public partial class LoginFormView : Form
+    public partial class LoginFormView : Form, ILoginFormView
     {
         public AuthController AuthController { get; set; }
 

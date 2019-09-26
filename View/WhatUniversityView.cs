@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace Advisor.View
 {
-    public partial class WhatUniversityView : Form
+    public partial class WhatUniversityView : Form, IWhatUniversityView
     {
         public WhatUniversityView()
         {

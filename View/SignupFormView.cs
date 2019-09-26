@@ -5,7 +5,7 @@ using Advisor.Model;
 
 namespace Advisor.View
 {
-    public partial class SignupFormView : Form
+    public partial class SignupFormView : Form, ISignupFormView
     {
         public AuthController AuthController { get; set; }
 
