@@ -14,8 +14,8 @@ namespace Advisor.Controller
             SignupFormView signupFormView,
             WhatUniversityView whatUniversityView,
             List<User> users,
-            LoginDataValidator loginDataValidator,
-            SignupDataValidator signupDataValidator
+            ILoginDataValidator loginDataValidator,
+            ISignupDataValidator signupDataValidator
         ) {
             LoginFormView = loginFormView;
             SignupFormView = signupFormView;
@@ -25,8 +25,8 @@ namespace Advisor.Controller
             Users = users;
         }
 
-        public SignupDataValidator SignupDataValidator { get; set; }
-        public LoginDataValidator LoginDataValidator { get; set; }
+        public ISignupDataValidator SignupDataValidator { get; set; }
+        public ILoginDataValidator LoginDataValidator { get; set; }
         public LoginFormView LoginFormView { get; set; }
         public WhatUniversityView WhatUniversityView { get; set; }
         public List<User> Users { get; set; }
