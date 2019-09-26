@@ -5,10 +5,8 @@ using Advisor.Model;
 
 namespace Advisor.View
 {
-    public partial class SignupFormView : Form, ISignupFormView
+    public partial class SignupFormView : ASignupFormView
     {
-        public AuthController AuthController { get; set; }
-
         public SignupFormView()
         {
             InitializeComponent();

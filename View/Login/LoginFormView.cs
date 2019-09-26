@@ -4,10 +4,8 @@ using Advisor.Controller;
 
 namespace Advisor.View
 {
-    public partial class LoginFormView : Form, ILoginFormView
+    public partial class LoginFormView : AbstractLoginFormView
     {
-        public AuthController AuthController { get; set; }
-
         public LoginFormView()
         {
             InitializeComponent();
