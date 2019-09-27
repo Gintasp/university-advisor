@@ -9,19 +9,24 @@ namespace Advisor.Controller
     {
         public AuthController(
             ILoginDataValidator loginDataValidator,
-            ISignupDataValidator signupDataValidator
+            ISignupDataValidator signupDataValidator,
+            IHomeController homeController
         ) {
             LoginDataValidator = loginDataValidator;
             SignupDataValidator = signupDataValidator;
+            HomeController = homeController;
         }
 
         public ISignupDataValidator SignupDataValidator { get; set; }
         public ILoginDataValidator LoginDataValidator { get; set; }
         public SignupFormView SignupFormView { get; set; }
         public LoginFormView LoginFormView { get; set; }
+        public HomeView HomeView { get; set; }
+        public IHomeController HomeController { get; set; }
 
         public bool AuthenticateUser(string email, string password)
         {
+            //TODO: Authenticate user from DB
             return true;
         }
 
@@ -39,7 +44,7 @@ namespace Advisor.Controller
         public void HandleSignupLinkClick()
         {
             LoginFormView.Hide();
-            SignupFormView = new SignupFormView(this);
+            SignupFormView.AuthController = this;
             SignupFormView.ShowDialog();
         }
 
@@ -49,8 +54,10 @@ namespace Advisor.Controller
             if (AuthenticateUser(email, password) == true)
             {
                 LoginFormView.Hide();
-                MessageBox.Show("Success!");
+                HomeView = new HomeView(HomeController);
+                HomeView.ShowDialog();
             }
+
             return false;
         }
 
@@ -59,6 +66,7 @@ namespace Advisor.Controller
             if (!SignupDataValidator.Validate(user, passConfirm))
             {
                 MessageBox.Show(SignupDataValidator.GetSignupDataVadilatorErrorMessage());
+
                 return false;
             }
 
@@ -69,14 +77,6 @@ namespace Advisor.Controller
             LoginFormView.Show();
 
             return true;
-        }
-        public void HandleAddUniversityClick()
-        {
-            MessageBox.Show(";))");
-        }
-        public void LoadUniversityList(ListBox listBox)
-        {
-            //add data from database
         }
     }
 }

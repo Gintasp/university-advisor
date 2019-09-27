@@ -1,12 +1,17 @@
-﻿using System;
+﻿using Advisor.Controller;
+using System;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace Advisor.View
 {
-    public partial class WhatUniversityView : AWhatUniversityView
+    public partial class HomeView : Form
     {
-        public WhatUniversityView()
+        public IHomeController HomeController { get; set; }
+        public HomeView(IHomeController homeController)
         {
+            HomeController = homeController;
+            homeController.HomeView = this;
             InitializeComponent();
         }
 
@@ -30,12 +35,12 @@ namespace Advisor.View
 
         private void AddUniversityClicked(object sender, EventArgs e)
         {
-            AuthController.HandleAddUniversityClick();
+            HomeController.HandleAddUniversityClick();
         }
 
         private void WhatUniversity_Load(object sender, EventArgs e)
         {
-            AuthController.LoadUniversityList(UniversityList);
+            HomeController.LoadUniversityList(UniversityList);
         }
     }
 }

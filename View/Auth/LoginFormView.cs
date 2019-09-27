@@ -14,6 +14,11 @@ namespace Advisor.View
             InitializeComponent();
         }
 
+        public LoginFormView()
+        {
+            InitializeComponent();
+        }
+
         private void OnSignupButtonClick(object sender, LinkLabelLinkClickedEventArgs e)
         {
             AuthController.HandleSignupLinkClick();

@@ -56,8 +56,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\AuthController.cs" />
-    <Compile Include="Controller\IAuthController.cs" />
+    <Compile Include="Controller\Auth\AuthController.cs" />
+    <Compile Include="Controller\Home\HomeController.cs" />
+    <Compile Include="Controller\Auth\IAuthController.cs" />
+    <Compile Include="Controller\Home\IHomeController.cs" />
     <Compile Include="DependencyInjection\Bindings.cs" />
     <Compile Include="Migrations\201909221555231_MainEntities.cs" />
     <Compile Include="Migrations\201909221555231_MainEntities.Designer.cs">
@@ -81,9 +83,6 @@
     <Compile Include="Validator\ISignupDataValidator.cs" />
     <Compile Include="Validator\SignupDataValidator.cs" />
     <Compile Include="Validator\LoginDataValidator.cs" />
-    <Compile Include="View\AWhatUniversityView.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="View\IndividualFacultyView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,11 +107,11 @@
     <Compile Include="View\Auth\SignupFormView.Designer.cs">
       <DependentUpon>SignupFormView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\WhatUniversityView.cs">
+    <Compile Include="View\HomeView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\WhatUniversityView.Designer.cs">
-      <DependentUpon>WhatUniversityView.cs</DependentUpon>
+    <Compile Include="View\HomeView.Designer.cs">
+      <DependentUpon>HomeView.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Migrations\201909221555231_MainEntities.resx">
       <DependentUpon>201909221555231_MainEntities.cs</DependentUpon>
@@ -142,8 +141,8 @@
       <DependentUpon>SignupFormView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\WhatUniversityView.resx">
-      <DependentUpon>WhatUniversityView.cs</DependentUpon>
+    <EmbeddedResource Include="View\HomeView.resx">
+      <DependentUpon>HomeView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -15,6 +15,11 @@ namespace Advisor.View
             InitializeComponent();
         }
 
+        public SignupFormView()
+        {
+            InitializeComponent();
+        }
+
         private void OnSignupButtonClick(object sender, EventArgs e)
         {
             if (txtPassword.Text.Equals(txtConfirmPassword.Text))

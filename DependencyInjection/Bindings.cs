@@ -1,6 +1,5 @@
 ﻿using Advisor.Controller;
 using Advisor.Validator;
-using Advisor.View;
 using Ninject.Modules;
 
 namespace Advisor.DependencyInjection
@@ -10,6 +9,7 @@ namespace Advisor.DependencyInjection
         public override void Load()
         {
             Bind<IAuthController>().To<AuthController>();
+            Bind<IHomeController>().To<HomeController>();
 
             Bind<ILoginDataValidator>().To<LoginDataValidator>();
             Bind<ISignupDataValidator>().To<SignupDataValidator>();
