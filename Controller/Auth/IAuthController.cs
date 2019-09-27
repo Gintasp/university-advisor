@@ -7,7 +7,6 @@ namespace Advisor.Controller
     {
         LoginFormView LoginFormView { get; set; }
         SignupFormView SignupFormView { get; set; }
-        bool AuthenticateUser(string email, string password);
         void CloseLoginView();
         void CloseSignupView();
         void HandleSignupLinkClick();

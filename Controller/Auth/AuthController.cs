@@ -24,9 +24,10 @@ namespace Advisor.Controller
         public HomeView HomeView { get; set; }
         public IHomeController HomeController { get; set; }
 
-        public bool AuthenticateUser(string email, string password)
+        private bool AuthenticateUser(string email, string password)
         {
             //TODO: Authenticate user from DB
+
             return true;
         }
 
@@ -51,7 +52,7 @@ namespace Advisor.Controller
         public bool HandleLogin (string email, string password)
         {
             if (!LoginDataValidator.Validate(email, password)) return false;
-            if (AuthenticateUser(email, password) == true)
+            if (AuthenticateUser(email, password))
             {
                 LoginFormView.Hide();
                 HomeView = new HomeView(HomeController);
