@@ -51,10 +51,11 @@
             this.UniversityTitleLabel.AutoSize = true;
             this.UniversityTitleLabel.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.UniversityTitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.UniversityTitleLabel.Location = new System.Drawing.Point(187, 60);
-            this.UniversityTitleLabel.MaximumSize = new System.Drawing.Size(220, 0);
+            this.UniversityTitleLabel.Location = new System.Drawing.Point(140, 49);
+            this.UniversityTitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.UniversityTitleLabel.MaximumSize = new System.Drawing.Size(165, 0);
             this.UniversityTitleLabel.Name = "UniversityTitleLabel";
-            this.UniversityTitleLabel.Size = new System.Drawing.Size(84, 46);
+            this.UniversityTitleLabel.Size = new System.Drawing.Size(68, 37);
             this.UniversityTitleLabel.TabIndex = 0;
             this.UniversityTitleLabel.Text = "Title";
             // 
@@ -63,27 +64,30 @@
             this.About.AutoSize = true;
             this.About.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.About.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.About.Location = new System.Drawing.Point(448, 60);
+            this.About.Location = new System.Drawing.Point(336, 49);
+            this.About.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.About.Name = "About";
-            this.About.Size = new System.Drawing.Size(113, 46);
+            this.About.Size = new System.Drawing.Size(90, 37);
             this.About.TabIndex = 1;
             this.About.Text = "About";
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(456, 109);
+            this.panel1.Location = new System.Drawing.Point(342, 89);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(346, 327);
+            this.panel1.Size = new System.Drawing.Size(260, 266);
             this.panel1.TabIndex = 2;
             // 
             // Faculties
             // 
             this.Faculties.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.Faculties.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Faculties.Location = new System.Drawing.Point(76, 294);
+            this.Faculties.Location = new System.Drawing.Point(57, 239);
+            this.Faculties.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Faculties.Name = "Faculties";
-            this.Faculties.Size = new System.Drawing.Size(292, 44);
+            this.Faculties.Size = new System.Drawing.Size(219, 36);
             this.Faculties.TabIndex = 3;
             this.Faculties.Text = "Faculties";
             this.Faculties.UseVisualStyleBackColor = true;
@@ -93,27 +97,30 @@
             // 
             this.StudyPrograms.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.StudyPrograms.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.StudyPrograms.Location = new System.Drawing.Point(76, 358);
+            this.StudyPrograms.Location = new System.Drawing.Point(57, 291);
+            this.StudyPrograms.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.StudyPrograms.Name = "StudyPrograms";
-            this.StudyPrograms.Size = new System.Drawing.Size(292, 44);
+            this.StudyPrograms.Size = new System.Drawing.Size(219, 36);
             this.StudyPrograms.TabIndex = 4;
             this.StudyPrograms.Text = "Study programs";
             this.StudyPrograms.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(58, 60);
+            this.pictureBox1.Location = new System.Drawing.Point(44, 49);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(123, 119);
+            this.pictureBox1.Size = new System.Drawing.Size(92, 97);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
             // PreviousIndividualUniversityView
             // 
             this.PreviousIndividualUniversityView.AutoSize = true;
-            this.PreviousIndividualUniversityView.Location = new System.Drawing.Point(12, 9);
+            this.PreviousIndividualUniversityView.Location = new System.Drawing.Point(9, 7);
+            this.PreviousIndividualUniversityView.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PreviousIndividualUniversityView.Name = "PreviousIndividualUniversityView";
-            this.PreviousIndividualUniversityView.Size = new System.Drawing.Size(24, 17);
+            this.PreviousIndividualUniversityView.Size = new System.Drawing.Size(19, 13);
             this.PreviousIndividualUniversityView.TabIndex = 6;
             this.PreviousIndividualUniversityView.TabStop = true;
             this.PreviousIndividualUniversityView.Text = "<<";
@@ -121,9 +128,9 @@
             // 
             // UniversityView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 481);
+            this.ClientSize = new System.Drawing.Size(635, 391);
             this.Controls.Add(this.PreviousIndividualUniversityView);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.StudyPrograms);
@@ -131,8 +138,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.About);
             this.Controls.Add(this.UniversityTitleLabel);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UniversityView";
-            this.Text = "UniversityView";
+            this.Text = "University";
             this.Load += new System.EventHandler(this.LoadUniversityTitle);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

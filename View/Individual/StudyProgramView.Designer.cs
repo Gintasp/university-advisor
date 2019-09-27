@@ -44,10 +44,11 @@
             this.StudyProgramTitle.AutoSize = true;
             this.StudyProgramTitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StudyProgramTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.StudyProgramTitle.Location = new System.Drawing.Point(51, 47);
-            this.StudyProgramTitle.MaximumSize = new System.Drawing.Size(400, 0);
+            this.StudyProgramTitle.Location = new System.Drawing.Point(34, 31);
+            this.StudyProgramTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.StudyProgramTitle.MaximumSize = new System.Drawing.Size(267, 0);
             this.StudyProgramTitle.Name = "StudyProgramTitle";
-            this.StudyProgramTitle.Size = new System.Drawing.Size(99, 54);
+            this.StudyProgramTitle.Size = new System.Drawing.Size(68, 37);
             this.StudyProgramTitle.TabIndex = 0;
             this.StudyProgramTitle.Text = "Title";
             // 
@@ -56,9 +57,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(55, 154);
+            this.label2.Location = new System.Drawing.Point(37, 100);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 28);
+            this.label2.Size = new System.Drawing.Size(47, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "About";
             // 
@@ -68,9 +70,10 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.AboutSection);
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Location = new System.Drawing.Point(60, 185);
+            this.panel1.Location = new System.Drawing.Point(40, 120);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(329, 229);
+            this.panel1.Size = new System.Drawing.Size(220, 150);
             this.panel1.TabIndex = 2;
             // 
             // AboutSection
@@ -78,10 +81,11 @@
             this.AboutSection.AutoSize = true;
             this.AboutSection.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AboutSection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.AboutSection.Location = new System.Drawing.Point(4, 4);
-            this.AboutSection.MaximumSize = new System.Drawing.Size(290, 0);
+            this.AboutSection.Location = new System.Drawing.Point(3, 3);
+            this.AboutSection.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.AboutSection.MaximumSize = new System.Drawing.Size(193, 0);
             this.AboutSection.Name = "AboutSection";
-            this.AboutSection.Size = new System.Drawing.Size(62, 21);
+            this.AboutSection.Size = new System.Drawing.Size(45, 13);
             this.AboutSection.TabIndex = 0;
             this.AboutSection.Text = "[About]";
             // 
@@ -89,9 +93,10 @@
             // 
             this.btnLeaveAReview.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLeaveAReview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnLeaveAReview.Location = new System.Drawing.Point(60, 434);
+            this.btnLeaveAReview.Location = new System.Drawing.Point(40, 282);
+            this.btnLeaveAReview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLeaveAReview.Name = "btnLeaveAReview";
-            this.btnLeaveAReview.Size = new System.Drawing.Size(329, 55);
+            this.btnLeaveAReview.Size = new System.Drawing.Size(219, 36);
             this.btnLeaveAReview.TabIndex = 3;
             this.btnLeaveAReview.Text = "Leave a review";
             this.btnLeaveAReview.UseVisualStyleBackColor = true;
@@ -101,9 +106,10 @@
             // 
             this.btnStudySubjects.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStudySubjects.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnStudySubjects.Location = new System.Drawing.Point(60, 505);
+            this.btnStudySubjects.Location = new System.Drawing.Point(40, 328);
+            this.btnStudySubjects.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnStudySubjects.Name = "btnStudySubjects";
-            this.btnStudySubjects.Size = new System.Drawing.Size(329, 55);
+            this.btnStudySubjects.Size = new System.Drawing.Size(219, 36);
             this.btnStudySubjects.TabIndex = 4;
             this.btnStudySubjects.Text = "Study subjects";
             this.btnStudySubjects.UseVisualStyleBackColor = true;
@@ -114,18 +120,20 @@
             this.ReviewList.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReviewList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ReviewList.FormattingEnabled = true;
-            this.ReviewList.ItemHeight = 25;
-            this.ReviewList.Location = new System.Drawing.Point(464, 72);
+            this.ReviewList.ItemHeight = 15;
+            this.ReviewList.Location = new System.Drawing.Point(309, 47);
+            this.ReviewList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ReviewList.Name = "ReviewList";
-            this.ReviewList.Size = new System.Drawing.Size(421, 479);
+            this.ReviewList.Size = new System.Drawing.Size(282, 304);
             this.ReviewList.TabIndex = 5;
             // 
             // PreviousForm
             // 
             this.PreviousForm.AutoSize = true;
-            this.PreviousForm.Location = new System.Drawing.Point(12, 9);
+            this.PreviousForm.Location = new System.Drawing.Point(8, 6);
+            this.PreviousForm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PreviousForm.Name = "PreviousForm";
-            this.PreviousForm.Size = new System.Drawing.Size(27, 20);
+            this.PreviousForm.Size = new System.Drawing.Size(19, 13);
             this.PreviousForm.TabIndex = 6;
             this.PreviousForm.TabStop = true;
             this.PreviousForm.Text = "<<";
@@ -133,9 +141,9 @@
             // 
             // StudyProgramView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(953, 601);
+            this.ClientSize = new System.Drawing.Size(635, 391);
             this.Controls.Add(this.PreviousForm);
             this.Controls.Add(this.ReviewList);
             this.Controls.Add(this.btnStudySubjects);
@@ -143,8 +151,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.StudyProgramTitle);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "StudyProgramView";
-            this.Text = "StudyProgramView";
+            this.Text = "Study Program";
             this.Load += new System.EventHandler(this.OnViewLoad);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

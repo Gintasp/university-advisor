@@ -39,9 +39,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(18, 39);
+            this.label1.Location = new System.Drawing.Point(14, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(814, 46);
+            this.label1.Size = new System.Drawing.Size(643, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "What university are you interested in at the moment?";
             // 
@@ -51,9 +52,10 @@
             this.searchBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.searchBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.searchBox.HideSelection = false;
-            this.searchBox.Location = new System.Drawing.Point(250, 107);
+            this.searchBox.Location = new System.Drawing.Point(188, 87);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(400, 30);
+            this.searchBox.Size = new System.Drawing.Size(301, 25);
             this.searchBox.TabIndex = 1;
             this.searchBox.Text = "Search";
             this.searchBox.Enter += new System.EventHandler(this.PrimaryTextDeletion);
@@ -64,35 +66,38 @@
             this.UniversityList.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.UniversityList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.UniversityList.FormattingEnabled = true;
-            this.UniversityList.ItemHeight = 23;
-            this.UniversityList.Location = new System.Drawing.Point(250, 159);
+            this.UniversityList.ItemHeight = 17;
+            this.UniversityList.Location = new System.Drawing.Point(188, 129);
+            this.UniversityList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UniversityList.Name = "UniversityList";
-            this.UniversityList.Size = new System.Drawing.Size(400, 188);
+            this.UniversityList.Size = new System.Drawing.Size(301, 140);
             this.UniversityList.TabIndex = 2;
             this.UniversityList.SelectedIndexChanged += new System.EventHandler(this.SelectedUniversity);
             // 
             // AddUniversity
             // 
             this.AddUniversity.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.AddUniversity.Location = new System.Drawing.Point(358, 407);
+            this.AddUniversity.Location = new System.Drawing.Point(268, 331);
+            this.AddUniversity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AddUniversity.Name = "AddUniversity";
-            this.AddUniversity.Size = new System.Drawing.Size(158, 61);
+            this.AddUniversity.Size = new System.Drawing.Size(118, 50);
             this.AddUniversity.TabIndex = 3;
             this.AddUniversity.Text = "Add University";
             this.AddUniversity.UseVisualStyleBackColor = true;
             this.AddUniversity.Click += new System.EventHandler(this.OnAddUniversityButtonClick);
             // 
-            // WhatUniversityView
+            // HomeView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 503);
+            this.ClientSize = new System.Drawing.Size(662, 409);
             this.Controls.Add(this.AddUniversity);
             this.Controls.Add(this.UniversityList);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.label1);
-            this.Name = "WhatUniversityView";
-            this.Text = "WhatUniversity";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "HomeView";
+            this.Text = "Home";
             this.Load += new System.EventHandler(this.LoadUniversityList);
             this.ResumeLayout(false);
             this.PerformLayout();

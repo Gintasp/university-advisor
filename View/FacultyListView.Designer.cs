@@ -40,11 +40,11 @@
             this.FacultiesListBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FacultiesListBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.FacultiesListBox.FormattingEnabled = true;
-            this.FacultiesListBox.ItemHeight = 23;
+            this.FacultiesListBox.ItemHeight = 17;
             this.FacultiesListBox.Location = new System.Drawing.Point(246, 192);
             this.FacultiesListBox.Margin = new System.Windows.Forms.Padding(4);
             this.FacultiesListBox.Name = "FacultiesListBox";
-            this.FacultiesListBox.Size = new System.Drawing.Size(492, 303);
+            this.FacultiesListBox.Size = new System.Drawing.Size(492, 293);
             this.FacultiesListBox.TabIndex = 0;
             this.FacultiesListBox.SelectedIndexChanged += new System.EventHandler(this.OnFacultySelect);
             // 
@@ -56,7 +56,7 @@
             this.label1.Location = new System.Drawing.Point(397, 48);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 50);
+            this.label1.Size = new System.Drawing.Size(131, 41);
             this.label1.TabIndex = 1;
             this.label1.Text = "Faculties";
             // 
@@ -68,7 +68,7 @@
             this.txtSearch.Location = new System.Drawing.Point(246, 141);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(492, 30);
+            this.txtSearch.Size = new System.Drawing.Size(492, 25);
             this.txtSearch.TabIndex = 2;
             this.txtSearch.Text = "Search";
             this.txtSearch.Enter += new System.EventHandler(this.OnSearchInputEnter);
@@ -93,15 +93,15 @@
             this.PreviousFacultiesListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PreviousFacultiesListView.Location = new System.Drawing.Point(13, 13);
             this.PreviousFacultiesListView.Name = "PreviousFacultiesListView";
-            this.PreviousFacultiesListView.Size = new System.Drawing.Size(24, 17);
+            this.PreviousFacultiesListView.Size = new System.Drawing.Size(19, 13);
             this.PreviousFacultiesListView.TabIndex = 4;
             this.PreviousFacultiesListView.TabStop = true;
             this.PreviousFacultiesListView.Text = "<<";
             this.PreviousFacultiesListView.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnPreviousButtonClick);
             // 
-            // FacultiesListView
+            // FacultyListView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 629);
             this.Controls.Add(this.PreviousFacultiesListView);
@@ -113,8 +113,8 @@
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FacultiesListView";
-            this.Text = "FacultiesListView";
+            this.Name = "FacultyListView";
+            this.Text = "Faculties";
             this.Load += new System.EventHandler(this.FacultiesListView_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
