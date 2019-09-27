@@ -15,7 +15,7 @@ namespace Advisor.View
             InitializeComponent();
         }
 
-        private void BtnSignUp_Click(object sender, EventArgs e)
+        private void OnSignupButtonClick(object sender, EventArgs e)
         {
             if (txtPassword.Text.Equals(txtConfirmPassword.Text))
             {
@@ -28,14 +28,9 @@ namespace Advisor.View
             }
         }
 
-        private void BtnCancel_Click(object sender, EventArgs e)
+        private void OnCancelButtonClick(object sender, EventArgs e)
         {
             AuthController.CloseSignupView();
-        }
-
-        private void Label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
