@@ -8,36 +8,21 @@ namespace Advisor.Controller
     public class AuthController : IAuthController
     {
         public AuthController(
-            ALoginFormView loginFormView,
-            ASignupFormView signupFormView,
-            AWhatUniversityView whatUniversityView,
             ILoginDataValidator loginDataValidator,
             ISignupDataValidator signupDataValidator
         ) {
-            LoginFormView = loginFormView;
-            SignupFormView = signupFormView;
-            WhatUniversityView = whatUniversityView;
             LoginDataValidator = loginDataValidator;
             SignupDataValidator = signupDataValidator;
         }
 
         public ISignupDataValidator SignupDataValidator { get; set; }
         public ILoginDataValidator LoginDataValidator { get; set; }
-        public ALoginFormView LoginFormView { get; set; }
-        public AWhatUniversityView WhatUniversityView { get; set; }
-
-        public ASignupFormView SignupFormView { get; set; }
+        public SignupFormView SignupFormView { get; set; }
+        public LoginFormView LoginFormView { get; set; }
 
         public bool AuthenticateUser(string email, string password)
         {
             return true;
-        }
-
-        public void LoadViews()
-        {
-            LoginFormView.AuthController = this;
-            SignupFormView.AuthController = this;
-            WhatUniversityView.AuthController = this;
         }
 
         public void CloseLoginView()
@@ -54,6 +39,7 @@ namespace Advisor.Controller
         public void HandleSignupLinkClick()
         {
             LoginFormView.Hide();
+            SignupFormView = new SignupFormView(this);
             SignupFormView.ShowDialog();
         }
 
@@ -63,7 +49,7 @@ namespace Advisor.Controller
             if (AuthenticateUser(email, password) == true)
             {
                 LoginFormView.Hide();
-                WhatUniversityView.ShowDialog();
+                MessageBox.Show("Success!");
             }
             return false;
         }

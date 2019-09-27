@@ -13,10 +13,6 @@ namespace Advisor.DependencyInjection
 
             Bind<ILoginDataValidator>().To<LoginDataValidator>();
             Bind<ISignupDataValidator>().To<SignupDataValidator>();
-
-            Bind<ALoginFormView>().To<LoginFormView>();
-            Bind<ASignupFormView>().To<SignupFormView>();
-            Bind<AWhatUniversityView>().To<WhatUniversityView>();
         }
     }
 }

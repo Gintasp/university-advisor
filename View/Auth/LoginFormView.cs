@@ -4,14 +4,17 @@ using System.Windows.Forms;
 
 namespace Advisor.View
 {
-    public partial class LoginFormView : ALoginFormView
+    public partial class LoginFormView : Form
     {
-        public LoginFormView()
+        public IAuthController AuthController { get; set; }
+        public LoginFormView(IAuthController authController)
         {
+            AuthController = authController;
+            authController.LoginFormView = this;
             InitializeComponent();
         }
 
-        private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void OnSignupButtonClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             AuthController.HandleSignupLinkClick();
         }

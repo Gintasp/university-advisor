@@ -5,10 +5,13 @@ using Advisor.Model;
 
 namespace Advisor.View
 {
-    public partial class SignupFormView : ASignupFormView
+    public partial class SignupFormView : Form
     {
-        public SignupFormView()
+        public IAuthController AuthController { get; set; }
+        public SignupFormView(IAuthController authController)
         {
+            AuthController = authController;
+            authController.SignupFormView = this;
             InitializeComponent();
         }
 

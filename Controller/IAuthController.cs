@@ -1,12 +1,14 @@
 ﻿using Advisor.Model;
+using Advisor.View;
 using System.Windows.Forms;
 
 namespace Advisor.Controller
 {
     public interface IAuthController
     {
+        LoginFormView LoginFormView { get; set; }
+        SignupFormView SignupFormView { get; set; }
         bool AuthenticateUser(string email, string password);
-        void LoadViews();
         void CloseLoginView();
         void CloseSignupView();
         void HandleSignupLinkClick();

@@ -84,9 +84,6 @@
     <Compile Include="View\AWhatUniversityView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Login\ALoginFormView.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="View\IndividualFacultyView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,19 +96,16 @@
     <Compile Include="View\IndividualStudyProgramView.Designer.cs">
       <DependentUpon>IndividualStudyProgramView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Login\LoginFormView.cs">
+    <Compile Include="View\Auth\LoginFormView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Login\LoginFormView.Designer.cs">
+    <Compile Include="View\Auth\LoginFormView.Designer.cs">
       <DependentUpon>LoginFormView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Signup\ASignupFormView.cs">
+    <Compile Include="View\Auth\SignupFormView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Signup\SignupFormView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Signup\SignupFormView.Designer.cs">
+    <Compile Include="View\Auth\SignupFormView.Designer.cs">
       <DependentUpon>SignupFormView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\WhatUniversityView.cs">
@@ -141,10 +135,10 @@
     <EmbeddedResource Include="View\IndividualStudyProgramView.resx">
       <DependentUpon>IndividualStudyProgramView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Login\LoginFormView.resx">
+    <EmbeddedResource Include="View\Auth\LoginFormView.resx">
       <DependentUpon>LoginFormView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Signup\SignupFormView.resx">
+    <EmbeddedResource Include="View\Auth\SignupFormView.resx">
       <DependentUpon>SignupFormView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
