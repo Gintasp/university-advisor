@@ -14,12 +14,12 @@ namespace Advisor.View
             InitializeComponent();
         }
 
-        private void OnSignupButtonClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void OnSignupButtonClick(object sender, LinkLabelLinkClickedEventArgs e)
         {
             AuthController.HandleSignupLinkClick();
         }
 
-        private void BtnLogIn_Click(object sender, EventArgs e)
+        private void OnLoginButtonClick(object sender, EventArgs e)
         {
             AuthController.HandleLogin(txtEmail.Text, txtPassword.Text);
         }
