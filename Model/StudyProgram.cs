@@ -7,6 +7,7 @@ namespace Advisor.Model
         public int Id { get; set; }
         public string Title { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<StudySubject> StudySubjects { get; set; }
 
         public StudyProgram()
         {
