@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace Advisor.View
 {
-    public partial class IndividualStudyProgramView : Form
+    public partial class StudyProgramView : Form
     {
-        public IndividualStudyProgramView()
+        public StudyProgramView()
         {
             InitializeComponent();
         }

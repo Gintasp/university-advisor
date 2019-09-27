@@ -1,6 +1,6 @@
 ﻿namespace Advisor.View
 {
-    partial class IndividualUniversityView
+    partial class UniversityView
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.UniversityName = new System.Windows.Forms.Label();
+            this.UniversityTitleLabel = new System.Windows.Forms.Label();
             this.About = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Faculties = new System.Windows.Forms.Button();
@@ -46,17 +46,17 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // UniversityName
+            // UniversityTitleLabel
             // 
-            this.UniversityName.AutoSize = true;
-            this.UniversityName.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.UniversityName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.UniversityName.Location = new System.Drawing.Point(187, 60);
-            this.UniversityName.MaximumSize = new System.Drawing.Size(220, 0);
-            this.UniversityName.Name = "UniversityName";
-            this.UniversityName.Size = new System.Drawing.Size(84, 46);
-            this.UniversityName.TabIndex = 0;
-            this.UniversityName.Text = "Title";
+            this.UniversityTitleLabel.AutoSize = true;
+            this.UniversityTitleLabel.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.UniversityTitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.UniversityTitleLabel.Location = new System.Drawing.Point(187, 60);
+            this.UniversityTitleLabel.MaximumSize = new System.Drawing.Size(220, 0);
+            this.UniversityTitleLabel.Name = "UniversityTitleLabel";
+            this.UniversityTitleLabel.Size = new System.Drawing.Size(84, 46);
+            this.UniversityTitleLabel.TabIndex = 0;
+            this.UniversityTitleLabel.Text = "Title";
             // 
             // About
             // 
@@ -87,7 +87,7 @@
             this.Faculties.TabIndex = 3;
             this.Faculties.Text = "Faculties";
             this.Faculties.UseVisualStyleBackColor = true;
-            this.Faculties.Click += new System.EventHandler(this.Faculties_Click);
+            this.Faculties.Click += new System.EventHandler(this.OnFacultiesButtonClick);
             // 
             // StudyPrograms
             // 
@@ -117,9 +117,9 @@
             this.PreviousIndividualUniversityView.TabIndex = 6;
             this.PreviousIndividualUniversityView.TabStop = true;
             this.PreviousIndividualUniversityView.Text = "<<";
-            this.PreviousIndividualUniversityView.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PreviousForm_LinkClicked);
+            this.PreviousIndividualUniversityView.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnPreviousButtonClick);
             // 
-            // IndividualUniversityView
+            // UniversityView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -130,10 +130,10 @@
             this.Controls.Add(this.Faculties);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.About);
-            this.Controls.Add(this.UniversityName);
-            this.Name = "IndividualUniversityView";
-            this.Text = "IndividualUniversityView";
-            this.Load += new System.EventHandler(this.IndividualUniversityView_Load);
+            this.Controls.Add(this.UniversityTitleLabel);
+            this.Name = "UniversityView";
+            this.Text = "UniversityView";
+            this.Load += new System.EventHandler(this.LoadUniversityTitle);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -143,7 +143,7 @@
         #endregion
 
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.Label UniversityName;
+        private System.Windows.Forms.Label UniversityTitleLabel;
         private System.Windows.Forms.Label About;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button Faculties;

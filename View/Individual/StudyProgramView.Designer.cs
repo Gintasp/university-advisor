@@ -1,6 +1,6 @@
 ﻿namespace Advisor.View
 {
-    partial class IndividualStudyProgramView
+    partial class StudyProgramView
     {
         /// <summary>
         /// Required designer variable.
@@ -131,7 +131,7 @@
             this.PreviousForm.Text = "<<";
             this.PreviousForm.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PreviousForm_LinkClicked);
             // 
-            // IndividualStudyProgramView
+            // StudyProgramView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -143,8 +143,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.StudyProgramTitle);
-            this.Name = "IndividualStudyProgramView";
-            this.Text = "IndividualStudyProgramView";
+            this.Name = "StudyProgramView";
+            this.Text = "StudyProgramView";
             this.Load += new System.EventHandler(this.IndividualStudyProgramView_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

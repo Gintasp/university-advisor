@@ -1,6 +1,6 @@
 ﻿namespace Advisor.View
 {
-    partial class IndividualFacultyView
+    partial class FacultyView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.FacultyTitle = new System.Windows.Forms.Label();
+            this.FacultyTitleLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.AboutSection = new System.Windows.Forms.Label();
@@ -39,17 +39,17 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // FacultyTitle
+            // FacultyTitleLabel
             // 
-            this.FacultyTitle.AutoSize = true;
-            this.FacultyTitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FacultyTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.FacultyTitle.Location = new System.Drawing.Point(58, 40);
-            this.FacultyTitle.MaximumSize = new System.Drawing.Size(444, 0);
-            this.FacultyTitle.Name = "FacultyTitle";
-            this.FacultyTitle.Size = new System.Drawing.Size(84, 46);
-            this.FacultyTitle.TabIndex = 0;
-            this.FacultyTitle.Text = "Title";
+            this.FacultyTitleLabel.AutoSize = true;
+            this.FacultyTitleLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FacultyTitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.FacultyTitleLabel.Location = new System.Drawing.Point(58, 40);
+            this.FacultyTitleLabel.MaximumSize = new System.Drawing.Size(444, 0);
+            this.FacultyTitleLabel.Name = "FacultyTitleLabel";
+            this.FacultyTitleLabel.Size = new System.Drawing.Size(84, 46);
+            this.FacultyTitleLabel.TabIndex = 0;
+            this.FacultyTitleLabel.Text = "Title";
             // 
             // label1
             // 
@@ -108,7 +108,7 @@
             this.btnLecturers.TabIndex = 4;
             this.btnLecturers.Text = "Lecturers";
             this.btnLecturers.UseVisualStyleBackColor = true;
-            this.btnLecturers.Click += new System.EventHandler(this.BtnLecturers_Click);
+            this.btnLecturers.Click += new System.EventHandler(this.OnLecturersButtonClick);
             // 
             // btnAddStudyProgram
             // 
@@ -121,7 +121,7 @@
             this.btnAddStudyProgram.TabIndex = 5;
             this.btnAddStudyProgram.Text = "Add Study Program";
             this.btnAddStudyProgram.UseVisualStyleBackColor = true;
-            this.btnAddStudyProgram.Click += new System.EventHandler(this.BtnAddStudyProgram_Click);
+            this.btnAddStudyProgram.Click += new System.EventHandler(this.OnAddStudyProgramButtonClick);
             // 
             // PreviousIndividualFaculty
             // 
@@ -132,9 +132,9 @@
             this.PreviousIndividualFaculty.TabIndex = 6;
             this.PreviousIndividualFaculty.TabStop = true;
             this.PreviousIndividualFaculty.Text = "<<";
-            this.PreviousIndividualFaculty.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PreviousForm_LinkClicked);
+            this.PreviousIndividualFaculty.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnPreviousButtonClick);
             // 
-            // IndividualFacultyView
+            // FacultyView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -145,11 +145,11 @@
             this.Controls.Add(this.StudyProgramList);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.FacultyTitle);
+            this.Controls.Add(this.FacultyTitleLabel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "IndividualFacultyView";
+            this.Name = "FacultyView";
             this.Text = "IndividualFaculty";
-            this.Load += new System.EventHandler(this.IndividualFaculty_Load);
+            this.Load += new System.EventHandler(this.OnFacultyLoad);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -159,7 +159,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label FacultyTitle;
+        private System.Windows.Forms.Label FacultyTitleLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label AboutSection;

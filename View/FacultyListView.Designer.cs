@@ -1,6 +1,6 @@
 ﻿namespace Advisor.View
 {
-    partial class FacultiesListView
+    partial class FacultyListView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.FacultiesList = new System.Windows.Forms.ListBox();
+            this.FacultiesListBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnAddFaculty = new System.Windows.Forms.Button();
             this.PreviousFacultiesListView = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
-            // FacultiesList
+            // FacultiesListBox
             // 
-            this.FacultiesList.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FacultiesList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.FacultiesList.FormattingEnabled = true;
-            this.FacultiesList.ItemHeight = 23;
-            this.FacultiesList.Location = new System.Drawing.Point(246, 192);
-            this.FacultiesList.Margin = new System.Windows.Forms.Padding(4);
-            this.FacultiesList.Name = "FacultiesList";
-            this.FacultiesList.Size = new System.Drawing.Size(492, 303);
-            this.FacultiesList.TabIndex = 0;
-            this.FacultiesList.SelectedIndexChanged += new System.EventHandler(this.SelectedFaculty);
+            this.FacultiesListBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FacultiesListBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.FacultiesListBox.FormattingEnabled = true;
+            this.FacultiesListBox.ItemHeight = 23;
+            this.FacultiesListBox.Location = new System.Drawing.Point(246, 192);
+            this.FacultiesListBox.Margin = new System.Windows.Forms.Padding(4);
+            this.FacultiesListBox.Name = "FacultiesListBox";
+            this.FacultiesListBox.Size = new System.Drawing.Size(492, 303);
+            this.FacultiesListBox.TabIndex = 0;
+            this.FacultiesListBox.SelectedIndexChanged += new System.EventHandler(this.OnFacultySelect);
             // 
             // label1
             // 
@@ -71,8 +71,8 @@
             this.txtSearch.Size = new System.Drawing.Size(492, 30);
             this.txtSearch.TabIndex = 2;
             this.txtSearch.Text = "Search";
-            this.txtSearch.Enter += new System.EventHandler(this.TxtSearch_Enter);
-            this.txtSearch.Leave += new System.EventHandler(this.TxtSearch_Leave);
+            this.txtSearch.Enter += new System.EventHandler(this.OnSearchInputEnter);
+            this.txtSearch.Leave += new System.EventHandler(this.OnSearchInputLeave);
             // 
             // btnAddFaculty
             // 
@@ -97,7 +97,7 @@
             this.PreviousFacultiesListView.TabIndex = 4;
             this.PreviousFacultiesListView.TabStop = true;
             this.PreviousFacultiesListView.Text = "<<";
-            this.PreviousFacultiesListView.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PreviousForm_LinkClicked);
+            this.PreviousFacultiesListView.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnPreviousButtonClick);
             // 
             // FacultiesListView
             // 
@@ -108,7 +108,7 @@
             this.Controls.Add(this.btnAddFaculty);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.FacultiesList);
+            this.Controls.Add(this.FacultiesListBox);
             this.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ScrollBar;
@@ -123,7 +123,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox FacultiesList;
+        private System.Windows.Forms.ListBox FacultiesListBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnAddFaculty;

@@ -57,9 +57,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Auth\AuthController.cs" />
+    <Compile Include="Controller\Faculty\FacultyController.cs" />
+    <Compile Include="Controller\Faculty\FacultyListController.cs" />
+    <Compile Include="Controller\Faculty\IFacultyController.cs" />
+    <Compile Include="Controller\Faculty\IFacultyListController.cs" />
     <Compile Include="Controller\Home\HomeController.cs" />
     <Compile Include="Controller\Auth\IAuthController.cs" />
     <Compile Include="Controller\Home\IHomeController.cs" />
+    <Compile Include="Controller\University\IUniversityController.cs" />
+    <Compile Include="Controller\University\UniversityController.cs" />
     <Compile Include="DependencyInjection\Bindings.cs" />
     <Compile Include="Migrations\201909221555231_MainEntities.cs" />
     <Compile Include="Migrations\201909221555231_MainEntities.Designer.cs">
@@ -88,23 +94,23 @@
     <Compile Include="Validator\ISignupDataValidator.cs" />
     <Compile Include="Validator\SignupDataValidator.cs" />
     <Compile Include="Validator\LoginDataValidator.cs" />
-    <Compile Include="View\FacultiesListView.cs">
+    <Compile Include="View\FacultyListView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FacultiesListView.Designer.cs">
-      <DependentUpon>FacultiesListView.cs</DependentUpon>
+    <Compile Include="View\FacultyListView.Designer.cs">
+      <DependentUpon>FacultyListView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\IndividualFacultyView.cs">
+    <Compile Include="View\Individual\FacultyView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\IndividualFacultyView.Designer.cs">
-      <DependentUpon>IndividualFacultyView.cs</DependentUpon>
+    <Compile Include="View\Individual\FacultyView.Designer.cs">
+      <DependentUpon>FacultyView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\IndividualStudyProgramView.cs">
+    <Compile Include="View\Individual\StudyProgramView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\IndividualStudyProgramView.Designer.cs">
-      <DependentUpon>IndividualStudyProgramView.cs</DependentUpon>
+    <Compile Include="View\Individual\StudyProgramView.Designer.cs">
+      <DependentUpon>StudyProgramView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Auth\LoginFormView.cs">
       <SubType>Form</SubType>
@@ -124,11 +130,11 @@
     <Compile Include="View\HomeView.Designer.cs">
       <DependentUpon>HomeView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\IndividualUniversityView.cs">
+    <Compile Include="View\Individual\UniversityView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\IndividualUniversityView.Designer.cs">
-      <DependentUpon>IndividualUniversityView.cs</DependentUpon>
+    <Compile Include="View\Individual\UniversityView.Designer.cs">
+      <DependentUpon>UniversityView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\StudySubjectListView.cs">
       <SubType>Form</SubType>
@@ -154,14 +160,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\FacultiesListView.resx">
-      <DependentUpon>FacultiesListView.cs</DependentUpon>
+    <EmbeddedResource Include="View\FacultyListView.resx">
+      <DependentUpon>FacultyListView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\IndividualFacultyView.resx">
-      <DependentUpon>IndividualFacultyView.cs</DependentUpon>
+    <EmbeddedResource Include="View\Individual\FacultyView.resx">
+      <DependentUpon>FacultyView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\IndividualStudyProgramView.resx">
-      <DependentUpon>IndividualStudyProgramView.cs</DependentUpon>
+    <EmbeddedResource Include="View\Individual\StudyProgramView.resx">
+      <DependentUpon>StudyProgramView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Auth\LoginFormView.resx">
       <DependentUpon>LoginFormView.cs</DependentUpon>
@@ -173,8 +179,8 @@
     <EmbeddedResource Include="View\HomeView.resx">
       <DependentUpon>HomeView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\IndividualUniversityView.resx">
-      <DependentUpon>IndividualUniversityView.cs</DependentUpon>
+    <EmbeddedResource Include="View\Individual\UniversityView.resx">
+      <DependentUpon>UniversityView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\StudySubjectListView.resx">
       <DependentUpon>StudySubjectListView.cs</DependentUpon>

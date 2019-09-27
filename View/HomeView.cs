@@ -33,19 +33,20 @@ namespace Advisor.View
             }
         }
 
-        private void AddUniversityClicked(object sender, EventArgs e)
+        private void OnAddUniversityButtonClick(object sender, EventArgs e)
         {
             HomeController.HandleAddUniversityClick();
         }
 
-        private void WhatUniversity_Load(object sender, EventArgs e)
+        private void LoadUniversityList(object sender, EventArgs e)
         {
             HomeController.LoadUniversityList(UniversityList);
         }
 
         private void SelectedUniversity(object sender, EventArgs e)
         {
-            AuthController.HandleSelectedUniversity(UniversityList.GetItemText(UniversityList.SelectedItem));
+            string universityTitle = UniversityList.GetItemText(UniversityList.SelectedItem);
+            HomeController.HandleUniversitySelect(universityTitle);
         }
     }
 }

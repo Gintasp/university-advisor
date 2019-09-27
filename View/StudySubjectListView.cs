@@ -47,7 +47,7 @@ namespace Advisor.View
 
         private void PreviousForm_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //go back to IndividualStudyProgramView
+            //go back to StudyProgramView
         }
     }
 }

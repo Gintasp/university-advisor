@@ -8,5 +8,6 @@ namespace Advisor.Controller
         HomeView HomeView { get; set; }
         void HandleAddUniversityClick();
         void LoadUniversityList(ListBox listBox);
+        void HandleUniversitySelect(string universityName);
     }
 }

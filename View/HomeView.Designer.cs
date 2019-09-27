@@ -80,7 +80,7 @@
             this.AddUniversity.TabIndex = 3;
             this.AddUniversity.Text = "Add University";
             this.AddUniversity.UseVisualStyleBackColor = true;
-            this.AddUniversity.Click += new System.EventHandler(this.AddUniversityClicked);
+            this.AddUniversity.Click += new System.EventHandler(this.OnAddUniversityButtonClick);
             // 
             // WhatUniversityView
             // 
@@ -93,7 +93,7 @@
             this.Controls.Add(this.label1);
             this.Name = "WhatUniversityView";
             this.Text = "WhatUniversity";
-            this.Load += new System.EventHandler(this.WhatUniversity_Load);
+            this.Load += new System.EventHandler(this.LoadUniversityList);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -45,7 +45,7 @@ namespace Advisor.Controller
         public void HandleSignupLinkClick()
         {
             LoginFormView.Hide();
-            SignupFormView.AuthController = this;
+            SignupFormView = new SignupFormView(this);
             SignupFormView.ShowDialog();
         }
 
