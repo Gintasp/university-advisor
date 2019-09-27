@@ -10,6 +10,7 @@ namespace Advisor.Model
         public DbSet<Review> Reviews { get; set; }
         public DbSet<StudyProgram> StudyPrograms { get; set; }
         public DbSet<University> Universities { get; set; }
+        public DbSet<StudySubject> StudySubjects { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

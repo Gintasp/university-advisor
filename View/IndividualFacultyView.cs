@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Windows.Forms;
+using Advisor.Controller;
 
 namespace Advisor.View
 {
     public partial class IndividualFacultyView : Form
     {
+        public AuthController AuthController { get; set; }
+
         public IndividualFacultyView()
         {
             InitializeComponent();
@@ -14,7 +17,8 @@ namespace Advisor.View
         {
             //load StudyProgramList
             //add text to AboutSection
-            //add FacultyTitle
+
+            AuthController.HandleLoadIndividualFacultyView(FacultyTitle);
         }
 
         private void BtnLecturers_Click(object sender, EventArgs e)
@@ -29,7 +33,7 @@ namespace Advisor.View
 
         private void PreviousForm_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            AuthController.LoadPreviousFormIndividualFacultyView();
         }
     }
 }

@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Advisor.Controller;
+
+namespace Advisor.View
+{
+    public partial class FacultiesListView : Form
+    {
+        public AuthController AuthController { get; set; }
+
+        public FacultiesListView()
+        {
+            InitializeComponent();
+        }
+        private void FacultiesListView_Load(object sender, EventArgs e)
+        {
+            AuthController.LoadFacultiesList(FacultiesList);
+        }
+
+        private void BtnAddFaculty_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtSearch_Enter(object sender, EventArgs e)
+        {
+            if(txtSearch.Text == "Search")
+            {
+                txtSearch.Text = "";
+                txtSearch.ForeColor = Color.Black;
+            }
+        }
+
+        private void TxtSearch_Leave(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "")
+            {
+                txtSearch.Text = "Search";
+                txtSearch.ForeColor = Color.Silver;
+            }
+
+        }
+
+        private void PreviousForm_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AuthController.LoadPreviousFormFacultiesListView();
+        }
+
+        private void SelectedFaculty(object sender, EventArgs e)
+        {
+            AuthController.HandleSelectedFaculty(FacultiesList.GetItemText(FacultiesList.SelectedItem));
+        }
+    }
+}
