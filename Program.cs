@@ -16,8 +16,8 @@ namespace Advisor
             Application.SetCompatibleTextRenderingDefault(false);
 
             var kernel = new StandardKernel(new Bindings());
-            var authController = kernel.Get<AuthController>();
-            Application.Run(authController.GetView());
+            var loginFormView = kernel.Get<LoginFormView>();
+            Application.Run(loginFormView);
         }
     }
 }

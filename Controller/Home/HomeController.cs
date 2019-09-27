@@ -33,7 +33,7 @@ namespace Advisor.Controller
             //TODO: Filter universities by supplied parameter and pass University to the view below.
             HomeView.Hide();
             University uni = new University();
-            uni.Title = "Vilnus University";
+            uni.Title = "Vilnius University";
             UniversityView = new UniversityView(UniversityController, uni);
             UniversityView.ShowDialog();
         }

@@ -24,7 +24,7 @@ namespace Advisor.View
 
         private void OnFacultiesButtonClick(object sender, EventArgs e)
         {
-            UniversityController.HandleFacultiesClick();
+            UniversityController.HandleFacultiesClick(University);
         }
 
         private void OnPreviousButtonClick(object sender, LinkLabelLinkClickedEventArgs e)

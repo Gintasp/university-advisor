@@ -24,7 +24,7 @@ namespace Advisor.View
             FacultyListController.LoadFacultyList(FacultiesListBox, University);
         }
 
-        private void BtnAddFaculty_Click(object sender, EventArgs e)
+        private void OnAddFacultyButtonClick(object sender, EventArgs e)
         {
             //TODO: Add functionality to add new Faculty
         }
@@ -49,13 +49,13 @@ namespace Advisor.View
 
         private void OnPreviousButtonClick(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FacultyListController.HandlePreviousButtonClick();
+            FacultyListController.HandlePreviousButtonClick(University);
         }
 
         private void OnFacultySelect(object sender, EventArgs e)
         {
             string facultyTitle = FacultiesListBox.GetItemText(FacultiesListBox.SelectedItem);
-            FacultyListController.HandleFacultySelect(facultyTitle);
+            FacultyListController.HandleFacultySelect(facultyTitle, University);
         }
     }
 }

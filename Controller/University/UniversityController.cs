@@ -16,16 +16,17 @@ namespace Advisor.Controller
             FacultyListController = facultyListController;
         }
 
-        public void HandleFacultiesClick()
+        public void HandleFacultiesClick(University uni)
         {
             UniversityView.Hide();
-            FacultiesListView = new FacultyListView(FacultyListController, University);
+            FacultiesListView = new FacultyListView(FacultyListController, uni);
             FacultiesListView.ShowDialog();
         }
 
         public void HandlePreviousButtonClick()
         {
             UniversityView.Hide();
+            HomeView = new HomeView(new HomeController(this));
             HomeView.ShowDialog();
         }
     }

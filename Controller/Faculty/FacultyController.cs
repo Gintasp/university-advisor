@@ -11,6 +11,7 @@ namespace Advisor.Controller
         public void HandlePreviousButtonClick(University uni)
         {
             FacultyView.Hide();
+            FacultyListView = new FacultyListView(new FacultyListController(this), uni);
             FacultyListView.Show();
         }
     }

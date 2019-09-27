@@ -85,7 +85,7 @@
             this.btnAddFaculty.TabIndex = 3;
             this.btnAddFaculty.Text = "Add Faculty";
             this.btnAddFaculty.UseVisualStyleBackColor = true;
-            this.btnAddFaculty.Click += new System.EventHandler(this.BtnAddFaculty_Click);
+            this.btnAddFaculty.Click += new System.EventHandler(this.OnAddFacultyButtonClick);
             // 
             // PreviousFacultiesListView
             // 
