@@ -1,4 +1,5 @@
-﻿using Advisor.Model;
+﻿using System.Windows.Forms;
+using Advisor.Model;
 using Advisor.View;
 
 namespace Advisor.Controller
@@ -13,6 +14,13 @@ namespace Advisor.Controller
             FacultyView.Hide();
             FacultyListView = new FacultyListView(new FacultyListController(this), uni);
             FacultyListView.Show();
+        }
+
+        public void LoadStudyProgramData(ListView listView)
+        {
+            //TODO: Load items from DB
+            listView.Items.Clear();
+            listView.Items.Add("Programu sistemos");
         }
     }
 }

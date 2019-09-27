@@ -26,6 +26,12 @@ namespace Advisor.View
         private void OnFacultyLoad(object sender, EventArgs e)
         {
             FacultyTitleLabel.Text = Faculty.Title;
+            LoadStudyProgramData();
+        }
+
+        private void LoadStudyProgramData()
+        {
+            FacultyController.LoadStudyProgramData(StudyProgramList);
         }
 
         private void OnLecturersButtonClick(object sender, EventArgs e)

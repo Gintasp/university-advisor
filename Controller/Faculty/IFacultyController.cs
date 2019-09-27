@@ -1,5 +1,6 @@
 ﻿using Advisor.Model;
 using Advisor.View;
+using System.Windows.Forms;
 
 namespace Advisor.Controller
 {
@@ -7,5 +8,6 @@ namespace Advisor.Controller
     {
         FacultyView FacultyView { get; set; }
         void HandlePreviousButtonClick(University uni);
+        void LoadStudyProgramData(ListView listView);
     }
 }
