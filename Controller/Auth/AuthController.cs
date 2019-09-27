@@ -64,6 +64,7 @@ namespace Advisor.Controller
 
         public bool HandleSignup (User user, string passConfirm)
         {
+            //TODO: Hash user password
             if (!SignupDataValidator.Validate(user, passConfirm))
             {
                 MessageBox.Show(SignupDataValidator.GetSignupDataVadilatorErrorMessage());
@@ -78,11 +79,6 @@ namespace Advisor.Controller
             LoginFormView.Show();
 
             return true;
-        }
-
-        public LoginFormView GetView()
-        {
-            return new LoginFormView();
         }
     }
 }

@@ -55,8 +55,8 @@
             this.txtSearch.Size = new System.Drawing.Size(492, 34);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.Text = "Search";
-            this.txtSearch.Enter += new System.EventHandler(this.TextBox1_Enter);
-            this.txtSearch.Leave += new System.EventHandler(this.TextBox1_Leave);
+            this.txtSearch.Enter += new System.EventHandler(this.OnSearchInputEnter);
+            this.txtSearch.Leave += new System.EventHandler(this.OnSearchInputLeave);
             // 
             // StudySubjectList
             // 
@@ -78,7 +78,7 @@
             this.PreviousForm.TabIndex = 3;
             this.PreviousForm.TabStop = true;
             this.PreviousForm.Text = "<<";
-            this.PreviousForm.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PreviousForm_LinkClicked);
+            this.PreviousForm.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnPreviousFormButtonClick);
             // 
             // btnAddStudySubject
             // 
@@ -90,7 +90,7 @@
             this.btnAddStudySubject.TabIndex = 4;
             this.btnAddStudySubject.Text = "Add Study Subject";
             this.btnAddStudySubject.UseVisualStyleBackColor = true;
-            this.btnAddStudySubject.Click += new System.EventHandler(this.BtnAddStudySubject_Click);
+            this.btnAddStudySubject.Click += new System.EventHandler(this.OnAddStudySubjectButtonClick);
             // 
             // StudySubjectListView
             // 
@@ -105,7 +105,7 @@
             this.Name = "StudySubjectListView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StudySubjectListView";
-            this.Load += new System.EventHandler(this.StudySubjectListView_Load);
+            this.Load += new System.EventHandler(this.LoadStudySubjectData);
             this.ResumeLayout(false);
             this.PerformLayout();
 

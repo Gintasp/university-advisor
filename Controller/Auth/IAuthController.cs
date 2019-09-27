@@ -12,6 +12,5 @@ namespace Advisor.Controller
         void HandleSignupLinkClick();
         bool HandleLogin(string email, string password);
         bool HandleSignup(User user, string passConfirm);
-        LoginFormView GetView();
     }
 }

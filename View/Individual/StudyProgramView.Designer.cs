@@ -95,7 +95,7 @@
             this.btnLeaveAReview.TabIndex = 3;
             this.btnLeaveAReview.Text = "Leave a review";
             this.btnLeaveAReview.UseVisualStyleBackColor = true;
-            this.btnLeaveAReview.Click += new System.EventHandler(this.BtnLeaveAReview_Click);
+            this.btnLeaveAReview.Click += new System.EventHandler(this.OnLeaveReviewButtonClick);
             // 
             // btnStudySubjects
             // 
@@ -107,7 +107,7 @@
             this.btnStudySubjects.TabIndex = 4;
             this.btnStudySubjects.Text = "Study subjects";
             this.btnStudySubjects.UseVisualStyleBackColor = true;
-            this.btnStudySubjects.Click += new System.EventHandler(this.BtnStudySubjects_Click);
+            this.btnStudySubjects.Click += new System.EventHandler(this.OnStudySubjectsButtonClick);
             // 
             // ReviewList
             // 
@@ -129,7 +129,7 @@
             this.PreviousForm.TabIndex = 6;
             this.PreviousForm.TabStop = true;
             this.PreviousForm.Text = "<<";
-            this.PreviousForm.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PreviousForm_LinkClicked);
+            this.PreviousForm.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnPreviousFormButtonClick);
             // 
             // StudyProgramView
             // 
@@ -145,7 +145,7 @@
             this.Controls.Add(this.StudyProgramTitle);
             this.Name = "StudyProgramView";
             this.Text = "StudyProgramView";
-            this.Load += new System.EventHandler(this.IndividualStudyProgramView_Load);
+            this.Load += new System.EventHandler(this.OnViewLoad);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

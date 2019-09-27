@@ -10,26 +10,24 @@ namespace Advisor.View
             InitializeComponent();
         }
 
-        private void IndividualStudyProgramView_Load(object sender, EventArgs e)
+        private void OnViewLoad(object sender, EventArgs e)
         {
-            // load ReviewList
-            // add StudyProgramTitle
-            // add AboutSection
+            //TODO: load StudyProgram data from DB
         }
 
-        private void BtnLeaveAReview_Click(object sender, EventArgs e)
+        private void OnLeaveReviewButtonClick(object sender, EventArgs e)
         {
-
+            //TODO: Handle leave a review button click and display review form
         }
 
-        private void BtnStudySubjects_Click(object sender, EventArgs e)
+        private void OnStudySubjectsButtonClick(object sender, EventArgs e)
         {
-
+            //TODO: Handle displaying study subjects list
         }
 
-        private void PreviousForm_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void OnPreviousFormButtonClick(object sender, EventArgs e)
         {
-
+            //TODO: Display previous form
         }
     }
 }

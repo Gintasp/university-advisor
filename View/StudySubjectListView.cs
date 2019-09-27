@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Advisor.View
@@ -17,7 +11,7 @@ namespace Advisor.View
             InitializeComponent();
         }
 
-        private void TextBox1_Enter(object sender, EventArgs e)
+        private void OnSearchInputEnter(object sender, EventArgs e)
         {
             if (txtSearch.Text == "Search")
             {
@@ -26,7 +20,7 @@ namespace Advisor.View
             }
         }
 
-        private void TextBox1_Leave(object sender, EventArgs e)
+        private void OnSearchInputLeave(object sender, EventArgs e)
         {
             if (txtSearch.Text == "")
             {
@@ -35,19 +29,19 @@ namespace Advisor.View
             }
         }
 
-        private void BtnAddStudySubject_Click(object sender, EventArgs e)
+        private void OnAddStudySubjectButtonClick(object sender, EventArgs e)
         {
-
+            //TODO: Add handler
         }
 
-        private void StudySubjectListView_Load(object sender, EventArgs e)
+        private void LoadStudySubjectData(object sender, EventArgs e)
         {
-            // load StudySubjectList
+            //TODO: Load StudySubject data from db
         }
 
-        private void PreviousForm_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void OnPreviousFormButtonClick(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //go back to StudyProgramView
+            //TODO: Go back to study program form
         }
     }
 }
