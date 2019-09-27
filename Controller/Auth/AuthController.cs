@@ -79,5 +79,10 @@ namespace Advisor.Controller
 
             return true;
         }
+
+        public LoginFormView GetView()
+        {
+            return new LoginFormView();
+        }
     }
 }

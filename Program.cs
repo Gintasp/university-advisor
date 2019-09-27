@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using Ninject;
 using Advisor.DependencyInjection;
 using Advisor.View;
+using Advisor.Controller;
 
 namespace Advisor
 {
@@ -15,8 +16,8 @@ namespace Advisor
             Application.SetCompatibleTextRenderingDefault(false);
 
             var kernel = new StandardKernel(new Bindings());
-            LoginFormView loginFormView = kernel.Get<LoginFormView>();
-            loginFormView.ShowDialog();
+            var authController = kernel.Get<AuthController>();
+            Application.Run(authController.GetView());
         }
     }
 }
