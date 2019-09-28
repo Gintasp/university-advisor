@@ -71,6 +71,7 @@
             this.StudySubjectList.Name = "StudySubjectList";
             this.StudySubjectList.Size = new System.Drawing.Size(621, 420);
             this.StudySubjectList.TabIndex = 2;
+            this.StudySubjectList.SelectedIndexChanged += new System.EventHandler(this.SelectedSubject);
             // 
             // PreviousForm
             // 
