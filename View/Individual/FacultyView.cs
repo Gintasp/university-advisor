@@ -51,7 +51,7 @@ namespace Advisor.View
 
         private void onStudyProgramSelect(object sender, EventArgs e)
         {
-            string selectedProgram = StudyProgramList.FocusedItem.Text;
+            string selectedProgram = StudyProgramList.GetItemText(StudyProgramList.SelectedItem);
             StudyProgram program = new StudyProgram() { Title = selectedProgram };
             FacultyController.HandleStudyProgramSelect(program, Faculty, University);
         }
