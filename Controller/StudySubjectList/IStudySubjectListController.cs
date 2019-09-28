@@ -7,6 +7,7 @@ namespace Advisor.Controller
     {
         StudySubjectListView StudySubjectListView { get; set; }
         void LoadStudySubjectData(ListBox listbox);
+        void HandleSelectedSubject(string name);
         void HandlePreviousFormButtonClick();
     }
 }
