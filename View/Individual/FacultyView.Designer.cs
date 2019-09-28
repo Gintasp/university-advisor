@@ -70,7 +70,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.AboutSection);
             this.panel1.Location = new System.Drawing.Point(50, 139);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(226, 130);
             this.panel1.TabIndex = 2;
@@ -94,18 +94,19 @@
             this.StudyProgramList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.StudyProgramList.HideSelection = false;
             this.StudyProgramList.Location = new System.Drawing.Point(347, 45);
-            this.StudyProgramList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StudyProgramList.Margin = new System.Windows.Forms.Padding(2);
             this.StudyProgramList.Name = "StudyProgramList";
             this.StudyProgramList.Size = new System.Drawing.Size(194, 224);
             this.StudyProgramList.TabIndex = 3;
             this.StudyProgramList.UseCompatibleStateImageBehavior = false;
+            this.StudyProgramList.SelectedIndexChanged += new System.EventHandler(this.onStudyProgramSelect);
             // 
             // btnLecturers
             // 
             this.btnLecturers.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLecturers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnLecturers.Location = new System.Drawing.Point(50, 291);
-            this.btnLecturers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLecturers.Margin = new System.Windows.Forms.Padding(2);
             this.btnLecturers.Name = "btnLecturers";
             this.btnLecturers.Size = new System.Drawing.Size(225, 37);
             this.btnLecturers.TabIndex = 4;
@@ -118,7 +119,7 @@
             this.btnAddStudyProgram.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddStudyProgram.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAddStudyProgram.Location = new System.Drawing.Point(347, 291);
-            this.btnAddStudyProgram.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddStudyProgram.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddStudyProgram.Name = "btnAddStudyProgram";
             this.btnAddStudyProgram.Size = new System.Drawing.Size(193, 37);
             this.btnAddStudyProgram.TabIndex = 5;
@@ -150,7 +151,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FacultyTitleLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FacultyView";
             this.Text = "Faculty";
             this.Load += new System.EventHandler(this.OnFacultyLoad);

@@ -64,6 +64,8 @@
     <Compile Include="Controller\Home\HomeController.cs" />
     <Compile Include="Controller\Auth\IAuthController.cs" />
     <Compile Include="Controller\Home\IHomeController.cs" />
+    <Compile Include="Controller\StudyProgram\IStudyProgramController.cs" />
+    <Compile Include="Controller\StudyProgram\StudyProgramController.cs" />
     <Compile Include="Controller\University\IUniversityController.cs" />
     <Compile Include="Controller\University\UniversityController.cs" />
     <Compile Include="DependencyInjection\Bindings.cs" />

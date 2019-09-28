@@ -48,5 +48,12 @@ namespace Advisor.View
         {
             FacultyController.HandlePreviousButtonClick(University);
         }
+
+        private void onStudyProgramSelect(object sender, EventArgs e)
+        {
+            string selectedProgram = StudyProgramList.FocusedItem.Text;
+            StudyProgram program = new StudyProgram() { Title = selectedProgram };
+            FacultyController.HandleStudyProgramSelect(program, Faculty);
+        }
     }
 }

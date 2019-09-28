@@ -8,6 +8,7 @@ namespace Advisor.Controller
     {
         public FacultyView FacultyView { get; set; }
         public FacultyListView FacultyListView { get; set; }
+        public StudyProgramView StudyProgramView { get; set; }
 
         public void HandlePreviousButtonClick(University uni)
         {
@@ -21,6 +22,13 @@ namespace Advisor.Controller
             //TODO: Load items from DB
             listView.Items.Clear();
             listView.Items.Add("Programu sistemos");
+        }
+
+        public void HandleStudyProgramSelect(StudyProgram selectedProgram, Faculty faculty)
+        {
+            FacultyView.Hide();
+            StudyProgramView = new StudyProgramView(new StudyProgramController(selectedProgram));
+            StudyProgramView.Show();
         }
     }
 }
