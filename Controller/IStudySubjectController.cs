@@ -11,8 +11,9 @@ namespace Advisor.Controller
 {
     public interface IStudySubjectController
     {
-        StudySubjectView studySubjectView { get; set; }
-        void LoadReviews();
+        StudySubjectView StudySubjectView { get; set; }
+        void LoadReviews(ListBox listBox);
+        void HandlePreviousClicked();
         void HandleAddReview();
     }
 }
