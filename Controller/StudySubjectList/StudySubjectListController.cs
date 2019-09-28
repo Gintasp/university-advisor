@@ -7,6 +7,7 @@ namespace Advisor.Controller
     public class StudySubjectListController : IStudySubjectListController
     {
         public StudySubjectListView StudySubjectListView { get; set; }
+        public StudyProgramView StudyProgramView { get; set; }
         public StudyProgram StudyProgram { get; set; }
 
         public StudySubjectListController(StudyProgram studyProgram)
@@ -19,6 +20,20 @@ namespace Advisor.Controller
             //TODO: Load StudySubject data by StudyProgram from db (pass whole object)
             StudySubject studySubject = new StudySubject() { Title = "Matematika programu sistemoms :)" };
             listbox.Items.Add(studySubject.Title);
+        }
+
+        public void HandlePreviousFormButtonClick()
+        {
+            //TODO: Fetch faculty and uni from DB by StudyProgram;
+            StudySubjectListView.Hide();
+            StudyProgramView = new StudyProgramView(
+                new StudyProgramController(
+                    StudyProgram,
+                    new Faculty() { Title = "MIF" },
+                    new University() { Title = "Vilnius University" }
+                )
+            );
+            StudyProgramView.Show();
         }
     }
 }

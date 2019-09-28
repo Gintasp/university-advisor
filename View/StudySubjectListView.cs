@@ -45,7 +45,7 @@ namespace Advisor.View
 
         private void OnPreviousFormButtonClick(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //TODO: Go back to study program form
+            StudySubjectListController.HandlePreviousFormButtonClick();
         }
     }
 }
