@@ -17,11 +17,11 @@ namespace Advisor.Controller
             FacultyListView.Show();
         }
 
-        public void LoadStudyProgramData(ListView listView)
+        public void LoadStudyProgramData(ListBox listBox)
         {
             //TODO: Load items from DB
-            listView.Items.Clear();
-            listView.Items.Add("Programu sistemos");
+            listBox.Items.Clear();
+            listBox.Items.Add("Programu sistemos");
         }
 
         public void HandleStudyProgramSelect(StudyProgram selectedProgram, Faculty faculty, University uni)
