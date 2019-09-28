@@ -143,6 +143,12 @@
     <Compile Include="View\HomeView.Designer.cs">
       <DependentUpon>HomeView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Individual\StudySubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Individual\StudySubject.Designer.cs">
+      <DependentUpon>StudySubject.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Individual\UniversityView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\HomeView.resx">
       <DependentUpon>HomeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Individual\StudySubject.resx">
+      <DependentUpon>StudySubject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Individual\UniversityView.resx">
       <DependentUpon>UniversityView.cs</DependentUpon>
