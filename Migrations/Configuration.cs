@@ -1,23 +1,31 @@
 namespace Advisor.Migrations
 {
-    using System;
-    using System.Data.Entity;
+    using Advisor.Model;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Advisor.Model.DatabaseContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<DatabaseContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Advisor.Model.DatabaseContext context)
+        protected override void Seed(DatabaseContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            PurgeDatabase(context);
+            context.Users.Add(new User() { Name = "John Doe", Email = "john@doe.com", Password = "password"});
+            context.SaveChanges();
+        }
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
+        private void PurgeDatabase(DatabaseContext context)
+        {
+            context.Database.ExecuteSqlCommand("DELETE FROM [User]");
+            context.Database.ExecuteSqlCommand("DELETE FROM [University]");
+            context.Database.ExecuteSqlCommand("DELETE FROM [StudySubject]");
+            context.Database.ExecuteSqlCommand("DELETE FROM [StudyProgram]");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Review]");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Lecturer]");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Faculty]");
         }
     }
 }
