@@ -183,6 +183,7 @@
             this.Name = "SignupFormView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Signup";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.onFormClose);
             this.ResumeLayout(false);
             this.PerformLayout();
 

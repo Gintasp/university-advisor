@@ -115,6 +115,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FacultyListView";
             this.Text = "Faculties";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.onFormClose);
             this.Load += new System.EventHandler(this.FacultiesListView_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -57,5 +57,10 @@ namespace Advisor.View
             string facultyTitle = FacultiesListBox.GetItemText(FacultiesListBox.SelectedItem);
             FacultyListController.HandleFacultySelect(facultyTitle, University);
         }
+
+        private void onFormClose(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

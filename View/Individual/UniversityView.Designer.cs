@@ -127,6 +127,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UniversityView";
             this.Text = "University";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.onFormClose);
             this.Load += new System.EventHandler(this.LoadUniversityTitle);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -55,5 +55,10 @@ namespace Advisor.View
             StudyProgram program = new StudyProgram() { Title = selectedProgram };
             FacultyController.HandleStudyProgramSelect(program, Faculty, University);
         }
+
+        private void onFormClose(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

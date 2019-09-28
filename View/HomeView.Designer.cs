@@ -53,7 +53,7 @@
             this.searchBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.searchBox.HideSelection = false;
             this.searchBox.Location = new System.Drawing.Point(188, 87);
-            this.searchBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(2);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(301, 25);
             this.searchBox.TabIndex = 1;
@@ -68,7 +68,7 @@
             this.UniversityList.FormattingEnabled = true;
             this.UniversityList.ItemHeight = 17;
             this.UniversityList.Location = new System.Drawing.Point(188, 129);
-            this.UniversityList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UniversityList.Margin = new System.Windows.Forms.Padding(2);
             this.UniversityList.Name = "UniversityList";
             this.UniversityList.Size = new System.Drawing.Size(301, 140);
             this.UniversityList.TabIndex = 2;
@@ -78,7 +78,7 @@
             // 
             this.AddUniversity.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.AddUniversity.Location = new System.Drawing.Point(268, 331);
-            this.AddUniversity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AddUniversity.Margin = new System.Windows.Forms.Padding(2);
             this.AddUniversity.Name = "AddUniversity";
             this.AddUniversity.Size = new System.Drawing.Size(118, 50);
             this.AddUniversity.TabIndex = 3;
@@ -95,9 +95,10 @@
             this.Controls.Add(this.UniversityList);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HomeView";
             this.Text = "Home";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.onFormClose);
             this.Load += new System.EventHandler(this.LoadUniversityList);
             this.ResumeLayout(false);
             this.PerformLayout();

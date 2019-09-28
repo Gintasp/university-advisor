@@ -154,6 +154,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "StudyProgramView";
             this.Text = "Study Program";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.onFormClose);
             this.Load += new System.EventHandler(this.OnViewLoad);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

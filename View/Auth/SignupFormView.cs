@@ -37,5 +37,10 @@ namespace Advisor.View
         {
             AuthController.CloseSignupView();
         }
+
+        private void onFormClose(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

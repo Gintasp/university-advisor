@@ -48,5 +48,10 @@ namespace Advisor.View
             string universityTitle = UniversityList.GetItemText(UniversityList.SelectedItem);
             HomeController.HandleUniversitySelect(universityTitle);
         }
+
+        private void onFormClose(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

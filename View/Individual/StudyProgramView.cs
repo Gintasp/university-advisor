@@ -33,5 +33,10 @@ namespace Advisor.View
         {
             StudyProgramController.HandlePreviousButtonClick();
         }
+
+        private void onFormClose(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
