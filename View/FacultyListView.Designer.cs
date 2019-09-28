@@ -42,11 +42,11 @@
             this.FacultiesListBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FacultiesListBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.FacultiesListBox.FormattingEnabled = true;
-            this.FacultiesListBox.ItemHeight = 32;
-            this.FacultiesListBox.Location = new System.Drawing.Point(429, 309);
+            this.FacultiesListBox.ItemHeight = 21;
+            this.FacultiesListBox.Location = new System.Drawing.Point(425, 209);
             this.FacultiesListBox.Margin = new System.Windows.Forms.Padding(4);
             this.FacultiesListBox.Name = "FacultiesListBox";
-            this.FacultiesListBox.Size = new System.Drawing.Size(621, 420);
+            this.FacultiesListBox.Size = new System.Drawing.Size(621, 340);
             this.FacultiesListBox.TabIndex = 0;
             this.FacultiesListBox.SelectedIndexChanged += new System.EventHandler(this.OnFacultySelect);
             // 
@@ -56,10 +56,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 30F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(586, 100);
+            this.label1.Location = new System.Drawing.Point(631, 68);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 81);
+            this.label1.Size = new System.Drawing.Size(175, 54);
             this.label1.TabIndex = 1;
             this.label1.Text = "Faculties";
             // 
@@ -69,10 +69,10 @@
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtSearch.HideSelection = false;
-            this.txtSearch.Location = new System.Drawing.Point(429, 238);
+            this.txtSearch.Location = new System.Drawing.Point(425, 147);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(621, 39);
+            this.txtSearch.Size = new System.Drawing.Size(621, 29);
             this.txtSearch.TabIndex = 2;
             this.txtSearch.Text = "Search";
             this.txtSearch.Enter += new System.EventHandler(this.OnSearchInputEnter);
@@ -83,7 +83,7 @@
             this.btnAddFaculty.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAddFaculty.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFaculty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAddFaculty.Location = new System.Drawing.Point(425, 761);
+            this.btnAddFaculty.Location = new System.Drawing.Point(425, 601);
             this.btnAddFaculty.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddFaculty.Name = "btnAddFaculty";
             this.btnAddFaculty.Size = new System.Drawing.Size(628, 59);
@@ -98,7 +98,7 @@
             this.PreviousFacultiesListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PreviousFacultiesListView.Location = new System.Drawing.Point(13, 13);
             this.PreviousFacultiesListView.Name = "PreviousFacultiesListView";
-            this.PreviousFacultiesListView.Size = new System.Drawing.Size(36, 25);
+            this.PreviousFacultiesListView.Size = new System.Drawing.Size(24, 17);
             this.PreviousFacultiesListView.TabIndex = 4;
             this.PreviousFacultiesListView.TabStop = true;
             this.PreviousFacultiesListView.Text = "<<";
@@ -106,9 +106,9 @@
             // 
             // FacultyListView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1478, 944);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.PreviousFacultiesListView);
             this.Controls.Add(this.btnAddFaculty);
             this.Controls.Add(this.txtSearch);
