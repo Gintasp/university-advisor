@@ -87,10 +87,15 @@
     <Compile Include="Migrations\201909271722515_AddStudySubjectRelation.Designer.cs">
       <DependentUpon>201909271722515_AddStudySubjectRelation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909281320065_CreateLecturer.cs" />
+    <Compile Include="Migrations\201909281320065_CreateLecturer.Designer.cs">
+      <DependentUpon>201909281320065_CreateLecturer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\DatabaseContext.cs" />
     <Compile Include="Model\DB.cs" />
     <Compile Include="Model\Faculty.cs" />
+    <Compile Include="Model\Lecturer.cs" />
     <Compile Include="Model\Review.cs" />
     <Compile Include="Model\StudyProgram.cs" />
     <Compile Include="Model\StudySubject.cs" />
@@ -161,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909271722515_AddStudySubjectRelation.resx">
       <DependentUpon>201909271722515_AddStudySubjectRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909281320065_CreateLecturer.resx">
+      <DependentUpon>201909281320065_CreateLecturer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
