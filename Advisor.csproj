@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -13,8 +12,6 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,10 +34,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -56,7 +56,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\AuthController.cs" />
+    <Compile Include="Controller\Auth\AuthController.cs" />
+    <Compile Include="Controller\Faculty\FacultyController.cs" />
+    <Compile Include="Controller\Faculty\FacultyListController.cs" />
+    <Compile Include="Controller\Faculty\IFacultyController.cs" />
+    <Compile Include="Controller\Faculty\IFacultyListController.cs" />
+    <Compile Include="Controller\Home\HomeController.cs" />
+    <Compile Include="Controller\Auth\IAuthController.cs" />
+    <Compile Include="Controller\Home\IHomeController.cs" />
+    <Compile Include="Controller\StudyProgram\IStudyProgramController.cs" />
+    <Compile Include="Controller\StudyProgram\StudyProgramController.cs" />
+    <Compile Include="Controller\StudySubjectList\IStudySubjectListController.cs" />
+    <Compile Include="Controller\StudySubjectList\StudySubjectListController.cs" />
+    <Compile Include="Controller\University\IUniversityController.cs" />
+    <Compile Include="Controller\University\UniversityController.cs" />
+    <Compile Include="DependencyInjection\Bindings.cs" />
     <Compile Include="Migrations\201909221555231_MainEntities.cs" />
     <Compile Include="Migrations\201909221555231_MainEntities.Designer.cs">
       <DependentUpon>201909221555231_MainEntities.cs</DependentUpon>
@@ -66,8 +80,12 @@
       <DependentUpon>201909240753298_RemoveLastname.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201909261214327_CreatedStudySubject.cs" />
-    <Compile Include="Migrations\201909261214327_CreatedStudySubject.designer.cs">
+    <Compile Include="Migrations\201909261214327_CreatedStudySubject.Designer.cs">
       <DependentUpon>201909261214327_CreatedStudySubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909271722515_AddStudySubjectRelation.cs" />
+    <Compile Include="Migrations\201909271722515_AddStudySubjectRelation.Designer.cs">
+      <DependentUpon>201909271722515_AddStudySubjectRelation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\DatabaseContext.cs" />
@@ -80,55 +98,57 @@
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validator\ILoginDataValidator.cs" />
+    <Compile Include="Validator\ISignupDataValidator.cs" />
     <Compile Include="Validator\SignupDataValidator.cs" />
     <Compile Include="Validator\LoginDataValidator.cs" />
-    <Compile Include="View\FacultiesListView.cs">
+    <Compile Include="View\FacultyListView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FacultiesListView.Designer.cs">
-      <DependentUpon>FacultiesListView.cs</DependentUpon>
+    <Compile Include="View\FacultyListView.Designer.cs">
+      <DependentUpon>FacultyListView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\IndividualFacultyView.cs">
+    <Compile Include="View\Individual\FacultyView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\IndividualFacultyView.Designer.cs">
-      <DependentUpon>IndividualFacultyView.cs</DependentUpon>
+    <Compile Include="View\Individual\FacultyView.Designer.cs">
+      <DependentUpon>FacultyView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\IndividualStudyProgramView.cs">
+    <Compile Include="View\Individual\StudyProgramView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\IndividualStudyProgramView.Designer.cs">
-      <DependentUpon>IndividualStudyProgramView.cs</DependentUpon>
+    <Compile Include="View\Individual\StudyProgramView.Designer.cs">
+      <DependentUpon>StudyProgramView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\IndividualUniversityView.cs">
+    <Compile Include="View\Auth\LoginFormView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\IndividualUniversityView.Designer.cs">
-      <DependentUpon>IndividualUniversityView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\LoginFormView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\LoginFormView.Designer.cs">
+    <Compile Include="View\Auth\LoginFormView.Designer.cs">
       <DependentUpon>LoginFormView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\SignupFormView.cs">
+    <Compile Include="View\Auth\SignupFormView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\SignupFormView.Designer.cs">
+    <Compile Include="View\Auth\SignupFormView.Designer.cs">
       <DependentUpon>SignupFormView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\HomeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\HomeView.Designer.cs">
+      <DependentUpon>HomeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Individual\UniversityView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Individual\UniversityView.Designer.cs">
+      <DependentUpon>UniversityView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\StudySubjectListView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\StudySubjectListView.Designer.cs">
       <DependentUpon>StudySubjectListView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\WhatUniversityView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\WhatUniversityView.Designer.cs">
-      <DependentUpon>WhatUniversityView.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Migrations\201909221555231_MainEntities.resx">
       <DependentUpon>201909221555231_MainEntities.cs</DependentUpon>
@@ -139,6 +159,9 @@
     <EmbeddedResource Include="Migrations\201909261214327_CreatedStudySubject.resx">
       <DependentUpon>201909261214327_CreatedStudySubject.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909271722515_AddStudySubjectRelation.resx">
+      <DependentUpon>201909271722515_AddStudySubjectRelation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -148,30 +171,30 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\FacultiesListView.resx">
-      <DependentUpon>FacultiesListView.cs</DependentUpon>
+    <EmbeddedResource Include="View\FacultyListView.resx">
+      <DependentUpon>FacultyListView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\IndividualFacultyView.resx">
-      <DependentUpon>IndividualFacultyView.cs</DependentUpon>
+    <EmbeddedResource Include="View\Individual\FacultyView.resx">
+      <DependentUpon>FacultyView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\IndividualStudyProgramView.resx">
-      <DependentUpon>IndividualStudyProgramView.cs</DependentUpon>
+    <EmbeddedResource Include="View\Individual\StudyProgramView.resx">
+      <DependentUpon>StudyProgramView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\IndividualUniversityView.resx">
-      <DependentUpon>IndividualUniversityView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\LoginFormView.resx">
+    <EmbeddedResource Include="View\Auth\LoginFormView.resx">
       <DependentUpon>LoginFormView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\SignupFormView.resx">
+    <EmbeddedResource Include="View\Auth\SignupFormView.resx">
       <DependentUpon>SignupFormView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\HomeView.resx">
+      <DependentUpon>HomeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Individual\UniversityView.resx">
+      <DependentUpon>UniversityView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\StudySubjectListView.resx">
       <DependentUpon>StudySubjectListView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\WhatUniversityView.resx">
-      <DependentUpon>WhatUniversityView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -189,12 +212,4 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
-  </Target>
-  <Import Project="packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
 </Project>

@@ -73,7 +73,6 @@
             this.label3.Size = new System.Drawing.Size(70, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "Password:";
-            this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // label4
             // 
@@ -138,7 +137,7 @@
             this.btnSignUp.TabIndex = 8;
             this.btnSignUp.Text = "Create";
             this.btnSignUp.UseVisualStyleBackColor = true;
-            this.btnSignUp.Click += new System.EventHandler(this.BtnSignUp_Click);
+            this.btnSignUp.Click += new System.EventHandler(this.OnSignupButtonClick);
             // 
             // btnCancel
             // 
@@ -150,7 +149,7 @@
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.OnCancelButtonClick);
             // 
             // label5
             // 
@@ -184,6 +183,7 @@
             this.Name = "SignupFormView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Signup";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.onFormClose);
             this.ResumeLayout(false);
             this.PerformLayout();
 

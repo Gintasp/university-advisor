@@ -89,7 +89,7 @@
             this.linkLabel1.TabIndex = 4;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Create an account!";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel1_LinkClicked);
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnSignupButtonClick);
             // 
             // btnLogIn
             // 
@@ -101,7 +101,7 @@
             this.btnLogIn.TabIndex = 5;
             this.btnLogIn.Text = "Log In";
             this.btnLogIn.UseVisualStyleBackColor = true;
-            this.btnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
+            this.btnLogIn.Click += new System.EventHandler(this.OnLoginButtonClick);
             // 
             // label3
             // 

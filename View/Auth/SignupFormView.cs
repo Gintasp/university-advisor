@@ -7,14 +7,20 @@ namespace Advisor.View
 {
     public partial class SignupFormView : Form
     {
-        public AuthController AuthController { get; set; }
+        public IAuthController AuthController { get; set; }
+        public SignupFormView(IAuthController authController)
+        {
+            AuthController = authController;
+            authController.SignupFormView = this;
+            InitializeComponent();
+        }
 
         public SignupFormView()
         {
             InitializeComponent();
         }
 
-        private void BtnSignUp_Click(object sender, EventArgs e)
+        private void OnSignupButtonClick(object sender, EventArgs e)
         {
             if (txtPassword.Text.Equals(txtConfirmPassword.Text))
             {
@@ -27,14 +33,14 @@ namespace Advisor.View
             }
         }
 
-        private void BtnCancel_Click(object sender, EventArgs e)
+        private void OnCancelButtonClick(object sender, EventArgs e)
         {
             AuthController.CloseSignupView();
         }
 
-        private void Label3_Click(object sender, EventArgs e)
+        private void onFormClose(object sender, FormClosedEventArgs e)
         {
-
+            Application.Exit();
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Advisor.Validator
 {
-    public class SignupDataValidator
+    public class SignupDataValidator : ISignupDataValidator
     {
         private string errorMessage;
         private User user;
@@ -52,6 +52,6 @@ namespace Advisor.Validator
              errorMessage = "Please enter all required fields.";
              return false;
             
-        } 
+        }
     }
 }

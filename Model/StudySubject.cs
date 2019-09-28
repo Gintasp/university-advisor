@@ -11,6 +11,5 @@ namespace Advisor.Model
         public StudySubject()
         {
         }
-
     }
 }
