@@ -53,7 +53,7 @@ namespace Advisor.View
         {
             string selectedProgram = StudyProgramList.FocusedItem.Text;
             StudyProgram program = new StudyProgram() { Title = selectedProgram };
-            FacultyController.HandleStudyProgramSelect(program, Faculty);
+            FacultyController.HandleStudyProgramSelect(program, Faculty, University);
         }
     }
 }

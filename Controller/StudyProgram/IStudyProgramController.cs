@@ -7,5 +7,6 @@ namespace Advisor.Controller
     {
         StudyProgramView StudyProgramView { get; set; }
         void LoadStudyProgramData(Label label);
+        void HandlePreviousButtonClick();
     }
 }

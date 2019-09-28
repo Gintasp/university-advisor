@@ -1,5 +1,4 @@
 ﻿using Advisor.Controller;
-using Advisor.Model;
 using System;
 using System.Windows.Forms;
 
@@ -17,7 +16,6 @@ namespace Advisor.View
 
         private void OnViewLoad(object sender, EventArgs e)
         {
-            //TODO: load StudyProgram data from DB
             StudyProgramController.LoadStudyProgramData(StudyProgramTitle);
         }
 
@@ -33,7 +31,7 @@ namespace Advisor.View
 
         private void OnPreviousFormButtonClick(object sender, EventArgs e)
         {
-            //TODO: Display previous form
+            StudyProgramController.HandlePreviousButtonClick();
         }
     }
 }

@@ -24,10 +24,10 @@ namespace Advisor.Controller
             listView.Items.Add("Programu sistemos");
         }
 
-        public void HandleStudyProgramSelect(StudyProgram selectedProgram, Faculty faculty)
+        public void HandleStudyProgramSelect(StudyProgram selectedProgram, Faculty faculty, University uni)
         {
             FacultyView.Hide();
-            StudyProgramView = new StudyProgramView(new StudyProgramController(selectedProgram));
+            StudyProgramView = new StudyProgramView(new StudyProgramController(selectedProgram, faculty, uni));
             StudyProgramView.Show();
         }
     }
