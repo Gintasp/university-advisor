@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Advisor.Controller;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -6,8 +7,11 @@ namespace Advisor.View
 {
     public partial class StudySubjectListView : Form
     {
-        public StudySubjectListView()
+        public IStudySubjectListController StudySubjectListController { get; set; }
+        public StudySubjectListView(IStudySubjectListController studySubjectListController)
         {
+            StudySubjectListController = studySubjectListController;
+            StudySubjectListController.StudySubjectListView = this;
             InitializeComponent();
         }
 
@@ -36,7 +40,7 @@ namespace Advisor.View
 
         private void LoadStudySubjectData(object sender, EventArgs e)
         {
-            //TODO: Load StudySubject data from db
+            StudySubjectListController.LoadStudySubjectData(StudySubjectList);
         }
 
         private void OnPreviousFormButtonClick(object sender, LinkLabelLinkClickedEventArgs e)

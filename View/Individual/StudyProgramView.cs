@@ -26,7 +26,7 @@ namespace Advisor.View
 
         private void OnStudySubjectsButtonClick(object sender, EventArgs e)
         {
-            //TODO: Handle displaying study subjects list
+            StudyProgramController.HandleStudySubjectsButtonClick();
         }
 
         private void OnPreviousFormButtonClick(object sender, EventArgs e)
