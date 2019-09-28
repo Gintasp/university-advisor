@@ -11,6 +11,7 @@ namespace Advisor.Model
         public DbSet<StudyProgram> StudyPrograms { get; set; }
         public DbSet<University> Universities { get; set; }
         public DbSet<StudySubject> StudySubjects { get; set; }
+        public DbSet<Lecturer> Lecturers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
