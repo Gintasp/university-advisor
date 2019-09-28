@@ -9,6 +9,7 @@ namespace Advisor.Controller
         public StudySubjectListView StudySubjectListView { get; set; }
         public StudyProgramView StudyProgramView { get; set; }
         public StudyProgram StudyProgram { get; set; }
+        public StudySubjectView StudySubjectView { get; set; }
 
         public StudySubjectListController(StudyProgram studyProgram)
         {
@@ -23,7 +24,9 @@ namespace Advisor.Controller
         }
         public void HandleSelectedSubject(string subjectTitle)
         {
-
+            StudySubjectListView.Hide();
+            StudySubjectView = new StudySubjectView(new StudySubjectController());
+            StudySubjectView.Show();
         }
 
         public void HandlePreviousFormButtonClick()

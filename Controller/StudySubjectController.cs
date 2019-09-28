@@ -9,6 +9,7 @@ namespace Advisor.Controller
 {
     public class StudySubjectController : IStudySubjectController
     {
+       
         public StudySubjectView studySubjectView { get; set; }
 
         public void HandleAddReview()

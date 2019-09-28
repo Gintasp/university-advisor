@@ -37,21 +37,20 @@
             // leaveReviewButton
             // 
             this.leaveReviewButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.leaveReviewButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.leaveReviewButton.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.leaveReviewButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.leaveReviewButton.Location = new System.Drawing.Point(290, 428);
+            this.leaveReviewButton.Location = new System.Drawing.Point(380, 614);
             this.leaveReviewButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.leaveReviewButton.Name = "leaveReviewButton";
-            this.leaveReviewButton.Size = new System.Drawing.Size(284, 47);
+            this.leaveReviewButton.Size = new System.Drawing.Size(552, 46);
             this.leaveReviewButton.TabIndex = 9;
             this.leaveReviewButton.Text = "Leave a review";
             this.leaveReviewButton.UseVisualStyleBackColor = true;
             // 
             // PreviousForm
             // 
-            this.PreviousForm.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PreviousForm.AutoSize = true;
-            this.PreviousForm.Location = new System.Drawing.Point(10, 11);
+            this.PreviousForm.Location = new System.Drawing.Point(12, 9);
             this.PreviousForm.Name = "PreviousForm";
             this.PreviousForm.Size = new System.Drawing.Size(24, 17);
             this.PreviousForm.TabIndex = 8;
@@ -61,40 +60,41 @@
             // Reviews
             // 
             this.Reviews.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Reviews.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reviews.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Reviews.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Reviews.FormattingEnabled = true;
-            this.Reviews.ItemHeight = 23;
-            this.Reviews.Location = new System.Drawing.Point(214, 133);
+            this.Reviews.ItemHeight = 28;
+            this.Reviews.Location = new System.Drawing.Point(380, 234);
             this.Reviews.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Reviews.Name = "Reviews";
-            this.Reviews.Size = new System.Drawing.Size(437, 257);
+            this.Reviews.Size = new System.Drawing.Size(552, 312);
             this.Reviews.TabIndex = 7;
             // 
             // SubjectTitle
             // 
             this.SubjectTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SubjectTitle.AutoSize = true;
-            this.SubjectTitle.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjectTitle.Font = new System.Drawing.Font("Segoe UI", 28F);
             this.SubjectTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.SubjectTitle.Location = new System.Drawing.Point(302, 39);
+            this.SubjectTitle.Location = new System.Drawing.Point(496, 113);
             this.SubjectTitle.Name = "SubjectTitle";
-            this.SubjectTitle.Size = new System.Drawing.Size(246, 50);
+            this.SubjectTitle.Size = new System.Drawing.Size(311, 62);
             this.SubjectTitle.TabIndex = 5;
             this.SubjectTitle.Text = "Study Subject";
             // 
-            // StudySubject
+            // StudySubjectView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 503);
+            this.ClientSize = new System.Drawing.Size(1314, 755);
             this.Controls.Add(this.leaveReviewButton);
             this.Controls.Add(this.PreviousForm);
             this.Controls.Add(this.Reviews);
             this.Controls.Add(this.SubjectTitle);
-            this.Name = "StudySubject";
+            this.Name = "StudySubjectView";
             this.Text = "StudySubject";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.onFormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

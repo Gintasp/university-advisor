@@ -48,15 +48,15 @@ namespace Advisor.View
             StudySubjectListController.HandlePreviousFormButtonClick();
         }
 
-        private void onFormClose(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void SelectedSubject(object sender, EventArgs e)
         {
             string title = StudySubjectList.SelectedItem.ToString();
             StudySubjectListController.HandleSelectedSubject(title);
+        }
+
+        private void onFormClose(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
