@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Advisor.View.Individual
+namespace Advisor.View
 {
-    public partial class StudySubject : Form
+    public partial class StudySubjectView : Form
     {
-        public StudySubject()
+        public StudySubjectView()
         {
             InitializeComponent();
         }

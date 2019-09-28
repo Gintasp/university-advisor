@@ -52,5 +52,11 @@ namespace Advisor.View
         {
             Application.Exit();
         }
+
+        private void SelectedSubject(object sender, EventArgs e)
+        {
+            string title = StudySubjectList.SelectedItem.ToString();
+            StudySubjectListController.HandleSelectedSubject(title);
+        }
     }
 }

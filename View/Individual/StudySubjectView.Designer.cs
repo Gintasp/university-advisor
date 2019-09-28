@@ -1,6 +1,6 @@
-﻿namespace Advisor.View.Individual
+﻿namespace Advisor.View
 {
-    partial class StudySubject
+    partial class StudySubjectView
     {
         /// <summary>
         /// Required designer variable.

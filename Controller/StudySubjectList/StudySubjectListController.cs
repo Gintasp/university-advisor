@@ -21,6 +21,10 @@ namespace Advisor.Controller
             StudySubject studySubject = new StudySubject() { Title = "Matematika programu sistemoms :)" };
             listbox.Items.Add(studySubject.Title);
         }
+        public void HandleSelectedSubject(string subjectTitle)
+        {
+
+        }
 
         public void HandlePreviousFormButtonClick()
         {
