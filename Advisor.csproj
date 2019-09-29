@@ -226,6 +226,7 @@
     <None Include="Migrations\Data\Review.csv" />
     <None Include="Migrations\Data\StudyProgram.csv" />
     <None Include="Migrations\Data\StudySubject.csv" />
+    <None Include="Migrations\Data\University.csv" />
     <None Include="Migrations\Data\User.csv" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

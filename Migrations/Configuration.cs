@@ -24,6 +24,21 @@ namespace Advisor.Migrations
             LoadStudySubjects(context, dataFolderPath + "StudySubject.csv");
             LoadStudyPrograms(context, dataFolderPath + "StudyProgram.csv");
             LoadLecturers(context, dataFolderPath + "Lecturer.csv");
+            LoadUniversities(context, dataFolderPath + "University.csv");
+        }
+
+        private void LoadUniversities(DatabaseContext context, string filePath)
+        {
+            var universityList = File.ReadAllLines(filePath).ToList();
+            List<University> universitiesToWrite = new List<University>();
+            foreach (string uni in universityList)
+            {
+                University newUni = new University() { Title = uni };
+                universitiesToWrite.Add(newUni);
+            }
+
+            context.Universities.AddRange(universitiesToWrite);
+            context.SaveChanges();
         }
 
         private void LoadLecturers(DatabaseContext context, string filePath)
