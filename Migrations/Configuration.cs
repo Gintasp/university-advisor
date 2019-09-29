@@ -19,16 +19,32 @@ namespace Advisor.Migrations
             string dataFolderPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName + "\\Migrations\\Data\\";
 
             PurgeDatabase(context);
-            LoadUsers(context, dataFolderPath);
-            LoadUserReviews(context, dataFolderPath);
+            LoadUsers(context, dataFolderPath + "User.csv");
+            LoadReviews(context, dataFolderPath + "Review.csv");
+            LoadStudySubjects(context, dataFolderPath + "StudySubject.csv");
+            
         }
 
-        private void LoadUserReviews(DatabaseContext context, string dataFolderPath)
+        private void LoadStudySubjects(DatabaseContext context, string filePath)
         {
-            List<User> userList = DB.Instance.Users.ToList();
+            var subjectList = File.ReadAllLines(filePath).ToList();
+            List<StudySubject> studySubjectsToWrite = new List<StudySubject>();
+            foreach (string subject in subjectList)
+            {
+                StudySubject newSubject = new StudySubject() { Title = subject };
+                studySubjectsToWrite.Add(newSubject);
+            }
+
+            context.StudySubjects.AddRange(studySubjectsToWrite);
+            context.SaveChanges();
+        }
+
+        private void LoadReviews(DatabaseContext context, string filePath)
+        {
+            List<User> userList = context.Users.ToList();
             Random rand = new Random();
 
-            var reviews = File.ReadAllLines(dataFolderPath + "Rating.csv").Select(
+            var reviews = File.ReadAllLines(filePath).Select(
                 line => new Review()
                 {
                     Rating = int.Parse(line.Split(',')[1]),
@@ -40,9 +56,9 @@ namespace Advisor.Migrations
             context.SaveChanges();
         }
 
-        private void LoadUsers(DatabaseContext context, string dataFolderPath)
+        private void LoadUsers(DatabaseContext context, string filePath)
         {
-            var users = File.ReadAllLines(dataFolderPath + "User.csv").Select(
+            var users = File.ReadAllLines(filePath).Select(
                 line => new User()
                 {
                     Name = line.Split(',')[0],

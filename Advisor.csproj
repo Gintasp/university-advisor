@@ -93,6 +93,10 @@
     <Compile Include="Migrations\201909281320065_CreateLecturer.Designer.cs">
       <DependentUpon>201909281320065_CreateLecturer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909291323205_AddSubjectId.cs" />
+    <Compile Include="Migrations\201909291323205_AddSubjectId.Designer.cs">
+      <DependentUpon>201909291323205_AddSubjectId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\DatabaseContext.cs" />
     <Compile Include="Model\DB.cs" />
@@ -178,6 +182,9 @@
     <EmbeddedResource Include="Migrations\201909281320065_CreateLecturer.resx">
       <DependentUpon>201909281320065_CreateLecturer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909291323205_AddSubjectId.resx">
+      <DependentUpon>201909291323205_AddSubjectId.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -216,6 +223,7 @@
       <DependentUpon>StudySubjectListView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Migrations\Data\Rating.csv" />
+    <None Include="Migrations\Data\StudySubject.csv" />
     <None Include="Migrations\Data\User.csv" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
