@@ -222,6 +222,7 @@
     <EmbeddedResource Include="View\StudySubjectListView.resx">
       <DependentUpon>StudySubjectListView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Migrations\Data\Faculty.csv" />
     <None Include="Migrations\Data\Lecturer.csv" />
     <None Include="Migrations\Data\Review.csv" />
     <None Include="Migrations\Data\StudyProgram.csv" />
