@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Advisor.View;
+﻿using Advisor.View;
 
 namespace Advisor.Controller
 {
-    public interface ITextReviewController
+    public interface IReviewController
     {
         TextReviewView TextReviewView { get; set; }
+        StatsReviewView StatsReviewView { get; set; }
 
         void HandleSubmitReviewButtonClick();
         void HandlePreviousFormLinkClick();

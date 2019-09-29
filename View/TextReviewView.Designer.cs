@@ -31,8 +31,9 @@
             this.ReviewInputTitle = new System.Windows.Forms.Label();
             this.ReviewTextBox = new System.Windows.Forms.RichTextBox();
             this.SubmitReviewButton = new System.Windows.Forms.Button();
-            this.ReviewScoreBar = new System.Windows.Forms.TrackBar();
             this.PreviousForm = new System.Windows.Forms.LinkLabel();
+            this.ReviewScoreBar = new System.Windows.Forms.TrackBar();
+            this.ScoreLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ReviewScoreBar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,15 +68,6 @@
             this.SubmitReviewButton.UseVisualStyleBackColor = true;
             this.SubmitReviewButton.Click += new System.EventHandler(this.OnSubmitReviewButtonClick);
             // 
-            // ReviewScoreBar
-            // 
-            this.ReviewScoreBar.Location = new System.Drawing.Point(295, 404);
-            this.ReviewScoreBar.Minimum = 1;
-            this.ReviewScoreBar.Name = "ReviewScoreBar";
-            this.ReviewScoreBar.Size = new System.Drawing.Size(414, 45);
-            this.ReviewScoreBar.TabIndex = 3;
-            this.ReviewScoreBar.Value = 1;
-            // 
             // PreviousForm
             // 
             this.PreviousForm.AutoSize = true;
@@ -87,18 +79,38 @@
             this.PreviousForm.Text = "<<";
             this.PreviousForm.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnPreviousFormLinkClick);
             // 
-            // TextReviewInputView
+            // ReviewScoreBar
+            // 
+            this.ReviewScoreBar.Location = new System.Drawing.Point(374, 404);
+            this.ReviewScoreBar.Minimum = 1;
+            this.ReviewScoreBar.Name = "ReviewScoreBar";
+            this.ReviewScoreBar.Size = new System.Drawing.Size(335, 45);
+            this.ReviewScoreBar.TabIndex = 11;
+            this.ReviewScoreBar.Value = 1;
+            // 
+            // ScoreLabel
+            // 
+            this.ScoreLabel.AutoSize = true;
+            this.ScoreLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreLabel.Location = new System.Drawing.Point(294, 404);
+            this.ScoreLabel.Name = "ScoreLabel";
+            this.ScoreLabel.Size = new System.Drawing.Size(74, 17);
+            this.ScoreLabel.TabIndex = 12;
+            this.ScoreLabel.Text = "Your Score:";
+            // 
+            // TextReviewView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 614);
-            this.Controls.Add(this.PreviousForm);
+            this.Controls.Add(this.ScoreLabel);
             this.Controls.Add(this.ReviewScoreBar);
+            this.Controls.Add(this.PreviousForm);
             this.Controls.Add(this.SubmitReviewButton);
             this.Controls.Add(this.ReviewTextBox);
             this.Controls.Add(this.ReviewInputTitle);
-            this.Name = "TextReviewInputView";
-            this.Text = "ReviewInputView";
+            this.Name = "TextReviewView";
+            this.Text = "ReviewView";
             ((System.ComponentModel.ISupportInitialize)(this.ReviewScoreBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -110,7 +122,8 @@
         private System.Windows.Forms.Label ReviewInputTitle;
         private System.Windows.Forms.RichTextBox ReviewTextBox;
         private System.Windows.Forms.Button SubmitReviewButton;
-        private System.Windows.Forms.TrackBar ReviewScoreBar;
         private System.Windows.Forms.LinkLabel PreviousForm;
+        private System.Windows.Forms.TrackBar ReviewScoreBar;
+        private System.Windows.Forms.Label ScoreLabel;
     }
 }

@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Advisor.View;
+﻿using Advisor.View;
 
 namespace Advisor.Controller
 {
-    class TextReviewController : ITextReviewController
+    class ReviewController : IReviewController
     {
         public TextReviewView TextReviewView { get; set; }
 
+        public StatsReviewView StatsReviewView { get; set; }
+
+        //!! Both review forms use the same methods in their button actions !!
+        //!! When implementing functionality it will be necessary to identify which form called the method !!
         public void HandleSubmitReviewButtonClick()
         {
             //TODO: Implement review object creation and storing

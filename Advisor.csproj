@@ -70,8 +70,8 @@
     <Compile Include="Controller\StudySubjectController.cs" />
     <Compile Include="Controller\StudySubjectList\IStudySubjectListController.cs" />
     <Compile Include="Controller\StudySubjectList\StudySubjectListController.cs" />
-    <Compile Include="Controller\TextReview\ITextReviewController.cs" />
-    <Compile Include="Controller\TextReview\TextReviewController.cs" />
+    <Compile Include="Controller\Review\IReviewController.cs" />
+    <Compile Include="Controller\Review\ReviewController.cs" />
     <Compile Include="Controller\University\IUniversityController.cs" />
     <Compile Include="Controller\University\UniversityController.cs" />
     <Compile Include="DependencyInjection\Bindings.cs" />
@@ -122,6 +122,12 @@
     </Compile>
     <Compile Include="View\Individual\FacultyView.Designer.cs">
       <DependentUpon>FacultyView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\StatsReviewView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\StatsReviewView.Designer.cs">
+      <DependentUpon>StatsReviewView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\TextReviewView.cs">
       <SubType>Form</SubType>
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Individual\FacultyView.resx">
       <DependentUpon>FacultyView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\StatsReviewView.resx">
+      <DependentUpon>StatsReviewView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TextReviewView.resx">
       <DependentUpon>TextReviewView.cs</DependentUpon>
