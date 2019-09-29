@@ -1,7 +1,10 @@
 namespace Advisor.Migrations
 {
     using Advisor.Model;
+    using System;
     using System.Data.Entity.Migrations;
+    using System.IO;
+    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<DatabaseContext>
     {
@@ -12,8 +15,24 @@ namespace Advisor.Migrations
 
         protected override void Seed(DatabaseContext context)
         {
+            string dataFolderPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName + "\\Migrations\\Data\\";
+
             PurgeDatabase(context);
-            context.Users.Add(new User() { Name = "John Doe", Email = "john@doe.com", Password = "password"});
+            LoadUsers(context, dataFolderPath);
+            
+        }
+
+        private void LoadUsers(DatabaseContext context, string dataFolderPath)
+        {
+            var users = File.ReadAllLines(dataFolderPath + "User.csv").Select(
+                line => new User()
+                {
+                    Name = line.Split(',')[0],
+                    Email = line.Split(',')[1],
+                    Password = "pass"
+                }
+            ).ToList();
+            context.Users.AddRange(users);
             context.SaveChanges();
         }
 

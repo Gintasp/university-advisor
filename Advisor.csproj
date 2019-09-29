@@ -215,6 +215,7 @@
     <EmbeddedResource Include="View\StudySubjectListView.resx">
       <DependentUpon>StudySubjectListView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Migrations\Data\User.csv" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
