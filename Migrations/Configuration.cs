@@ -46,40 +46,23 @@ namespace Advisor.Migrations
             var programs = context.StudyPrograms.ToList();
             var subjects = context.StudySubjects.ToList();
             var lecturers = context.Lecturers.ToList();
+            var reviews = context.Reviews.ToList();
 
-            var programReviews = context.Reviews.ToArray().Select(
-                (item, i) => new { Review = item, Index = i }
-            ).Where(
-                element => element.Index % 3 == 0
-            ).Select(element => element.Review);
-
-            var subjectReviews = context.Reviews.ToArray().Select(
-                (item, i) => new { Review = item, Index = i }
-            ).Where(
-                element => element.Index % 2 == 0 && element.Review.StudyProgram == null
-            ).Select(element => element.Review);
-
-            var lecturerReviews = context.Reviews.Where(
-                rev => rev.StudySubject == null && rev.StudyProgram == null
-            ).Select(rev => rev);
-
-            foreach (Review review in programReviews)
-            {
-                review.StudyProgram = programs.ElementAt(r.Next(0, programs.Count));
+            foreach(Review review in reviews){
+                if (review.Id % 3 == 0)
+                {
+                    review.StudySubject = subjects.ElementAt(r.Next(0, subjects.Count));
+                    context.SaveChanges();
+                } else if (review.Id % 2 == 0 && review.StudyProgram == null)
+                {
+                    review.StudyProgram = programs.ElementAt(r.Next(0, programs.Count));
+                    context.SaveChanges();
+                } else if (review.StudyProgram == null && review.StudySubject == null)
+                {
+                    review.Lecturer = lecturers.ElementAt(r.Next(0, lecturers.Count));
+                    context.SaveChanges();
+                }
             }
-            context.SaveChanges();
-
-            foreach (Review review in subjectReviews)
-            {
-                review.StudySubject = subjects.ElementAt(r.Next(0, subjects.Count));
-            }
-            context.SaveChanges();
-
-            foreach (Review review in lecturerReviews)
-            {
-                review.Lecturer = lecturers.ElementAt(r.Next(0, lecturers.Count));
-            }
-            context.SaveChanges();
         }
 
         private void LoadStudySubjectRelations(DatabaseContext context)

@@ -3,7 +3,6 @@ using System.Windows.Forms;
 using Ninject;
 using Advisor.DependencyInjection;
 using Advisor.View;
-using Advisor.Controller;
 
 namespace Advisor
 {
