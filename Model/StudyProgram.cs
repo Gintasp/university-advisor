@@ -6,12 +6,18 @@ namespace Advisor.Model
     {
         public int Id { get; set; }
         public string Title { get; set; }
+        public string Description { get; set; }
         public virtual Faculty Faculty { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
         public virtual ICollection<StudySubject> StudySubjects { get; set; }
 
         public StudyProgram()
         {
+        }
+
+        public override string ToString()
+        {
+            return Title;
         }
     }
 }

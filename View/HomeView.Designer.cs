@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.searchBox = new System.Windows.Forms.TextBox();
-            this.UniversityList = new System.Windows.Forms.ListBox();
+            this.UniversityData = new System.Windows.Forms.ListBox();
             this.AddUniversity = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -64,16 +64,16 @@
             // 
             // UniversityList
             // 
-            this.UniversityList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UniversityList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UniversityList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.UniversityList.FormattingEnabled = true;
-            this.UniversityList.ItemHeight = 32;
-            this.UniversityList.Location = new System.Drawing.Point(372, 320);
-            this.UniversityList.Name = "UniversityList";
-            this.UniversityList.Size = new System.Drawing.Size(621, 420);
-            this.UniversityList.TabIndex = 2;
-            this.UniversityList.SelectedIndexChanged += new System.EventHandler(this.SelectedUniversity);
+            this.UniversityData.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UniversityData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UniversityData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.UniversityData.FormattingEnabled = true;
+            this.UniversityData.ItemHeight = 32;
+            this.UniversityData.Location = new System.Drawing.Point(372, 320);
+            this.UniversityData.Name = "UniversityList";
+            this.UniversityData.Size = new System.Drawing.Size(621, 420);
+            this.UniversityData.TabIndex = 2;
+            this.UniversityData.SelectedIndexChanged += new System.EventHandler(this.SelectedUniversity);
             // 
             // AddUniversity
             // 
@@ -94,7 +94,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1478, 944);
             this.Controls.Add(this.AddUniversity);
-            this.Controls.Add(this.UniversityList);
+            this.Controls.Add(this.UniversityData);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.label1);
             this.Name = "HomeView";
@@ -112,5 +112,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.Button AddUniversity;
+        private System.Windows.Forms.ListBox UniversityData;
     }
 }

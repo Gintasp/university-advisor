@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.ObjectModel;
+using System.Windows.Forms;
 using Advisor.Model;
 using Advisor.View;
 
@@ -20,8 +21,16 @@ namespace Advisor.Controller
         public void LoadStudyProgramData(ListBox listBox)
         {
             //TODO: Load items from DB
+            Collection<Review> reviews = new Collection<Review>();
+            reviews.Add(new Review() { Text = "Test review" });
+            StudyProgram program = new StudyProgram()
+            {
+                Title = "Study Program",
+                Description = "This is a test study program description",
+                Reviews = reviews
+            };
             listBox.Items.Clear();
-            listBox.Items.Add("Programu sistemos");
+            listBox.Items.Add(program);
         }
 
         public void HandleStudyProgramSelect(StudyProgram selectedProgram, Faculty faculty, University uni)
