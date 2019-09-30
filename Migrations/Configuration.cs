@@ -3,7 +3,6 @@ namespace Advisor.Migrations
     using Advisor.Model;
     using System;
     using System.Collections.Generic;
-    using System.Collections.ObjectModel;
     using System.Data.Entity.Migrations;
     using System.IO;
     using System.Linq;
@@ -29,6 +28,47 @@ namespace Advisor.Migrations
             LoadFaculties(context, dataFolderPath + "Faculty.csv");
 
             LoadFacultyUniversityRelations(context);
+            LoadLecturerFacultyRelations(context);
+            LoadStudyProgramFacultyRelations(context);
+            LoadStudySubjectRelations(context);
+        }
+
+        private void LoadStudySubjectRelations(DatabaseContext context)
+        {
+            Random r = new Random();
+            var subjects = context.StudySubjects.ToList();
+            var programs = context.StudyPrograms.ToList();
+            var lecturers = context.Lecturers.ToList();
+            foreach(StudySubject subject in subjects)
+            {
+                subject.Lecturer = lecturers.ElementAt(r.Next(0, lecturers.Count));
+                subject.StudyProgram = programs.ElementAt(r.Next(0, programs.Count));
+                context.SaveChanges();
+            }
+        }
+
+        private void LoadStudyProgramFacultyRelations(DatabaseContext context)
+        {
+            Random r = new Random();
+            var programs = context.StudyPrograms.ToList();
+            var faculties = context.Faculties.ToList();
+            foreach (StudyProgram program in programs)
+            {
+                program.Faculty = faculties.ElementAt(r.Next(0, faculties.Count));
+                context.SaveChanges();
+            }
+        }
+
+        private void LoadLecturerFacultyRelations(DatabaseContext context)
+        {
+            Random r = new Random();
+            var lecturers = context.Lecturers.ToList();
+            var faculties = context.Faculties.ToList();
+            foreach (Lecturer lecturer in lecturers)
+            {
+                lecturer.Faculty = faculties.ElementAt(r.Next(0, faculties.Count));
+                context.SaveChanges();
+            }
         }
 
         private void LoadFacultyUniversityRelations(DatabaseContext context)
@@ -81,7 +121,10 @@ namespace Advisor.Migrations
             List<Lecturer> lecturersToWrite = new List<Lecturer>();
             foreach (string lecturer in lecturerList)
             {
-                Lecturer newLecturer = new Lecturer(lecturer);
+                Lecturer newLecturer = new Lecturer()
+                {
+                    Name = lecturer
+                };
                 lecturersToWrite.Add(newLecturer);
             }
 
@@ -151,12 +194,12 @@ namespace Advisor.Migrations
         private void PurgeDatabase(DatabaseContext context)
         {
             context.Database.ExecuteSqlCommand("DELETE FROM [User]; DBCC CHECKIDENT ([User], RESEED, 0)");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Lecturer]; DBCC CHECKIDENT ([Lecturer], RESEED, 0)");
+            context.Database.ExecuteSqlCommand("DELETE FROM [StudyProgram]; DBCC CHECKIDENT ([StudyProgram], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Faculty]; DBCC CHECKIDENT ([Faculty], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [University]; DBCC CHECKIDENT ([University], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [StudySubject]; DBCC CHECKIDENT ([StudySubject], RESEED, 0)");
-            context.Database.ExecuteSqlCommand("DELETE FROM [StudyProgram]; DBCC CHECKIDENT ([StudyProgram], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Review]; DBCC CHECKIDENT ([Review], RESEED, 0)");
-            context.Database.ExecuteSqlCommand("DELETE FROM [Lecturer]; DBCC CHECKIDENT ([Lecturer], RESEED, 0)");
         }
     }
 }
