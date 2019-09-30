@@ -1,6 +1,8 @@
 ﻿using System.Windows.Forms;
 using Advisor.Model;
 using Advisor.View;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Advisor.Controller
 {
@@ -20,12 +22,14 @@ namespace Advisor.Controller
             //TODO: Handle add university click
         }
 
-        public void LoadUniversityList(ListBox listBox)
+        public void LoadUniversityList()
         {
-            //TODO: Load universities to listbox from DB
-            listBox.Items.Clear();
-            string exampleUni = "Vilnius University";
-            listBox.Items.Add(exampleUni);
+            List<University> unis = DB.Instance.Universities.ToList();
+            HomeView.UniversityList.Items.Clear();
+            foreach(University uni in unis)
+            {
+                HomeView.UniversityList.Items.Add(uni);
+            }
         }
 
         public void HandleUniversitySelect(string universityName)

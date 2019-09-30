@@ -111,9 +111,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox searchBox;
-        private System.Windows.Forms.ListBox UniversityList;
         private System.Windows.Forms.Button AddUniversity;
-
-
     }
 }

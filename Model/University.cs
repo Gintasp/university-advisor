@@ -12,5 +12,10 @@ namespace Advisor.Model
         public University()
         {
         }
+
+        public override string ToString()
+        {
+            return Title;
+        }
     }
 }
