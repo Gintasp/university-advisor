@@ -1,6 +1,7 @@
 namespace Advisor.Migrations
 {
     using Advisor.Model;
+    using Advisor.Service.Auth;
     using System;
     using System.Collections.Generic;
     using System.Data.Entity.Migrations;
@@ -211,12 +212,13 @@ namespace Advisor.Migrations
 
         private void LoadUsers(DatabaseContext context, string filePath)
         {
+            PasswordEncoder encoder = new PasswordEncoder();
             var users = File.ReadAllLines(filePath).Select(
                 line => new User()
                 {
                     Name = line.Split(',')[0],
                     Email = line.Split(',')[1],
-                    Password = "pass"
+                    Password = encoder.Encode("Pass1")
                 }
             ).ToList();
             context.Users.AddRange(users);
