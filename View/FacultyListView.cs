@@ -10,18 +10,19 @@ namespace Advisor.View
     {
         public University University { get; set; }
         public IFacultyListController FacultyListController { get; set; }
-
+        public ListBox FacultiesList { get; set; }
         public FacultyListView(IFacultyListController facultyListController, University uni)
         {
             University = uni;
             FacultyListController = facultyListController;
             FacultyListController.FacultyListView = this;
             InitializeComponent();
+            FacultiesList = FacultiesListBox;
         }
 
         private void FacultiesListView_Load(object sender, EventArgs e)
         {
-            FacultyListController.LoadFacultyList(FacultiesListBox, University);
+            FacultyListController.LoadFacultyList(University);
         }
 
         private void OnAddFacultyButtonClick(object sender, EventArgs e)
