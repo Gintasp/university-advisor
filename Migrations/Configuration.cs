@@ -169,9 +169,13 @@ namespace Advisor.Migrations
         {
             var programList = File.ReadAllLines(filePath).ToList();
             List<StudyProgram> studyProgramsToWrite = new List<StudyProgram>();
-            foreach (string program in programList)
+            foreach (string line in programList)
             {
-                StudyProgram newProgram = new StudyProgram() { Title = program };
+                StudyProgram newProgram = new StudyProgram()
+                {
+                    Title = line.Split(',')[0],
+                    Description = line.Split(',')[1]
+                };
                 studyProgramsToWrite.Add(newProgram);
             }
 

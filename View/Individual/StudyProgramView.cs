@@ -22,6 +22,7 @@ namespace Advisor.View
         {
             StudyProgramController.LoadStudyProgramData();
             StudyProgramTitle.Text = StudyProgram.Title;
+            AboutSection.Text = StudyProgram.Description;
         }
 
         private void OnLeaveReviewButtonClick(object sender, EventArgs e)

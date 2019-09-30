@@ -26,6 +26,7 @@ namespace Advisor.Controller
             StudyProgram program = new StudyProgram()
             {
                 Title = "Study Program",
+                Description = "This is a test study program description",
                 Reviews = reviews
             };
             listBox.Items.Clear();
