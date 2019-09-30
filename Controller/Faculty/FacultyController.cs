@@ -23,11 +23,14 @@ namespace Advisor.Controller
             //TODO: Load items from DB
             Collection<Review> reviews = new Collection<Review>();
             reviews.Add(new Review() { Text = "Test review" });
+            Collection<StudySubject> studySubjects = new Collection<StudySubject>();
+            studySubjects.Add(new StudySubject() { Title = "Test study subject" });
             StudyProgram program = new StudyProgram()
             {
                 Title = "Study Program",
                 Description = "This is a test study program description",
-                Reviews = reviews
+                Reviews = reviews,
+                StudySubjects = studySubjects
             };
             listBox.Items.Clear();
             listBox.Items.Add(program);

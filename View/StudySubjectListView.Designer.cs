@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.StudySubjectList = new System.Windows.Forms.ListBox();
+            this.StudySubjectData = new System.Windows.Forms.ListBox();
             this.PreviousForm = new System.Windows.Forms.LinkLabel();
             this.btnAddStudySubject = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -41,9 +41,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(544, 120);
+            this.label1.Location = new System.Drawing.Point(484, 96);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(393, 74);
+            this.label1.Size = new System.Drawing.Size(331, 62);
             this.label1.TabIndex = 0;
             this.label1.Text = "Study Subjects";
             // 
@@ -52,34 +52,36 @@
             this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtSearch.Location = new System.Drawing.Point(430, 251);
+            this.txtSearch.Location = new System.Drawing.Point(382, 201);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(621, 39);
+            this.txtSearch.Size = new System.Drawing.Size(552, 34);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.Text = "Search";
             this.txtSearch.Enter += new System.EventHandler(this.OnSearchInputEnter);
             this.txtSearch.Leave += new System.EventHandler(this.OnSearchInputLeave);
             // 
-            // StudySubjectList
+            // StudySubjectData
             // 
-            this.StudySubjectList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.StudySubjectList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StudySubjectList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.StudySubjectList.FormattingEnabled = true;
-            this.StudySubjectList.ItemHeight = 32;
-            this.StudySubjectList.Location = new System.Drawing.Point(428, 314);
-            this.StudySubjectList.Name = "StudySubjectList";
-            this.StudySubjectList.Size = new System.Drawing.Size(621, 420);
-            this.StudySubjectList.TabIndex = 2;
-            this.StudySubjectList.SelectedIndexChanged += new System.EventHandler(this.SelectedSubject);
+            this.StudySubjectData.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.StudySubjectData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StudySubjectData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.StudySubjectData.FormattingEnabled = true;
+            this.StudySubjectData.ItemHeight = 28;
+            this.StudySubjectData.Location = new System.Drawing.Point(380, 251);
+            this.StudySubjectData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.StudySubjectData.Name = "StudySubjectData";
+            this.StudySubjectData.Size = new System.Drawing.Size(552, 312);
+            this.StudySubjectData.TabIndex = 2;
+            this.StudySubjectData.SelectedIndexChanged += new System.EventHandler(this.SelectedSubject);
             // 
             // PreviousForm
             // 
             this.PreviousForm.AutoSize = true;
             this.PreviousForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PreviousForm.Location = new System.Drawing.Point(14, 12);
+            this.PreviousForm.Location = new System.Drawing.Point(12, 10);
             this.PreviousForm.Name = "PreviousForm";
-            this.PreviousForm.Size = new System.Drawing.Size(36, 25);
+            this.PreviousForm.Size = new System.Drawing.Size(29, 20);
             this.PreviousForm.TabIndex = 3;
             this.PreviousForm.TabStop = true;
             this.PreviousForm.Text = "<<";
@@ -90,9 +92,10 @@
             this.btnAddStudySubject.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAddStudySubject.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddStudySubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAddStudySubject.Location = new System.Drawing.Point(428, 767);
+            this.btnAddStudySubject.Location = new System.Drawing.Point(380, 614);
+            this.btnAddStudySubject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddStudySubject.Name = "btnAddStudySubject";
-            this.btnAddStudySubject.Size = new System.Drawing.Size(621, 58);
+            this.btnAddStudySubject.Size = new System.Drawing.Size(552, 46);
             this.btnAddStudySubject.TabIndex = 4;
             this.btnAddStudySubject.Text = "Add Study Subject";
             this.btnAddStudySubject.UseVisualStyleBackColor = true;
@@ -100,14 +103,15 @@
             // 
             // StudySubjectListView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1478, 944);
+            this.ClientSize = new System.Drawing.Size(1314, 755);
             this.Controls.Add(this.btnAddStudySubject);
             this.Controls.Add(this.PreviousForm);
-            this.Controls.Add(this.StudySubjectList);
+            this.Controls.Add(this.StudySubjectData);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "StudySubjectListView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Study Subjects";
@@ -123,7 +127,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.ListBox StudySubjectList;
+        private System.Windows.Forms.ListBox StudySubjectData;
         private System.Windows.Forms.LinkLabel PreviousForm;
         private System.Windows.Forms.Button btnAddStudySubject;
     }

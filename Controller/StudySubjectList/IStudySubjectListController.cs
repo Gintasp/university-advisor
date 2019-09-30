@@ -6,7 +6,7 @@ namespace Advisor.Controller
     public interface IStudySubjectListController
     {
         StudySubjectListView StudySubjectListView { get; set; }
-        void LoadStudySubjectData(ListBox listbox);
+        void LoadStudySubjectData();
         void HandleSelectedSubject(string name);
         void HandlePreviousFormButtonClick();
     }

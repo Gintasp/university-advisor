@@ -8,11 +8,13 @@ namespace Advisor.View
     public partial class StudySubjectListView : Form
     {
         public IStudySubjectListController StudySubjectListController { get; set; }
+        public ListBox StudySubjectList { get; set; }
         public StudySubjectListView(IStudySubjectListController studySubjectListController)
         {
             StudySubjectListController = studySubjectListController;
             StudySubjectListController.StudySubjectListView = this;
             InitializeComponent();
+            StudySubjectList = StudySubjectData;
         }
 
         private void OnSearchInputEnter(object sender, EventArgs e)
@@ -40,7 +42,7 @@ namespace Advisor.View
 
         private void LoadStudySubjectData(object sender, EventArgs e)
         {
-            StudySubjectListController.LoadStudySubjectData(StudySubjectList);
+            StudySubjectListController.LoadStudySubjectData();
         }
 
         private void OnPreviousFormButtonClick(object sender, LinkLabelLinkClickedEventArgs e)
@@ -50,7 +52,7 @@ namespace Advisor.View
 
         private void SelectedSubject(object sender, EventArgs e)
         {
-            string title = StudySubjectList.SelectedItem.ToString();
+            string title = StudySubjectData.SelectedItem.ToString();
             StudySubjectListController.HandleSelectedSubject(title);
         }
 
