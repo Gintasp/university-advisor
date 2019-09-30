@@ -20,8 +20,6 @@ namespace Advisor.Controller
 
         public void LoadStudyProgramData(Faculty faculty)
         {
-            //TODO: Load items from DB
-
             FacultyView.StudyProgramList.Items.Clear();
             foreach (StudyProgram studyProgram in faculty.StudyPrograms)
             {
