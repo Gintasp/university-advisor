@@ -16,9 +16,15 @@ namespace Advisor.Migrations
 
         protected override void Seed(DatabaseContext context)
         {
+            PurgeDatabase(context);
+            LoadTestData(context);
+        }
+
+        private void LoadTestData(DatabaseContext context)
+        {
             string dataFolderPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName + "\\Migrations\\Data\\";
 
-            PurgeDatabase(context);
+            //WARNING: The order of these function calls does matter
             LoadUsers(context, dataFolderPath + "User.csv");
             LoadReviews(context, dataFolderPath + "Review.csv");
             LoadStudySubjects(context, dataFolderPath + "StudySubject.csv");
@@ -236,6 +242,7 @@ namespace Advisor.Migrations
 
         private void PurgeDatabase(DatabaseContext context)
         {
+            //WARNING: The order of these function calls does matter
             context.Database.ExecuteSqlCommand("DELETE FROM [User]; DBCC CHECKIDENT ([User], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [StudySubject]; DBCC CHECKIDENT ([StudySubject], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Lecturer]; DBCC CHECKIDENT ([Lecturer], RESEED, 0)");
