@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 using Advisor.View;
 using Advisor.Model;
-using Advisor.Validator;
+using Advisor.Service.Validator;
 
 namespace Advisor.Controller
 {

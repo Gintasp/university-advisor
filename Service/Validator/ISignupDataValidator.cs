@@ -1,6 +1,6 @@
 ﻿using Advisor.Model;
 
-namespace Advisor.Validator
+namespace Advisor.Service.Validator
 {
     public interface ISignupDataValidator
     {

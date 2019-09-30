@@ -1,5 +1,5 @@
 ﻿using Advisor.Controller;
-using Advisor.Validator;
+using Advisor.Service.Validator;
 using Ninject.Modules;
 
 namespace Advisor.DependencyInjection
