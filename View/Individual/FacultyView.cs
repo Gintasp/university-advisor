@@ -52,7 +52,10 @@ namespace Advisor.View
         private void onStudyProgramSelect(object sender, EventArgs e)
         {
             StudyProgram selectedProgram = (StudyProgram) StudyProgramList.SelectedItem;
-            FacultyController.HandleStudyProgramSelect(selectedProgram, Faculty, University);
+            if(selectedProgram != null)
+            {
+                FacultyController.HandleStudyProgramSelect(selectedProgram, Faculty, University);
+            }
         }
 
         private void onFormClose(object sender, FormClosedEventArgs e)
