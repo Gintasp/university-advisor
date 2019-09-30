@@ -7,8 +7,8 @@ namespace Advisor.Controller
     public interface IFacultyListController
     {
         FacultyListView FacultyListView { get; set; }
-        void LoadFacultyList(ListBox listbox, University uni);
+        void LoadFacultyList( University uni);
         void HandlePreviousButtonClick(University uni);
-        void HandleFacultySelect(string faculty, University uni);
+        void HandleFacultySelect(Faculty faculty, University uni);
     }
 }

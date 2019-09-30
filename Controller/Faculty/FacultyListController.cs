@@ -1,6 +1,8 @@
 ﻿using System.Windows.Forms;
 using Advisor.Model;
 using Advisor.View;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Advisor.Controller
 {
@@ -17,13 +19,14 @@ namespace Advisor.Controller
             FacultyController = facultyController;
         }
 
-        public void LoadFacultyList(ListBox listbox, University uni)
+        public void LoadFacultyList(University uni)
         {
-            //TODO: Fetch all faculties of given university and add them to the listbox.
-            listbox.Items.Clear();
-            listbox.Items.Add("MIF");
+            FacultyListView.FacultiesList.Items.Clear();
+            foreach (Faculty faculty in uni.Faculties)
+            {
+                FacultyListView.FacultiesList.Items.Add(faculty);
+            }
         }
-
         public void HandlePreviousButtonClick(University uni)
         {
             FacultyListView.Hide();
@@ -31,12 +34,9 @@ namespace Advisor.Controller
             UniversityView.Show();
         }
 
-        public void HandleFacultySelect(string faculty, University uni)
+        public void HandleFacultySelect(Faculty faculty, University uni)
         {
-            //TODO: Find Faculty in DB by given parameter and pass to the view below.
-            Faculty exampleFaculty = new Faculty();
-            exampleFaculty.Title = "MIF";
-            FacultyView = new FacultyView(FacultyController, exampleFaculty, uni);
+            FacultyView = new FacultyView(FacultyController, faculty, uni);
             FacultyListView.Hide();
             FacultyView.ShowDialog();
         }

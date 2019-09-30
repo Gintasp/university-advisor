@@ -44,12 +44,12 @@
             // 
             this.FacultyTitleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FacultyTitleLabel.AutoSize = true;
-            this.FacultyTitleLabel.Font = new System.Drawing.Font("Segoe UI", 34F);
+            this.FacultyTitleLabel.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FacultyTitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.FacultyTitleLabel.Location = new System.Drawing.Point(120, 142);
+            this.FacultyTitleLabel.Location = new System.Drawing.Point(114, 151);
             this.FacultyTitleLabel.MaximumSize = new System.Drawing.Size(500, 0);
             this.FacultyTitleLabel.Name = "FacultyTitleLabel";
-            this.FacultyTitleLabel.Size = new System.Drawing.Size(166, 91);
+            this.FacultyTitleLabel.Size = new System.Drawing.Size(108, 60);
             this.FacultyTitleLabel.TabIndex = 0;
             this.FacultyTitleLabel.Text = "Title";
             // 
@@ -144,11 +144,11 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label2.Location = new System.Drawing.Point(673, 157);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(302, 54);
+            this.label2.Size = new System.Drawing.Size(244, 45);
             this.label2.TabIndex = 8;
             this.label2.Text = "Study Programs";
             // 
