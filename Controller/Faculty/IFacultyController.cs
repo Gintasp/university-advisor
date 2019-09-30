@@ -9,7 +9,7 @@ namespace Advisor.Controller
         FacultyView FacultyView { get; set; }
         StudyProgramView StudyProgramView { get; set; }
         void HandlePreviousButtonClick(University uni);
-        void LoadStudyProgramData(ListBox listBox);
+        void LoadStudyProgramData(Faculty faculty);
         void HandleStudyProgramSelect(StudyProgram selectedProgram, Faculty faculty, University uni);
     }
 }
