@@ -25,16 +25,6 @@ namespace Advisor.Controller
             {
                 FacultyView.StudyProgramList.Items.Add(studyProgram);
             }
-
-            
-            Collection<Review> reviews = new Collection<Review>();
-            reviews.Add(new Review() { Text = "Test review" });
-            StudyProgram program = new StudyProgram()
-            {
-                Title = "Study Program",
-                Description = "This is a test study program description",
-                Reviews = reviews
-            };
         }
 
         public void HandleStudyProgramSelect(StudyProgram selectedProgram, Faculty faculty, University uni)
