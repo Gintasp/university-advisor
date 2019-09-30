@@ -1,4 +1,5 @@
 ﻿using Advisor.Controller;
+using Advisor.Model;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -46,8 +47,8 @@ namespace Advisor.View
 
         private void SelectedUniversity(object sender, EventArgs e)
         {
-            string universityTitle = UniversityList.GetItemText(UniversityList.SelectedItem);
-            HomeController.HandleUniversitySelect(universityTitle);
+            University uni = (University) UniversityList.SelectedItem;
+            HomeController.HandleUniversitySelect(uni);
         }
 
         private void onFormClose(object sender, FormClosedEventArgs e)

@@ -32,12 +32,9 @@ namespace Advisor.Controller
             }
         }
 
-        public void HandleUniversitySelect(string universityName)
+        public void HandleUniversitySelect(University uni)
         {
-            //TODO: Filter universities by supplied parameter and pass University to the view below.
             HomeView.Hide();
-            University uni = new University();
-            uni.Title = "Vilnius University";
             UniversityView = new UniversityView(UniversityController, uni);
             UniversityView.ShowDialog();
         }
