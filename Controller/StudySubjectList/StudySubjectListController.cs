@@ -16,12 +16,12 @@ namespace Advisor.Controller
             StudyProgram = studyProgram;
         }
 
-        public void LoadStudySubjectData(ListBox listbox)
+        public void LoadStudySubjectData()
         {
             //TODO: Load StudySubject data by StudyProgram from db (pass whole object)
             foreach(StudySubject subject in StudyProgram.StudySubjects)
             {
-                listbox.Items.Add(subject);
+                StudySubjectListView.StudySubjectList.Items.Add(subject);
             }
         }
         public void HandleSelectedSubject(string subjectTitle)
