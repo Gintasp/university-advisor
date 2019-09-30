@@ -18,7 +18,6 @@ namespace Advisor.Controller
 
         public void LoadStudySubjectData()
         {
-            //TODO: Load StudySubject data by StudyProgram from db (pass whole object)
             foreach(StudySubject subject in StudyProgram.StudySubjects)
             {
                 StudySubjectListView.StudySubjectList.Items.Add(subject);
