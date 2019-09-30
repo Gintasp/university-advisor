@@ -19,8 +19,10 @@ namespace Advisor.Controller
         public void LoadStudySubjectData(ListBox listbox)
         {
             //TODO: Load StudySubject data by StudyProgram from db (pass whole object)
-            StudySubject studySubject = new StudySubject() { Title = "Matematika programu sistemoms :)" };
-            listbox.Items.Add(studySubject.Title);
+            foreach(StudySubject subject in StudyProgram.StudySubjects)
+            {
+                listbox.Items.Add(subject);
+            }
         }
         public void HandleSelectedSubject(string subjectTitle)
         {
