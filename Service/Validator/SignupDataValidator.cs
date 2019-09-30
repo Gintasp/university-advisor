@@ -1,7 +1,7 @@
 ﻿using Advisor.Model;
 using System.Text.RegularExpressions;
 
-namespace Advisor.Validator
+namespace Advisor.Service.Validator
 {
     public class SignupDataValidator : ISignupDataValidator
     {

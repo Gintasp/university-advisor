@@ -1,34 +1,43 @@
 ﻿using System.Windows.Forms;
 using Advisor.View;
 using Advisor.Model;
-using Advisor.Validator;
+using Advisor.Service.Validator;
+using Advisor.Service.Auth;
+using System.Linq;
 
 namespace Advisor.Controller
 {
     public class AuthController : IAuthController
     {
-        public AuthController(
-            ILoginDataValidator loginDataValidator,
-            ISignupDataValidator signupDataValidator,
-            IHomeController homeController
-        ) {
-            LoginDataValidator = loginDataValidator;
-            SignupDataValidator = signupDataValidator;
-            HomeController = homeController;
-        }
-
         public ISignupDataValidator SignupDataValidator { get; set; }
         public ILoginDataValidator LoginDataValidator { get; set; }
         public SignupFormView SignupFormView { get; set; }
         public LoginFormView LoginFormView { get; set; }
         public HomeView HomeView { get; set; }
         public IHomeController HomeController { get; set; }
+        public IPasswordEncoder PasswordEncoder { get; set; }
+
+        public AuthController(
+            ILoginDataValidator loginDataValidator,
+            ISignupDataValidator signupDataValidator,
+            IHomeController homeController,
+            IPasswordEncoder passwordEncoder
+        ) {
+            LoginDataValidator = loginDataValidator;
+            SignupDataValidator = signupDataValidator;
+            HomeController = homeController;
+            PasswordEncoder = passwordEncoder;
+        }
 
         private bool AuthenticateUser(string email, string password)
         {
-            //TODO: Authenticate user from DB
+            User user = DB.Instance.Users.Where(u => u.Email == email).SingleOrDefault();
+            if(user == null)
+            {
+                return false;
+            }
 
-            return true;
+            return PasswordEncoder.Verify(password, user.Password);
         }
 
         public void CloseLoginView()
@@ -64,7 +73,6 @@ namespace Advisor.Controller
 
         public bool HandleSignup (User user, string passConfirm)
         {
-            //TODO: Hash user password
             if (!SignupDataValidator.Validate(user, passConfirm))
             {
                 MessageBox.Show(SignupDataValidator.GetSignupDataVadilatorErrorMessage());
@@ -72,6 +80,7 @@ namespace Advisor.Controller
                 return false;
             }
 
+            user.Password = PasswordEncoder.Encode(user.Password);
             DB.Instance.Users.Add(user);
             DB.Instance.SaveChanges();
 

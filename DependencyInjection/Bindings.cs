@@ -1,5 +1,6 @@
 ﻿using Advisor.Controller;
-using Advisor.Validator;
+using Advisor.Service.Auth;
+using Advisor.Service.Validator;
 using Ninject.Modules;
 
 namespace Advisor.DependencyInjection
@@ -19,6 +20,7 @@ namespace Advisor.DependencyInjection
 
             Bind<ILoginDataValidator>().To<LoginDataValidator>();
             Bind<ISignupDataValidator>().To<SignupDataValidator>();
+            Bind<IPasswordEncoder>().To<PasswordEncoder>();
         }
     }
 }
