@@ -36,5 +36,10 @@ namespace Advisor.View
         {
             Application.Exit();
         }
+
+        private void LoadUniversityAbout(object sender, PaintEventArgs e)
+        {
+            AboutSection.Text = University.Description;
+        }
     }
 }
