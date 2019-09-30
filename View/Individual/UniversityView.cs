@@ -17,9 +17,10 @@ namespace Advisor.View
             InitializeComponent();
         }
 
-        private void LoadUniversityTitle(object sender, EventArgs e)
+        private void LoadUniversityData(object sender, EventArgs e)
         {
             UniversityTitleLabel.Text = University.Title;
+            AboutSection.Text = University.Description;
         }
 
         private void OnFacultiesButtonClick(object sender, EventArgs e)

@@ -80,10 +80,11 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.AboutSection);
             this.panel1.Location = new System.Drawing.Point(491, 153);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(371, 352);
             this.panel1.TabIndex = 2;
+            
             // 
             // AboutSection
             // 
@@ -104,7 +105,7 @@
             this.Faculties.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Faculties.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Faculties.Location = new System.Drawing.Point(132, 461);
-            this.Faculties.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Faculties.Margin = new System.Windows.Forms.Padding(2);
             this.Faculties.Name = "Faculties";
             this.Faculties.Size = new System.Drawing.Size(227, 44);
             this.Faculties.TabIndex = 3;
@@ -117,7 +118,7 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(132, 109);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(122, 118);
             this.pictureBox1.TabIndex = 5;
@@ -147,12 +148,12 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.About);
             this.Controls.Add(this.UniversityTitleLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UniversityView";
             this.Text = "University";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.onFormClose);
-            this.Load += new System.EventHandler(this.LoadUniversityTitle);
+            this.Load += new System.EventHandler(this.LoadUniversityData);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
