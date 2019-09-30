@@ -37,7 +37,7 @@ namespace Advisor.Controller
                 return false;
             }
 
-            return PasswordEncoder.Verify(user.Password, PasswordEncoder.Encode(password));
+            return PasswordEncoder.Verify(password, user.Password);
         }
 
         public void CloseLoginView()
