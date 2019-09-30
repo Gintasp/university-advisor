@@ -3,6 +3,7 @@ namespace Advisor.Migrations
     using Advisor.Model;
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.Data.Entity.Migrations;
     using System.IO;
     using System.Linq;
@@ -26,6 +27,20 @@ namespace Advisor.Migrations
             LoadLecturers(context, dataFolderPath + "Lecturer.csv");
             LoadUniversities(context, dataFolderPath + "University.csv");
             LoadFaculties(context, dataFolderPath + "Faculty.csv");
+
+            LoadFacultyUniversityRelations(context);
+        }
+
+        private void LoadFacultyUniversityRelations(DatabaseContext context)
+        {
+            Random r = new Random();
+            var faculties = context.Faculties.ToList();
+            var unis = context.Universities.ToList();
+            foreach (Faculty fac in faculties)
+            {
+                fac.University = unis.ElementAt(r.Next(0, unis.Count));
+                context.SaveChanges();
+            }
         }
 
         private void LoadFaculties(DatabaseContext context, string filePath)
@@ -132,12 +147,12 @@ namespace Advisor.Migrations
         private void PurgeDatabase(DatabaseContext context)
         {
             context.Database.ExecuteSqlCommand("DELETE FROM [User]; DBCC CHECKIDENT ([User], RESEED, 0)");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Faculty]; DBCC CHECKIDENT ([Faculty], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [University]; DBCC CHECKIDENT ([University], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [StudySubject]; DBCC CHECKIDENT ([StudySubject], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [StudyProgram]; DBCC CHECKIDENT ([StudyProgram], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Review]; DBCC CHECKIDENT ([Review], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Lecturer]; DBCC CHECKIDENT ([Lecturer], RESEED, 0)");
-            context.Database.ExecuteSqlCommand("DELETE FROM [Faculty]; DBCC CHECKIDENT ([Faculty], RESEED, 0)");
         }
     }
 }
