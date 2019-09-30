@@ -18,9 +18,17 @@ namespace Advisor.Controller
             FacultyListView.Show();
         }
 
-        public void LoadStudyProgramData(ListBox listBox)
+        public void LoadStudyProgramData(Faculty faculty)
         {
             //TODO: Load items from DB
+
+            FacultyView.StudyProgramList.Items.Clear();
+            foreach (StudyProgram studyProgram in faculty.StudyPrograms)
+            {
+                FacultyView.StudyProgramList.Items.Add(studyProgram);
+            }
+
+            
             Collection<Review> reviews = new Collection<Review>();
             reviews.Add(new Review() { Text = "Test review" });
             StudyProgram program = new StudyProgram()
@@ -29,8 +37,9 @@ namespace Advisor.Controller
                 Description = "This is a test study program description",
                 Reviews = reviews
             };
-            listBox.Items.Clear();
-            listBox.Items.Add(program);
+            //listBox.Items.Clear();
+            //listBox.Items.Add(program);
+            
         }
 
         public void HandleStudyProgramSelect(StudyProgram selectedProgram, Faculty faculty, University uni)

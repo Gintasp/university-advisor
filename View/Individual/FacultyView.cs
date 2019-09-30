@@ -10,6 +10,7 @@ namespace Advisor.View
         public IFacultyController FacultyController { get; set; }
         public Faculty Faculty { get; set; }
         public University University { get; set; }
+        public ListBox StudyProgramList { get; set; }
 
         public FacultyView(
             IFacultyController facultyController,
@@ -21,18 +22,17 @@ namespace Advisor.View
             University = uni;
             FacultyController.FacultyView = this;
             InitializeComponent();
+            StudyProgramList = StudyProgramListBox;
         }
 
         private void OnFacultyLoad(object sender, EventArgs e)
         {
             FacultyTitleLabel.Text = Faculty.Title;
-            LoadStudyProgramData();
+            AboutSection.Text = "Our faculties have no descriptions sooo?";
+            FacultyController.LoadStudyProgramData(Faculty);
         }
 
-        private void LoadStudyProgramData()
-        {
-            FacultyController.LoadStudyProgramData(StudyProgramList);
-        }
+        
 
         private void OnLecturersButtonClick(object sender, EventArgs e)
         {
@@ -51,7 +51,7 @@ namespace Advisor.View
 
         private void onStudyProgramSelect(object sender, EventArgs e)
         {
-            StudyProgram selectedProgram = (StudyProgram) StudyProgramList.SelectedItem;
+            StudyProgram selectedProgram = (StudyProgram) StudyProgramListBox.SelectedItem;
             if(selectedProgram != null)
             {
                 FacultyController.HandleStudyProgramSelect(selectedProgram, Faculty, University);
