@@ -32,8 +32,6 @@ namespace Advisor.View
             FacultyController.LoadStudyProgramData(Faculty);
         }
 
-        
-
         private void OnLecturersButtonClick(object sender, EventArgs e)
         {
             //TODO: Handle by displaying lecturers list/form
