@@ -61,9 +61,13 @@ namespace Advisor.Migrations
         {
             var universityList = File.ReadAllLines(filePath).ToList();
             List<University> universitiesToWrite = new List<University>();
-            foreach (string uni in universityList)
+            foreach (string line in universityList)
             {
-                University newUni = new University() { Title = uni };
+                University newUni = new University()
+                {
+                    Title = line.Split(',')[0],
+                    Description = line.Split(',')[1]
+                };
                 universitiesToWrite.Add(newUni);
             }
 
