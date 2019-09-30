@@ -6,7 +6,7 @@ namespace Advisor.Controller
     public interface IStudyProgramController
     {
         StudyProgramView StudyProgramView { get; set; }
-        void LoadStudyProgramData(Label label);
+        void LoadStudyProgramData();
         void HandlePreviousButtonClick();
         void HandleStudySubjectsButtonClick();
     }

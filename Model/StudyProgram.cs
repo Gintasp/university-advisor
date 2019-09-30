@@ -13,5 +13,10 @@ namespace Advisor.Model
         public StudyProgram()
         {
         }
+
+        public override string ToString()
+        {
+            return Title;
+        }
     }
 }

@@ -20,10 +20,13 @@ namespace Advisor.Controller
             University = uni;
         }
 
-        public void LoadStudyProgramData(Label label)
+        public void LoadStudyProgramData()
         {
-            //TODO: load StudyProgram data from DB to StudyProgramView (pass whole object)
-            label.Text = StudyProgram.Title;
+            StudyProgramView.StudyProgram = StudyProgram;
+            foreach(Review review in StudyProgram.Reviews)
+            {
+                StudyProgramView.ReviewListBox.Items.Add(review);
+            }
         }
 
         public void HandlePreviousButtonClick()
