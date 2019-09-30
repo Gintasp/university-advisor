@@ -3,6 +3,7 @@ using Advisor.View;
 using Advisor.Model;
 using Advisor.Service.Validator;
 using Advisor.Service.Auth;
+using System.Linq;
 
 namespace Advisor.Controller
 {
@@ -30,9 +31,13 @@ namespace Advisor.Controller
 
         private bool AuthenticateUser(string email, string password)
         {
-            //TODO: Authenticate user from DB
+            User user = DB.Instance.Users.Where(u => u.Email == email).SingleOrDefault();
+            if(user == null)
+            {
+                return false;
+            }
 
-            return true;
+            return PasswordEncoder.Verify(user.Password, PasswordEncoder.Encode(password));
         }
 
         public void CloseLoginView()
