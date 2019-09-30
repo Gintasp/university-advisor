@@ -30,14 +30,14 @@
         {
             this.StudyProgramTitle = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.AboutPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.AboutSection = new System.Windows.Forms.Label();
             this.btnLeaveAReview = new System.Windows.Forms.Button();
             this.btnStudySubjects = new System.Windows.Forms.Button();
             this.ReviewList = new System.Windows.Forms.ListBox();
             this.PreviousForm = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.AboutPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // StudyProgramTitle
@@ -67,19 +67,19 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "About";
             // 
-            // AboutPanel
+            // panel1
             // 
-            this.AboutPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AboutPanel.AutoScroll = true;
-            this.AboutPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AboutPanel.Controls.Add(this.AboutSection);
-            this.AboutPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AboutPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.AboutPanel.Location = new System.Drawing.Point(47, 226);
-            this.AboutPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.AboutPanel.Name = "AboutPanel";
-            this.AboutPanel.Size = new System.Drawing.Size(288, 206);
-            this.AboutPanel.TabIndex = 2;
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.AutoScroll = true;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.AboutSection);
+            this.panel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Location = new System.Drawing.Point(47, 226);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(288, 206);
+            this.panel1.TabIndex = 2;
             // 
             // AboutSection
             // 
@@ -100,7 +100,7 @@
             this.btnLeaveAReview.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLeaveAReview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnLeaveAReview.Location = new System.Drawing.Point(47, 456);
-            this.btnLeaveAReview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLeaveAReview.Margin = new System.Windows.Forms.Padding(2);
             this.btnLeaveAReview.Name = "btnLeaveAReview";
             this.btnLeaveAReview.Size = new System.Drawing.Size(287, 36);
             this.btnLeaveAReview.TabIndex = 3;
@@ -114,7 +114,7 @@
             this.btnStudySubjects.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStudySubjects.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnStudySubjects.Location = new System.Drawing.Point(47, 502);
-            this.btnStudySubjects.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStudySubjects.Margin = new System.Windows.Forms.Padding(2);
             this.btnStudySubjects.Name = "btnStudySubjects";
             this.btnStudySubjects.Size = new System.Drawing.Size(287, 36);
             this.btnStudySubjects.TabIndex = 4;
@@ -130,7 +130,7 @@
             this.ReviewList.FormattingEnabled = true;
             this.ReviewList.ItemHeight = 17;
             this.ReviewList.Location = new System.Drawing.Point(367, 132);
-            this.ReviewList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ReviewList.Margin = new System.Windows.Forms.Padding(2);
             this.ReviewList.Name = "ReviewList";
             this.ReviewList.Size = new System.Drawing.Size(583, 395);
             this.ReviewList.TabIndex = 5;
@@ -171,17 +171,17 @@
             this.Controls.Add(this.ReviewList);
             this.Controls.Add(this.btnStudySubjects);
             this.Controls.Add(this.btnLeaveAReview);
-            this.Controls.Add(this.AboutPanel);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.StudyProgramTitle);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "StudyProgramView";
             this.Text = "Study Program";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.onFormClose);
             this.Load += new System.EventHandler(this.OnViewLoad);
-            this.AboutPanel.ResumeLayout(false);
-            this.AboutPanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,7 +191,7 @@
 
         private System.Windows.Forms.Label StudyProgramTitle;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel AboutPanel;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnLeaveAReview;
         private System.Windows.Forms.Button btnStudySubjects;
         private System.Windows.Forms.ListBox ReviewList;
