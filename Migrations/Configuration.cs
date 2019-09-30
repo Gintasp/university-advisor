@@ -31,6 +31,49 @@ namespace Advisor.Migrations
             LoadLecturerFacultyRelations(context);
             LoadStudyProgramFacultyRelations(context);
             LoadStudySubjectRelations(context);
+            LoadReviewRelations(context);
+        }
+
+        private void LoadReviewRelations(DatabaseContext context)
+        {
+            Random r = new Random();
+            var programs = context.StudyPrograms.ToList();
+            var subjects = context.StudySubjects.ToList();
+            var lecturers = context.Lecturers.ToList();
+
+            var programReviews = context.Reviews.ToArray().Select(
+                (item, i) => new { Review = item, Index = i }
+            ).Where(
+                element => element.Index % 3 == 0
+            ).Select(element => element.Review);
+
+            var subjectReviews = context.Reviews.ToArray().Select(
+                (item, i) => new { Review = item, Index = i }
+            ).Where(
+                element => element.Index % 2 == 0 && element.Review.StudyProgram == null
+            ).Select(element => element.Review);
+
+            var lecturerReviews = context.Reviews.Where(
+                rev => rev.StudySubject == null && rev.StudyProgram == null
+            ).Select(rev => rev);
+
+            foreach (Review review in programReviews)
+            {
+                review.StudyProgram = programs.ElementAt(r.Next(0, programs.Count));
+            }
+            context.SaveChanges();
+
+            foreach (Review review in subjectReviews)
+            {
+                review.StudySubject = subjects.ElementAt(r.Next(0, subjects.Count));
+            }
+            context.SaveChanges();
+
+            foreach (Review review in lecturerReviews)
+            {
+                review.Lecturer = lecturers.ElementAt(r.Next(0, lecturers.Count));
+            }
+            context.SaveChanges();
         }
 
         private void LoadStudySubjectRelations(DatabaseContext context)
@@ -194,11 +237,11 @@ namespace Advisor.Migrations
         private void PurgeDatabase(DatabaseContext context)
         {
             context.Database.ExecuteSqlCommand("DELETE FROM [User]; DBCC CHECKIDENT ([User], RESEED, 0)");
+            context.Database.ExecuteSqlCommand("DELETE FROM [StudySubject]; DBCC CHECKIDENT ([StudySubject], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Lecturer]; DBCC CHECKIDENT ([Lecturer], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [StudyProgram]; DBCC CHECKIDENT ([StudyProgram], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Faculty]; DBCC CHECKIDENT ([Faculty], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [University]; DBCC CHECKIDENT ([University], RESEED, 0)");
-            context.Database.ExecuteSqlCommand("DELETE FROM [StudySubject]; DBCC CHECKIDENT ([StudySubject], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Review]; DBCC CHECKIDENT ([Review], RESEED, 0)");
         }
     }

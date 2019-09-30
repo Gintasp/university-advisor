@@ -97,6 +97,10 @@
     <Compile Include="Migrations\201909291323205_AddSubjectId.Designer.cs">
       <DependentUpon>201909291323205_AddSubjectId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909300754400_RemoveIdField.cs" />
+    <Compile Include="Migrations\201909300754400_RemoveIdField.Designer.cs">
+      <DependentUpon>201909300754400_RemoveIdField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\DatabaseContext.cs" />
     <Compile Include="Model\DB.cs" />
@@ -184,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909291323205_AddSubjectId.resx">
       <DependentUpon>201909291323205_AddSubjectId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909300754400_RemoveIdField.resx">
+      <DependentUpon>201909300754400_RemoveIdField.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
