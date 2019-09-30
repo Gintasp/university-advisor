@@ -1,5 +1,5 @@
-﻿using Advisor.View;
-using System.Windows.Forms;
+﻿using Advisor.Model;
+using Advisor.View;
 
 namespace Advisor.Controller
 {
@@ -7,7 +7,7 @@ namespace Advisor.Controller
     {
         HomeView HomeView { get; set; }
         void HandleAddUniversityClick();
-        void LoadUniversityList(ListBox listBox);
-        void HandleUniversitySelect(string universityName);
+        void LoadUniversityList();
+        void HandleUniversitySelect(University uni);
     }
 }
