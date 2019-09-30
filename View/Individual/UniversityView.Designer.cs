@@ -84,7 +84,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(371, 352);
             this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.LoadUniversityAbout);
+            
             // 
             // AboutSection
             // 
@@ -153,7 +153,7 @@
             this.Text = "University";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.onFormClose);
-            this.Load += new System.EventHandler(this.LoadUniversityTitle);
+            this.Load += new System.EventHandler(this.LoadUniversityData);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
