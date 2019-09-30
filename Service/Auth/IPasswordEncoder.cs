@@ -2,9 +2,9 @@
 {
     public interface IPasswordEncoder
     {
-        string Hash(string password, int iterations);
-        string Hash(string password);
-        bool IsHashSupported(string hashString);
-        bool Verify(string password, string hashedPassword);
+        string Encode(string password, int iterations);
+        string Encode(string password);
+        bool IsHashSupported(string encodedString);
+        bool Verify(string password, string encodedPassword);
     }
 }

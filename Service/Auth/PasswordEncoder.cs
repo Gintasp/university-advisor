@@ -8,7 +8,7 @@ namespace Advisor.Service.Auth
         private const int SaltSize = 16;
         private const int HashSize = 20;
 
-        public string Hash(string password, int iterations)
+        public string Encode(string password, int iterations)
         {
             byte[] salt;
             new RNGCryptoServiceProvider().GetBytes(salt = new byte[SaltSize]);
@@ -22,27 +22,27 @@ namespace Advisor.Service.Auth
 
             var base64Hash = Convert.ToBase64String(hashBytes);
 
-            return string.Format("$MYHASH$V1${0}${1}", iterations, base64Hash);
+            return string.Format("$HASH$V1${0}${1}", iterations, base64Hash);
         }
 
-        public string Hash(string password)
+        public string Encode(string password)
         {
-            return Hash(password, 10000);
+            return Encode(password, 10000);
         }
 
-        public bool IsHashSupported(string hashString)
+        public bool IsHashSupported(string encodedString)
         {
-            return hashString.Contains("$MYHASH$V1$");
+            return encodedString.Contains("$HASH$V1$");
         }
 
-        public bool Verify(string password, string hashedPassword)
+        public bool Verify(string password, string encodedPassword)
         {
-            if (!IsHashSupported(hashedPassword))
+            if (!IsHashSupported(encodedPassword))
             {
                 throw new NotSupportedException("The hashtype is not supported");
             }
 
-            var splittedHashString = hashedPassword.Replace("$MYHASH$V1$", "").Split('$');
+            var splittedHashString = encodedPassword.Replace("$HASH$V1$", "").Split('$');
             var iterations = int.Parse(splittedHashString[0]);
             var base64Hash = splittedHashString[1];
 
