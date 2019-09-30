@@ -15,6 +15,7 @@ namespace Advisor.View
             HomeController = homeController;
             homeController.HomeView = this;
             InitializeComponent();
+            UniversityList = UniversityData;
         }
 
         private void PrimaryTextDeletion(object sender, EventArgs e)
@@ -47,7 +48,7 @@ namespace Advisor.View
 
         private void SelectedUniversity(object sender, EventArgs e)
         {
-            University uni = (University) UniversityList.SelectedItem;
+            University uni = (University) UniversityData.SelectedItem;
             HomeController.HandleUniversitySelect(uni);
         }
 
