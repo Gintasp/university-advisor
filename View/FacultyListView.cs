@@ -20,7 +20,7 @@ namespace Advisor.View
             FacultiesList = FacultiesListBox;
         }
 
-        private void FacultiesListView_Load(object sender, EventArgs e)
+        private void OnViewLoad(object sender, EventArgs e)
         {
             FacultyListController.LoadFacultyList(University);
         }
@@ -55,8 +55,8 @@ namespace Advisor.View
 
         private void OnFacultySelect(object sender, EventArgs e)
         {
-            string facultyTitle = FacultiesListBox.GetItemText(FacultiesListBox.SelectedItem);
-            FacultyListController.HandleFacultySelect(facultyTitle, University);
+            Faculty faculty = (Faculty) FacultiesList.SelectedItem;
+            FacultyListController.HandleFacultySelect(faculty, University);
         }
 
         private void onFormClose(object sender, FormClosedEventArgs e)

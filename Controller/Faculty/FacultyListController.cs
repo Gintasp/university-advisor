@@ -34,19 +34,11 @@ namespace Advisor.Controller
             UniversityView.Show();
         }
 
-        public void HandleFacultySelect(string faculty, University uni)
+        public void HandleFacultySelect(Faculty faculty, University uni)
         {
-            foreach(Faculty fac in uni.Faculties)
-            {
-                if (fac.Title.Equals(faculty))
-                {
-                    FacultyView = new FacultyView(FacultyController, fac, uni);
-                    FacultyListView.Hide();
-                    FacultyView.ShowDialog();
-                    break;
-                }
-            }
-           
+            FacultyView = new FacultyView(FacultyController, faculty, uni);
+            FacultyListView.Hide();
+            FacultyView.ShowDialog();
         }
     }
 }

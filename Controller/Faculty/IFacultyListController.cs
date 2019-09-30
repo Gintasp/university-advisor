@@ -9,6 +9,6 @@ namespace Advisor.Controller
         FacultyListView FacultyListView { get; set; }
         void LoadFacultyList( University uni);
         void HandlePreviousButtonClick(University uni);
-        void HandleFacultySelect(string faculty, University uni);
+        void HandleFacultySelect(Faculty faculty, University uni);
     }
 }

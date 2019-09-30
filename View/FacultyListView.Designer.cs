@@ -123,7 +123,7 @@
             this.Text = "Faculties";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.onFormClose);
-            this.Load += new System.EventHandler(this.FacultiesListView_Load);
+            this.Load += new System.EventHandler(this.OnViewLoad);
             this.ResumeLayout(false);
             this.PerformLayout();
 
