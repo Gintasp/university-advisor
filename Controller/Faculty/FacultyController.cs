@@ -35,9 +35,6 @@ namespace Advisor.Controller
                 Description = "This is a test study program description",
                 Reviews = reviews
             };
-            //listBox.Items.Clear();
-            //listBox.Items.Add(program);
-            
         }
 
         public void HandleStudyProgramSelect(StudyProgram selectedProgram, Faculty faculty, University uni)
