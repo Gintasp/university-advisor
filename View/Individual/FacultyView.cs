@@ -34,7 +34,7 @@ namespace Advisor.View
 
         private void OnLecturersButtonClick(object sender, EventArgs e)
         {
-            //TODO: Handle by displaying lecturers list/form
+            FacultyController.HandleLecturersButtonClick(Faculty);
         }
 
         private void OnAddStudyProgramButtonClick(object sender, EventArgs e)

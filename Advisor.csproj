@@ -65,6 +65,8 @@
     <Compile Include="Controller\Auth\IAuthController.cs" />
     <Compile Include="Controller\Home\IHomeController.cs" />
     <Compile Include="Controller\IStudySubjectController.cs" />
+    <Compile Include="Controller\LecturerList\ILecturerListController.cs" />
+    <Compile Include="Controller\LecturerList\LecturerListController.cs" />
     <Compile Include="Controller\StudyProgram\IStudyProgramController.cs" />
     <Compile Include="Controller\StudyProgram\StudyProgramController.cs" />
     <Compile Include="Controller\StudySubjectController.cs" />
@@ -136,6 +138,12 @@
     </Compile>
     <Compile Include="View\Individual\FacultyView.Designer.cs">
       <DependentUpon>FacultyView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LecturerListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LecturerListView.Designer.cs">
+      <DependentUpon>LecturerListView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\StatsReviewView.cs">
       <SubType>Form</SubType>
@@ -229,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Individual\FacultyView.resx">
       <DependentUpon>FacultyView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LecturerListView.resx">
+      <DependentUpon>LecturerListView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\StatsReviewView.resx">
       <DependentUpon>StatsReviewView.cs</DependentUpon>
