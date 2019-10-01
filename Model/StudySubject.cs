@@ -13,6 +13,7 @@ namespace Advisor.Model
         public StudySubject()
         {
         }
+
         public override string ToString()
         {
             return Title;

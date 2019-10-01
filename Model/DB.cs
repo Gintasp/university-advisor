@@ -5,6 +5,7 @@
         private static DatabaseContext instance = null;
 
         private DB() { }
+
         public static DatabaseContext Instance
         {
             get
