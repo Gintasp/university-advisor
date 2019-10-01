@@ -109,6 +109,10 @@
     <Compile Include="Migrations\201909301612511_AddDescription.Designer.cs">
       <DependentUpon>201909301612511_AddDescription.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910011931117_AddFacultyDesc.cs" />
+    <Compile Include="Migrations\201910011931117_AddFacultyDesc.Designer.cs">
+      <DependentUpon>201910011931117_AddFacultyDesc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\DatabaseContext.cs" />
     <Compile Include="Model\DB.cs" />
@@ -222,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909301612511_AddDescription.resx">
       <DependentUpon>201909301612511_AddDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910011931117_AddFacultyDesc.resx">
+      <DependentUpon>201910011931117_AddFacultyDesc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
