@@ -28,7 +28,7 @@ namespace Advisor.View
         private void OnFacultyLoad(object sender, EventArgs e)
         {
             FacultyTitleLabel.Text = Faculty.Title;
-            AboutSection.Text = "Our faculties have no descriptions sooo?";
+            AboutSection.Text = Faculty.Description;
             FacultyController.LoadStudyProgramData(Faculty);
         }
 
