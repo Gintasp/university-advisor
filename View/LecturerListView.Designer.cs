@@ -108,7 +108,9 @@
             this.Controls.Add(this.previousForm);
             this.Controls.Add(this.label1);
             this.Name = "LecturerListView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lecturers";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.LoadLecturerData);
             this.ResumeLayout(false);
             this.PerformLayout();
