@@ -55,5 +55,10 @@ namespace Advisor.View
             string title = LecturerData.SelectedItem.ToString();
             LecturerListController.HandleSelectedLecturer(title);
         }
+
+        private void OnFormClose(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -37,6 +37,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 28F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -61,6 +62,7 @@
             // 
             // txtSearch
             // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtSearch.Location = new System.Drawing.Point(294, 163);
@@ -73,6 +75,7 @@
             // 
             // LecturerData
             // 
+            this.LecturerData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.LecturerData.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.LecturerData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.LecturerData.FormattingEnabled = true;
@@ -85,13 +88,14 @@
             // 
             // btnAddLecturer
             // 
+            this.btnAddLecturer.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnAddLecturer.AutoSize = true;
             this.btnAddLecturer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddLecturer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAddLecturer.Location = new System.Drawing.Point(294, 446);
             this.btnAddLecturer.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.btnAddLecturer.Name = "btnAddLecturer";
-            this.btnAddLecturer.Size = new System.Drawing.Size(415, 31);
+            this.btnAddLecturer.Size = new System.Drawing.Size(415, 43);
             this.btnAddLecturer.TabIndex = 7;
             this.btnAddLecturer.Text = "Add a lecturer";
             this.btnAddLecturer.UseVisualStyleBackColor = true;
@@ -111,6 +115,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lecturers";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnFormClose);
             this.Load += new System.EventHandler(this.LoadLecturerData);
             this.ResumeLayout(false);
             this.PerformLayout();
