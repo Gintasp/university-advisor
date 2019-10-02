@@ -14,11 +14,11 @@ namespace Advisor.View
             StudySubjectController.StudySubjectView = this;
             InitializeComponent();
         }
-        private void StudySubjectView_Load(object sender, EventArgs e)
+        private void OnViewLoad(object sender, EventArgs e)
         {
             StudySubjectController.LoadReviews(Reviews);
         }
-        private void PreviousForm_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void OnPreviousButtonClick(object sender, LinkLabelLinkClickedEventArgs e)
         {
             StudySubjectController.HandlePreviousClicked();
         }

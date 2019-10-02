@@ -1,5 +1,5 @@
-﻿using Advisor.View;
-using System.Windows.Forms;
+﻿using Advisor.Model;
+using Advisor.View;
 
 namespace Advisor.Controller
 {
@@ -7,7 +7,7 @@ namespace Advisor.Controller
     {
         StudySubjectListView StudySubjectListView { get; set; }
         void LoadStudySubjectData();
-        void HandleSelectedSubject(string name);
+        void HandleSelectedSubject(StudySubject subject);
         void HandlePreviousFormButtonClick();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Advisor.Controller;
+using Advisor.Model;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -52,8 +53,8 @@ namespace Advisor.View
 
         private void SelectedSubject(object sender, EventArgs e)
         {
-            string title = StudySubjectData.SelectedItem.ToString();
-            StudySubjectListController.HandleSelectedSubject(title);
+            StudySubject subject = (StudySubject) StudySubjectData.SelectedItem;
+            StudySubjectListController.HandleSelectedSubject(subject);
         }
 
         private void onFormClose(object sender, FormClosedEventArgs e)

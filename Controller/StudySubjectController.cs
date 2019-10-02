@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Advisor.View;
+﻿using Advisor.View;
 using Advisor.Model;
 using System.Windows.Forms;
 
@@ -14,15 +9,16 @@ namespace Advisor.Controller
         public StudySubjectView StudySubjectView { get; set; }
         public StudySubjectListView StudySubjectListView { get; set; }
         public StudyProgram StudyProgram { get; set; }
-        public StudySubjectController(StudyProgram studyProgram)
+        public StudySubject StudySubject { get; set; }
+        public StudySubjectController(StudyProgram studyProgram, StudySubject subject)
         {
             StudyProgram = studyProgram;
+            StudySubject = subject;
         }
 
         public void HandleAddReview()
         {
             //TODO: Implement add review feature
-            throw new NotImplementedException();
         }
 
         public void LoadReviews(ListBox listbox)
@@ -37,7 +33,6 @@ namespace Advisor.Controller
             StudySubjectView.Hide();
             StudySubjectListView = new StudySubjectListView(new StudySubjectListController(StudyProgram));
             StudySubjectListView.Show();
-
         }
     }
 }

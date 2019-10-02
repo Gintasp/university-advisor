@@ -1,6 +1,5 @@
 ﻿using Advisor.Model;
 using Advisor.View;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -26,10 +25,10 @@ namespace Advisor.Controller
                 StudySubjectListView.StudySubjectList.Items.Add(subject);
             }
         }
-        public void HandleSelectedSubject(string subjectTitle)
+        public void HandleSelectedSubject(StudySubject subject)
         {
             StudySubjectListView.Hide();
-            StudySubjectView = new StudySubjectView(new StudySubjectController(StudyProgram));
+            StudySubjectView = new StudySubjectView(new StudySubjectController(StudyProgram, subject));
             StudySubjectView.Show();
         }
 
