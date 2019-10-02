@@ -4,10 +4,10 @@ using Advisor.Controller;
 
 namespace Advisor.View
 {
-    public partial class StatsReviewView : Form
+    public partial class StatisticReviewView : Form
     {
         public IReviewController ReviewController { get; set; }
-        public StatsReviewView(IReviewController reviewController)
+        public StatisticReviewView(IReviewController reviewController)
         {
             ReviewController = reviewController;
             reviewController.StatsReviewView = this;

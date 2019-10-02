@@ -149,11 +149,11 @@
     <Compile Include="View\LecturerListView.Designer.cs">
       <DependentUpon>LecturerListView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\StatsReviewView.cs">
+    <Compile Include="View\StatisticReviewView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\StatsReviewView.Designer.cs">
-      <DependentUpon>StatsReviewView.cs</DependentUpon>
+    <Compile Include="View\StatisticReviewView.Designer.cs">
+      <DependentUpon>StatisticReviewView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\TextReviewView.cs">
       <SubType>Form</SubType>
@@ -248,8 +248,8 @@
     <EmbeddedResource Include="View\LecturerListView.resx">
       <DependentUpon>LecturerListView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\StatsReviewView.resx">
-      <DependentUpon>StatsReviewView.cs</DependentUpon>
+    <EmbeddedResource Include="View\StatisticReviewView.resx">
+      <DependentUpon>StatisticReviewView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TextReviewView.resx">
       <DependentUpon>TextReviewView.cs</DependentUpon>
