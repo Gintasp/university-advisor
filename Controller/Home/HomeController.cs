@@ -1,5 +1,4 @@
-﻿using System.Windows.Forms;
-using Advisor.Model;
+﻿using Advisor.Model;
 using Advisor.View;
 using System.Linq;
 using System.Collections.Generic;

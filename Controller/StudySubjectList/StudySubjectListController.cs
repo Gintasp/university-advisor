@@ -1,6 +1,8 @@
 ﻿using Advisor.Model;
 using Advisor.View;
-using System.Windows.Forms;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Advisor.Controller
 {
@@ -18,7 +20,8 @@ namespace Advisor.Controller
 
         public void LoadStudySubjectData()
         {
-            foreach(StudySubject subject in StudyProgram.StudySubjects)
+            List<StudySubject> subjects = DB.Instance.StudySubjects.Where(s => s.StudyProgram.Id == StudyProgram.Id).ToList();
+            foreach(StudySubject subject in subjects)
             {
                 StudySubjectListView.StudySubjectList.Items.Add(subject);
             }
@@ -32,16 +35,39 @@ namespace Advisor.Controller
 
         public void HandlePreviousFormButtonClick()
         {
-            //TODO: Fetch faculty and uni from DB by StudyProgram;
+            Faculty fac = GetFacultyByStudyProgram(StudyProgram);
+            University uni = GetUniversityByFaculty(fac);
+
             StudySubjectListView.Hide();
-            StudyProgramView = new StudyProgramView(
-                new StudyProgramController(
-                    StudyProgram,
-                    new Faculty() { Title = "MIF" },
-                    new University() { Title = "Vilnius University" }
-                )
-            );
+            StudyProgramView = new StudyProgramView(new StudyProgramController(StudyProgram, fac, uni));
             StudyProgramView.Show();
+        }
+
+        private University GetUniversityByFaculty(Faculty fac)
+        {
+            return DB.Instance.Universities.Join(
+                DB.Instance.Faculties,
+                u => u.Id,
+                f => f.University.Id,
+                (u, f) => new { University = u, Faculty = f }
+            )
+            .Where(u => u.University.Id == fac.University.Id)
+            .Select(u => u.University)
+            .Distinct()
+            .SingleOrDefault();
+        }
+
+        private Faculty GetFacultyByStudyProgram(StudyProgram program)
+        {
+            return DB.Instance.Faculties.Join(
+                DB.Instance.StudyPrograms,
+                f => f.Id,
+                p => p.Faculty.Id,
+                (f, p) => new { Faculty = f, StudyProgram = p }
+            )
+            .Where(p => p.StudyProgram.Id == program.Id)
+            .Select(f => f.Faculty)
+            .SingleOrDefault();
         }
     }
 }
