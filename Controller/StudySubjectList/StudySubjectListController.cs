@@ -28,7 +28,7 @@ namespace Advisor.Controller
         public void HandleSelectedSubject(StudySubject subject)
         {
             StudySubjectListView.Hide();
-            StudySubjectView = new StudySubjectView(new StudySubjectController(StudyProgram, subject));
+            StudySubjectView = new StudySubjectView(new StudySubjectController(StudyProgram, subject), subject);
             StudySubjectView.Show();
         }
 

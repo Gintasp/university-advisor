@@ -1,6 +1,7 @@
 ﻿using Advisor.View;
 using Advisor.Model;
-using System.Windows.Forms;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Advisor.Controller
 {
@@ -21,11 +22,13 @@ namespace Advisor.Controller
             //TODO: Implement add review feature
         }
 
-        public void LoadReviews(ListBox listbox)
+        public void LoadSubjectReviews()
         {
-            //TODO: Fetch reviews of specific study subject
-            listbox.Items.Clear();
-            listbox.Items.Add("The best subject ever");
+            List<Review> reviews = DB.Instance.Reviews.Where(r => r.StudySubject.Id == StudySubject.Id).ToList();
+            foreach(Review review in reviews)
+            {
+                StudySubjectView.ReviewList.Items.Add(review);
+            }
         }
 
         public void HandlePreviousClicked()
