@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Advisor.View;
+﻿using Advisor.View;
 using Advisor.Model;
-using System.Windows.Forms;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Advisor.Controller
 {
@@ -14,22 +10,25 @@ namespace Advisor.Controller
         public StudySubjectView StudySubjectView { get; set; }
         public StudySubjectListView StudySubjectListView { get; set; }
         public StudyProgram StudyProgram { get; set; }
-        public StudySubjectController(StudyProgram studyProgram)
+        public StudySubject StudySubject { get; set; }
+        public StudySubjectController(StudyProgram studyProgram, StudySubject subject)
         {
             StudyProgram = studyProgram;
+            StudySubject = subject;
         }
 
         public void HandleAddReview()
         {
             //TODO: Implement add review feature
-            throw new NotImplementedException();
         }
 
-        public void LoadReviews(ListBox listbox)
+        public void LoadSubjectReviews()
         {
-            //TODO: Fetch reviews of specific study subject
-            listbox.Items.Clear();
-            listbox.Items.Add("The best subject ever");
+            List<Review> reviews = DB.Instance.Reviews.Where(r => r.StudySubject.Id == StudySubject.Id).ToList();
+            foreach(Review review in reviews)
+            {
+                StudySubjectView.ReviewList.Items.Add(review);
+            }
         }
 
         public void HandlePreviousClicked()
@@ -37,7 +36,6 @@ namespace Advisor.Controller
             StudySubjectView.Hide();
             StudySubjectListView = new StudySubjectListView(new StudySubjectListController(StudyProgram));
             StudySubjectListView.Show();
-
         }
     }
 }

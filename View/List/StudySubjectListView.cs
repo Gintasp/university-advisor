@@ -1,4 +1,5 @@
 ﻿using Advisor.Controller;
+using Advisor.Model;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -37,7 +38,7 @@ namespace Advisor.View
 
         private void OnAddStudySubjectButtonClick(object sender, EventArgs e)
         {
-            //TODO: Add handler
+            //TODO: handle adding new study subject
         }
 
         private void LoadStudySubjectData(object sender, EventArgs e)
@@ -52,11 +53,11 @@ namespace Advisor.View
 
         private void SelectedSubject(object sender, EventArgs e)
         {
-            string title = StudySubjectData.SelectedItem.ToString();
-            StudySubjectListController.HandleSelectedSubject(title);
+            StudySubject subject = (StudySubject) StudySubjectData.SelectedItem;
+            StudySubjectListController.HandleSelectedSubject(subject);
         }
 
-        private void onFormClose(object sender, FormClosedEventArgs e)
+        private void OnFormClose(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }

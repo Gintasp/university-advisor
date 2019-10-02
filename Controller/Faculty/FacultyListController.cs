@@ -1,5 +1,4 @@
-﻿using System.Windows.Forms;
-using Advisor.Model;
+﻿using Advisor.Model;
 using Advisor.View;
 using System.Linq;
 using System.Collections.Generic;
@@ -12,7 +11,6 @@ namespace Advisor.Controller
         public UniversityView UniversityView { get; set; }
         public FacultyView FacultyView { get; set; }
         public IFacultyController FacultyController { get; set; }
-        public University University { get; set; }
 
         public FacultyListController(IFacultyController facultyController)
         {
@@ -22,7 +20,8 @@ namespace Advisor.Controller
         public void LoadFacultyList(University uni)
         {
             FacultyListView.FacultiesList.Items.Clear();
-            foreach (Faculty faculty in uni.Faculties)
+            List<Faculty> faculties = DB.Instance.Faculties.Where(f => f.University.Id == uni.Id).ToList();
+            foreach (Faculty faculty in faculties)
             {
                 FacultyListView.FacultiesList.Items.Add(faculty);
             }

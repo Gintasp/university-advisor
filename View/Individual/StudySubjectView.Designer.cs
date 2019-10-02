@@ -56,7 +56,7 @@
             this.PreviousForm.TabIndex = 8;
             this.PreviousForm.TabStop = true;
             this.PreviousForm.Text = "<<";
-            this.PreviousForm.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PreviousForm_LinkClicked);
+            this.PreviousForm.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnPreviousButtonClick);
             // 
             // Reviews
             // 
@@ -95,8 +95,8 @@
             this.Name = "StudySubjectView";
             this.Text = "StudySubject";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.onFormClosed);
-            this.Load += new System.EventHandler(this.StudySubjectView_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnFormClosed);
+            this.Load += new System.EventHandler(this.OnViewLoad);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -100,7 +100,7 @@
             this.Name = "HomeView";
             this.Text = "Home";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.onFormClose);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnFormClose);
             this.Load += new System.EventHandler(this.LoadUniversityList);
             this.ResumeLayout(false);
             this.PerformLayout();

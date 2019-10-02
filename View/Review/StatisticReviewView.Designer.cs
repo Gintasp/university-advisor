@@ -1,6 +1,6 @@
 ﻿namespace Advisor.View
 {
-    partial class StatsReviewView
+    partial class StatisticReviewView
     {
         /// <summary>
         /// Required designer variable.
@@ -201,7 +201,7 @@
             this.txtDuration.Size = new System.Drawing.Size(183, 25);
             this.txtDuration.TabIndex = 24;
             // 
-            // StatsReviewView
+            // StatisticReviewView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -223,8 +223,8 @@
             this.Controls.Add(this.btnSubmitReview);
             this.Controls.Add(this.ReviewTextBox);
             this.Controls.Add(this.ReviewInputTitle);
-            this.Name = "StatsReviewView";
-            this.Text = "StatsReviewView";
+            this.Name = "StatisticReviewView";
+            this.Text = "StatisticReviewView";
             ((System.ComponentModel.ISupportInitialize)(this.ReviewScoreBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

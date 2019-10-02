@@ -1,7 +1,7 @@
-﻿using System.Collections.ObjectModel;
-using System.Windows.Forms;
-using Advisor.Model;
+﻿using Advisor.Model;
 using Advisor.View;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Advisor.Controller
 {
@@ -21,7 +21,8 @@ namespace Advisor.Controller
         public void LoadStudyProgramData(Faculty faculty)
         {
             FacultyView.StudyProgramList.Items.Clear();
-            foreach (StudyProgram studyProgram in faculty.StudyPrograms)
+            List<StudyProgram> programs = DB.Instance.StudyPrograms.Where(p => p.Faculty.Id == faculty.Id).ToList();
+            foreach (StudyProgram studyProgram in programs)
             {
                 FacultyView.StudyProgramList.Items.Add(studyProgram);
             }

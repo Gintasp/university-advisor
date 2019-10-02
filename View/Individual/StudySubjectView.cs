@@ -1,39 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Advisor.Controller;
+using Advisor.Model;
 
 namespace Advisor.View
 {
     public partial class StudySubjectView : Form
     {
         public IStudySubjectController StudySubjectController { get; set; }
+        public ListBox ReviewList { get; set; }
+        public StudySubject StudySubject { get; set; }
         
-        public StudySubjectView(IStudySubjectController studySubjectController)
+        public StudySubjectView(IStudySubjectController studySubjectController, StudySubject subject)
         {
             StudySubjectController = studySubjectController;
+            StudySubject = subject;
             StudySubjectController.StudySubjectView = this;
             InitializeComponent();
+            ReviewList = Reviews;
         }
-        private void StudySubjectView_Load(object sender, EventArgs e)
+
+        private void OnViewLoad(object sender, EventArgs e)
         {
-            StudySubjectController.LoadReviews(Reviews);
+            StudySubjectController.LoadSubjectReviews();
+            SubjectTitle.Text = StudySubject.Title;
         }
-        private void PreviousForm_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+
+        private void OnPreviousButtonClick(object sender, LinkLabelLinkClickedEventArgs e)
         {
             StudySubjectController.HandlePreviousClicked();
         }
 
-        private void onFormClosed(object sender, FormClosedEventArgs e)
+        private void OnFormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
-
     }
 }

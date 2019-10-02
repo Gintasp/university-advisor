@@ -64,14 +64,14 @@
     <Compile Include="Controller\Home\HomeController.cs" />
     <Compile Include="Controller\Auth\IAuthController.cs" />
     <Compile Include="Controller\Home\IHomeController.cs" />
-    <Compile Include="Controller\IStudySubjectController.cs" />
-    <Compile Include="Controller\LecturerList\ILecturerListController.cs" />
-    <Compile Include="Controller\LecturerList\LecturerListController.cs" />
+    <Compile Include="Controller\StudySubject\IStudySubjectController.cs" />
+    <Compile Include="Controller\Lecturer\ILecturerListController.cs" />
+    <Compile Include="Controller\Lecturer\LecturerListController.cs" />
     <Compile Include="Controller\StudyProgram\IStudyProgramController.cs" />
     <Compile Include="Controller\StudyProgram\StudyProgramController.cs" />
-    <Compile Include="Controller\StudySubjectController.cs" />
-    <Compile Include="Controller\StudySubjectList\IStudySubjectListController.cs" />
-    <Compile Include="Controller\StudySubjectList\StudySubjectListController.cs" />
+    <Compile Include="Controller\StudySubject\StudySubjectController.cs" />
+    <Compile Include="Controller\StudySubject\IStudySubjectListController.cs" />
+    <Compile Include="Controller\StudySubject\StudySubjectListController.cs" />
     <Compile Include="Controller\Review\IReviewController.cs" />
     <Compile Include="Controller\Review\ReviewController.cs" />
     <Compile Include="Controller\University\IUniversityController.cs" />
@@ -131,10 +131,10 @@
     <Compile Include="Service\Validator\ISignupDataValidator.cs" />
     <Compile Include="Service\Validator\SignupDataValidator.cs" />
     <Compile Include="Service\Validator\LoginDataValidator.cs" />
-    <Compile Include="View\FacultyListView.cs">
+    <Compile Include="View\List\FacultyListView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FacultyListView.Designer.cs">
+    <Compile Include="View\List\FacultyListView.Designer.cs">
       <DependentUpon>FacultyListView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Individual\FacultyView.cs">
@@ -143,22 +143,22 @@
     <Compile Include="View\Individual\FacultyView.Designer.cs">
       <DependentUpon>FacultyView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\LecturerListView.cs">
+    <Compile Include="View\List\LecturerListView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\LecturerListView.Designer.cs">
+    <Compile Include="View\List\LecturerListView.Designer.cs">
       <DependentUpon>LecturerListView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\StatsReviewView.cs">
+    <Compile Include="View\Review\StatisticReviewView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\StatsReviewView.Designer.cs">
-      <DependentUpon>StatsReviewView.cs</DependentUpon>
+    <Compile Include="View\Review\StatisticReviewView.Designer.cs">
+      <DependentUpon>StatisticReviewView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TextReviewView.cs">
+    <Compile Include="View\Review\TextReviewView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\TextReviewView.Designer.cs">
+    <Compile Include="View\Review\TextReviewView.Designer.cs">
       <DependentUpon>TextReviewView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Individual\StudyProgramView.cs">
@@ -197,10 +197,10 @@
     <Compile Include="View\Individual\UniversityView.Designer.cs">
       <DependentUpon>UniversityView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\StudySubjectListView.cs">
+    <Compile Include="View\List\StudySubjectListView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\StudySubjectListView.Designer.cs">
+    <Compile Include="View\List\StudySubjectListView.Designer.cs">
       <DependentUpon>StudySubjectListView.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Migrations\201909221555231_MainEntities.resx">
@@ -239,19 +239,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\FacultyListView.resx">
+    <EmbeddedResource Include="View\List\FacultyListView.resx">
       <DependentUpon>FacultyListView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Individual\FacultyView.resx">
       <DependentUpon>FacultyView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\LecturerListView.resx">
+    <EmbeddedResource Include="View\List\LecturerListView.resx">
       <DependentUpon>LecturerListView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\StatsReviewView.resx">
-      <DependentUpon>StatsReviewView.cs</DependentUpon>
+    <EmbeddedResource Include="View\Review\StatisticReviewView.resx">
+      <DependentUpon>StatisticReviewView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\TextReviewView.resx">
+    <EmbeddedResource Include="View\Review\TextReviewView.resx">
       <DependentUpon>TextReviewView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Individual\StudyProgramView.resx">
@@ -273,7 +273,7 @@
     <EmbeddedResource Include="View\Individual\UniversityView.resx">
       <DependentUpon>UniversityView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\StudySubjectListView.resx">
+    <EmbeddedResource Include="View\List\StudySubjectListView.resx">
       <DependentUpon>StudySubjectListView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Migrations\Data\Faculty.csv" />
@@ -297,8 +297,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\StudySubject\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
