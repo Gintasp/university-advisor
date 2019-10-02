@@ -6,7 +6,6 @@ namespace Advisor.Controller
     public class LecturerListController : ILecturerListController
     {
         public LecturerListView LecturerListView { get; set; }
-
         public Faculty Faculty { get; set; }
 
         public LecturerListController(Faculty faculty)

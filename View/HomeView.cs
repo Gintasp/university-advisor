@@ -52,7 +52,7 @@ namespace Advisor.View
             HomeController.HandleUniversitySelect(uni);
         }
 
-        private void onFormClose(object sender, FormClosedEventArgs e)
+        private void OnFormClose(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }

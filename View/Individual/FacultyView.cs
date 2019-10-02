@@ -47,7 +47,7 @@ namespace Advisor.View
             FacultyController.HandlePreviousButtonClick(University);
         }
 
-        private void onStudyProgramSelect(object sender, EventArgs e)
+        private void OnStudyProgramSelect(object sender, EventArgs e)
         {
             StudyProgram selectedProgram = (StudyProgram) StudyProgramListBox.SelectedItem;
             if(selectedProgram != null)
@@ -56,7 +56,7 @@ namespace Advisor.View
             }
         }
 
-        private void onFormClose(object sender, FormClosedEventArgs e)
+        private void OnFormClose(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }

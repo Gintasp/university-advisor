@@ -145,7 +145,7 @@
             this.StudyProgramListBox.Name = "StudyProgramListBox";
             this.StudyProgramListBox.Size = new System.Drawing.Size(454, 298);
             this.StudyProgramListBox.TabIndex = 7;
-            this.StudyProgramListBox.SelectedIndexChanged += new System.EventHandler(this.onStudyProgramSelect);
+            this.StudyProgramListBox.SelectedIndexChanged += new System.EventHandler(this.OnStudyProgramSelect);
             // 
             // label2
             // 
@@ -177,7 +177,7 @@
             this.Name = "FacultyView";
             this.Text = "Faculty";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.onFormClose);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnFormClose);
             this.Load += new System.EventHandler(this.OnFacultyLoad);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

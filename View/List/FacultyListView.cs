@@ -59,7 +59,7 @@ namespace Advisor.View
             FacultyListController.HandleFacultySelect(faculty, University);
         }
 
-        private void onFormClose(object sender, FormClosedEventArgs e)
+        private void OnFormClose(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }

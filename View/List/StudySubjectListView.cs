@@ -57,7 +57,7 @@ namespace Advisor.View
             StudySubjectListController.HandleSelectedSubject(subject);
         }
 
-        private void onFormClose(object sender, FormClosedEventArgs e)
+        private void OnFormClose(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }

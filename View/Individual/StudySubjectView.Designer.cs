@@ -95,7 +95,7 @@
             this.Name = "StudySubjectView";
             this.Text = "StudySubject";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.onFormClosed);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnFormClosed);
             this.Load += new System.EventHandler(this.OnViewLoad);
             this.ResumeLayout(false);
             this.PerformLayout();
