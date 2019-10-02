@@ -64,14 +64,14 @@
     <Compile Include="Controller\Home\HomeController.cs" />
     <Compile Include="Controller\Auth\IAuthController.cs" />
     <Compile Include="Controller\Home\IHomeController.cs" />
-    <Compile Include="Controller\IStudySubjectController.cs" />
-    <Compile Include="Controller\LecturerList\ILecturerListController.cs" />
-    <Compile Include="Controller\LecturerList\LecturerListController.cs" />
+    <Compile Include="Controller\StudySubject\IStudySubjectController.cs" />
+    <Compile Include="Controller\Lecturer\ILecturerListController.cs" />
+    <Compile Include="Controller\Lecturer\LecturerListController.cs" />
     <Compile Include="Controller\StudyProgram\IStudyProgramController.cs" />
     <Compile Include="Controller\StudyProgram\StudyProgramController.cs" />
-    <Compile Include="Controller\StudySubjectController.cs" />
-    <Compile Include="Controller\StudySubjectList\IStudySubjectListController.cs" />
-    <Compile Include="Controller\StudySubjectList\StudySubjectListController.cs" />
+    <Compile Include="Controller\StudySubject\StudySubjectController.cs" />
+    <Compile Include="Controller\StudySubject\IStudySubjectListController.cs" />
+    <Compile Include="Controller\StudySubject\StudySubjectListController.cs" />
     <Compile Include="Controller\Review\IReviewController.cs" />
     <Compile Include="Controller\Review\ReviewController.cs" />
     <Compile Include="Controller\University\IUniversityController.cs" />
@@ -297,8 +297,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\StudySubject\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

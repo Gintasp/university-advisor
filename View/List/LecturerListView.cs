@@ -13,8 +13,8 @@ namespace Advisor.View
         {
             LecturerListController = lecturerListController;
             LecturerListController.LecturerListView = this;
-            LecturerList = LecturerData;
             InitializeComponent();
+            LecturerList = LecturerData;
         }
 
         private void OnSearchInputEnter(object sender, EventArgs e)

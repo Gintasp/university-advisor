@@ -19,5 +19,10 @@ namespace Advisor.Model
         public Lecturer()
         {
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
