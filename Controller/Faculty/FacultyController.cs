@@ -33,5 +33,12 @@ namespace Advisor.Controller
             StudyProgramView = new StudyProgramView(new StudyProgramController(selectedProgram, faculty, uni));
             StudyProgramView.Show();
         }
+
+        public void HandleLecturersButtonClick(Faculty faculty)
+        {
+            FacultyView.Hide();
+            LecturerListView LecturerListView = new LecturerListView(new LecturerListController(faculty));
+            LecturerListView.Show();
+        }
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.previousForm = new System.Windows.Forms.LinkLabel();
-            this.submitReviewButton = new System.Windows.Forms.Button();
+            this.btnSubmitReview = new System.Windows.Forms.Button();
             this.ReviewTextBox = new System.Windows.Forms.RichTextBox();
             this.ReviewInputTitle = new System.Windows.Forms.Label();
             this.txtOccupation = new System.Windows.Forms.TextBox();
@@ -58,17 +58,17 @@
             this.previousForm.Text = "<<";
             this.previousForm.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnPreviousFormLinkClick);
             // 
-            // submitReviewButton
+            // btnSubmitReview
             // 
-            this.submitReviewButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitReviewButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.submitReviewButton.Location = new System.Drawing.Point(295, 570);
-            this.submitReviewButton.Name = "submitReviewButton";
-            this.submitReviewButton.Size = new System.Drawing.Size(414, 37);
-            this.submitReviewButton.TabIndex = 7;
-            this.submitReviewButton.Text = "Submit Review";
-            this.submitReviewButton.UseVisualStyleBackColor = true;
-            this.submitReviewButton.Click += new System.EventHandler(this.OnSubmitReviewButtonClick);
+            this.btnSubmitReview.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmitReview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSubmitReview.Location = new System.Drawing.Point(295, 570);
+            this.btnSubmitReview.Name = "btnSubmitReview";
+            this.btnSubmitReview.Size = new System.Drawing.Size(414, 37);
+            this.btnSubmitReview.TabIndex = 7;
+            this.btnSubmitReview.Text = "Submit Review";
+            this.btnSubmitReview.UseVisualStyleBackColor = true;
+            this.btnSubmitReview.Click += new System.EventHandler(this.OnSubmitReviewButtonClick);
             // 
             // ReviewTextBox
             // 
@@ -220,7 +220,7 @@
             this.Controls.Add(this.OccupationLabel);
             this.Controls.Add(this.txtOccupation);
             this.Controls.Add(this.previousForm);
-            this.Controls.Add(this.submitReviewButton);
+            this.Controls.Add(this.btnSubmitReview);
             this.Controls.Add(this.ReviewTextBox);
             this.Controls.Add(this.ReviewInputTitle);
             this.Name = "StatsReviewView";
@@ -234,7 +234,7 @@
         #endregion
 
         private System.Windows.Forms.LinkLabel previousForm;
-        private System.Windows.Forms.Button submitReviewButton;
+        private System.Windows.Forms.Button btnSubmitReview;
         private System.Windows.Forms.RichTextBox ReviewTextBox;
         private System.Windows.Forms.Label ReviewInputTitle;
         private System.Windows.Forms.TextBox txtOccupation;
