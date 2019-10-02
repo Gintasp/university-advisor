@@ -120,9 +120,13 @@ namespace Advisor.Migrations
         {
             var facultyList = File.ReadAllLines(filePath).ToList();
             List<Faculty> facultiesToWrite = new List<Faculty>();
-            foreach (string faculty in facultyList)
+            foreach (string line in facultyList)
             {
-                Faculty newFaculty = new Faculty() { Title = faculty };
+                Faculty newFaculty = new Faculty()
+                {
+                    Title = line.Split(',')[0],
+                    Description = line.Split(',')[1]
+                };
                 facultiesToWrite.Add(newFaculty);
             }
 
