@@ -38,7 +38,7 @@ namespace Advisor.View
 
         private void OnAddStudySubjectButtonClick(object sender, EventArgs e)
         {
-            //TODO: Add handler
+            //TODO: handle adding new study subject
         }
 
         private void LoadStudySubjectData(object sender, EventArgs e)

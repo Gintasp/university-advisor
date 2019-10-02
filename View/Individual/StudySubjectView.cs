@@ -19,11 +19,13 @@ namespace Advisor.View
             InitializeComponent();
             ReviewList = Reviews;
         }
+
         private void OnViewLoad(object sender, EventArgs e)
         {
             StudySubjectController.LoadSubjectReviews();
             SubjectTitle.Text = StudySubject.Title;
         }
+
         private void OnPreviousButtonClick(object sender, LinkLabelLinkClickedEventArgs e)
         {
             StudySubjectController.HandlePreviousClicked();
@@ -33,6 +35,5 @@ namespace Advisor.View
         {
             Application.Exit();
         }
-
     }
 }
