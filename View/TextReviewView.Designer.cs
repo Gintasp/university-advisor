@@ -34,6 +34,7 @@
             this.PreviousForm = new System.Windows.Forms.LinkLabel();
             this.ReviewScoreBar = new System.Windows.Forms.TrackBar();
             this.ScoreLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ReviewScoreBar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             // 
             // ReviewTextBox
             // 
-            this.ReviewTextBox.Location = new System.Drawing.Point(295, 186);
+            this.ReviewTextBox.Location = new System.Drawing.Point(295, 189);
             this.ReviewTextBox.Name = "ReviewTextBox";
             this.ReviewTextBox.Size = new System.Drawing.Size(414, 212);
             this.ReviewTextBox.TabIndex = 1;
@@ -60,7 +61,7 @@
             // 
             this.SubmitReviewButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SubmitReviewButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.SubmitReviewButton.Location = new System.Drawing.Point(295, 455);
+            this.SubmitReviewButton.Location = new System.Drawing.Point(295, 482);
             this.SubmitReviewButton.Name = "SubmitReviewButton";
             this.SubmitReviewButton.Size = new System.Drawing.Size(414, 37);
             this.SubmitReviewButton.TabIndex = 2;
@@ -81,28 +82,39 @@
             // 
             // ReviewScoreBar
             // 
-            this.ReviewScoreBar.Location = new System.Drawing.Point(374, 404);
+            this.ReviewScoreBar.Location = new System.Drawing.Point(297, 431);
             this.ReviewScoreBar.Minimum = 1;
             this.ReviewScoreBar.Name = "ReviewScoreBar";
-            this.ReviewScoreBar.Size = new System.Drawing.Size(335, 45);
+            this.ReviewScoreBar.Size = new System.Drawing.Size(412, 45);
             this.ReviewScoreBar.TabIndex = 11;
             this.ReviewScoreBar.Value = 1;
             // 
             // ScoreLabel
             // 
             this.ScoreLabel.AutoSize = true;
-            this.ScoreLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreLabel.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ScoreLabel.Location = new System.Drawing.Point(294, 404);
             this.ScoreLabel.Name = "ScoreLabel";
-            this.ScoreLabel.Size = new System.Drawing.Size(74, 17);
+            this.ScoreLabel.Size = new System.Drawing.Size(58, 21);
             this.ScoreLabel.TabIndex = 12;
-            this.ScoreLabel.Text = "Your Score:";
+            this.ScoreLabel.Text = "Rating:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label1.Location = new System.Drawing.Point(293, 163);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 21);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Your review:";
             // 
             // TextReviewView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 614);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ScoreLabel);
             this.Controls.Add(this.ReviewScoreBar);
             this.Controls.Add(this.PreviousForm);
@@ -125,5 +137,6 @@
         private System.Windows.Forms.LinkLabel PreviousForm;
         private System.Windows.Forms.TrackBar ReviewScoreBar;
         private System.Windows.Forms.Label ScoreLabel;
+        private System.Windows.Forms.Label label1;
     }
 }
