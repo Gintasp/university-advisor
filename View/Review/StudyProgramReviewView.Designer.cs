@@ -50,12 +50,12 @@
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.YearPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.YearPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSubmitReview
@@ -124,7 +124,7 @@
             this.panel1.Controls.Add(this.numericUpDown3);
             this.panel1.Controls.Add(this.ScoreLabel);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.YearPanel);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.radioButton2);
             this.panel1.Controls.Add(this.radioButton1);
@@ -334,16 +334,16 @@
             this.label6.Text = "Your anonymous reviews help us better assess study program quality across the uni" +
     "versities";
             // 
-            // panel2
+            // YearPanel
             // 
-            this.panel2.Controls.Add(this.RadioFirst);
-            this.panel2.Controls.Add(this.RadioSecond);
-            this.panel2.Controls.Add(this.RadioThird);
-            this.panel2.Controls.Add(this.RadioFourth);
-            this.panel2.Location = new System.Drawing.Point(5, 172);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(326, 43);
-            this.panel2.TabIndex = 35;
+            this.YearPanel.Controls.Add(this.RadioFirst);
+            this.YearPanel.Controls.Add(this.RadioSecond);
+            this.YearPanel.Controls.Add(this.RadioThird);
+            this.YearPanel.Controls.Add(this.RadioFourth);
+            this.YearPanel.Location = new System.Drawing.Point(5, 172);
+            this.YearPanel.Name = "YearPanel";
+            this.YearPanel.Size = new System.Drawing.Size(326, 43);
+            this.YearPanel.TabIndex = 35;
             // 
             // StudyProgramReviewView
             // 
@@ -363,8 +363,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.YearPanel.ResumeLayout(false);
+            this.YearPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -393,6 +393,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown numericUpDown3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel YearPanel;
     }
 }
