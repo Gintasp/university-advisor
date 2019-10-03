@@ -4,13 +4,13 @@ using Advisor.Controller;
 
 namespace Advisor.View
 {
-    public partial class StatisticReviewView : Form
+    public partial class CourseReviewView : Form
     {
         public IReviewController ReviewController { get; set; }
-        public StatisticReviewView(IReviewController reviewController)
+        public CourseReviewView(IReviewController reviewController)
         {
             ReviewController = reviewController;
-            reviewController.StatisticReviewView = this;
+            reviewController.TextReviewView = this;
             InitializeComponent();
         }
 

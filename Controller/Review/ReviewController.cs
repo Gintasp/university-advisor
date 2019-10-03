@@ -4,9 +4,9 @@ namespace Advisor.Controller
 {
     class ReviewController : IReviewController
     {
-        public TextReviewView TextReviewView { get; set; }
+        public CourseReviewView TextReviewView { get; set; }
 
-        public StatisticReviewView StatisticReviewView { get; set; }
+        public StudyProgramReviewView StatisticReviewView { get; set; }
 
         //!! Both review forms use the same methods in their button actions !!
         //!! When implementing functionality it will be necessary to identify which form called the method !!

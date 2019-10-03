@@ -1,6 +1,6 @@
 ﻿namespace Advisor.View
 {
-    partial class TextReviewView
+    partial class CourseReviewView
     {
         /// <summary>
         /// Required designer variable.
@@ -109,7 +109,7 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "Your review:";
             // 
-            // TextReviewView
+            // CourseReviewView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,7 +121,7 @@
             this.Controls.Add(this.SubmitReviewButton);
             this.Controls.Add(this.ReviewTextBox);
             this.Controls.Add(this.ReviewInputTitle);
-            this.Name = "TextReviewView";
+            this.Name = "CourseReviewView";
             this.Text = "ReviewView";
             ((System.ComponentModel.ISupportInitialize)(this.ReviewScoreBar)).EndInit();
             this.ResumeLayout(false);

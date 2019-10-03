@@ -4,8 +4,8 @@ namespace Advisor.Controller
 {
     public interface IReviewController
     {
-        TextReviewView TextReviewView { get; set; }
-        StatisticReviewView StatisticReviewView { get; set; }
+        CourseReviewView TextReviewView { get; set; }
+        StudyProgramReviewView StatisticReviewView { get; set; }
         void HandleSubmitReviewButtonClick();
         void HandlePreviousFormLinkClick();
     }
