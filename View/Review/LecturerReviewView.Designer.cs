@@ -310,9 +310,9 @@
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.Location = new System.Drawing.Point(181, 495);
+            this.button1.Location = new System.Drawing.Point(181, 496);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(411, 49);
+            this.button1.Size = new System.Drawing.Size(411, 37);
             this.button1.TabIndex = 44;
             this.button1.Text = "Submit Review";
             this.button1.UseVisualStyleBackColor = true;
@@ -321,7 +321,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 612);
+            this.ClientSize = new System.Drawing.Size(805, 573);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panel2);
@@ -329,7 +329,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Name = "LecturerReviewView";
-            this.Text = "LecturerReviewView";
+            this.Text = "Leave a review";
             this.Click += new System.EventHandler(this.OnSubmitReviewButtonClick);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
