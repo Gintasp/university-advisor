@@ -10,7 +10,7 @@ namespace Advisor.View
         public StatisticReviewView(IReviewController reviewController)
         {
             ReviewController = reviewController;
-            reviewController.StatsReviewView = this;
+            reviewController.StatisticReviewView = this;
             InitializeComponent();
         }
 

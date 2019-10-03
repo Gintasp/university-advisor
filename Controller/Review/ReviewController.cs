@@ -6,7 +6,7 @@ namespace Advisor.Controller
     {
         public TextReviewView TextReviewView { get; set; }
 
-        public StatisticReviewView StatsReviewView { get; set; }
+        public StatisticReviewView StatisticReviewView { get; set; }
 
         //!! Both review forms use the same methods in their button actions !!
         //!! When implementing functionality it will be necessary to identify which form called the method !!

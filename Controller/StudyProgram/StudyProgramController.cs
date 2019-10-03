@@ -10,7 +10,7 @@ namespace Advisor.Controller
         public Faculty Faculty { get; set; }
         public FacultyView FacultyView { get; set; }
         public University University { get; set; }
-        public StudySubjectListView StudySubjectListView { get; set; }
+        public CourseListView CourseListView { get; set; }
 
         public StudyProgramController(StudyProgram studyProgram, Faculty faculty, University uni)
         {
@@ -35,11 +35,11 @@ namespace Advisor.Controller
             FacultyView.Show();
         }
 
-        public void HandleStudySubjectsButtonClick()
+        public void HandleCoursesButtonClick()
         {
             StudyProgramView.Hide();
-            StudySubjectListView = new StudySubjectListView(new StudySubjectListController(StudyProgram));
-            StudySubjectListView.Show();
+            CourseListView = new CourseListView(new CourseListController(StudyProgram));
+            CourseListView.Show();
         }
     }
 }

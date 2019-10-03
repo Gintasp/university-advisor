@@ -1,6 +1,6 @@
 ﻿namespace Advisor.View
 {
-    partial class StudySubjectListView
+    partial class CourseListView
     {
         /// <summary>
         /// Required designer variable.
@@ -30,9 +30,9 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.StudySubjectData = new System.Windows.Forms.ListBox();
+            this.CourseData = new System.Windows.Forms.ListBox();
             this.PreviousForm = new System.Windows.Forms.LinkLabel();
-            this.btnAddStudySubject = new System.Windows.Forms.Button();
+            this.btnAddCourse = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -45,7 +45,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(331, 62);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Study Subjects";
+            this.label1.Text = "Courses";
             // 
             // txtSearch
             // 
@@ -63,17 +63,17 @@
             // 
             // StudySubjectData
             // 
-            this.StudySubjectData.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.StudySubjectData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StudySubjectData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.StudySubjectData.FormattingEnabled = true;
-            this.StudySubjectData.ItemHeight = 28;
-            this.StudySubjectData.Location = new System.Drawing.Point(380, 251);
-            this.StudySubjectData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.StudySubjectData.Name = "StudySubjectData";
-            this.StudySubjectData.Size = new System.Drawing.Size(552, 312);
-            this.StudySubjectData.TabIndex = 2;
-            this.StudySubjectData.SelectedIndexChanged += new System.EventHandler(this.SelectedSubject);
+            this.CourseData.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CourseData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CourseData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.CourseData.FormattingEnabled = true;
+            this.CourseData.ItemHeight = 28;
+            this.CourseData.Location = new System.Drawing.Point(380, 251);
+            this.CourseData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CourseData.Name = "CourseData";
+            this.CourseData.Size = new System.Drawing.Size(552, 312);
+            this.CourseData.TabIndex = 2;
+            this.CourseData.SelectedIndexChanged += new System.EventHandler(this.OnCourseSelect);
             // 
             // PreviousForm
             // 
@@ -89,35 +89,35 @@
             // 
             // btnAddStudySubject
             // 
-            this.btnAddStudySubject.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddStudySubject.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddStudySubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAddStudySubject.Location = new System.Drawing.Point(380, 614);
-            this.btnAddStudySubject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAddStudySubject.Name = "btnAddStudySubject";
-            this.btnAddStudySubject.Size = new System.Drawing.Size(552, 46);
-            this.btnAddStudySubject.TabIndex = 4;
-            this.btnAddStudySubject.Text = "Add Study Subject";
-            this.btnAddStudySubject.UseVisualStyleBackColor = true;
-            this.btnAddStudySubject.Click += new System.EventHandler(this.OnAddStudySubjectButtonClick);
+            this.btnAddCourse.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddCourse.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAddCourse.Location = new System.Drawing.Point(380, 614);
+            this.btnAddCourse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddCourse.Name = "btnAddCourse";
+            this.btnAddCourse.Size = new System.Drawing.Size(552, 46);
+            this.btnAddCourse.TabIndex = 4;
+            this.btnAddCourse.Text = "Add Course";
+            this.btnAddCourse.UseVisualStyleBackColor = true;
+            this.btnAddCourse.Click += new System.EventHandler(this.OnAddCourseButtonClick);
             // 
             // StudySubjectListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1314, 755);
-            this.Controls.Add(this.btnAddStudySubject);
+            this.Controls.Add(this.btnAddCourse);
             this.Controls.Add(this.PreviousForm);
-            this.Controls.Add(this.StudySubjectData);
+            this.Controls.Add(this.CourseData);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "StudySubjectListView";
+            this.Name = "CourseListView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Study Subjects";
+            this.Text = "Courses";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnFormClose);
-            this.Load += new System.EventHandler(this.LoadStudySubjectData);
+            this.Load += new System.EventHandler(this.OnViewLoad);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,8 +127,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.ListBox StudySubjectData;
+        private System.Windows.Forms.ListBox CourseData;
         private System.Windows.Forms.LinkLabel PreviousForm;
-        private System.Windows.Forms.Button btnAddStudySubject;
+        private System.Windows.Forms.Button btnAddCourse;
     }
 }

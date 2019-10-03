@@ -28,7 +28,7 @@ namespace Advisor.Migrations
             //WARNING: The order of these function calls does matter
             LoadUsers(context, dataFolderPath + "User.csv");
             LoadReviews(context, dataFolderPath + "Review.csv");
-            LoadStudySubjects(context, dataFolderPath + "StudySubject.csv");
+            LoadCourses(context, dataFolderPath + "Course.csv");
             LoadStudyPrograms(context, dataFolderPath + "StudyProgram.csv");
             LoadLecturers(context, dataFolderPath + "Lecturer.csv");
             LoadUniversities(context, dataFolderPath + "University.csv");
@@ -37,7 +37,7 @@ namespace Advisor.Migrations
             LoadFacultyUniversityRelations(context);
             LoadLecturerFacultyRelations(context);
             LoadStudyProgramFacultyRelations(context);
-            LoadStudySubjectRelations(context);
+            LoadCourseRelations(context);
             LoadReviewRelations(context);
         }
 
@@ -45,20 +45,20 @@ namespace Advisor.Migrations
         {
             Random r = new Random();
             var programs = context.StudyPrograms.ToList();
-            var subjects = context.StudySubjects.ToList();
+            var courses = context.Courses.ToList();
             var lecturers = context.Lecturers.ToList();
             var reviews = context.Reviews.ToList();
 
             foreach(Review review in reviews){
                 if (review.Id % 3 == 0)
                 {
-                    review.StudySubject = subjects.ElementAt(r.Next(0, subjects.Count));
+                    review.Course = courses.ElementAt(r.Next(0, courses.Count));
                     context.SaveChanges();
                 } else if (review.Id % 2 == 0 && review.StudyProgram == null)
                 {
                     review.StudyProgram = programs.ElementAt(r.Next(0, programs.Count));
                     context.SaveChanges();
-                } else if (review.StudyProgram == null && review.StudySubject == null)
+                } else if (review.StudyProgram == null && review.Course == null)
                 {
                     review.Lecturer = lecturers.ElementAt(r.Next(0, lecturers.Count));
                     context.SaveChanges();
@@ -66,13 +66,13 @@ namespace Advisor.Migrations
             }
         }
 
-        private void LoadStudySubjectRelations(DatabaseContext context)
+        private void LoadCourseRelations(DatabaseContext context)
         {
             Random r = new Random();
-            var subjects = context.StudySubjects.ToList();
+            var courses = context.Courses.ToList();
             var programs = context.StudyPrograms.ToList();
             var lecturers = context.Lecturers.ToList();
-            foreach(StudySubject subject in subjects)
+            foreach(Course subject in courses)
             {
                 subject.Lecturer = lecturers.ElementAt(r.Next(0, lecturers.Count));
                 subject.StudyProgram = programs.ElementAt(r.Next(0, programs.Count));
@@ -187,17 +187,17 @@ namespace Advisor.Migrations
             context.SaveChanges();
         }
 
-        private void LoadStudySubjects(DatabaseContext context, string filePath)
+        private void LoadCourses(DatabaseContext context, string filePath)
         {
-            var subjectList = File.ReadAllLines(filePath).ToList();
-            List<StudySubject> studySubjectsToWrite = new List<StudySubject>();
-            foreach (string subject in subjectList)
+            var courseList = File.ReadAllLines(filePath).ToList();
+            List<Course> coursesToWrite = new List<Course>();
+            foreach (string course in courseList)
             {
-                StudySubject newSubject = new StudySubject() { Title = subject };
-                studySubjectsToWrite.Add(newSubject);
+                Course newCourse = new Course() { Title = course };
+                coursesToWrite.Add(newCourse);
             }
 
-            context.StudySubjects.AddRange(studySubjectsToWrite);
+            context.Courses.AddRange(coursesToWrite);
             context.SaveChanges();
         }
 
@@ -237,7 +237,7 @@ namespace Advisor.Migrations
         {
             //WARNING: The order of these function calls does matter
             context.Database.ExecuteSqlCommand("DELETE FROM [User]; DBCC CHECKIDENT ([User], RESEED, 0)");
-            context.Database.ExecuteSqlCommand("DELETE FROM [StudySubject]; DBCC CHECKIDENT ([StudySubject], RESEED, 0)");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Course]; DBCC CHECKIDENT ([Course], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Lecturer]; DBCC CHECKIDENT ([Lecturer], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [StudyProgram]; DBCC CHECKIDENT ([StudyProgram], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Faculty]; DBCC CHECKIDENT ([Faculty], RESEED, 0)");

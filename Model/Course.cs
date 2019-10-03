@@ -2,7 +2,7 @@
 
 namespace Advisor.Model
 {
-    public class StudySubject
+    public class Course
     {
         public int Id { get; set; }
         public string Title { get; set; }
@@ -10,7 +10,7 @@ namespace Advisor.Model
         public virtual Lecturer Lecturer { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
 
-        public StudySubject()
+        public Course()
         {
         }
 

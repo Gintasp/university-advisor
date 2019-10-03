@@ -33,7 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.AboutSection = new System.Windows.Forms.Label();
             this.btnLeaveAReview = new System.Windows.Forms.Button();
-            this.btnStudySubjects = new System.Windows.Forms.Button();
+            this.btnCourses = new System.Windows.Forms.Button();
             this.ReviewList = new System.Windows.Forms.ListBox();
             this.PreviousForm = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
@@ -110,17 +110,17 @@
             // 
             // btnStudySubjects
             // 
-            this.btnStudySubjects.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnStudySubjects.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStudySubjects.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnStudySubjects.Location = new System.Drawing.Point(47, 502);
-            this.btnStudySubjects.Margin = new System.Windows.Forms.Padding(2);
-            this.btnStudySubjects.Name = "btnStudySubjects";
-            this.btnStudySubjects.Size = new System.Drawing.Size(287, 36);
-            this.btnStudySubjects.TabIndex = 4;
-            this.btnStudySubjects.Text = "Study subjects";
-            this.btnStudySubjects.UseVisualStyleBackColor = true;
-            this.btnStudySubjects.Click += new System.EventHandler(this.OnStudySubjectsButtonClick);
+            this.btnCourses.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCourses.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCourses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCourses.Location = new System.Drawing.Point(47, 502);
+            this.btnCourses.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCourses.Name = "btnCourses";
+            this.btnCourses.Size = new System.Drawing.Size(287, 36);
+            this.btnCourses.TabIndex = 4;
+            this.btnCourses.Text = "Courses";
+            this.btnCourses.UseVisualStyleBackColor = true;
+            this.btnCourses.Click += new System.EventHandler(this.OnCoursesButtonClick);
             // 
             // ReviewList
             // 
@@ -169,7 +169,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PreviousForm);
             this.Controls.Add(this.ReviewList);
-            this.Controls.Add(this.btnStudySubjects);
+            this.Controls.Add(this.btnCourses);
             this.Controls.Add(this.btnLeaveAReview);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
@@ -193,7 +193,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnLeaveAReview;
-        private System.Windows.Forms.Button btnStudySubjects;
+        private System.Windows.Forms.Button btnCourses;
         private System.Windows.Forms.ListBox ReviewList;
         private System.Windows.Forms.Label AboutSection;
         private System.Windows.Forms.LinkLabel PreviousForm;

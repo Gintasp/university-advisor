@@ -5,31 +5,31 @@ using System.Linq;
 
 namespace Advisor.Controller
 {
-    public class StudySubjectListController : IStudySubjectListController
+    public class CourseListController : ICourseListController
     {
-        public StudySubjectListView StudySubjectListView { get; set; }
+        public CourseListView CourseListView { get; set; }
         public StudyProgramView StudyProgramView { get; set; }
         public StudyProgram StudyProgram { get; set; }
-        public StudySubjectView StudySubjectView { get; set; }
+        public CourseView CourseView { get; set; }
 
-        public StudySubjectListController(StudyProgram studyProgram)
+        public CourseListController(StudyProgram studyProgram)
         {
             StudyProgram = studyProgram;
         }
 
-        public void LoadStudySubjectData()
+        public void LoadCourseData()
         {
-            List<StudySubject> subjects = DB.Instance.StudySubjects.Where(s => s.StudyProgram.Id == StudyProgram.Id).ToList();
-            foreach(StudySubject subject in subjects)
+            List<Course> courses = DB.Instance.Courses.Where(s => s.StudyProgram.Id == StudyProgram.Id).ToList();
+            foreach(Course course in courses)
             {
-                StudySubjectListView.StudySubjectList.Items.Add(subject);
+                CourseListView.CourseList.Items.Add(course);
             }
         }
-        public void HandleSelectedSubject(StudySubject subject)
+        public void HandleSelectedCourse(Course course)
         {
-            StudySubjectListView.Hide();
-            StudySubjectView = new StudySubjectView(new StudySubjectController(StudyProgram, subject), subject);
-            StudySubjectView.Show();
+            CourseListView.Hide();
+            CourseView = new CourseView(new CourseController(StudyProgram, course), course);
+            CourseView.Show();
         }
 
         public void HandlePreviousFormButtonClick()
@@ -37,7 +37,7 @@ namespace Advisor.Controller
             Faculty fac = GetFacultyByStudyProgram(StudyProgram);
             University uni = GetUniversityByFaculty(fac);
 
-            StudySubjectListView.Hide();
+            CourseListView.Hide();
             StudyProgramView = new StudyProgramView(new StudyProgramController(StudyProgram, fac, uni));
             StudyProgramView.Show();
         }

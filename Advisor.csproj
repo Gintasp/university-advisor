@@ -64,14 +64,14 @@
     <Compile Include="Controller\Home\HomeController.cs" />
     <Compile Include="Controller\Auth\IAuthController.cs" />
     <Compile Include="Controller\Home\IHomeController.cs" />
-    <Compile Include="Controller\StudySubject\IStudySubjectController.cs" />
+    <Compile Include="Controller\Course\ICourseController.cs" />
     <Compile Include="Controller\Lecturer\ILecturerListController.cs" />
     <Compile Include="Controller\Lecturer\LecturerListController.cs" />
     <Compile Include="Controller\StudyProgram\IStudyProgramController.cs" />
     <Compile Include="Controller\StudyProgram\StudyProgramController.cs" />
-    <Compile Include="Controller\StudySubject\StudySubjectController.cs" />
-    <Compile Include="Controller\StudySubject\IStudySubjectListController.cs" />
-    <Compile Include="Controller\StudySubject\StudySubjectListController.cs" />
+    <Compile Include="Controller\Course\CourseController.cs" />
+    <Compile Include="Controller\Course\ICourseListController.cs" />
+    <Compile Include="Controller\Course\CourseListController.cs" />
     <Compile Include="Controller\Review\IReviewController.cs" />
     <Compile Include="Controller\Review\ReviewController.cs" />
     <Compile Include="Controller\University\IUniversityController.cs" />
@@ -113,6 +113,10 @@
     <Compile Include="Migrations\201910011931117_AddFacultyDesc.Designer.cs">
       <DependentUpon>201910011931117_AddFacultyDesc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910030723042_RenameToCourse.cs" />
+    <Compile Include="Migrations\201910030723042_RenameToCourse.Designer.cs">
+      <DependentUpon>201910030723042_RenameToCourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\DatabaseContext.cs" />
     <Compile Include="Model\DB.cs" />
@@ -120,7 +124,7 @@
     <Compile Include="Model\Lecturer.cs" />
     <Compile Include="Model\Review.cs" />
     <Compile Include="Model\StudyProgram.cs" />
-    <Compile Include="Model\StudySubject.cs" />
+    <Compile Include="Model\Course.cs" />
     <Compile Include="Model\University.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
@@ -185,11 +189,11 @@
     <Compile Include="View\HomeView.Designer.cs">
       <DependentUpon>HomeView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Individual\StudySubjectView.cs">
+    <Compile Include="View\Individual\CourseView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Individual\StudySubjectView.Designer.cs">
-      <DependentUpon>StudySubjectView.cs</DependentUpon>
+    <Compile Include="View\Individual\CourseView.Designer.cs">
+      <DependentUpon>CourseView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Individual\UniversityView.cs">
       <SubType>Form</SubType>
@@ -197,11 +201,11 @@
     <Compile Include="View\Individual\UniversityView.Designer.cs">
       <DependentUpon>UniversityView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\List\StudySubjectListView.cs">
+    <Compile Include="View\List\CourseListView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\List\StudySubjectListView.Designer.cs">
-      <DependentUpon>StudySubjectListView.cs</DependentUpon>
+    <Compile Include="View\List\CourseListView.Designer.cs">
+      <DependentUpon>CourseListView.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Migrations\201909221555231_MainEntities.resx">
       <DependentUpon>201909221555231_MainEntities.cs</DependentUpon>
@@ -229,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910011931117_AddFacultyDesc.resx">
       <DependentUpon>201910011931117_AddFacultyDesc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910030723042_RenameToCourse.resx">
+      <DependentUpon>201910030723042_RenameToCourse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -267,20 +274,20 @@
     <EmbeddedResource Include="View\HomeView.resx">
       <DependentUpon>HomeView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Individual\StudySubjectView.resx">
-      <DependentUpon>StudySubjectView.cs</DependentUpon>
+    <EmbeddedResource Include="View\Individual\CourseView.resx">
+      <DependentUpon>CourseView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Individual\UniversityView.resx">
       <DependentUpon>UniversityView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\List\StudySubjectListView.resx">
-      <DependentUpon>StudySubjectListView.cs</DependentUpon>
+    <EmbeddedResource Include="View\List\CourseListView.resx">
+      <DependentUpon>CourseListView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Migrations\Data\Faculty.csv" />
     <None Include="Migrations\Data\Lecturer.csv" />
     <None Include="Migrations\Data\Review.csv" />
     <None Include="Migrations\Data\StudyProgram.csv" />
-    <None Include="Migrations\Data\StudySubject.csv" />
+    <None Include="Migrations\Data\Course.csv" />
     <None Include="Migrations\Data\University.csv" />
     <None Include="Migrations\Data\User.csv" />
     <None Include="packages.config" />
