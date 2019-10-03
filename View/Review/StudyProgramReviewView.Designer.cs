@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.previousForm = new System.Windows.Forms.LinkLabel();
             this.btnSubmitReview = new System.Windows.Forms.Button();
             this.ReviewTextBox = new System.Windows.Forms.RichTextBox();
             this.ReviewInputTitle = new System.Windows.Forms.Label();
@@ -51,28 +50,19 @@
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // previousForm
-            // 
-            this.previousForm.AutoSize = true;
-            this.previousForm.Location = new System.Drawing.Point(12, 9);
-            this.previousForm.Name = "previousForm";
-            this.previousForm.Size = new System.Drawing.Size(19, 13);
-            this.previousForm.TabIndex = 9;
-            this.previousForm.TabStop = true;
-            this.previousForm.Text = "<<";
-            this.previousForm.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnPreviousFormLinkClick);
             // 
             // btnSubmitReview
             // 
             this.btnSubmitReview.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitReview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSubmitReview.Location = new System.Drawing.Point(293, 540);
+            this.btnSubmitReview.Location = new System.Drawing.Point(215, 523);
             this.btnSubmitReview.Name = "btnSubmitReview";
             this.btnSubmitReview.Size = new System.Drawing.Size(414, 37);
             this.btnSubmitReview.TabIndex = 7;
@@ -82,7 +72,9 @@
             // 
             // ReviewTextBox
             // 
-            this.ReviewTextBox.Location = new System.Drawing.Point(295, 446);
+            this.ReviewTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ReviewTextBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ReviewTextBox.Location = new System.Drawing.Point(217, 423);
             this.ReviewTextBox.Name = "ReviewTextBox";
             this.ReviewTextBox.Size = new System.Drawing.Size(414, 82);
             this.ReviewTextBox.TabIndex = 6;
@@ -93,7 +85,7 @@
             this.ReviewInputTitle.AutoSize = true;
             this.ReviewInputTitle.Font = new System.Drawing.Font("Segoe UI", 28F);
             this.ReviewInputTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ReviewInputTitle.Location = new System.Drawing.Point(359, 49);
+            this.ReviewInputTitle.Location = new System.Drawing.Point(294, 57);
             this.ReviewInputTitle.Name = "ReviewInputTitle";
             this.ReviewInputTitle.Size = new System.Drawing.Size(272, 51);
             this.ReviewInputTitle.TabIndex = 5;
@@ -129,14 +121,11 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.numericUpDown3);
-            this.panel1.Controls.Add(this.RadioThird);
             this.panel1.Controls.Add(this.ScoreLabel);
-            this.panel1.Controls.Add(this.RadioFirst);
-            this.panel1.Controls.Add(this.RadioFourth);
-            this.panel1.Controls.Add(this.RadioSecond);
             this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.radioButton2);
             this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Controls.Add(this.label3);
@@ -147,7 +136,7 @@
             this.panel1.Controls.Add(this.Incomelabel);
             this.panel1.Controls.Add(this.txtIncome);
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.panel1.Location = new System.Drawing.Point(295, 168);
+            this.panel1.Location = new System.Drawing.Point(217, 154);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(412, 274);
             this.panel1.TabIndex = 22;
@@ -252,16 +241,16 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label4.Location = new System.Drawing.Point(4, 161);
+            this.label4.Location = new System.Drawing.Point(4, 160);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(347, 19);
-            this.label4.TabIndex = 29;
+            this.label4.TabIndex = 50;
             this.label4.Text = "Which year into the program did you start your career?";
             // 
             // RadioSecond
             // 
             this.RadioSecond.AutoSize = true;
-            this.RadioSecond.Location = new System.Drawing.Point(73, 183);
+            this.RadioSecond.Location = new System.Drawing.Point(69, 13);
             this.RadioSecond.Name = "RadioSecond";
             this.RadioSecond.Size = new System.Drawing.Size(69, 21);
             this.RadioSecond.TabIndex = 30;
@@ -272,7 +261,7 @@
             // RadioFourth
             // 
             this.RadioFourth.AutoSize = true;
-            this.RadioFourth.Location = new System.Drawing.Point(210, 183);
+            this.RadioFourth.Location = new System.Drawing.Point(205, 13);
             this.RadioFourth.Name = "RadioFourth";
             this.RadioFourth.Size = new System.Drawing.Size(63, 21);
             this.RadioFourth.TabIndex = 31;
@@ -283,7 +272,7 @@
             // RadioFirst
             // 
             this.RadioFirst.AutoSize = true;
-            this.RadioFirst.Location = new System.Drawing.Point(17, 183);
+            this.RadioFirst.Location = new System.Drawing.Point(13, 13);
             this.RadioFirst.Name = "RadioFirst";
             this.RadioFirst.Size = new System.Drawing.Size(50, 21);
             this.RadioFirst.TabIndex = 32;
@@ -294,7 +283,7 @@
             // RadioThird
             // 
             this.RadioThird.AutoSize = true;
-            this.RadioThird.Location = new System.Drawing.Point(148, 183);
+            this.RadioThird.Location = new System.Drawing.Point(143, 13);
             this.RadioThird.Name = "RadioThird";
             this.RadioThird.Size = new System.Drawing.Size(56, 21);
             this.RadioThird.TabIndex = 33;
@@ -328,7 +317,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label5.Location = new System.Drawing.Point(4, 251);
+            this.label5.Location = new System.Drawing.Point(4, 244);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(171, 19);
             this.label5.TabIndex = 23;
@@ -338,24 +327,34 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label6.Location = new System.Drawing.Point(224, 137);
+            this.label6.Location = new System.Drawing.Point(136, 122);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(571, 19);
             this.label6.TabIndex = 23;
             this.label6.Text = "Your anonymous reviews help us better assess study program quality across the uni" +
     "versities";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.RadioFirst);
+            this.panel2.Controls.Add(this.RadioSecond);
+            this.panel2.Controls.Add(this.RadioThird);
+            this.panel2.Controls.Add(this.RadioFourth);
+            this.panel2.Location = new System.Drawing.Point(5, 172);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(326, 43);
+            this.panel2.TabIndex = 35;
+            // 
             // StudyProgramReviewView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(985, 614);
+            this.ClientSize = new System.Drawing.Size(837, 614);
+            this.Controls.Add(this.ReviewTextBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.previousForm);
             this.Controls.Add(this.btnSubmitReview);
-            this.Controls.Add(this.ReviewTextBox);
             this.Controls.Add(this.ReviewInputTitle);
             this.Name = "StudyProgramReviewView";
             this.Text = "Leave a review";
@@ -364,14 +363,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.LinkLabel previousForm;
         private System.Windows.Forms.Button btnSubmitReview;
         private System.Windows.Forms.RichTextBox ReviewTextBox;
         private System.Windows.Forms.Label ReviewInputTitle;
@@ -394,5 +393,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown numericUpDown3;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel2;
     }
 }

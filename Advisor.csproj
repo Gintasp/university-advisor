@@ -145,17 +145,17 @@
     <Compile Include="View\List\LecturerListView.Designer.cs">
       <DependentUpon>LecturerListView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Review\StatisticReviewView.cs">
+    <Compile Include="View\Review\StudyProgramReviewView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Review\StatisticReviewView.Designer.cs">
-      <DependentUpon>StatisticReviewView.cs</DependentUpon>
+    <Compile Include="View\Review\StudyProgramReviewView.Designer.cs">
+      <DependentUpon>StudyProgramReviewView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Review\TextReviewView.cs">
+    <Compile Include="View\Review\CourseReviewView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Review\TextReviewView.Designer.cs">
-      <DependentUpon>TextReviewView.cs</DependentUpon>
+    <Compile Include="View\Review\CourseReviewView.Designer.cs">
+      <DependentUpon>CourseReviewView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Individual\StudyProgramView.cs">
       <SubType>Form</SubType>
@@ -244,11 +244,11 @@
     <EmbeddedResource Include="View\List\LecturerListView.resx">
       <DependentUpon>LecturerListView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Review\StatisticReviewView.resx">
-      <DependentUpon>StatisticReviewView.cs</DependentUpon>
+    <EmbeddedResource Include="View\Review\StudyProgramReviewView.resx">
+      <DependentUpon>StudyProgramReviewView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Review\TextReviewView.resx">
-      <DependentUpon>TextReviewView.cs</DependentUpon>
+    <EmbeddedResource Include="View\Review\CourseReviewView.resx">
+      <DependentUpon>CourseReviewView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Individual\StudyProgramView.resx">
       <DependentUpon>StudyProgramView.cs</DependentUpon>
