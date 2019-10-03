@@ -35,27 +35,27 @@
             this.Incomelabel = new System.Windows.Forms.Label();
             this.txtIncome = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.RadioSecond = new System.Windows.Forms.RadioButton();
-            this.RadioFourth = new System.Windows.Forms.RadioButton();
-            this.RadioFirst = new System.Windows.Forms.RadioButton();
-            this.RadioThird = new System.Windows.Forms.RadioButton();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.YearPanel = new System.Windows.Forms.Panel();
+            this.RadioFirst = new System.Windows.Forms.RadioButton();
+            this.RadioSecond = new System.Windows.Forms.RadioButton();
+            this.RadioThird = new System.Windows.Forms.RadioButton();
+            this.RadioFourth = new System.Windows.Forms.RadioButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.YearPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSubmitReview
@@ -141,47 +141,134 @@
             this.panel1.Size = new System.Drawing.Size(412, 274);
             this.panel1.TabIndex = 22;
             // 
-            // numericUpDown1
+            // numericUpDown3
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(210, 51);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.numericUpDown3.Location = new System.Drawing.Point(97, 207);
+            this.numericUpDown3.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.numericUpDown3.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(45, 25);
-            this.numericUpDown1.TabIndex = 22;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(45, 25);
+            this.numericUpDown3.TabIndex = 34;
+            this.numericUpDown3.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             // 
-            // label1
+            // label4
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label1.Location = new System.Drawing.Point(3, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 19);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "How difficult was this program:";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label4.Location = new System.Drawing.Point(4, 160);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(347, 19);
+            this.label4.TabIndex = 50;
+            this.label4.Text = "Which year into the program did you start your career?";
             // 
-            // label2
+            // YearPanel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label2.Location = new System.Drawing.Point(4, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(194, 19);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "Satisfaction with this program:";
+            this.YearPanel.Controls.Add(this.RadioFirst);
+            this.YearPanel.Controls.Add(this.RadioSecond);
+            this.YearPanel.Controls.Add(this.RadioThird);
+            this.YearPanel.Controls.Add(this.RadioFourth);
+            this.YearPanel.Location = new System.Drawing.Point(5, 172);
+            this.YearPanel.Name = "YearPanel";
+            this.YearPanel.Size = new System.Drawing.Size(326, 43);
+            this.YearPanel.TabIndex = 35;
+            // 
+            // RadioFirst
+            // 
+            this.RadioFirst.AutoSize = true;
+            this.RadioFirst.Location = new System.Drawing.Point(13, 13);
+            this.RadioFirst.Name = "RadioFirst";
+            this.RadioFirst.Size = new System.Drawing.Size(50, 21);
+            this.RadioFirst.TabIndex = 32;
+            this.RadioFirst.TabStop = true;
+            this.RadioFirst.Text = "First";
+            this.RadioFirst.UseVisualStyleBackColor = true;
+            // 
+            // RadioSecond
+            // 
+            this.RadioSecond.AutoSize = true;
+            this.RadioSecond.Location = new System.Drawing.Point(69, 13);
+            this.RadioSecond.Name = "RadioSecond";
+            this.RadioSecond.Size = new System.Drawing.Size(69, 21);
+            this.RadioSecond.TabIndex = 30;
+            this.RadioSecond.TabStop = true;
+            this.RadioSecond.Text = "Second";
+            this.RadioSecond.UseVisualStyleBackColor = true;
+            // 
+            // RadioThird
+            // 
+            this.RadioThird.AutoSize = true;
+            this.RadioThird.Location = new System.Drawing.Point(143, 13);
+            this.RadioThird.Name = "RadioThird";
+            this.RadioThird.Size = new System.Drawing.Size(56, 21);
+            this.RadioThird.TabIndex = 33;
+            this.RadioThird.TabStop = true;
+            this.RadioThird.Text = "Third";
+            this.RadioThird.UseVisualStyleBackColor = true;
+            // 
+            // RadioFourth
+            // 
+            this.RadioFourth.AutoSize = true;
+            this.RadioFourth.Location = new System.Drawing.Point(205, 13);
+            this.RadioFourth.Name = "RadioFourth";
+            this.RadioFourth.Size = new System.Drawing.Size(63, 21);
+            this.RadioFourth.TabIndex = 31;
+            this.RadioFourth.TabStop = true;
+            this.RadioFourth.Text = "Fourth";
+            this.RadioFourth.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label5.Location = new System.Drawing.Point(4, 244);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(171, 19);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Any additional comments?";
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(68, 137);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(44, 21);
+            this.radioButton2.TabIndex = 28;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "No";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(17, 137);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(45, 21);
+            this.radioButton1.TabIndex = 27;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Yes";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label3.Location = new System.Drawing.Point(4, 113);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(345, 19);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Are you working in a relevant industry at the moment?";
             // 
             // numericUpDown2
             // 
@@ -205,123 +292,47 @@
             0,
             0});
             // 
-            // label3
+            // label2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label3.Location = new System.Drawing.Point(4, 113);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(345, 19);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "Are you working in a relevant industry at the moment?";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label2.Location = new System.Drawing.Point(4, 84);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(194, 19);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Satisfaction with this program:";
             // 
-            // radioButton1
+            // label1
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(17, 137);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(45, 21);
-            this.radioButton1.TabIndex = 27;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Yes";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label1.Location = new System.Drawing.Point(3, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(198, 19);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "How difficult was this program:";
             // 
-            // radioButton2
+            // numericUpDown1
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(68, 137);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(44, 21);
-            this.radioButton2.TabIndex = 28;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "No";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label4.Location = new System.Drawing.Point(4, 160);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(347, 19);
-            this.label4.TabIndex = 50;
-            this.label4.Text = "Which year into the program did you start your career?";
-            // 
-            // RadioSecond
-            // 
-            this.RadioSecond.AutoSize = true;
-            this.RadioSecond.Location = new System.Drawing.Point(69, 13);
-            this.RadioSecond.Name = "RadioSecond";
-            this.RadioSecond.Size = new System.Drawing.Size(69, 21);
-            this.RadioSecond.TabIndex = 30;
-            this.RadioSecond.TabStop = true;
-            this.RadioSecond.Text = "Second";
-            this.RadioSecond.UseVisualStyleBackColor = true;
-            // 
-            // RadioFourth
-            // 
-            this.RadioFourth.AutoSize = true;
-            this.RadioFourth.Location = new System.Drawing.Point(205, 13);
-            this.RadioFourth.Name = "RadioFourth";
-            this.RadioFourth.Size = new System.Drawing.Size(63, 21);
-            this.RadioFourth.TabIndex = 31;
-            this.RadioFourth.TabStop = true;
-            this.RadioFourth.Text = "Fourth";
-            this.RadioFourth.UseVisualStyleBackColor = true;
-            // 
-            // RadioFirst
-            // 
-            this.RadioFirst.AutoSize = true;
-            this.RadioFirst.Location = new System.Drawing.Point(13, 13);
-            this.RadioFirst.Name = "RadioFirst";
-            this.RadioFirst.Size = new System.Drawing.Size(50, 21);
-            this.RadioFirst.TabIndex = 32;
-            this.RadioFirst.TabStop = true;
-            this.RadioFirst.Text = "First";
-            this.RadioFirst.UseVisualStyleBackColor = true;
-            // 
-            // RadioThird
-            // 
-            this.RadioThird.AutoSize = true;
-            this.RadioThird.Location = new System.Drawing.Point(143, 13);
-            this.RadioThird.Name = "RadioThird";
-            this.RadioThird.Size = new System.Drawing.Size(56, 21);
-            this.RadioThird.TabIndex = 33;
-            this.RadioThird.TabStop = true;
-            this.RadioThird.Text = "Third";
-            this.RadioThird.UseVisualStyleBackColor = true;
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.Location = new System.Drawing.Point(97, 207);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
+            this.numericUpDown1.Location = new System.Drawing.Point(210, 51);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.numericUpDown3.Minimum = new decimal(new int[] {
+            this.numericUpDown1.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(45, 25);
-            this.numericUpDown3.TabIndex = 34;
-            this.numericUpDown3.Value = new decimal(new int[] {
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(45, 25);
+            this.numericUpDown1.TabIndex = 22;
+            this.numericUpDown1.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label5.Location = new System.Drawing.Point(4, 244);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(171, 19);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Any additional comments?";
             // 
             // label6
             // 
@@ -333,17 +344,6 @@
             this.label6.TabIndex = 23;
             this.label6.Text = "Your anonymous reviews help us better assess study program quality across the uni" +
     "versities";
-            // 
-            // YearPanel
-            // 
-            this.YearPanel.Controls.Add(this.RadioFirst);
-            this.YearPanel.Controls.Add(this.RadioSecond);
-            this.YearPanel.Controls.Add(this.RadioThird);
-            this.YearPanel.Controls.Add(this.RadioFourth);
-            this.YearPanel.Location = new System.Drawing.Point(5, 172);
-            this.YearPanel.Name = "YearPanel";
-            this.YearPanel.Size = new System.Drawing.Size(326, 43);
-            this.YearPanel.TabIndex = 35;
             // 
             // StudyProgramReviewView
             // 
@@ -360,11 +360,11 @@
             this.Text = "Leave a review";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.YearPanel.ResumeLayout(false);
             this.YearPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

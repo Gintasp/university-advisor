@@ -10,6 +10,10 @@
         public int Satisfaction { get; set; }
         public bool RelevantIndustry { get; set; }
         public int CareerStartYear { get; set; }
+        public int Usefulness { get; set; }
+        public int Interesting { get; set; }
+        public int TheoryPercentage { get; set; }
+        public int PracticePercentage { get; set; }
         public int UserId { get; set; }
         public virtual User User { get; set; }
         public virtual Course Course { get; set; }
