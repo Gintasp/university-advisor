@@ -31,21 +31,21 @@
             this.Title = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.TextBox = new System.Windows.Forms.TextBox();
+            this.RichTextBox = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Title
             // 
-            this.Title.AutoSize = true;
             this.Title.Font = new System.Drawing.Font("Segoe UI", 28F);
             this.Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Title.Location = new System.Drawing.Point(308, 63);
+            this.Title.Location = new System.Drawing.Point(152, 63);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(176, 51);
+            this.Title.Size = new System.Drawing.Size(505, 51);
             this.Title.TabIndex = 0;
             this.Title.Text = "Add New";
+            this.Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -67,22 +67,23 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Description:";
             // 
-            // textBox1
+            // TextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(226, 199);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(352, 31);
-            this.textBox1.TabIndex = 3;
+            this.TextBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.TextBox.Location = new System.Drawing.Point(226, 199);
+            this.TextBox.Multiline = true;
+            this.TextBox.Name = "TextBox";
+            this.TextBox.Size = new System.Drawing.Size(352, 31);
+            this.TextBox.TabIndex = 3;
             // 
-            // richTextBox1
+            // RichTextBox
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.richTextBox1.Location = new System.Drawing.Point(226, 269);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(352, 134);
-            this.richTextBox1.TabIndex = 4;
-            this.richTextBox1.Text = "";
+            this.RichTextBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.RichTextBox.Location = new System.Drawing.Point(226, 269);
+            this.RichTextBox.Name = "RichTextBox";
+            this.RichTextBox.Size = new System.Drawing.Size(352, 134);
+            this.RichTextBox.TabIndex = 4;
+            this.RichTextBox.Text = "";
             // 
             // button1
             // 
@@ -102,8 +103,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 503);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.RichTextBox);
+            this.Controls.Add(this.TextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Title);
@@ -119,8 +120,8 @@
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox TextBox;
+        private System.Windows.Forms.RichTextBox RichTextBox;
         private System.Windows.Forms.Button button1;
     }
 }

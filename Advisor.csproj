@@ -133,6 +133,12 @@
     <Compile Include="Service\Validator\ISignupDataValidator.cs" />
     <Compile Include="Service\Validator\SignupDataValidator.cs" />
     <Compile Include="Service\Validator\LoginDataValidator.cs" />
+    <Compile Include="View\AddFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddFormView.Designer.cs">
+      <DependentUpon>AddFormView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Individual\FacultyView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +244,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\AddFormView.resx">
+      <DependentUpon>AddFormView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Individual\FacultyView.resx">
       <DependentUpon>FacultyView.cs</DependentUpon>
     </EmbeddedResource>
