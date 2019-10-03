@@ -15,9 +15,12 @@ namespace Advisor.Controller
 
         public void LoadLecturerData()
         {
-            foreach (Lecturer lecturer in Faculty.Lecturers)
+            if(Faculty.Lecturers != null)
             {
-                LecturerListView.LecturerList.Items.Add(lecturer);
+                foreach (Lecturer lecturer in Faculty.Lecturers)
+                {
+                    LecturerListView.LecturerList.Items.Add(lecturer);
+                }
             }
         }
 
