@@ -6,22 +6,17 @@ namespace Advisor.View
 {
     public partial class CourseReviewView : Form
     {
-        public IReviewController ReviewController { get; set; }
-        public CourseReviewView(IReviewController reviewController)
+        public ICourseReviewController CourseReviewController { get; set; }
+        public CourseReviewView(ICourseReviewController courseReviewController)
         {
-            ReviewController = reviewController;
-            reviewController.TextReviewView = this;
+            CourseReviewController = courseReviewController;
+            courseReviewController.CourseReviewView = this;
             InitializeComponent();
         }
 
         private void OnSubmitReviewButtonClick(object sender, EventArgs e)
         {
-            ReviewController.HandleSubmitReviewButtonClick();
-        }
-
-        private void OnPreviousFormLinkClick(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            ReviewController.HandlePreviousFormLinkClick();
+            CourseReviewController.HandleSubmitReviewButtonClick();
         }
     }
 }
