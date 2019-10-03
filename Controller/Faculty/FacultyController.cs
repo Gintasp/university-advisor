@@ -8,14 +8,14 @@ namespace Advisor.Controller
     public class FacultyController : IFacultyController
     {
         public FacultyView FacultyView { get; set; }
-        public FacultyListView FacultyListView { get; set; }
+        public UniversityView UniversityView { get; set; }
         public StudyProgramView StudyProgramView { get; set; }
 
         public void HandlePreviousButtonClick(University uni)
         {
             FacultyView.Hide();
-            FacultyListView = new FacultyListView(new FacultyListController(this), uni);
-            FacultyListView.Show();
+            UniversityView = new UniversityView(new UniversityController(this), uni);
+            UniversityView.Show();
         }
 
         public void LoadStudyProgramData(Faculty faculty)
