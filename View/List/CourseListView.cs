@@ -6,16 +6,16 @@ using System.Windows.Forms;
 
 namespace Advisor.View
 {
-    public partial class StudySubjectListView : Form
+    public partial class CourseListView : Form
     {
-        public IStudySubjectListController StudySubjectListController { get; set; }
-        public ListBox StudySubjectList { get; set; }
-        public StudySubjectListView(IStudySubjectListController studySubjectListController)
+        public ICourseListController CourseListController { get; set; }
+        public ListBox CourseList { get; set; }
+        public CourseListView(ICourseListController courseListController)
         {
-            StudySubjectListController = studySubjectListController;
-            StudySubjectListController.StudySubjectListView = this;
+            CourseListController = courseListController;
+            CourseListController.CourseListView = this;
             InitializeComponent();
-            StudySubjectList = StudySubjectData;
+            CourseList = CourseData;
         }
 
         private void OnSearchInputEnter(object sender, EventArgs e)
@@ -36,25 +36,25 @@ namespace Advisor.View
             }
         }
 
-        private void OnAddStudySubjectButtonClick(object sender, EventArgs e)
+        private void OnAddCourseButtonClick(object sender, EventArgs e)
         {
             //TODO: handle adding new study subject
         }
 
-        private void LoadStudySubjectData(object sender, EventArgs e)
+        private void OnViewLoad(object sender, EventArgs e)
         {
-            StudySubjectListController.LoadStudySubjectData();
+            CourseListController.LoadCourseData();
         }
 
         private void OnPreviousFormButtonClick(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            StudySubjectListController.HandlePreviousFormButtonClick();
+            CourseListController.HandlePreviousFormButtonClick();
         }
 
-        private void SelectedSubject(object sender, EventArgs e)
+        private void OnCourseSelect(object sender, EventArgs e)
         {
-            StudySubject subject = (StudySubject) StudySubjectData.SelectedItem;
-            StudySubjectListController.HandleSelectedSubject(subject);
+            Course subject = (Course) CourseData.SelectedItem;
+            CourseListController.HandleSelectedCourse(subject);
         }
 
         private void OnFormClose(object sender, FormClosedEventArgs e)

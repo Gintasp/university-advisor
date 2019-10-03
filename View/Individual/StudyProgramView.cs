@@ -30,9 +30,9 @@ namespace Advisor.View
             //TODO: Handle leave a review button click and display review form
         }
 
-        private void OnStudySubjectsButtonClick(object sender, EventArgs e)
+        private void OnCoursesButtonClick(object sender, EventArgs e)
         {
-            StudyProgramController.HandleStudySubjectsButtonClick();
+            StudyProgramController.HandleCoursesButtonClick();
         }
 
         private void OnPreviousFormButtonClick(object sender, EventArgs e)

@@ -8,6 +8,6 @@ namespace Advisor.Controller
         StudyProgramView StudyProgramView { get; set; }
         void LoadStudyProgramData();
         void HandlePreviousButtonClick();
-        void HandleStudySubjectsButtonClick();
+        void HandleCoursesButtonClick();
     }
 }

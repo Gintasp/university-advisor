@@ -2,10 +2,10 @@
 
 namespace Advisor.Controller
 {
-    public interface IStudySubjectController
+    public interface ICourseController
     {
-        StudySubjectView StudySubjectView { get; set; }
-        void LoadSubjectReviews();
+        CourseView CourseView { get; set; }
+        void LoadCourseReviews();
         void HandlePreviousClicked();
         void HandleAddReview();
     }
