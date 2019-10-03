@@ -6,6 +6,11 @@
         public string Text { get; set; }
         public int Rating { get; set; }
         public int UserId { get; set; }
+        public int Competence { get; set; }
+        public int Strictness { get; set; }
+        public int Delivery { get; set; }
+        public int Interesting { get; set; }
+        public int Personality { get; set; }
         public virtual User User { get; set; }
         public virtual Course Course { get; set; }
         public virtual StudyProgram StudyProgram { get; set; }
