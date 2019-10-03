@@ -6,7 +6,8 @@ namespace Advisor.Controller
     public interface IUniversityController
     {
         UniversityView UniversityView { get; set; }
-        void HandleFacultiesClick(University uni);
         void HandlePreviousButtonClick();
+        void LoadFacultyData(University uni);
+        void HandleFacultySelect(Faculty faculty, University uni);
     }
 }
