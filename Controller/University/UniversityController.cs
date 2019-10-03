@@ -2,6 +2,7 @@
 using Advisor.View;
 using System.Linq;
 using System.Collections.Generic;
+using System;
 
 namespace Advisor.Controller
 {
@@ -11,6 +12,7 @@ namespace Advisor.Controller
         public FacultyView FacultyView { get; set; }
         public IFacultyController FacultyController { get; set; }
         public HomeView HomeView { get; set; }
+        public AddFormView AddFormView { get; set; }
 
         public UniversityController(IFacultyController facultyController)
         {
@@ -36,6 +38,28 @@ namespace Advisor.Controller
             FacultyView = new FacultyView(FacultyController, faculty, uni);
             UniversityView.Hide();
             FacultyView.ShowDialog();
+        }
+
+        public void HandleAddFacultyClick()
+        {
+            AddFormView = new AddFormView();
+            AddFormView.AddButtonClicked += HandleAddFaculty;
+            AddFormView.TitleLabel.Text = "Add new faculty";
+            AddFormView.ShowDialog();
+        }
+
+        public void HandleAddFaculty(object sender, EventArgs e)
+        {
+            Faculty fac = new Faculty()
+            {
+                Title = AddFormView.TitleInput.Text,
+                Description = AddFormView.DescriptionInput.Text,
+                University = UniversityView.University
+            };
+            DB.Instance.Faculties.Add(fac);
+            DB.Instance.SaveChanges();
+            UniversityView.Faculties.Items.Add(fac);
+            AddFormView.Close();
         }
     }
 }

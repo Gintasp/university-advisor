@@ -53,10 +53,11 @@
             this.UniversityTitleLabel.AutoSize = true;
             this.UniversityTitleLabel.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UniversityTitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.UniversityTitleLabel.Location = new System.Drawing.Point(141, 112);
-            this.UniversityTitleLabel.MaximumSize = new System.Drawing.Size(300, 0);
+            this.UniversityTitleLabel.Location = new System.Drawing.Point(94, 73);
+            this.UniversityTitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.UniversityTitleLabel.MaximumSize = new System.Drawing.Size(200, 0);
             this.UniversityTitleLabel.Name = "UniversityTitleLabel";
-            this.UniversityTitleLabel.Size = new System.Drawing.Size(108, 60);
+            this.UniversityTitleLabel.Size = new System.Drawing.Size(74, 41);
             this.UniversityTitleLabel.TabIndex = 0;
             this.UniversityTitleLabel.Text = "Title";
             // 
@@ -66,9 +67,10 @@
             this.About.AutoSize = true;
             this.About.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.About.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.About.Location = new System.Drawing.Point(137, 394);
+            this.About.Location = new System.Drawing.Point(91, 256);
+            this.About.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.About.Name = "About";
-            this.About.Size = new System.Drawing.Size(80, 32);
+            this.About.Size = new System.Drawing.Size(52, 21);
             this.About.TabIndex = 1;
             this.About.Text = "About";
             // 
@@ -77,9 +79,10 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.AboutSection);
-            this.panel1.Location = new System.Drawing.Point(142, 429);
+            this.panel1.Location = new System.Drawing.Point(95, 279);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(366, 278);
+            this.panel1.Size = new System.Drawing.Size(245, 181);
             this.panel1.TabIndex = 2;
             // 
             // AboutSection
@@ -87,10 +90,11 @@
             this.AboutSection.AutoSize = true;
             this.AboutSection.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AboutSection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.AboutSection.Location = new System.Drawing.Point(3, 10);
-            this.AboutSection.MaximumSize = new System.Drawing.Size(350, 0);
+            this.AboutSection.Location = new System.Drawing.Point(2, 6);
+            this.AboutSection.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.AboutSection.MaximumSize = new System.Drawing.Size(233, 0);
             this.AboutSection.Name = "AboutSection";
-            this.AboutSection.Size = new System.Drawing.Size(79, 28);
+            this.AboutSection.Size = new System.Drawing.Size(55, 19);
             this.AboutSection.TabIndex = 0;
             this.AboutSection.Text = "[About]";
             // 
@@ -98,9 +102,10 @@
             // 
             this.PreviousIndividualUniversityView.AutoSize = true;
             this.PreviousIndividualUniversityView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PreviousIndividualUniversityView.Location = new System.Drawing.Point(14, 11);
+            this.PreviousIndividualUniversityView.Location = new System.Drawing.Point(9, 7);
+            this.PreviousIndividualUniversityView.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PreviousIndividualUniversityView.Name = "PreviousIndividualUniversityView";
-            this.PreviousIndividualUniversityView.Size = new System.Drawing.Size(36, 25);
+            this.PreviousIndividualUniversityView.Size = new System.Drawing.Size(24, 17);
             this.PreviousIndividualUniversityView.TabIndex = 6;
             this.PreviousIndividualUniversityView.TabStop = true;
             this.PreviousIndividualUniversityView.Text = "<<";
@@ -112,10 +117,11 @@
             this.FacultyListBox.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FacultyListBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.FacultyListBox.FormattingEnabled = true;
-            this.FacultyListBox.ItemHeight = 30;
-            this.FacultyListBox.Location = new System.Drawing.Point(664, 163);
+            this.FacultyListBox.ItemHeight = 20;
+            this.FacultyListBox.Location = new System.Drawing.Point(443, 106);
+            this.FacultyListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FacultyListBox.Name = "FacultyListBox";
-            this.FacultyListBox.Size = new System.Drawing.Size(537, 544);
+            this.FacultyListBox.Size = new System.Drawing.Size(359, 344);
             this.FacultyListBox.TabIndex = 7;
             this.FacultyListBox.SelectedIndexChanged += new System.EventHandler(this.OnFacSelect);
             // 
@@ -124,12 +130,14 @@
             this.AddFacultyLink.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddFacultyLink.AutoSize = true;
             this.AddFacultyLink.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddFacultyLink.Location = new System.Drawing.Point(776, 715);
+            this.AddFacultyLink.Location = new System.Drawing.Point(517, 465);
+            this.AddFacultyLink.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.AddFacultyLink.Name = "AddFacultyLink";
-            this.AddFacultyLink.Size = new System.Drawing.Size(285, 25);
+            this.AddFacultyLink.Size = new System.Drawing.Size(190, 15);
             this.AddFacultyLink.TabIndex = 8;
             this.AddFacultyLink.TabStop = true;
             this.AddFacultyLink.Text = "Cant find your Faculty? Add it here";
+            this.AddFacultyLink.Click += new System.EventHandler(this.OnAddFacultyClick);
             // 
             // label1
             // 
@@ -137,17 +145,18 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(657, 112);
+            this.label1.Location = new System.Drawing.Point(438, 73);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 38);
+            this.label1.Size = new System.Drawing.Size(84, 25);
             this.label1.TabIndex = 9;
             this.label1.Text = "Faculties";
             // 
             // UniversityView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(913, 487);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AddFacultyLink);
             this.Controls.Add(this.FacultyListBox);
@@ -155,6 +164,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.About);
             this.Controls.Add(this.UniversityTitleLabel);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UniversityView";
             this.Text = "University";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

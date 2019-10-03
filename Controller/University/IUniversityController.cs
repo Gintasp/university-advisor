@@ -9,5 +9,6 @@ namespace Advisor.Controller
         void HandlePreviousButtonClick();
         void LoadFacultyData(University uni);
         void HandleFacultySelect(Faculty faculty, University uni);
+        void HandleAddFacultyClick();
     }
 }

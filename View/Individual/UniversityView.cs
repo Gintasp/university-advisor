@@ -39,10 +39,16 @@ namespace Advisor.View
 
         private void OnFacSelect(object sender, EventArgs e)
         {
-            
-                Faculty faculty = (Faculty)Faculties.SelectedItem;
+            Faculty faculty = (Faculty)Faculties.SelectedItem;
+            if(faculty != null)
+            {
                 UniversityController.HandleFacultySelect(faculty, University);
-            
+            }
+        }
+
+        private void OnAddFacultyClick(object sender, EventArgs e)
+        {
+            UniversityController.HandleAddFacultyClick();
         }
     }
 }
