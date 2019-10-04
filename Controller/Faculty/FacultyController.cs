@@ -18,14 +18,14 @@ namespace Advisor.Controller
             UniversityView.Show();
         }
 
-        public void LoadStudyProgramData(Faculty faculty)
+        public void LoadData(Faculty faculty)
         {
             FacultyView.StudyProgramList.Items.Clear();
-            List<StudyProgram> programs = DB.Instance.StudyPrograms.Where(p => p.Faculty.Id == faculty.Id).ToList();
-            foreach (StudyProgram studyProgram in programs)
-            {
-                FacultyView.StudyProgramList.Items.Add(studyProgram);
-            }
+            FacultyView.LecturerList.Items.Clear();
+            List<StudyProgram> programs = faculty.StudyPrograms.ToList();
+            List<Lecturer> lecturers = faculty.Lecturers.ToList();
+            programs.ForEach(program => FacultyView.StudyProgramList.Items.Add(program));
+            lecturers.ForEach(lecturer => FacultyView.LecturerList.Items.Add(lecturer));
         }
 
         public void HandleStudyProgramSelect(StudyProgram selectedProgram, Faculty faculty, University uni)
@@ -35,11 +35,9 @@ namespace Advisor.Controller
             StudyProgramView.Show();
         }
 
-        public void HandleLecturersButtonClick(Faculty faculty)
+        public void HandleLecturerSelect(Lecturer lecturer, Faculty faculty, University university)
         {
-            FacultyView.Hide();
-            LecturerListView LecturerListView = new LecturerListView(new LecturerListController(faculty));
-            LecturerListView.Show();
+            //TODO: Display lecturer form
         }
     }
 }

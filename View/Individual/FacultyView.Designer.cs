@@ -147,6 +147,7 @@
             this.LecturerListBox.Name = "LecturerListBox";
             this.LecturerListBox.Size = new System.Drawing.Size(289, 340);
             this.LecturerListBox.TabIndex = 9;
+            this.LecturerListBox.SelectedIndexChanged += new System.EventHandler(this.OnLecturerSelect);
             // 
             // label2
             // 
@@ -174,6 +175,7 @@
             this.btnAddLecturer.TabIndex = 5;
             this.btnAddLecturer.Text = "Add a lecturer";
             this.btnAddLecturer.UseVisualStyleBackColor = true;
+            this.btnAddLecturer.Click += new System.EventHandler(this.OnAddLecturerButtonClick);
             // 
             // label3
             // 
@@ -208,7 +210,7 @@
             this.Text = "Faculty";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnFormClose);
-            this.Load += new System.EventHandler(this.OnFacultyLoad);
+            this.Load += new System.EventHandler(this.OnViewLoad);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
