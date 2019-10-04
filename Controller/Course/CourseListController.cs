@@ -23,6 +23,8 @@ namespace Advisor.Controller
         {
             AddFormView = new AddFormView();
             AddFormView.TitleLabel.Text = "Add new course";
+            AddFormView.DescriptionInput.Visible = false;
+            AddFormView.DescriptionLabel.Visible = false;
             AddFormView.AddButtonClicked += HandleAddCourse;
             AddFormView.ShowDialog();
         }

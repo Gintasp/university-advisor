@@ -30,7 +30,7 @@
         {
             this.Title = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.DescLabel = new System.Windows.Forms.Label();
             this.TextBox = new System.Windows.Forms.TextBox();
             this.RichTextBox = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -57,15 +57,15 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Title:";
             // 
-            // label3
+            // DescLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label3.Location = new System.Drawing.Point(222, 247);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 19);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Description:";
+            this.DescLabel.AutoSize = true;
+            this.DescLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.DescLabel.Location = new System.Drawing.Point(222, 247);
+            this.DescLabel.Name = "DescLabel";
+            this.DescLabel.Size = new System.Drawing.Size(81, 19);
+            this.DescLabel.TabIndex = 2;
+            this.DescLabel.Text = "Description:";
             // 
             // TextBox
             // 
@@ -105,7 +105,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.RichTextBox);
             this.Controls.Add(this.TextBox);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.DescLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Title);
             this.Name = "AddFormView";
@@ -119,7 +119,7 @@
 
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label DescLabel;
         private System.Windows.Forms.TextBox TextBox;
         private System.Windows.Forms.RichTextBox RichTextBox;
         private System.Windows.Forms.Button button1;
