@@ -19,42 +19,36 @@ namespace Advisor.View
             UniversityList = UniversityData;
             SearchBox = searchBox;
         }
-
-        private void PrimaryTextDeletion(object sender, EventArgs e)
-        {
-            if (SearchBox.Text == "Search")
-            {
-                SearchBox.Text = "";
-                SearchBox.ForeColor = Color.Black;
-            }
-        }
-
         private void LoadUniversityList(object sender, EventArgs e)
         {
            HomeController.LoadUniversityList();
         }
-
         private void SelectedUniversity(object sender, EventArgs e)
         {
             University uni = (University) UniversityData.SelectedItem;
             HomeController.HandleUniversitySelect(uni);
         }
-
         private void OnFormClose(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
-
         private void OnAddUniversityLinkClick(object sender, EventArgs e)
         {
             HomeController.HandleAddUniversityClick();
         }
-
-        private void SearchBox_TextChanged(object sender, EventArgs e)
+        private void OnSearchBoxTextChange(object sender, EventArgs e)
         {
-          HomeController.HandleSearchBox();
+            HomeController.HandleSearchBoxChange();
         }
-        private void SetPrimaryText(object sender, EventArgs e)
+        private void OnSearchBoxEnter(object sender, EventArgs e)
+        {
+            if (SearchBox.Text == "Search")
+            {
+                searchBox.Text = "";
+                searchBox.ForeColor = Color.Black;
+            }
+        }
+        private void OnSearchBoxLeave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(SearchBox.Text))
             {
@@ -63,7 +57,5 @@ namespace Advisor.View
                 HomeController.LoadUniversityList();
             }
         }
-
-
     }
 }

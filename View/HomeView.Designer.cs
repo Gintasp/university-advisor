@@ -59,9 +59,9 @@
             this.searchBox.Size = new System.Drawing.Size(620, 39);
             this.searchBox.TabIndex = 1;
             this.searchBox.Text = "Search";
-            this.searchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged);
-            this.searchBox.Enter += new System.EventHandler(this.PrimaryTextDeletion);
-            this.searchBox.Leave += new System.EventHandler(this.SetPrimaryText);
+            this.searchBox.TextChanged += new System.EventHandler(this.OnSearchBoxTextChange);
+            this.searchBox.Enter += new System.EventHandler(this.OnSearchBoxEnter);
+            this.searchBox.Leave += new System.EventHandler(this.OnSearchBoxLeave);
             // 
             // UniversityData
             // 
