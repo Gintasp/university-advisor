@@ -65,6 +65,8 @@
     <Compile Include="Controller\Course\ICourseController.cs" />
     <Compile Include="Controller\Lecturer\ILecturerListController.cs" />
     <Compile Include="Controller\Lecturer\LecturerListController.cs" />
+    <Compile Include="Controller\Review\ILecturerReviewController.cs" />
+    <Compile Include="Controller\Review\LecturerReviewController.cs" />
     <Compile Include="Controller\Review\ICourseReviewController.cs" />
     <Compile Include="Controller\Review\IStudyProgramReviewController.cs" />
     <Compile Include="Controller\Review\StudyProgramReviewController.cs" />
@@ -122,6 +124,10 @@
     <Compile Include="Migrations\201910031904073_AddMoreFieldsReview.Designer.cs">
       <DependentUpon>201910031904073_AddMoreFieldsReview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910040905468_LecturerReviewFields.cs" />
+    <Compile Include="Migrations\201910040905468_LecturerReviewFields.Designer.cs">
+      <DependentUpon>201910040905468_LecturerReviewFields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\DatabaseContext.cs" />
     <Compile Include="Model\DB.cs" />
@@ -157,6 +163,12 @@
     </Compile>
     <Compile Include="View\List\LecturerListView.Designer.cs">
       <DependentUpon>LecturerListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Review\LecturerReviewView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Review\LecturerReviewView.Designer.cs">
+      <DependentUpon>LecturerReviewView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Review\CourseReviewView.cs">
       <SubType>Form</SubType>
@@ -245,6 +257,9 @@
     <EmbeddedResource Include="Migrations\201910031904073_AddMoreFieldsReview.resx">
       <DependentUpon>201910031904073_AddMoreFieldsReview.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910040905468_LecturerReviewFields.resx">
+      <DependentUpon>201910040905468_LecturerReviewFields.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -262,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\List\LecturerListView.resx">
       <DependentUpon>LecturerListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Review\LecturerReviewView.resx">
+      <DependentUpon>LecturerReviewView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Review\CourseReviewView.resx">
       <DependentUpon>CourseReviewView.cs</DependentUpon>
