@@ -7,13 +7,13 @@ namespace Advisor.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddLecturerReviewFields : IMigrationMetadata
+    public sealed partial class LecturerReviewFields : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddLecturerReviewFields));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(LecturerReviewFields));
         
         string IMigrationMetadata.Id
         {
-            get { return "201910031930565_AddLecturerReviewFields"; }
+            get { return "201910040905468_LecturerReviewFields"; }
         }
         
         string IMigrationMetadata.Source
