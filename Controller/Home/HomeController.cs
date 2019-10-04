@@ -54,5 +54,22 @@ namespace Advisor.Controller
             UniversityView = new UniversityView(UniversityController, uni);
             UniversityView.ShowDialog();
         }
+        public void HandleSearchBox()
+        {
+            if (!string.IsNullOrEmpty(HomeView.SearchBox.Text))
+            {
+                List<University> unis = DB.Instance.Universities.ToList();
+                HomeView.UniversityList.Items.Clear();
+                foreach (University uni in unis)
+                {
+                    if (uni.Title.ToLower().Contains(HomeView.SearchBox.Text.ToLower()))
+                    {
+                        HomeView.UniversityList.Items.Add(uni); 
+                    }
+                }
+            }
+            else LoadUniversityList();
+
+        }
     }
 }

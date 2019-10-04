@@ -10,35 +10,28 @@ namespace Advisor.View
     {
         public ListBox UniversityList { get; set; }
         public IHomeController HomeController { get; set; }
+        public TextBox SearchBox { get; set; }
         public HomeView(IHomeController homeController)
         {
             HomeController = homeController;
             homeController.HomeView = this;
             InitializeComponent();
             UniversityList = UniversityData;
+            SearchBox = searchBox;
         }
 
         private void PrimaryTextDeletion(object sender, EventArgs e)
         {
-            if (searchBox.Text == "Search")
+            if (SearchBox.Text == "Search")
             {
-                searchBox.Text = "";
-                searchBox.ForeColor = Color.Black;
-            }
-        }
-
-        private void SetPrimaryText(object sender, EventArgs e)
-        {
-            if (searchBox.Text == "")
-            {
-                searchBox.Text = "Search";
-                searchBox.ForeColor = Color.Silver;
+                SearchBox.Text = "";
+                SearchBox.ForeColor = Color.Black;
             }
         }
 
         private void LoadUniversityList(object sender, EventArgs e)
         {
-            HomeController.LoadUniversityList();
+           HomeController.LoadUniversityList();
         }
 
         private void SelectedUniversity(object sender, EventArgs e)
@@ -56,5 +49,21 @@ namespace Advisor.View
         {
             HomeController.HandleAddUniversityClick();
         }
+
+        private void SearchBox_TextChanged(object sender, EventArgs e)
+        {
+          HomeController.HandleSearchBox();
+        }
+        private void SetPrimaryText(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(SearchBox.Text))
+            {
+                SearchBox.Text = "Search";
+                SearchBox.ForeColor = Color.Silver;
+                HomeController.LoadUniversityList();
+            }
+        }
+
+
     }
 }
