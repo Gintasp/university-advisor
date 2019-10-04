@@ -34,6 +34,8 @@
             this.TextBox = new System.Windows.Forms.TextBox();
             this.RichTextBox = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.ComboBox = new System.Windows.Forms.ComboBox();
+            this.LectLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Title
@@ -97,11 +99,34 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.OnAddButtonClick);
             // 
+            // ComboBox
+            // 
+            this.ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ComboBox.FormattingEnabled = true;
+            this.ComboBox.Location = new System.Drawing.Point(226, 269);
+            this.ComboBox.Name = "ComboBox";
+            this.ComboBox.Size = new System.Drawing.Size(352, 25);
+            this.ComboBox.TabIndex = 6;
+            this.ComboBox.Visible = false;
+            // 
+            // LectLabel
+            // 
+            this.LectLabel.AutoSize = true;
+            this.LectLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.LectLabel.Location = new System.Drawing.Point(224, 248);
+            this.LectLabel.Name = "LectLabel";
+            this.LectLabel.Size = new System.Drawing.Size(62, 19);
+            this.LectLabel.TabIndex = 7;
+            this.LectLabel.Text = "Lecturer:";
+            this.LectLabel.Visible = false;
+            // 
             // AddFormView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 503);
+            this.Controls.Add(this.LectLabel);
+            this.Controls.Add(this.ComboBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.RichTextBox);
             this.Controls.Add(this.TextBox);
@@ -123,5 +148,7 @@
         private System.Windows.Forms.TextBox TextBox;
         private System.Windows.Forms.RichTextBox RichTextBox;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox ComboBox;
+        private System.Windows.Forms.Label LectLabel;
     }
 }

@@ -10,6 +10,8 @@ namespace Advisor.View
         public RichTextBox DescriptionInput { get; set; }
         public Label DescriptionLabel { get; set; }
         public Label TextFieldLabel { get; set; }
+        public Label LecturerLabel { get; set; }
+        public ComboBox LecturerComboBox { get; set; }
         public event EventHandler<EventArgs> AddButtonClicked;
         public AddFormView()
         {
@@ -19,6 +21,8 @@ namespace Advisor.View
             DescriptionInput = RichTextBox;
             DescriptionLabel = DescLabel;
             TextFieldLabel = InputLabel;
+            LecturerLabel = LectLabel;
+            LecturerComboBox = ComboBox;
         }
 
         private void OnAddButtonClick(object sender, EventArgs e)
