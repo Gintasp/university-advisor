@@ -16,6 +16,8 @@ namespace Advisor.DependencyInjection
             Bind<IStudyProgramController>().To<StudyProgramController>();
             Bind<ICourseListController>().To<CourseListController>();
             Bind<ILecturerReviewController>().To<LecturerReviewController>();
+            Bind<ICourseReviewController>().To<CourseReviewController>();
+            Bind<IStudyProgramReviewController>().To<StudyProgramReviewController>();
 
             Bind<ILoginDataValidator>().To<LoginDataValidator>();
             Bind<ISignupDataValidator>().To<SignupDataValidator>();

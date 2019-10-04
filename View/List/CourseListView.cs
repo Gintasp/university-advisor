@@ -38,7 +38,7 @@ namespace Advisor.View
 
         private void OnAddCourseButtonClick(object sender, EventArgs e)
         {
-            //TODO: handle adding new study subject
+            CourseListController.HandleAddCourseButtonClick();
         }
 
         private void OnViewLoad(object sender, EventArgs e)

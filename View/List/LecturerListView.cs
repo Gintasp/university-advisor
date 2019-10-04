@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Advisor.Controller;
+using Advisor.Model;
 
 namespace Advisor.View
 {
@@ -37,7 +38,7 @@ namespace Advisor.View
 
         private void OnAddLecturerButtonClick(object sender, EventArgs e)
         {
-            //TODO: Implement handling of new lecturer creation
+            LecturerListController.HandleAddLecturerButtonClick();
         }
 
         private void LoadLecturerData(object sender, EventArgs e)
@@ -52,8 +53,11 @@ namespace Advisor.View
 
         private void SelectedLecturer(object sender, EventArgs e)
         {
-            string title = LecturerData.SelectedItem.ToString();
-            LecturerListController.HandleSelectedLecturer(title);
+            Lecturer lecturer = (Lecturer) LecturerData.SelectedItem;
+            if (lecturer != null)
+            {
+                LecturerListController.HandleSelectedLecturer(lecturer);
+            }
         }
 
         private void OnFormClose(object sender, FormClosedEventArgs e)

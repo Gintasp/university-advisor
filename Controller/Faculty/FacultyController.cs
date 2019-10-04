@@ -1,5 +1,6 @@
 ﻿using Advisor.Model;
 using Advisor.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,6 +11,7 @@ namespace Advisor.Controller
         public FacultyView FacultyView { get; set; }
         public UniversityView UniversityView { get; set; }
         public StudyProgramView StudyProgramView { get; set; }
+        public AddFormView AddFormView { get; set; }
 
         public void HandlePreviousButtonClick(University uni)
         {
@@ -40,6 +42,28 @@ namespace Advisor.Controller
             FacultyView.Hide();
             LecturerListView LecturerListView = new LecturerListView(new LecturerListController(faculty));
             LecturerListView.Show();
+        }
+
+        public void HandleAddStudyProgramClick()
+        {
+            AddFormView = new AddFormView();
+            AddFormView.AddButtonClicked += HandleAddStudyProgram;
+            AddFormView.TitleLabel.Text = "Add study program";
+            AddFormView.ShowDialog();
+        }
+
+        public void HandleAddStudyProgram(object sender, EventArgs e)
+        {
+            StudyProgram program = new StudyProgram()
+            {
+                Title = AddFormView.TitleInput.Text,
+                Description = AddFormView.DescriptionInput.Text,
+                Faculty = FacultyView.Faculty
+            };
+            DB.Instance.StudyPrograms.Add(program);
+            DB.Instance.SaveChanges();
+            FacultyView.StudyProgramList.Items.Add(program);
+            AddFormView.Close();
         }
     }
 }

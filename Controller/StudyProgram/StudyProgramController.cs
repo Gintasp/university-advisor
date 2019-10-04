@@ -22,9 +22,12 @@ namespace Advisor.Controller
         public void LoadStudyProgramData()
         {
             StudyProgramView.StudyProgram = StudyProgram;
-            foreach(Review review in StudyProgram.Reviews)
+            if(StudyProgram.Reviews != null)
             {
-                StudyProgramView.ReviewListBox.Items.Add(review);
+                foreach (Review review in StudyProgram.Reviews)
+                {
+                    StudyProgramView.ReviewListBox.Items.Add(review);
+                }
             }
         }
 

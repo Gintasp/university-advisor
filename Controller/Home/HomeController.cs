@@ -2,6 +2,7 @@
 using Advisor.View;
 using System.Linq;
 using System.Collections.Generic;
+using System;
 
 namespace Advisor.Controller
 {
@@ -10,6 +11,7 @@ namespace Advisor.Controller
         public HomeView HomeView { get; set; }
         public UniversityView UniversityView { get; set; }
         public IUniversityController UniversityController { get; set; }
+        public AddFormView AddFormView { get; set; }
 
         public HomeController(IUniversityController universityController)
         {
@@ -18,7 +20,21 @@ namespace Advisor.Controller
 
         public void HandleAddUniversityClick()
         {
-            //TODO: Handle add university click
+            AddFormView = new AddFormView();
+            AddFormView.AddButtonClicked += HandleAddNewUniversity;
+            AddFormView.TitleLabel.Text = "Add new university";
+            AddFormView.ShowDialog();
+        }
+
+        public void HandleAddNewUniversity(object sender, EventArgs e)
+        {
+            University uni = new University() {
+                Title = AddFormView.TitleInput.Text,
+                Description = AddFormView.DescriptionInput.Text
+            };
+            DB.Instance.Universities.Add(uni);
+            DB.Instance.SaveChanges();
+            AddFormView.Close();
         }
 
         public void LoadUniversityList()
