@@ -11,6 +11,7 @@ namespace Advisor.View
         public Faculty Faculty { get; set; }
         public University University { get; set; }
         public ListBox StudyProgramList { get; set; }
+        public ListBox LecturerList { get; set; }
 
         public FacultyView(
             IFacultyController facultyController,
@@ -23,18 +24,14 @@ namespace Advisor.View
             FacultyController.FacultyView = this;
             InitializeComponent();
             StudyProgramList = StudyProgramListBox;
+            LecturerList = LecturerListBox;
         }
 
-        private void OnFacultyLoad(object sender, EventArgs e)
+        private void OnViewLoad(object sender, EventArgs e)
         {
             FacultyTitleLabel.Text = Faculty.Title;
             AboutSection.Text = Faculty.Description;
-            FacultyController.LoadStudyProgramData(Faculty);
-        }
-
-        private void OnLecturersButtonClick(object sender, EventArgs e)
-        {
-            FacultyController.HandleLecturersButtonClick(Faculty);
+            FacultyController.LoadData(Faculty);
         }
 
         private void OnAddStudyProgramLinkClick(object sender, EventArgs e)
@@ -59,6 +56,20 @@ namespace Advisor.View
         private void OnFormClose(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void OnAddLecturerLinkClick(object sender, EventArgs e)
+        {
+            FacultyController.HandleAddLecturerClick();
+        }
+
+        private void OnLecturerSelect(object sender, EventArgs e)
+        {
+            Lecturer lecturer = (Lecturer) LecturerListBox.SelectedItem;
+            if (lecturer != null)
+            {
+                FacultyController.HandleLecturerSelect(lecturer, Faculty, University);
+            }
         }
     }
 }
