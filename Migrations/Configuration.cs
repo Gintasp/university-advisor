@@ -209,7 +209,7 @@ namespace Advisor.Migrations
             var reviews = File.ReadAllLines(filePath).Select(
                 line => new Review()
                 {
-                    Rating = int.Parse(line.Split(',')[1]),
+                    OveralRating = int.Parse(line.Split(',')[1]),
                     Text = line.Split(',')[0],
                     UserId = userList.ElementAt(rand.Next(0, userList.Count)).Id
                 }
