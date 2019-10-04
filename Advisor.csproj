@@ -128,6 +128,10 @@
     <Compile Include="Migrations\201910040905468_LecturerReviewFields.Designer.cs">
       <DependentUpon>201910040905468_LecturerReviewFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910041613380_UniWebsites.cs" />
+    <Compile Include="Migrations\201910041613380_UniWebsites.Designer.cs">
+      <DependentUpon>201910041613380_UniWebsites.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\DatabaseContext.cs" />
     <Compile Include="Model\DB.cs" />
@@ -253,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910040905468_LecturerReviewFields.resx">
       <DependentUpon>201910040905468_LecturerReviewFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910041613380_UniWebsites.resx">
+      <DependentUpon>201910041613380_UniWebsites.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
