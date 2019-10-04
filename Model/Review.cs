@@ -4,7 +4,16 @@
     {
         public int Id { get; set; }
         public string Text { get; set; }
-        public int Rating { get; set; }
+        public int OveralRating { get; set; }
+        public int Salary { get; set; }
+        public int Difficulty { get; set; }
+        public int Satisfaction { get; set; }
+        public bool RelevantIndustry { get; set; }
+        public int CareerStartYear { get; set; }
+        public int Usefulness { get; set; }
+        public int Interesting { get; set; }
+        public int TheoryPercentage { get; set; }
+        public int PracticePercentage { get; set; }
         public int UserId { get; set; }
         public virtual User User { get; set; }
         public virtual Course Course { get; set; }
