@@ -33,10 +33,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.AboutSection = new System.Windows.Forms.Label();
             this.btnLecturers = new System.Windows.Forms.Button();
-            this.btnAddStudyProgram = new System.Windows.Forms.Button();
             this.PreviousIndividualFaculty = new System.Windows.Forms.LinkLabel();
             this.StudyProgramListBox = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.AddFacultyLink = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,7 +74,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.AboutSection);
             this.panel1.Location = new System.Drawing.Point(83, 247);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(337, 212);
             this.panel1.TabIndex = 2;
@@ -97,28 +97,14 @@
             this.btnLecturers.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLecturers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLecturers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnLecturers.Location = new System.Drawing.Point(83, 484);
-            this.btnLecturers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLecturers.Location = new System.Drawing.Point(83, 472);
+            this.btnLecturers.Margin = new System.Windows.Forms.Padding(2);
             this.btnLecturers.Name = "btnLecturers";
             this.btnLecturers.Size = new System.Drawing.Size(337, 37);
             this.btnLecturers.TabIndex = 4;
             this.btnLecturers.Text = "Lecturers";
             this.btnLecturers.UseVisualStyleBackColor = true;
             this.btnLecturers.Click += new System.EventHandler(this.OnLecturersButtonClick);
-            // 
-            // btnAddStudyProgram
-            // 
-            this.btnAddStudyProgram.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddStudyProgram.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddStudyProgram.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAddStudyProgram.Location = new System.Drawing.Point(455, 484);
-            this.btnAddStudyProgram.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnAddStudyProgram.Name = "btnAddStudyProgram";
-            this.btnAddStudyProgram.Size = new System.Drawing.Size(453, 37);
-            this.btnAddStudyProgram.TabIndex = 5;
-            this.btnAddStudyProgram.Text = "Add Study Program";
-            this.btnAddStudyProgram.UseVisualStyleBackColor = true;
-            this.btnAddStudyProgram.Click += new System.EventHandler(this.OnAddStudyProgramButtonClick);
             // 
             // PreviousIndividualFaculty
             // 
@@ -143,7 +129,7 @@
             this.StudyProgramListBox.Location = new System.Drawing.Point(455, 144);
             this.StudyProgramListBox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.StudyProgramListBox.Name = "StudyProgramListBox";
-            this.StudyProgramListBox.Size = new System.Drawing.Size(454, 298);
+            this.StudyProgramListBox.Size = new System.Drawing.Size(454, 319);
             this.StudyProgramListBox.TabIndex = 7;
             this.StudyProgramListBox.SelectedIndexChanged += new System.EventHandler(this.OnStudyProgramSelect);
             // 
@@ -160,20 +146,34 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Study Programs";
             // 
+            // AddFacultyLink
+            // 
+            this.AddFacultyLink.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddFacultyLink.AutoSize = true;
+            this.AddFacultyLink.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddFacultyLink.Location = new System.Drawing.Point(460, 472);
+            this.AddFacultyLink.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.AddFacultyLink.Name = "AddFacultyLink";
+            this.AddFacultyLink.Size = new System.Drawing.Size(230, 15);
+            this.AddFacultyLink.TabIndex = 9;
+            this.AddFacultyLink.TabStop = true;
+            this.AddFacultyLink.Text = "Cant find your study program? Add it here";
+            this.AddFacultyLink.Click += new System.EventHandler(this.OnAddStudyProgramLinkClick);
+            // 
             // FacultyView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 614);
+            this.Controls.Add(this.AddFacultyLink);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.StudyProgramListBox);
             this.Controls.Add(this.PreviousIndividualFaculty);
-            this.Controls.Add(this.btnAddStudyProgram);
             this.Controls.Add(this.btnLecturers);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FacultyTitleLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FacultyView";
             this.Text = "Faculty";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -193,9 +193,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label AboutSection;
         private System.Windows.Forms.Button btnLecturers;
-        private System.Windows.Forms.Button btnAddStudyProgram;
         private System.Windows.Forms.LinkLabel PreviousIndividualFaculty;
         private System.Windows.Forms.ListBox StudyProgramListBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.LinkLabel AddFacultyLink;
     }
 }

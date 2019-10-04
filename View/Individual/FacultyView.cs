@@ -37,7 +37,7 @@ namespace Advisor.View
             FacultyController.HandleLecturersButtonClick(Faculty);
         }
 
-        private void OnAddStudyProgramButtonClick(object sender, EventArgs e)
+        private void OnAddStudyProgramLinkClick(object sender, EventArgs e)
         {
             //TODO: Handle adding new study program
         }
