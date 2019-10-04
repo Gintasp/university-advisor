@@ -150,6 +150,12 @@
     <Compile Include="View\AddFormView.Designer.cs">
       <DependentUpon>AddFormView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Comparison\UniversityComparisonView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Comparison\UniversityComparisonView.Designer.cs">
+      <DependentUpon>UniversityComparisonView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Individual\FacultyView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +269,9 @@
     </Compile>
     <EmbeddedResource Include="View\AddFormView.resx">
       <DependentUpon>AddFormView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Comparison\UniversityComparisonView.resx">
+      <DependentUpon>UniversityComparisonView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Individual\FacultyView.resx">
       <DependentUpon>FacultyView.cs</DependentUpon>
