@@ -43,11 +43,9 @@ namespace Advisor.Controller
         public void LoadCourseData()
         {
             List<Course> courses = DB.Instance.Courses.Where(s => s.StudyProgram.Id == StudyProgram.Id).ToList();
-            foreach(Course course in courses)
-            {
-                CourseListView.CourseList.Items.Add(course);
-            }
+            courses.ForEach(course => CourseListView.CourseList.Items.Add(course));
         }
+
         public void HandleSelectedCourse(Course course)
         {
             CourseListView.Hide();
