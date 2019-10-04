@@ -2,6 +2,7 @@
 using Advisor.View;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace Advisor.Controller
@@ -80,7 +81,9 @@ namespace Advisor.Controller
             {
                 Title = AddFormView.TitleInput.Text,
                 Description = AddFormView.DescriptionInput.Text,
-                Faculty = FacultyView.Faculty
+                Faculty = FacultyView.Faculty,
+                Reviews = new Collection<Review>(),
+                Courses = new Collection<Course>()
             };
             DB.Instance.StudyPrograms.Add(program);
             DB.Instance.SaveChanges();

@@ -9,30 +9,27 @@ namespace Advisor.View
     {
         public IStudyProgramController StudyProgramController { get; set; }
         public StudyProgram StudyProgram { get; set; }
-        public ListBox ReviewListBox { get; set; }
+        public ListBox ReviewList { get; set; }
+        public ListBox CourseList { get; set; }
         public StudyProgramView(IStudyProgramController studyProgramController)
         {
             StudyProgramController = studyProgramController;
             studyProgramController.StudyProgramView = this;
             InitializeComponent();
-            ReviewListBox = ReviewList;
+            ReviewList = ReviewData;
+            CourseList = CourseData;
         }
 
         private void OnViewLoad(object sender, EventArgs e)
         {
             StudyProgramController.LoadStudyProgramData();
-            StudyProgramTitle.Text = StudyProgram.Title;
+            TitleLabel.Text = StudyProgram.Title;
             AboutSection.Text = StudyProgram.Description;
         }
 
         private void OnLeaveReviewButtonClick(object sender, EventArgs e)
         {
-            //TODO: Handle leave a review button click and display review form
-        }
-
-        private void OnCoursesButtonClick(object sender, EventArgs e)
-        {
-            StudyProgramController.HandleCoursesButtonClick();
+            StudyProgramController.HandleLeaveReviewClick();
         }
 
         private void OnPreviousFormButtonClick(object sender, EventArgs e)
@@ -43,6 +40,20 @@ namespace Advisor.View
         private void OnFormClose(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void OnCourseSelect(object sender, EventArgs e)
+        {
+            Course course = (Course) CourseData.SelectedItem;
+            if (course != null)
+            {
+                StudyProgramController.HandleCourseSelect(course);
+            }
+        }
+
+        private void OnAddCourseLinkClick(object sender, EventArgs e)
+        {
+            StudyProgramController.HandleAddCourseLinkClick();
         }
     }
 }

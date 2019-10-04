@@ -15,7 +15,7 @@ namespace Advisor.View
         {
             CourseController = courseController;
             Course = course;
-            CourseController.CourseView = this;
+            courseController.CourseView = this;
             InitializeComponent();
             ReviewList = Reviews;
         }
