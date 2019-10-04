@@ -2,11 +2,13 @@ namespace Advisor.Migrations
 {
     using Advisor.Model;
     using Advisor.Service.Auth;
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.Data.Entity.Migrations;
     using System.IO;
     using System.Linq;
+    using System.Net;
 
     internal sealed class Configuration : DbMigrationsConfiguration<DatabaseContext>
     {
@@ -31,7 +33,7 @@ namespace Advisor.Migrations
             LoadCourses(context, dataFolderPath + "Course.csv");
             LoadStudyPrograms(context, dataFolderPath + "StudyProgram.csv");
             LoadLecturers(context, dataFolderPath + "Lecturer.csv");
-            LoadUniversities(context, dataFolderPath + "University.csv");
+            LoadUniversities(context, "lithuania");
             LoadFaculties(context, dataFolderPath + "Faculty.csv");
 
             LoadFacultyUniversityRelations(context);
@@ -134,21 +136,20 @@ namespace Advisor.Migrations
             context.SaveChanges();
         }
 
-        private void LoadUniversities(DatabaseContext context, string filePath)
+        private void LoadUniversities(DatabaseContext context, string country)
         {
-            var universityList = File.ReadAllLines(filePath).ToList();
-            List<University> universitiesToWrite = new List<University>();
-            foreach (string line in universityList)
-            {
-                University newUni = new University()
+            string json = new WebClient().DownloadString("http://universities.hipolabs.com/search?country=" + country);
+            List<UniTmp> tmpUnis = JsonConvert.DeserializeObject<List<UniTmp>>(json);
+            List<University> unis = new List<University>();
+            tmpUnis.ForEach(tmpUni => unis.Add(
+                new University()
                 {
-                    Title = line.Split(',')[0],
-                    Description = line.Split(',')[1]
-                };
-                universitiesToWrite.Add(newUni);
-            }
-
-            context.Universities.AddRange(universitiesToWrite);
+                    Title = tmpUni.Name,
+                    Website = tmpUni.Webpages[0],
+                    Description = "Lorem ipsum dolor sit amet"
+                }
+            ));
+            context.Universities.AddRange(unis);
             context.SaveChanges();
         }
 
@@ -244,5 +245,13 @@ namespace Advisor.Migrations
             context.Database.ExecuteSqlCommand("DELETE FROM [University]; DBCC CHECKIDENT ([University], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Review]; DBCC CHECKIDENT ([Review], RESEED, 0)");
         }
+    }
+
+    internal class UniTmp
+    {
+        [JsonProperty(PropertyName = "name")]
+        public string Name { get; set; }
+        [JsonProperty(PropertyName = "web_pages")]
+        public string[] Webpages { get; set; }
     }
 }
