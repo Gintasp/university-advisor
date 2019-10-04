@@ -40,10 +40,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(74, 96);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(111, 148);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(845, 47);
+            this.label1.Size = new System.Drawing.Size(1245, 70);
             this.label1.TabIndex = 0;
             this.label1.Text = "What university are you interested in at the moment?";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -55,14 +54,14 @@
             this.searchBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.searchBox.HideSelection = false;
-            this.searchBox.Location = new System.Drawing.Point(248, 194);
-            this.searchBox.Margin = new System.Windows.Forms.Padding(2);
+            this.searchBox.Location = new System.Drawing.Point(372, 298);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(415, 29);
+            this.searchBox.Size = new System.Drawing.Size(620, 39);
             this.searchBox.TabIndex = 1;
             this.searchBox.Text = "Search";
-            this.searchBox.Enter += new System.EventHandler(this.PrimaryTextDeletion);
-            this.searchBox.Leave += new System.EventHandler(this.SetPrimaryText);
+            this.searchBox.TextChanged += new System.EventHandler(this.OnSearchBoxTextChange);
+            this.searchBox.Enter += new System.EventHandler(this.OnSearchBoxEnter);
+            this.searchBox.Leave += new System.EventHandler(this.OnSearchBoxLeave);
             // 
             // UniversityData
             // 
@@ -70,11 +69,10 @@
             this.UniversityData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UniversityData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.UniversityData.FormattingEnabled = true;
-            this.UniversityData.ItemHeight = 21;
-            this.UniversityData.Location = new System.Drawing.Point(248, 243);
-            this.UniversityData.Margin = new System.Windows.Forms.Padding(2);
+            this.UniversityData.ItemHeight = 32;
+            this.UniversityData.Location = new System.Drawing.Point(372, 374);
             this.UniversityData.Name = "UniversityData";
-            this.UniversityData.Size = new System.Drawing.Size(415, 256);
+            this.UniversityData.Size = new System.Drawing.Size(620, 388);
             this.UniversityData.TabIndex = 2;
             this.UniversityData.SelectedIndexChanged += new System.EventHandler(this.SelectedUniversity);
             // 
@@ -83,10 +81,9 @@
             this.AddFacultyLink.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddFacultyLink.AutoSize = true;
             this.AddFacultyLink.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddFacultyLink.Location = new System.Drawing.Point(246, 505);
-            this.AddFacultyLink.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.AddFacultyLink.Location = new System.Drawing.Point(369, 777);
             this.AddFacultyLink.Name = "AddFacultyLink";
-            this.AddFacultyLink.Size = new System.Drawing.Size(203, 15);
+            this.AddFacultyLink.Size = new System.Drawing.Size(306, 25);
             this.AddFacultyLink.TabIndex = 9;
             this.AddFacultyLink.TabStop = true;
             this.AddFacultyLink.Text = "Cant find your university? Add it here";
@@ -94,14 +91,13 @@
             // 
             // HomeView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(913, 658);
+            this.ClientSize = new System.Drawing.Size(1370, 1012);
             this.Controls.Add(this.AddFacultyLink);
             this.Controls.Add(this.UniversityData);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HomeView";
             this.Text = "Home";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

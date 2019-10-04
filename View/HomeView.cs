@@ -10,51 +10,52 @@ namespace Advisor.View
     {
         public ListBox UniversityList { get; set; }
         public IHomeController HomeController { get; set; }
+        public TextBox SearchBox { get; set; }
         public HomeView(IHomeController homeController)
         {
             HomeController = homeController;
             homeController.HomeView = this;
             InitializeComponent();
             UniversityList = UniversityData;
+            SearchBox = searchBox;
         }
-
-        private void PrimaryTextDeletion(object sender, EventArgs e)
-        {
-            if (searchBox.Text == "Search")
-            {
-                searchBox.Text = "";
-                searchBox.ForeColor = Color.Black;
-            }
-        }
-
-        private void SetPrimaryText(object sender, EventArgs e)
-        {
-            if (searchBox.Text == "")
-            {
-                searchBox.Text = "Search";
-                searchBox.ForeColor = Color.Silver;
-            }
-        }
-
         private void LoadUniversityList(object sender, EventArgs e)
         {
-            HomeController.LoadUniversityList();
+           HomeController.LoadUniversityList();
         }
-
         private void SelectedUniversity(object sender, EventArgs e)
         {
             University uni = (University) UniversityData.SelectedItem;
             HomeController.HandleUniversitySelect(uni);
         }
-
         private void OnFormClose(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
-
         private void OnAddUniversityLinkClick(object sender, EventArgs e)
         {
             HomeController.HandleAddUniversityClick();
+        }
+        private void OnSearchBoxTextChange(object sender, EventArgs e)
+        {
+            HomeController.HandleSearchBoxChange();
+        }
+        private void OnSearchBoxEnter(object sender, EventArgs e)
+        {
+            if (SearchBox.Text == "Search")
+            {
+                searchBox.Text = "";
+                searchBox.ForeColor = Color.Black;
+            }
+        }
+        private void OnSearchBoxLeave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(SearchBox.Text))
+            {
+                SearchBox.Text = "Search";
+                SearchBox.ForeColor = Color.Silver;
+                HomeController.LoadUniversityList();
+            }
         }
     }
 }

@@ -11,5 +11,6 @@ namespace Advisor.Controller
         void HandleAddNewUniversity(object sender, EventArgs e);
         void LoadUniversityList();
         void HandleUniversitySelect(University uni);
+        void HandleSearchBoxChange();
     }
 }
