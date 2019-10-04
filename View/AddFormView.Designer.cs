@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.Title = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.InputLabel = new System.Windows.Forms.Label();
             this.DescLabel = new System.Windows.Forms.Label();
             this.TextBox = new System.Windows.Forms.TextBox();
             this.RichTextBox = new System.Windows.Forms.RichTextBox();
@@ -47,15 +47,15 @@
             this.Title.Text = "Add New";
             this.Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // InputLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label2.Location = new System.Drawing.Point(222, 176);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Title:";
+            this.InputLabel.AutoSize = true;
+            this.InputLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.InputLabel.Location = new System.Drawing.Point(222, 176);
+            this.InputLabel.Name = "InputLabel";
+            this.InputLabel.Size = new System.Drawing.Size(37, 19);
+            this.InputLabel.TabIndex = 1;
+            this.InputLabel.Text = "Title:";
             // 
             // DescLabel
             // 
@@ -106,7 +106,7 @@
             this.Controls.Add(this.RichTextBox);
             this.Controls.Add(this.TextBox);
             this.Controls.Add(this.DescLabel);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.InputLabel);
             this.Controls.Add(this.Title);
             this.Name = "AddFormView";
             this.Text = "Add new";
@@ -118,7 +118,7 @@
         #endregion
 
         private System.Windows.Forms.Label Title;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label InputLabel;
         private System.Windows.Forms.Label DescLabel;
         private System.Windows.Forms.TextBox TextBox;
         private System.Windows.Forms.RichTextBox RichTextBox;

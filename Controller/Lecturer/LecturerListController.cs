@@ -1,11 +1,13 @@
 ﻿using Advisor.View;
 using Advisor.Model;
+using System;
 
 namespace Advisor.Controller
 {
     public class LecturerListController : ILecturerListController
     {
         public LecturerListView LecturerListView { get; set; }
+        public AddFormView AddFormView { get; set; }
         public Faculty Faculty { get; set; }
 
         public LecturerListController(Faculty faculty)
@@ -24,6 +26,30 @@ namespace Advisor.Controller
             }
         }
 
+        public void HandleAddLecturerButtonClick()
+        {
+            AddFormView = new AddFormView();
+            AddFormView.TitleLabel.Text = "Add new lecturer";
+            AddFormView.TextFieldLabel.Text = "Name:";
+            AddFormView.DescriptionInput.Visible = false;
+            AddFormView.DescriptionLabel.Visible = false;
+            AddFormView.AddButtonClicked += HandleAddLecturer;
+            AddFormView.ShowDialog();
+        }
+
+        public void HandleAddLecturer(object sender, EventArgs e)
+        {
+            Lecturer lecturer = new Lecturer()
+            {
+                Name = AddFormView.TitleInput.Text,
+                Faculty = Faculty
+            };
+            DB.Instance.Lecturers.Add(lecturer);
+            DB.Instance.SaveChanges();
+            LecturerListView.LecturerList.Items.Add(lecturer);
+            AddFormView.Close();
+        }
+
         public void HandlePreviousFormButtonClick()
         {
             LecturerListView.Hide();
@@ -31,7 +57,7 @@ namespace Advisor.Controller
             FacultyView.Show();
         }
 
-        public void HandleSelectedLecturer(string title)
+        public void HandleSelectedLecturer(Lecturer lecturer)
         {
             //TODO: Show individual lecturers view
         }

@@ -9,6 +9,7 @@ namespace Advisor.View
         public TextBox TitleInput { get; set; }
         public RichTextBox DescriptionInput { get; set; }
         public Label DescriptionLabel { get; set; }
+        public Label TextFieldLabel { get; set; }
         public event EventHandler<EventArgs> AddButtonClicked;
         public AddFormView()
         {
@@ -17,6 +18,7 @@ namespace Advisor.View
             TitleInput = TextBox;
             DescriptionInput = RichTextBox;
             DescriptionLabel = DescLabel;
+            TextFieldLabel = InputLabel;
         }
 
         private void OnAddButtonClick(object sender, EventArgs e)
