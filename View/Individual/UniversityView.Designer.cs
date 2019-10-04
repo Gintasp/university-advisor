@@ -130,7 +130,7 @@
             this.AddFacultyLink.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddFacultyLink.AutoSize = true;
             this.AddFacultyLink.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddFacultyLink.Location = new System.Drawing.Point(517, 465);
+            this.AddFacultyLink.Location = new System.Drawing.Point(441, 456);
             this.AddFacultyLink.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.AddFacultyLink.Name = "AddFacultyLink";
             this.AddFacultyLink.Size = new System.Drawing.Size(190, 15);

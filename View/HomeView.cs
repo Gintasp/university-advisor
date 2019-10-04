@@ -36,11 +36,6 @@ namespace Advisor.View
             }
         }
 
-        private void OnAddUniversityButtonClick(object sender, EventArgs e)
-        {
-            HomeController.HandleAddUniversityClick();
-        }
-
         private void LoadUniversityList(object sender, EventArgs e)
         {
             HomeController.LoadUniversityList();
@@ -55,6 +50,11 @@ namespace Advisor.View
         private void OnFormClose(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void OnAddUniversityLinkClick(object sender, EventArgs e)
+        {
+            HomeController.HandleAddUniversityClick();
         }
     }
 }

@@ -34,7 +34,7 @@ namespace Advisor.View
             FacultyController.LoadData(Faculty);
         }
 
-        private void OnAddStudyProgramButtonClick(object sender, EventArgs e)
+        private void OnAddStudyProgramLinkClick(object sender, EventArgs e)
         {
             FacultyController.HandleAddStudyProgramClick();
         }
@@ -58,9 +58,9 @@ namespace Advisor.View
             Application.Exit();
         }
 
-        private void OnAddLecturerButtonClick(object sender, EventArgs e)
+        private void OnAddLecturerLinkClick(object sender, EventArgs e)
         {
-            //TODO: Handle adding lecturers
+            FacultyController.HandleAddLecturerClick();
         }
 
         private void OnLecturerSelect(object sender, EventArgs e)

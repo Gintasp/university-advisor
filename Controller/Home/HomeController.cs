@@ -34,6 +34,7 @@ namespace Advisor.Controller
             };
             DB.Instance.Universities.Add(uni);
             DB.Instance.SaveChanges();
+            HomeView.UniversityList.Items.Add(uni);
             AddFormView.Close();
         }
 

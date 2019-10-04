@@ -33,12 +33,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.AboutSection = new System.Windows.Forms.Label();
             this.PreviousIndividualFaculty = new System.Windows.Forms.LinkLabel();
-            this.btnAddStudyProgram = new System.Windows.Forms.Button();
             this.StudyProgramListBox = new System.Windows.Forms.ListBox();
             this.LecturerListBox = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnAddLecturer = new System.Windows.Forms.Button();
+            this.AddFacultyLink = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +48,7 @@
             this.FacultyTitleLabel.AutoSize = true;
             this.FacultyTitleLabel.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FacultyTitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.FacultyTitleLabel.Location = new System.Drawing.Point(178, 94);
+            this.FacultyTitleLabel.Location = new System.Drawing.Point(158, 90);
             this.FacultyTitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FacultyTitleLabel.MaximumSize = new System.Drawing.Size(333, 0);
             this.FacultyTitleLabel.Name = "FacultyTitleLabel";
@@ -62,7 +62,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(173, 215);
+            this.label1.Location = new System.Drawing.Point(153, 192);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 21);
@@ -75,7 +75,7 @@
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.AboutSection);
-            this.panel1.Location = new System.Drawing.Point(177, 238);
+            this.panel1.Location = new System.Drawing.Point(157, 215);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(337, 309);
@@ -106,20 +106,6 @@
             this.PreviousIndividualFaculty.TabStop = true;
             this.PreviousIndividualFaculty.Text = "<<";
             this.PreviousIndividualFaculty.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnPreviousButtonClick);
-            // 
-            // btnAddStudyProgram
-            // 
-            this.btnAddStudyProgram.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddStudyProgram.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddStudyProgram.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAddStudyProgram.Location = new System.Drawing.Point(551, 510);
-            this.btnAddStudyProgram.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAddStudyProgram.Name = "btnAddStudyProgram";
-            this.btnAddStudyProgram.Size = new System.Drawing.Size(289, 37);
-            this.btnAddStudyProgram.TabIndex = 5;
-            this.btnAddStudyProgram.Text = "Add Study Program";
-            this.btnAddStudyProgram.UseVisualStyleBackColor = true;
-            this.btnAddStudyProgram.Click += new System.EventHandler(this.OnAddStudyProgramButtonClick);
             // 
             // StudyProgramListBox
             // 
@@ -155,27 +141,26 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(556, 102);
+            this.label2.Location = new System.Drawing.Point(546, 123);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(166, 30);
             this.label2.TabIndex = 8;
             this.label2.Text = "Study Programs";
             // 
-            // btnAddLecturer
+            // AddFacultyLink
             // 
-            this.btnAddLecturer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddLecturer.AutoSize = true;
-            this.btnAddLecturer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddLecturer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAddLecturer.Location = new System.Drawing.Point(854, 510);
-            this.btnAddLecturer.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAddLecturer.Name = "btnAddLecturer";
-            this.btnAddLecturer.Size = new System.Drawing.Size(289, 37);
-            this.btnAddLecturer.TabIndex = 5;
-            this.btnAddLecturer.Text = "Add a lecturer";
-            this.btnAddLecturer.UseVisualStyleBackColor = true;
-            this.btnAddLecturer.Click += new System.EventHandler(this.OnAddLecturerButtonClick);
+            this.AddFacultyLink.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddFacultyLink.AutoSize = true;
+            this.AddFacultyLink.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddFacultyLink.Location = new System.Drawing.Point(548, 509);
+            this.AddFacultyLink.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.AddFacultyLink.Name = "AddFacultyLink";
+            this.AddFacultyLink.Size = new System.Drawing.Size(230, 15);
+            this.AddFacultyLink.TabIndex = 9;
+            this.AddFacultyLink.TabStop = true;
+            this.AddFacultyLink.Text = "Cant find your study program? Add it here";
+            this.AddFacultyLink.Click += new System.EventHandler(this.OnAddStudyProgramLinkClick);
             // 
             // label3
             // 
@@ -183,25 +168,39 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(849, 102);
+            this.label3.Location = new System.Drawing.Point(849, 123);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 30);
             this.label3.TabIndex = 10;
             this.label3.Text = "Lecturers";
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(851, 509);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(125, 15);
+            this.linkLabel1.TabIndex = 11;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Add your lecturer here";
+            this.linkLabel1.Click += new System.EventHandler(this.OnAddLecturerLinkClick);
+            // 
             // FacultyView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 614);
-            this.Controls.Add(this.btnAddLecturer);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.AddFacultyLink);
             this.Controls.Add(this.LecturerListBox);
             this.Controls.Add(this.StudyProgramListBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.PreviousIndividualFaculty);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnAddStudyProgram);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FacultyTitleLabel);
@@ -225,11 +224,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label AboutSection;
         private System.Windows.Forms.LinkLabel PreviousIndividualFaculty;
-        private System.Windows.Forms.Button btnAddStudyProgram;
         private System.Windows.Forms.ListBox StudyProgramListBox;
         private System.Windows.Forms.ListBox LecturerListBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnAddLecturer;
+        private System.Windows.Forms.LinkLabel AddFacultyLink;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

@@ -50,6 +50,30 @@ namespace Advisor.Controller
             AddFormView.ShowDialog();
         }
 
+        public void HandleAddLecturerClick()
+        {
+            AddFormView = new AddFormView();
+            AddFormView.AddButtonClicked += HandleAddLecturer;
+            AddFormView.TitleLabel.Text = "Add lecturer";
+            AddFormView.TextFieldLabel.Text = "Name:";
+            AddFormView.DescriptionInput.Visible = false;
+            AddFormView.DescriptionLabel.Visible = false;
+            AddFormView.ShowDialog();
+        }
+
+        public void HandleAddLecturer(object sender, EventArgs e)
+        {
+            Lecturer lecturer = new Lecturer()
+            {
+                Name = AddFormView.TitleInput.Text,
+                Faculty = FacultyView.Faculty
+            };
+            DB.Instance.Lecturers.Add(lecturer);
+            DB.Instance.SaveChanges();
+            FacultyView.LecturerList.Items.Add(lecturer);
+            AddFormView.Close();
+        }
+
         public void HandleAddStudyProgram(object sender, EventArgs e)
         {
             StudyProgram program = new StudyProgram()
