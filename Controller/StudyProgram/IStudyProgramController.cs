@@ -1,5 +1,6 @@
-﻿using Advisor.View;
-using System.Windows.Forms;
+﻿using Advisor.Model;
+using Advisor.View;
+using System;
 
 namespace Advisor.Controller
 {
@@ -8,6 +9,9 @@ namespace Advisor.Controller
         StudyProgramView StudyProgramView { get; set; }
         void LoadStudyProgramData();
         void HandlePreviousButtonClick();
-        void HandleCoursesButtonClick();
+        void HandleAddCourseLinkClick();
+        void HandleAddCourse(object sender, EventArgs e);
+        void HandleLeaveReviewClick();
+        void HandleCourseSelect(Course course);
     }
 }

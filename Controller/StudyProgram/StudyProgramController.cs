@@ -1,5 +1,9 @@
-﻿using Advisor.Model;
+﻿using System;
+using System.Collections.Generic;
+using Advisor.Model;
 using Advisor.View;
+using System.Linq;
+using System.Collections.ObjectModel;
 
 namespace Advisor.Controller
 {
@@ -10,7 +14,8 @@ namespace Advisor.Controller
         public Faculty Faculty { get; set; }
         public FacultyView FacultyView { get; set; }
         public University University { get; set; }
-        public CourseListView CourseListView { get; set; }
+        public AddFormView AddFormView { get; set; }
+        public CourseView CourseView { get; set; }
 
         public StudyProgramController(StudyProgram studyProgram, Faculty faculty, University uni)
         {
@@ -22,13 +27,12 @@ namespace Advisor.Controller
         public void LoadStudyProgramData()
         {
             StudyProgramView.StudyProgram = StudyProgram;
-            if(StudyProgram.Reviews != null)
-            {
-                foreach (Review review in StudyProgram.Reviews)
-                {
-                    StudyProgramView.ReviewListBox.Items.Add(review);
-                }
-            }
+            StudyProgramView.ReviewList.Items.Clear();
+            StudyProgramView.CourseList.Items.Clear();
+            List<Review> reviews = StudyProgram.Reviews.ToList();
+            List<Course> courses = StudyProgram.Courses.ToList();
+            reviews.ForEach(review => StudyProgramView.ReviewList.Items.Add(review));
+            courses.ForEach(course => StudyProgramView.CourseList.Items.Add(course));
         }
 
         public void HandlePreviousButtonClick()
@@ -38,11 +42,49 @@ namespace Advisor.Controller
             FacultyView.Show();
         }
 
-        public void HandleCoursesButtonClick()
+        public void HandleAddCourseLinkClick()
         {
-            StudyProgramView.Hide();
-            CourseListView = new CourseListView(new CourseListController(StudyProgram));
-            CourseListView.Show();
+            LoadAddForm();
+            AddFormView.ShowDialog();
+        }
+
+        public void HandleAddCourse(object sender, EventArgs e)
+        {
+            Course course = new Course()
+            {
+                Title = AddFormView.TitleInput.Text,
+                Lecturer = (Lecturer)AddFormView.LecturerComboBox.SelectedItem,
+                StudyProgram = StudyProgram,
+                Reviews = new Collection<Review>()
+            };
+            DB.Instance.Courses.Add(course);
+            DB.Instance.SaveChanges();
+            StudyProgramView.CourseList.Items.Add(course);
+            AddFormView.Close();
+        }
+
+        public void HandleLeaveReviewClick()
+        {
+            //TODO: Handle leave review
+        }
+
+        public void HandleCourseSelect(Course course)
+        {
+            CourseView = new CourseView(new CourseController(StudyProgram, course, this), course);
+            CourseView.Show();
+        }
+
+        private void LoadAddForm()
+        {
+            AddFormView = new AddFormView();
+            AddFormView.TitleLabel.Text = "Add course";
+            AddFormView.DescriptionInput.Visible = false;
+            AddFormView.DescriptionLabel.Visible = false;
+            AddFormView.LecturerComboBox.Visible = true;
+            AddFormView.LecturerLabel.Visible = true;
+            AddFormView.AddButtonClicked += HandleAddCourse;
+            List<Lecturer> lecturers = Faculty.Lecturers.ToList();
+            lecturers.ForEach(lecturer => AddFormView.LecturerComboBox.Items.Add(lecturer));
         }
     }
 }

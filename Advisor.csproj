@@ -71,8 +71,6 @@
     <Compile Include="Controller\StudyProgram\IStudyProgramController.cs" />
     <Compile Include="Controller\StudyProgram\StudyProgramController.cs" />
     <Compile Include="Controller\Course\CourseController.cs" />
-    <Compile Include="Controller\Course\ICourseListController.cs" />
-    <Compile Include="Controller\Course\CourseListController.cs" />
     <Compile Include="Controller\Review\IReviewController.cs" />
     <Compile Include="Controller\Review\CourseReviewController.cs" />
     <Compile Include="Controller\University\IUniversityController.cs" />
@@ -210,12 +208,6 @@
     <Compile Include="View\Individual\UniversityView.Designer.cs">
       <DependentUpon>UniversityView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\List\CourseListView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\List\CourseListView.Designer.cs">
-      <DependentUpon>CourseListView.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Migrations\201909221555231_MainEntities.resx">
       <DependentUpon>201909221555231_MainEntities.cs</DependentUpon>
     </EmbeddedResource>
@@ -294,9 +286,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Individual\UniversityView.resx">
       <DependentUpon>UniversityView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\List\CourseListView.resx">
-      <DependentUpon>CourseListView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Migrations\Data\Faculty.csv" />
     <None Include="Migrations\Data\Lecturer.csv" />

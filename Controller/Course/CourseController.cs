@@ -8,13 +8,19 @@ namespace Advisor.Controller
     public class CourseController : ICourseController
     {
         public CourseView CourseView { get; set; }
-        public CourseListView CourseListView { get; set; }
         public StudyProgram StudyProgram { get; set; }
         public Course Course { get; set; }
-        public CourseController(StudyProgram studyProgram, Course course)
-        {
+        public StudyProgramView StudyProgramView { get; set; }
+        public IStudyProgramController StudyProgramController { get; set; }
+
+        public CourseController(
+            StudyProgram studyProgram,
+            Course course,
+            IStudyProgramController studyProgramController
+        ) {
             StudyProgram = studyProgram;
             Course = course;
+            StudyProgramController = studyProgramController;
         }
 
         public void LoadCourseReviews()
@@ -29,8 +35,8 @@ namespace Advisor.Controller
         public void HandlePreviousClicked()
         {
             CourseView.Hide();
-            CourseListView = new CourseListView(new CourseListController(StudyProgram));
-            CourseListView.Show();
+            StudyProgramView = new StudyProgramView(StudyProgramController);
+            StudyProgramView.Show();
         }
     }
 }
