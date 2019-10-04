@@ -11,5 +11,6 @@ namespace Advisor.Controller
         void LoadData(Faculty faculty);
         void HandleStudyProgramSelect(StudyProgram selectedProgram, Faculty faculty, University uni);
         void HandleLecturerSelect(Lecturer lecturer, Faculty faculty, University university);
+        void HandleAddStudyProgramClick();
     }
 }
