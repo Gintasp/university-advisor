@@ -1,4 +1,5 @@
-﻿using Advisor.View;
+﻿using Advisor.Model;
+using Advisor.View;
 
 namespace Advisor.Controller
 {
@@ -7,6 +8,7 @@ namespace Advisor.Controller
         LecturerListView LecturerListView { get; set; }
         void LoadLecturerData();
         void HandlePreviousFormButtonClick();
-        void HandleSelectedLecturer(string title);
+        void HandleSelectedLecturer(Lecturer lecturer);
+        void HandleAddLecturerButtonClick();
     }
 }

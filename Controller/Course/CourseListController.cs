@@ -1,5 +1,6 @@
 ﻿using Advisor.Model;
 using Advisor.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,20 +12,40 @@ namespace Advisor.Controller
         public StudyProgramView StudyProgramView { get; set; }
         public StudyProgram StudyProgram { get; set; }
         public CourseView CourseView { get; set; }
+        public AddFormView AddFormView { get; set; }
 
         public CourseListController(StudyProgram studyProgram)
         {
             StudyProgram = studyProgram;
         }
 
+        public void HandleAddCourseButtonClick()
+        {
+            LoadAddLecturerView();
+            LoadLecturerList();
+            AddFormView.ShowDialog();
+        }
+
+        public void HandleAddCourse(object sender, EventArgs e)
+        {
+            Course course = new Course()
+            {
+                Title = AddFormView.TitleInput.Text,
+                StudyProgram = StudyProgram,
+                Lecturer = (Lecturer) AddFormView.LecturerComboBox.SelectedItem
+            };
+            DB.Instance.Courses.Add(course);
+            DB.Instance.SaveChanges();
+            CourseListView.CourseList.Items.Add(course);
+            AddFormView.Close();
+        }
+
         public void LoadCourseData()
         {
             List<Course> courses = DB.Instance.Courses.Where(s => s.StudyProgram.Id == StudyProgram.Id).ToList();
-            foreach(Course course in courses)
-            {
-                CourseListView.CourseList.Items.Add(course);
-            }
+            courses.ForEach(course => CourseListView.CourseList.Items.Add(course));
         }
+
         public void HandleSelectedCourse(Course course)
         {
             CourseListView.Hide();
@@ -67,6 +88,27 @@ namespace Advisor.Controller
             .Where(p => p.StudyProgram.Id == program.Id)
             .Select(f => f.Faculty)
             .SingleOrDefault();
+        }
+
+        private void LoadAddLecturerView()
+        {
+            AddFormView = new AddFormView();
+            AddFormView.TitleLabel.Text = "Add new course";
+            AddFormView.DescriptionInput.Visible = false;
+            AddFormView.DescriptionLabel.Visible = false;
+            AddFormView.LecturerComboBox.Visible = true;
+            AddFormView.LecturerLabel.Visible = true;
+            AddFormView.AddButtonClicked += HandleAddCourse;
+        }
+
+        private void LoadLecturerList()
+        {
+            Faculty fac = StudyProgram.Faculty;
+            List<Lecturer> lecturers = fac.Lecturers.ToList();
+            foreach(Lecturer lecturer in lecturers)
+            {
+                AddFormView.LecturerComboBox.Items.Add(lecturer);
+            }
         }
     }
 }
