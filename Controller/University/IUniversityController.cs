@@ -1,5 +1,6 @@
 ﻿using Advisor.Model;
 using Advisor.View;
+using System;
 
 namespace Advisor.Controller
 {
@@ -9,5 +10,7 @@ namespace Advisor.Controller
         void HandlePreviousButtonClick();
         void LoadFacultyData(University uni);
         void HandleFacultySelect(Faculty faculty, University uni);
+        void HandleAddFaculty(object sender, EventArgs e);
+        void HandleAddFacultyClick();
     }
 }

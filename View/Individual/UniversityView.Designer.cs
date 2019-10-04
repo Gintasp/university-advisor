@@ -137,6 +137,7 @@
             this.AddFacultyLink.TabIndex = 8;
             this.AddFacultyLink.TabStop = true;
             this.AddFacultyLink.Text = "Cant find your Faculty? Add it here";
+            this.AddFacultyLink.Click += new System.EventHandler(this.OnAddFacultyClick);
             // 
             // label1
             // 

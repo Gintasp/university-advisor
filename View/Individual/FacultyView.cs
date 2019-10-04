@@ -39,7 +39,7 @@ namespace Advisor.View
 
         private void OnAddStudyProgramLinkClick(object sender, EventArgs e)
         {
-            //TODO: Handle adding new study program
+            FacultyController.HandleAddStudyProgramClick();
         }
 
         private void OnPreviousButtonClick(object sender, LinkLabelLinkClickedEventArgs e)
