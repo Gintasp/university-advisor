@@ -32,7 +32,7 @@
             this.previousForm = new System.Windows.Forms.LinkLabel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.LecturerData = new System.Windows.Forms.ListBox();
-            this.btnAddLecturer = new System.Windows.Forms.Button();
+            this.AddFacultyLink = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -86,27 +86,26 @@
             this.LecturerData.TabIndex = 6;
             this.LecturerData.SelectedIndexChanged += new System.EventHandler(this.SelectedLecturer);
             // 
-            // btnAddLecturer
+            // AddFacultyLink
             // 
-            this.btnAddLecturer.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnAddLecturer.AutoSize = true;
-            this.btnAddLecturer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddLecturer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAddLecturer.Location = new System.Drawing.Point(294, 446);
-            this.btnAddLecturer.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
-            this.btnAddLecturer.Name = "btnAddLecturer";
-            this.btnAddLecturer.Size = new System.Drawing.Size(415, 43);
-            this.btnAddLecturer.TabIndex = 7;
-            this.btnAddLecturer.Text = "Add a lecturer";
-            this.btnAddLecturer.UseVisualStyleBackColor = true;
-            this.btnAddLecturer.Click += new System.EventHandler(this.OnAddLecturerButtonClick);
+            this.AddFacultyLink.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddFacultyLink.AutoSize = true;
+            this.AddFacultyLink.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddFacultyLink.Location = new System.Drawing.Point(291, 439);
+            this.AddFacultyLink.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.AddFacultyLink.Name = "AddFacultyLink";
+            this.AddFacultyLink.Size = new System.Drawing.Size(192, 15);
+            this.AddFacultyLink.TabIndex = 10;
+            this.AddFacultyLink.TabStop = true;
+            this.AddFacultyLink.Text = "Cant find your lecturer? Add it here";
+            this.AddFacultyLink.Click += new System.EventHandler(this.OnAddLecturerLinkClick);
             // 
             // LecturerListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(986, 613);
-            this.Controls.Add(this.btnAddLecturer);
+            this.Controls.Add(this.AddFacultyLink);
             this.Controls.Add(this.LecturerData);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.previousForm);
@@ -128,6 +127,6 @@
         private System.Windows.Forms.LinkLabel previousForm;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ListBox LecturerData;
-        private System.Windows.Forms.Button btnAddLecturer;
+        private System.Windows.Forms.LinkLabel AddFacultyLink;
     }
 }

@@ -35,7 +35,7 @@ namespace Advisor.View
             }
         }
 
-        private void OnAddLecturerButtonClick(object sender, EventArgs e)
+        private void OnAddLecturerLinkClick(object sender, EventArgs e)
         {
             //TODO: Implement handling of new lecturer creation
         }
