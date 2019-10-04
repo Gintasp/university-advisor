@@ -40,7 +40,7 @@
             this.leaveReviewButton.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.leaveReviewButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.leaveReviewButton.Location = new System.Drawing.Point(285, 499);
-            this.leaveReviewButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.leaveReviewButton.Margin = new System.Windows.Forms.Padding(2);
             this.leaveReviewButton.Name = "leaveReviewButton";
             this.leaveReviewButton.Size = new System.Drawing.Size(414, 37);
             this.leaveReviewButton.TabIndex = 9;
@@ -67,7 +67,7 @@
             this.Reviews.FormattingEnabled = true;
             this.Reviews.ItemHeight = 21;
             this.Reviews.Location = new System.Drawing.Point(285, 190);
-            this.Reviews.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Reviews.Margin = new System.Windows.Forms.Padding(2);
             this.Reviews.Name = "Reviews";
             this.Reviews.Size = new System.Drawing.Size(415, 235);
             this.Reviews.TabIndex = 7;
@@ -75,15 +75,15 @@
             // CourseTitle
             // 
             this.CourseTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CourseTitle.AutoSize = true;
             this.CourseTitle.Font = new System.Drawing.Font("Segoe UI", 28F);
             this.CourseTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.CourseTitle.Location = new System.Drawing.Point(423, 105);
+            this.CourseTitle.Location = new System.Drawing.Point(285, 105);
             this.CourseTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CourseTitle.Name = "CourseTitle";
-            this.CourseTitle.Size = new System.Drawing.Size(139, 51);
+            this.CourseTitle.Size = new System.Drawing.Size(414, 51);
             this.CourseTitle.TabIndex = 5;
             this.CourseTitle.Text = "Course";
+            this.CourseTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CourseView
             // 
@@ -94,7 +94,7 @@
             this.Controls.Add(this.PreviousForm);
             this.Controls.Add(this.Reviews);
             this.Controls.Add(this.CourseTitle);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CourseView";
             this.Text = "Course";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

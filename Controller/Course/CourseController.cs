@@ -17,11 +17,6 @@ namespace Advisor.Controller
             Course = course;
         }
 
-        public void HandleAddReview()
-        {
-            //TODO: Implement add review feature
-        }
-
         public void LoadCourseReviews()
         {
             List<Review> reviews = DB.Instance.Reviews.Where(r => r.Course.Id == Course.Id).ToList();

@@ -1,5 +1,6 @@
 ﻿using Advisor.Model;
 using Advisor.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,10 +12,32 @@ namespace Advisor.Controller
         public StudyProgramView StudyProgramView { get; set; }
         public StudyProgram StudyProgram { get; set; }
         public CourseView CourseView { get; set; }
+        public AddFormView AddFormView { get; set; }
 
         public CourseListController(StudyProgram studyProgram)
         {
             StudyProgram = studyProgram;
+        }
+
+        public void HandleAddCourseButtonClick()
+        {
+            AddFormView = new AddFormView();
+            AddFormView.TitleLabel.Text = "Add new course";
+            AddFormView.AddButtonClicked += HandleAddCourse;
+            AddFormView.ShowDialog();
+        }
+
+        public void HandleAddCourse(object sender, EventArgs e)
+        {
+            Course course = new Course()
+            {
+                Title = AddFormView.TitleInput.Text,
+                StudyProgram = StudyProgram
+            };
+            DB.Instance.Courses.Add(course);
+            DB.Instance.SaveChanges();
+            CourseListView.CourseList.Items.Add(course);
+            AddFormView.Close();
         }
 
         public void LoadCourseData()
