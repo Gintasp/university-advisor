@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Course1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.PracticeCourse1 = new System.Windows.Forms.Label();
             this.TheoryCourse1 = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Course2 = new System.Windows.Forms.Button();
             this.PracticeCourse2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.TheoryCourse2 = new System.Windows.Forms.Label();
@@ -65,8 +67,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.PreviousForm = new System.Windows.Forms.LinkLabel();
-            this.Course1 = new System.Windows.Forms.Button();
-            this.Course2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -93,11 +93,24 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(52, 98);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(39, 80);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(598, 569);
+            this.panel1.Size = new System.Drawing.Size(449, 463);
             this.panel1.TabIndex = 1;
+            // 
+            // Course1
+            // 
+            this.Course1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Course1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Course1.Location = new System.Drawing.Point(86, 42);
+            this.Course1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Course1.Name = "Course1";
+            this.Course1.Size = new System.Drawing.Size(254, 29);
+            this.Course1.TabIndex = 21;
+            this.Course1.Text = "Choose course";
+            this.Course1.UseVisualStyleBackColor = true;
+            this.Course1.Click += new System.EventHandler(this.OnCourseOneClick);
             // 
             // label7
             // 
@@ -105,9 +118,10 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(34, 488);
+            this.label7.Location = new System.Drawing.Point(26, 396);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(130, 28);
+            this.label7.Size = new System.Drawing.Size(103, 21);
             this.label7.TabIndex = 18;
             this.label7.Text = "Practice ratio:";
             // 
@@ -117,9 +131,10 @@
             this.PracticeCourse1.AutoSize = true;
             this.PracticeCourse1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PracticeCourse1.ForeColor = System.Drawing.Color.Gray;
-            this.PracticeCourse1.Location = new System.Drawing.Point(192, 488);
+            this.PracticeCourse1.Location = new System.Drawing.Point(144, 396);
+            this.PracticeCourse1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PracticeCourse1.Name = "PracticeCourse1";
-            this.PracticeCourse1.Size = new System.Drawing.Size(24, 28);
+            this.PracticeCourse1.Size = new System.Drawing.Size(19, 21);
             this.PracticeCourse1.TabIndex = 20;
             this.PracticeCourse1.Text = "X";
             // 
@@ -129,9 +144,10 @@
             this.TheoryCourse1.AutoSize = true;
             this.TheoryCourse1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TheoryCourse1.ForeColor = System.Drawing.Color.Gray;
-            this.TheoryCourse1.Location = new System.Drawing.Point(176, 439);
+            this.TheoryCourse1.Location = new System.Drawing.Point(132, 357);
+            this.TheoryCourse1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TheoryCourse1.Name = "TheoryCourse1";
-            this.TheoryCourse1.Size = new System.Drawing.Size(24, 28);
+            this.TheoryCourse1.Size = new System.Drawing.Size(19, 21);
             this.TheoryCourse1.TabIndex = 17;
             this.TheoryCourse1.Text = "X";
             // 
@@ -141,9 +157,10 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label15.Location = new System.Drawing.Point(34, 439);
+            this.label15.Location = new System.Drawing.Point(26, 357);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(122, 28);
+            this.label15.Size = new System.Drawing.Size(97, 21);
             this.label15.TabIndex = 16;
             this.label15.Text = "Theory ratio:";
             // 
@@ -153,9 +170,10 @@
             this.CourseTitle1.AutoSize = true;
             this.CourseTitle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CourseTitle1.ForeColor = System.Drawing.Color.Gray;
-            this.CourseTitle1.Location = new System.Drawing.Point(34, 115);
+            this.CourseTitle1.Location = new System.Drawing.Point(26, 93);
+            this.CourseTitle1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CourseTitle1.Name = "CourseTitle1";
-            this.CourseTitle1.Size = new System.Drawing.Size(49, 28);
+            this.CourseTitle1.Size = new System.Drawing.Size(39, 21);
             this.CourseTitle1.TabIndex = 14;
             this.CourseTitle1.Text = "Title";
             // 
@@ -165,9 +183,10 @@
             this.InterestingCourse1.AutoSize = true;
             this.InterestingCourse1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InterestingCourse1.ForeColor = System.Drawing.Color.Gray;
-            this.InterestingCourse1.Location = new System.Drawing.Point(208, 394);
+            this.InterestingCourse1.Location = new System.Drawing.Point(156, 320);
+            this.InterestingCourse1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.InterestingCourse1.Name = "InterestingCourse1";
-            this.InterestingCourse1.Size = new System.Drawing.Size(23, 25);
+            this.InterestingCourse1.Size = new System.Drawing.Size(18, 20);
             this.InterestingCourse1.TabIndex = 13;
             this.InterestingCourse1.Text = "X";
             // 
@@ -177,9 +196,10 @@
             this.UsefulnessCourse1.AutoSize = true;
             this.UsefulnessCourse1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsefulnessCourse1.ForeColor = System.Drawing.Color.Gray;
-            this.UsefulnessCourse1.Location = new System.Drawing.Point(162, 346);
+            this.UsefulnessCourse1.Location = new System.Drawing.Point(122, 281);
+            this.UsefulnessCourse1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UsefulnessCourse1.Name = "UsefulnessCourse1";
-            this.UsefulnessCourse1.Size = new System.Drawing.Size(23, 25);
+            this.UsefulnessCourse1.Size = new System.Drawing.Size(18, 20);
             this.UsefulnessCourse1.TabIndex = 12;
             this.UsefulnessCourse1.Text = "X";
             // 
@@ -189,9 +209,10 @@
             this.DifficultyCourse1.AutoSize = true;
             this.DifficultyCourse1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DifficultyCourse1.ForeColor = System.Drawing.Color.Gray;
-            this.DifficultyCourse1.Location = new System.Drawing.Point(141, 301);
+            this.DifficultyCourse1.Location = new System.Drawing.Point(106, 245);
+            this.DifficultyCourse1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DifficultyCourse1.Name = "DifficultyCourse1";
-            this.DifficultyCourse1.Size = new System.Drawing.Size(23, 25);
+            this.DifficultyCourse1.Size = new System.Drawing.Size(18, 20);
             this.DifficultyCourse1.TabIndex = 11;
             this.DifficultyCourse1.Text = "X";
             // 
@@ -201,9 +222,10 @@
             this.LevelOfSatisfactionCourse1.AutoSize = true;
             this.LevelOfSatisfactionCourse1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LevelOfSatisfactionCourse1.ForeColor = System.Drawing.Color.Gray;
-            this.LevelOfSatisfactionCourse1.Location = new System.Drawing.Point(237, 254);
+            this.LevelOfSatisfactionCourse1.Location = new System.Drawing.Point(178, 206);
+            this.LevelOfSatisfactionCourse1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LevelOfSatisfactionCourse1.Name = "LevelOfSatisfactionCourse1";
-            this.LevelOfSatisfactionCourse1.Size = new System.Drawing.Size(23, 25);
+            this.LevelOfSatisfactionCourse1.Size = new System.Drawing.Size(18, 20);
             this.LevelOfSatisfactionCourse1.TabIndex = 10;
             this.LevelOfSatisfactionCourse1.Text = "X";
             // 
@@ -213,9 +235,10 @@
             this.RatingCourse1.AutoSize = true;
             this.RatingCourse1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RatingCourse1.ForeColor = System.Drawing.Color.Gray;
-            this.RatingCourse1.Location = new System.Drawing.Point(193, 207);
+            this.RatingCourse1.Location = new System.Drawing.Point(145, 168);
+            this.RatingCourse1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RatingCourse1.Name = "RatingCourse1";
-            this.RatingCourse1.Size = new System.Drawing.Size(23, 25);
+            this.RatingCourse1.Size = new System.Drawing.Size(18, 20);
             this.RatingCourse1.TabIndex = 9;
             this.RatingCourse1.Text = "X";
             // 
@@ -225,9 +248,10 @@
             this.ReviewCountCourse1.AutoSize = true;
             this.ReviewCountCourse1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReviewCountCourse1.ForeColor = System.Drawing.Color.Gray;
-            this.ReviewCountCourse1.Location = new System.Drawing.Point(141, 160);
+            this.ReviewCountCourse1.Location = new System.Drawing.Point(106, 130);
+            this.ReviewCountCourse1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ReviewCountCourse1.Name = "ReviewCountCourse1";
-            this.ReviewCountCourse1.Size = new System.Drawing.Size(23, 25);
+            this.ReviewCountCourse1.Size = new System.Drawing.Size(18, 20);
             this.ReviewCountCourse1.TabIndex = 8;
             this.ReviewCountCourse1.Text = "X";
             // 
@@ -237,9 +261,10 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(34, 391);
+            this.label6.Location = new System.Drawing.Point(26, 318);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(153, 28);
+            this.label6.Size = new System.Drawing.Size(123, 21);
             this.label6.TabIndex = 6;
             this.label6.Text = "Level of interest:";
             // 
@@ -249,9 +274,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(34, 159);
+            this.label1.Location = new System.Drawing.Point(26, 129);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 28);
+            this.label1.Size = new System.Drawing.Size(70, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Reviews:";
             // 
@@ -261,9 +287,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(34, 344);
+            this.label4.Location = new System.Drawing.Point(26, 280);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 28);
+            this.label4.Size = new System.Drawing.Size(88, 21);
             this.label4.TabIndex = 5;
             this.label4.Text = "Usefulness:";
             // 
@@ -273,9 +300,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(34, 205);
+            this.label2.Location = new System.Drawing.Point(26, 167);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 28);
+            this.label2.Size = new System.Drawing.Size(108, 21);
             this.label2.TabIndex = 2;
             this.label2.Text = "Overall rating:";
             // 
@@ -285,9 +313,10 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label10.Location = new System.Drawing.Point(34, 298);
+            this.label10.Location = new System.Drawing.Point(26, 242);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(94, 28);
+            this.label10.Size = new System.Drawing.Size(75, 21);
             this.label10.TabIndex = 4;
             this.label10.Text = "Difficulty:";
             // 
@@ -297,9 +326,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(34, 251);
+            this.label3.Location = new System.Drawing.Point(26, 204);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(186, 28);
+            this.label3.Size = new System.Drawing.Size(149, 21);
             this.label3.TabIndex = 3;
             this.label3.Text = "Level of satisfaction:";
             // 
@@ -325,11 +355,24 @@
             this.panel2.Controls.Add(this.label22);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label24);
-            this.panel2.Location = new System.Drawing.Point(656, 98);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(492, 80);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(598, 569);
+            this.panel2.Size = new System.Drawing.Size(449, 463);
             this.panel2.TabIndex = 18;
+            // 
+            // Course2
+            // 
+            this.Course2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Course2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Course2.Location = new System.Drawing.Point(89, 42);
+            this.Course2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Course2.Name = "Course2";
+            this.Course2.Size = new System.Drawing.Size(254, 29);
+            this.Course2.TabIndex = 22;
+            this.Course2.Text = "Choose course";
+            this.Course2.UseVisualStyleBackColor = true;
+            this.Course2.Click += new System.EventHandler(this.OnCourseTwoClick);
             // 
             // PracticeCourse2
             // 
@@ -337,9 +380,10 @@
             this.PracticeCourse2.AutoSize = true;
             this.PracticeCourse2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PracticeCourse2.ForeColor = System.Drawing.Color.Gray;
-            this.PracticeCourse2.Location = new System.Drawing.Point(186, 488);
+            this.PracticeCourse2.Location = new System.Drawing.Point(140, 396);
+            this.PracticeCourse2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PracticeCourse2.Name = "PracticeCourse2";
-            this.PracticeCourse2.Size = new System.Drawing.Size(24, 28);
+            this.PracticeCourse2.Size = new System.Drawing.Size(19, 21);
             this.PracticeCourse2.TabIndex = 21;
             this.PracticeCourse2.Text = "X";
             // 
@@ -349,9 +393,10 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label11.Location = new System.Drawing.Point(34, 488);
+            this.label11.Location = new System.Drawing.Point(26, 396);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(130, 28);
+            this.label11.Size = new System.Drawing.Size(103, 21);
             this.label11.TabIndex = 19;
             this.label11.Text = "Practice ratio:";
             // 
@@ -361,9 +406,10 @@
             this.TheoryCourse2.AutoSize = true;
             this.TheoryCourse2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TheoryCourse2.ForeColor = System.Drawing.Color.Gray;
-            this.TheoryCourse2.Location = new System.Drawing.Point(173, 439);
+            this.TheoryCourse2.Location = new System.Drawing.Point(130, 357);
+            this.TheoryCourse2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TheoryCourse2.Name = "TheoryCourse2";
-            this.TheoryCourse2.Size = new System.Drawing.Size(24, 28);
+            this.TheoryCourse2.Size = new System.Drawing.Size(19, 21);
             this.TheoryCourse2.TabIndex = 17;
             this.TheoryCourse2.Text = "X";
             // 
@@ -373,9 +419,10 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(34, 439);
+            this.label8.Location = new System.Drawing.Point(26, 357);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(122, 28);
+            this.label8.Size = new System.Drawing.Size(97, 21);
             this.label8.TabIndex = 16;
             this.label8.Text = "Theory ratio:";
             // 
@@ -385,9 +432,10 @@
             this.CourseTitle2.AutoSize = true;
             this.CourseTitle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CourseTitle2.ForeColor = System.Drawing.Color.Gray;
-            this.CourseTitle2.Location = new System.Drawing.Point(34, 115);
+            this.CourseTitle2.Location = new System.Drawing.Point(26, 93);
+            this.CourseTitle2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CourseTitle2.Name = "CourseTitle2";
-            this.CourseTitle2.Size = new System.Drawing.Size(49, 28);
+            this.CourseTitle2.Size = new System.Drawing.Size(39, 21);
             this.CourseTitle2.TabIndex = 14;
             this.CourseTitle2.Text = "Title";
             // 
@@ -397,9 +445,10 @@
             this.InterestingCourse2.AutoSize = true;
             this.InterestingCourse2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InterestingCourse2.ForeColor = System.Drawing.Color.Gray;
-            this.InterestingCourse2.Location = new System.Drawing.Point(210, 394);
+            this.InterestingCourse2.Location = new System.Drawing.Point(158, 320);
+            this.InterestingCourse2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.InterestingCourse2.Name = "InterestingCourse2";
-            this.InterestingCourse2.Size = new System.Drawing.Size(23, 25);
+            this.InterestingCourse2.Size = new System.Drawing.Size(18, 20);
             this.InterestingCourse2.TabIndex = 13;
             this.InterestingCourse2.Text = "X";
             // 
@@ -409,9 +458,10 @@
             this.UsefulnessCourse2.AutoSize = true;
             this.UsefulnessCourse2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsefulnessCourse2.ForeColor = System.Drawing.Color.Gray;
-            this.UsefulnessCourse2.Location = new System.Drawing.Point(173, 347);
+            this.UsefulnessCourse2.Location = new System.Drawing.Point(130, 282);
+            this.UsefulnessCourse2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UsefulnessCourse2.Name = "UsefulnessCourse2";
-            this.UsefulnessCourse2.Size = new System.Drawing.Size(23, 25);
+            this.UsefulnessCourse2.Size = new System.Drawing.Size(18, 20);
             this.UsefulnessCourse2.TabIndex = 12;
             this.UsefulnessCourse2.Text = "X";
             // 
@@ -421,9 +471,10 @@
             this.DifficultyCourse2.AutoSize = true;
             this.DifficultyCourse2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DifficultyCourse2.ForeColor = System.Drawing.Color.Gray;
-            this.DifficultyCourse2.Location = new System.Drawing.Point(146, 298);
+            this.DifficultyCourse2.Location = new System.Drawing.Point(110, 242);
+            this.DifficultyCourse2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DifficultyCourse2.Name = "DifficultyCourse2";
-            this.DifficultyCourse2.Size = new System.Drawing.Size(23, 25);
+            this.DifficultyCourse2.Size = new System.Drawing.Size(18, 20);
             this.DifficultyCourse2.TabIndex = 11;
             this.DifficultyCourse2.Text = "X";
             // 
@@ -433,9 +484,10 @@
             this.LevelOfSatisfactionCourse2.AutoSize = true;
             this.LevelOfSatisfactionCourse2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LevelOfSatisfactionCourse2.ForeColor = System.Drawing.Color.Gray;
-            this.LevelOfSatisfactionCourse2.Location = new System.Drawing.Point(247, 251);
+            this.LevelOfSatisfactionCourse2.Location = new System.Drawing.Point(185, 204);
+            this.LevelOfSatisfactionCourse2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LevelOfSatisfactionCourse2.Name = "LevelOfSatisfactionCourse2";
-            this.LevelOfSatisfactionCourse2.Size = new System.Drawing.Size(23, 25);
+            this.LevelOfSatisfactionCourse2.Size = new System.Drawing.Size(18, 20);
             this.LevelOfSatisfactionCourse2.TabIndex = 10;
             this.LevelOfSatisfactionCourse2.Text = "X";
             // 
@@ -445,9 +497,10 @@
             this.RatingCourse2.AutoSize = true;
             this.RatingCourse2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RatingCourse2.ForeColor = System.Drawing.Color.Gray;
-            this.RatingCourse2.Location = new System.Drawing.Point(187, 207);
+            this.RatingCourse2.Location = new System.Drawing.Point(140, 168);
+            this.RatingCourse2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RatingCourse2.Name = "RatingCourse2";
-            this.RatingCourse2.Size = new System.Drawing.Size(23, 25);
+            this.RatingCourse2.Size = new System.Drawing.Size(18, 20);
             this.RatingCourse2.TabIndex = 9;
             this.RatingCourse2.Text = "X";
             // 
@@ -457,9 +510,10 @@
             this.ReviewCountCourse2.AutoSize = true;
             this.ReviewCountCourse2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReviewCountCourse2.ForeColor = System.Drawing.Color.Gray;
-            this.ReviewCountCourse2.Location = new System.Drawing.Point(141, 160);
+            this.ReviewCountCourse2.Location = new System.Drawing.Point(106, 130);
+            this.ReviewCountCourse2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ReviewCountCourse2.Name = "ReviewCountCourse2";
-            this.ReviewCountCourse2.Size = new System.Drawing.Size(23, 25);
+            this.ReviewCountCourse2.Size = new System.Drawing.Size(18, 20);
             this.ReviewCountCourse2.TabIndex = 8;
             this.ReviewCountCourse2.Text = "X";
             // 
@@ -469,9 +523,10 @@
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label.Location = new System.Drawing.Point(34, 391);
+            this.label.Location = new System.Drawing.Point(26, 318);
+            this.label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(153, 28);
+            this.label.Size = new System.Drawing.Size(123, 21);
             this.label.TabIndex = 6;
             this.label.Text = "Level of interest:";
             // 
@@ -481,9 +536,10 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label20.Location = new System.Drawing.Point(34, 159);
+            this.label20.Location = new System.Drawing.Point(26, 129);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(84, 28);
+            this.label20.Size = new System.Drawing.Size(70, 21);
             this.label20.TabIndex = 1;
             this.label20.Text = "Reviews:";
             // 
@@ -493,9 +549,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(34, 344);
+            this.label5.Location = new System.Drawing.Point(26, 280);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 28);
+            this.label5.Size = new System.Drawing.Size(88, 21);
             this.label5.TabIndex = 5;
             this.label5.Text = "Usefulness:";
             // 
@@ -505,9 +562,10 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label22.Location = new System.Drawing.Point(34, 205);
+            this.label22.Location = new System.Drawing.Point(26, 167);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(135, 28);
+            this.label22.Size = new System.Drawing.Size(108, 21);
             this.label22.TabIndex = 2;
             this.label22.Text = "Overall rating:";
             // 
@@ -517,9 +575,10 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(34, 298);
+            this.label9.Location = new System.Drawing.Point(26, 242);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(88, 28);
+            this.label9.Size = new System.Drawing.Size(70, 21);
             this.label9.TabIndex = 4;
             this.label9.Text = "Dificulty:";
             // 
@@ -529,9 +588,10 @@
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label24.Location = new System.Drawing.Point(34, 251);
+            this.label24.Location = new System.Drawing.Point(26, 204);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(186, 28);
+            this.label24.Size = new System.Drawing.Size(149, 21);
             this.label24.TabIndex = 3;
             this.label24.Text = "Level of satisfaction:";
             // 
@@ -539,45 +599,23 @@
             // 
             this.PreviousForm.AutoSize = true;
             this.PreviousForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PreviousForm.Location = new System.Drawing.Point(12, 9);
+            this.PreviousForm.Location = new System.Drawing.Point(9, 7);
+            this.PreviousForm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PreviousForm.Name = "PreviousForm";
-            this.PreviousForm.Size = new System.Drawing.Size(29, 20);
+            this.PreviousForm.Size = new System.Drawing.Size(24, 17);
             this.PreviousForm.TabIndex = 18;
             this.PreviousForm.TabStop = true;
             this.PreviousForm.Text = "<<";
             // 
-            // Course1
-            // 
-            this.Course1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.Course1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Course1.Location = new System.Drawing.Point(114, 52);
-            this.Course1.Name = "Course1";
-            this.Course1.Size = new System.Drawing.Size(339, 36);
-            this.Course1.TabIndex = 21;
-            this.Course1.Text = "Choose course";
-            this.Course1.UseVisualStyleBackColor = true;
-            this.Course1.Click += new System.EventHandler(this.Course1_Click);
-            // 
-            // Course2
-            // 
-            this.Course2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.Course2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Course2.Location = new System.Drawing.Point(119, 52);
-            this.Course2.Name = "Course2";
-            this.Course2.Size = new System.Drawing.Size(339, 36);
-            this.Course2.TabIndex = 22;
-            this.Course2.Text = "Choose course";
-            this.Course2.UseVisualStyleBackColor = true;
-            this.Course2.Click += new System.EventHandler(this.Course2_Click);
-            // 
             // CourseComparisonView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1314, 755);
+            this.ClientSize = new System.Drawing.Size(986, 609);
             this.Controls.Add(this.PreviousForm);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CourseComparisonView";
             this.Text = "CourseComparisonView";
             this.panel1.ResumeLayout(false);

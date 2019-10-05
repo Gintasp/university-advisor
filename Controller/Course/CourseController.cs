@@ -39,10 +39,5 @@ namespace Advisor.Controller
             StudyProgramView = new StudyProgramView(StudyProgramController);
             StudyProgramView.Show();
         }
-        public void DisplayPopup()
-        {
-            PopupCourseComparison = new CourseSelectFormView();
-            PopupCourseComparison.ShowDialog();
-        }
     }
 }
