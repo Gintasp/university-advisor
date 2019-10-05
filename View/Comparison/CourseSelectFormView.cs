@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace Advisor.View
 {
-    public partial class PopupCourseComparison : Form
+    public partial class CourseSelectFormView : Form
     {
-        public PopupCourseComparison()
+        public CourseSelectFormView()
         {
             InitializeComponent();
         }
