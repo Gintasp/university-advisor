@@ -24,13 +24,9 @@ namespace Advisor.Controller
             StudyProgramController = studyProgramController;
         }
 
-        public void LoadCourseReviews()
+        public void LoadCourseData()
         {
-            List<Review> reviews = DB.Instance.Reviews.Where(r => r.Course.Id == Course.Id).ToList();
-            foreach (Review review in reviews)
-            {
-                CourseView.ReviewList.Items.Add(review);
-            }
+            LoadReviews();
         }
 
         public void HandlePreviousClicked()
@@ -38,6 +34,12 @@ namespace Advisor.Controller
             CourseView.Hide();
             StudyProgramView = new StudyProgramView(StudyProgramController);
             StudyProgramView.Show();
+        }
+
+        private void LoadReviews()
+        {
+            List<Review> reviews = DB.Instance.Reviews.Where(r => r.Course.Id == Course.Id).ToList();
+            reviews.ForEach(review => CourseView.ReviewList.Items.Add(review));
         }
     }
 }

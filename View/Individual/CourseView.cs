@@ -23,7 +23,7 @@ namespace Advisor.View
 
         private void OnViewLoad(object sender, EventArgs e)
         {
-            CourseController.LoadCourseReviews();
+            CourseController.LoadCourseData();
             CourseTitle.Text = Course.Title;
         }
 
