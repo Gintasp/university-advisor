@@ -40,14 +40,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.AddFacultyLink = new System.Windows.Forms.LinkLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.OveralVal = new System.Windows.Forms.Label();
+            this.SatisfactionVal = new System.Windows.Forms.Label();
+            this.DifficultyVal = new System.Windows.Forms.Label();
+            this.SalaryVal = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.Salary = new System.Windows.Forms.Label();
-            this.Difficulty = new System.Windows.Forms.Label();
-            this.Satisfaction = new System.Windows.Forms.Label();
-            this.Overal = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -202,10 +202,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.Overal);
-            this.groupBox1.Controls.Add(this.Satisfaction);
-            this.groupBox1.Controls.Add(this.Difficulty);
-            this.groupBox1.Controls.Add(this.Salary);
+            this.groupBox1.Controls.Add(this.OveralVal);
+            this.groupBox1.Controls.Add(this.SatisfactionVal);
+            this.groupBox1.Controls.Add(this.DifficultyVal);
+            this.groupBox1.Controls.Add(this.SalaryVal);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -217,31 +217,70 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Stats";
             // 
-            // label4
+            // OveralVal
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(12, 33);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 15);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Avg. graduate salary:";
+            this.OveralVal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.OveralVal.AutoSize = true;
+            this.OveralVal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.OveralVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.OveralVal.Location = new System.Drawing.Point(103, 115);
+            this.OveralVal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.OveralVal.Name = "OveralVal";
+            this.OveralVal.Size = new System.Drawing.Size(14, 15);
+            this.OveralVal.TabIndex = 19;
+            this.OveralVal.Text = "X";
             // 
-            // label5
+            // SatisfactionVal
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(12, 61);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 15);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Difficulty:";
+            this.SatisfactionVal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SatisfactionVal.AutoSize = true;
+            this.SatisfactionVal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SatisfactionVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.SatisfactionVal.Location = new System.Drawing.Point(97, 88);
+            this.SatisfactionVal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SatisfactionVal.Name = "SatisfactionVal";
+            this.SatisfactionVal.Size = new System.Drawing.Size(14, 15);
+            this.SatisfactionVal.TabIndex = 18;
+            this.SatisfactionVal.Text = "X";
+            // 
+            // DifficultyVal
+            // 
+            this.DifficultyVal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DifficultyVal.AutoSize = true;
+            this.DifficultyVal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DifficultyVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.DifficultyVal.Location = new System.Drawing.Point(87, 61);
+            this.DifficultyVal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.DifficultyVal.Name = "DifficultyVal";
+            this.DifficultyVal.Size = new System.Drawing.Size(14, 15);
+            this.DifficultyVal.TabIndex = 17;
+            this.DifficultyVal.Text = "X";
+            // 
+            // SalaryVal
+            // 
+            this.SalaryVal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SalaryVal.AutoSize = true;
+            this.SalaryVal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SalaryVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.SalaryVal.Location = new System.Drawing.Point(145, 33);
+            this.SalaryVal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SalaryVal.Name = "SalaryVal";
+            this.SalaryVal.Size = new System.Drawing.Size(14, 15);
+            this.SalaryVal.TabIndex = 16;
+            this.SalaryVal.Text = "X";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label7.Location = new System.Drawing.Point(12, 115);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(78, 15);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Overal rating:";
             // 
             // label6
             // 
@@ -256,70 +295,31 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Satisfaction:";
             // 
-            // label7
+            // label5
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(12, 115);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 15);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Overal rating";
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label5.Location = new System.Drawing.Point(12, 61);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 15);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Difficulty:";
             // 
-            // Salary
+            // label4
             // 
-            this.Salary.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Salary.AutoSize = true;
-            this.Salary.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Salary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Salary.Location = new System.Drawing.Point(145, 33);
-            this.Salary.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Salary.Name = "Salary";
-            this.Salary.Size = new System.Drawing.Size(14, 15);
-            this.Salary.TabIndex = 16;
-            this.Salary.Text = "X";
-            // 
-            // Difficulty
-            // 
-            this.Difficulty.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Difficulty.AutoSize = true;
-            this.Difficulty.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Difficulty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Difficulty.Location = new System.Drawing.Point(87, 61);
-            this.Difficulty.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Difficulty.Name = "Difficulty";
-            this.Difficulty.Size = new System.Drawing.Size(14, 15);
-            this.Difficulty.TabIndex = 17;
-            this.Difficulty.Text = "X";
-            // 
-            // Satisfaction
-            // 
-            this.Satisfaction.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Satisfaction.AutoSize = true;
-            this.Satisfaction.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Satisfaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Satisfaction.Location = new System.Drawing.Point(97, 88);
-            this.Satisfaction.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Satisfaction.Name = "Satisfaction";
-            this.Satisfaction.Size = new System.Drawing.Size(14, 15);
-            this.Satisfaction.TabIndex = 18;
-            this.Satisfaction.Text = "X";
-            // 
-            // Overal
-            // 
-            this.Overal.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Overal.AutoSize = true;
-            this.Overal.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Overal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Overal.Location = new System.Drawing.Point(103, 115);
-            this.Overal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Overal.Name = "Overal";
-            this.Overal.Size = new System.Drawing.Size(14, 15);
-            this.Overal.TabIndex = 19;
-            this.Overal.Text = "X";
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.Location = new System.Drawing.Point(12, 33);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 15);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Avg. graduate salary:";
             // 
             // StudyProgramView
             // 
@@ -366,10 +366,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel AddFacultyLink;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label Overal;
-        private System.Windows.Forms.Label Satisfaction;
-        private System.Windows.Forms.Label Difficulty;
-        private System.Windows.Forms.Label Salary;
+        private System.Windows.Forms.Label OveralVal;
+        private System.Windows.Forms.Label SatisfactionVal;
+        private System.Windows.Forms.Label DifficultyVal;
+        private System.Windows.Forms.Label SalaryVal;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

@@ -39,7 +39,17 @@
             this.AddFacultyLink = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.OveralVal = new System.Windows.Forms.Label();
+            this.SatisfactionVal = new System.Windows.Forms.Label();
+            this.DifficultyVal = new System.Windows.Forms.Label();
+            this.SalaryVal = new System.Windows.Forms.Label();
+            this.FacOveral = new System.Windows.Forms.Label();
+            this.FacSatisfaction = new System.Windows.Forms.Label();
+            this.FacDifficulty = new System.Windows.Forms.Label();
+            this.FacSalary = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // FacultyTitleLabel
@@ -48,7 +58,7 @@
             this.FacultyTitleLabel.AutoSize = true;
             this.FacultyTitleLabel.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FacultyTitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.FacultyTitleLabel.Location = new System.Drawing.Point(158, 90);
+            this.FacultyTitleLabel.Location = new System.Drawing.Point(177, 31);
             this.FacultyTitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FacultyTitleLabel.MaximumSize = new System.Drawing.Size(333, 0);
             this.FacultyTitleLabel.Name = "FacultyTitleLabel";
@@ -62,7 +72,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(153, 192);
+            this.label1.Location = new System.Drawing.Point(180, 123);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 21);
@@ -75,10 +85,10 @@
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.AboutSection);
-            this.panel1.Location = new System.Drawing.Point(157, 215);
+            this.panel1.Location = new System.Drawing.Point(184, 162);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(337, 309);
+            this.panel1.Size = new System.Drawing.Size(337, 153);
             this.panel1.TabIndex = 2;
             // 
             // AboutSection
@@ -189,11 +199,133 @@
             this.linkLabel1.Text = "Add your lecturer here";
             this.linkLabel1.Click += new System.EventHandler(this.OnAddLecturerLinkClick);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.OveralVal);
+            this.groupBox1.Controls.Add(this.SatisfactionVal);
+            this.groupBox1.Controls.Add(this.DifficultyVal);
+            this.groupBox1.Controls.Add(this.SalaryVal);
+            this.groupBox1.Controls.Add(this.FacOveral);
+            this.groupBox1.Controls.Add(this.FacSatisfaction);
+            this.groupBox1.Controls.Add(this.FacDifficulty);
+            this.groupBox1.Controls.Add(this.FacSalary);
+            this.groupBox1.Location = new System.Drawing.Point(184, 330);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(337, 172);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Stats";
+            // 
+            // OveralVal
+            // 
+            this.OveralVal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.OveralVal.AutoSize = true;
+            this.OveralVal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.OveralVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.OveralVal.Location = new System.Drawing.Point(106, 124);
+            this.OveralVal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.OveralVal.Name = "OveralVal";
+            this.OveralVal.Size = new System.Drawing.Size(14, 15);
+            this.OveralVal.TabIndex = 19;
+            this.OveralVal.Text = "X";
+            // 
+            // SatisfactionVal
+            // 
+            this.SatisfactionVal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SatisfactionVal.AutoSize = true;
+            this.SatisfactionVal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SatisfactionVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.SatisfactionVal.Location = new System.Drawing.Point(106, 95);
+            this.SatisfactionVal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SatisfactionVal.Name = "SatisfactionVal";
+            this.SatisfactionVal.Size = new System.Drawing.Size(14, 15);
+            this.SatisfactionVal.TabIndex = 18;
+            this.SatisfactionVal.Text = "X";
+            // 
+            // DifficultyVal
+            // 
+            this.DifficultyVal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DifficultyVal.AutoSize = true;
+            this.DifficultyVal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DifficultyVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.DifficultyVal.Location = new System.Drawing.Point(94, 66);
+            this.DifficultyVal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.DifficultyVal.Name = "DifficultyVal";
+            this.DifficultyVal.Size = new System.Drawing.Size(14, 15);
+            this.DifficultyVal.TabIndex = 17;
+            this.DifficultyVal.Text = "X";
+            // 
+            // SalaryVal
+            // 
+            this.SalaryVal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SalaryVal.AutoSize = true;
+            this.SalaryVal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SalaryVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.SalaryVal.Location = new System.Drawing.Point(153, 35);
+            this.SalaryVal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SalaryVal.Name = "SalaryVal";
+            this.SalaryVal.Size = new System.Drawing.Size(14, 15);
+            this.SalaryVal.TabIndex = 16;
+            this.SalaryVal.Text = "X";
+            // 
+            // FacOveral
+            // 
+            this.FacOveral.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FacOveral.AutoSize = true;
+            this.FacOveral.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.FacOveral.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.FacOveral.Location = new System.Drawing.Point(21, 124);
+            this.FacOveral.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.FacOveral.Name = "FacOveral";
+            this.FacOveral.Size = new System.Drawing.Size(78, 15);
+            this.FacOveral.TabIndex = 15;
+            this.FacOveral.Text = "Overal rating:";
+            // 
+            // FacSatisfaction
+            // 
+            this.FacSatisfaction.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FacSatisfaction.AutoSize = true;
+            this.FacSatisfaction.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.FacSatisfaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.FacSatisfaction.Location = new System.Drawing.Point(21, 95);
+            this.FacSatisfaction.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.FacSatisfaction.Name = "FacSatisfaction";
+            this.FacSatisfaction.Size = new System.Drawing.Size(71, 15);
+            this.FacSatisfaction.TabIndex = 14;
+            this.FacSatisfaction.Text = "Satisfaction:";
+            // 
+            // FacDifficulty
+            // 
+            this.FacDifficulty.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FacDifficulty.AutoSize = true;
+            this.FacDifficulty.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.FacDifficulty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.FacDifficulty.Location = new System.Drawing.Point(21, 66);
+            this.FacDifficulty.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.FacDifficulty.Name = "FacDifficulty";
+            this.FacDifficulty.Size = new System.Drawing.Size(58, 15);
+            this.FacDifficulty.TabIndex = 13;
+            this.FacDifficulty.Text = "Difficulty:";
+            // 
+            // FacSalary
+            // 
+            this.FacSalary.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FacSalary.AutoSize = true;
+            this.FacSalary.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.FacSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.FacSalary.Location = new System.Drawing.Point(21, 35);
+            this.FacSalary.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.FacSalary.Name = "FacSalary";
+            this.FacSalary.Size = new System.Drawing.Size(117, 15);
+            this.FacSalary.TabIndex = 12;
+            this.FacSalary.Text = "Avg. graduate salary:";
+            // 
             // FacultyView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 614);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.AddFacultyLink);
             this.Controls.Add(this.LecturerListBox);
@@ -212,6 +344,8 @@
             this.Load += new System.EventHandler(this.OnViewLoad);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +364,14 @@
         private System.Windows.Forms.LinkLabel AddFacultyLink;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label OveralVal;
+        private System.Windows.Forms.Label SatisfactionVal;
+        private System.Windows.Forms.Label DifficultyVal;
+        private System.Windows.Forms.Label SalaryVal;
+        private System.Windows.Forms.Label FacOveral;
+        private System.Windows.Forms.Label FacSatisfaction;
+        private System.Windows.Forms.Label FacDifficulty;
+        private System.Windows.Forms.Label FacSalary;
     }
 }
