@@ -133,7 +133,7 @@
             this.FacultyListBox.Name = "FacultyListBox";
             this.FacultyListBox.Size = new System.Drawing.Size(359, 344);
             this.FacultyListBox.TabIndex = 7;
-            this.FacultyListBox.SelectedIndexChanged += new System.EventHandler(this.OnFacSelect);
+            this.FacultyListBox.SelectedIndexChanged += new System.EventHandler(this.OnFacultySelect);
             // 
             // AddFacultyLink
             // 

@@ -9,7 +9,7 @@ namespace Advisor.View
     {
         public IUniversityController UniversityController { get; set; }
         public University University { get; set; }
-        public ListBox Faculties { get; set; }
+        public ListBox FacultyList { get; set; }
 
         public UniversityView(IUniversityController universityController, University uni)
         {
@@ -17,7 +17,7 @@ namespace Advisor.View
             University = uni;
             universityController.UniversityView = this;
             InitializeComponent();
-            Faculties = FacultyListBox;
+            FacultyList = FacultyListBox;
         }
 
         private void LoadUniversityData(object sender, EventArgs e)
@@ -37,10 +37,10 @@ namespace Advisor.View
             Application.Exit();
         }
 
-        private void OnFacSelect(object sender, EventArgs e)
+        private void OnFacultySelect(object sender, EventArgs e)
         {
-            Faculty faculty = (Faculty)Faculties.SelectedItem;
-            if(faculty != null)
+            Faculty faculty = (Faculty) FacultyList.SelectedItem;
+            if (faculty != null)
             {
                 UniversityController.HandleFacultySelect(faculty, University);
             }

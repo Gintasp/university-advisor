@@ -27,11 +27,11 @@ namespace Advisor.Controller
         }
         public void LoadFacultyData(University uni)
         {
-            UniversityView.Faculties.Items.Clear();
+            UniversityView.FacultyList.Items.Clear();
             List<Faculty> faculties = DB.Instance.Faculties.Where(f => f.University.Id == uni.Id).ToList();
             foreach (Faculty faculty in faculties)
             {
-                UniversityView.Faculties.Items.Add(faculty);
+                UniversityView.FacultyList.Items.Add(faculty);
             }
         }
         public void HandleFacultySelect(Faculty faculty, University uni)
@@ -61,7 +61,7 @@ namespace Advisor.Controller
             };
             DB.Instance.Faculties.Add(fac);
             DB.Instance.SaveChanges();
-            UniversityView.Faculties.Items.Add(fac);
+            UniversityView.FacultyList.Items.Add(fac);
             AddFormView.Close();
         }
     }
