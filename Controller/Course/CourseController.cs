@@ -2,6 +2,7 @@
 using Advisor.Model;
 using System.Linq;
 using System.Collections.Generic;
+using System;
 
 namespace Advisor.Controller
 {
@@ -37,13 +38,26 @@ namespace Advisor.Controller
             StudyProgramView.Show();
         }
 
+        private float CalcAverage(List<Review> list, Func<Review, int> prop, int decimalPlaces)
+        {
+            if (list.Count != 0)
+            {
+                return (float) Math.Round((double) list.Sum(r => prop(r)) / list.Count, decimalPlaces);
+            }
+
+            return 0;
+        }
+
         private void LoadStats()
         {
             ReviewData reviewData = new ReviewData();
             List<Review> courseReviews = Course.Reviews.ToList();
-            int sum = 0;
-            courseReviews.ForEach(review => sum += review.Usefulness);
-            reviewData.Usefulness = sum / courseReviews.Count;
+            reviewData.Usefulness = CalcAverage(courseReviews, r => r.Usefulness, 1);
+            reviewData.Difficulty = CalcAverage(courseReviews, r => r.Difficulty, 1);
+            reviewData.Satisfaction = CalcAverage(courseReviews, r => r.Satisfaction, 1);
+            reviewData.OveralRating = CalcAverage(courseReviews, r => r.OveralRating, 1);
+            reviewData.Theory = CalcAverage(courseReviews, r => r.TheoryPercentage, 1);
+            reviewData.Practice = CalcAverage(courseReviews, r => r.PracticePercentage, 1);
 
             CourseView.ReviewData = reviewData;
         }
