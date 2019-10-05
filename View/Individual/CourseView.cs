@@ -10,6 +10,7 @@ namespace Advisor.View
         public ICourseController CourseController { get; set; }
         public ListBox ReviewList { get; set; }
         public Course Course { get; set; }
+        public ReviewData ReviewData { get; set; }
         
         public CourseView(ICourseController courseController, Course course)
         {
@@ -34,11 +35,6 @@ namespace Advisor.View
         private void OnFormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void Label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -289,7 +289,6 @@
             this.label3.Size = new System.Drawing.Size(78, 25);
             this.label3.TabIndex = 13;
             this.label3.Text = "Reviews";
-            this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // panel1
             // 
