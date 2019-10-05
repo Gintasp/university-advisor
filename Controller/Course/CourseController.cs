@@ -27,7 +27,7 @@ namespace Advisor.Controller
         public void LoadCourseReviews()
         {
             List<Review> reviews = DB.Instance.Reviews.Where(r => r.Course.Id == Course.Id).ToList();
-            foreach(Review review in reviews)
+            foreach (Review review in reviews)
             {
                 CourseView.ReviewList.Items.Add(review);
             }
