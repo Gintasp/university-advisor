@@ -9,6 +9,7 @@ namespace Advisor.Controller
     {
         public CourseView CourseView { get; set; }
         public StudyProgram StudyProgram { get; set; }
+        public PopupCourseComparison PopupCourseComparison { get; set; }
         public Course Course { get; set; }
         public StudyProgramView StudyProgramView { get; set; }
         public IStudyProgramController StudyProgramController { get; set; }
@@ -37,6 +38,11 @@ namespace Advisor.Controller
             CourseView.Hide();
             StudyProgramView = new StudyProgramView(StudyProgramController);
             StudyProgramView.Show();
+        }
+        public void DisplayPopup()
+        {
+            PopupCourseComparison = new PopupCourseComparison();
+            PopupCourseComparison.ShowDialog();
         }
     }
 }
