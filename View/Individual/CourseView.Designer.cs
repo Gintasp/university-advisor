@@ -116,6 +116,8 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.groupBox1.Location = new System.Drawing.Point(34, 97);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(231, 240);
@@ -297,7 +299,7 @@
             this.panel1.Controls.Add(this.leaveReviewButton);
             this.panel1.Controls.Add(this.Reviews);
             this.panel1.Controls.Add(this.CourseTitle);
-            this.panel1.Location = new System.Drawing.Point(152, 103);
+            this.panel1.Location = new System.Drawing.Point(349, 154);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(708, 404);
             this.panel1.TabIndex = 14;
@@ -311,6 +313,7 @@
             this.Controls.Add(this.PreviousForm);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CourseView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Course";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnFormClosed);

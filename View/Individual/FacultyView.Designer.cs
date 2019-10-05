@@ -55,14 +55,12 @@
             // FacultyTitleLabel
             // 
             this.FacultyTitleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FacultyTitleLabel.AutoSize = true;
             this.FacultyTitleLabel.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FacultyTitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.FacultyTitleLabel.Location = new System.Drawing.Point(177, 31);
             this.FacultyTitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.FacultyTitleLabel.MaximumSize = new System.Drawing.Size(333, 0);
             this.FacultyTitleLabel.Name = "FacultyTitleLabel";
-            this.FacultyTitleLabel.Size = new System.Drawing.Size(74, 41);
+            this.FacultyTitleLabel.Size = new System.Drawing.Size(663, 47);
             this.FacultyTitleLabel.TabIndex = 0;
             this.FacultyTitleLabel.Text = "Title";
             // 
@@ -201,6 +199,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.OveralVal);
             this.groupBox1.Controls.Add(this.SatisfactionVal);
             this.groupBox1.Controls.Add(this.DifficultyVal);
@@ -209,6 +208,8 @@
             this.groupBox1.Controls.Add(this.FacSatisfaction);
             this.groupBox1.Controls.Add(this.FacDifficulty);
             this.groupBox1.Controls.Add(this.FacSalary);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.groupBox1.Location = new System.Drawing.Point(184, 330);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(337, 172);

@@ -60,14 +60,12 @@
             // UniversityTitleLabel
             // 
             this.UniversityTitleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UniversityTitleLabel.AutoSize = true;
             this.UniversityTitleLabel.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UniversityTitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.UniversityTitleLabel.Location = new System.Drawing.Point(95, 42);
+            this.UniversityTitleLabel.Location = new System.Drawing.Point(95, 9);
             this.UniversityTitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.UniversityTitleLabel.MaximumSize = new System.Drawing.Size(200, 0);
             this.UniversityTitleLabel.Name = "UniversityTitleLabel";
-            this.UniversityTitleLabel.Size = new System.Drawing.Size(74, 41);
+            this.UniversityTitleLabel.Size = new System.Drawing.Size(678, 43);
             this.UniversityTitleLabel.TabIndex = 0;
             this.UniversityTitleLabel.Text = "Title";
             // 
@@ -164,6 +162,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.FacultiesVal);
             this.groupBox1.Controls.Add(this.OveralVal);
             this.groupBox1.Controls.Add(this.ReviewsVal);
@@ -172,6 +171,8 @@
             this.groupBox1.Controls.Add(this.UniReviews);
             this.groupBox1.Controls.Add(this.UniFaculties);
             this.groupBox1.Controls.Add(this.UniSalary);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.groupBox1.Location = new System.Drawing.Point(102, 321);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(245, 154);
