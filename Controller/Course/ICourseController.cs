@@ -7,5 +7,6 @@ namespace Advisor.Controller
         CourseView CourseView { get; set; }
         void LoadCourseReviews();
         void HandlePreviousClicked();
+        void DisplayPopup();
     }
 }
