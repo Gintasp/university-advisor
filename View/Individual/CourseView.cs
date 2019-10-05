@@ -35,5 +35,10 @@ namespace Advisor.View
         {
             Application.Exit();
         }
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
