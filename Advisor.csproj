@@ -138,6 +138,7 @@
     <Compile Include="Model\Faculty.cs" />
     <Compile Include="Model\Lecturer.cs" />
     <Compile Include="Model\Review.cs" />
+    <Compile Include="Model\ReviewData.cs" />
     <Compile Include="Model\StudyProgram.cs" />
     <Compile Include="Model\Course.cs" />
     <Compile Include="Model\University.cs" />
