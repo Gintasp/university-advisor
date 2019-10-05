@@ -67,6 +67,8 @@
     <Compile Include="Controller\Auth\IAuthController.cs" />
     <Compile Include="Controller\Home\IHomeController.cs" />
     <Compile Include="Controller\Course\ICourseController.cs" />
+    <Compile Include="Controller\Lecturer\ILecturerController.cs" />
+    <Compile Include="Controller\Lecturer\LecturerController.cs" />
     <Compile Include="Controller\Review\ILecturerReviewController.cs" />
     <Compile Include="Controller\Review\LecturerReviewController.cs" />
     <Compile Include="Controller\Review\ICourseReviewController.cs" />
@@ -192,6 +194,12 @@
     <Compile Include="View\PopupCourseComparison.Designer.cs">
       <DependentUpon>PopupCourseComparison.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\PopupLecturerComparison.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PopupLecturerComparison.Designer.cs">
+      <DependentUpon>PopupLecturerComparison.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Review\LecturerReviewView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -314,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\PopupCourseComparison.resx">
       <DependentUpon>PopupCourseComparison.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PopupLecturerComparison.resx">
+      <DependentUpon>PopupLecturerComparison.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Review\LecturerReviewView.resx">
       <DependentUpon>LecturerReviewView.cs</DependentUpon>
