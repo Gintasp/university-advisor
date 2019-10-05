@@ -26,10 +26,13 @@ namespace Advisor.View.Comparison
         {
 
         }
+<<<<<<< HEAD
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
+=======
+>>>>>>> 84ae29b7b9f8e1f5fcec7920fe2eec1d92ad1d00
     }
 }
