@@ -162,6 +162,12 @@
     <Compile Include="View\Comparison\CourseComparisonView.Designer.cs">
       <DependentUpon>CourseComparisonView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Comparison\CourseSelectFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Comparison\CourseSelectFormView.Designer.cs">
+      <DependentUpon>CourseSelectFormView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Comparison\FacultyComparisonView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,12 +185,6 @@
     </Compile>
     <Compile Include="View\Individual\FacultyView.Designer.cs">
       <DependentUpon>FacultyView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\PopupCourseComparison.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\PopupCourseComparison.Designer.cs">
-      <DependentUpon>PopupCourseComparison.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Review\LecturerReviewView.cs">
       <SubType>Form</SubType>
@@ -294,6 +294,9 @@
     <EmbeddedResource Include="View\Comparison\CourseComparisonView.resx">
       <DependentUpon>CourseComparisonView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Comparison\CourseSelectFormView.resx">
+      <DependentUpon>CourseSelectFormView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Comparison\FacultyComparisonView.resx">
       <DependentUpon>FacultyComparisonView.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,9 +305,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Individual\FacultyView.resx">
       <DependentUpon>FacultyView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\PopupCourseComparison.resx">
-      <DependentUpon>PopupCourseComparison.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Review\LecturerReviewView.resx">
       <DependentUpon>LecturerReviewView.cs</DependentUpon>
