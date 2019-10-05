@@ -147,6 +147,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\Auth\IPasswordEncoder.cs" />
     <Compile Include="Service\Auth\PasswordEncoder.cs" />
+    <Compile Include="Service\Statistics\IStatisticCalculator.cs" />
+    <Compile Include="Service\Statistics\StatisticCalculator.cs" />
     <Compile Include="Service\Validator\ILoginDataValidator.cs" />
     <Compile Include="Service\Validator\ISignupDataValidator.cs" />
     <Compile Include="Service\Validator\SignupDataValidator.cs" />
