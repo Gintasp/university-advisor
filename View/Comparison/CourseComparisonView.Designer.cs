@@ -33,7 +33,6 @@
             this.PracticeCourse1 = new System.Windows.Forms.Label();
             this.TheoryCourse1 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.Course1 = new System.Windows.Forms.Label();
             this.CourseTitle1 = new System.Windows.Forms.Label();
             this.InterestingCourse1 = new System.Windows.Forms.Label();
             this.UsefulnessCourse1 = new System.Windows.Forms.Label();
@@ -41,7 +40,6 @@
             this.LevelOfSatisfactionCourse1 = new System.Windows.Forms.Label();
             this.RatingCourse1 = new System.Windows.Forms.Label();
             this.ReviewCountCourse1 = new System.Windows.Forms.Label();
-            this.CourseSelectBox1 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,7 +51,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.TheoryCourse2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.Course2 = new System.Windows.Forms.Label();
             this.CourseTitle2 = new System.Windows.Forms.Label();
             this.InterestingCourse2 = new System.Windows.Forms.Label();
             this.UsefulnessCourse2 = new System.Windows.Forms.Label();
@@ -61,7 +58,6 @@
             this.LevelOfSatisfactionCourse2 = new System.Windows.Forms.Label();
             this.RatingCourse2 = new System.Windows.Forms.Label();
             this.ReviewCountCourse2 = new System.Windows.Forms.Label();
-            this.CourseSelectBox2 = new System.Windows.Forms.ComboBox();
             this.label = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -69,6 +65,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.PreviousForm = new System.Windows.Forms.LinkLabel();
+            this.Course1 = new System.Windows.Forms.Button();
+            this.Course2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -77,11 +75,11 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.Course1);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.PracticeCourse1);
             this.panel1.Controls.Add(this.TheoryCourse1);
             this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.Course1);
             this.panel1.Controls.Add(this.CourseTitle1);
             this.panel1.Controls.Add(this.InterestingCourse1);
             this.panel1.Controls.Add(this.UsefulnessCourse1);
@@ -89,7 +87,6 @@
             this.panel1.Controls.Add(this.LevelOfSatisfactionCourse1);
             this.panel1.Controls.Add(this.RatingCourse1);
             this.panel1.Controls.Add(this.ReviewCountCourse1);
-            this.panel1.Controls.Add(this.CourseSelectBox1);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label4);
@@ -149,18 +146,6 @@
             this.label15.Size = new System.Drawing.Size(122, 28);
             this.label15.TabIndex = 16;
             this.label15.Text = "Theory ratio:";
-            // 
-            // Course1
-            // 
-            this.Course1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Course1.AutoSize = true;
-            this.Course1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Course1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Course1.Location = new System.Drawing.Point(34, 25);
-            this.Course1.Name = "Course1";
-            this.Course1.Size = new System.Drawing.Size(76, 28);
-            this.Course1.TabIndex = 15;
-            this.Course1.Text = "Course:";
             // 
             // CourseTitle1
             // 
@@ -246,18 +231,6 @@
             this.ReviewCountCourse1.TabIndex = 8;
             this.ReviewCountCourse1.Text = "X";
             // 
-            // CourseSelectBox1
-            // 
-            this.CourseSelectBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CourseSelectBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CourseSelectBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.CourseSelectBox1.FormattingEnabled = true;
-            this.CourseSelectBox1.Location = new System.Drawing.Point(39, 53);
-            this.CourseSelectBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CourseSelectBox1.Name = "CourseSelectBox1";
-            this.CourseSelectBox1.Size = new System.Drawing.Size(480, 36);
-            this.CourseSelectBox1.TabIndex = 7;
-            // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -334,11 +307,11 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.Course2);
             this.panel2.Controls.Add(this.PracticeCourse2);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.TheoryCourse2);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.Course2);
             this.panel2.Controls.Add(this.CourseTitle2);
             this.panel2.Controls.Add(this.InterestingCourse2);
             this.panel2.Controls.Add(this.UsefulnessCourse2);
@@ -346,7 +319,6 @@
             this.panel2.Controls.Add(this.LevelOfSatisfactionCourse2);
             this.panel2.Controls.Add(this.RatingCourse2);
             this.panel2.Controls.Add(this.ReviewCountCourse2);
-            this.panel2.Controls.Add(this.CourseSelectBox2);
             this.panel2.Controls.Add(this.label);
             this.panel2.Controls.Add(this.label20);
             this.panel2.Controls.Add(this.label5);
@@ -406,18 +378,6 @@
             this.label8.Size = new System.Drawing.Size(122, 28);
             this.label8.TabIndex = 16;
             this.label8.Text = "Theory ratio:";
-            // 
-            // Course2
-            // 
-            this.Course2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Course2.AutoSize = true;
-            this.Course2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Course2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Course2.Location = new System.Drawing.Point(34, 25);
-            this.Course2.Name = "Course2";
-            this.Course2.Size = new System.Drawing.Size(76, 28);
-            this.Course2.TabIndex = 15;
-            this.Course2.Text = "Course:";
             // 
             // CourseTitle2
             // 
@@ -503,18 +463,6 @@
             this.ReviewCountCourse2.TabIndex = 8;
             this.ReviewCountCourse2.Text = "X";
             // 
-            // CourseSelectBox2
-            // 
-            this.CourseSelectBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CourseSelectBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CourseSelectBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.CourseSelectBox2.FormattingEnabled = true;
-            this.CourseSelectBox2.Location = new System.Drawing.Point(39, 53);
-            this.CourseSelectBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CourseSelectBox2.Name = "CourseSelectBox2";
-            this.CourseSelectBox2.Size = new System.Drawing.Size(480, 36);
-            this.CourseSelectBox2.TabIndex = 7;
-            // 
             // label
             // 
             this.label.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -598,6 +546,30 @@
             this.PreviousForm.TabStop = true;
             this.PreviousForm.Text = "<<";
             // 
+            // Course1
+            // 
+            this.Course1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Course1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Course1.Location = new System.Drawing.Point(114, 52);
+            this.Course1.Name = "Course1";
+            this.Course1.Size = new System.Drawing.Size(339, 36);
+            this.Course1.TabIndex = 21;
+            this.Course1.Text = "Choose course";
+            this.Course1.UseVisualStyleBackColor = true;
+            this.Course1.Click += new System.EventHandler(this.Course1_Click);
+            // 
+            // Course2
+            // 
+            this.Course2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Course2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Course2.Location = new System.Drawing.Point(119, 52);
+            this.Course2.Name = "Course2";
+            this.Course2.Size = new System.Drawing.Size(339, 36);
+            this.Course2.TabIndex = 22;
+            this.Course2.Text = "Choose course";
+            this.Course2.UseVisualStyleBackColor = true;
+            this.Course2.Click += new System.EventHandler(this.Course2_Click);
+            // 
             // CourseComparisonView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -622,7 +594,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label TheoryCourse1;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label Course1;
         private System.Windows.Forms.Label CourseTitle1;
         private System.Windows.Forms.Label InterestingCourse1;
         private System.Windows.Forms.Label UsefulnessCourse1;
@@ -630,7 +601,6 @@
         private System.Windows.Forms.Label LevelOfSatisfactionCourse1;
         private System.Windows.Forms.Label RatingCourse1;
         private System.Windows.Forms.Label ReviewCountCourse1;
-        private System.Windows.Forms.ComboBox CourseSelectBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
@@ -640,7 +610,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label TheoryCourse2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label Course2;
         private System.Windows.Forms.Label CourseTitle2;
         private System.Windows.Forms.Label InterestingCourse2;
         private System.Windows.Forms.Label UsefulnessCourse2;
@@ -648,7 +617,6 @@
         private System.Windows.Forms.Label LevelOfSatisfactionCourse2;
         private System.Windows.Forms.Label RatingCourse2;
         private System.Windows.Forms.Label ReviewCountCourse2;
-        private System.Windows.Forms.ComboBox CourseSelectBox2;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label5;
@@ -660,5 +628,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label PracticeCourse1;
         private System.Windows.Forms.Label PracticeCourse2;
+        private System.Windows.Forms.Button Course1;
+        private System.Windows.Forms.Button Course2;
     }
 }
