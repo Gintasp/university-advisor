@@ -325,7 +325,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label OveralVal;
         private System.Windows.Forms.Label ReviewsVal;
-        private System.Windows.Forms.Label Faculties;
         private System.Windows.Forms.Label SalaryVal;
         private System.Windows.Forms.Label UniOveral;
         private System.Windows.Forms.Label UniReviews;
