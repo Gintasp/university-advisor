@@ -36,7 +36,6 @@
             this.ReviewData = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.linkAddCourse = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // PreviousForm
@@ -96,7 +95,6 @@
             this.CourseData.Name = "CourseData";
             this.CourseData.Size = new System.Drawing.Size(325, 340);
             this.CourseData.TabIndex = 12;
-            this.CourseData.SelectedIndexChanged += new System.EventHandler(this.OnCourseSelect);
             // 
             // ReviewData
             // 
@@ -131,24 +129,11 @@
             this.label3.TabIndex = 15;
             this.label3.Text = "Reviews";
             // 
-            // linkAddCourse
-            // 
-            this.linkAddCourse.AutoSize = true;
-            this.linkAddCourse.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkAddCourse.Location = new System.Drawing.Point(359, 547);
-            this.linkAddCourse.Name = "linkAddCourse";
-            this.linkAddCourse.Size = new System.Drawing.Size(193, 15);
-            this.linkAddCourse.TabIndex = 16;
-            this.linkAddCourse.TabStop = true;
-            this.linkAddCourse.Text = "Can\'t find your course? Add it here!";
-            this.linkAddCourse.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnAddCourseLinkClick);
-            // 
             // LecturerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1196, 631);
-            this.Controls.Add(this.linkAddCourse);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ReviewData);
@@ -177,6 +162,5 @@
         private System.Windows.Forms.ListBox ReviewData;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.LinkLabel linkAddCourse;
     }
 }
