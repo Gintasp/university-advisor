@@ -11,6 +11,7 @@ namespace Advisor.View
         public StudyProgram StudyProgram { get; set; }
         public ListBox ReviewList { get; set; }
         public ListBox CourseList { get; set; }
+        public ReviewData StatsReviewData { get; set; }
         public StudyProgramView(IStudyProgramController studyProgramController)
         {
             StudyProgramController = studyProgramController;
@@ -25,6 +26,15 @@ namespace Advisor.View
             StudyProgramController.LoadStudyProgramData();
             TitleLabel.Text = StudyProgram.Title;
             AboutSection.Text = StudyProgram.Description;
+            ShowStatsData();
+        }
+
+        private void ShowStatsData()
+        {
+            SalaryVal.Text = StatsReviewData.AverageSalary.ToString() + " / 10";
+            DifficultyVal.Text = StatsReviewData.Difficulty.ToString() + " / 10";
+            SatisfactionVal.Text = StatsReviewData.Satisfaction.ToString() + " / 10";
+            OveralVal.Text = StatsReviewData.OveralRating.ToString() + " / 10";
         }
 
         private void OnLeaveReviewButtonClick(object sender, EventArgs e)
