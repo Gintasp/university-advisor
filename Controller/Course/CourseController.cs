@@ -27,6 +27,7 @@ namespace Advisor.Controller
         public void LoadCourseData()
         {
             LoadReviews();
+            LoadStats();
         }
 
         public void HandlePreviousClicked()
@@ -34,6 +35,17 @@ namespace Advisor.Controller
             CourseView.Hide();
             StudyProgramView = new StudyProgramView(StudyProgramController);
             StudyProgramView.Show();
+        }
+
+        private void LoadStats()
+        {
+            ReviewData reviewData = new ReviewData();
+            List<Review> courseReviews = Course.Reviews.ToList();
+            int sum = 0;
+            courseReviews.ForEach(review => sum += review.Usefulness);
+            reviewData.Usefulness = sum / courseReviews.Count;
+
+            CourseView.ReviewData = reviewData;
         }
 
         private void LoadReviews()

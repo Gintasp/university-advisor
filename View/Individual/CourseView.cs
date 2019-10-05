@@ -25,6 +25,17 @@ namespace Advisor.View
         {
             CourseController.LoadCourseData();
             CourseTitle.Text = Course.Title;
+            ShowStatsData();
+        }
+
+        private void ShowStatsData()
+        {
+            UsefulnessVal.Text = ReviewData.Usefulness.ToString() + " / 10";
+            DifficultyVal.Text = ReviewData.Difficulty.ToString() + " / 10";
+            SatisfactionVal.Text = ReviewData.Satisfaction.ToString() + " / 10";
+            OveralVal.Text = ReviewData.OveralRating.ToString() + " / 10";
+            TheoryVal.Text = ReviewData.Theory.ToString() + " %";
+            PracticeVal.Text = ReviewData.Practice.ToString() + " %";
         }
 
         private void OnPreviousButtonClick(object sender, LinkLabelLinkClickedEventArgs e)
