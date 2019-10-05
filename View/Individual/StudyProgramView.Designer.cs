@@ -39,7 +39,17 @@
             this.CourseData = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.AddFacultyLink = new System.Windows.Forms.LinkLabel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.Salary = new System.Windows.Forms.Label();
+            this.Difficulty = new System.Windows.Forms.Label();
+            this.Satisfaction = new System.Windows.Forms.Label();
+            this.Overal = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TitleLabel
@@ -48,7 +58,7 @@
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TitleLabel.Location = new System.Drawing.Point(177, 170);
+            this.TitleLabel.Location = new System.Drawing.Point(184, 68);
             this.TitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TitleLabel.MaximumSize = new System.Drawing.Size(267, 0);
             this.TitleLabel.Name = "TitleLabel";
@@ -62,7 +72,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(182, 320);
+            this.label2.Location = new System.Drawing.Point(192, 174);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 21);
@@ -77,10 +87,10 @@
             this.panel1.Controls.Add(this.AboutSection);
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Location = new System.Drawing.Point(186, 343);
+            this.panel1.Location = new System.Drawing.Point(193, 204);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(287, 205);
+            this.panel1.Size = new System.Drawing.Size(287, 184);
             this.panel1.TabIndex = 2;
             // 
             // AboutSection
@@ -190,11 +200,133 @@
             this.AddFacultyLink.Text = "Cant find your course? Add it here";
             this.AddFacultyLink.Click += new System.EventHandler(this.OnAddCourseLinkClick);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.Overal);
+            this.groupBox1.Controls.Add(this.Satisfaction);
+            this.groupBox1.Controls.Add(this.Difficulty);
+            this.groupBox1.Controls.Add(this.Salary);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Location = new System.Drawing.Point(193, 393);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(283, 154);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Stats";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.Location = new System.Drawing.Point(12, 33);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 15);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Avg. graduate salary:";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label5.Location = new System.Drawing.Point(12, 61);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 15);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Difficulty:";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(12, 88);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 15);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Satisfaction:";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label7.Location = new System.Drawing.Point(12, 115);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 15);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Overal rating";
+            // 
+            // Salary
+            // 
+            this.Salary.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Salary.AutoSize = true;
+            this.Salary.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Salary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Salary.Location = new System.Drawing.Point(145, 33);
+            this.Salary.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Salary.Name = "Salary";
+            this.Salary.Size = new System.Drawing.Size(14, 15);
+            this.Salary.TabIndex = 16;
+            this.Salary.Text = "X";
+            // 
+            // Difficulty
+            // 
+            this.Difficulty.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Difficulty.AutoSize = true;
+            this.Difficulty.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Difficulty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Difficulty.Location = new System.Drawing.Point(87, 61);
+            this.Difficulty.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Difficulty.Name = "Difficulty";
+            this.Difficulty.Size = new System.Drawing.Size(14, 15);
+            this.Difficulty.TabIndex = 17;
+            this.Difficulty.Text = "X";
+            // 
+            // Satisfaction
+            // 
+            this.Satisfaction.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Satisfaction.AutoSize = true;
+            this.Satisfaction.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Satisfaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Satisfaction.Location = new System.Drawing.Point(97, 88);
+            this.Satisfaction.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Satisfaction.Name = "Satisfaction";
+            this.Satisfaction.Size = new System.Drawing.Size(14, 15);
+            this.Satisfaction.TabIndex = 18;
+            this.Satisfaction.Text = "X";
+            // 
+            // Overal
+            // 
+            this.Overal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Overal.AutoSize = true;
+            this.Overal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Overal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Overal.Location = new System.Drawing.Point(103, 115);
+            this.Overal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Overal.Name = "Overal";
+            this.Overal.Size = new System.Drawing.Size(14, 15);
+            this.Overal.TabIndex = 19;
+            this.Overal.Text = "X";
+            // 
             // StudyProgramView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1313, 675);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.AddFacultyLink);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.CourseData);
@@ -213,6 +345,8 @@
             this.Load += new System.EventHandler(this.OnViewLoad);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,5 +365,14 @@
         private System.Windows.Forms.ListBox CourseData;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel AddFacultyLink;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label Overal;
+        private System.Windows.Forms.Label Satisfaction;
+        private System.Windows.Forms.Label Difficulty;
+        private System.Windows.Forms.Label Salary;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }
