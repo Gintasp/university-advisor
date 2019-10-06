@@ -8,5 +8,10 @@ namespace Advisor.View.Comparison
         {
             InitializeComponent();
         }
+
+        private void OnLecurerSelectClick(object sender, System.EventArgs e)
+        {
+            //TODO: display popup
+        }
     }
 }
