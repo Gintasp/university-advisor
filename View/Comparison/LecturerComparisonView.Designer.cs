@@ -395,7 +395,6 @@
             this.label19.Size = new System.Drawing.Size(142, 45);
             this.label19.TabIndex = 21;
             this.label19.Text = "Lecturer:";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // LecturerSelectBoxLec1
             // 
@@ -408,7 +407,6 @@
             this.LecturerSelectBoxLec1.Name = "LecturerSelectBoxLec1";
             this.LecturerSelectBoxLec1.Size = new System.Drawing.Size(717, 53);
             this.LecturerSelectBoxLec1.TabIndex = 20;
-            this.LecturerSelectBoxLec1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label11
             // 
