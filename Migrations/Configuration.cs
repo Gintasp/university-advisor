@@ -5,6 +5,7 @@ namespace Advisor.Migrations
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.Data.Entity.Migrations;
     using System.IO;
     using System.Linq;
@@ -127,7 +128,9 @@ namespace Advisor.Migrations
                 Faculty newFaculty = new Faculty()
                 {
                     Title = line.Split(',')[0],
-                    Description = line.Split(',')[1]
+                    Description = line.Split(',')[1],
+                    Lecturers = new Collection<Lecturer>(),
+                    StudyPrograms = new Collection<StudyProgram>()
                 };
                 facultiesToWrite.Add(newFaculty);
             }
@@ -146,7 +149,8 @@ namespace Advisor.Migrations
                 {
                     Title = tmpUni.Name,
                     Website = tmpUni.Webpages[0],
-                    Description = "Lorem ipsum dolor sit amet"
+                    Description = "Lorem ipsum dolor sit amet",
+                    Faculties = new Collection<Faculty>()
                 }
             ));
             context.Universities.AddRange(unis);
@@ -161,7 +165,9 @@ namespace Advisor.Migrations
             {
                 Lecturer newLecturer = new Lecturer()
                 {
-                    Name = lecturer
+                    Name = lecturer,
+                    Courses = new Collection<Course>(),
+                    Reviews = new Collection<Review>()
                 };
                 lecturersToWrite.Add(newLecturer);
             }
@@ -179,7 +185,9 @@ namespace Advisor.Migrations
                 StudyProgram newProgram = new StudyProgram()
                 {
                     Title = line.Split(',')[0],
-                    Description = line.Split(',')[1]
+                    Description = line.Split(',')[1],
+                    Reviews = new Collection<Review>(),
+                    Courses = new Collection<Course>()
                 };
                 studyProgramsToWrite.Add(newProgram);
             }
@@ -194,7 +202,11 @@ namespace Advisor.Migrations
             List<Course> coursesToWrite = new List<Course>();
             foreach (string course in courseList)
             {
-                Course newCourse = new Course() { Title = course };
+                Course newCourse = new Course()
+                {
+                    Title = course,
+                    Reviews = new Collection<Review>()
+                };
                 coursesToWrite.Add(newCourse);
             }
 
