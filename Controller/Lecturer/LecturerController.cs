@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using Advisor.View;
 using Advisor.Model;
-using System;
 
 namespace Advisor.Controller
 {

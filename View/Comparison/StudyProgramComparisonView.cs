@@ -8,5 +8,10 @@ namespace Advisor.View.Comparison
         {
             InitializeComponent();
         }
+
+        private void OnSelectProgramClick(object sender, System.EventArgs e)
+        {
+            //TODO: Handle displaying popup
+        }
     }
 }
