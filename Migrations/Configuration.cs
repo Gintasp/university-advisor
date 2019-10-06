@@ -222,9 +222,22 @@ namespace Advisor.Migrations
             var reviews = File.ReadAllLines(filePath).Select(
                 line => new Review()
                 {
-                    OveralRating = int.Parse(line.Split(',')[1]),
                     Text = line.Split(',')[0],
-                    UserId = userList.ElementAt(rand.Next(0, userList.Count)).Id
+                    UserId = userList.ElementAt(rand.Next(0, userList.Count)).Id,
+                    OveralRating = int.Parse(line.Split(',')[1]),
+                    Salary = int.Parse(line.Split(',')[2]),
+                    Difficulty = int.Parse(line.Split(',')[3]),
+                    Satisfaction = int.Parse(line.Split(',')[4]),
+                    RelevantIndustry = bool.Parse(line.Split(',')[5]),
+                    Usefulness = int.Parse(line.Split(',')[6]),
+                    Interesting = int.Parse(line.Split(',')[7]),
+                    TheoryPercentage = int.Parse(line.Split(',')[8]),
+                    PracticePercentage = 100 - int.Parse(line.Split(',')[8]),
+                    Competence = int.Parse(line.Split(',')[9]),
+                    Strictness = int.Parse(line.Split(',')[10]),
+                    Delivery = int.Parse(line.Split(',')[11]),
+                    Personality = int.Parse(line.Split(',')[12]),
+                    CareerStartYear = int.Parse(line.Split(',')[13]),
                 }
             ).ToList();
             context.Reviews.AddRange(reviews);
