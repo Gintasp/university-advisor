@@ -41,19 +41,5 @@ namespace Advisor.View
         {
             Application.Exit();
         }
-
-        //private void OnCourseSelect(object sender, System.EventArgs e)
-        //{
-        //    Course course = (Course)CourseData.SelectedItem;
-        //    if (course != null)
-        //    {
-        //        LecturerController.HandleCourseSelect(course);
-        //    }
-        //}
-
-        //private void OnAddCourseLinkClick(object sender, LinkLabelLinkClickedEventArgs e)
-        //{
-        //    LecturerController.HandleAddCourseClick();
-        //}
     }
 }

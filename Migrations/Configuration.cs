@@ -5,6 +5,7 @@ namespace Advisor.Migrations
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.Data.Entity.Migrations;
     using System.IO;
     using System.Linq;
@@ -51,19 +52,44 @@ namespace Advisor.Migrations
             var lecturers = context.Lecturers.ToList();
             var reviews = context.Reviews.ToList();
 
-            foreach(Review review in reviews){
-                if (review.Id % 3 == 0)
+            foreach (StudyProgram program in programs)
+            {
+                for (int i = 0; i < 10; i++)
                 {
-                    review.Course = courses.ElementAt(r.Next(0, courses.Count));
-                    context.SaveChanges();
-                } else if (review.Id % 2 == 0 && review.StudyProgram == null)
+                    Review review = reviews.ElementAt(r.Next(0, reviews.Count));
+                    if(review.StudyProgram == null)
+                    {
+                        program.Reviews.Add(review);
+                        context.SaveChanges();
+                    }
+                }
+            }
+
+            for (int i = 0; i < courses.Count; i++)
+            {
+                Course course = courses.ElementAt(r.Next(0, courses.Count));
+                for (int j = 0; j < 80; j++)
                 {
-                    review.StudyProgram = programs.ElementAt(r.Next(0, programs.Count));
-                    context.SaveChanges();
-                } else if (review.StudyProgram == null && review.Course == null)
+                    Review review = reviews.ElementAt(r.Next(0, reviews.Count));
+                    if (review.StudyProgram == null && review.Course == null)
+                    {
+                        course.Reviews.Add(review);
+                        context.SaveChanges();
+                    }
+                }
+            }
+
+            for (int i = 0; i < lecturers.Count; i++)
+            {
+                Lecturer lecturer = lecturers.ElementAt(r.Next(0, lecturers.Count));
+                for (int j = 0; j < 80; j++)
                 {
-                    review.Lecturer = lecturers.ElementAt(r.Next(0, lecturers.Count));
-                    context.SaveChanges();
+                    Review review = reviews.ElementAt(r.Next(0, reviews.Count));
+                    if (review.StudyProgram == null && review.Course == null && review.Lecturer == null)
+                    {
+                        lecturer.Reviews.Add(review);
+                        context.SaveChanges();
+                    }
                 }
             }
         }
@@ -127,7 +153,9 @@ namespace Advisor.Migrations
                 Faculty newFaculty = new Faculty()
                 {
                     Title = line.Split(',')[0],
-                    Description = line.Split(',')[1]
+                    Description = line.Split(',')[1],
+                    Lecturers = new Collection<Lecturer>(),
+                    StudyPrograms = new Collection<StudyProgram>()
                 };
                 facultiesToWrite.Add(newFaculty);
             }
@@ -146,7 +174,8 @@ namespace Advisor.Migrations
                 {
                     Title = tmpUni.Name,
                     Website = tmpUni.Webpages[0],
-                    Description = "Lorem ipsum dolor sit amet"
+                    Description = "Lorem ipsum dolor sit amet",
+                    Faculties = new Collection<Faculty>()
                 }
             ));
             context.Universities.AddRange(unis);
@@ -161,7 +190,9 @@ namespace Advisor.Migrations
             {
                 Lecturer newLecturer = new Lecturer()
                 {
-                    Name = lecturer
+                    Name = lecturer,
+                    Courses = new Collection<Course>(),
+                    Reviews = new Collection<Review>()
                 };
                 lecturersToWrite.Add(newLecturer);
             }
@@ -179,7 +210,9 @@ namespace Advisor.Migrations
                 StudyProgram newProgram = new StudyProgram()
                 {
                     Title = line.Split(',')[0],
-                    Description = line.Split(',')[1]
+                    Description = line.Split(',')[1],
+                    Reviews = new Collection<Review>(),
+                    Courses = new Collection<Course>()
                 };
                 studyProgramsToWrite.Add(newProgram);
             }
@@ -194,7 +227,11 @@ namespace Advisor.Migrations
             List<Course> coursesToWrite = new List<Course>();
             foreach (string course in courseList)
             {
-                Course newCourse = new Course() { Title = course };
+                Course newCourse = new Course()
+                {
+                    Title = course,
+                    Reviews = new Collection<Review>()
+                };
                 coursesToWrite.Add(newCourse);
             }
 
@@ -210,9 +247,22 @@ namespace Advisor.Migrations
             var reviews = File.ReadAllLines(filePath).Select(
                 line => new Review()
                 {
-                    OveralRating = int.Parse(line.Split(',')[1]),
                     Text = line.Split(',')[0],
-                    UserId = userList.ElementAt(rand.Next(0, userList.Count)).Id
+                    UserId = userList.ElementAt(rand.Next(0, userList.Count)).Id,
+                    OveralRating = int.Parse(line.Split(',')[1]),
+                    Salary = int.Parse(line.Split(',')[2]),
+                    Difficulty = int.Parse(line.Split(',')[3]),
+                    Satisfaction = int.Parse(line.Split(',')[4]),
+                    RelevantIndustry = bool.Parse(line.Split(',')[5]),
+                    Usefulness = int.Parse(line.Split(',')[6]),
+                    Interesting = int.Parse(line.Split(',')[7]),
+                    TheoryPercentage = int.Parse(line.Split(',')[8]),
+                    PracticePercentage = 100 - int.Parse(line.Split(',')[8]),
+                    Competence = int.Parse(line.Split(',')[9]),
+                    Strictness = int.Parse(line.Split(',')[10]),
+                    Delivery = int.Parse(line.Split(',')[11]),
+                    Personality = int.Parse(line.Split(',')[12]),
+                    CareerStartYear = int.Parse(line.Split(',')[13]),
                 }
             ).ToList();
             context.Reviews.AddRange(reviews);

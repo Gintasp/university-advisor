@@ -4,6 +4,7 @@ using Advisor.Model;
 using Advisor.View;
 using System.Linq;
 using System.Collections.ObjectModel;
+using Advisor.Service.Statistics;
 
 namespace Advisor.Controller
 {
@@ -33,12 +34,26 @@ namespace Advisor.Controller
             List<Course> courses = StudyProgram.Courses.ToList();
             reviews.ForEach(review => StudyProgramView.ReviewList.Items.Add(review));
             courses.ForEach(course => StudyProgramView.CourseList.Items.Add(course));
+            LoadStats();
+        }
+
+        private void LoadStats()
+        {
+            StatsData statsData = new StatsData();
+            StatisticCalculator calculator = new StatisticCalculator();
+            List<Review> programReviews = StudyProgram.Reviews.ToList();
+            statsData.AverageSalary = calculator.CalcReviewAverage(programReviews, r => r.Salary, 1);
+            statsData.Difficulty = calculator.CalcReviewAverage(programReviews, r => r.Difficulty, 1);
+            statsData.Satisfaction = calculator.CalcReviewAverage(programReviews, r => r.Satisfaction, 1);
+            statsData.OveralRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
+
+            StudyProgramView.StatsData = statsData;
         }
 
         public void HandlePreviousButtonClick()
         {
             StudyProgramView.Hide();
-            FacultyView = new FacultyView(new FacultyController(), Faculty, University);
+            FacultyView = new FacultyView(new FacultyController(Faculty), University);
             FacultyView.Show();
         }
 

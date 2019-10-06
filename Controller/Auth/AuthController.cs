@@ -14,18 +14,15 @@ namespace Advisor.Controller
         public SignupFormView SignupFormView { get; set; }
         public LoginFormView LoginFormView { get; set; }
         public HomeView HomeView { get; set; }
-        public IHomeController HomeController { get; set; }
         public IPasswordEncoder PasswordEncoder { get; set; }
 
         public AuthController(
             ILoginDataValidator loginDataValidator,
             ISignupDataValidator signupDataValidator,
-            IHomeController homeController,
             IPasswordEncoder passwordEncoder
         ) {
             LoginDataValidator = loginDataValidator;
             SignupDataValidator = signupDataValidator;
-            HomeController = homeController;
             PasswordEncoder = passwordEncoder;
         }
 
@@ -64,7 +61,7 @@ namespace Advisor.Controller
             if (AuthenticateUser(email, password))
             {
                 LoginFormView.Hide();
-                HomeView = new HomeView(HomeController);
+                HomeView = new HomeView(new HomeController());
                 HomeView.ShowDialog();
             }
 

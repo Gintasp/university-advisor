@@ -4,6 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System;
 using System.Collections.ObjectModel;
+using Advisor.Service.Statistics;
 
 namespace Advisor.Controller
 {
@@ -11,32 +12,31 @@ namespace Advisor.Controller
     {
         public UniversityView UniversityView { get; set; }
         public FacultyView FacultyView { get; set; }
-        public IFacultyController FacultyController { get; set; }
         public HomeView HomeView { get; set; }
         public AddFormView AddFormView { get; set; }
+        public University University { get; set; }
 
-        public UniversityController(IFacultyController facultyController)
+        public UniversityController(University uni)
         {
-            FacultyController = facultyController;
+            University = uni;
         }
+
         public void HandlePreviousButtonClick()
         {
             UniversityView.Hide();
-            HomeView = new HomeView(new HomeController(this));
+            HomeView = new HomeView(new HomeController());
             HomeView.ShowDialog();
         }
-        public void LoadFacultyData(University uni)
+        public void LoadData()
         {
-            UniversityView.Faculties.Items.Clear();
-            List<Faculty> faculties = DB.Instance.Faculties.Where(f => f.University.Id == uni.Id).ToList();
-            foreach (Faculty faculty in faculties)
-            {
-                UniversityView.Faculties.Items.Add(faculty);
-            }
+            LoadFacultyList();
+            LoadStats();
+            UniversityView.University = University;
         }
-        public void HandleFacultySelect(Faculty faculty, University uni)
+
+        public void HandleFacultySelect(Faculty faculty)
         {
-            FacultyView = new FacultyView(FacultyController, faculty, uni);
+            FacultyView = new FacultyView(new FacultyController(faculty), University);
             UniversityView.Hide();
             FacultyView.ShowDialog();
         }
@@ -55,14 +55,39 @@ namespace Advisor.Controller
             {
                 Title = AddFormView.TitleInput.Text,
                 Description = AddFormView.DescriptionInput.Text,
-                University = UniversityView.University,
+                University = University,
                 StudyPrograms = new Collection<StudyProgram>(),
                 Lecturers = new Collection<Lecturer>()
             };
             DB.Instance.Faculties.Add(fac);
             DB.Instance.SaveChanges();
-            UniversityView.Faculties.Items.Add(fac);
+            UniversityView.FacultyList.Items.Add(fac);
             AddFormView.Close();
+        }
+
+        private void LoadFacultyList()
+        {
+            UniversityView.FacultyList.Items.Clear();
+            List<Faculty> faculties = DB.Instance.Faculties.Where(f => f.University.Id == University.Id).ToList();
+            faculties.ForEach(faculty => UniversityView.FacultyList.Items.Add(faculty));
+        }
+
+        private void LoadStats()
+        {
+            StatsData statsData = new StatsData();
+            StatisticCalculator calculator = new StatisticCalculator();
+            List<Review> reviews = (from r in DB.Instance.Reviews
+                                           join p in DB.Instance.StudyPrograms on r.StudyProgram.Id equals p.Id
+                                           join f in DB.Instance.Faculties on p.Faculty.Id equals f.Id
+                                           join u in DB.Instance.Universities on f.University.Id equals u.Id
+                                    where u.Id == University.Id
+                                    select r).ToList();
+            statsData.AverageSalary = calculator.CalcReviewAverage(reviews, r => r.Salary, 2);
+            statsData.OveralRating = calculator.CalcReviewAverage(reviews, r => r.OveralRating, 1);
+            statsData.FacultyCount = University.Faculties.Count;
+            statsData.ReviewCount = reviews.Count;
+
+            UniversityView.StatsData = statsData;
         }
     }
 }

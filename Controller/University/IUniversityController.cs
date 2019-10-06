@@ -8,8 +8,8 @@ namespace Advisor.Controller
     {
         UniversityView UniversityView { get; set; }
         void HandlePreviousButtonClick();
-        void LoadFacultyData(University uni);
-        void HandleFacultySelect(Faculty faculty, University uni);
+        void LoadData();
+        void HandleFacultySelect(Faculty faculty);
         void HandleAddFaculty(object sender, EventArgs e);
         void HandleAddFacultyClick();
     }

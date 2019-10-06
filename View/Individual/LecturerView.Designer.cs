@@ -53,23 +53,21 @@
             // 
             // labelName
             // 
-            this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Segoe UI", 28F);
+            this.labelName.Font = new System.Drawing.Font("Segoe UI", 22F);
             this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelName.Location = new System.Drawing.Point(63, 164);
+            this.labelName.Location = new System.Drawing.Point(63, 69);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(122, 51);
+            this.labelName.Size = new System.Drawing.Size(624, 51);
             this.labelName.TabIndex = 8;
             this.labelName.Text = "Name";
             // 
             // labelFaculty
             // 
-            this.labelFaculty.AutoSize = true;
             this.labelFaculty.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFaculty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelFaculty.Location = new System.Drawing.Point(68, 215);
+            this.labelFaculty.Location = new System.Drawing.Point(68, 120);
             this.labelFaculty.Name = "labelFaculty";
-            this.labelFaculty.Size = new System.Drawing.Size(58, 21);
+            this.labelFaculty.Size = new System.Drawing.Size(619, 21);
             this.labelFaculty.TabIndex = 10;
             this.labelFaculty.Text = "Faculty";
             // 
@@ -77,9 +75,10 @@
             // 
             this.btnLeaveReview.AutoSize = true;
             this.btnLeaveReview.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLeaveReview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnLeaveReview.Location = new System.Drawing.Point(705, 550);
             this.btnLeaveReview.Name = "btnLeaveReview";
-            this.btnLeaveReview.Size = new System.Drawing.Size(287, 31);
+            this.btnLeaveReview.Size = new System.Drawing.Size(325, 37);
             this.btnLeaveReview.TabIndex = 11;
             this.btnLeaveReview.Text = "Leave a review";
             this.btnLeaveReview.UseVisualStyleBackColor = true;

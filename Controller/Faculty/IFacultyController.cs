@@ -8,9 +8,9 @@ namespace Advisor.Controller
         FacultyView FacultyView { get; set; }
         StudyProgramView StudyProgramView { get; set; }
         void HandlePreviousButtonClick(University uni);
-        void LoadData(Faculty faculty);
+        void LoadData();
         void HandleStudyProgramSelect(StudyProgram selectedProgram, Faculty faculty, University uni);
-        void HandleLecturerSelect(Lecturer lecturer, Faculty faculty, University university);
+        void HandleLecturerSelect(Lecturer lecturer);
         void HandleAddStudyProgramClick();
         void HandleAddLecturerClick();
     }

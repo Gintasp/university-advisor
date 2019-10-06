@@ -1,4 +1,5 @@
 ﻿using Advisor.Model;
+using Advisor.Service.Statistics;
 using Advisor.View;
 using System;
 using System.Collections.Generic;
@@ -14,22 +15,30 @@ namespace Advisor.Controller
         public StudyProgramView StudyProgramView { get; set; }
         public LecturerView LecturerView { get; set; }
         public AddFormView AddFormView { get; set; }
+        public Faculty Faculty { get; set; }
+
+        public FacultyController(Faculty faculty)
+        {
+            Faculty = faculty;
+        }
 
         public void HandlePreviousButtonClick(University uni)
         {
             FacultyView.Hide();
-            UniversityView = new UniversityView(new UniversityController(this), uni);
+            UniversityView = new UniversityView(new UniversityController(uni));
             UniversityView.Show();
         }
 
-        public void LoadData(Faculty faculty)
+        public void LoadData()
         {
             FacultyView.StudyProgramList.Items.Clear();
             FacultyView.LecturerList.Items.Clear();
-            List<StudyProgram> programs = faculty.StudyPrograms.ToList();
-            List<Lecturer> lecturers = faculty.Lecturers.ToList();
+            FacultyView.Faculty = Faculty;
+            List<StudyProgram> programs = Faculty.StudyPrograms.ToList();
+            List<Lecturer> lecturers = Faculty.Lecturers.ToList();
             programs.ForEach(program => FacultyView.StudyProgramList.Items.Add(program));
             lecturers.ForEach(lecturer => FacultyView.LecturerList.Items.Add(lecturer));
+            LoadStats();
         }
 
         public void HandleStudyProgramSelect(StudyProgram selectedProgram, Faculty faculty, University uni)
@@ -39,7 +48,7 @@ namespace Advisor.Controller
             StudyProgramView.Show();
         }
 
-        public void HandleLecturerSelect(Lecturer lecturer, Faculty faculty, University university)
+        public void HandleLecturerSelect(Lecturer lecturer)
         {
             FacultyView.Hide();
             LecturerView = new LecturerView(new LecturerController(lecturer));
@@ -92,6 +101,23 @@ namespace Advisor.Controller
             DB.Instance.SaveChanges();
             FacultyView.StudyProgramList.Items.Add(program);
             AddFormView.Close();
+        }
+
+        private void LoadStats()
+        {
+            StatsData statsData = new StatsData();
+            StatisticCalculator calculator = new StatisticCalculator();
+            List<Review> programReviews = (from r in DB.Instance.Reviews
+                                          join p in DB.Instance.StudyPrograms on r.StudyProgram.Id equals p.Id 
+                                          join f in DB.Instance.Faculties on p.Faculty.Id equals f.Id
+                                          where f.Id == Faculty.Id
+                                          select r).ToList();
+            statsData.AverageSalary = calculator.CalcReviewAverage(programReviews, r => r.Salary, 1);
+            statsData.Difficulty = calculator.CalcReviewAverage(programReviews, r => r.Difficulty, 1);
+            statsData.Satisfaction = calculator.CalcReviewAverage(programReviews, r => r.Satisfaction, 1);
+            statsData.OveralRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
+
+            FacultyView.StatsData = statsData;
         }
     }
 }
