@@ -42,8 +42,6 @@ namespace Advisor.View
             Application.Exit();
         }
 
-        //Course select code
-        //
         //private void OnCourseSelect(object sender, System.EventArgs e)
         //{
         //    Course course = (Course)CourseData.SelectedItem;
@@ -53,9 +51,6 @@ namespace Advisor.View
         //    }
         //}
 
-
-        //Course Add Code
-        //
         //private void OnAddCourseLinkClick(object sender, LinkLabelLinkClickedEventArgs e)
         //{
         //    LecturerController.HandleAddCourseClick();

@@ -12,8 +12,6 @@ namespace Advisor.Controller
         void HandleLeaveReviewClick();
         void HandlePreviousFormClick();
 
-        //Not implemented in the form
-        //
         //void HandleCourseSelect(Course course);
         //void HandleAddCourseClick();
         //void HandleAddCourse(object sender, EventArgs e);

@@ -51,21 +51,19 @@ namespace Advisor.Controller
             FacultyView.Show();
         }
 
-        //      Not implemented in the form
-        //
         //public void HandleCourseSelect(Course course)
         //{
         //    LecturerView.Hide();
         //    CourseView = new CourseView(new CourseController(course.StudyProgram, course, new StudyProgramController(course.StudyProgram, Lecturer.Faculty, Lecturer.Faculty.University)), course);
         //    CourseView.Show();
         //}
-
+        //
         //public void HandleAddCourseClick()
         //{
         //    LoadAddForm();
         //    AddFormView.ShowDialog();
         //}
-
+        //
         //public void HandleAddCourse(object sender, EventArgs e)
         //{
         //    Course course = new Course()
@@ -80,7 +78,7 @@ namespace Advisor.Controller
         //    LecturerView.CourseList.Items.Add(course);
         //    AddFormView.Close();
         //}
-
+        //
         //public void LoadAddForm()
         //{
         //    AddFormView = new AddFormView();
