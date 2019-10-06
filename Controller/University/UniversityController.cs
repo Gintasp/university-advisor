@@ -11,14 +11,9 @@ namespace Advisor.Controller
     {
         public UniversityView UniversityView { get; set; }
         public FacultyView FacultyView { get; set; }
-        public IFacultyController FacultyController { get; set; }
         public HomeView HomeView { get; set; }
         public AddFormView AddFormView { get; set; }
 
-        public UniversityController(IFacultyController facultyController)
-        {
-            FacultyController = facultyController;
-        }
         public void HandlePreviousButtonClick()
         {
             UniversityView.Hide();
@@ -36,7 +31,7 @@ namespace Advisor.Controller
         }
         public void HandleFacultySelect(Faculty faculty, University uni)
         {
-            FacultyView = new FacultyView(FacultyController, faculty, uni);
+            FacultyView = new FacultyView(new FacultyController(faculty), uni);
             UniversityView.Hide();
             FacultyView.ShowDialog();
         }

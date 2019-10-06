@@ -1,4 +1,5 @@
 ﻿using Advisor.Model;
+using Advisor.Service.Statistics;
 using Advisor.View;
 using System;
 using System.Collections.Generic;
@@ -13,22 +14,30 @@ namespace Advisor.Controller
         public UniversityView UniversityView { get; set; }
         public StudyProgramView StudyProgramView { get; set; }
         public AddFormView AddFormView { get; set; }
+        public Faculty Faculty { get; set; }
+
+        public FacultyController(Faculty faculty)
+        {
+            Faculty = faculty;
+        }
 
         public void HandlePreviousButtonClick(University uni)
         {
             FacultyView.Hide();
-            UniversityView = new UniversityView(new UniversityController(this), uni);
+            UniversityView = new UniversityView(new UniversityController(), uni);
             UniversityView.Show();
         }
 
-        public void LoadData(Faculty faculty)
+        public void LoadData()
         {
             FacultyView.StudyProgramList.Items.Clear();
             FacultyView.LecturerList.Items.Clear();
-            List<StudyProgram> programs = faculty.StudyPrograms.ToList();
-            List<Lecturer> lecturers = faculty.Lecturers.ToList();
+            FacultyView.Faculty = Faculty;
+            List<StudyProgram> programs = Faculty.StudyPrograms.ToList();
+            List<Lecturer> lecturers = Faculty.Lecturers.ToList();
             programs.ForEach(program => FacultyView.StudyProgramList.Items.Add(program));
             lecturers.ForEach(lecturer => FacultyView.LecturerList.Items.Add(lecturer));
+            LoadStats();
         }
 
         public void HandleStudyProgramSelect(StudyProgram selectedProgram, Faculty faculty, University uni)
@@ -89,6 +98,24 @@ namespace Advisor.Controller
             DB.Instance.SaveChanges();
             FacultyView.StudyProgramList.Items.Add(program);
             AddFormView.Close();
+        }
+
+        private void LoadStats()
+        {
+            ReviewData reviewData = new ReviewData();
+            StatisticCalculator calculator = new StatisticCalculator();
+            List<Review> programReviews = DB.Instance.Reviews.Join(
+                DB.Instance.StudyPrograms,
+                r => r.StudyProgram.Id,
+                p => p.Id,
+                (r, p) => new { Review = r, StudyProgram = p }
+            ).Where(p => p.StudyProgram.Faculty.Id == Faculty.Id).Select(r => r.Review).ToList();
+            reviewData.AverageSalary = calculator.CalcReviewAverage(programReviews, r => r.Salary, 1);
+            reviewData.Difficulty = calculator.CalcReviewAverage(programReviews, r => r.Difficulty, 1);
+            reviewData.Satisfaction = calculator.CalcReviewAverage(programReviews, r => r.Satisfaction, 1);
+            reviewData.OveralRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
+
+            FacultyView.ReviewData = reviewData;
         }
     }
 }

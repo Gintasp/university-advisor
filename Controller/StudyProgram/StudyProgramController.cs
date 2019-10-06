@@ -53,7 +53,7 @@ namespace Advisor.Controller
         public void HandlePreviousButtonClick()
         {
             StudyProgramView.Hide();
-            FacultyView = new FacultyView(new FacultyController(), Faculty, University);
+            FacultyView = new FacultyView(new FacultyController(Faculty), University);
             FacultyView.Show();
         }
 
