@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.StudyProgramSelectBox2 = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.UniversitySelectBox2 = new System.Windows.Forms.ComboBox();
-            this.PercentOfWorkingGraduatesFac2 = new System.Windows.Forms.Label();
-            this.StudyProgramCountFac2 = new System.Windows.Forms.Label();
+            this.WorkingGraduates2 = new System.Windows.Forms.Label();
+            this.CourseCount2 = new System.Windows.Forms.Label();
             this.LecturerCount2 = new System.Windows.Forms.Label();
             this.Salary2 = new System.Windows.Forms.Label();
             this.Satisfaction2 = new System.Windows.Forms.Label();
@@ -48,10 +50,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.FacultySelectBox2 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.StudyProgramSelectBox1 = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.UniversitySelectBox1 = new System.Windows.Forms.ComboBox();
-            this.PercentOfWorkingGraduatesFac1 = new System.Windows.Forms.Label();
-            this.StudyProgramCountFac1 = new System.Windows.Forms.Label();
+            this.WorkingGraduates1 = new System.Windows.Forms.Label();
+            this.CourseCount1 = new System.Windows.Forms.Label();
             this.LecturerCount1 = new System.Windows.Forms.Label();
             this.Salary1 = new System.Windows.Forms.Label();
             this.Satisfaction1 = new System.Windows.Forms.Label();
@@ -66,10 +70,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.FacultySelectBox1 = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.StudyProgramSelectBox1 = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -79,11 +79,11 @@
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label20);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.StudyProgramSelectBox2);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.UniversitySelectBox2);
-            this.panel2.Controls.Add(this.PercentOfWorkingGraduatesFac2);
-            this.panel2.Controls.Add(this.StudyProgramCountFac2);
+            this.panel2.Controls.Add(this.WorkingGraduates2);
+            this.panel2.Controls.Add(this.CourseCount2);
             this.panel2.Controls.Add(this.LecturerCount2);
             this.panel2.Controls.Add(this.Salary2);
             this.panel2.Controls.Add(this.Satisfaction2);
@@ -103,6 +103,31 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(449, 491);
             this.panel2.TabIndex = 3;
+            // 
+            // label20
+            // 
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label20.Location = new System.Drawing.Point(25, 119);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(117, 21);
+            this.label20.TabIndex = 23;
+            this.label20.Text = "Study program:";
+            // 
+            // StudyProgramSelectBox2
+            // 
+            this.StudyProgramSelectBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.StudyProgramSelectBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StudyProgramSelectBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.StudyProgramSelectBox2.FormattingEnabled = true;
+            this.StudyProgramSelectBox2.Location = new System.Drawing.Point(29, 141);
+            this.StudyProgramSelectBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.StudyProgramSelectBox2.Name = "StudyProgramSelectBox2";
+            this.StudyProgramSelectBox2.Size = new System.Drawing.Size(390, 29);
+            this.StudyProgramSelectBox2.TabIndex = 22;
             // 
             // label18
             // 
@@ -129,31 +154,31 @@
             this.UniversitySelectBox2.Size = new System.Drawing.Size(392, 29);
             this.UniversitySelectBox2.TabIndex = 19;
             // 
-            // PercentOfWorkingGraduatesFac2
+            // WorkingGraduates2
             // 
-            this.PercentOfWorkingGraduatesFac2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PercentOfWorkingGraduatesFac2.AutoSize = true;
-            this.PercentOfWorkingGraduatesFac2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PercentOfWorkingGraduatesFac2.ForeColor = System.Drawing.Color.Gray;
-            this.PercentOfWorkingGraduatesFac2.Location = new System.Drawing.Point(290, 431);
-            this.PercentOfWorkingGraduatesFac2.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
-            this.PercentOfWorkingGraduatesFac2.Name = "PercentOfWorkingGraduatesFac2";
-            this.PercentOfWorkingGraduatesFac2.Size = new System.Drawing.Size(19, 21);
-            this.PercentOfWorkingGraduatesFac2.TabIndex = 18;
-            this.PercentOfWorkingGraduatesFac2.Text = "X";
+            this.WorkingGraduates2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.WorkingGraduates2.AutoSize = true;
+            this.WorkingGraduates2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WorkingGraduates2.ForeColor = System.Drawing.Color.Gray;
+            this.WorkingGraduates2.Location = new System.Drawing.Point(290, 431);
+            this.WorkingGraduates2.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
+            this.WorkingGraduates2.Name = "WorkingGraduates2";
+            this.WorkingGraduates2.Size = new System.Drawing.Size(19, 21);
+            this.WorkingGraduates2.TabIndex = 18;
+            this.WorkingGraduates2.Text = "X";
             // 
-            // StudyProgramCountFac2
+            // CourseCount2
             // 
-            this.StudyProgramCountFac2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.StudyProgramCountFac2.AutoSize = true;
-            this.StudyProgramCountFac2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StudyProgramCountFac2.ForeColor = System.Drawing.Color.Gray;
-            this.StudyProgramCountFac2.Location = new System.Drawing.Point(290, 372);
-            this.StudyProgramCountFac2.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
-            this.StudyProgramCountFac2.Name = "StudyProgramCountFac2";
-            this.StudyProgramCountFac2.Size = new System.Drawing.Size(19, 21);
-            this.StudyProgramCountFac2.TabIndex = 17;
-            this.StudyProgramCountFac2.Text = "X";
+            this.CourseCount2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CourseCount2.AutoSize = true;
+            this.CourseCount2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CourseCount2.ForeColor = System.Drawing.Color.Gray;
+            this.CourseCount2.Location = new System.Drawing.Point(290, 372);
+            this.CourseCount2.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
+            this.CourseCount2.Name = "CourseCount2";
+            this.CourseCount2.Size = new System.Drawing.Size(19, 21);
+            this.CourseCount2.TabIndex = 17;
+            this.CourseCount2.Text = "X";
             // 
             // LecturerCount2
             // 
@@ -351,8 +376,8 @@
             this.panel1.Controls.Add(this.StudyProgramSelectBox1);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.UniversitySelectBox1);
-            this.panel1.Controls.Add(this.PercentOfWorkingGraduatesFac1);
-            this.panel1.Controls.Add(this.StudyProgramCountFac1);
+            this.panel1.Controls.Add(this.WorkingGraduates1);
+            this.panel1.Controls.Add(this.CourseCount1);
             this.panel1.Controls.Add(this.LecturerCount1);
             this.panel1.Controls.Add(this.Salary1);
             this.panel1.Controls.Add(this.Satisfaction1);
@@ -372,6 +397,31 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(449, 491);
             this.panel1.TabIndex = 2;
+            // 
+            // label19
+            // 
+            this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label19.Location = new System.Drawing.Point(25, 119);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(117, 21);
+            this.label19.TabIndex = 21;
+            this.label19.Text = "Study program:";
+            // 
+            // StudyProgramSelectBox1
+            // 
+            this.StudyProgramSelectBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.StudyProgramSelectBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StudyProgramSelectBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.StudyProgramSelectBox1.FormattingEnabled = true;
+            this.StudyProgramSelectBox1.Location = new System.Drawing.Point(29, 141);
+            this.StudyProgramSelectBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.StudyProgramSelectBox1.Name = "StudyProgramSelectBox1";
+            this.StudyProgramSelectBox1.Size = new System.Drawing.Size(390, 29);
+            this.StudyProgramSelectBox1.TabIndex = 20;
             // 
             // label17
             // 
@@ -398,31 +448,31 @@
             this.UniversitySelectBox1.Size = new System.Drawing.Size(390, 29);
             this.UniversitySelectBox1.TabIndex = 18;
             // 
-            // PercentOfWorkingGraduatesFac1
+            // WorkingGraduates1
             // 
-            this.PercentOfWorkingGraduatesFac1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PercentOfWorkingGraduatesFac1.AutoSize = true;
-            this.PercentOfWorkingGraduatesFac1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PercentOfWorkingGraduatesFac1.ForeColor = System.Drawing.Color.Gray;
-            this.PercentOfWorkingGraduatesFac1.Location = new System.Drawing.Point(291, 431);
-            this.PercentOfWorkingGraduatesFac1.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
-            this.PercentOfWorkingGraduatesFac1.Name = "PercentOfWorkingGraduatesFac1";
-            this.PercentOfWorkingGraduatesFac1.Size = new System.Drawing.Size(19, 21);
-            this.PercentOfWorkingGraduatesFac1.TabIndex = 17;
-            this.PercentOfWorkingGraduatesFac1.Text = "X";
+            this.WorkingGraduates1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.WorkingGraduates1.AutoSize = true;
+            this.WorkingGraduates1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WorkingGraduates1.ForeColor = System.Drawing.Color.Gray;
+            this.WorkingGraduates1.Location = new System.Drawing.Point(291, 431);
+            this.WorkingGraduates1.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
+            this.WorkingGraduates1.Name = "WorkingGraduates1";
+            this.WorkingGraduates1.Size = new System.Drawing.Size(19, 21);
+            this.WorkingGraduates1.TabIndex = 17;
+            this.WorkingGraduates1.Text = "X";
             // 
-            // StudyProgramCountFac1
+            // CourseCount1
             // 
-            this.StudyProgramCountFac1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.StudyProgramCountFac1.AutoSize = true;
-            this.StudyProgramCountFac1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StudyProgramCountFac1.ForeColor = System.Drawing.Color.Gray;
-            this.StudyProgramCountFac1.Location = new System.Drawing.Point(291, 372);
-            this.StudyProgramCountFac1.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
-            this.StudyProgramCountFac1.Name = "StudyProgramCountFac1";
-            this.StudyProgramCountFac1.Size = new System.Drawing.Size(19, 21);
-            this.StudyProgramCountFac1.TabIndex = 16;
-            this.StudyProgramCountFac1.Text = "X";
+            this.CourseCount1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CourseCount1.AutoSize = true;
+            this.CourseCount1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CourseCount1.ForeColor = System.Drawing.Color.Gray;
+            this.CourseCount1.Location = new System.Drawing.Point(291, 372);
+            this.CourseCount1.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
+            this.CourseCount1.Name = "CourseCount1";
+            this.CourseCount1.Size = new System.Drawing.Size(19, 21);
+            this.CourseCount1.TabIndex = 16;
+            this.CourseCount1.Text = "X";
             // 
             // LecturerCount1
             // 
@@ -612,56 +662,6 @@
             this.FacultySelectBox1.Size = new System.Drawing.Size(390, 29);
             this.FacultySelectBox1.TabIndex = 0;
             // 
-            // label19
-            // 
-            this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label19.Location = new System.Drawing.Point(25, 119);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(117, 21);
-            this.label19.TabIndex = 21;
-            this.label19.Text = "Study program:";
-            // 
-            // StudyProgramSelectBox1
-            // 
-            this.StudyProgramSelectBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.StudyProgramSelectBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StudyProgramSelectBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.StudyProgramSelectBox1.FormattingEnabled = true;
-            this.StudyProgramSelectBox1.Location = new System.Drawing.Point(29, 141);
-            this.StudyProgramSelectBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.StudyProgramSelectBox1.Name = "StudyProgramSelectBox1";
-            this.StudyProgramSelectBox1.Size = new System.Drawing.Size(390, 29);
-            this.StudyProgramSelectBox1.TabIndex = 20;
-            // 
-            // label20
-            // 
-            this.label20.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label20.Location = new System.Drawing.Point(25, 119);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(117, 21);
-            this.label20.TabIndex = 23;
-            this.label20.Text = "Study program:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(29, 141);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(390, 29);
-            this.comboBox1.TabIndex = 22;
-            // 
             // StudyProgramComparisonView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -685,8 +685,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox UniversitySelectBox2;
-        private System.Windows.Forms.Label PercentOfWorkingGraduatesFac2;
-        private System.Windows.Forms.Label StudyProgramCountFac2;
+        private System.Windows.Forms.Label WorkingGraduates2;
+        private System.Windows.Forms.Label CourseCount2;
         private System.Windows.Forms.Label LecturerCount2;
         private System.Windows.Forms.Label Salary2;
         private System.Windows.Forms.Label Satisfaction2;
@@ -704,8 +704,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox UniversitySelectBox1;
-        private System.Windows.Forms.Label PercentOfWorkingGraduatesFac1;
-        private System.Windows.Forms.Label StudyProgramCountFac1;
+        private System.Windows.Forms.Label WorkingGraduates1;
+        private System.Windows.Forms.Label CourseCount1;
         private System.Windows.Forms.Label LecturerCount1;
         private System.Windows.Forms.Label Salary1;
         private System.Windows.Forms.Label Satisfaction1;
@@ -721,7 +721,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox FacultySelectBox1;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox StudyProgramSelectBox2;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ComboBox StudyProgramSelectBox1;
     }
