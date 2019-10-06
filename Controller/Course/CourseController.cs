@@ -2,6 +2,7 @@
 using Advisor.Model;
 using System.Linq;
 using System.Collections.Generic;
+using Advisor.View.Comparison;
 
 namespace Advisor.Controller
 {
@@ -9,7 +10,7 @@ namespace Advisor.Controller
     {
         public CourseView CourseView { get; set; }
         public StudyProgram StudyProgram { get; set; }
-        public PopupCourseComparison PopupCourseComparison { get; set; }
+        public SelectPopup SelectPopup { get; set; }
         public Course Course { get; set; }
         public StudyProgramView StudyProgramView { get; set; }
         public IStudyProgramController StudyProgramController { get; set; }
@@ -41,8 +42,9 @@ namespace Advisor.Controller
         }
         public void DisplayPopup()
         {
-            PopupCourseComparison = new PopupCourseComparison();
-            PopupCourseComparison.ShowDialog();
+            //TODO: Load data to comboboxesof popup
+            SelectPopup = new SelectPopup();
+            SelectPopup.ShowDialog();
         }
     }
 }

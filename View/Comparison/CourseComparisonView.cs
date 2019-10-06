@@ -14,12 +14,7 @@ namespace Advisor.View.Comparison
             InitializeComponent();
         }
 
-        private void Course1_Click(object sender, EventArgs e)
-        {
-            CourseController.DisplayPopup();
-        }
-
-        private void Course2_Click(object sender, EventArgs e)
+        private void OnCourseSelectClick(object sender, EventArgs e)
         {
             CourseController.DisplayPopup();
         }

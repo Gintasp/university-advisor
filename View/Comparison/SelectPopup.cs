@@ -3,16 +3,16 @@ using System.Windows.Forms;
 
 namespace Advisor.View.Comparison
 {
-    public partial class LecturerSelectPopup : Form
+    public partial class SelectPopup : Form
     {
-        public LecturerSelectPopup()
+        public SelectPopup()
         {
             InitializeComponent();
         }
 
         private void OnSelectClick(object sender, EventArgs e)
         {
-            //TODO: handle lectuer select
+            //TODO: invoke select event
         }
     }
 }
