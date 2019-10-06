@@ -52,19 +52,44 @@ namespace Advisor.Migrations
             var lecturers = context.Lecturers.ToList();
             var reviews = context.Reviews.ToList();
 
-            foreach(Review review in reviews){
-                if (review.Id % 3 == 0)
+            foreach (StudyProgram program in programs)
+            {
+                for (int i = 0; i < 10; i++)
                 {
-                    review.Course = courses.ElementAt(r.Next(0, courses.Count));
-                    context.SaveChanges();
-                } else if (review.Id % 2 == 0 && review.StudyProgram == null)
+                    Review review = reviews.ElementAt(r.Next(0, reviews.Count));
+                    if(review.StudyProgram == null)
+                    {
+                        program.Reviews.Add(review);
+                        context.SaveChanges();
+                    }
+                }
+            }
+
+            for (int i = 0; i < courses.Count; i++)
+            {
+                Course course = courses.ElementAt(r.Next(0, courses.Count));
+                for (int j = 0; j < 80; j++)
                 {
-                    review.StudyProgram = programs.ElementAt(r.Next(0, programs.Count));
-                    context.SaveChanges();
-                } else if (review.StudyProgram == null && review.Course == null)
+                    Review review = reviews.ElementAt(r.Next(0, reviews.Count));
+                    if (review.StudyProgram == null && review.Course == null)
+                    {
+                        course.Reviews.Add(review);
+                        context.SaveChanges();
+                    }
+                }
+            }
+
+            for (int i = 0; i < lecturers.Count; i++)
+            {
+                Lecturer lecturer = lecturers.ElementAt(r.Next(0, lecturers.Count));
+                for (int j = 0; j < 80; j++)
                 {
-                    review.Lecturer = lecturers.ElementAt(r.Next(0, lecturers.Count));
-                    context.SaveChanges();
+                    Review review = reviews.ElementAt(r.Next(0, reviews.Count));
+                    if (review.StudyProgram == null && review.Course == null && review.Lecturer == null)
+                    {
+                        lecturer.Reviews.Add(review);
+                        context.SaveChanges();
+                    }
                 }
             }
         }
