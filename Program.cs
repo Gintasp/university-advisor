@@ -3,7 +3,6 @@ using System.Windows.Forms;
 using Ninject;
 using Advisor.DependencyInjection;
 using Advisor.View;
-using Advisor.View.Comparison;
 
 namespace Advisor
 {
@@ -17,8 +16,7 @@ namespace Advisor
 
             var kernel = new StandardKernel(new Bindings());
             var loginFormView = kernel.Get<LoginFormView>();
-            LecturerComparisonView view = new LecturerComparisonView();
-            Application.Run(view);
+            Application.Run(loginFormView);
         }
     }
 }
