@@ -12,7 +12,7 @@ namespace Advisor.View
         public University University { get; set; }
         public ListBox StudyProgramList { get; set; }
         public ListBox LecturerList { get; set; }
-        public ReviewData ReviewData { get; set; }
+        public StatsData StatsData { get; set; }
 
         public FacultyView(
             IFacultyController facultyController,
@@ -36,10 +36,10 @@ namespace Advisor.View
 
         private void ShowStatsData()
         {
-            SalaryVal.Text = ReviewData.AverageSalary.ToString() + " €";
-            DifficultyVal.Text = ReviewData.Difficulty.ToString() + " / 10";
-            SatisfactionVal.Text = ReviewData.Satisfaction.ToString() + " / 10";
-            OveralVal.Text = ReviewData.OveralRating.ToString() + " / 10";
+            SalaryVal.Text = StatsData.AverageSalary.ToString() + " €";
+            DifficultyVal.Text = StatsData.Difficulty.ToString() + " / 10";
+            SatisfactionVal.Text = StatsData.Satisfaction.ToString() + " / 10";
+            OveralVal.Text = StatsData.OveralRating.ToString() + " / 10";
         }
 
         private void OnAddStudyProgramLinkClick(object sender, EventArgs e)

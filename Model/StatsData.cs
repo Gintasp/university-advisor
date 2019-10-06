@@ -1,6 +1,6 @@
 ﻿namespace Advisor.Model
 {
-    public struct ReviewData
+    public struct StatsData
     {
         public float Usefulness { get; set; }
         public float Satisfaction { get; set; }

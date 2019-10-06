@@ -10,13 +10,8 @@ namespace Advisor.Controller
     {
         public HomeView HomeView { get; set; }
         public UniversityView UniversityView { get; set; }
-        public IUniversityController UniversityController { get; set; }
         public AddFormView AddFormView { get; set; }
 
-        public HomeController(IUniversityController universityController)
-        {
-            UniversityController = universityController;
-        }
         public void HandleAddUniversityClick()
         {
             AddFormView = new AddFormView();
@@ -39,15 +34,12 @@ namespace Advisor.Controller
         {
             List<University> unis = DB.Instance.Universities.ToList();
             HomeView.UniversityList.Items.Clear();
-            foreach(University uni in unis)
-            {
-                HomeView.UniversityList.Items.Add(uni);
-            }
+            unis.ForEach(uni => HomeView.UniversityList.Items.Add(uni));
         }
         public void HandleUniversitySelect(University uni)
         {
             HomeView.Hide();
-            UniversityView = new UniversityView(UniversityController, uni);
+            UniversityView = new UniversityView(new UniversityController(uni));
             UniversityView.ShowDialog();
         }
         public void HandleSearchBoxChange()

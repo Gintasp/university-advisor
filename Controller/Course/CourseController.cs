@@ -41,17 +41,17 @@ namespace Advisor.Controller
 
         private void LoadStats()
         {
-            ReviewData reviewData = new ReviewData();
+            StatsData statsData = new StatsData();
             StatisticCalculator calculator = new StatisticCalculator();
             List<Review> courseReviews = Course.Reviews.ToList();
-            reviewData.Usefulness = calculator.CalcReviewAverage(courseReviews, r => r.Usefulness, 1);
-            reviewData.Difficulty = calculator.CalcReviewAverage(courseReviews, r => r.Difficulty, 1);
-            reviewData.Satisfaction = calculator.CalcReviewAverage(courseReviews, r => r.Satisfaction, 1);
-            reviewData.OveralRating = calculator.CalcReviewAverage(courseReviews, r => r.OveralRating, 1);
-            reviewData.Theory = calculator.CalcReviewAverage(courseReviews, r => r.TheoryPercentage, 1);
-            reviewData.Practice = calculator.CalcReviewAverage(courseReviews, r => r.PracticePercentage, 1);
+            statsData.Usefulness = calculator.CalcReviewAverage(courseReviews, r => r.Usefulness, 1);
+            statsData.Difficulty = calculator.CalcReviewAverage(courseReviews, r => r.Difficulty, 1);
+            statsData.Satisfaction = calculator.CalcReviewAverage(courseReviews, r => r.Satisfaction, 1);
+            statsData.OveralRating = calculator.CalcReviewAverage(courseReviews, r => r.OveralRating, 1);
+            statsData.Theory = calculator.CalcReviewAverage(courseReviews, r => r.TheoryPercentage, 1);
+            statsData.Practice = calculator.CalcReviewAverage(courseReviews, r => r.PracticePercentage, 1);
 
-            CourseView.ReviewData = reviewData;
+            CourseView.StatsData = statsData;
         }
 
         private void LoadReviews()

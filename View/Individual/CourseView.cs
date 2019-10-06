@@ -10,7 +10,7 @@ namespace Advisor.View
         public ICourseController CourseController { get; set; }
         public ListBox ReviewList { get; set; }
         public Course Course { get; set; }
-        public ReviewData ReviewData { get; set; }
+        public StatsData StatsData { get; set; }
         
         public CourseView(ICourseController courseController, Course course)
         {
@@ -30,12 +30,12 @@ namespace Advisor.View
 
         private void ShowStatsData()
         {
-            UsefulnessVal.Text = ReviewData.Usefulness.ToString() + " / 10";
-            DifficultyVal.Text = ReviewData.Difficulty.ToString() + " / 10";
-            SatisfactionVal.Text = ReviewData.Satisfaction.ToString() + " / 10";
-            OveralVal.Text = ReviewData.OveralRating.ToString() + " / 10";
-            TheoryVal.Text = ReviewData.Theory.ToString() + " %";
-            PracticeVal.Text = ReviewData.Practice.ToString() + " %";
+            UsefulnessVal.Text = StatsData.Usefulness.ToString() + " / 10";
+            DifficultyVal.Text = StatsData.Difficulty.ToString() + " / 10";
+            SatisfactionVal.Text = StatsData.Satisfaction.ToString() + " / 10";
+            OveralVal.Text = StatsData.OveralRating.ToString() + " / 10";
+            TheoryVal.Text = StatsData.Theory.ToString() + " %";
+            PracticeVal.Text = StatsData.Practice.ToString() + " %";
         }
 
         private void OnPreviousButtonClick(object sender, LinkLabelLinkClickedEventArgs e)

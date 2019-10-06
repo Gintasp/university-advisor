@@ -39,15 +39,15 @@ namespace Advisor.Controller
 
         private void LoadStats()
         {
-            ReviewData reviewData = new ReviewData();
+            StatsData statsData = new StatsData();
             StatisticCalculator calculator = new StatisticCalculator();
             List<Review> programReviews = StudyProgram.Reviews.ToList();
-            reviewData.AverageSalary = calculator.CalcReviewAverage(programReviews, r => r.Salary, 1);
-            reviewData.Difficulty = calculator.CalcReviewAverage(programReviews, r => r.Difficulty, 1);
-            reviewData.Satisfaction = calculator.CalcReviewAverage(programReviews, r => r.Satisfaction, 1);
-            reviewData.OveralRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
+            statsData.AverageSalary = calculator.CalcReviewAverage(programReviews, r => r.Salary, 1);
+            statsData.Difficulty = calculator.CalcReviewAverage(programReviews, r => r.Difficulty, 1);
+            statsData.Satisfaction = calculator.CalcReviewAverage(programReviews, r => r.Satisfaction, 1);
+            statsData.OveralRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
 
-            StudyProgramView.StatsReviewData = reviewData;
+            StudyProgramView.StatsData = statsData;
         }
 
         public void HandlePreviousButtonClick()
