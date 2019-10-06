@@ -52,9 +52,14 @@ namespace Advisor.Controller
             Review review = new Review(Salary,Difficulty,Satisfaction,RelevantIndustry,CareerStartYear,OveralRating,Text);
             StudyProgram.Reviews.Add(review);
             StudyProgramView.ReviewList.Items.Add(review);
-            string dataFolderPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName + "\\Migrations\\Data\\Review.csv";
-            File.AppendAllText(dataFolderPath, Environment.NewLine + review.AllToString());            
+            SaveReview(review);
             StudyProgramReviewView.Close();
+        }
+
+        public void SaveReview(Review review)
+        {
+            string dataFolderPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName + "\\Migrations\\Data\\Review.csv";
+            File.AppendAllText(dataFolderPath, Environment.NewLine + review.AllToString());
         }
     }
 }

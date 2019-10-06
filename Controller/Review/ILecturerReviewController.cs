@@ -2,9 +2,8 @@
 
 namespace Advisor.Controller
 {
-    public interface ILecturerReviewController
+    public interface ILecturerReviewController : IReviewController
     {
         LecturerReviewView LecturerReviewView { get; set; }
-        void HandleReviewSubmit();
     }
 }

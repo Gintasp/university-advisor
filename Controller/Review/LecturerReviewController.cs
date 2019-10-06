@@ -1,4 +1,7 @@
 ﻿using Advisor.View;
+using Advisor.Model;
+using System.IO;
+using System;
 
 namespace Advisor.Controller
 {
@@ -6,9 +9,15 @@ namespace Advisor.Controller
     {
         public LecturerReviewView LecturerReviewView { get; set; }
 
-        public void HandleReviewSubmit()
+        public void HandleSubmitReviewButtonClick()
         {
-            //TODO: Handle lecturer review submit
+            throw new System.NotImplementedException();
+        }
+
+        public void SaveReview(Review review)
+        {
+            string dataFolderPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName + "\\Migrations\\Data\\Review.csv";
+            File.AppendAllText(dataFolderPath, Environment.NewLine + review.AllToString());
         }
     }
 }

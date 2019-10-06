@@ -16,7 +16,7 @@ namespace Advisor.View
 
         private void OnSubmitReviewButtonClick(object sender, EventArgs e)
         {
-            LecturerReviewController.HandleReviewSubmit();
+            LecturerReviewController.HandleSubmitReviewButtonClick();
         }
     }
 }
