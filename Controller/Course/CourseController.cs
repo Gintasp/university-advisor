@@ -62,7 +62,7 @@ namespace Advisor.Controller
         }
         public void HandleLeaveReviewClick()
         {
-            CourseReviewView = new CourseReviewView(new CourseReviewController());
+            CourseReviewView = new CourseReviewView(new CourseReviewController(Course, CourseView));
             CourseReviewView.ShowDialog();
         }
     }

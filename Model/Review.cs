@@ -47,6 +47,17 @@
             OveralRating = rating;
             Text = review;
         }
+        public Review(int difficulty, int satisfaction, int usefulness, int interesting, int rating, int theoryPercentage, int practicePercentage, string review)
+        {
+            Difficulty = difficulty;
+            Satisfaction = satisfaction;
+            Usefulness = usefulness;
+            Interesting = interesting;
+            OveralRating = rating;
+            TheoryPercentage = theoryPercentage;
+            PracticePercentage = practicePercentage;
+            Text = review;
+        }
 
         public override string ToString()
         {
