@@ -39,7 +39,8 @@ namespace Advisor.Controller
             TextReview = CourseReviewView.TextReview.Text;
             Review review = new Review(Difficulty, Satisfaction, Usefulness, Interesting, OveralRating, TheoryPercentage, PracticePercentage, TextReview);
             Course.Reviews.Add(review);
-            CourseView.ReviewList.Items.Add(review);
+            if(!review.Text.Equals(""))
+                CourseView.ReviewList.Items.Add(review);
             SaveReview(review);
             LoadStats();
             CourseReviewView.Close();

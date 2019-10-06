@@ -52,7 +52,8 @@ namespace Advisor.Controller
                 Text = StudyProgramReviewView.TextReview.Text;
                 Review review = new Review(Salary, Difficulty, Satisfaction, RelevantIndustry, CareerStartYear, OveralRating, Text);
                 StudyProgram.Reviews.Add(review);
-                StudyProgramView.ReviewList.Items.Add(review);
+                if (!review.Text.Equals(""))
+                    StudyProgramView.ReviewList.Items.Add(review);
                 SaveReview(review);
                 LoadStats();
                 StudyProgramReviewView.Close();

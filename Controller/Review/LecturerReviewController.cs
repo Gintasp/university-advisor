@@ -34,7 +34,8 @@ namespace Advisor.Controller
             TextReview = LecturerReviewView.TextReview.Text;
             Review review = new Review(Competence, Strictness, Delivery, Interesting, Personality, OveralRating, TextReview);
             Lecturer.Reviews.Add(review);
-            LecturerView.ReviewList.Items.Add(review);
+            if (!review.Text.Equals(""))
+                LecturerView.ReviewList.Items.Add(review);
             SaveReview(review);
             LecturerReviewView.Close();
         }
