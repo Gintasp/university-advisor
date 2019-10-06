@@ -197,12 +197,6 @@
     <Compile Include="View\Individual\LecturerView.Designer.cs">
       <DependentUpon>LecturerView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\PopupCourseComparison.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\PopupCourseComparison.Designer.cs">
-      <DependentUpon>PopupCourseComparison.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Review\LecturerReviewView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -325,9 +319,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Individual\LecturerView.resx">
       <DependentUpon>LecturerView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\PopupCourseComparison.resx">
-      <DependentUpon>PopupCourseComparison.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Review\LecturerReviewView.resx">
       <DependentUpon>LecturerReviewView.cs</DependentUpon>

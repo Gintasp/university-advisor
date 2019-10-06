@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using Advisor.View;
 using Advisor.Model;
-using System;
 
 namespace Advisor.Controller
 {
@@ -26,13 +24,13 @@ namespace Advisor.Controller
             LecturerView.CourseList.Items.Clear();
             LecturerView.ReviewList.Items.Clear();
 
-            if(Lecturer.Courses != null)
+            if (Lecturer.Courses != null)
             {
                 List<Course> courses = Lecturer.Courses.ToList();
                 courses.ForEach(course => LecturerView.CourseList.Items.Add(course));
             }
             
-            if(Lecturer.Reviews != null)
+            if (Lecturer.Reviews != null)
             {
                 List<Review> reviews = Lecturer.Reviews.ToList();
                 reviews.ForEach(review => LecturerView.ReviewList.Items.Add(review));
@@ -47,51 +45,8 @@ namespace Advisor.Controller
         public void HandlePreviousFormClick()
         {
             LecturerView.Hide();
-            FacultyView = new FacultyView(new FacultyController(), Lecturer.Faculty, Lecturer.Faculty.University);
+            FacultyView = new FacultyView(new FacultyController(Lecturer.Faculty), Lecturer.Faculty.University);
             FacultyView.Show();
         }
-
-        //public void HandleCourseSelect(Course course)
-        //{
-        //    LecturerView.Hide();
-        //    CourseView = new CourseView(new CourseController(course.StudyProgram, course, new StudyProgramController(course.StudyProgram, Lecturer.Faculty, Lecturer.Faculty.University)), course);
-        //    CourseView.Show();
-        //}
-        //
-        //public void HandleAddCourseClick()
-        //{
-        //    LoadAddForm();
-        //    AddFormView.ShowDialog();
-        //}
-        //
-        //public void HandleAddCourse(object sender, EventArgs e)
-        //{
-        //    Course course = new Course()
-        //    {
-        //        Title = AddFormView.TitleInput.Text,
-        //        Lecturer = Lecturer,
-        //        StudyProgram = (StudyProgram)AddFormView.LecturerComboBox.SelectedItem,
-        //        Reviews = new Collection<Review>()
-        //    };
-        //    DB.Instance.Courses.Add(course);
-        //    DB.Instance.SaveChanges();
-        //    LecturerView.CourseList.Items.Add(course);
-        //    AddFormView.Close();
-        //}
-        //
-        //public void LoadAddForm()
-        //{
-        //    AddFormView = new AddFormView();
-        //    AddFormView.TitleLabel.Text = "Add course";
-        //    AddFormView.TextFieldLabel.Text = "Name:";
-        //    AddFormView.DescriptionInput.Visible = false;
-        //    AddFormView.DescriptionLabel.Visible = false;
-        //    AddFormView.LecturerComboBox.Visible = true;
-        //    AddFormView.LecturerLabel.Visible = true;
-        //    AddFormView.LecturerLabel.Text = "Choose a study program";
-        //    AddFormView.AddButtonClicked += HandleAddCourse;
-        //    List<StudyProgram> studyPrograms = Lecturer.Faculty.StudyPrograms.ToList();
-        //    studyPrograms.ForEach(program => AddFormView.LecturerComboBox.Items.Add(program));
-        //}
     }
 }

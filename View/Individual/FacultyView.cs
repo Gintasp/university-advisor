@@ -76,7 +76,7 @@ namespace Advisor.View
             Lecturer lecturer = (Lecturer) LecturerListBox.SelectedItem;
             if (lecturer != null)
             {
-                FacultyController.HandleLecturerSelect(lecturer, Faculty, University);
+                FacultyController.HandleLecturerSelect(lecturer);
             }
         }
     }

@@ -48,7 +48,7 @@ namespace Advisor.Controller
             StudyProgramView.Show();
         }
 
-        public void HandleLecturerSelect(Lecturer lecturer, Faculty faculty, University university)
+        public void HandleLecturerSelect(Lecturer lecturer)
         {
             FacultyView.Hide();
             LecturerView = new LecturerView(new LecturerController(lecturer));
