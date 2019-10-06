@@ -40,7 +40,7 @@ namespace Advisor.Controller
 
         public void HandleLeaveReviewClick()
         {
-            LecturerReviewView = new LecturerReviewView(new LecturerReviewController());
+            LecturerReviewView = new LecturerReviewView(new LecturerReviewController(Lecturer, LecturerView));
             LecturerReviewView.ShowDialog();
         }
 

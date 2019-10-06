@@ -37,6 +37,16 @@
             OveralRating = rating;
             Text = text;
         }
+        public Review(int competence, int strictness, int delivery, int interesting, int personality, int rating, string review)
+        {
+            Competence = competence;
+            Strictness = strictness;
+            Delivery = delivery;
+            Interesting = interesting;
+            Personality = personality;
+            OveralRating = rating;
+            Text = review;
+        }
 
         public override string ToString()
         {
