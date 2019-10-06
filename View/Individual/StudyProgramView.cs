@@ -40,6 +40,7 @@ namespace Advisor.View
         private void OnLeaveReviewButtonClick(object sender, EventArgs e)
         {
             StudyProgramController.HandleLeaveReviewClick();
+            ShowStatsData();
         }
 
         private void OnPreviousFormButtonClick(object sender, EventArgs e)

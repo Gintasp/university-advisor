@@ -2,6 +2,9 @@
 using Advisor.Model;
 using System;
 using System.IO;
+using Advisor.Service.Statistics;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Advisor.Controller
 {
@@ -47,19 +50,33 @@ namespace Advisor.Controller
                     CareerStartYear = 4;
                 OveralRating = Convert.ToInt32(StudyProgramReviewView.Rating.Value.ToString());
                 Text = StudyProgramReviewView.TextReview.Text;
+                Review review = new Review(Salary, Difficulty, Satisfaction, RelevantIndustry, CareerStartYear, OveralRating, Text);
+                StudyProgram.Reviews.Add(review);
+                StudyProgramView.ReviewList.Items.Add(review);
+                SaveReview(review);
+                LoadStats();
+                StudyProgramReviewView.Close();
             }
 
-            Review review = new Review(Salary,Difficulty,Satisfaction,RelevantIndustry,CareerStartYear,OveralRating,Text);
-            StudyProgram.Reviews.Add(review);
-            StudyProgramView.ReviewList.Items.Add(review);
-            SaveReview(review);
-            StudyProgramReviewView.Close();
+            
         }
 
         public void SaveReview(Review review)
         {
             string dataFolderPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName + "\\Migrations\\Data\\Review.csv";
             File.AppendAllText(dataFolderPath, Environment.NewLine + review.AllToString());
+        }
+        private void LoadStats()
+        {
+            StatsData statsData = new StatsData();
+            StatisticCalculator calculator = new StatisticCalculator();
+            List<Review> programReviews = StudyProgram.Reviews.ToList();
+            statsData.AverageSalary = calculator.CalcReviewAverage(programReviews, r => r.Salary, 1);
+            statsData.Difficulty = calculator.CalcReviewAverage(programReviews, r => r.Difficulty, 1);
+            statsData.Satisfaction = calculator.CalcReviewAverage(programReviews, r => r.Satisfaction, 1);
+            statsData.OveralRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
+
+            StudyProgramView.StatsData = statsData;
         }
     }
 }
