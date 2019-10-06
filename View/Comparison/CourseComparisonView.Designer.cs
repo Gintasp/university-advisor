@@ -106,11 +106,11 @@
             this.Course1.Location = new System.Drawing.Point(86, 42);
             this.Course1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Course1.Name = "Course1";
-            this.Course1.Size = new System.Drawing.Size(254, 29);
+            this.Course1.Size = new System.Drawing.Size(254, 35);
             this.Course1.TabIndex = 21;
             this.Course1.Text = "Choose course";
             this.Course1.UseVisualStyleBackColor = true;
-            this.Course1.Click += new System.EventHandler(this.OnCourseOneClick);
+            this.Course1.Click += new System.EventHandler(this.OnCourseSelectClick);
             // 
             // label7
             // 
@@ -368,11 +368,10 @@
             this.Course2.Location = new System.Drawing.Point(89, 42);
             this.Course2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Course2.Name = "Course2";
-            this.Course2.Size = new System.Drawing.Size(254, 29);
+            this.Course2.Size = new System.Drawing.Size(254, 35);
             this.Course2.TabIndex = 22;
             this.Course2.Text = "Choose course";
             this.Course2.UseVisualStyleBackColor = true;
-            this.Course2.Click += new System.EventHandler(this.OnCourseTwoClick);
             // 
             // PracticeCourse2
             // 

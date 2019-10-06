@@ -2,7 +2,7 @@
 using Advisor.Model;
 using System.Linq;
 using System.Collections.Generic;
-using System;
+using Advisor.View.Comparison;
 using Advisor.Service.Statistics;
 
 namespace Advisor.Controller
@@ -11,7 +11,7 @@ namespace Advisor.Controller
     {
         public CourseView CourseView { get; set; }
         public StudyProgram StudyProgram { get; set; }
-        public CourseSelectFormView PopupCourseComparison { get; set; }
+        public SelectPopup SelectPopup { get; set; }
         public Course Course { get; set; }
         public StudyProgramView StudyProgramView { get; set; }
         public IStudyProgramController StudyProgramController { get; set; }
