@@ -1,6 +1,4 @@
-﻿using System;
 using Advisor.View;
-using Advisor.Model;
 
 namespace Advisor.Controller
 {
