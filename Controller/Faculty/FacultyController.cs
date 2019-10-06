@@ -12,6 +12,7 @@ namespace Advisor.Controller
         public FacultyView FacultyView { get; set; }
         public UniversityView UniversityView { get; set; }
         public StudyProgramView StudyProgramView { get; set; }
+        public LecturerView LecturerView { get; set; }
         public AddFormView AddFormView { get; set; }
 
         public void HandlePreviousButtonClick(University uni)
@@ -40,7 +41,9 @@ namespace Advisor.Controller
 
         public void HandleLecturerSelect(Lecturer lecturer, Faculty faculty, University university)
         {
-            //TODO: Display lecturer form
+            FacultyView.Hide();
+            LecturerView = new LecturerView(new LecturerController(lecturer));
+            LecturerView.Show();
         }
 
         public void HandleAddStudyProgramClick()
