@@ -47,5 +47,10 @@ namespace Advisor.View
         {
             Application.Exit();
         }
+
+        private void LeaveReviewButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

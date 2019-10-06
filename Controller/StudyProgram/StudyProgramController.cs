@@ -11,6 +11,7 @@ namespace Advisor.Controller
     public class StudyProgramController : IStudyProgramController
     {
         public StudyProgramView StudyProgramView { get; set; }
+        public StudyProgramReviewView StudyProgramReviewView { get; set; }
         public StudyProgram StudyProgram { get; set; }
         public Faculty Faculty { get; set; }
         public FacultyView FacultyView { get; set; }
@@ -80,7 +81,8 @@ namespace Advisor.Controller
 
         public void HandleLeaveReviewClick()
         {
-            //TODO: Handle leave review
+            StudyProgramReviewView = new StudyProgramReviewView(new StudyProgramReviewController());
+            StudyProgramReviewView.ShowDialog();
         }
 
         public void HandleCourseSelect(Course course)

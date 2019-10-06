@@ -56,21 +56,21 @@
             this.leaveReviewButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.leaveReviewButton.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.leaveReviewButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.leaveReviewButton.Location = new System.Drawing.Point(34, 347);
-            this.leaveReviewButton.Margin = new System.Windows.Forms.Padding(2);
+            this.leaveReviewButton.Location = new System.Drawing.Point(45, 427);
+            this.leaveReviewButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.leaveReviewButton.Name = "leaveReviewButton";
-            this.leaveReviewButton.Size = new System.Drawing.Size(650, 37);
+            this.leaveReviewButton.Size = new System.Drawing.Size(867, 46);
             this.leaveReviewButton.TabIndex = 9;
             this.leaveReviewButton.Text = "Leave a review";
             this.leaveReviewButton.UseVisualStyleBackColor = true;
+            this.leaveReviewButton.Click += new System.EventHandler(this.LeaveReviewButton_Click);
             // 
             // PreviousForm
             // 
             this.PreviousForm.AutoSize = true;
-            this.PreviousForm.Location = new System.Drawing.Point(9, 7);
-            this.PreviousForm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PreviousForm.Location = new System.Drawing.Point(12, 9);
             this.PreviousForm.Name = "PreviousForm";
-            this.PreviousForm.Size = new System.Drawing.Size(19, 13);
+            this.PreviousForm.Size = new System.Drawing.Size(24, 17);
             this.PreviousForm.TabIndex = 8;
             this.PreviousForm.TabStop = true;
             this.PreviousForm.Text = "<<";
@@ -82,11 +82,11 @@
             this.Reviews.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Reviews.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Reviews.FormattingEnabled = true;
-            this.Reviews.ItemHeight = 21;
-            this.Reviews.Location = new System.Drawing.Point(270, 102);
-            this.Reviews.Margin = new System.Windows.Forms.Padding(2);
+            this.Reviews.ItemHeight = 28;
+            this.Reviews.Location = new System.Drawing.Point(360, 126);
+            this.Reviews.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Reviews.Name = "Reviews";
-            this.Reviews.Size = new System.Drawing.Size(415, 235);
+            this.Reviews.Size = new System.Drawing.Size(552, 284);
             this.Reviews.TabIndex = 7;
             // 
             // CourseTitle
@@ -94,10 +94,9 @@
             this.CourseTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CourseTitle.Font = new System.Drawing.Font("Segoe UI", 28F);
             this.CourseTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.CourseTitle.Location = new System.Drawing.Point(34, 0);
-            this.CourseTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CourseTitle.Location = new System.Drawing.Point(45, 0);
             this.CourseTitle.Name = "CourseTitle";
-            this.CourseTitle.Size = new System.Drawing.Size(650, 51);
+            this.CourseTitle.Size = new System.Drawing.Size(867, 63);
             this.CourseTitle.TabIndex = 5;
             this.CourseTitle.Text = "Course";
             this.CourseTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -118,9 +117,11 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupBox1.Location = new System.Drawing.Point(34, 97);
+            this.groupBox1.Location = new System.Drawing.Point(45, 119);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(231, 240);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(308, 295);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Stats";
@@ -131,10 +132,9 @@
             this.PracticeVal.AutoSize = true;
             this.PracticeVal.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.PracticeVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.PracticeVal.Location = new System.Drawing.Point(77, 174);
-            this.PracticeVal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PracticeVal.Location = new System.Drawing.Point(103, 214);
             this.PracticeVal.Name = "PracticeVal";
-            this.PracticeVal.Size = new System.Drawing.Size(14, 15);
+            this.PracticeVal.Size = new System.Drawing.Size(18, 20);
             this.PracticeVal.TabIndex = 23;
             this.PracticeVal.Text = "X";
             // 
@@ -144,10 +144,9 @@
             this.TheoryVal.AutoSize = true;
             this.TheoryVal.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TheoryVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TheoryVal.Location = new System.Drawing.Point(71, 147);
-            this.TheoryVal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TheoryVal.Location = new System.Drawing.Point(95, 181);
             this.TheoryVal.Name = "TheoryVal";
-            this.TheoryVal.Size = new System.Drawing.Size(14, 15);
+            this.TheoryVal.Size = new System.Drawing.Size(18, 20);
             this.TheoryVal.TabIndex = 22;
             this.TheoryVal.Text = "X";
             // 
@@ -157,10 +156,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(13, 174);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(17, 214);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 15);
+            this.label2.Size = new System.Drawing.Size(64, 20);
             this.label2.TabIndex = 21;
             this.label2.Text = "Practice:";
             // 
@@ -170,10 +168,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(13, 147);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(17, 181);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 15);
+            this.label1.Size = new System.Drawing.Size(57, 20);
             this.label1.TabIndex = 20;
             this.label1.Text = "Theory:";
             // 
@@ -183,10 +180,9 @@
             this.OveralVal.AutoSize = true;
             this.OveralVal.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.OveralVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.OveralVal.Location = new System.Drawing.Point(96, 120);
-            this.OveralVal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.OveralVal.Location = new System.Drawing.Point(128, 148);
             this.OveralVal.Name = "OveralVal";
-            this.OveralVal.Size = new System.Drawing.Size(14, 15);
+            this.OveralVal.Size = new System.Drawing.Size(18, 20);
             this.OveralVal.TabIndex = 19;
             this.OveralVal.Text = "X";
             // 
@@ -196,10 +192,9 @@
             this.SatisfactionVal.AutoSize = true;
             this.SatisfactionVal.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SatisfactionVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.SatisfactionVal.Location = new System.Drawing.Point(93, 93);
-            this.SatisfactionVal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SatisfactionVal.Location = new System.Drawing.Point(124, 114);
             this.SatisfactionVal.Name = "SatisfactionVal";
-            this.SatisfactionVal.Size = new System.Drawing.Size(14, 15);
+            this.SatisfactionVal.Size = new System.Drawing.Size(18, 20);
             this.SatisfactionVal.TabIndex = 18;
             this.SatisfactionVal.Text = "X";
             // 
@@ -209,10 +204,9 @@
             this.DifficultyVal.AutoSize = true;
             this.DifficultyVal.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DifficultyVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.DifficultyVal.Location = new System.Drawing.Point(77, 64);
-            this.DifficultyVal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.DifficultyVal.Location = new System.Drawing.Point(103, 79);
             this.DifficultyVal.Name = "DifficultyVal";
-            this.DifficultyVal.Size = new System.Drawing.Size(14, 15);
+            this.DifficultyVal.Size = new System.Drawing.Size(18, 20);
             this.DifficultyVal.TabIndex = 17;
             this.DifficultyVal.Text = "X";
             // 
@@ -222,10 +216,9 @@
             this.UsefulnessVal.AutoSize = true;
             this.UsefulnessVal.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.UsefulnessVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.UsefulnessVal.Location = new System.Drawing.Point(86, 37);
-            this.UsefulnessVal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.UsefulnessVal.Location = new System.Drawing.Point(115, 46);
             this.UsefulnessVal.Name = "UsefulnessVal";
-            this.UsefulnessVal.Size = new System.Drawing.Size(14, 15);
+            this.UsefulnessVal.Size = new System.Drawing.Size(18, 20);
             this.UsefulnessVal.TabIndex = 16;
             this.UsefulnessVal.Text = "X";
             // 
@@ -235,10 +228,9 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(13, 120);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(17, 148);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 15);
+            this.label7.Size = new System.Drawing.Size(98, 20);
             this.label7.TabIndex = 15;
             this.label7.Text = "Overal rating:";
             // 
@@ -248,10 +240,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(14, 92);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(19, 113);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 15);
+            this.label6.Size = new System.Drawing.Size(89, 20);
             this.label6.TabIndex = 14;
             this.label6.Text = "Satisfaction:";
             // 
@@ -261,10 +252,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(13, 64);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(17, 79);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 15);
+            this.label5.Size = new System.Drawing.Size(72, 20);
             this.label5.TabIndex = 13;
             this.label5.Text = "Difficulty:";
             // 
@@ -274,10 +264,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(13, 37);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(17, 46);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 15);
+            this.label4.Size = new System.Drawing.Size(81, 20);
             this.label4.TabIndex = 12;
             this.label4.Text = "Usefulness:";
             // 
@@ -286,9 +275,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(265, 75);
+            this.label3.Location = new System.Drawing.Point(353, 92);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 25);
+            this.label3.Size = new System.Drawing.Size(99, 32);
             this.label3.TabIndex = 13;
             this.label3.Text = "Reviews";
             // 
@@ -299,19 +289,20 @@
             this.panel1.Controls.Add(this.leaveReviewButton);
             this.panel1.Controls.Add(this.Reviews);
             this.panel1.Controls.Add(this.CourseTitle);
-            this.panel1.Location = new System.Drawing.Point(349, 154);
+            this.panel1.Location = new System.Drawing.Point(465, 190);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(708, 404);
+            this.panel1.Size = new System.Drawing.Size(944, 497);
             this.panel1.TabIndex = 14;
             // 
             // CourseView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(986, 609);
+            this.ClientSize = new System.Drawing.Size(1315, 750);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PreviousForm);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CourseView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Course";
