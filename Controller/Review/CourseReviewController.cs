@@ -2,6 +2,9 @@
 using Advisor.View;
 using System.IO;
 using System;
+using Advisor.Service.Statistics;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Advisor.Controller
 {
@@ -38,6 +41,7 @@ namespace Advisor.Controller
             Course.Reviews.Add(review);
             CourseView.ReviewList.Items.Add(review);
             SaveReview(review);
+            LoadStats();
             CourseReviewView.Close();
         }
 
@@ -45,6 +49,20 @@ namespace Advisor.Controller
         {
             string dataFolderPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName + "\\Migrations\\Data\\Review.csv";
             File.AppendAllText(dataFolderPath, Environment.NewLine + review.AllToString());
+        }
+        private void LoadStats()
+        {
+            StatsData statsData = new StatsData();
+            StatisticCalculator calculator = new StatisticCalculator();
+            List<Review> courseReviews = Course.Reviews.ToList();
+            statsData.Usefulness = calculator.CalcReviewAverage(courseReviews, r => r.Usefulness, 1);
+            statsData.Difficulty = calculator.CalcReviewAverage(courseReviews, r => r.Difficulty, 1);
+            statsData.Satisfaction = calculator.CalcReviewAverage(courseReviews, r => r.Satisfaction, 1);
+            statsData.OveralRating = calculator.CalcReviewAverage(courseReviews, r => r.OveralRating, 1);
+            statsData.Theory = calculator.CalcReviewAverage(courseReviews, r => r.TheoryPercentage, 1);
+            statsData.Practice = calculator.CalcReviewAverage(courseReviews, r => r.PracticePercentage, 1);
+
+            CourseView.StatsData = statsData;
         }
     }
 }

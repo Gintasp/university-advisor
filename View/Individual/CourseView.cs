@@ -51,6 +51,7 @@ namespace Advisor.View
         private void LeaveReviewButton_Click(object sender, EventArgs e)
         {
             CourseController.HandleLeaveReviewClick();
+            ShowStatsData();
         }
     }
 }
