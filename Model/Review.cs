@@ -27,10 +27,25 @@
         public Review()
         {
         }
+        public Review(int salary, int difficulty, int satisfaction, bool relevantIndustry, int careerStartYear, int rating, string text)
+        {
+            Salary = salary;
+            Difficulty = difficulty;
+            Satisfaction = satisfaction;
+            RelevantIndustry = relevantIndustry;
+            CareerStartYear = careerStartYear;
+            OveralRating = rating;
+            Text = text;
+        }
 
         public override string ToString()
         {
             return Text;
+        }
+        public string AllToString()
+        {
+            return $"{Text},{OveralRating},{Salary},{Difficulty},{Satisfaction},{RelevantIndustry},{Usefulness},{Interesting}," +
+                $"{TheoryPercentage},{PracticePercentage},{Competence},{Strictness},{Delivery},{Personality},{CareerStartYear}";
         }
     }
 }

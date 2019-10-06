@@ -81,7 +81,7 @@ namespace Advisor.Controller
 
         public void HandleLeaveReviewClick()
         {
-            StudyProgramReviewView = new StudyProgramReviewView(new StudyProgramReviewController());
+            StudyProgramReviewView = new StudyProgramReviewView(new StudyProgramReviewController(StudyProgramView,StudyProgram));
             StudyProgramReviewView.ShowDialog();
         }
 
