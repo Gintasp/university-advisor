@@ -50,22 +50,38 @@ namespace Advisor.Controller
                     CareerStartYear = 4;
                 OveralRating = Convert.ToInt32(StudyProgramReviewView.Rating.Value.ToString());
                 Text = StudyProgramReviewView.TextReview.Text;
-                Review review = new Review(Salary, Difficulty, Satisfaction, RelevantIndustry, CareerStartYear, OveralRating, Text);
-                StudyProgram.Reviews.Add(review);
+
+                Review review = new Review
+                {
+                    Salary = Salary,
+                    Difficulty = Difficulty,
+                    Satisfaction = Satisfaction,
+                    RelevantIndustry = RelevantIndustry,
+                    CareerStartYear = CareerStartYear,
+                    OveralRating = OveralRating,
+                    Text = Text
+                };
+                SaveReview(review);
+
                 if (!review.Text.Equals(""))
                     StudyProgramView.ReviewList.Items.Add(review);
-                SaveReview(review);
                 LoadStats();
                 StudyProgramReviewView.Close();
-            }
-
-            
+            }            
         }
 
         public void SaveReview(Review review)
         {
-            string dataFolderPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName + "\\Migrations\\Data\\Review.csv";
-            File.AppendAllText(dataFolderPath, Environment.NewLine + review.AllToString());
+            using (var context = new DatabaseContext())
+            {
+                Random random = new Random();
+                List<User> userList = context.Users.ToList();
+                review.UserId = userList.ElementAt(random.Next(0, userList.Count)).Id;
+                context.Reviews.Add(review);
+                context.SaveChanges();
+
+            }
+            StudyProgram.Reviews.Add(review);
         }
         private void LoadStats()
         {

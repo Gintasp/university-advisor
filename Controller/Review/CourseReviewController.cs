@@ -37,19 +37,38 @@ namespace Advisor.Controller
             TheoryPercentage = Convert.ToInt32(CourseReviewView.TheoryPercentage.Value);
             PracticePercentage = Convert.ToInt32(CourseReviewView.PracticePercentage.Value);
             TextReview = CourseReviewView.TextReview.Text;
-            Review review = new Review(Difficulty, Satisfaction, Usefulness, Interesting, OveralRating, TheoryPercentage, PracticePercentage, TextReview);
-            Course.Reviews.Add(review);
-            if(!review.Text.Equals(""))
-                CourseView.ReviewList.Items.Add(review);
+
+            Review review = new Review
+            {
+                Difficulty = Difficulty,
+                Satisfaction = Satisfaction,
+                Usefulness = Usefulness,
+                Interesting = Interesting,
+                OveralRating = OveralRating,
+                TheoryPercentage = TheoryPercentage,
+                PracticePercentage = PracticePercentage,
+                Text = TextReview
+            };
             SaveReview(review);
+            
+            if (!review.Text.Equals(""))
+                CourseView.ReviewList.Items.Add(review);
             LoadStats();
             CourseReviewView.Close();
         }
 
         public void SaveReview(Review review)
         {
-            string dataFolderPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName + "\\Migrations\\Data\\Review.csv";
-            File.AppendAllText(dataFolderPath, Environment.NewLine + review.AllToString());
+            using (var context = new DatabaseContext())
+            {
+                Random random = new Random();
+                List<User> userList = context.Users.ToList();
+                review.UserId = userList.ElementAt(random.Next(0, userList.Count)).Id;
+                context.Reviews.Add(review);
+                context.SaveChanges();
+
+            }
+            Course.Reviews.Add(review);
         }
         private void LoadStats()
         {

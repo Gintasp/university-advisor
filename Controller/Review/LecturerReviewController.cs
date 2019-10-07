@@ -2,6 +2,8 @@
 using Advisor.Model;
 using System.IO;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Advisor.Controller
 {
@@ -32,18 +34,35 @@ namespace Advisor.Controller
             Personality = Convert.ToInt32(LecturerReviewView.Personality.Value);
             OveralRating = Convert.ToInt32(LecturerReviewView.OveralRating.Value);
             TextReview = LecturerReviewView.TextReview.Text;
-            Review review = new Review(Competence, Strictness, Delivery, Interesting, Personality, OveralRating, TextReview);
-            Lecturer.Reviews.Add(review);
+            Review review = new Review
+            {
+                Competence = Competence,
+                Strictness = Strictness,
+                Delivery = Delivery,
+                Interesting = Interesting,
+                Personality = Personality,
+                OveralRating = OveralRating,
+                Text = TextReview
+            };
+
+            SaveReview(review);
+
             if (!review.Text.Equals(""))
                 LecturerView.ReviewList.Items.Add(review);
-            SaveReview(review);
-            LecturerReviewView.Close();
         }
 
         public void SaveReview(Review review)
         {
-            string dataFolderPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName + "\\Migrations\\Data\\Review.csv";
-            File.AppendAllText(dataFolderPath, Environment.NewLine + review.AllToString());
+            using (var context = new DatabaseContext())
+            {
+                Random random = new Random();
+                List<User> userList = context.Users.ToList();
+                review.UserId = userList.ElementAt(random.Next(0, userList.Count)).Id;
+                context.Reviews.Add(review);
+                context.SaveChanges();
+
+            }
+            Lecturer.Reviews.Add(review);
         }
     }
 }

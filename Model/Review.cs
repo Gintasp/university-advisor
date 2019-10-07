@@ -27,46 +27,9 @@
         public Review()
         {
         }
-        public Review(int salary, int difficulty, int satisfaction, bool relevantIndustry, int careerStartYear, int rating, string text)
-        {
-            Salary = salary;
-            Difficulty = difficulty;
-            Satisfaction = satisfaction;
-            RelevantIndustry = relevantIndustry;
-            CareerStartYear = careerStartYear;
-            OveralRating = rating;
-            Text = text;
-        }
-        public Review(int competence, int strictness, int delivery, int interesting, int personality, int rating, string review)
-        {
-            Competence = competence;
-            Strictness = strictness;
-            Delivery = delivery;
-            Interesting = interesting;
-            Personality = personality;
-            OveralRating = rating;
-            Text = review;
-        }
-        public Review(int difficulty, int satisfaction, int usefulness, int interesting, int rating, int theoryPercentage, int practicePercentage, string review)
-        {
-            Difficulty = difficulty;
-            Satisfaction = satisfaction;
-            Usefulness = usefulness;
-            Interesting = interesting;
-            OveralRating = rating;
-            TheoryPercentage = theoryPercentage;
-            PracticePercentage = practicePercentage;
-            Text = review;
-        }
-
         public override string ToString()
         {
             return Text;
-        }
-        public string AllToString()
-        {
-            return $"{Text},{OveralRating},{Salary},{Difficulty},{Satisfaction},{RelevantIndustry},{Usefulness},{Interesting}," +
-                $"{TheoryPercentage},{PracticePercentage},{Competence},{Strictness},{Delivery},{Personality},{CareerStartYear}";
         }
     }
 }
