@@ -315,6 +315,7 @@
             this.linkLabel1.TabIndex = 16;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Compare";
+            this.linkLabel1.Click += new System.EventHandler(this.OnCompareClick);
             // 
             // CourseView
             // 

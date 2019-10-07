@@ -85,6 +85,7 @@ namespace Advisor.Controller
 
         public void HandleCourseSelect(Course course)
         {
+            StudyProgramView.Hide();
             CourseView = new CourseView(new CourseController(StudyProgram, course, this), course);
             CourseView.Show();
         }

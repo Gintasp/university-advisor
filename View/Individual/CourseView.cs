@@ -47,5 +47,10 @@ namespace Advisor.View
         {
             Application.Exit();
         }
+
+        private void OnCompareClick(object sender, EventArgs e)
+        {
+            CourseController.HandleCompareClick();
+        }
     }
 }
