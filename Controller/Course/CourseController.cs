@@ -10,6 +10,7 @@ namespace Advisor.Controller
     public class CourseController : ICourseController
     {
         public CourseView CourseView { get; set; }
+        public CourseReviewView CourseReviewView { get; set; }
         public StudyProgram StudyProgram { get; set; }
         public SelectPopup SelectPopup { get; set; }
         public Course Course { get; set; }
@@ -65,6 +66,12 @@ namespace Advisor.Controller
         {
             List<Review> reviews = DB.Instance.Reviews.Where(r => r.Course.Id == Course.Id).ToList();
             reviews.ForEach(review => CourseView.ReviewList.Items.Add(review));
+        }
+        public void HandleLeaveReviewClick()
+        {
+            CourseReviewView = new CourseReviewView(new CourseReviewController(Course, CourseView));
+            CourseReviewView.ShowDialog();
+            LoadStats();
         }
     }
 }

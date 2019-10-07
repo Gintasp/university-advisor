@@ -8,6 +8,7 @@ namespace Advisor.Controller
     public class LecturerController : ILecturerController
     {
         public LecturerView LecturerView { get; set; }
+        public LecturerReviewView LecturerReviewView { get; set; }
         public FacultyView FacultyView { get; set; }
         public CourseView CourseView { get; set; }
         public AddFormView AddFormView { get; set; }
@@ -39,7 +40,8 @@ namespace Advisor.Controller
 
         public void HandleLeaveReviewClick()
         {
-            //TODO: Implement opening review form
+            LecturerReviewView = new LecturerReviewView(new LecturerReviewController(Lecturer, LecturerView));
+            LecturerReviewView.ShowDialog();
         }
 
         public void HandlePreviousFormClick()

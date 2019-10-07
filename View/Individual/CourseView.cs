@@ -52,5 +52,11 @@ namespace Advisor.View
         {
             CourseController.HandleCompareClick();
         }
+
+        private void OnLeaveReviewButtonClick(object sender, EventArgs e)
+        {
+            CourseController.HandleLeaveReviewClick();
+            ShowStatsData();
+        }
     }
 }
