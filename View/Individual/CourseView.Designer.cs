@@ -63,7 +63,7 @@
             this.leaveReviewButton.TabIndex = 9;
             this.leaveReviewButton.Text = "Leave a review";
             this.leaveReviewButton.UseVisualStyleBackColor = true;
-            this.leaveReviewButton.Click += new System.EventHandler(this.LeaveReviewButton_Click);
+            this.leaveReviewButton.Click += new System.EventHandler(this.OnLeaveReviewButtonClick);
             // 
             // PreviousForm
             // 

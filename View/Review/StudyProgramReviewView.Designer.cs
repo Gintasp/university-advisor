@@ -62,9 +62,10 @@
             // 
             this.btnSubmitReview.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitReview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSubmitReview.Location = new System.Drawing.Point(215, 523);
+            this.btnSubmitReview.Location = new System.Drawing.Point(287, 644);
+            this.btnSubmitReview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSubmitReview.Name = "btnSubmitReview";
-            this.btnSubmitReview.Size = new System.Drawing.Size(414, 37);
+            this.btnSubmitReview.Size = new System.Drawing.Size(552, 46);
             this.btnSubmitReview.TabIndex = 7;
             this.btnSubmitReview.Text = "Submit Review";
             this.btnSubmitReview.UseVisualStyleBackColor = true;
@@ -74,9 +75,10 @@
             // 
             this.ReviewTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ReviewTextBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.ReviewTextBox.Location = new System.Drawing.Point(217, 423);
+            this.ReviewTextBox.Location = new System.Drawing.Point(289, 521);
+            this.ReviewTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ReviewTextBox.Name = "ReviewTextBox";
-            this.ReviewTextBox.Size = new System.Drawing.Size(414, 82);
+            this.ReviewTextBox.Size = new System.Drawing.Size(551, 100);
             this.ReviewTextBox.TabIndex = 6;
             this.ReviewTextBox.Text = "";
             // 
@@ -85,9 +87,10 @@
             this.ReviewInputTitle.AutoSize = true;
             this.ReviewInputTitle.Font = new System.Drawing.Font("Segoe UI", 28F);
             this.ReviewInputTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ReviewInputTitle.Location = new System.Drawing.Point(294, 57);
+            this.ReviewInputTitle.Location = new System.Drawing.Point(392, 70);
+            this.ReviewInputTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ReviewInputTitle.Name = "ReviewInputTitle";
-            this.ReviewInputTitle.Size = new System.Drawing.Size(272, 51);
+            this.ReviewInputTitle.Size = new System.Drawing.Size(341, 62);
             this.ReviewInputTitle.TabIndex = 5;
             this.ReviewInputTitle.Text = "Leave a Review";
             // 
@@ -95,9 +98,10 @@
             // 
             this.ScoreLabel.AutoSize = true;
             this.ScoreLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreLabel.Location = new System.Drawing.Point(4, 209);
+            this.ScoreLabel.Location = new System.Drawing.Point(5, 257);
+            this.ScoreLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ScoreLabel.Name = "ScoreLabel";
-            this.ScoreLabel.Size = new System.Drawing.Size(87, 17);
+            this.ScoreLabel.Size = new System.Drawing.Size(113, 23);
             this.ScoreLabel.TabIndex = 19;
             this.ScoreLabel.Text = "Overal rating:";
             // 
@@ -105,18 +109,20 @@
             // 
             this.Incomelabel.AutoSize = true;
             this.Incomelabel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.Incomelabel.Location = new System.Drawing.Point(3, 19);
+            this.Incomelabel.Location = new System.Drawing.Point(4, 23);
+            this.Incomelabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Incomelabel.Name = "Incomelabel";
-            this.Incomelabel.Size = new System.Drawing.Size(153, 19);
+            this.Incomelabel.Size = new System.Drawing.Size(188, 23);
             this.Incomelabel.TabIndex = 21;
             this.Incomelabel.Text = "Current monthly salary:";
             // 
             // txtIncome
             // 
             this.txtIncome.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtIncome.Location = new System.Drawing.Point(210, 16);
+            this.txtIncome.Location = new System.Drawing.Point(280, 20);
+            this.txtIncome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtIncome.Name = "txtIncome";
-            this.txtIncome.Size = new System.Drawing.Size(140, 25);
+            this.txtIncome.Size = new System.Drawing.Size(185, 30);
             this.txtIncome.TabIndex = 20;
             // 
             // panel1
@@ -136,14 +142,16 @@
             this.panel1.Controls.Add(this.Incomelabel);
             this.panel1.Controls.Add(this.txtIncome);
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.panel1.Location = new System.Drawing.Point(217, 154);
+            this.panel1.Location = new System.Drawing.Point(289, 190);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(412, 274);
+            this.panel1.Size = new System.Drawing.Size(549, 337);
             this.panel1.TabIndex = 22;
             // 
             // numericUpDown3
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(97, 207);
+            this.numericUpDown3.Location = new System.Drawing.Point(129, 255);
+            this.numericUpDown3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numericUpDown3.Maximum = new decimal(new int[] {
             10,
             0,
@@ -155,7 +163,7 @@
             0,
             0});
             this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(45, 25);
+            this.numericUpDown3.Size = new System.Drawing.Size(60, 29);
             this.numericUpDown3.TabIndex = 34;
             this.numericUpDown3.Value = new decimal(new int[] {
             1,
@@ -167,9 +175,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label4.Location = new System.Drawing.Point(4, 160);
+            this.label4.Location = new System.Drawing.Point(5, 197);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(347, 19);
+            this.label4.Size = new System.Drawing.Size(431, 23);
             this.label4.TabIndex = 50;
             this.label4.Text = "Which year into the program did you start your career?";
             // 
@@ -179,17 +188,19 @@
             this.YearPanel.Controls.Add(this.RadioSecond);
             this.YearPanel.Controls.Add(this.RadioThird);
             this.YearPanel.Controls.Add(this.RadioFourth);
-            this.YearPanel.Location = new System.Drawing.Point(5, 172);
+            this.YearPanel.Location = new System.Drawing.Point(7, 212);
+            this.YearPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.YearPanel.Name = "YearPanel";
-            this.YearPanel.Size = new System.Drawing.Size(326, 43);
+            this.YearPanel.Size = new System.Drawing.Size(435, 53);
             this.YearPanel.TabIndex = 35;
             // 
             // RadioFirst
             // 
             this.RadioFirst.AutoSize = true;
-            this.RadioFirst.Location = new System.Drawing.Point(13, 13);
+            this.RadioFirst.Location = new System.Drawing.Point(17, 16);
+            this.RadioFirst.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RadioFirst.Name = "RadioFirst";
-            this.RadioFirst.Size = new System.Drawing.Size(50, 21);
+            this.RadioFirst.Size = new System.Drawing.Size(62, 27);
             this.RadioFirst.TabIndex = 32;
             this.RadioFirst.TabStop = true;
             this.RadioFirst.Text = "First";
@@ -198,9 +209,10 @@
             // RadioSecond
             // 
             this.RadioSecond.AutoSize = true;
-            this.RadioSecond.Location = new System.Drawing.Point(69, 13);
+            this.RadioSecond.Location = new System.Drawing.Point(92, 16);
+            this.RadioSecond.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RadioSecond.Name = "RadioSecond";
-            this.RadioSecond.Size = new System.Drawing.Size(69, 21);
+            this.RadioSecond.Size = new System.Drawing.Size(87, 27);
             this.RadioSecond.TabIndex = 30;
             this.RadioSecond.TabStop = true;
             this.RadioSecond.Text = "Second";
@@ -209,9 +221,10 @@
             // RadioThird
             // 
             this.RadioThird.AutoSize = true;
-            this.RadioThird.Location = new System.Drawing.Point(143, 13);
+            this.RadioThird.Location = new System.Drawing.Point(191, 16);
+            this.RadioThird.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RadioThird.Name = "RadioThird";
-            this.RadioThird.Size = new System.Drawing.Size(56, 21);
+            this.RadioThird.Size = new System.Drawing.Size(70, 27);
             this.RadioThird.TabIndex = 33;
             this.RadioThird.TabStop = true;
             this.RadioThird.Text = "Third";
@@ -220,9 +233,11 @@
             // RadioFourth
             // 
             this.RadioFourth.AutoSize = true;
-            this.RadioFourth.Location = new System.Drawing.Point(205, 13);
+            this.RadioFourth.Checked = true;
+            this.RadioFourth.Location = new System.Drawing.Point(273, 16);
+            this.RadioFourth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RadioFourth.Name = "RadioFourth";
-            this.RadioFourth.Size = new System.Drawing.Size(63, 21);
+            this.RadioFourth.Size = new System.Drawing.Size(81, 27);
             this.RadioFourth.TabIndex = 31;
             this.RadioFourth.TabStop = true;
             this.RadioFourth.Text = "Fourth";
@@ -232,18 +247,20 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label5.Location = new System.Drawing.Point(4, 244);
+            this.label5.Location = new System.Drawing.Point(5, 300);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(171, 19);
+            this.label5.Size = new System.Drawing.Size(213, 23);
             this.label5.TabIndex = 23;
             this.label5.Text = "Any additional comments?";
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(68, 137);
+            this.radioButton2.Location = new System.Drawing.Point(91, 169);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(44, 21);
+            this.radioButton2.Size = new System.Drawing.Size(54, 27);
             this.radioButton2.TabIndex = 28;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "No";
@@ -252,9 +269,11 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(17, 137);
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(23, 169);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(45, 21);
+            this.radioButton1.Size = new System.Drawing.Size(55, 27);
             this.radioButton1.TabIndex = 27;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Yes";
@@ -264,15 +283,17 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label3.Location = new System.Drawing.Point(4, 113);
+            this.label3.Location = new System.Drawing.Point(5, 139);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(345, 19);
+            this.label3.Size = new System.Drawing.Size(427, 23);
             this.label3.TabIndex = 26;
             this.label3.Text = "Are you working in a relevant industry at the moment?";
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(210, 82);
+            this.numericUpDown2.Location = new System.Drawing.Point(280, 101);
+            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numericUpDown2.Maximum = new decimal(new int[] {
             10,
             0,
@@ -284,7 +305,7 @@
             0,
             0});
             this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(45, 25);
+            this.numericUpDown2.Size = new System.Drawing.Size(60, 29);
             this.numericUpDown2.TabIndex = 25;
             this.numericUpDown2.Value = new decimal(new int[] {
             1,
@@ -296,9 +317,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label2.Location = new System.Drawing.Point(4, 84);
+            this.label2.Location = new System.Drawing.Point(5, 103);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(194, 19);
+            this.label2.Size = new System.Drawing.Size(241, 23);
             this.label2.TabIndex = 24;
             this.label2.Text = "Satisfaction with this program:";
             // 
@@ -306,15 +328,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label1.Location = new System.Drawing.Point(3, 53);
+            this.label1.Location = new System.Drawing.Point(4, 65);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 19);
+            this.label1.Size = new System.Drawing.Size(245, 23);
             this.label1.TabIndex = 23;
             this.label1.Text = "How difficult was this program:";
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(210, 51);
+            this.numericUpDown1.Location = new System.Drawing.Point(280, 63);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             10,
             0,
@@ -326,7 +350,7 @@
             0,
             0});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(45, 25);
+            this.numericUpDown1.Size = new System.Drawing.Size(60, 29);
             this.numericUpDown1.TabIndex = 22;
             this.numericUpDown1.Value = new decimal(new int[] {
             1,
@@ -338,24 +362,26 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label6.Location = new System.Drawing.Point(136, 122);
+            this.label6.Location = new System.Drawing.Point(181, 150);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(571, 19);
+            this.label6.Size = new System.Drawing.Size(704, 23);
             this.label6.TabIndex = 23;
             this.label6.Text = "Your anonymous reviews help us better assess study program quality across the uni" +
     "versities";
             // 
             // StudyProgramReviewView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(837, 614);
+            this.ClientSize = new System.Drawing.Size(1116, 756);
             this.Controls.Add(this.ReviewTextBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSubmitReview);
             this.Controls.Add(this.ReviewInputTitle);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "StudyProgramReviewView";
             this.Text = "Leave a review";
             this.panel1.ResumeLayout(false);

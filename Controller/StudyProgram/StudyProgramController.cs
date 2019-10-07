@@ -83,6 +83,7 @@ namespace Advisor.Controller
         {
             StudyProgramReviewView = new StudyProgramReviewView(new StudyProgramReviewController(StudyProgramView,StudyProgram));
             StudyProgramReviewView.ShowDialog();
+            LoadStats();
         }
 
         public void HandleCourseSelect(Course course)

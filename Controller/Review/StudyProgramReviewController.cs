@@ -11,13 +11,14 @@ namespace Advisor.Controller
 {
     public class StudyProgramReviewController : IStudyProgramReviewController
     {
-        public int Salary { get; set; }
-        public int Difficulty { get; set; }
-        public int Satisfaction { get; set; }
-        public bool RelevantIndustry { get; set; }
-        public int CareerStartYear { get; set; }
-        public int OveralRating { get; set; }
-        public string Text { get; set; }
+        enum StartYear
+        {
+            First = 1,
+            Second = 2,
+            Third = 3,
+            Fourth = 4
+        }
+
         public StudyProgramReviewView StudyProgramReviewView { get; set; }
         public StudyProgramView StudyProgramView { get; set; }
         public StudyProgram StudyProgram { get; set; }
@@ -29,52 +30,48 @@ namespace Advisor.Controller
         }
         public void HandleSubmitReviewButtonClick()
         {
-            if(!StudyProgramReviewView.Income.Text.Equals("") &&
-                (StudyProgramReviewView.RelevantIndustry.Checked || StudyProgramReviewView.IrrelevantIndustry.Checked) &&
-                (StudyProgramReviewView.FirstYear.Checked || StudyProgramReviewView.SecondYear.Checked || 
-                StudyProgramReviewView.ThirdYear.Checked || StudyProgramReviewView.FourthYear.Checked))
+            if(!StudyProgramReviewView.Income.Text.Equals(""))
             {
+                int salary;
                 try
                 {
-                    Salary = Convert.ToInt32(StudyProgramReviewView.Income.Text);
+                    salary = Convert.ToInt32(StudyProgramReviewView.Income.Text);
                 }
-                catch(System.FormatException)
+                catch(FormatException)
                 {
                     StudyProgramReviewView.Income.BackColor = Color.Yellow;
                     return;
                 }
-                Difficulty = Convert.ToInt32(StudyProgramReviewView.Difficulty.Value.ToString());
-                Satisfaction = Convert.ToInt32(StudyProgramReviewView.Satisfaction.Value.ToString());
-                if (StudyProgramReviewView.RelevantIndustry.Checked)
-                    RelevantIndustry = true;
-                else
-                    RelevantIndustry = false;
+                int difficulty = Convert.ToInt32(StudyProgramReviewView.Difficulty.Value.ToString());
+                int satisfaction = Convert.ToInt32(StudyProgramReviewView.Satisfaction.Value.ToString());
+
+                bool relevantIndustry = StudyProgramReviewView.RelevantIndustry.Checked;
+                int careerStartYear;
                 if (StudyProgramReviewView.FirstYear.Checked)
-                    CareerStartYear = 1;
+                    careerStartYear = (int)StartYear.First;
                 else if (StudyProgramReviewView.SecondYear.Checked)
-                    CareerStartYear = 2;
+                    careerStartYear = (int)StartYear.Second;
                 else if (StudyProgramReviewView.ThirdYear.Checked)
-                    CareerStartYear = 3;
+                    careerStartYear = (int)StartYear.Third;
                 else
-                    CareerStartYear = 4;
-                OveralRating = Convert.ToInt32(StudyProgramReviewView.Rating.Value.ToString());
-                Text = StudyProgramReviewView.TextReview.Text;
+                    careerStartYear = (int)StartYear.Fourth;
+                int overalRating = Convert.ToInt32(StudyProgramReviewView.Rating.Value.ToString());
+                string text = StudyProgramReviewView.TextReview.Text;
 
                 Review review = new Review
                 {
-                    Salary = Salary,
-                    Difficulty = Difficulty,
-                    Satisfaction = Satisfaction,
-                    RelevantIndustry = RelevantIndustry,
-                    CareerStartYear = CareerStartYear,
-                    OveralRating = OveralRating,
-                    Text = Text
+                    Salary = salary,
+                    Difficulty = difficulty,
+                    Satisfaction = satisfaction,
+                    RelevantIndustry = relevantIndustry,
+                    CareerStartYear = careerStartYear,
+                    OveralRating = overalRating,
+                    Text = text
                 };
                 SaveReview(review);
 
                 if (!review.Text.Equals(""))
                     StudyProgramView.ReviewList.Items.Add(review);
-                LoadStats();
                 StudyProgramReviewView.Close();
             }            
         }
@@ -82,24 +79,11 @@ namespace Advisor.Controller
         public void SaveReview(Review review)
         {
             Random random = new Random();
-            List<User> userList = DB.Instance.Users.ToList();
-            review.UserId = userList.ElementAt(random.Next(0, userList.Count)).Id;
-            StudyProgram studyProgram = DB.Instance.StudyPrograms.Where(r => r.Id == StudyProgram.Id).FirstOrDefault();
+            List<User> userList = DB.Instance.Users.ToList(); 
+            review.UserId = userList.ElementAt(random.Next(0, userList.Count)).Id;      //TODO: set current user
             DB.Instance.Reviews.Add(review);
-            studyProgram.Reviews.Add(review);
+            StudyProgram.Reviews.Add(review);
             DB.Instance.SaveChanges();
-        }
-        private void LoadStats()
-        {
-            StatsData statsData = new StatsData();
-            StatisticCalculator calculator = new StatisticCalculator();
-            List<Review> programReviews = StudyProgram.Reviews.ToList();
-            statsData.AverageSalary = calculator.CalcReviewAverage(programReviews, r => r.Salary, 1);
-            statsData.Difficulty = calculator.CalcReviewAverage(programReviews, r => r.Difficulty, 1);
-            statsData.Satisfaction = calculator.CalcReviewAverage(programReviews, r => r.Satisfaction, 1);
-            statsData.OveralRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
-
-            StudyProgramView.StatsData = statsData;
         }
     }
 }

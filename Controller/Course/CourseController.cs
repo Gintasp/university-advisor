@@ -64,6 +64,7 @@ namespace Advisor.Controller
         {
             CourseReviewView = new CourseReviewView(new CourseReviewController(Course, CourseView));
             CourseReviewView.ShowDialog();
+            LoadStats();
         }
     }
 }

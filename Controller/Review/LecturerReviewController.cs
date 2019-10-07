@@ -9,13 +9,6 @@ namespace Advisor.Controller
 {
     public class LecturerReviewController : ILecturerReviewController
     {
-        public int Competence { get; set; }
-        public int Strictness { get; set; }
-        public int Delivery { get; set; }
-        public int Interesting { get; set; }
-        public int Personality { get; set; }
-        public int OveralRating { get; set; }
-        public string TextReview { get; set; }
         public Lecturer Lecturer { get; set; }
         public LecturerReviewView LecturerReviewView { get; set; }
         public LecturerView LecturerView { get; set; }
@@ -27,22 +20,22 @@ namespace Advisor.Controller
 
         public void HandleSubmitReviewButtonClick()
         {
-            Competence = Convert.ToInt32(LecturerReviewView.Competence.Value);
-            Strictness = Convert.ToInt32(LecturerReviewView.Strictness.Value);
-            Delivery = Convert.ToInt32(LecturerReviewView.Delivery.Value);
-            Interesting = Convert.ToInt32(LecturerReviewView.Interesting.Value);
-            Personality = Convert.ToInt32(LecturerReviewView.Personality.Value);
-            OveralRating = Convert.ToInt32(LecturerReviewView.OveralRating.Value);
-            TextReview = LecturerReviewView.TextReview.Text;
+            int competence = Convert.ToInt32(LecturerReviewView.Competence.Value);
+            int strictness = Convert.ToInt32(LecturerReviewView.Strictness.Value);
+            int delivery = Convert.ToInt32(LecturerReviewView.Delivery.Value);
+            int interesting = Convert.ToInt32(LecturerReviewView.Interesting.Value);
+            int personality = Convert.ToInt32(LecturerReviewView.Personality.Value);
+            int overalRating = Convert.ToInt32(LecturerReviewView.OveralRating.Value);
+            string textReview = LecturerReviewView.TextReview.Text;
             Review review = new Review
             {
-                Competence = Competence,
-                Strictness = Strictness,
-                Delivery = Delivery,
-                Interesting = Interesting,
-                Personality = Personality,
-                OveralRating = OveralRating,
-                Text = TextReview
+                Competence = competence,
+                Strictness = strictness,
+                Delivery = delivery,
+                Interesting = interesting,
+                Personality = personality,
+                OveralRating = overalRating,
+                Text = textReview
             };
 
             SaveReview(review);
@@ -56,10 +49,9 @@ namespace Advisor.Controller
         {
             Random random = new Random();
             List<User> userList = DB.Instance.Users.ToList();
-            review.UserId = userList.ElementAt(random.Next(0, userList.Count)).Id;
-            Lecturer lecturer = DB.Instance.Lecturers.Where(r => r.Id == Lecturer.Id).FirstOrDefault();
+            review.UserId = userList.ElementAt(random.Next(0, userList.Count)).Id;      //TODO: set current user
             DB.Instance.Reviews.Add(review);
-            lecturer.Reviews.Add(review);
+            Lecturer.Reviews.Add(review);
             DB.Instance.SaveChanges();
         }
     }

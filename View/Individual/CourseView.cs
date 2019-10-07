@@ -48,7 +48,7 @@ namespace Advisor.View
             Application.Exit();
         }
 
-        private void LeaveReviewButton_Click(object sender, EventArgs e)
+        private void OnLeaveReviewButtonClick(object sender, EventArgs e)
         {
             CourseController.HandleLeaveReviewClick();
             ShowStatsData();

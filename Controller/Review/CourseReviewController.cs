@@ -12,15 +12,7 @@ namespace Advisor.Controller
     {
         public CourseReviewView CourseReviewView { get; set; }
         public Course Course { get; set; }
-        public CourseView CourseView { get; set; }
-        public int Difficulty { get; set; }
-        public int Satisfaction { get; set; }
-        public int Usefulness { get; set; }
-        public int Interesting { get; set; }
-        public int OveralRating { get; set; }
-        public int TheoryPercentage { get; set; }
-        public int PracticePercentage { get; set; }
-        public string TextReview { get; set; }
+        public CourseView CourseView { get; set; } 
         public CourseReviewController(Course course, CourseView courseView)
         {
             Course = course;
@@ -29,56 +21,40 @@ namespace Advisor.Controller
 
         public void HandleSubmitReviewButtonClick()
         {
-            Difficulty = Convert.ToInt32(CourseReviewView.Difficulty.Value);
-            Satisfaction = Convert.ToInt32(CourseReviewView.Satisfaction.Value);
-            Usefulness = Convert.ToInt32(CourseReviewView.Usefulness.Value);
-            Interesting = Convert.ToInt32(CourseReviewView.Interesting.Value);
-            OveralRating = Convert.ToInt32(CourseReviewView.OveralRating.Value);
-            TheoryPercentage = Convert.ToInt32(CourseReviewView.TheoryPercentage.Value);
-            PracticePercentage = Convert.ToInt32(CourseReviewView.PracticePercentage.Value);
-            TextReview = CourseReviewView.TextReview.Text;
+            int difficulty = Convert.ToInt32(CourseReviewView.Difficulty.Value);
+            int satisfaction = Convert.ToInt32(CourseReviewView.Satisfaction.Value);
+            int usefulness = Convert.ToInt32(CourseReviewView.Usefulness.Value);
+            int interesting = Convert.ToInt32(CourseReviewView.Interesting.Value);
+            int overalRating = Convert.ToInt32(CourseReviewView.OveralRating.Value);
+            int theoryPercentage = Convert.ToInt32(CourseReviewView.TheoryPercentage.Value);
+            int practicePercentage = Convert.ToInt32(CourseReviewView.PracticePercentage.Value);
+            string textReview = CourseReviewView.TextReview.Text;
 
             Review review = new Review
             {
-                Difficulty = Difficulty,
-                Satisfaction = Satisfaction,
-                Usefulness = Usefulness,
-                Interesting = Interesting,
-                OveralRating = OveralRating,
-                TheoryPercentage = TheoryPercentage,
-                PracticePercentage = PracticePercentage,
-                Text = TextReview
+                Difficulty = difficulty,
+                Satisfaction = satisfaction,
+                Usefulness = usefulness,
+                Interesting = interesting,
+                OveralRating = overalRating,
+                TheoryPercentage = theoryPercentage,
+                PracticePercentage =practicePercentage,
+                Text = textReview
             };
             SaveReview(review);
             if (!review.Text.Equals(""))
                 CourseView.ReviewList.Items.Add(review);
-            LoadStats();
             CourseReviewView.Close();
         }
 
         public void SaveReview(Review review)
         {
-                Random random = new Random();
-                List<User> userList = DB.Instance.Users.ToList();
-                review.UserId = userList.ElementAt(random.Next(0, userList.Count)).Id;
-                Course course = DB.Instance.Courses.Where(r => r.Id == Course.Id).FirstOrDefault();
-                DB.Instance.Reviews.Add(review);
-                course.Reviews.Add(review);
-                DB.Instance.SaveChanges();
-        }
-        private void LoadStats()
-        {
-            StatsData statsData = new StatsData();
-            StatisticCalculator calculator = new StatisticCalculator();
-            List<Review> courseReviews = Course.Reviews.ToList();
-            statsData.Usefulness = calculator.CalcReviewAverage(courseReviews, r => r.Usefulness, 1);
-            statsData.Difficulty = calculator.CalcReviewAverage(courseReviews, r => r.Difficulty, 1);
-            statsData.Satisfaction = calculator.CalcReviewAverage(courseReviews, r => r.Satisfaction, 1);
-            statsData.OveralRating = calculator.CalcReviewAverage(courseReviews, r => r.OveralRating, 1);
-            statsData.Theory = calculator.CalcReviewAverage(courseReviews, r => r.TheoryPercentage, 1);
-            statsData.Practice = calculator.CalcReviewAverage(courseReviews, r => r.PracticePercentage, 1);
-
-            CourseView.StatsData = statsData;
+            Random random = new Random();
+            List<User> userList = DB.Instance.Users.ToList();
+            review.UserId = userList.ElementAt(random.Next(0, userList.Count)).Id;      //TODO: set current user
+            DB.Instance.Reviews.Add(review);
+            Course.Reviews.Add(review);
+            DB.Instance.SaveChanges();
         }
     }
 }
