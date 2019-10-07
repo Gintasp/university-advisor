@@ -27,7 +27,6 @@
         public Review()
         {
         }
-
         public override string ToString()
         {
             return Text;
