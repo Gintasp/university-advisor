@@ -5,6 +5,7 @@ using System.IO;
 using Advisor.Service.Statistics;
 using System.Collections.Generic;
 using System.Linq;
+using System.Drawing;
 
 namespace Advisor.Controller
 {
@@ -33,7 +34,15 @@ namespace Advisor.Controller
                 (StudyProgramReviewView.FirstYear.Checked || StudyProgramReviewView.SecondYear.Checked || 
                 StudyProgramReviewView.ThirdYear.Checked || StudyProgramReviewView.FourthYear.Checked))
             {
-                Salary = Convert.ToInt32(StudyProgramReviewView.Income.Text);
+                try
+                {
+                    Salary = Convert.ToInt32(StudyProgramReviewView.Income.Text);
+                }
+                catch(System.FormatException)
+                {
+                    StudyProgramReviewView.Income.BackColor = Color.Yellow;
+                    return;
+                }
                 Difficulty = Convert.ToInt32(StudyProgramReviewView.Difficulty.Value.ToString());
                 Satisfaction = Convert.ToInt32(StudyProgramReviewView.Satisfaction.Value.ToString());
                 if (StudyProgramReviewView.RelevantIndustry.Checked)
@@ -72,16 +81,13 @@ namespace Advisor.Controller
 
         public void SaveReview(Review review)
         {
-            using (var context = new DatabaseContext())
-            {
-                Random random = new Random();
-                List<User> userList = context.Users.ToList();
-                review.UserId = userList.ElementAt(random.Next(0, userList.Count)).Id;
-                context.Reviews.Add(review);
-                context.SaveChanges();
-
-            }
-            StudyProgram.Reviews.Add(review);
+            Random random = new Random();
+            List<User> userList = DB.Instance.Users.ToList();
+            review.UserId = userList.ElementAt(random.Next(0, userList.Count)).Id;
+            StudyProgram studyProgram = DB.Instance.StudyPrograms.Where(r => r.Id == StudyProgram.Id).FirstOrDefault();
+            DB.Instance.Reviews.Add(review);
+            studyProgram.Reviews.Add(review);
+            DB.Instance.SaveChanges();
         }
         private void LoadStats()
         {

@@ -49,20 +49,18 @@ namespace Advisor.Controller
 
             if (!review.Text.Equals(""))
                 LecturerView.ReviewList.Items.Add(review);
+            LecturerReviewView.Close();
         }
 
         public void SaveReview(Review review)
         {
-            using (var context = new DatabaseContext())
-            {
-                Random random = new Random();
-                List<User> userList = context.Users.ToList();
-                review.UserId = userList.ElementAt(random.Next(0, userList.Count)).Id;
-                context.Reviews.Add(review);
-                context.SaveChanges();
-
-            }
-            Lecturer.Reviews.Add(review);
+            Random random = new Random();
+            List<User> userList = DB.Instance.Users.ToList();
+            review.UserId = userList.ElementAt(random.Next(0, userList.Count)).Id;
+            Lecturer lecturer = DB.Instance.Lecturers.Where(r => r.Id == Lecturer.Id).FirstOrDefault();
+            DB.Instance.Reviews.Add(review);
+            lecturer.Reviews.Add(review);
+            DB.Instance.SaveChanges();
         }
     }
 }

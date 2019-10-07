@@ -50,7 +50,6 @@ namespace Advisor.Controller
                 Text = TextReview
             };
             SaveReview(review);
-            
             if (!review.Text.Equals(""))
                 CourseView.ReviewList.Items.Add(review);
             LoadStats();
@@ -59,16 +58,13 @@ namespace Advisor.Controller
 
         public void SaveReview(Review review)
         {
-            using (var context = new DatabaseContext())
-            {
                 Random random = new Random();
-                List<User> userList = context.Users.ToList();
+                List<User> userList = DB.Instance.Users.ToList();
                 review.UserId = userList.ElementAt(random.Next(0, userList.Count)).Id;
-                context.Reviews.Add(review);
-                context.SaveChanges();
-
-            }
-            Course.Reviews.Add(review);
+                Course course = DB.Instance.Courses.Where(r => r.Id == Course.Id).FirstOrDefault();
+                DB.Instance.Reviews.Add(review);
+                course.Reviews.Add(review);
+                DB.Instance.SaveChanges();
         }
         private void LoadStats()
         {
