@@ -548,6 +548,7 @@
             this.Name = "StudyProgramComparisonView";
             this.Text = "Study program comparison";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.OnFormLoad);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

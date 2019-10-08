@@ -1,11 +1,14 @@
 ﻿using System.Windows.Forms;
 using Advisor.Controller;
+using Advisor.Model;
 
 namespace Advisor.View
 {
     public partial class StudyProgramComparisonView : Form
     {
         public IStudyProgramComparisonController ComparisonController { get; set; }
+        public StatsData FirstProgramData { get; set; }
+        public StatsData SecondProgramData { get; set; }
         public StudyProgramComparisonView(IStudyProgramComparisonController studyProgramComparisonController)
         {
             ComparisonController = studyProgramComparisonController;
@@ -23,6 +26,16 @@ namespace Advisor.View
             }
 
             ComparisonController.HandleProgramSelectClick(isItSecondButton);
+        }
+
+        private void OnFormLoad(object sender, System.EventArgs e)
+        {
+            ComparisonController.UpdateData();
+        }
+
+        private void ShowStatsData(bool showFirst, bool showSecond)
+        {
+            
         }
     }
 }

@@ -2,6 +2,7 @@
 using Advisor.Model;
 using System.Collections.Generic;
 using System.Linq;
+using Advisor.Service.Statistics;
 
 namespace Advisor.Controller
 {
@@ -11,7 +12,6 @@ namespace Advisor.Controller
         public StudyProgramSelectView SelectView { get; set; }
         public StudyProgram FirstStudyProgram { get; set; }
         public StudyProgram SecondStudyProgram { get; set; }
-        public string ClickedSelectButtonName { get; set; }
         public bool SecondButtonClicked { get; set; }
 
         public StudyProgramComparisonController(StudyProgram firstStudyProgram)
@@ -54,6 +54,32 @@ namespace Advisor.Controller
             else
             {
                 FirstStudyProgram = prog;
+            }
+            UpdateData();
+        }
+
+        public void UpdateData()
+        {
+            if (FirstStudyProgram != null)
+            {
+                StatsData statsData = new StatsData();
+                StatisticCalculator calculator = new StatisticCalculator();
+                List<Review> programReviews = FirstStudyProgram.Reviews.ToList();
+                statsData.ReviewCount = programReviews.Count();
+                statsData.OveralRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
+                statsData.Satisfaction = calculator.CalcReviewAverage(programReviews, r => r.Satisfaction, 1);
+                statsData.AverageSalary = calculator.CalcReviewAverage(programReviews, r => r.Salary, 1);          
+            }
+
+            if(SecondStudyProgram != null)
+            {
+                StatsData statsData = new StatsData();
+                StatisticCalculator calculator = new StatisticCalculator();
+                List<Review> programReviews = SecondStudyProgram.Reviews.ToList();
+                statsData.ReviewCount = programReviews.Count();
+                statsData.OveralRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
+                statsData.Satisfaction = calculator.CalcReviewAverage(programReviews, r => r.Satisfaction, 1);
+                statsData.AverageSalary = calculator.CalcReviewAverage(programReviews, r => r.Salary, 1);
             }
         }
     }
