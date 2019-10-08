@@ -12,6 +12,7 @@ namespace Advisor.DependencyInjection
             Bind<IAuthController>().To<AuthController>();
             Bind<IHomeController>().To<HomeController>();
             Bind<IUniversityController>().To<UniversityController>();
+            Bind<IUniversityComparisonController>().To<UniversityComparisonController>();
             Bind<IFacultyController>().To<FacultyController>();
             Bind<IStudyProgramController>().To<StudyProgramController>();
             Bind<ILecturerReviewController>().To<LecturerReviewController>();

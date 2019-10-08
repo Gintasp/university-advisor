@@ -12,5 +12,6 @@ namespace Advisor.Controller
         void HandleFacultySelect(Faculty faculty);
         void HandleAddFaculty(object sender, EventArgs e);
         void HandleAddFacultyClick();
+        void HandleComparisonButtonClick();
     }
 }

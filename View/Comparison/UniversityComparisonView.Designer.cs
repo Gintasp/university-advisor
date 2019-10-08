@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PercentOfWorkingGraduatesUni1 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.UniversityTitle1 = new System.Windows.Forms.Label();
             this.StudyProgramCountUni1 = new System.Windows.Forms.Label();
             this.FacultyCountUni1 = new System.Windows.Forms.Label();
@@ -44,6 +47,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.PercentOfWorkingGraduatesUni2 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.UniversityTitle2 = new System.Windows.Forms.Label();
             this.StudyProgramCountUni2 = new System.Windows.Forms.Label();
             this.FacultyCountUni2 = new System.Windows.Forms.Label();
@@ -59,12 +65,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.PreviousForm = new System.Windows.Forms.LinkLabel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.PercentOfWorkingGraduatesUni1 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.PercentOfWorkingGraduatesUni2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -94,6 +94,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(673, 647);
             this.panel1.TabIndex = 0;
+            // 
+            // PercentOfWorkingGraduatesUni1
+            // 
+            this.PercentOfWorkingGraduatesUni1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PercentOfWorkingGraduatesUni1.AutoSize = true;
+            this.PercentOfWorkingGraduatesUni1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PercentOfWorkingGraduatesUni1.ForeColor = System.Drawing.Color.Gray;
+            this.PercentOfWorkingGraduatesUni1.Location = new System.Drawing.Point(602, 562);
+            this.PercentOfWorkingGraduatesUni1.Name = "PercentOfWorkingGraduatesUni1";
+            this.PercentOfWorkingGraduatesUni1.Size = new System.Drawing.Size(29, 32);
+            this.PercentOfWorkingGraduatesUni1.TabIndex = 17;
+            this.PercentOfWorkingGraduatesUni1.Text = "X";
+            // 
+            // label15
+            // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label15.Location = new System.Drawing.Point(39, 562);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(545, 32);
+            this.label15.TabIndex = 16;
+            this.label15.Text = "Percent of graduates working in relevant industry:";
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label13.Location = new System.Drawing.Point(39, 45);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(125, 32);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "University:";
             // 
             // UniversityTitle1
             // 
@@ -288,6 +324,42 @@
             this.panel2.Size = new System.Drawing.Size(673, 647);
             this.panel2.TabIndex = 8;
             // 
+            // PercentOfWorkingGraduatesUni2
+            // 
+            this.PercentOfWorkingGraduatesUni2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PercentOfWorkingGraduatesUni2.AutoSize = true;
+            this.PercentOfWorkingGraduatesUni2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PercentOfWorkingGraduatesUni2.ForeColor = System.Drawing.Color.Gray;
+            this.PercentOfWorkingGraduatesUni2.Location = new System.Drawing.Point(602, 562);
+            this.PercentOfWorkingGraduatesUni2.Name = "PercentOfWorkingGraduatesUni2";
+            this.PercentOfWorkingGraduatesUni2.Size = new System.Drawing.Size(29, 32);
+            this.PercentOfWorkingGraduatesUni2.TabIndex = 18;
+            this.PercentOfWorkingGraduatesUni2.Text = "X";
+            // 
+            // label17
+            // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label17.Location = new System.Drawing.Point(38, 562);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(545, 32);
+            this.label17.TabIndex = 17;
+            this.label17.Text = "Percent of graduates working in relevant industry:";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label14.Location = new System.Drawing.Point(38, 45);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(125, 32);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "University:";
+            // 
             // UniversityTitle2
             // 
             this.UniversityTitle2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -465,78 +537,7 @@
             this.PreviousForm.TabIndex = 9;
             this.PreviousForm.TabStop = true;
             this.PreviousForm.Text = "<<";
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(39, 45);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(125, 32);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "University:";
-            // 
-            // label14
-            // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label14.Location = new System.Drawing.Point(38, 45);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(125, 32);
-            this.label14.TabIndex = 16;
-            this.label14.Text = "University:";
-            // 
-            // label15
-            // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label15.Location = new System.Drawing.Point(39, 562);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(545, 32);
-            this.label15.TabIndex = 16;
-            this.label15.Text = "Percent of graduates working in relevant industry:";
-            // 
-            // PercentOfWorkingGraduatesUni1
-            // 
-            this.PercentOfWorkingGraduatesUni1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PercentOfWorkingGraduatesUni1.AutoSize = true;
-            this.PercentOfWorkingGraduatesUni1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PercentOfWorkingGraduatesUni1.ForeColor = System.Drawing.Color.Gray;
-            this.PercentOfWorkingGraduatesUni1.Location = new System.Drawing.Point(602, 562);
-            this.PercentOfWorkingGraduatesUni1.Name = "PercentOfWorkingGraduatesUni1";
-            this.PercentOfWorkingGraduatesUni1.Size = new System.Drawing.Size(29, 32);
-            this.PercentOfWorkingGraduatesUni1.TabIndex = 17;
-            this.PercentOfWorkingGraduatesUni1.Text = "X";
-            // 
-            // label17
-            // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label17.Location = new System.Drawing.Point(38, 562);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(545, 32);
-            this.label17.TabIndex = 17;
-            this.label17.Text = "Percent of graduates working in relevant industry:";
-            // 
-            // PercentOfWorkingGraduatesUni2
-            // 
-            this.PercentOfWorkingGraduatesUni2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PercentOfWorkingGraduatesUni2.AutoSize = true;
-            this.PercentOfWorkingGraduatesUni2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PercentOfWorkingGraduatesUni2.ForeColor = System.Drawing.Color.Gray;
-            this.PercentOfWorkingGraduatesUni2.Location = new System.Drawing.Point(602, 562);
-            this.PercentOfWorkingGraduatesUni2.Name = "PercentOfWorkingGraduatesUni2";
-            this.PercentOfWorkingGraduatesUni2.Size = new System.Drawing.Size(29, 32);
-            this.PercentOfWorkingGraduatesUni2.TabIndex = 18;
-            this.PercentOfWorkingGraduatesUni2.Text = "X";
+            this.PreviousForm.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnPreviousButtonClick);
             // 
             // UniversityComparisonView
             // 
@@ -549,6 +550,7 @@
             this.Name = "UniversityComparisonView";
             this.Text = "UniversityComparisonView";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnFormClose);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

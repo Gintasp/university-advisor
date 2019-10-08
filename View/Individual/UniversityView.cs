@@ -59,5 +59,10 @@ namespace Advisor.View
         {
             UniversityController.HandleAddFacultyClick();
         }
+
+        private void OnComparisonButtonClick(object sender, EventArgs e)
+        {
+            UniversityController.HandleComparisonButtonClick();
+        }
     }
 }
