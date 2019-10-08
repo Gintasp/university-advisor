@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System;
 using System.Collections.ObjectModel;
 using Advisor.Service.Statistics;
+using Advisor.View.Comparison;
 
 namespace Advisor.Controller
 {
@@ -15,6 +16,7 @@ namespace Advisor.Controller
         public HomeView HomeView { get; set; }
         public AddFormView AddFormView { get; set; }
         public University University { get; set; }
+        public UniversityComparisonView UniversityComparisonView {get; set; }
 
         public UniversityController(University uni)
         {
@@ -64,6 +66,12 @@ namespace Advisor.Controller
             UniversityView.FacultyList.Items.Add(fac);
             AddFormView.Close();
         }
+        public void HandleComparisonButtonClick()
+        {
+            UniversityView.Hide();
+            UniversityComparisonView = new UniversityComparisonView(new UniversityComparisonController(), University);
+            UniversityComparisonView.ShowDialog();
+        }
 
         private void LoadFacultyList()
         {
@@ -89,5 +97,6 @@ namespace Advisor.Controller
 
             UniversityView.StatsData = statsData;
         }
+
     }
 }

@@ -47,6 +47,7 @@
             this.UniReviews = new System.Windows.Forms.Label();
             this.UniFaculties = new System.Windows.Forms.Label();
             this.UniSalary = new System.Windows.Forms.Label();
+            this.btnCompare = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -62,10 +63,9 @@
             this.UniversityTitleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UniversityTitleLabel.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UniversityTitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.UniversityTitleLabel.Location = new System.Drawing.Point(95, 9);
-            this.UniversityTitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.UniversityTitleLabel.Location = new System.Drawing.Point(231, 114);
             this.UniversityTitleLabel.Name = "UniversityTitleLabel";
-            this.UniversityTitleLabel.Size = new System.Drawing.Size(678, 43);
+            this.UniversityTitleLabel.Size = new System.Drawing.Size(1017, 66);
             this.UniversityTitleLabel.TabIndex = 0;
             this.UniversityTitleLabel.Text = "Title";
             // 
@@ -75,10 +75,9 @@
             this.About.AutoSize = true;
             this.About.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.About.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.About.Location = new System.Drawing.Point(98, 106);
-            this.About.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.About.Location = new System.Drawing.Point(235, 228);
             this.About.Name = "About";
-            this.About.Size = new System.Drawing.Size(52, 21);
+            this.About.Size = new System.Drawing.Size(80, 32);
             this.About.TabIndex = 1;
             this.About.Text = "About";
             // 
@@ -87,10 +86,9 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.AboutSection);
-            this.panel1.Location = new System.Drawing.Point(102, 129);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(241, 263);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(245, 181);
+            this.panel1.Size = new System.Drawing.Size(366, 277);
             this.panel1.TabIndex = 2;
             // 
             // AboutSection
@@ -98,11 +96,10 @@
             this.AboutSection.AutoSize = true;
             this.AboutSection.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AboutSection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.AboutSection.Location = new System.Drawing.Point(2, 6);
-            this.AboutSection.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.AboutSection.MaximumSize = new System.Drawing.Size(233, 0);
+            this.AboutSection.Location = new System.Drawing.Point(3, 9);
+            this.AboutSection.MaximumSize = new System.Drawing.Size(350, 0);
             this.AboutSection.Name = "AboutSection";
-            this.AboutSection.Size = new System.Drawing.Size(55, 19);
+            this.AboutSection.Size = new System.Drawing.Size(79, 28);
             this.AboutSection.TabIndex = 0;
             this.AboutSection.Text = "[About]";
             // 
@@ -110,10 +107,9 @@
             // 
             this.PreviousIndividualUniversityView.AutoSize = true;
             this.PreviousIndividualUniversityView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PreviousIndividualUniversityView.Location = new System.Drawing.Point(9, 7);
-            this.PreviousIndividualUniversityView.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PreviousIndividualUniversityView.Location = new System.Drawing.Point(14, 11);
             this.PreviousIndividualUniversityView.Name = "PreviousIndividualUniversityView";
-            this.PreviousIndividualUniversityView.Size = new System.Drawing.Size(24, 17);
+            this.PreviousIndividualUniversityView.Size = new System.Drawing.Size(36, 25);
             this.PreviousIndividualUniversityView.TabIndex = 6;
             this.PreviousIndividualUniversityView.TabStop = true;
             this.PreviousIndividualUniversityView.Text = "<<";
@@ -125,11 +121,10 @@
             this.FacultyListBox.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FacultyListBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.FacultyListBox.FormattingEnabled = true;
-            this.FacultyListBox.ItemHeight = 20;
-            this.FacultyListBox.Location = new System.Drawing.Point(414, 106);
-            this.FacultyListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.FacultyListBox.ItemHeight = 30;
+            this.FacultyListBox.Location = new System.Drawing.Point(710, 263);
             this.FacultyListBox.Name = "FacultyListBox";
-            this.FacultyListBox.Size = new System.Drawing.Size(359, 344);
+            this.FacultyListBox.Size = new System.Drawing.Size(536, 544);
             this.FacultyListBox.TabIndex = 7;
             this.FacultyListBox.SelectedIndexChanged += new System.EventHandler(this.OnFacultySelect);
             // 
@@ -138,10 +133,9 @@
             this.AddFacultyLink.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddFacultyLink.AutoSize = true;
             this.AddFacultyLink.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddFacultyLink.Location = new System.Drawing.Point(415, 456);
-            this.AddFacultyLink.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.AddFacultyLink.Location = new System.Drawing.Point(706, 815);
             this.AddFacultyLink.Name = "AddFacultyLink";
-            this.AddFacultyLink.Size = new System.Drawing.Size(190, 15);
+            this.AddFacultyLink.Size = new System.Drawing.Size(285, 25);
             this.AddFacultyLink.TabIndex = 8;
             this.AddFacultyLink.TabStop = true;
             this.AddFacultyLink.Text = "Cant find your Faculty? Add it here";
@@ -153,10 +147,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(410, 74);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(704, 214);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 25);
+            this.label1.Size = new System.Drawing.Size(123, 38);
             this.label1.TabIndex = 9;
             this.label1.Text = "Faculties";
             // 
@@ -173,9 +166,11 @@
             this.groupBox1.Controls.Add(this.UniSalary);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupBox1.Location = new System.Drawing.Point(102, 321);
+            this.groupBox1.Location = new System.Drawing.Point(241, 559);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(245, 154);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(368, 237);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Stats";
@@ -186,10 +181,9 @@
             this.FacultiesVal.AutoSize = true;
             this.FacultiesVal.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FacultiesVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.FacultiesVal.Location = new System.Drawing.Point(96, 61);
-            this.FacultiesVal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.FacultiesVal.Location = new System.Drawing.Point(144, 94);
             this.FacultiesVal.Name = "FacultiesVal";
-            this.FacultiesVal.Size = new System.Drawing.Size(14, 15);
+            this.FacultiesVal.Size = new System.Drawing.Size(23, 25);
             this.FacultiesVal.TabIndex = 20;
             this.FacultiesVal.Text = "X";
             // 
@@ -199,10 +193,9 @@
             this.OveralVal.AutoSize = true;
             this.OveralVal.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.OveralVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.OveralVal.Location = new System.Drawing.Point(90, 115);
-            this.OveralVal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.OveralVal.Location = new System.Drawing.Point(135, 177);
             this.OveralVal.Name = "OveralVal";
-            this.OveralVal.Size = new System.Drawing.Size(14, 15);
+            this.OveralVal.Size = new System.Drawing.Size(23, 25);
             this.OveralVal.TabIndex = 19;
             this.OveralVal.Text = "X";
             // 
@@ -212,10 +205,9 @@
             this.ReviewsVal.AutoSize = true;
             this.ReviewsVal.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ReviewsVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ReviewsVal.Location = new System.Drawing.Point(89, 88);
-            this.ReviewsVal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ReviewsVal.Location = new System.Drawing.Point(134, 135);
             this.ReviewsVal.Name = "ReviewsVal";
-            this.ReviewsVal.Size = new System.Drawing.Size(14, 15);
+            this.ReviewsVal.Size = new System.Drawing.Size(23, 25);
             this.ReviewsVal.TabIndex = 18;
             this.ReviewsVal.Text = "X";
             // 
@@ -225,10 +217,9 @@
             this.SalaryVal.AutoSize = true;
             this.SalaryVal.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SalaryVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.SalaryVal.Location = new System.Drawing.Point(135, 33);
-            this.SalaryVal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SalaryVal.Location = new System.Drawing.Point(202, 51);
             this.SalaryVal.Name = "SalaryVal";
-            this.SalaryVal.Size = new System.Drawing.Size(14, 15);
+            this.SalaryVal.Size = new System.Drawing.Size(23, 25);
             this.SalaryVal.TabIndex = 16;
             this.SalaryVal.Text = "X";
             // 
@@ -238,10 +229,9 @@
             this.UniOveral.AutoSize = true;
             this.UniOveral.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.UniOveral.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.UniOveral.Location = new System.Drawing.Point(10, 115);
-            this.UniOveral.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.UniOveral.Location = new System.Drawing.Point(15, 177);
             this.UniOveral.Name = "UniOveral";
-            this.UniOveral.Size = new System.Drawing.Size(78, 15);
+            this.UniOveral.Size = new System.Drawing.Size(118, 25);
             this.UniOveral.TabIndex = 15;
             this.UniOveral.Text = "Overal rating:";
             // 
@@ -251,10 +241,9 @@
             this.UniReviews.AutoSize = true;
             this.UniReviews.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.UniReviews.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.UniReviews.Location = new System.Drawing.Point(10, 88);
-            this.UniReviews.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.UniReviews.Location = new System.Drawing.Point(15, 135);
             this.UniReviews.Name = "UniReviews";
-            this.UniReviews.Size = new System.Drawing.Size(73, 15);
+            this.UniReviews.Size = new System.Drawing.Size(112, 25);
             this.UniReviews.TabIndex = 14;
             this.UniReviews.Text = "# of reviews:";
             // 
@@ -264,10 +253,9 @@
             this.UniFaculties.AutoSize = true;
             this.UniFaculties.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.UniFaculties.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.UniFaculties.Location = new System.Drawing.Point(10, 61);
-            this.UniFaculties.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.UniFaculties.Location = new System.Drawing.Point(15, 94);
             this.UniFaculties.Name = "UniFaculties";
-            this.UniFaculties.Size = new System.Drawing.Size(78, 15);
+            this.UniFaculties.Size = new System.Drawing.Size(118, 25);
             this.UniFaculties.TabIndex = 13;
             this.UniFaculties.Text = "# of faculties:";
             // 
@@ -277,18 +265,31 @@
             this.UniSalary.AutoSize = true;
             this.UniSalary.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.UniSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.UniSalary.Location = new System.Drawing.Point(10, 33);
-            this.UniSalary.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.UniSalary.Location = new System.Drawing.Point(15, 51);
             this.UniSalary.Name = "UniSalary";
-            this.UniSalary.Size = new System.Drawing.Size(117, 15);
+            this.UniSalary.Size = new System.Drawing.Size(178, 25);
             this.UniSalary.TabIndex = 12;
             this.UniSalary.Text = "Avg. graduate salary:";
             // 
+            // btnCompare
+            // 
+            this.btnCompare.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCompare.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCompare.Location = new System.Drawing.Point(241, 815);
+            this.btnCompare.Name = "btnCompare";
+            this.btnCompare.Size = new System.Drawing.Size(368, 54);
+            this.btnCompare.TabIndex = 13;
+            this.btnCompare.Text = "Compare";
+            this.btnCompare.UseVisualStyleBackColor = true;
+            this.btnCompare.Click += new System.EventHandler(this.OnComparisonButtonClick);
+            // 
             // UniversityView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(913, 487);
+            this.ClientSize = new System.Drawing.Size(1478, 944);
+            this.Controls.Add(this.btnCompare);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AddFacultyLink);
@@ -297,7 +298,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.About);
             this.Controls.Add(this.UniversityTitleLabel);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UniversityView";
             this.Text = "University";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -332,5 +332,6 @@
         private System.Windows.Forms.Label UniFaculties;
         private System.Windows.Forms.Label UniSalary;
         private System.Windows.Forms.Label FacultiesVal;
+        private System.Windows.Forms.Button btnCompare;
     }
 }
