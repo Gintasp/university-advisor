@@ -32,5 +32,16 @@ namespace Advisor.Controller
                 FacultyComparisonView.FacultySelectBox1.Items.Add(fac);
             }
         }
+        public void LoadFaculties2()
+        {
+            FacultyComparisonView.FacultySelectBox2.Items.Clear();
+            FacultyComparisonView.FacultySelectBox2.ResetText();
+            University selectedUni = (University)FacultyComparisonView.UniversitySelectBox2.SelectedItem;
+            List<Faculty> faculties = DB.Instance.Faculties.Where(f => f.University.Id == selectedUni.Id).ToList();
+            foreach (Faculty fac in faculties)
+            {
+                FacultyComparisonView.FacultySelectBox2.Items.Add(fac);
+            }
+        }
     }
 }

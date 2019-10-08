@@ -7,5 +7,6 @@ namespace Advisor.Controller
         FacultyComparisonView FacultyComparisonView { get; set; }
         void LoadUniversities();
         void LoadFaculties1();
+        void LoadFaculties2();
     }
 }
