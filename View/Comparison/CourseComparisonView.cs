@@ -18,8 +18,15 @@ namespace Advisor.View.Comparison
 
         public void LoadCourseOne(Course course, StatsData statsData)
         {
-            //ReviewCountCourse1.Text = statsData.ReviewCount.ToString();
+            ReviewCountCourse1.Text = statsData.ReviewCount.ToString();
             CourseTitle1.Text = course.Title;
+            RatingCourse1.Text = statsData.OveralRating.ToString();
+            LevelOfSatisfactionCourse1.Text = statsData.Satisfaction.ToString();
+            DifficultyCourse1.Text = statsData.Difficulty.ToString();
+            UsefulnessCourse1.Text = statsData.Usefulness.ToString();
+            InterestingCourse1.Text = statsData.Interesting.ToString();
+            TheoryCourse1.Text = statsData.Theory.ToString();
+            PracticeCourse1.Text = statsData.Practice.ToString();
         }
 
         private void OnCourseOneSelectClick(object sender, EventArgs e)

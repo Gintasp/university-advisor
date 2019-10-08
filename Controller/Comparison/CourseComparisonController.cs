@@ -1,6 +1,8 @@
 ﻿using Advisor.Model;
+using Advisor.Service.Statistics;
 using Advisor.View.Comparison;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Advisor.Controller
@@ -24,13 +26,27 @@ namespace Advisor.Controller
         private void HandleCourseOneSelect(object sender, EventArgs e)
         {
             SelectPopup.Close();
-            Course course = (Course)SelectPopup.ComboLast.SelectedItem;
+            Course course = (Course) SelectPopup.ComboLast.SelectedItem;
+            StatsData statsData = BuildCourseStats(course);
+            CourseComparisonView.LoadCourseOne(course, statsData);
+        }
+
+        private StatsData BuildCourseStats(Course course)
+        {
+            List<Review> reviews = course.Reviews.ToList();
+            StatisticCalculator calc = new StatisticCalculator();
             StatsData statsData = new StatsData()
             {
-                //ReviewCount = course.Reviews.Count
-                
+                ReviewCount = reviews.Count,
+                Satisfaction = calc.CalcReviewAverage(reviews, r => r.Satisfaction, 1),
+                Difficulty = calc.CalcReviewAverage(reviews, r => r.Difficulty, 1),
+                Usefulness = calc.CalcReviewAverage(reviews, r => r.Usefulness, 1),
+                Interesting = calc.CalcReviewAverage(reviews, r => r.Interesting, 1),
+                Theory = calc.CalcReviewAverage(reviews, r => r.TheoryPercentage, 1),
+                Practice = calc.CalcReviewAverage(reviews, r => r.PracticePercentage, 1)
             };
-            CourseComparisonView.LoadCourseOne(course, statsData);
+
+            return statsData;
         }
 
         private void DisplayPopup()
