@@ -12,6 +12,7 @@ namespace Advisor.View.Comparison
         public ComboBox UniversitySelectBox2 { get; set; }
         public ComboBox FacultySelectBox1 { get; set; }
         public ComboBox FacultySelectBox2 { get; set; }
+        public StatsData StatsData { get; set; }
         public FacultyComparisonView(IFacultyComparisonController facultyComparisonController)
         {
             FacultyComparisonController = facultyComparisonController;
@@ -40,7 +41,14 @@ namespace Advisor.View.Comparison
 
         private void OnFaculty1Select(object sender, EventArgs e)
         {
-
+            StatsData = FacultyComparisonController.BuildFacultyStats((Faculty)FacultySelectBox1.SelectedItem);
+            ReviewCountFac1.Text = StatsData.ReviewCount.ToString();
+            RatingFac1.Text = StatsData.OveralRating.ToString() + " / 10";
+            LevelOfSatisfactionFac1.Text = StatsData.Satisfaction.ToString() + " / 10";
+            AverageSalaryFac1.Text = StatsData.AverageSalary.ToString() + " €";
+            LecturerCountFac1.Text = StatsData.LecturerCount.ToString();
+            StudyProgramCountFac1.Text = StatsData.StudyProgramCount.ToString();
+            PercentOfWorkingGraduatesFac1.Text = StatsData.RelevantIndustryPercentage.ToString() + " %";
         }
 
         private void OnFaculty2Select(object sender, EventArgs e)
