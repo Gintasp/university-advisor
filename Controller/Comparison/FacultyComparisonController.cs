@@ -44,7 +44,7 @@ namespace Advisor.Controller
                 FacultyComparisonView.FacultySelectBox2.Items.Add(fac);
             }
         }
-        private StatsData BuildCourseStats(Faculty faculty)
+        public StatsData BuildFacultyStats(Faculty faculty)
         {
             List<Review> reviews = (from r in DB.Instance.Reviews
                                     join p in DB.Instance.StudyPrograms on r.StudyProgram.Id equals p.Id
