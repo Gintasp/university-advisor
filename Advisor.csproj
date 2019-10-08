@@ -81,7 +81,9 @@
     <Compile Include="Controller\Course\CourseController.cs" />
     <Compile Include="Controller\Review\IReviewController.cs" />
     <Compile Include="Controller\Review\CourseReviewController.cs" />
+    <Compile Include="Controller\University\IUniversityComparisonController.cs" />
     <Compile Include="Controller\University\IUniversityController.cs" />
+    <Compile Include="Controller\University\UniversityComparisonController.cs" />
     <Compile Include="Controller\University\UniversityController.cs" />
     <Compile Include="DependencyInjection\Bindings.cs" />
     <Compile Include="Migrations\201909221555231_MainEntities.cs" />
