@@ -132,9 +132,8 @@
             this.PracticeCourse1.Location = new System.Drawing.Point(133, 303);
             this.PracticeCourse1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PracticeCourse1.Name = "PracticeCourse1";
-            this.PracticeCourse1.Size = new System.Drawing.Size(19, 21);
+            this.PracticeCourse1.Size = new System.Drawing.Size(0, 21);
             this.PracticeCourse1.TabIndex = 20;
-            this.PracticeCourse1.Text = "X";
             // 
             // TheoryCourse1
             // 
@@ -145,9 +144,8 @@
             this.TheoryCourse1.Location = new System.Drawing.Point(121, 264);
             this.TheoryCourse1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TheoryCourse1.Name = "TheoryCourse1";
-            this.TheoryCourse1.Size = new System.Drawing.Size(19, 21);
+            this.TheoryCourse1.Size = new System.Drawing.Size(0, 21);
             this.TheoryCourse1.TabIndex = 17;
-            this.TheoryCourse1.Text = "X";
             // 
             // label15
             // 
@@ -184,9 +182,8 @@
             this.InterestingCourse1.Location = new System.Drawing.Point(145, 227);
             this.InterestingCourse1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.InterestingCourse1.Name = "InterestingCourse1";
-            this.InterestingCourse1.Size = new System.Drawing.Size(18, 20);
+            this.InterestingCourse1.Size = new System.Drawing.Size(0, 20);
             this.InterestingCourse1.TabIndex = 13;
-            this.InterestingCourse1.Text = "X";
             // 
             // UsefulnessCourse1
             // 
@@ -197,9 +194,8 @@
             this.UsefulnessCourse1.Location = new System.Drawing.Point(111, 188);
             this.UsefulnessCourse1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UsefulnessCourse1.Name = "UsefulnessCourse1";
-            this.UsefulnessCourse1.Size = new System.Drawing.Size(18, 20);
+            this.UsefulnessCourse1.Size = new System.Drawing.Size(0, 20);
             this.UsefulnessCourse1.TabIndex = 12;
-            this.UsefulnessCourse1.Text = "X";
             // 
             // DifficultyCourse1
             // 
@@ -210,9 +206,8 @@
             this.DifficultyCourse1.Location = new System.Drawing.Point(95, 152);
             this.DifficultyCourse1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DifficultyCourse1.Name = "DifficultyCourse1";
-            this.DifficultyCourse1.Size = new System.Drawing.Size(18, 20);
+            this.DifficultyCourse1.Size = new System.Drawing.Size(0, 20);
             this.DifficultyCourse1.TabIndex = 11;
-            this.DifficultyCourse1.Text = "X";
             // 
             // LevelOfSatisfactionCourse1
             // 
@@ -223,9 +218,8 @@
             this.LevelOfSatisfactionCourse1.Location = new System.Drawing.Point(167, 113);
             this.LevelOfSatisfactionCourse1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LevelOfSatisfactionCourse1.Name = "LevelOfSatisfactionCourse1";
-            this.LevelOfSatisfactionCourse1.Size = new System.Drawing.Size(18, 20);
+            this.LevelOfSatisfactionCourse1.Size = new System.Drawing.Size(0, 20);
             this.LevelOfSatisfactionCourse1.TabIndex = 10;
-            this.LevelOfSatisfactionCourse1.Text = "X";
             // 
             // RatingCourse1
             // 
@@ -236,9 +230,8 @@
             this.RatingCourse1.Location = new System.Drawing.Point(134, 75);
             this.RatingCourse1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RatingCourse1.Name = "RatingCourse1";
-            this.RatingCourse1.Size = new System.Drawing.Size(18, 20);
+            this.RatingCourse1.Size = new System.Drawing.Size(0, 20);
             this.RatingCourse1.TabIndex = 9;
-            this.RatingCourse1.Text = "X";
             // 
             // ReviewCountCourse1
             // 
@@ -249,9 +242,8 @@
             this.ReviewCountCourse1.Location = new System.Drawing.Point(95, 37);
             this.ReviewCountCourse1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ReviewCountCourse1.Name = "ReviewCountCourse1";
-            this.ReviewCountCourse1.Size = new System.Drawing.Size(18, 20);
+            this.ReviewCountCourse1.Size = new System.Drawing.Size(0, 20);
             this.ReviewCountCourse1.TabIndex = 8;
-            this.ReviewCountCourse1.Text = "X";
             // 
             // label6
             // 
@@ -388,9 +380,8 @@
             this.PracticeCourse2.Location = new System.Drawing.Point(124, 303);
             this.PracticeCourse2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PracticeCourse2.Name = "PracticeCourse2";
-            this.PracticeCourse2.Size = new System.Drawing.Size(19, 21);
+            this.PracticeCourse2.Size = new System.Drawing.Size(0, 21);
             this.PracticeCourse2.TabIndex = 21;
-            this.PracticeCourse2.Text = "X";
             // 
             // label11
             // 
@@ -414,9 +405,8 @@
             this.TheoryCourse2.Location = new System.Drawing.Point(114, 264);
             this.TheoryCourse2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TheoryCourse2.Name = "TheoryCourse2";
-            this.TheoryCourse2.Size = new System.Drawing.Size(19, 21);
+            this.TheoryCourse2.Size = new System.Drawing.Size(0, 21);
             this.TheoryCourse2.TabIndex = 17;
-            this.TheoryCourse2.Text = "X";
             // 
             // label8
             // 
@@ -453,9 +443,8 @@
             this.InterestingCourse2.Location = new System.Drawing.Point(142, 227);
             this.InterestingCourse2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.InterestingCourse2.Name = "InterestingCourse2";
-            this.InterestingCourse2.Size = new System.Drawing.Size(18, 20);
+            this.InterestingCourse2.Size = new System.Drawing.Size(0, 20);
             this.InterestingCourse2.TabIndex = 13;
-            this.InterestingCourse2.Text = "X";
             // 
             // UsefulnessCourse2
             // 
@@ -466,9 +455,8 @@
             this.UsefulnessCourse2.Location = new System.Drawing.Point(114, 189);
             this.UsefulnessCourse2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UsefulnessCourse2.Name = "UsefulnessCourse2";
-            this.UsefulnessCourse2.Size = new System.Drawing.Size(18, 20);
+            this.UsefulnessCourse2.Size = new System.Drawing.Size(0, 20);
             this.UsefulnessCourse2.TabIndex = 12;
-            this.UsefulnessCourse2.Text = "X";
             // 
             // DifficultyCourse2
             // 
@@ -479,9 +467,8 @@
             this.DifficultyCourse2.Location = new System.Drawing.Point(94, 149);
             this.DifficultyCourse2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DifficultyCourse2.Name = "DifficultyCourse2";
-            this.DifficultyCourse2.Size = new System.Drawing.Size(18, 20);
+            this.DifficultyCourse2.Size = new System.Drawing.Size(0, 20);
             this.DifficultyCourse2.TabIndex = 11;
-            this.DifficultyCourse2.Text = "X";
             // 
             // LevelOfSatisfactionCourse2
             // 
@@ -492,9 +479,8 @@
             this.LevelOfSatisfactionCourse2.Location = new System.Drawing.Point(169, 111);
             this.LevelOfSatisfactionCourse2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LevelOfSatisfactionCourse2.Name = "LevelOfSatisfactionCourse2";
-            this.LevelOfSatisfactionCourse2.Size = new System.Drawing.Size(18, 20);
+            this.LevelOfSatisfactionCourse2.Size = new System.Drawing.Size(0, 20);
             this.LevelOfSatisfactionCourse2.TabIndex = 10;
-            this.LevelOfSatisfactionCourse2.Text = "X";
             // 
             // RatingCourse2
             // 
@@ -505,9 +491,8 @@
             this.RatingCourse2.Location = new System.Drawing.Point(124, 75);
             this.RatingCourse2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RatingCourse2.Name = "RatingCourse2";
-            this.RatingCourse2.Size = new System.Drawing.Size(18, 20);
+            this.RatingCourse2.Size = new System.Drawing.Size(0, 20);
             this.RatingCourse2.TabIndex = 9;
-            this.RatingCourse2.Text = "X";
             // 
             // ReviewCountCourse2
             // 
@@ -518,9 +503,8 @@
             this.ReviewCountCourse2.Location = new System.Drawing.Point(90, 37);
             this.ReviewCountCourse2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ReviewCountCourse2.Name = "ReviewCountCourse2";
-            this.ReviewCountCourse2.Size = new System.Drawing.Size(18, 20);
+            this.ReviewCountCourse2.Size = new System.Drawing.Size(0, 20);
             this.ReviewCountCourse2.TabIndex = 8;
-            this.ReviewCountCourse2.Text = "X";
             // 
             // label
             // 
