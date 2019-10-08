@@ -1,4 +1,4 @@
-﻿namespace Advisor.View.Comparison
+﻿namespace Advisor.View
 {
     partial class StudyProgramComparisonView
     {
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.WorkingGraduates1 = new System.Windows.Forms.Label();
             this.CourseCount1 = new System.Windows.Forms.Label();
             this.LecturerCount1 = new System.Windows.Forms.Label();
@@ -43,6 +44,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.StudyProgram1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,13 +60,11 @@
             this.CourseCount2 = new System.Windows.Forms.Label();
             this.WorkingGraduates2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Course1 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.StudyProgram2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,12 +73,33 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.Course1);
+            this.panel1.Controls.Add(this.StudyProgram1);
             this.panel1.Location = new System.Drawing.Point(42, 57);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(449, 491);
             this.panel1.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.WorkingGraduates1);
+            this.panel3.Controls.Add(this.CourseCount1);
+            this.panel3.Controls.Add(this.LecturerCount1);
+            this.panel3.Controls.Add(this.Salary1);
+            this.panel3.Controls.Add(this.Satisfaction1);
+            this.panel3.Controls.Add(this.Rating1);
+            this.panel3.Controls.Add(this.ReviewCount1);
+            this.panel3.Controls.Add(this.label15);
+            this.panel3.Controls.Add(this.label12);
+            this.panel3.Controls.Add(this.label11);
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Location = new System.Drawing.Point(57, 107);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(316, 301);
+            this.panel3.TabIndex = 23;
             // 
             // WorkingGraduates1
             // 
@@ -268,6 +289,19 @@
             this.label3.Size = new System.Drawing.Size(70, 21);
             this.label3.TabIndex = 3;
             this.label3.Text = "Reviews:";
+            // 
+            // StudyProgram1
+            // 
+            this.StudyProgram1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.StudyProgram1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.StudyProgram1.Location = new System.Drawing.Point(90, 48);
+            this.StudyProgram1.Margin = new System.Windows.Forms.Padding(2);
+            this.StudyProgram1.Name = "StudyProgram1";
+            this.StudyProgram1.Size = new System.Drawing.Size(254, 35);
+            this.StudyProgram1.TabIndex = 22;
+            this.StudyProgram1.Text = "Choose program";
+            this.StudyProgram1.UseVisualStyleBackColor = true;
+            this.StudyProgram1.Click += new System.EventHandler(this.OnSelectProgramClick);
             // 
             // label4
             // 
@@ -463,59 +497,12 @@
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.StudyProgram2);
             this.panel2.Location = new System.Drawing.Point(495, 57);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(449, 491);
             this.panel2.TabIndex = 3;
-            // 
-            // Course1
-            // 
-            this.Course1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.Course1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Course1.Location = new System.Drawing.Point(90, 48);
-            this.Course1.Margin = new System.Windows.Forms.Padding(2);
-            this.Course1.Name = "Course1";
-            this.Course1.Size = new System.Drawing.Size(254, 35);
-            this.Course1.TabIndex = 22;
-            this.Course1.Text = "Choose program";
-            this.Course1.UseVisualStyleBackColor = true;
-            this.Course1.Click += new System.EventHandler(this.OnSelectProgramClick);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.Location = new System.Drawing.Point(89, 48);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(254, 35);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Choose program";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.OnSelectProgramClick);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.WorkingGraduates1);
-            this.panel3.Controls.Add(this.CourseCount1);
-            this.panel3.Controls.Add(this.LecturerCount1);
-            this.panel3.Controls.Add(this.Salary1);
-            this.panel3.Controls.Add(this.Satisfaction1);
-            this.panel3.Controls.Add(this.Rating1);
-            this.panel3.Controls.Add(this.ReviewCount1);
-            this.panel3.Controls.Add(this.label15);
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(57, 107);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(316, 301);
-            this.panel3.TabIndex = 23;
             // 
             // panel4
             // 
@@ -538,6 +525,19 @@
             this.panel4.Size = new System.Drawing.Size(327, 308);
             this.panel4.TabIndex = 24;
             // 
+            // StudyProgram2
+            // 
+            this.StudyProgram2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.StudyProgram2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.StudyProgram2.Location = new System.Drawing.Point(89, 48);
+            this.StudyProgram2.Margin = new System.Windows.Forms.Padding(2);
+            this.StudyProgram2.Name = "StudyProgram2";
+            this.StudyProgram2.Size = new System.Drawing.Size(254, 35);
+            this.StudyProgram2.TabIndex = 23;
+            this.StudyProgram2.Text = "Choose program";
+            this.StudyProgram2.UseVisualStyleBackColor = true;
+            this.StudyProgram2.Click += new System.EventHandler(this.OnSelectProgramClick);
+            // 
             // StudyProgramComparisonView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -549,9 +549,9 @@
             this.Text = "Study program comparison";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
@@ -589,8 +589,8 @@
         private System.Windows.Forms.Label CourseCount2;
         private System.Windows.Forms.Label WorkingGraduates2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button Course1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button StudyProgram1;
+        private System.Windows.Forms.Button StudyProgram2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
     }

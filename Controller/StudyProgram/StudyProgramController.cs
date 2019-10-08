@@ -12,6 +12,7 @@ namespace Advisor.Controller
     {
         public StudyProgramView StudyProgramView { get; set; }
         public StudyProgramReviewView StudyProgramReviewView { get; set; }
+        public StudyProgramComparisonView ComparisonView { get; set; }
         public StudyProgram StudyProgram { get; set; }
         public Faculty Faculty { get; set; }
         public FacultyView FacultyView { get; set; }
@@ -77,6 +78,13 @@ namespace Advisor.Controller
             DB.Instance.SaveChanges();
             StudyProgramView.CourseList.Items.Add(course);
             AddFormView.Close();
+        }
+
+        public void HandleCompareButtonClick()
+        {
+            StudyProgramView.Hide();
+            ComparisonView = new StudyProgramComparisonView(new StudyProgramComparisonController(StudyProgram));
+            ComparisonView.Show();
         }
 
         public void HandleLeaveReviewClick()

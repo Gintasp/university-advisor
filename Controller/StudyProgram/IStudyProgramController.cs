@@ -13,5 +13,6 @@ namespace Advisor.Controller
         void HandleAddCourse(object sender, EventArgs e);
         void HandleLeaveReviewClick();
         void HandleCourseSelect(Course course);
+        void HandleCompareButtonClick();
     }
 }
