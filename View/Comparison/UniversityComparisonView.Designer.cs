@@ -54,7 +54,7 @@
             this.StudyProgramCountUni2 = new System.Windows.Forms.Label();
             this.FacultyCountUni2 = new System.Windows.Forms.Label();
             this.AverageSalaryUni2 = new System.Windows.Forms.Label();
-            this.LevelOfSatisfacionUni2 = new System.Windows.Forms.Label();
+            this.LevelOfSatisfactionUni2 = new System.Windows.Forms.Label();
             this.RatingUni2 = new System.Windows.Forms.Label();
             this.ReviewCountUni2 = new System.Windows.Forms.Label();
             this.UniversitySelectBox2 = new System.Windows.Forms.ComboBox();
@@ -218,13 +218,16 @@
             // UniversitySelectBox1
             // 
             this.UniversitySelectBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UniversitySelectBox1.DropDownHeight = 400;
             this.UniversitySelectBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UniversitySelectBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.UniversitySelectBox1.FormattingEnabled = true;
+            this.UniversitySelectBox1.IntegralHeight = false;
             this.UniversitySelectBox1.Location = new System.Drawing.Point(45, 80);
             this.UniversitySelectBox1.Name = "UniversitySelectBox1";
             this.UniversitySelectBox1.Size = new System.Drawing.Size(539, 40);
             this.UniversitySelectBox1.TabIndex = 7;
+            this.UniversitySelectBox1.SelectedValueChanged += new System.EventHandler(this.OnUniversity1Select);
             // 
             // label6
             // 
@@ -309,7 +312,7 @@
             this.panel2.Controls.Add(this.StudyProgramCountUni2);
             this.panel2.Controls.Add(this.FacultyCountUni2);
             this.panel2.Controls.Add(this.AverageSalaryUni2);
-            this.panel2.Controls.Add(this.LevelOfSatisfacionUni2);
+            this.panel2.Controls.Add(this.LevelOfSatisfactionUni2);
             this.panel2.Controls.Add(this.RatingUni2);
             this.panel2.Controls.Add(this.ReviewCountUni2);
             this.panel2.Controls.Add(this.UniversitySelectBox2);
@@ -408,17 +411,17 @@
             this.AverageSalaryUni2.TabIndex = 11;
             this.AverageSalaryUni2.Text = "X";
             // 
-            // LevelOfSatisfacionUni2
+            // LevelOfSatisfactionUni2
             // 
-            this.LevelOfSatisfacionUni2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LevelOfSatisfacionUni2.AutoSize = true;
-            this.LevelOfSatisfacionUni2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LevelOfSatisfacionUni2.ForeColor = System.Drawing.Color.Gray;
-            this.LevelOfSatisfacionUni2.Location = new System.Drawing.Point(306, 330);
-            this.LevelOfSatisfacionUni2.Name = "LevelOfSatisfacionUni2";
-            this.LevelOfSatisfacionUni2.Size = new System.Drawing.Size(26, 30);
-            this.LevelOfSatisfacionUni2.TabIndex = 10;
-            this.LevelOfSatisfacionUni2.Text = "X";
+            this.LevelOfSatisfactionUni2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LevelOfSatisfactionUni2.AutoSize = true;
+            this.LevelOfSatisfactionUni2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LevelOfSatisfactionUni2.ForeColor = System.Drawing.Color.Gray;
+            this.LevelOfSatisfactionUni2.Location = new System.Drawing.Point(306, 330);
+            this.LevelOfSatisfactionUni2.Name = "LevelOfSatisfactionUni2";
+            this.LevelOfSatisfactionUni2.Size = new System.Drawing.Size(26, 30);
+            this.LevelOfSatisfactionUni2.TabIndex = 10;
+            this.LevelOfSatisfactionUni2.Text = "X";
             // 
             // RatingUni2
             // 
@@ -438,7 +441,7 @@
             this.ReviewCountUni2.AutoSize = true;
             this.ReviewCountUni2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReviewCountUni2.ForeColor = System.Drawing.Color.Gray;
-            this.ReviewCountUni2.Location = new System.Drawing.Point(176, 212);
+            this.ReviewCountUni2.Location = new System.Drawing.Point(176, 214);
             this.ReviewCountUni2.Name = "ReviewCountUni2";
             this.ReviewCountUni2.Size = new System.Drawing.Size(26, 30);
             this.ReviewCountUni2.TabIndex = 8;
@@ -447,13 +450,16 @@
             // UniversitySelectBox2
             // 
             this.UniversitySelectBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UniversitySelectBox2.DropDownHeight = 400;
             this.UniversitySelectBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UniversitySelectBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.UniversitySelectBox2.FormattingEnabled = true;
+            this.UniversitySelectBox2.IntegralHeight = false;
             this.UniversitySelectBox2.Location = new System.Drawing.Point(44, 80);
             this.UniversitySelectBox2.Name = "UniversitySelectBox2";
             this.UniversitySelectBox2.Size = new System.Drawing.Size(539, 40);
             this.UniversitySelectBox2.TabIndex = 7;
+            this.UniversitySelectBox2.SelectedValueChanged += new System.EventHandler(this.OnUniversity2Select);
             // 
             // label7
             // 
@@ -551,6 +557,7 @@
             this.Text = "UniversityComparisonView";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnFormClose);
+            this.Load += new System.EventHandler(this.LoadUniversityList);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -580,7 +587,7 @@
         private System.Windows.Forms.Label StudyProgramCountUni2;
         private System.Windows.Forms.Label FacultyCountUni2;
         private System.Windows.Forms.Label AverageSalaryUni2;
-        private System.Windows.Forms.Label LevelOfSatisfacionUni2;
+        private System.Windows.Forms.Label LevelOfSatisfactionUni2;
         private System.Windows.Forms.Label RatingUni2;
         private System.Windows.Forms.Label ReviewCountUni2;
         private System.Windows.Forms.ComboBox UniversitySelectBox2;
