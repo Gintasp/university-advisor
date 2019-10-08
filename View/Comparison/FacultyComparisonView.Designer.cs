@@ -121,6 +121,7 @@
             this.UniversitySelectBoxFac1.Name = "UniversitySelectBoxFac1";
             this.UniversitySelectBoxFac1.Size = new System.Drawing.Size(480, 36);
             this.UniversitySelectBoxFac1.TabIndex = 18;
+            this.UniversitySelectBoxFac1.SelectedIndexChanged += new System.EventHandler(this.OnUniversity1Select);
             // 
             // PercentOfWorkingGraduatesFac1
             // 
@@ -365,6 +366,7 @@
             this.UniversitySelectBoxFac2.Name = "UniversitySelectBoxFac2";
             this.UniversitySelectBoxFac2.Size = new System.Drawing.Size(480, 36);
             this.UniversitySelectBoxFac2.TabIndex = 19;
+            this.UniversitySelectBoxFac2.SelectedIndexChanged += new System.EventHandler(this.OnUniversity2Select);
             // 
             // PercentOfWorkingGraduatesFac2
             // 
