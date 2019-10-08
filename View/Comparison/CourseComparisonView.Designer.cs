@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Course1 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.PracticeCourse1 = new System.Windows.Forms.Label();
             this.TheoryCourse1 = new System.Windows.Forms.Label();
@@ -47,8 +47,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.Course1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Course2 = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.PracticeCourse2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.TheoryCourse2 = new System.Windows.Forms.Label();
@@ -66,12 +67,11 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.Course2 = new System.Windows.Forms.Button();
             this.PreviousForm = new System.Windows.Forms.LinkLabel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,18 +86,29 @@
             this.panel1.Size = new System.Drawing.Size(449, 463);
             this.panel1.TabIndex = 1;
             // 
-            // Course1
+            // panel3
             // 
-            this.Course1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.Course1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Course1.Location = new System.Drawing.Point(86, 42);
-            this.Course1.Margin = new System.Windows.Forms.Padding(2);
-            this.Course1.Name = "Course1";
-            this.Course1.Size = new System.Drawing.Size(254, 35);
-            this.Course1.TabIndex = 21;
-            this.Course1.Text = "Choose course";
-            this.Course1.UseVisualStyleBackColor = true;
-            this.Course1.Click += new System.EventHandler(this.OnCourseSelectClick);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.PracticeCourse1);
+            this.panel3.Controls.Add(this.TheoryCourse1);
+            this.panel3.Controls.Add(this.label15);
+            this.panel3.Controls.Add(this.CourseTitle1);
+            this.panel3.Controls.Add(this.InterestingCourse1);
+            this.panel3.Controls.Add(this.UsefulnessCourse1);
+            this.panel3.Controls.Add(this.DifficultyCourse1);
+            this.panel3.Controls.Add(this.LevelOfSatisfactionCourse1);
+            this.panel3.Controls.Add(this.RatingCourse1);
+            this.panel3.Controls.Add(this.ReviewCountCourse1);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Location = new System.Drawing.Point(86, 94);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(191, 335);
+            this.panel3.TabIndex = 22;
             // 
             // label7
             // 
@@ -320,6 +331,19 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Level of satisfaction:";
             // 
+            // Course1
+            // 
+            this.Course1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Course1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Course1.Location = new System.Drawing.Point(86, 42);
+            this.Course1.Margin = new System.Windows.Forms.Padding(2);
+            this.Course1.Name = "Course1";
+            this.Course1.Size = new System.Drawing.Size(254, 35);
+            this.Course1.TabIndex = 21;
+            this.Course1.Text = "Choose course";
+            this.Course1.UseVisualStyleBackColor = true;
+            this.Course1.Click += new System.EventHandler(this.OnCourseOneSelectClick);
+            // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -331,17 +355,29 @@
             this.panel2.Size = new System.Drawing.Size(449, 463);
             this.panel2.TabIndex = 18;
             // 
-            // Course2
+            // panel4
             // 
-            this.Course2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.Course2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Course2.Location = new System.Drawing.Point(89, 42);
-            this.Course2.Margin = new System.Windows.Forms.Padding(2);
-            this.Course2.Name = "Course2";
-            this.Course2.Size = new System.Drawing.Size(254, 35);
-            this.Course2.TabIndex = 22;
-            this.Course2.Text = "Choose course";
-            this.Course2.UseVisualStyleBackColor = true;
+            this.panel4.Controls.Add(this.PracticeCourse2);
+            this.panel4.Controls.Add(this.label11);
+            this.panel4.Controls.Add(this.TheoryCourse2);
+            this.panel4.Controls.Add(this.label8);
+            this.panel4.Controls.Add(this.CourseTitle2);
+            this.panel4.Controls.Add(this.InterestingCourse2);
+            this.panel4.Controls.Add(this.UsefulnessCourse2);
+            this.panel4.Controls.Add(this.DifficultyCourse2);
+            this.panel4.Controls.Add(this.LevelOfSatisfactionCourse2);
+            this.panel4.Controls.Add(this.RatingCourse2);
+            this.panel4.Controls.Add(this.ReviewCountCourse2);
+            this.panel4.Controls.Add(this.label);
+            this.panel4.Controls.Add(this.label20);
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.label22);
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Controls.Add(this.label24);
+            this.panel4.Location = new System.Drawing.Point(95, 94);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(200, 341);
+            this.panel4.TabIndex = 23;
             // 
             // PracticeCourse2
             // 
@@ -564,6 +600,19 @@
             this.label24.TabIndex = 3;
             this.label24.Text = "Level of satisfaction:";
             // 
+            // Course2
+            // 
+            this.Course2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Course2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Course2.Location = new System.Drawing.Point(89, 42);
+            this.Course2.Margin = new System.Windows.Forms.Padding(2);
+            this.Course2.Name = "Course2";
+            this.Course2.Size = new System.Drawing.Size(254, 35);
+            this.Course2.TabIndex = 22;
+            this.Course2.Text = "Choose course";
+            this.Course2.UseVisualStyleBackColor = true;
+            this.Course2.Click += new System.EventHandler(this.OnCourseTwoSelectClick);
+            // 
             // PreviousForm
             // 
             this.PreviousForm.AutoSize = true;
@@ -576,54 +625,6 @@
             this.PreviousForm.TabStop = true;
             this.PreviousForm.Text = "<<";
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.PracticeCourse1);
-            this.panel3.Controls.Add(this.TheoryCourse1);
-            this.panel3.Controls.Add(this.label15);
-            this.panel3.Controls.Add(this.CourseTitle1);
-            this.panel3.Controls.Add(this.InterestingCourse1);
-            this.panel3.Controls.Add(this.UsefulnessCourse1);
-            this.panel3.Controls.Add(this.DifficultyCourse1);
-            this.panel3.Controls.Add(this.LevelOfSatisfactionCourse1);
-            this.panel3.Controls.Add(this.RatingCourse1);
-            this.panel3.Controls.Add(this.ReviewCountCourse1);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(86, 94);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(191, 335);
-            this.panel3.TabIndex = 22;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.PracticeCourse2);
-            this.panel4.Controls.Add(this.label11);
-            this.panel4.Controls.Add(this.TheoryCourse2);
-            this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.CourseTitle2);
-            this.panel4.Controls.Add(this.InterestingCourse2);
-            this.panel4.Controls.Add(this.UsefulnessCourse2);
-            this.panel4.Controls.Add(this.DifficultyCourse2);
-            this.panel4.Controls.Add(this.LevelOfSatisfactionCourse2);
-            this.panel4.Controls.Add(this.RatingCourse2);
-            this.panel4.Controls.Add(this.ReviewCountCourse2);
-            this.panel4.Controls.Add(this.label);
-            this.panel4.Controls.Add(this.label20);
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.label22);
-            this.panel4.Controls.Add(this.label9);
-            this.panel4.Controls.Add(this.label24);
-            this.panel4.Location = new System.Drawing.Point(95, 94);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 341);
-            this.panel4.TabIndex = 23;
-            // 
             // CourseComparisonView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -634,11 +635,12 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CourseComparisonView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CourseComparisonView";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);

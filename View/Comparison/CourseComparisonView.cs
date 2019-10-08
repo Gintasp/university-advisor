@@ -1,4 +1,5 @@
 ﻿using Advisor.Controller;
+using Advisor.Model;
 using System;
 using System.Windows.Forms;
 
@@ -11,12 +12,24 @@ namespace Advisor.View.Comparison
         public CourseComparisonView(ICourseComparisonController comparisonController)
         {
             CourseComparisonController = comparisonController;
+            comparisonController.CourseComparisonView = this;
             InitializeComponent();
         }
 
-        private void OnCourseSelectClick(object sender, EventArgs e)
+        public void LoadCourseOne(Course course, StatsData statsData)
         {
-            //TODO: Handle displaying popup
+            //ReviewCountCourse1.Text = statsData.ReviewCount.ToString();
+            CourseTitle1.Text = course.Title;
+        }
+
+        private void OnCourseOneSelectClick(object sender, EventArgs e)
+        {
+            CourseComparisonController.HandleCourseOneSelectClick();
+        }
+
+        private void OnCourseTwoSelectClick(object sender, EventArgs e)
+        {
+            CourseComparisonController.HandleCourseTwoSelectClick();
         }
     }
 }

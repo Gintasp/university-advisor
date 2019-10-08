@@ -99,6 +99,7 @@
             this.Combo1.Name = "Combo1";
             this.Combo1.Size = new System.Drawing.Size(361, 29);
             this.Combo1.TabIndex = 25;
+            this.Combo1.SelectedIndexChanged += new System.EventHandler(this.OnComboFirstSelect);
             // 
             // Label2
             // 
@@ -124,6 +125,7 @@
             this.Combo2.Name = "Combo2";
             this.Combo2.Size = new System.Drawing.Size(361, 29);
             this.Combo2.TabIndex = 23;
+            this.Combo2.SelectedIndexChanged += new System.EventHandler(this.OnComboSecondSelect);
             // 
             // SelectPopup
             // 
@@ -139,7 +141,9 @@
             this.Controls.Add(this.Combo2);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SelectPopup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PopupLecturerComparisonView";
+            this.Load += new System.EventHandler(this.OnViewLoad);
             this.ResumeLayout(false);
             this.PerformLayout();
 
