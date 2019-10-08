@@ -26,8 +26,8 @@ namespace Advisor.Controller
 
         private void HandleCourseOneSelect(object sender, EventArgs e)
         {
-            SelectPopup.Hide();
             SelectPopup.SelectClick -= HandleCourseOneSelect;
+            SelectPopup.Hide();
             Course course = (Course) SelectPopup.ComboLast.SelectedItem;
             StatsData statsData = BuildCourseStats(course);
             CourseComparisonView.LoadCourseOne(course, statsData);
@@ -35,8 +35,8 @@ namespace Advisor.Controller
 
         private void HandleCourseTwoSelect(object sender, EventArgs e)
         {
-            SelectPopup.Hide();
             SelectPopup.SelectClick -= HandleCourseTwoSelect;
+            SelectPopup.Hide();
             Course course = (Course) SelectPopup.ComboLast.SelectedItem;
             StatsData statsData = BuildCourseStats(course);
             CourseComparisonView.LoadCourseTwo(course, statsData);
@@ -65,17 +65,19 @@ namespace Advisor.Controller
             if (SelectPopup == null)
             {
                 SelectPopup = new SelectPopup();
+                SelectPopup.FirstComboSelect += FilterByUniversity;
+                SelectPopup.SecondComboSelect += FilterByFaculty;
+                SelectPopup.LabelLast.Text = "Course:";
+                SelectPopup.ViewLoad += LoadPopupData;
             }
-            SelectPopup.LabelLast.Text = "Course:";
-            SelectPopup.ViewLoad += LoadPopupData;
-            SelectPopup.FirstComboSelect += FilterByUniversity;
-            SelectPopup.SecondComboSelect += FilterByFaculty;
-            SelectPopup.Show();
+            SelectPopup.ShowDialog();
         }
 
         private void FilterByUniversity(object sender, EventArgs e)
         {
             SelectPopup.ComboSecond.Items.Clear();
+            SelectPopup.ComboSecond.ResetText();
+            SelectPopup.ComboLast.ResetText();
             University selectedUni = (University) SelectPopup.ComboFirst.SelectedItem;
             SelectPopup.ComboSecond.Items.AddRange(
                 DB.Instance.Faculties.Where(
@@ -87,6 +89,7 @@ namespace Advisor.Controller
         private void FilterByFaculty(object sender, EventArgs e)
         {
             SelectPopup.ComboLast.Items.Clear();
+            SelectPopup.ComboLast.ResetText();
             Faculty selectedFaculty = (Faculty) SelectPopup.ComboSecond.SelectedItem;
             SelectPopup.ComboLast.Items.AddRange(
                 DB.Instance.Courses.Where(
