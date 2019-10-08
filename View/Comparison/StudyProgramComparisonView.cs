@@ -14,7 +14,15 @@ namespace Advisor.View
 
         private void OnSelectProgramClick(object sender, System.EventArgs e)
         {
-            ComparisonController.HandleProgramSelectClick();
+            Button SenderButton = (Button)sender;
+            bool isItSecondButton = false;
+
+            if(SenderButton.Name == "StudyProgram2")
+            {
+                isItSecondButton = true;
+            }
+
+            ComparisonController.HandleProgramSelectClick(isItSecondButton);
         }
     }
 }

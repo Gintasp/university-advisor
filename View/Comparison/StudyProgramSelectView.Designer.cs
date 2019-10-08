@@ -1,6 +1,6 @@
-﻿namespace Advisor.View.Comparison
+﻿namespace Advisor.View
 {
-    partial class StudyProgramSelectForm
+    partial class StudyProgramSelectView
     {
         /// <summary>
         /// Required designer variable.
@@ -115,6 +115,7 @@
             this.UniversitySelectBox.Name = "UniversitySelectBox";
             this.UniversitySelectBox.Size = new System.Drawing.Size(361, 29);
             this.UniversitySelectBox.TabIndex = 18;
+            this.UniversitySelectBox.SelectedIndexChanged += new System.EventHandler(this.OnUniversitySelect);
             // 
             // label3
             // 
@@ -140,15 +141,17 @@
             this.FacultySelectBox.Name = "FacultySelectBox";
             this.FacultySelectBox.Size = new System.Drawing.Size(361, 29);
             this.FacultySelectBox.TabIndex = 16;
+            this.FacultySelectBox.SelectedIndexChanged += new System.EventHandler(this.OnFacultySelect);
             // 
-            // StudyProgramSelectForm
+            // StudyProgramSelectView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 388);
             this.Controls.Add(this.panel1);
-            this.Name = "StudyProgramSelectForm";
+            this.Name = "StudyProgramSelectView";
             this.Text = "StudyProgramSelectForm";
+            this.Load += new System.EventHandler(this.OnFormLoad);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
