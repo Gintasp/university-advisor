@@ -29,6 +29,19 @@ namespace Advisor.View.Comparison
             PracticeCourse1.Text = statsData.Practice.ToString();
         }
 
+        public void LoadCourseTwo(Course course, StatsData statsData)
+        {
+            ReviewCountCourse2.Text = statsData.ReviewCount.ToString();
+            CourseTitle2.Text = course.Title;
+            RatingCourse2.Text = statsData.OveralRating.ToString();
+            LevelOfSatisfactionCourse2.Text = statsData.Satisfaction.ToString();
+            DifficultyCourse2.Text = statsData.Difficulty.ToString();
+            UsefulnessCourse2.Text = statsData.Usefulness.ToString();
+            InterestingCourse2.Text = statsData.Interesting.ToString();
+            TheoryCourse2.Text = statsData.Theory.ToString();
+            PracticeCourse2.Text = statsData.Practice.ToString();
+        }
+
         private void OnCourseOneSelectClick(object sender, EventArgs e)
         {
             CourseComparisonController.HandleCourseOneSelectClick();

@@ -20,15 +20,26 @@ namespace Advisor.Controller
 
         public void HandleCourseTwoSelectClick()
         {
-
+            DisplayPopup();
+            SelectPopup.SelectClick += HandleCourseTwoSelect;
         }
 
         private void HandleCourseOneSelect(object sender, EventArgs e)
         {
-            SelectPopup.Close();
+            SelectPopup.Hide();
+            SelectPopup.SelectClick -= HandleCourseOneSelect;
             Course course = (Course) SelectPopup.ComboLast.SelectedItem;
             StatsData statsData = BuildCourseStats(course);
             CourseComparisonView.LoadCourseOne(course, statsData);
+        }
+
+        private void HandleCourseTwoSelect(object sender, EventArgs e)
+        {
+            SelectPopup.Hide();
+            SelectPopup.SelectClick -= HandleCourseTwoSelect;
+            Course course = (Course) SelectPopup.ComboLast.SelectedItem;
+            StatsData statsData = BuildCourseStats(course);
+            CourseComparisonView.LoadCourseTwo(course, statsData);
         }
 
         private StatsData BuildCourseStats(Course course)

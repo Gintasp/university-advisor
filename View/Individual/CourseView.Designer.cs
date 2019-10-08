@@ -58,7 +58,7 @@
             this.leaveReviewButton.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.leaveReviewButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.leaveReviewButton.Location = new System.Drawing.Point(34, 347);
-            this.leaveReviewButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.leaveReviewButton.Margin = new System.Windows.Forms.Padding(2);
             this.leaveReviewButton.Name = "leaveReviewButton";
             this.leaveReviewButton.Size = new System.Drawing.Size(650, 37);
             this.leaveReviewButton.TabIndex = 9;
@@ -86,7 +86,7 @@
             this.Reviews.FormattingEnabled = true;
             this.Reviews.ItemHeight = 21;
             this.Reviews.Location = new System.Drawing.Point(270, 102);
-            this.Reviews.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Reviews.Margin = new System.Windows.Forms.Padding(2);
             this.Reviews.Name = "Reviews";
             this.Reviews.Size = new System.Drawing.Size(415, 214);
             this.Reviews.TabIndex = 7;
@@ -313,10 +313,10 @@
             this.linkLabel1.Location = new System.Drawing.Point(386, 544);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(74, 21);
+            this.linkLabel1.Size = new System.Drawing.Size(131, 21);
             this.linkLabel1.TabIndex = 16;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Compare";
+            this.linkLabel1.Text = "Compare courses";
             this.linkLabel1.Click += new System.EventHandler(this.OnCompareClick);
             // 
             // CourseView
@@ -327,7 +327,7 @@
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PreviousForm);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CourseView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Course";
