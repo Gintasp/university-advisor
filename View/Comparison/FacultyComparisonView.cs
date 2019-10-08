@@ -37,5 +37,15 @@ namespace Advisor.View.Comparison
         {
             FacultyComparisonController.LoadFaculties2();
         }
+
+        private void OnFaculty1Select(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OnFaculty2Select(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -11,6 +11,7 @@
         public float Practice { get; set; }
         public float AverageSalary { get; set; }
         public int FacultyCount { get; set; }
+        public int LecturerCount { get; set; }
         public int ReviewCount { get; set; }
         public int StudyProgramCount { get; set; }
         public int RelevantIndustryPercentage { get; set; }

@@ -314,6 +314,7 @@
             this.FacultySelectBoxFac1.Name = "FacultySelectBoxFac1";
             this.FacultySelectBoxFac1.Size = new System.Drawing.Size(480, 36);
             this.FacultySelectBoxFac1.TabIndex = 0;
+            this.FacultySelectBoxFac1.SelectedIndexChanged += new System.EventHandler(this.OnFaculty1Select);
             // 
             // panel2
             // 
@@ -559,6 +560,7 @@
             this.FacultySelectBoxFac2.Name = "FacultySelectBoxFac2";
             this.FacultySelectBoxFac2.Size = new System.Drawing.Size(480, 36);
             this.FacultySelectBoxFac2.TabIndex = 1;
+            this.FacultySelectBoxFac2.SelectedIndexChanged += new System.EventHandler(this.OnFaculty2Select);
             // 
             // FacultyComparisonView
             // 
