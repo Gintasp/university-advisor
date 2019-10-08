@@ -68,7 +68,19 @@ namespace Advisor.Controller
                 statsData.ReviewCount = programReviews.Count();
                 statsData.OveralRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
                 statsData.Satisfaction = calculator.CalcReviewAverage(programReviews, r => r.Satisfaction, 1);
-                statsData.AverageSalary = calculator.CalcReviewAverage(programReviews, r => r.Salary, 1);          
+                statsData.AverageSalary = calculator.CalcReviewAverage(programReviews, r => r.Salary, 1);
+                statsData.CourseCount = FirstStudyProgram.Courses.Count();
+                if (statsData.ReviewCount != 0)
+                {
+                    statsData.RelevantIndustryPercentage = programReviews.Count(r => r.RelevantIndustry == true) * 100 / statsData.ReviewCount;
+                }
+                else
+                {
+                    statsData.RelevantIndustryPercentage = 0;
+                }
+
+                ComparisonView.FirstProgramData = statsData;
+                ComparisonView.ShowFirstProgramStatsData();
             }
 
             if(SecondStudyProgram != null)
@@ -80,6 +92,18 @@ namespace Advisor.Controller
                 statsData.OveralRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
                 statsData.Satisfaction = calculator.CalcReviewAverage(programReviews, r => r.Satisfaction, 1);
                 statsData.AverageSalary = calculator.CalcReviewAverage(programReviews, r => r.Salary, 1);
+                statsData.CourseCount = SecondStudyProgram.Courses.Count();
+                if (statsData.ReviewCount != 0)
+                {
+                    statsData.RelevantIndustryPercentage = programReviews.Count(r => r.RelevantIndustry == true) * 100 / statsData.ReviewCount;
+                }
+                else
+                {
+                    statsData.RelevantIndustryPercentage = 0;
+                }
+
+                ComparisonView.SecondProgramData = statsData;
+                ComparisonView.ShowSecondProgramStatsData();
             }
         }
     }

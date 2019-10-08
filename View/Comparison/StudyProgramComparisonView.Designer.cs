@@ -32,14 +32,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.WorkingGraduates1 = new System.Windows.Forms.Label();
             this.CourseCount1 = new System.Windows.Forms.Label();
-            this.LecturerCount1 = new System.Windows.Forms.Label();
             this.Salary1 = new System.Windows.Forms.Label();
             this.Satisfaction1 = new System.Windows.Forms.Label();
             this.Rating1 = new System.Windows.Forms.Label();
             this.ReviewCount1 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,14 +47,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.ReviewCount2 = new System.Windows.Forms.Label();
             this.Rating2 = new System.Windows.Forms.Label();
             this.Satisfaction2 = new System.Windows.Forms.Label();
             this.Salary2 = new System.Windows.Forms.Label();
-            this.LecturerCount2 = new System.Windows.Forms.Label();
             this.CourseCount2 = new System.Windows.Forms.Label();
             this.WorkingGraduates2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -84,14 +80,12 @@
             // 
             this.panel3.Controls.Add(this.WorkingGraduates1);
             this.panel3.Controls.Add(this.CourseCount1);
-            this.panel3.Controls.Add(this.LecturerCount1);
             this.panel3.Controls.Add(this.Salary1);
             this.panel3.Controls.Add(this.Satisfaction1);
             this.panel3.Controls.Add(this.Rating1);
             this.panel3.Controls.Add(this.ReviewCount1);
             this.panel3.Controls.Add(this.label15);
             this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label5);
@@ -107,7 +101,7 @@
             this.WorkingGraduates1.AutoSize = true;
             this.WorkingGraduates1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WorkingGraduates1.ForeColor = System.Drawing.Color.Gray;
-            this.WorkingGraduates1.Location = new System.Drawing.Point(279, 274);
+            this.WorkingGraduates1.Location = new System.Drawing.Point(278, 239);
             this.WorkingGraduates1.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
             this.WorkingGraduates1.Name = "WorkingGraduates1";
             this.WorkingGraduates1.Size = new System.Drawing.Size(19, 21);
@@ -120,25 +114,12 @@
             this.CourseCount1.AutoSize = true;
             this.CourseCount1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CourseCount1.ForeColor = System.Drawing.Color.Gray;
-            this.CourseCount1.Location = new System.Drawing.Point(279, 215);
+            this.CourseCount1.Location = new System.Drawing.Point(278, 180);
             this.CourseCount1.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
             this.CourseCount1.Name = "CourseCount1";
             this.CourseCount1.Size = new System.Drawing.Size(19, 21);
             this.CourseCount1.TabIndex = 16;
             this.CourseCount1.Text = "X";
-            // 
-            // LecturerCount1
-            // 
-            this.LecturerCount1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LecturerCount1.AutoSize = true;
-            this.LecturerCount1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LecturerCount1.ForeColor = System.Drawing.Color.Gray;
-            this.LecturerCount1.Location = new System.Drawing.Point(279, 178);
-            this.LecturerCount1.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
-            this.LecturerCount1.Name = "LecturerCount1";
-            this.LecturerCount1.Size = new System.Drawing.Size(19, 21);
-            this.LecturerCount1.TabIndex = 15;
-            this.LecturerCount1.Text = "X";
             // 
             // Salary1
             // 
@@ -198,7 +179,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label15.Location = new System.Drawing.Point(14, 253);
+            this.label15.Location = new System.Drawing.Point(13, 218);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.MaximumSize = new System.Drawing.Size(213, 100);
             this.label15.Name = "label15";
@@ -212,27 +193,13 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label12.Location = new System.Drawing.Point(14, 215);
+            this.label12.Location = new System.Drawing.Point(13, 180);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.MaximumSize = new System.Drawing.Size(213, 100);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(146, 21);
             this.label12.TabIndex = 9;
             this.label12.Text = "Number of courses:";
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label11.Location = new System.Drawing.Point(14, 178);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.MaximumSize = new System.Drawing.Size(213, 100);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(153, 21);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "Number of lecturers:";
             // 
             // label9
             // 
@@ -359,27 +326,13 @@
             this.label10.TabIndex = 8;
             this.label10.Text = "Average alumni salary:";
             // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(10, 170);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.MaximumSize = new System.Drawing.Size(213, 100);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(153, 21);
-            this.label13.TabIndex = 10;
-            this.label13.Text = "Number of lecturers:";
-            // 
             // label14
             // 
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label14.Location = new System.Drawing.Point(10, 207);
+            this.label14.Location = new System.Drawing.Point(10, 174);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.MaximumSize = new System.Drawing.Size(213, 100);
             this.label14.Name = "label14";
@@ -393,7 +346,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label16.Location = new System.Drawing.Point(10, 245);
+            this.label16.Location = new System.Drawing.Point(10, 212);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.MaximumSize = new System.Drawing.Size(213, 100);
             this.label16.Name = "label16";
@@ -453,26 +406,13 @@
             this.Salary2.TabIndex = 15;
             this.Salary2.Text = "X";
             // 
-            // LecturerCount2
-            // 
-            this.LecturerCount2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LecturerCount2.AutoSize = true;
-            this.LecturerCount2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LecturerCount2.ForeColor = System.Drawing.Color.Gray;
-            this.LecturerCount2.Location = new System.Drawing.Point(275, 170);
-            this.LecturerCount2.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
-            this.LecturerCount2.Name = "LecturerCount2";
-            this.LecturerCount2.Size = new System.Drawing.Size(19, 21);
-            this.LecturerCount2.TabIndex = 16;
-            this.LecturerCount2.Text = "X";
-            // 
             // CourseCount2
             // 
             this.CourseCount2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CourseCount2.AutoSize = true;
             this.CourseCount2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CourseCount2.ForeColor = System.Drawing.Color.Gray;
-            this.CourseCount2.Location = new System.Drawing.Point(275, 207);
+            this.CourseCount2.Location = new System.Drawing.Point(275, 174);
             this.CourseCount2.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
             this.CourseCount2.Name = "CourseCount2";
             this.CourseCount2.Size = new System.Drawing.Size(19, 21);
@@ -485,7 +425,7 @@
             this.WorkingGraduates2.AutoSize = true;
             this.WorkingGraduates2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WorkingGraduates2.ForeColor = System.Drawing.Color.Gray;
-            this.WorkingGraduates2.Location = new System.Drawing.Point(275, 266);
+            this.WorkingGraduates2.Location = new System.Drawing.Point(275, 233);
             this.WorkingGraduates2.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
             this.WorkingGraduates2.Name = "WorkingGraduates2";
             this.WorkingGraduates2.Size = new System.Drawing.Size(19, 21);
@@ -508,14 +448,12 @@
             // 
             this.panel4.Controls.Add(this.WorkingGraduates2);
             this.panel4.Controls.Add(this.CourseCount2);
-            this.panel4.Controls.Add(this.LecturerCount2);
             this.panel4.Controls.Add(this.Salary2);
             this.panel4.Controls.Add(this.Satisfaction2);
             this.panel4.Controls.Add(this.Rating2);
             this.panel4.Controls.Add(this.ReviewCount2);
             this.panel4.Controls.Add(this.label16);
             this.panel4.Controls.Add(this.label14);
-            this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label6);
@@ -563,14 +501,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label WorkingGraduates1;
         private System.Windows.Forms.Label CourseCount1;
-        private System.Windows.Forms.Label LecturerCount1;
         private System.Windows.Forms.Label Salary1;
         private System.Windows.Forms.Label Satisfaction1;
         private System.Windows.Forms.Label Rating1;
         private System.Windows.Forms.Label ReviewCount1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
@@ -579,14 +515,12 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label ReviewCount2;
         private System.Windows.Forms.Label Rating2;
         private System.Windows.Forms.Label Satisfaction2;
         private System.Windows.Forms.Label Salary2;
-        private System.Windows.Forms.Label LecturerCount2;
         private System.Windows.Forms.Label CourseCount2;
         private System.Windows.Forms.Label WorkingGraduates2;
         private System.Windows.Forms.Panel panel2;

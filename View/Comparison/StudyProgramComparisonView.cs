@@ -33,9 +33,24 @@ namespace Advisor.View
             ComparisonController.UpdateData();
         }
 
-        private void ShowStatsData(bool showFirst, bool showSecond)
+        public void ShowFirstProgramStatsData()
         {
-            
+            ReviewCount1.Text = FirstProgramData.ReviewCount.ToString();
+            Rating1.Text = FirstProgramData.OveralRating + "/10";
+            Satisfaction1.Text = FirstProgramData.Satisfaction + "/10";
+            Salary1.Text = FirstProgramData.AverageSalary + "eur";
+            CourseCount1.Text = FirstProgramData.CourseCount.ToString();
+            WorkingGraduates1.Text = FirstProgramData.RelevantIndustryPercentage + "%";
+        }
+
+        public void ShowSecondProgramStatsData()
+        {
+            ReviewCount2.Text = SecondProgramData.ReviewCount.ToString();
+            Rating2.Text = SecondProgramData.OveralRating + "/10";
+            Satisfaction2.Text = SecondProgramData.Satisfaction + "/10";
+            Salary2.Text = SecondProgramData.AverageSalary + "eur";
+            CourseCount2.Text = SecondProgramData.CourseCount.ToString();
+            WorkingGraduates2.Text = SecondProgramData.RelevantIndustryPercentage + "%";
         }
     }
 }
