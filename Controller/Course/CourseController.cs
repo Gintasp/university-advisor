@@ -16,6 +16,7 @@ namespace Advisor.Controller
         public Course Course { get; set; }
         public StudyProgramView StudyProgramView { get; set; }
         public IStudyProgramController StudyProgramController { get; set; }
+        public CourseComparisonView CourseComparisonView { get; set; }
 
         public CourseController(
             StudyProgram studyProgram,
@@ -38,6 +39,12 @@ namespace Advisor.Controller
             CourseView.Hide();
             StudyProgramView = new StudyProgramView(StudyProgramController);
             StudyProgramView.Show();
+        }
+
+        public void HandleCompareClick()
+        {
+            CourseComparisonView = new CourseComparisonView(new CourseComparisonController());
+            CourseComparisonView.ShowDialog();
         }
 
         private void LoadStats()

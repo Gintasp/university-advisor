@@ -61,6 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Auth\AuthController.cs" />
+    <Compile Include="Controller\Comparison\CourseComparisonController.cs" />
+    <Compile Include="Controller\Comparison\ICourseComparisonController.cs" />
     <Compile Include="Controller\Faculty\FacultyController.cs" />
     <Compile Include="Controller\Faculty\IFacultyController.cs" />
     <Compile Include="Controller\Home\HomeController.cs" />

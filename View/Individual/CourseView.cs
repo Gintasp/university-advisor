@@ -21,6 +21,10 @@ namespace Advisor.View
             ReviewList = Reviews;
         }
 
+        public CourseView()
+        {
+        }
+
         private void OnViewLoad(object sender, EventArgs e)
         {
             CourseController.LoadCourseData();
@@ -46,6 +50,11 @@ namespace Advisor.View
         private void OnFormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void OnCompareClick(object sender, EventArgs e)
+        {
+            CourseController.HandleCompareClick();
         }
 
         private void OnLeaveReviewButtonClick(object sender, EventArgs e)
