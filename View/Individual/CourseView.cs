@@ -21,6 +21,10 @@ namespace Advisor.View
             ReviewList = Reviews;
         }
 
+        public CourseView()
+        {
+        }
+
         private void OnViewLoad(object sender, EventArgs e)
         {
             CourseController.LoadCourseData();
