@@ -42,12 +42,12 @@ namespace Advisor.View.Comparison
             UniversityComparisonController.LoadStats(uni);
             UniversityTitle1.Text = uni.ToString();
             ReviewCountUni1.Text = StatsData.ReviewCount.ToString();
-            RatingUni1.Text = StatsData.OveralRating.ToString()+" / 10";
-            LevelOfSatisfactionUni1.Text = StatsData.Satisfaction.ToString()+" / 10";
-            AverageSalaryUni1.Text = StatsData.AverageSalary.ToString()+ " €";
+            RatingUni1.Text = StatsData.OveralRating.ToString() + " / 10";
+            LevelOfSatisfactionUni1.Text = StatsData.Satisfaction.ToString() + " / 10";
+            AverageSalaryUni1.Text = StatsData.AverageSalary.ToString() + " €";
             FacultyCountUni1.Text = StatsData.FacultyCount.ToString();
-            //TO DO: add StudyProgramCount
-            //TO DO: add RelevanIndustryCount
+            StudyProgramCountUni1.Text = StatsData.StudyProgramCount.ToString();
+            PercentOfWorkingGraduatesUni1.Text = StatsData.RelevantIndustryPercentage.ToString() + " %";
 
         }
 
@@ -61,8 +61,8 @@ namespace Advisor.View.Comparison
             LevelOfSatisfactionUni2.Text = StatsData.Satisfaction.ToString() + " / 10";
             AverageSalaryUni2.Text = StatsData.AverageSalary.ToString() + " €";
             FacultyCountUni2.Text = StatsData.FacultyCount.ToString();
-            //TO DO: add StudyProgramCount
-            //TO DO: add RelevanIndustryCount
+            StudyProgramCountUni2.Text = StatsData.StudyProgramCount.ToString();
+            PercentOfWorkingGraduatesUni2.Text = StatsData.RelevantIndustryPercentage.ToString() + " %";
         }
     }
 }

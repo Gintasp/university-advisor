@@ -43,9 +43,12 @@ namespace Advisor.Controller
             statsData.Satisfaction = calculator.CalcReviewAverage(reviews, r => r.Satisfaction, 1);
             statsData.FacultyCount = uni.Faculties.Count;
             statsData.ReviewCount = reviews.Count;
-            //TO DO: add StudyProgramCount to stats model
-            //TO DO: add RelevantIndustry to stats model
-            //statsData.Industry = reviews.Count(r => r.RelevantIndustry == true);
+            statsData.StudyProgramCount = 0;
+            foreach (Faculty f in uni.Faculties)
+            {
+                statsData.StudyProgramCount += f.StudyPrograms.Count;
+            }
+            if(statsData.ReviewCount!=0) statsData.RelevantIndustryPercentage = reviews.Count(r => r.RelevantIndustry==true)*100/statsData.ReviewCount;
             UniversityComparisonView.StatsData = statsData;
         }
     }
