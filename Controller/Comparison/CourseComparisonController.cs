@@ -26,20 +26,26 @@ namespace Advisor.Controller
 
         private void HandleCourseOneSelect(object sender, EventArgs e)
         {
-            SelectPopup.SelectClick -= HandleCourseOneSelect;
-            SelectPopup.Hide();
             Course course = (Course) SelectPopup.ComboLast.SelectedItem;
-            StatsData statsData = BuildCourseStats(course);
-            CourseComparisonView.LoadCourseOne(course, statsData);
+            if(course != null)
+            {
+                SelectPopup.Hide();
+                StatsData statsData = BuildCourseStats(course);
+                CourseComparisonView.LoadCourseOne(course, statsData);
+                SelectPopup.SelectClick -= HandleCourseOneSelect;
+            }
         }
 
         private void HandleCourseTwoSelect(object sender, EventArgs e)
         {
-            SelectPopup.SelectClick -= HandleCourseTwoSelect;
-            SelectPopup.Hide();
             Course course = (Course) SelectPopup.ComboLast.SelectedItem;
-            StatsData statsData = BuildCourseStats(course);
-            CourseComparisonView.LoadCourseTwo(course, statsData);
+            if(course != null)
+            {
+                SelectPopup.Hide();
+                StatsData statsData = BuildCourseStats(course);
+                CourseComparisonView.LoadCourseTwo(course, statsData);
+                SelectPopup.SelectClick -= HandleCourseTwoSelect;
+            }
         }
 
         private StatsData BuildCourseStats(Course course)
@@ -62,15 +68,12 @@ namespace Advisor.Controller
 
         private void DisplayPopup()
         {
-            if (SelectPopup == null)
-            {
-                SelectPopup = new SelectPopup();
-                SelectPopup.FirstComboSelect += FilterByUniversity;
-                SelectPopup.SecondComboSelect += FilterByFaculty;
-                SelectPopup.LabelLast.Text = "Course:";
-                SelectPopup.ViewLoad += LoadPopupData;
-            }
-            SelectPopup.ShowDialog();
+            SelectPopup = new SelectPopup();
+            SelectPopup.FirstComboSelect += FilterByUniversity;
+            SelectPopup.SecondComboSelect += FilterByFaculty;
+            SelectPopup.LabelLast.Text = "Course:";
+            SelectPopup.ViewLoad += LoadPopupData;
+            SelectPopup.Show();
         }
 
         private void FilterByUniversity(object sender, EventArgs e)
