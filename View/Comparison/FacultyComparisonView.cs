@@ -53,7 +53,14 @@ namespace Advisor.View.Comparison
 
         private void OnFaculty2Select(object sender, EventArgs e)
         {
-
+            StatsData = FacultyComparisonController.BuildFacultyStats((Faculty)FacultySelectBox2.SelectedItem);
+            ReviewCountFac2.Text = StatsData.ReviewCount.ToString();
+            RatingFac2.Text = StatsData.OveralRating.ToString() + " / 10";
+            LevelOfSatisfactionFac2.Text = StatsData.Satisfaction.ToString() + " / 10";
+            AverageSalaryFac2.Text = StatsData.AverageSalary.ToString() + " €";
+            LecturerCountFac2.Text = StatsData.LecturerCount.ToString();
+            StudyProgramCountFac2.Text = StatsData.StudyProgramCount.ToString();
+            PercentOfWorkingGraduatesFac2.Text = StatsData.RelevantIndustryPercentage.ToString() + " %";
         }
     }
 }
