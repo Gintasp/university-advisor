@@ -41,5 +41,10 @@ namespace Advisor.View
         {
             Application.Exit();
         }
+
+        private void OnCompareLecturersButtonClick(object sender, System.EventArgs e)
+        {
+            LecturerController.HandleComparisonButtonClick();
+        }
     }
 }

@@ -59,9 +59,8 @@
             this.Label3.Location = new System.Drawing.Point(122, 210);
             this.Label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(70, 21);
+            this.Label3.Size = new System.Drawing.Size(0, 21);
             this.Label3.TabIndex = 28;
-            this.Label3.Text = "Lecturer:";
             // 
             // Combo3
             // 

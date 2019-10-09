@@ -8,5 +8,6 @@ namespace Advisor.Controller
         void LoadLecturerData();
         void HandleLeaveReviewClick();
         void HandlePreviousFormClick();
+        void HandleComparisonButtonClick();
     }
 }

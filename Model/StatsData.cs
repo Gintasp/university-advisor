@@ -14,5 +14,9 @@
         public int ReviewCount { get; set; }
         public int StudyProgramCount { get; set; }
         public int RelevantIndustryPercentage { get; set; }
+        public float Competence { get; set; }
+        public float Strictness { get; set; }
+        public float Delivery { get; set; }
+        public float Personality { get; set; }
     }
 }

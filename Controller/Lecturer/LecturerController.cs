@@ -2,6 +2,7 @@
 using System.Linq;
 using Advisor.View;
 using Advisor.Model;
+using Advisor.View.Comparison;
 
 namespace Advisor.Controller
 {
@@ -13,6 +14,7 @@ namespace Advisor.Controller
         public CourseView CourseView { get; set; }
         public AddFormView AddFormView { get; set; }
         public Lecturer Lecturer { get; set; }
+        public LecturerComparisonView LecturerComparisonView { get; set; }
 
         public LecturerController(Lecturer lecturer)
         {
@@ -49,6 +51,13 @@ namespace Advisor.Controller
             LecturerView.Hide();
             FacultyView = new FacultyView(new FacultyController(Lecturer.Faculty), Lecturer.Faculty.University);
             FacultyView.Show();
+        }
+
+        public void HandleComparisonButtonClick()
+        {
+            LecturerView.Hide();
+            LecturerComparisonView = new LecturerComparisonView(new LecturerComparisonController(), Lecturer);
+            LecturerComparisonView.ShowDialog();
         }
     }
 }
