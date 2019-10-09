@@ -53,7 +53,8 @@ namespace Advisor.View.Comparison
         {
             LecturerComparisonController.HandlePreviousButtonClick(Lecturer);
         }
-        private void OnFormClose(object sender, FormClosingEventArgs e)
+
+        private void OnViewClose(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }

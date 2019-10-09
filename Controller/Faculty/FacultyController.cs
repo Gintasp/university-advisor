@@ -81,7 +81,9 @@ namespace Advisor.Controller
             Lecturer lecturer = new Lecturer()
             {
                 Name = AddFormView.TitleInput.Text,
-                Faculty = FacultyView.Faculty
+                Faculty = FacultyView.Faculty,
+                Courses = new Collection<Course>(),
+                Reviews =  new Collection<Review>()
             };
             DB.Instance.Lecturers.Add(lecturer);
             DB.Instance.SaveChanges();

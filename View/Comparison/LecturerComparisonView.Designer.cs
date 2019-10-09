@@ -76,9 +76,8 @@
             this.PersonalityLec1.Location = new System.Drawing.Point(120, 214);
             this.PersonalityLec1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PersonalityLec1.Name = "PersonalityLec1";
-            this.PersonalityLec1.Size = new System.Drawing.Size(19, 21);
+            this.PersonalityLec1.Size = new System.Drawing.Size(0, 21);
             this.PersonalityLec1.TabIndex = 17;
-            this.PersonalityLec1.Text = "X";
             // 
             // DeliveryLec1
             // 
@@ -89,9 +88,8 @@
             this.DeliveryLec1.Location = new System.Drawing.Point(113, 176);
             this.DeliveryLec1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DeliveryLec1.Name = "DeliveryLec1";
-            this.DeliveryLec1.Size = new System.Drawing.Size(19, 21);
+            this.DeliveryLec1.Size = new System.Drawing.Size(0, 21);
             this.DeliveryLec1.TabIndex = 16;
-            this.DeliveryLec1.Text = "X";
             // 
             // StrictnessLec1
             // 
@@ -102,9 +100,8 @@
             this.StrictnessLec1.Location = new System.Drawing.Point(107, 138);
             this.StrictnessLec1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.StrictnessLec1.Name = "StrictnessLec1";
-            this.StrictnessLec1.Size = new System.Drawing.Size(19, 21);
+            this.StrictnessLec1.Size = new System.Drawing.Size(0, 21);
             this.StrictnessLec1.TabIndex = 14;
-            this.StrictnessLec1.Text = "X";
             // 
             // CompetenceLec1
             // 
@@ -115,9 +112,8 @@
             this.CompetenceLec1.Location = new System.Drawing.Point(125, 101);
             this.CompetenceLec1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CompetenceLec1.Name = "CompetenceLec1";
-            this.CompetenceLec1.Size = new System.Drawing.Size(19, 21);
+            this.CompetenceLec1.Size = new System.Drawing.Size(0, 21);
             this.CompetenceLec1.TabIndex = 13;
-            this.CompetenceLec1.Text = "X";
             // 
             // RatingLec1
             // 
@@ -128,9 +124,8 @@
             this.RatingLec1.Location = new System.Drawing.Point(129, 63);
             this.RatingLec1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RatingLec1.Name = "RatingLec1";
-            this.RatingLec1.Size = new System.Drawing.Size(19, 21);
+            this.RatingLec1.Size = new System.Drawing.Size(0, 21);
             this.RatingLec1.TabIndex = 12;
-            this.RatingLec1.Text = "X";
             // 
             // ReviewCountLec1
             // 
@@ -141,9 +136,8 @@
             this.ReviewCountLec1.Location = new System.Drawing.Point(89, 25);
             this.ReviewCountLec1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ReviewCountLec1.Name = "ReviewCountLec1";
-            this.ReviewCountLec1.Size = new System.Drawing.Size(19, 21);
+            this.ReviewCountLec1.Size = new System.Drawing.Size(0, 21);
             this.ReviewCountLec1.TabIndex = 11;
-            this.ReviewCountLec1.Text = "X";
             // 
             // label15
             // 
@@ -289,9 +283,8 @@
             this.PersonalityLec2.Location = new System.Drawing.Point(118, 211);
             this.PersonalityLec2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PersonalityLec2.Name = "PersonalityLec2";
-            this.PersonalityLec2.Size = new System.Drawing.Size(19, 21);
+            this.PersonalityLec2.Size = new System.Drawing.Size(0, 21);
             this.PersonalityLec2.TabIndex = 33;
-            this.PersonalityLec2.Text = "X";
             // 
             // DeliveryLec2
             // 
@@ -302,9 +295,8 @@
             this.DeliveryLec2.Location = new System.Drawing.Point(112, 173);
             this.DeliveryLec2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DeliveryLec2.Name = "DeliveryLec2";
-            this.DeliveryLec2.Size = new System.Drawing.Size(19, 21);
+            this.DeliveryLec2.Size = new System.Drawing.Size(0, 21);
             this.DeliveryLec2.TabIndex = 32;
-            this.DeliveryLec2.Text = "X";
             // 
             // StrictnessLec2
             // 
@@ -315,9 +307,8 @@
             this.StrictnessLec2.Location = new System.Drawing.Point(106, 134);
             this.StrictnessLec2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.StrictnessLec2.Name = "StrictnessLec2";
-            this.StrictnessLec2.Size = new System.Drawing.Size(19, 21);
+            this.StrictnessLec2.Size = new System.Drawing.Size(0, 21);
             this.StrictnessLec2.TabIndex = 31;
-            this.StrictnessLec2.Text = "X";
             // 
             // CompetenceLec2
             // 
@@ -328,9 +319,8 @@
             this.CompetenceLec2.Location = new System.Drawing.Point(122, 97);
             this.CompetenceLec2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CompetenceLec2.Name = "CompetenceLec2";
-            this.CompetenceLec2.Size = new System.Drawing.Size(19, 21);
+            this.CompetenceLec2.Size = new System.Drawing.Size(0, 21);
             this.CompetenceLec2.TabIndex = 30;
-            this.CompetenceLec2.Text = "X";
             // 
             // RatingLec2
             // 
@@ -341,9 +331,8 @@
             this.RatingLec2.Location = new System.Drawing.Point(128, 60);
             this.RatingLec2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RatingLec2.Name = "RatingLec2";
-            this.RatingLec2.Size = new System.Drawing.Size(19, 21);
+            this.RatingLec2.Size = new System.Drawing.Size(0, 21);
             this.RatingLec2.TabIndex = 29;
-            this.RatingLec2.Text = "X";
             // 
             // ReviewCountLec2
             // 
@@ -354,9 +343,8 @@
             this.ReviewCountLec2.Location = new System.Drawing.Point(87, 22);
             this.ReviewCountLec2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ReviewCountLec2.Name = "ReviewCountLec2";
-            this.ReviewCountLec2.Size = new System.Drawing.Size(19, 21);
+            this.ReviewCountLec2.Size = new System.Drawing.Size(0, 21);
             this.ReviewCountLec2.TabIndex = 28;
-            this.ReviewCountLec2.Text = "X";
             // 
             // label16
             // 
@@ -519,6 +507,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Compare lecturers";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnViewClose);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
