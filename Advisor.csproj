@@ -76,7 +76,9 @@
     <Compile Include="Controller\Review\ICourseReviewController.cs" />
     <Compile Include="Controller\Review\IStudyProgramReviewController.cs" />
     <Compile Include="Controller\Review\StudyProgramReviewController.cs" />
+    <Compile Include="Controller\StudyProgram\IStudyProgramComparisonController.cs" />
     <Compile Include="Controller\StudyProgram\IStudyProgramController.cs" />
+    <Compile Include="Controller\StudyProgram\StudyProgramComparisonController.cs" />
     <Compile Include="Controller\StudyProgram\StudyProgramController.cs" />
     <Compile Include="Controller\Course\CourseController.cs" />
     <Compile Include="Controller\Review\IReviewController.cs" />
