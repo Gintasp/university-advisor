@@ -106,9 +106,9 @@
             this.ProgramTitle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ProgramTitle1.Location = new System.Drawing.Point(13, 24);
             this.ProgramTitle1.Name = "ProgramTitle1";
-            this.ProgramTitle1.Size = new System.Drawing.Size(52, 21);
+            this.ProgramTitle1.Size = new System.Drawing.Size(39, 21);
             this.ProgramTitle1.TabIndex = 18;
-            this.ProgramTitle1.Text = "Title 1";
+            this.ProgramTitle1.Text = "Title";
             // 
             // WorkingGraduates1
             // 
@@ -119,9 +119,8 @@
             this.WorkingGraduates1.Location = new System.Drawing.Point(278, 275);
             this.WorkingGraduates1.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
             this.WorkingGraduates1.Name = "WorkingGraduates1";
-            this.WorkingGraduates1.Size = new System.Drawing.Size(19, 21);
+            this.WorkingGraduates1.Size = new System.Drawing.Size(0, 21);
             this.WorkingGraduates1.TabIndex = 17;
-            this.WorkingGraduates1.Text = "X";
             // 
             // CourseCount1
             // 
@@ -132,9 +131,8 @@
             this.CourseCount1.Location = new System.Drawing.Point(278, 216);
             this.CourseCount1.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
             this.CourseCount1.Name = "CourseCount1";
-            this.CourseCount1.Size = new System.Drawing.Size(19, 21);
+            this.CourseCount1.Size = new System.Drawing.Size(0, 21);
             this.CourseCount1.TabIndex = 16;
-            this.CourseCount1.Text = "X";
             // 
             // Salary1
             // 
@@ -145,9 +143,8 @@
             this.Salary1.Location = new System.Drawing.Point(279, 176);
             this.Salary1.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
             this.Salary1.Name = "Salary1";
-            this.Salary1.Size = new System.Drawing.Size(19, 21);
+            this.Salary1.Size = new System.Drawing.Size(0, 21);
             this.Salary1.TabIndex = 14;
-            this.Salary1.Text = "X";
             // 
             // Satisfaction1
             // 
@@ -158,9 +155,8 @@
             this.Satisfaction1.Location = new System.Drawing.Point(279, 138);
             this.Satisfaction1.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
             this.Satisfaction1.Name = "Satisfaction1";
-            this.Satisfaction1.Size = new System.Drawing.Size(19, 21);
+            this.Satisfaction1.Size = new System.Drawing.Size(0, 21);
             this.Satisfaction1.TabIndex = 13;
-            this.Satisfaction1.Text = "X";
             // 
             // Rating1
             // 
@@ -171,9 +167,8 @@
             this.Rating1.Location = new System.Drawing.Point(279, 101);
             this.Rating1.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
             this.Rating1.Name = "Rating1";
-            this.Rating1.Size = new System.Drawing.Size(19, 21);
+            this.Rating1.Size = new System.Drawing.Size(0, 21);
             this.Rating1.TabIndex = 12;
-            this.Rating1.Text = "X";
             // 
             // ReviewCount1
             // 
@@ -184,9 +179,8 @@
             this.ReviewCount1.Location = new System.Drawing.Point(279, 63);
             this.ReviewCount1.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
             this.ReviewCount1.Name = "ReviewCount1";
-            this.ReviewCount1.Size = new System.Drawing.Size(19, 21);
+            this.ReviewCount1.Size = new System.Drawing.Size(0, 21);
             this.ReviewCount1.TabIndex = 11;
-            this.ReviewCount1.Text = "X";
             // 
             // label15
             // 
@@ -378,9 +372,8 @@
             this.ReviewCount2.Location = new System.Drawing.Point(284, 63);
             this.ReviewCount2.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
             this.ReviewCount2.Name = "ReviewCount2";
-            this.ReviewCount2.Size = new System.Drawing.Size(19, 21);
+            this.ReviewCount2.Size = new System.Drawing.Size(0, 21);
             this.ReviewCount2.TabIndex = 12;
-            this.ReviewCount2.Text = "X";
             // 
             // Rating2
             // 
@@ -391,9 +384,8 @@
             this.Rating2.Location = new System.Drawing.Point(284, 101);
             this.Rating2.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
             this.Rating2.Name = "Rating2";
-            this.Rating2.Size = new System.Drawing.Size(19, 21);
+            this.Rating2.Size = new System.Drawing.Size(0, 21);
             this.Rating2.TabIndex = 13;
-            this.Rating2.Text = "X";
             // 
             // Satisfaction2
             // 
@@ -404,9 +396,8 @@
             this.Satisfaction2.Location = new System.Drawing.Point(284, 138);
             this.Satisfaction2.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
             this.Satisfaction2.Name = "Satisfaction2";
-            this.Satisfaction2.Size = new System.Drawing.Size(19, 21);
+            this.Satisfaction2.Size = new System.Drawing.Size(0, 21);
             this.Satisfaction2.TabIndex = 14;
-            this.Satisfaction2.Text = "X";
             // 
             // Salary2
             // 
@@ -417,9 +408,8 @@
             this.Salary2.Location = new System.Drawing.Point(284, 176);
             this.Salary2.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
             this.Salary2.Name = "Salary2";
-            this.Salary2.Size = new System.Drawing.Size(19, 21);
+            this.Salary2.Size = new System.Drawing.Size(0, 21);
             this.Salary2.TabIndex = 15;
-            this.Salary2.Text = "X";
             // 
             // CourseCount2
             // 
@@ -430,9 +420,8 @@
             this.CourseCount2.Location = new System.Drawing.Point(284, 218);
             this.CourseCount2.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
             this.CourseCount2.Name = "CourseCount2";
-            this.CourseCount2.Size = new System.Drawing.Size(19, 21);
+            this.CourseCount2.Size = new System.Drawing.Size(0, 21);
             this.CourseCount2.TabIndex = 17;
-            this.CourseCount2.Text = "X";
             // 
             // WorkingGraduates2
             // 
@@ -443,9 +432,8 @@
             this.WorkingGraduates2.Location = new System.Drawing.Point(284, 277);
             this.WorkingGraduates2.Margin = new System.Windows.Forms.Padding(50, 0, 2, 0);
             this.WorkingGraduates2.Name = "WorkingGraduates2";
-            this.WorkingGraduates2.Size = new System.Drawing.Size(19, 21);
+            this.WorkingGraduates2.Size = new System.Drawing.Size(0, 21);
             this.WorkingGraduates2.TabIndex = 18;
-            this.WorkingGraduates2.Text = "X";
             // 
             // panel2
             // 
@@ -486,9 +474,9 @@
             this.ProgramTitle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ProgramTitle2.Location = new System.Drawing.Point(19, 24);
             this.ProgramTitle2.Name = "ProgramTitle2";
-            this.ProgramTitle2.Size = new System.Drawing.Size(52, 21);
+            this.ProgramTitle2.Size = new System.Drawing.Size(39, 21);
             this.ProgramTitle2.TabIndex = 19;
-            this.ProgramTitle2.Text = "Title 2";
+            this.ProgramTitle2.Text = "Title";
             // 
             // StudyProgram2
             // 
