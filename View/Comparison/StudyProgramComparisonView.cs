@@ -7,50 +7,49 @@ namespace Advisor.View
     public partial class StudyProgramComparisonView : Form
     {
         public IStudyProgramComparisonController ComparisonController { get; set; }
-        public StatsData FirstProgramData { get; set; }
-        public StatsData SecondProgramData { get; set; }
+
         public StudyProgramComparisonView(IStudyProgramComparisonController studyProgramComparisonController)
         {
             ComparisonController = studyProgramComparisonController;
+            ComparisonController.ComparisonView = this;
             InitializeComponent();
         }
 
-        private void OnSelectProgramClick(object sender, System.EventArgs e)
+        public void ShowFirstProgramStatsData(StudyProgram program, StatsData data)
         {
-            Button SenderButton = (Button)sender;
-            bool isItSecondButton = false;
-
-            if(SenderButton.Name == "StudyProgram2")
-            {
-                isItSecondButton = true;
-            }
-
-            ComparisonController.HandleProgramSelectClick(isItSecondButton);
+            ProgramTitle1.Text = program.Title;
+            ReviewCount1.Text = data.ReviewCount.ToString();
+            Rating1.Text = data.OveralRating + "/10";
+            Satisfaction1.Text = data.Satisfaction + "/10";
+            Salary1.Text = data.AverageSalary + "eur";
+            CourseCount1.Text = data.CourseCount.ToString();
+            WorkingGraduates1.Text = data.RelevantIndustryPercentage + "%";
         }
 
-        private void OnFormLoad(object sender, System.EventArgs e)
+        public void ShowSecondProgramStatsData(StudyProgram program, StatsData data)
         {
-            ComparisonController.UpdateData();
+            ProgramTitle2.Text = program.Title;
+            ReviewCount2.Text = data.ReviewCount.ToString();
+            Rating2.Text = data.OveralRating + "/10";
+            Satisfaction2.Text = data.Satisfaction + "/10";
+            Salary2.Text = data.AverageSalary + "eur";
+            CourseCount2.Text = data.CourseCount.ToString();
+            WorkingGraduates2.Text = data.RelevantIndustryPercentage + "%";
         }
 
-        public void ShowFirstProgramStatsData()
+        private void OnSelectProgramOneClick(object sender, System.EventArgs e)
         {
-            ReviewCount1.Text = FirstProgramData.ReviewCount.ToString();
-            Rating1.Text = FirstProgramData.OveralRating + "/10";
-            Satisfaction1.Text = FirstProgramData.Satisfaction + "/10";
-            Salary1.Text = FirstProgramData.AverageSalary + "eur";
-            CourseCount1.Text = FirstProgramData.CourseCount.ToString();
-            WorkingGraduates1.Text = FirstProgramData.RelevantIndustryPercentage + "%";
+            ComparisonController.HandleProgramOneSelectClick();
         }
 
-        public void ShowSecondProgramStatsData()
+        private void OnSelectProgramTwoClick(object sender, System.EventArgs e)
         {
-            ReviewCount2.Text = SecondProgramData.ReviewCount.ToString();
-            Rating2.Text = SecondProgramData.OveralRating + "/10";
-            Satisfaction2.Text = SecondProgramData.Satisfaction + "/10";
-            Salary2.Text = SecondProgramData.AverageSalary + "eur";
-            CourseCount2.Text = SecondProgramData.CourseCount.ToString();
-            WorkingGraduates2.Text = SecondProgramData.RelevantIndustryPercentage + "%";
+            ComparisonController.HandleProgramTwoSelectClick();
+        }
+
+        private void OnPreviousFormLinkClick(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ComparisonController.HandlePreviousFormClick();
         }
     }
 }

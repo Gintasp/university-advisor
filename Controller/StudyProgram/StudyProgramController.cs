@@ -83,7 +83,7 @@ namespace Advisor.Controller
         public void HandleCompareButtonClick()
         {
             StudyProgramView.Hide();
-            ComparisonView = new StudyProgramComparisonView(new StudyProgramComparisonController(StudyProgram));
+            ComparisonView = new StudyProgramComparisonView(new StudyProgramComparisonController(StudyProgramView));
             ComparisonView.Show();
         }
 

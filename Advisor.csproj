@@ -197,12 +197,6 @@
     <Compile Include="View\Comparison\LecturerComparisonView.Designer.cs">
       <DependentUpon>LecturerComparisonView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Comparison\StudyProgramSelectView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Comparison\StudyProgramSelectView.Designer.cs">
-      <DependentUpon>StudyProgramSelectView.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Comparison\UniversityComparisonView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -346,9 +340,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Comparison\LecturerComparisonView.resx">
       <DependentUpon>LecturerComparisonView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Comparison\StudyProgramSelectView.resx">
-      <DependentUpon>StudyProgramSelectView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Comparison\UniversityComparisonView.resx">
       <DependentUpon>UniversityComparisonView.cs</DependentUpon>

@@ -3,108 +3,119 @@ using Advisor.Model;
 using System.Collections.Generic;
 using System.Linq;
 using Advisor.Service.Statistics;
+using Advisor.View.Comparison;
+using System;
 
 namespace Advisor.Controller
 {
     class StudyProgramComparisonController : IStudyProgramComparisonController
     {
         public StudyProgramComparisonView ComparisonView { get; set; }
-        public StudyProgramSelectView SelectView { get; set; }
-        public StudyProgram FirstStudyProgram { get; set; }
-        public StudyProgram SecondStudyProgram { get; set; }
-        public bool SecondButtonClicked { get; set; }
+        public StudyProgramView PreviousView { get; set; }
+        public SelectPopup SelectPopup { get; set; }
 
-        public StudyProgramComparisonController(StudyProgram firstStudyProgram)
+        public StudyProgramComparisonController(StudyProgramView previousView)
         {
-            FirstStudyProgram = firstStudyProgram;
+            PreviousView = previousView;
         }
 
-        public void HandleProgramSelectClick(bool wasSecondButtonClicked)
+        public void HandlePreviousFormClick()
         {
-            SecondButtonClicked = wasSecondButtonClicked;
-            SelectView = new StudyProgramSelectView(this);
-            SelectView.ShowDialog();
+            ComparisonView.Hide();
+            PreviousView.Show();
         }
 
-        public void LoadUniversities()
+        public void HandleProgramOneSelectClick()
         {
-            List<University> unis = DB.Instance.Universities.ToList();
-            SelectView.UniversityList.Items.Clear();
-            unis.ForEach(uni => SelectView.UniversityList.Items.Add(uni));
+            DisplayPopup();
+            SelectPopup.SelectClick += HandleProgramOneSelect;
         }
 
-        public void LoadFaculties(University uni)
+        public void HandleProgramTwoSelectClick()
         {
-            List<Faculty> faculties = DB.Instance.Faculties.Where(f => f.University.Id == uni.Id).ToList();
-            faculties.ForEach(faculty => SelectView.FacultyList.Items.Add(faculty));
+            DisplayPopup();
+            SelectPopup.SelectClick += HandleProgramTwoSelect;
         }
 
-        public void LoadStudyPrograms(Faculty fac)
+        private void HandleProgramOneSelect(object sender, EventArgs e)
         {
-            List<StudyProgram> programs = fac.StudyPrograms.ToList();
-            programs.ForEach(program => SelectView.StudyProgramList.Items.Add(program));
-        }
-
-        public void SelectedStudyProgram(StudyProgram prog)
-        {
-            if(SecondButtonClicked)
+            StudyProgram program = (StudyProgram)SelectPopup.ComboLast.SelectedItem;
+            if (program != null)
             {
-                SecondStudyProgram = prog;
+                SelectPopup.Hide();
+                StatsData statsData = UpdateData(program);
+                ComparisonView.ShowFirstProgramStatsData(program, statsData);
+                SelectPopup.SelectClick -= HandleProgramOneSelect;
+            }
+        }
+
+        private void HandleProgramTwoSelect(object sender, EventArgs e)
+        {
+            StudyProgram program = (StudyProgram)SelectPopup.ComboLast.SelectedItem;
+            if (program != null)
+            {
+                SelectPopup.Hide();
+                StatsData statsData = UpdateData(program);
+                ComparisonView.ShowSecondProgramStatsData(program, statsData);
+                SelectPopup.SelectClick -= HandleProgramTwoSelect;
+            }
+        }
+
+        public StatsData UpdateData(StudyProgram program)
+        {
+            StatsData statsData = new StatsData();
+            StatisticCalculator calculator = new StatisticCalculator();
+            List<Review> programReviews = program.Reviews.ToList();
+            statsData.ReviewCount = programReviews.Count();
+            statsData.OveralRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
+            statsData.Satisfaction = calculator.CalcReviewAverage(programReviews, r => r.Satisfaction, 1);
+            statsData.AverageSalary = calculator.CalcReviewAverage(programReviews, r => r.Salary, 1);
+            statsData.CourseCount = program.Courses.Count();
+            if (statsData.ReviewCount != 0)
+            {
+                statsData.RelevantIndustryPercentage = programReviews.Count(r => r.RelevantIndustry == true) * 100 / statsData.ReviewCount;
             }
             else
             {
-                FirstStudyProgram = prog;
+                statsData.RelevantIndustryPercentage = 0;
             }
-            UpdateData();
+
+            return statsData;
         }
 
-        public void UpdateData()
+        private void DisplayPopup()
         {
-            if (FirstStudyProgram != null)
-            {
-                StatsData statsData = new StatsData();
-                StatisticCalculator calculator = new StatisticCalculator();
-                List<Review> programReviews = FirstStudyProgram.Reviews.ToList();
-                statsData.ReviewCount = programReviews.Count();
-                statsData.OveralRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
-                statsData.Satisfaction = calculator.CalcReviewAverage(programReviews, r => r.Satisfaction, 1);
-                statsData.AverageSalary = calculator.CalcReviewAverage(programReviews, r => r.Salary, 1);
-                statsData.CourseCount = FirstStudyProgram.Courses.Count();
-                if (statsData.ReviewCount != 0)
-                {
-                    statsData.RelevantIndustryPercentage = programReviews.Count(r => r.RelevantIndustry == true) * 100 / statsData.ReviewCount;
-                }
-                else
-                {
-                    statsData.RelevantIndustryPercentage = 0;
-                }
+            SelectPopup = new SelectPopup();
+            SelectPopup.FirstComboSelect += LoadFaculties;
+            SelectPopup.SecondComboSelect += LoadStudyPrograms;
+            SelectPopup.LabelLast.Text = "Study program:";
+            SelectPopup.ViewLoad += LoadPopupData;
+            SelectPopup.Show();
+        }
 
-                ComparisonView.FirstProgramData = statsData;
-                ComparisonView.ShowFirstProgramStatsData();
-            }
+        private void LoadPopupData(object sender, EventArgs e)
+        {
+            SelectPopup.ComboFirst.Items.Clear();
+            SelectPopup.ComboSecond.Items.Clear();
+            SelectPopup.ComboLast.Items.Clear();
+            SelectPopup.ComboFirst.Items.AddRange(DB.Instance.Universities.ToArray());
+        }
 
-            if(SecondStudyProgram != null)
-            {
-                StatsData statsData = new StatsData();
-                StatisticCalculator calculator = new StatisticCalculator();
-                List<Review> programReviews = SecondStudyProgram.Reviews.ToList();
-                statsData.ReviewCount = programReviews.Count();
-                statsData.OveralRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
-                statsData.Satisfaction = calculator.CalcReviewAverage(programReviews, r => r.Satisfaction, 1);
-                statsData.AverageSalary = calculator.CalcReviewAverage(programReviews, r => r.Salary, 1);
-                statsData.CourseCount = SecondStudyProgram.Courses.Count();
-                if (statsData.ReviewCount != 0)
-                {
-                    statsData.RelevantIndustryPercentage = programReviews.Count(r => r.RelevantIndustry == true) * 100 / statsData.ReviewCount;
-                }
-                else
-                {
-                    statsData.RelevantIndustryPercentage = 0;
-                }
+        public void LoadFaculties(object sender, EventArgs e)
+        {
+            SelectPopup.ComboSecond.Items.Clear();
+            SelectPopup.ComboSecond.ResetText();
+            SelectPopup.ComboLast.ResetText();
+            University selectedUni = (University)SelectPopup.ComboFirst.SelectedItem;
+            SelectPopup.ComboSecond.Items.AddRange(DB.Instance.Faculties.Where(f => f.University.Id == selectedUni.Id).ToArray());
+        }
 
-                ComparisonView.SecondProgramData = statsData;
-                ComparisonView.ShowSecondProgramStatsData();
-            }
+        public void LoadStudyPrograms(object sender, EventArgs e)
+        {
+            SelectPopup.ComboLast.Items.Clear();
+            SelectPopup.ComboLast.ResetText();
+            Faculty selectedFaculty = (Faculty)SelectPopup.ComboSecond.SelectedItem;
+            SelectPopup.ComboLast.Items.AddRange(DB.Instance.Courses.Where(c => c.StudyProgram.Faculty.Id == selectedFaculty.Id).ToArray());
         }
     }
 }
