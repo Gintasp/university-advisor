@@ -36,6 +36,7 @@
             this.ReviewData = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnCompareLecturers = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // PreviousForm
@@ -128,11 +129,25 @@
             this.label3.TabIndex = 15;
             this.label3.Text = "Reviews";
             // 
+            // btnCompareLecturers
+            // 
+            this.btnCompareLecturers.AutoSize = true;
+            this.btnCompareLecturers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompareLecturers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCompareLecturers.Location = new System.Drawing.Point(362, 550);
+            this.btnCompareLecturers.Name = "btnCompareLecturers";
+            this.btnCompareLecturers.Size = new System.Drawing.Size(325, 37);
+            this.btnCompareLecturers.TabIndex = 16;
+            this.btnCompareLecturers.Text = "Compare lecturers";
+            this.btnCompareLecturers.UseVisualStyleBackColor = true;
+            this.btnCompareLecturers.Click += new System.EventHandler(this.OnCompareLecturersButtonClick);
+            // 
             // LecturerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1196, 631);
+            this.Controls.Add(this.btnCompareLecturers);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ReviewData);
@@ -161,5 +176,6 @@
         private System.Windows.Forms.ListBox ReviewData;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnCompareLecturers;
     }
 }

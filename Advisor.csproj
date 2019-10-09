@@ -64,6 +64,8 @@
     <Compile Include="Controller\Comparison\CourseComparisonController.cs" />
     <Compile Include="Controller\Comparison\FacultyComparisonController.cs" />
     <Compile Include="Controller\Comparison\ICourseComparisonController.cs" />
+    <Compile Include="Controller\Comparison\ILecturerComparisonController.cs" />
+    <Compile Include="Controller\Comparison\LecturerComparisonController.cs" />
     <Compile Include="Controller\Comparison\IFacultyComparisonController.cs" />
     <Compile Include="Controller\Faculty\FacultyController.cs" />
     <Compile Include="Controller\Faculty\IFacultyController.cs" />
