@@ -71,13 +71,10 @@ namespace Advisor.Controller
             statsData.Satisfaction = calculator.CalcReviewAverage(programReviews, r => r.Satisfaction, 1);
             statsData.AverageSalary = calculator.CalcReviewAverage(programReviews, r => r.Salary, 1);
             statsData.CourseCount = program.Courses.Count();
+            statsData.RelevantIndustryPercentage = 0;
             if (statsData.ReviewCount != 0)
             {
                 statsData.RelevantIndustryPercentage = programReviews.Count(r => r.RelevantIndustry == true) * 100 / statsData.ReviewCount;
-            }
-            else
-            {
-                statsData.RelevantIndustryPercentage = 0;
             }
 
             return statsData;
