@@ -6,6 +6,7 @@ using Advisor.Service.Statistics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Drawing;
+using Advisor.Service.Auth;
 
 namespace Advisor.Controller
 {
@@ -79,8 +80,8 @@ namespace Advisor.Controller
         public void SaveReview(Review review)
         {
             Random random = new Random();
-            List<User> userList = DB.Instance.Users.ToList(); 
-            review.UserId = userList.ElementAt(random.Next(0, userList.Count)).Id;      //TODO: set current user
+            List<User> userList = DB.Instance.Users.ToList();
+            review.UserId = SessionStorage.Instance.User.Id;
             DB.Instance.Reviews.Add(review);
             StudyProgram.Reviews.Add(review);
             DB.Instance.SaveChanges();
