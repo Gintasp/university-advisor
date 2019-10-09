@@ -13,5 +13,6 @@ namespace Advisor.Controller
         void HandleLecturerSelect(Lecturer lecturer);
         void HandleAddStudyProgramClick();
         void HandleAddLecturerClick();
+        void HandleCompareLink();
     }
 }

@@ -79,5 +79,10 @@ namespace Advisor.View
                 FacultyController.HandleLecturerSelect(lecturer);
             }
         }
+
+        private void OnCompareLinkClick(object sender, EventArgs e)
+        {
+            FacultyController.HandleCompareLink();
+        }
     }
 }

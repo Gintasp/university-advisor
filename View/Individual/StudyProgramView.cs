@@ -66,5 +66,10 @@ namespace Advisor.View
         {
             StudyProgramController.HandleAddCourseLinkClick();
         }
+
+        private void OnCompareButtonClick(object sender, EventArgs e)
+        {
+            StudyProgramController.HandleCompareButtonClick();
+        }
     }
 }

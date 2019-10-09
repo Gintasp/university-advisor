@@ -1,6 +1,7 @@
 ﻿using Advisor.Model;
 using Advisor.Service.Statistics;
 using Advisor.View;
+using Advisor.View.Comparison;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,6 +17,7 @@ namespace Advisor.Controller
         public LecturerView LecturerView { get; set; }
         public AddFormView AddFormView { get; set; }
         public Faculty Faculty { get; set; }
+        public FacultyComparisonView FacultyComparisonView { get; set; }
 
         public FacultyController(Faculty faculty)
         {
@@ -101,6 +103,11 @@ namespace Advisor.Controller
             DB.Instance.SaveChanges();
             FacultyView.StudyProgramList.Items.Add(program);
             AddFormView.Close();
+        }
+        public void HandleCompareLink()
+        {
+            FacultyComparisonView = new FacultyComparisonView(new FacultyComparisonController());
+            FacultyComparisonView.ShowDialog();
         }
 
         private void LoadStats()

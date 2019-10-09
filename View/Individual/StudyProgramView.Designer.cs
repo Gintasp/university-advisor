@@ -48,6 +48,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnCompare = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -109,7 +110,7 @@
             this.btnLeaveAReview.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLeaveAReview.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLeaveAReview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnLeaveAReview.Location = new System.Drawing.Point(186, 567);
+            this.btnLeaveAReview.Location = new System.Drawing.Point(189, 592);
             this.btnLeaveAReview.Margin = new System.Windows.Forms.Padding(2);
             this.btnLeaveAReview.Name = "btnLeaveAReview";
             this.btnLeaveAReview.Size = new System.Drawing.Size(287, 36);
@@ -322,11 +323,26 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "Avg. graduate salary:";
             // 
+            // btnCompare
+            // 
+            this.btnCompare.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCompare.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCompare.Location = new System.Drawing.Point(189, 552);
+            this.btnCompare.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCompare.Name = "btnCompare";
+            this.btnCompare.Size = new System.Drawing.Size(287, 36);
+            this.btnCompare.TabIndex = 12;
+            this.btnCompare.Text = "Compare study programs";
+            this.btnCompare.UseVisualStyleBackColor = true;
+            this.btnCompare.Click += new System.EventHandler(this.OnCompareButtonClick);
+            // 
             // StudyProgramView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1313, 675);
+            this.Controls.Add(this.btnCompare);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.AddFacultyLink);
             this.Controls.Add(this.label3);
@@ -375,5 +391,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnCompare;
     }
 }
