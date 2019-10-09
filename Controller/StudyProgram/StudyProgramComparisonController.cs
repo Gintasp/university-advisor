@@ -112,7 +112,7 @@ namespace Advisor.Controller
             SelectPopup.ComboLast.Items.Clear();
             SelectPopup.ComboLast.ResetText();
             Faculty selectedFaculty = (Faculty)SelectPopup.ComboSecond.SelectedItem;
-            SelectPopup.ComboLast.Items.AddRange(DB.Instance.Courses.Where(c => c.StudyProgram.Faculty.Id == selectedFaculty.Id).ToArray());
+            SelectPopup.ComboLast.Items.AddRange(DB.Instance.StudyPrograms.Where(c => c.Faculty.Id == selectedFaculty.Id).ToArray());
         }
     }
 }
