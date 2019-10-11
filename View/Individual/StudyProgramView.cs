@@ -31,7 +31,7 @@ namespace Advisor.View
 
         private void ShowStatsData()
         {
-            SalaryVal.Text = StatsData.AverageSalary.ToString() + " / 10";
+            SalaryVal.Text = StatsData.AverageSalary.ToString() + " €";
             DifficultyVal.Text = StatsData.Difficulty.ToString() + " / 10";
             SatisfactionVal.Text = StatsData.Satisfaction.ToString() + " / 10";
             OveralVal.Text = StatsData.OveralRating.ToString() + " / 10";

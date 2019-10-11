@@ -60,6 +60,7 @@ namespace Advisor.Controller
             if (!LoginDataValidator.Validate(email, password)) return false;
             if (AuthenticateUser(email, password))
             {
+                SessionStorage.Instance.User = DB.Instance.Users.Where(u => u.Email.Equals(email)).SingleOrDefault();
                 LoginFormView.Hide();
                 HomeView = new HomeView(new HomeController());
                 HomeView.ShowDialog();

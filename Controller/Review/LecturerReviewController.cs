@@ -4,6 +4,7 @@ using System.IO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Advisor.Service.Auth;
 
 namespace Advisor.Controller
 {
@@ -49,7 +50,7 @@ namespace Advisor.Controller
         {
             Random random = new Random();
             List<User> userList = DB.Instance.Users.ToList();
-            review.UserId = userList.ElementAt(random.Next(0, userList.Count)).Id;      //TODO: set current user
+            review.UserId = SessionStorage.Instance.User.Id;
             DB.Instance.Reviews.Add(review);
             Lecturer.Reviews.Add(review);
             DB.Instance.SaveChanges();
