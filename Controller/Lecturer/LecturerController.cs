@@ -3,6 +3,8 @@ using System.Linq;
 using Advisor.View;
 using Advisor.Model;
 using Advisor.View.Comparison;
+using Advisor.Service.Validator;
+using System.Windows.Forms;
 
 namespace Advisor.Controller
 {
@@ -42,8 +44,16 @@ namespace Advisor.Controller
 
         public void HandleLeaveReviewClick()
         {
-            LecturerReviewView = new LecturerReviewView(new LecturerReviewController(Lecturer, LecturerView));
-            LecturerReviewView.ShowDialog();
+            ReviewValidator validator = new ReviewValidator();
+            if (validator.Validate(Lecturer))
+            {
+                LecturerReviewView = new LecturerReviewView(new LecturerReviewController(Lecturer, LecturerView));
+                LecturerReviewView.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You have already left a review.");
+            }
         }
 
         public void HandlePreviousFormClick()

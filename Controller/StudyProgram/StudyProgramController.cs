@@ -5,6 +5,8 @@ using Advisor.View;
 using System.Linq;
 using System.Collections.ObjectModel;
 using Advisor.Service.Statistics;
+using Advisor.Service.Validator;
+using System.Windows.Forms;
 
 namespace Advisor.Controller
 {
@@ -89,9 +91,17 @@ namespace Advisor.Controller
 
         public void HandleLeaveReviewClick()
         {
-            StudyProgramReviewView = new StudyProgramReviewView(new StudyProgramReviewController(StudyProgramView,StudyProgram));
-            StudyProgramReviewView.ShowDialog();
-            LoadStats();
+            ReviewValidator validator = new ReviewValidator();
+            if (validator.Validate(StudyProgram))
+            {
+                StudyProgramReviewView = new StudyProgramReviewView(new StudyProgramReviewController(StudyProgramView, StudyProgram));
+                StudyProgramReviewView.ShowDialog();
+                LoadStats();
+            }
+            else
+            {
+                MessageBox.Show("You have already left a review.");
+            }
         }
 
         public void HandleCourseSelect(Course course)

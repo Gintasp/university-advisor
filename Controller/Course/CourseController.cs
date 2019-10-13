@@ -4,6 +4,8 @@ using System.Linq;
 using System.Collections.Generic;
 using Advisor.View.Comparison;
 using Advisor.Service.Statistics;
+using Advisor.Service.Validator;
+using System.Windows.Forms;
 
 namespace Advisor.Controller
 {
@@ -67,11 +69,20 @@ namespace Advisor.Controller
             List<Review> reviews = DB.Instance.Reviews.Where(r => r.Course.Id == Course.Id).ToList();
             reviews.ForEach(review => CourseView.ReviewList.Items.Add(review));
         }
+
         public void HandleLeaveReviewClick()
         {
-            CourseReviewView = new CourseReviewView(new CourseReviewController(Course, CourseView));
-            CourseReviewView.ShowDialog();
-            LoadStats();
+            ReviewValidator validator = new ReviewValidator();
+            if (validator.Validate(Course))
+            {
+                CourseReviewView = new CourseReviewView(new CourseReviewController(Course, CourseView));
+                CourseReviewView.ShowDialog();
+                LoadStats();
+            }
+            else
+            {
+                MessageBox.Show("You have already left a review.");
+            }
         }
     }
 }

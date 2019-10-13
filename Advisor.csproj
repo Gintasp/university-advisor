@@ -163,7 +163,9 @@
     <Compile Include="Service\Statistics\IStatisticCalculator.cs" />
     <Compile Include="Service\Statistics\StatisticCalculator.cs" />
     <Compile Include="Service\Validator\ILoginDataValidator.cs" />
+    <Compile Include="Service\Validator\IReviewValidator.cs" />
     <Compile Include="Service\Validator\ISignupDataValidator.cs" />
+    <Compile Include="Service\Validator\ReviewValidator.cs" />
     <Compile Include="Service\Validator\SignupDataValidator.cs" />
     <Compile Include="Service\Validator\LoginDataValidator.cs" />
     <Compile Include="View\AddFormView.cs">
