@@ -80,9 +80,9 @@
     <Compile Include="Controller\Review\ICourseReviewController.cs" />
     <Compile Include="Controller\Review\IStudyProgramReviewController.cs" />
     <Compile Include="Controller\Review\StudyProgramReviewController.cs" />
-    <Compile Include="Controller\StudyProgram\IStudyProgramComparisonController.cs" />
+    <Compile Include="Controller\Comparison\IStudyProgramComparisonController.cs" />
     <Compile Include="Controller\StudyProgram\IStudyProgramController.cs" />
-    <Compile Include="Controller\StudyProgram\StudyProgramComparisonController.cs" />
+    <Compile Include="Controller\Comparison\StudyProgramComparisonController.cs" />
     <Compile Include="Controller\StudyProgram\StudyProgramController.cs" />
     <Compile Include="Controller\Course\CourseController.cs" />
     <Compile Include="Controller\Review\IReviewController.cs" />
@@ -163,7 +163,9 @@
     <Compile Include="Service\Statistics\IStatisticCalculator.cs" />
     <Compile Include="Service\Statistics\StatisticCalculator.cs" />
     <Compile Include="Service\Validator\ILoginDataValidator.cs" />
+    <Compile Include="Service\Validator\IReviewValidator.cs" />
     <Compile Include="Service\Validator\ISignupDataValidator.cs" />
+    <Compile Include="Service\Validator\ReviewValidator.cs" />
     <Compile Include="Service\Validator\SignupDataValidator.cs" />
     <Compile Include="Service\Validator\LoginDataValidator.cs" />
     <Compile Include="View\AddFormView.cs">
