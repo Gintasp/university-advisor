@@ -187,6 +187,7 @@
     <Compile Include="Tests\LoginDataValidatorTest.cs" />
     <Compile Include="Tests\PasswordEncoderTest.cs" />
     <Compile Include="Tests\SessionStorageTest.cs" />
+    <Compile Include="Tests\SignupDataValidatorTest.cs" />
     <Compile Include="Tests\StatisticCalculatorTest.cs" />
     <Compile Include="View\AddFormView.cs">
       <SubType>Form</SubType>

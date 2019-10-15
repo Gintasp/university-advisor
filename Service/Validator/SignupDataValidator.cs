@@ -10,7 +10,7 @@ namespace Advisor.Service.Validator
 
         public bool Validate(User user, string passConfirm)
         {
-           this.user = user;
+            this.user = user;
             if ((CheckForEmptyFields(passConfirm) &&
                  CheckEmailByRegex() &&
                  CheckPasswordByRegex()))
