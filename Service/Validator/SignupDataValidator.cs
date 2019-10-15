@@ -16,13 +16,14 @@ namespace Advisor.Service.Validator
                  CheckPasswordByRegex()))
             {
                 errorMessage = null;
+
                 return true;
             }
 
             return false;
         }
-
-        public string GetSignupDataVadilatorErrorMessage()
+            
+        public string GetSignupDataValidatorErrorMessage()
         {
             return errorMessage;
         }
