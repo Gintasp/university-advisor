@@ -73,7 +73,7 @@ namespace Advisor.Controller
         {
             if (!SignupDataValidator.Validate(user, passConfirm))
             {
-                MessageBox.Show(SignupDataValidator.GetSignupDataVadilatorErrorMessage());
+                MessageBox.Show(SignupDataValidator.GetSignupDataValidatorErrorMessage());
 
                 return false;
             }
