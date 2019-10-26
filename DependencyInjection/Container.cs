@@ -5,7 +5,7 @@ using Ninject.Modules;
 
 namespace Advisor.DependencyInjection
 {
-    class Bindings : NinjectModule
+    public class Container : NinjectModule
     {
         public override void Load()
         {

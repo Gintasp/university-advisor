@@ -178,7 +178,7 @@
     <Compile Include="Controllers\University\IUniversityController.cs" />
     <Compile Include="Controllers\University\UniversityComparisonController.cs" />
     <Compile Include="Controllers\University\UniversityController.cs" />
-    <Compile Include="DependencyInjection\Bindings.cs" />
+    <Compile Include="DependencyInjection\Container.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
