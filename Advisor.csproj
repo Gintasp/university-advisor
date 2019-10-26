@@ -264,16 +264,16 @@
     <Compile Include="Tests\StatisticCalculatorTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Assets\css\lib\bootstrap-theme.css" />
+    <Content Include="Assets\css\lib\bootstrap-theme.min.css" />
+    <Content Include="Assets\css\lib\bootstrap.css" />
+    <Content Include="Assets\css\lib\bootstrap.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Assets\main.css" />
+    <Content Include="Assets\js\lib\bootstrap.js" />
+    <Content Include="Assets\js\lib\bootstrap.min.js" />
     <Content Include=".gitignore" />
     <Content Include="features.md" />
     <Content Include="LICENSE" />
@@ -286,17 +286,17 @@
     <Content Include="Migrations\Data\University.csv" />
     <Content Include="Migrations\Data\User.csv" />
     <None Include="packages.config" />
-    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.3.1.js" />
-    <Content Include="Scripts\jquery-3.3.1.min.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <None Include="Assets\js\lib\jquery-3.3.1.intellisense.js" />
+    <Content Include="Assets\js\lib\jquery-3.3.1.js" />
+    <Content Include="Assets\js\lib\jquery-3.3.1.min.js" />
+    <Content Include="Assets\js\lib\jquery-3.3.1.slim.js" />
+    <Content Include="Assets\js\lib\jquery-3.3.1.slim.min.js" />
+    <None Include="Assets\js\lib\jquery.validate-vsdoc.js" />
+    <Content Include="Assets\js\lib\jquery.validate.js" />
+    <Content Include="Assets\js\lib\jquery.validate.min.js" />
+    <Content Include="Assets\js\lib\jquery.validate.unobtrusive.js" />
+    <Content Include="Assets\js\lib\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Assets\js\lib\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -312,20 +312,18 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\css\lib\bootstrap.min.css.map" />
+    <Content Include="Assets\css\lib\bootstrap.css.map" />
+    <Content Include="Assets\css\lib\bootstrap-theme.min.css.map" />
+    <Content Include="Assets\css\lib\bootstrap-theme.css.map" />
+    <Content Include="Assets\js\lib\jquery-3.3.1.slim.min.map" />
+    <Content Include="Assets\js\lib\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201909221555231_MainEntities.resx">
