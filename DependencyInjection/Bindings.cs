@@ -1,4 +1,4 @@
-﻿using Advisor.Controller;
+﻿using Advisor.Controllers;
 using Advisor.Service.Auth;
 using Advisor.Service.Validator;
 using Ninject.Modules;
@@ -10,7 +10,6 @@ namespace Advisor.DependencyInjection
         public override void Load()
         {
             Bind<IAuthController>().To<AuthController>();
-            Bind<IHomeController>().To<HomeController>();
             Bind<IUniversityController>().To<UniversityController>();
             Bind<IUniversityComparisonController>().To<UniversityComparisonController>();
             Bind<IFacultyController>().To<FacultyController>();
