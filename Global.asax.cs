@@ -14,7 +14,8 @@ namespace Advisor
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            (new Container()).Load();
+            Container container = new Container();
+            container.Load();
         }
     }
 }
