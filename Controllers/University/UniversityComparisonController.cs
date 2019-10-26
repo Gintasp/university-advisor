@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Advisor.Model;
+using Advisor.Models;
 using Advisor.Service.Statistics;
 
 namespace Advisor.Controllers

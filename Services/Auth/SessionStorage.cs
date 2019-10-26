@@ -1,4 +1,4 @@
-﻿using Advisor.Model;
+﻿using Advisor.Models;
 
 namespace Advisor.Service.Auth
 {

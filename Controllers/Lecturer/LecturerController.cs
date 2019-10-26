@@ -1,4 +1,4 @@
-﻿using Advisor.Model;
+﻿using Advisor.Models;
 namespace Advisor.Controllers
 {
     public class LecturerController : ILecturerController

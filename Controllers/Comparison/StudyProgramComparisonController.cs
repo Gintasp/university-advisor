@@ -1,4 +1,4 @@
-﻿using Advisor.Model;
+﻿using Advisor.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Advisor.Service.Statistics;

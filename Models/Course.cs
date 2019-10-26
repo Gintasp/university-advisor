@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Advisor.Model
+namespace Advisor.Models
 {
     public class Course
     {

@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace Advisor.Model
+namespace Advisor.Models
 {
     public class DatabaseContext : DbContext
     {

@@ -1,4 +1,4 @@
-﻿using Advisor.Model;
+﻿using Advisor.Models;
 using Advisor.Service.Auth;
 using System;
 using System.Collections.Generic;

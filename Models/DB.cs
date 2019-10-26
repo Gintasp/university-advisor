@@ -1,22 +1,13 @@
-﻿namespace Advisor.Model
+﻿using System;
+
+namespace Advisor.Models
 {
     public sealed class DB
     {
-        private static DatabaseContext instance = null;
+        private static readonly Lazy<DatabaseContext> instance = new Lazy<DatabaseContext>(() => new DatabaseContext());
 
         private DB() { }
 
-        public static DatabaseContext Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new DatabaseContext();
-                }
-
-                return instance;
-            }
-        }
+        public static DatabaseContext Instance { get { return instance.Value; } }
     }
 }

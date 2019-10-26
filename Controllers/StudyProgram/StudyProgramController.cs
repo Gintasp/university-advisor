@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Advisor.Model;
+using Advisor.Models;
 using System.Linq;
 using System.Collections.ObjectModel;
 using Advisor.Service.Statistics;

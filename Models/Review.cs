@@ -1,4 +1,4 @@
-﻿namespace Advisor.Model
+﻿namespace Advisor.Models
 {
     public class Review
     {
