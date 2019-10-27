@@ -1,0 +1,22 @@
+﻿using System.Collections.Generic;
+
+namespace Advisor.Models
+{
+    public class University
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Website { get; set; }
+        public string Description { get; set; }
+        public virtual ICollection<Faculty> Faculties { get; set; }
+
+        public University()
+        {
+        }
+
+        public override string ToString()
+        {
+            return Title;
+        }
+    }
+}

@@ -1,67 +1,149 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props" Condition="Exists('packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.props')" />
   <Import Project="packages\xunit.runner.visualstudio.2.4.1\build\net20\xunit.runner.visualstudio.props" Condition="Exists('packages\xunit.runner.visualstudio.2.4.1\build\net20\xunit.runner.visualstudio.props')" />
   <Import Project="packages\xunit.core.2.4.1\build\xunit.core.props" Condition="Exists('packages\xunit.core.2.4.1\build\xunit.core.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{BC69778F-C719-4365-A679-C6F28806D0AC}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Advisor</RootNamespace>
     <AssemblyName>Advisor</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44308</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>packages\EntityFramework.6.4.0-preview1-19506-01\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>packages\EntityFramework.6.4.0-preview1-19506-01\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
-    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
-    </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Thread" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Abstractions, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>packages\Unity.Abstractions.5.11.1\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>packages\Unity.Container.5.11.1\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mvc, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>packages\Unity.Mvc.5.11.1\lib\net47\Unity.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
       <HintPath>packages\xunit.abstractions.2.0.3\lib\net35\xunit.abstractions.dll</HintPath>
     </Reference>
@@ -76,38 +158,46 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\Auth\AuthController.cs" />
-    <Compile Include="Controller\Comparison\CourseComparisonController.cs" />
-    <Compile Include="Controller\Comparison\FacultyComparisonController.cs" />
-    <Compile Include="Controller\Comparison\ICourseComparisonController.cs" />
-    <Compile Include="Controller\Comparison\ILecturerComparisonController.cs" />
-    <Compile Include="Controller\Comparison\LecturerComparisonController.cs" />
-    <Compile Include="Controller\Comparison\IFacultyComparisonController.cs" />
-    <Compile Include="Controller\Faculty\FacultyController.cs" />
-    <Compile Include="Controller\Faculty\IFacultyController.cs" />
-    <Compile Include="Controller\Home\HomeController.cs" />
-    <Compile Include="Controller\Auth\IAuthController.cs" />
-    <Compile Include="Controller\Home\IHomeController.cs" />
-    <Compile Include="Controller\Course\ICourseController.cs" />
-    <Compile Include="Controller\Lecturer\ILecturerController.cs" />
-    <Compile Include="Controller\Lecturer\LecturerController.cs" />
-    <Compile Include="Controller\Review\ILecturerReviewController.cs" />
-    <Compile Include="Controller\Review\LecturerReviewController.cs" />
-    <Compile Include="Controller\Review\ICourseReviewController.cs" />
-    <Compile Include="Controller\Review\IStudyProgramReviewController.cs" />
-    <Compile Include="Controller\Review\StudyProgramReviewController.cs" />
-    <Compile Include="Controller\Comparison\IStudyProgramComparisonController.cs" />
-    <Compile Include="Controller\StudyProgram\IStudyProgramController.cs" />
-    <Compile Include="Controller\Comparison\StudyProgramComparisonController.cs" />
-    <Compile Include="Controller\StudyProgram\StudyProgramController.cs" />
-    <Compile Include="Controller\Course\CourseController.cs" />
-    <Compile Include="Controller\Review\IReviewController.cs" />
-    <Compile Include="Controller\Review\CourseReviewController.cs" />
-    <Compile Include="Controller\University\IUniversityComparisonController.cs" />
-    <Compile Include="Controller\University\IUniversityController.cs" />
-    <Compile Include="Controller\University\UniversityComparisonController.cs" />
-    <Compile Include="Controller\University\UniversityController.cs" />
-    <Compile Include="DependencyInjection\Bindings.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="Controllers\Auth\AuthController.cs" />
+    <Compile Include="Controllers\Auth\IAuthController.cs" />
+    <Compile Include="Controllers\Comparison\CourseComparisonController.cs" />
+    <Compile Include="Controllers\Comparison\FacultyComparisonController.cs" />
+    <Compile Include="Controllers\Comparison\ICourseComparisonController.cs" />
+    <Compile Include="Controllers\Comparison\IFacultyComparisonController.cs" />
+    <Compile Include="Controllers\Comparison\ILecturerComparisonController.cs" />
+    <Compile Include="Controllers\Comparison\IStudyProgramComparisonController.cs" />
+    <Compile Include="Controllers\Comparison\LecturerComparisonController.cs" />
+    <Compile Include="Controllers\Comparison\StudyProgramComparisonController.cs" />
+    <Compile Include="Controllers\Course\CourseController.cs" />
+    <Compile Include="Controllers\Course\ICourseController.cs" />
+    <Compile Include="Controllers\Faculty\FacultyController.cs" />
+    <Compile Include="Controllers\Faculty\IFacultyController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Home\HomeController.cs" />
+    <Compile Include="Controllers\Home\IHomeController.cs" />
+    <Compile Include="Controllers\Lecturer\ILecturerController.cs" />
+    <Compile Include="Controllers\Lecturer\LecturerController.cs" />
+    <Compile Include="Controllers\Review\CourseReviewController.cs" />
+    <Compile Include="Controllers\Review\ICourseReviewController.cs" />
+    <Compile Include="Controllers\Review\ILecturerReviewController.cs" />
+    <Compile Include="Controllers\Review\IReviewController.cs" />
+    <Compile Include="Controllers\Review\IStudyProgramReviewController.cs" />
+    <Compile Include="Controllers\Review\LecturerReviewController.cs" />
+    <Compile Include="Controllers\Review\StudyProgramReviewController.cs" />
+    <Compile Include="Controllers\StudyProgram\IStudyProgramController.cs" />
+    <Compile Include="Controllers\StudyProgram\StudyProgramController.cs" />
+    <Compile Include="Controllers\University\IUniversityComparisonController.cs" />
+    <Compile Include="Controllers\University\IUniversityController.cs" />
+    <Compile Include="Controllers\University\UniversityComparisonController.cs" />
+    <Compile Include="Controllers\University\UniversityController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201909221555231_MainEntities.cs" />
     <Compile Include="Migrations\201909221555231_MainEntities.Designer.cs">
       <DependentUpon>201909221555231_MainEntities.cs</DependentUpon>
@@ -161,148 +251,97 @@
       <DependentUpon>201910041613380_UniWebsites.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\DatabaseContext.cs" />
-    <Compile Include="Model\DB.cs" />
-    <Compile Include="Model\Faculty.cs" />
-    <Compile Include="Model\Lecturer.cs" />
-    <Compile Include="Model\Review.cs" />
-    <Compile Include="Model\StatsData.cs" />
-    <Compile Include="Model\StudyProgram.cs" />
-    <Compile Include="Model\Course.cs" />
-    <Compile Include="Model\University.cs" />
-    <Compile Include="Model\User.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\DatabaseContext.cs" />
+    <Compile Include="Models\DB.cs" />
+    <Compile Include="Models\Faculty.cs" />
+    <Compile Include="Models\Lecturer.cs" />
+    <Compile Include="Models\Review.cs" />
+    <Compile Include="Models\StatsData.cs" />
+    <Compile Include="Models\StudyProgram.cs" />
+    <Compile Include="Models\University.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\Auth\IPasswordEncoder.cs" />
-    <Compile Include="Service\Auth\PasswordEncoder.cs" />
-    <Compile Include="Service\Auth\SessionStorage.cs" />
-    <Compile Include="Service\Statistics\IStatisticCalculator.cs" />
-    <Compile Include="Service\Statistics\StatisticCalculator.cs" />
-    <Compile Include="Service\Validator\ILoginDataValidator.cs" />
-    <Compile Include="Service\Validator\IReviewValidator.cs" />
-    <Compile Include="Service\Validator\ISignupDataValidator.cs" />
-    <Compile Include="Service\Validator\ReviewValidator.cs" />
-    <Compile Include="Service\Validator\SignupDataValidator.cs" />
-    <Compile Include="Service\Validator\LoginDataValidator.cs" />
+    <Compile Include="Services\Auth\IPasswordEncoder.cs" />
+    <Compile Include="Services\Auth\PasswordEncoder.cs" />
+    <Compile Include="Services\Auth\SessionStorage.cs" />
+    <Compile Include="Services\Statistics\IStatisticCalculator.cs" />
+    <Compile Include="Services\Statistics\StatisticCalculator.cs" />
+    <Compile Include="Services\Validator\ILoginDataValidator.cs" />
+    <Compile Include="Services\Validator\IReviewValidator.cs" />
+    <Compile Include="Services\Validator\ISignupDataValidator.cs" />
+    <Compile Include="Services\Validator\LoginDataValidator.cs" />
+    <Compile Include="Services\Validator\ReviewValidator.cs" />
+    <Compile Include="Services\Validator\SignupDataValidator.cs" />
     <Compile Include="Tests\LoginDataValidatorTest.cs" />
     <Compile Include="Tests\PasswordEncoderTest.cs" />
     <Compile Include="Tests\SessionStorageTest.cs" />
     <Compile Include="Tests\SignupDataValidatorTest.cs" />
     <Compile Include="Tests\StatisticCalculatorTest.cs" />
-    <Compile Include="View\AddFormView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\AddFormView.Designer.cs">
-      <DependentUpon>AddFormView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Comparison\CourseComparisonView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Comparison\CourseComparisonView.Designer.cs">
-      <DependentUpon>CourseComparisonView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Comparison\CourseSelectFormView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Comparison\CourseSelectFormView.Designer.cs">
-      <DependentUpon>CourseSelectFormView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Comparison\FacultyComparisonView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Comparison\FacultyComparisonView.Designer.cs">
-      <DependentUpon>FacultyComparisonView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Comparison\StudyProgramComparisonView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Comparison\StudyProgramComparisonView.Designer.cs">
-      <DependentUpon>StudyProgramComparisonView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Comparison\LecturerComparisonView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Comparison\LecturerComparisonView.Designer.cs">
-      <DependentUpon>LecturerComparisonView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Comparison\UniversityComparisonView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Comparison\UniversityComparisonView.Designer.cs">
-      <DependentUpon>UniversityComparisonView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Individual\FacultyView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Individual\FacultyView.Designer.cs">
-      <DependentUpon>FacultyView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Individual\LecturerView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Individual\LecturerView.Designer.cs">
-      <DependentUpon>LecturerView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Comparison\SelectPopup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Comparison\SelectPopup.Designer.cs">
-      <DependentUpon>SelectPopup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Review\LecturerReviewView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Review\LecturerReviewView.Designer.cs">
-      <DependentUpon>LecturerReviewView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Review\CourseReviewView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Review\CourseReviewView.Designer.cs">
-      <DependentUpon>CourseReviewView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Review\StudyProgramReviewView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Review\StudyProgramReviewView.Designer.cs">
-      <DependentUpon>StudyProgramReviewView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Individual\StudyProgramView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Individual\StudyProgramView.Designer.cs">
-      <DependentUpon>StudyProgramView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Auth\LoginFormView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Auth\LoginFormView.Designer.cs">
-      <DependentUpon>LoginFormView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Auth\SignupFormView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Auth\SignupFormView.Designer.cs">
-      <DependentUpon>SignupFormView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\HomeView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\HomeView.Designer.cs">
-      <DependentUpon>HomeView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Individual\CourseView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Individual\CourseView.Designer.cs">
-      <DependentUpon>CourseView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Individual\UniversityView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Individual\UniversityView.Designer.cs">
-      <DependentUpon>UniversityView.cs</DependentUpon>
-    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\css\lib\bootstrap-theme.css" />
+    <Content Include="Assets\css\lib\bootstrap-theme.min.css" />
+    <Content Include="Assets\css\lib\bootstrap.css" />
+    <Content Include="Assets\css\lib\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Assets\main.css" />
+    <Content Include="Assets\js\lib\bootstrap.js" />
+    <Content Include="Assets\js\lib\bootstrap.min.js" />
+    <Content Include=".gitignore" />
+    <Content Include="features.md" />
+    <Content Include="LICENSE" />
+    <Content Include="README.md" />
+    <Content Include="Migrations\Data\Course.csv" />
+    <Content Include="Migrations\Data\Faculty.csv" />
+    <Content Include="Migrations\Data\Lecturer.csv" />
+    <Content Include="Migrations\Data\Review.csv" />
+    <Content Include="Migrations\Data\StudyProgram.csv" />
+    <Content Include="Migrations\Data\University.csv" />
+    <Content Include="Migrations\Data\User.csv" />
+    <None Include="packages.config" />
+    <None Include="Assets\js\lib\jquery-3.3.1.intellisense.js" />
+    <Content Include="Assets\js\lib\jquery-3.3.1.js" />
+    <Content Include="Assets\js\lib\jquery-3.3.1.min.js" />
+    <Content Include="Assets\js\lib\jquery-3.3.1.slim.js" />
+    <Content Include="Assets\js\lib\jquery-3.3.1.slim.min.js" />
+    <None Include="Assets\js\lib\jquery.validate-vsdoc.js" />
+    <Content Include="Assets\js\lib\jquery.validate.js" />
+    <Content Include="Assets\js\lib\jquery.validate.min.js" />
+    <Content Include="Assets\js\lib\jquery.validate.unobtrusive.js" />
+    <Content Include="Assets\js\lib\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Assets\js\lib\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\css\lib\bootstrap.min.css.map" />
+    <Content Include="Assets\css\lib\bootstrap.css.map" />
+    <Content Include="Assets\css\lib\bootstrap-theme.min.css.map" />
+    <Content Include="Assets\css\lib\bootstrap-theme.css.map" />
+    <Content Include="Assets\js\lib\jquery-3.3.1.slim.min.map" />
+    <Content Include="Assets\js\lib\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="Migrations\201909221555231_MainEntities.resx">
       <DependentUpon>201909221555231_MainEntities.cs</DependentUpon>
     </EmbeddedResource>
@@ -342,98 +381,38 @@
     <EmbeddedResource Include="Migrations\201910041613380_UniWebsites.resx">
       <DependentUpon>201910041613380_UniWebsites.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="View\AddFormView.resx">
-      <DependentUpon>AddFormView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Comparison\CourseComparisonView.resx">
-      <DependentUpon>CourseComparisonView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Comparison\CourseSelectFormView.resx">
-      <DependentUpon>CourseSelectFormView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Comparison\FacultyComparisonView.resx">
-      <DependentUpon>FacultyComparisonView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Comparison\StudyProgramComparisonView.resx">
-      <DependentUpon>StudyProgramComparisonView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Comparison\LecturerComparisonView.resx">
-      <DependentUpon>LecturerComparisonView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Comparison\UniversityComparisonView.resx">
-      <DependentUpon>UniversityComparisonView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Individual\FacultyView.resx">
-      <DependentUpon>FacultyView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Individual\LecturerView.resx">
-      <DependentUpon>LecturerView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Comparison\SelectPopup.resx">
-      <DependentUpon>SelectPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Review\LecturerReviewView.resx">
-      <DependentUpon>LecturerReviewView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Review\CourseReviewView.resx">
-      <DependentUpon>CourseReviewView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Review\StudyProgramReviewView.resx">
-      <DependentUpon>StudyProgramReviewView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Individual\StudyProgramView.resx">
-      <DependentUpon>StudyProgramView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Auth\LoginFormView.resx">
-      <DependentUpon>LoginFormView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Auth\SignupFormView.resx">
-      <DependentUpon>SignupFormView.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\HomeView.resx">
-      <DependentUpon>HomeView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Individual\CourseView.resx">
-      <DependentUpon>CourseView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Individual\UniversityView.resx">
-      <DependentUpon>UniversityView.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="Migrations\Data\Faculty.csv" />
-    <None Include="Migrations\Data\Lecturer.csv" />
-    <None Include="Migrations\Data\Review.csv" />
-    <None Include="Migrations\Data\StudyProgram.csv" />
-    <None Include="Migrations\Data\Course.csv" />
-    <None Include="Migrations\Data\University.csv" />
-    <None Include="Migrations\Data\User.csv" />
-    <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55974</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44308/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
@@ -441,6 +420,17 @@
     <Error Condition="!Exists('packages\xunit.core.2.4.1\build\xunit.core.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\xunit.core.2.4.1\build\xunit.core.props'))" />
     <Error Condition="!Exists('packages\xunit.core.2.4.1\build\xunit.core.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\xunit.core.2.4.1\build\xunit.core.targets'))" />
     <Error Condition="!Exists('packages\xunit.runner.visualstudio.2.4.1\build\net20\xunit.runner.visualstudio.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\xunit.runner.visualstudio.2.4.1\build\net20\xunit.runner.visualstudio.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props'))" />
   </Target>
   <Import Project="packages\xunit.core.2.4.1\build\xunit.core.targets" Condition="Exists('packages\xunit.core.2.4.1\build\xunit.core.targets')" />
+  <Import Project="packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
 </Project>
