@@ -1,5 +1,4 @@
-﻿using Advisor.DependencyInjection;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
@@ -13,9 +12,6 @@ namespace Advisor
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            Container container = new Container();
-            container.Load();
         }
     }
 }
