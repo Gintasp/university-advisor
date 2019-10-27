@@ -4,6 +4,7 @@ namespace Advisor.Controllers
 {
     public class HomeController : Controller
     {
+        [RequireHttps]
         [Route("")]
         public ActionResult Index()
         {
