@@ -7,7 +7,7 @@ The aim of this project is to create a comprehensive, intuitive and most importa
 2. Help students narrow down their choices by providing the means to quickly and easily compare universities/courses/etc.
 3. Let people voice their opinion and share their experiences with others
 
-[Our full list of planned features](https://github.com/Gintasp/university-advisor/blob/master/List%20of%20Features.md)
+[Our full list of planned features](https://github.com/Gintasp/university-advisor/blob/master/features.md)
 
 #### Project members
 - Gintautas Plonis
