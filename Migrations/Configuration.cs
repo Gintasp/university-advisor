@@ -1,7 +1,6 @@
 namespace Advisor.Migrations
 {
     using Advisor.Models;
-    using Advisor.Service.Auth;
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
@@ -57,7 +56,7 @@ namespace Advisor.Migrations
                 for (int i = 0; i < 10; i++)
                 {
                     Review review = reviews.ElementAt(r.Next(0, reviews.Count));
-                    if(review.StudyProgram == null)
+                    if (review.StudyProgram == null)
                     {
                         program.Reviews.Add(review);
                         context.SaveChanges();
@@ -100,7 +99,7 @@ namespace Advisor.Migrations
             var courses = context.Courses.ToList();
             var programs = context.StudyPrograms.ToList();
             var lecturers = context.Lecturers.ToList();
-            foreach(Course subject in courses)
+            foreach (Course subject in courses)
             {
                 subject.Lecturer = lecturers.ElementAt(r.Next(0, lecturers.Count));
                 subject.StudyProgram = programs.ElementAt(r.Next(0, programs.Count));
@@ -271,17 +270,17 @@ namespace Advisor.Migrations
 
         private void LoadUsers(DatabaseContext context, string filePath)
         {
-            PasswordEncoder encoder = new PasswordEncoder();
-            var users = File.ReadAllLines(filePath).Select(
-                line => new User()
-                {
-                    Name = line.Split(',')[0],
-                    Email = line.Split(',')[1],
-                    Password = encoder.Encode("Pass1")
-                }
-            ).ToList();
-            context.Users.AddRange(users);
-            context.SaveChanges();
+            //PasswordEncoder encoder = new PasswordEncoder();
+            //var users = File.ReadAllLines(filePath).Select(
+            //    line => new User()
+            //    {
+            //        Name = line.Split(',')[0],
+            //        Email = line.Split(',')[1],
+            //        Password = encoder.Encode("Pass1")
+            //    }
+            //).ToList();
+            //context.Users.AddRange(users);
+            //context.SaveChanges();
         }
 
         private void PurgeDatabase(DatabaseContext context)
@@ -305,3 +304,4 @@ namespace Advisor.Migrations
         public string[] Webpages { get; set; }
     }
 }
+
