@@ -178,8 +178,8 @@
     <Compile Include="Controllers\Faculty\FacultyController.cs" />
     <Compile Include="Controllers\Faculty\IFacultyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\Home\HomeController.cs" />
-    <Compile Include="Controllers\Home\IHomeController.cs" />
+    <Compile Include="Controllers\UniversityList\UniversityListController.cs" />
+    <Compile Include="Controllers\UniversityList\IUniversityListController.cs" />
     <Compile Include="Controllers\Lecturer\ILecturerController.cs" />
     <Compile Include="Controllers\Lecturer\LecturerController.cs" />
     <Compile Include="Controllers\Review\CourseReviewController.cs" />
@@ -327,6 +327,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\UniversityList\UniversityList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\images\" />

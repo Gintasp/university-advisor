@@ -1,0 +1,18 @@
+﻿@using Advisor.Models
+@{ 
+    ViewBag.Title = "UniversityList page";
+}
+<div class="row" style="padding-top: 20px;">
+    <div align="center">
+        <h3 class="col-md-12" style="margin-bottom: 20px">What university are you interested in at the moment?</h3>
+        <input class="form-control" type="text" id="Search" placeholder="Search" style="width: 100%" />
+        <br />
+        <select class="form-control" id="universityList" name="universityList" size="10" style="width: 100%;">
+            @foreach (University uni in ViewBag.universities)
+            {
+                <option>@uni</option>
+            }
+        </select>
+        
+    </div>
+</div>
