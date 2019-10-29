@@ -20,12 +20,6 @@
                 @Html.ActionLink("University Advisor", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <!--TODO: change actionLinks in the future-->
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li> 
-                    <li>@Html.ActionLink("Log In", "About", "Home")</li>
-                    <li>@Html.ActionLink("Sign up", "Contact", "Home")</li>
-                </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>

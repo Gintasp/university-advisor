@@ -324,11 +324,12 @@
     <Compile Include="Tests\StatisticCalculatorTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\index.css" />
     <Content Include="Assets\css\lib\bootstrap-theme.css" />
     <Content Include="Assets\css\lib\bootstrap-theme.min.css" />
     <Content Include="Assets\css\lib\bootstrap.css" />
     <Content Include="Assets\css\lib\bootstrap.min.css" />
-    <Content Include="Assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\css\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Assets\js\lib\bootstrap.js" />
     <Content Include="Assets\js\lib\bootstrap.min.js" />
     <Content Include=".gitignore" />
@@ -343,7 +344,7 @@
     <Content Include="Assets\js\lib\jquery.validate.unobtrusive.js" />
     <Content Include="Assets\js\lib\jquery.validate.unobtrusive.min.js" />
     <Content Include="Assets\js\lib\modernizr-2.8.3.js" />
-    <Content Include="Assets\main.css" />
+    <Content Include="Assets\css\layout.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
@@ -359,10 +360,10 @@
     <Content Include="Assets\css\lib\bootstrap-theme.min.css.map" />
     <Content Include="Assets\css\lib\bootstrap.css.map" />
     <Content Include="Assets\css\lib\bootstrap.min.css.map" />
-    <Content Include="Assets\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Assets\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Assets\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Assets\css\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\css\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\css\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Assets\css\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Assets\js\lib\jquery-3.3.1.min.map" />
     <Content Include="Assets\js\lib\jquery-3.3.1.slim.min.map" />
     <Content Include="features.md" />
@@ -415,11 +416,10 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Assets\images\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />

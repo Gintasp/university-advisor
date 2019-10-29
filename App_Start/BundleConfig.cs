@@ -22,7 +22,11 @@ namespace Advisor
 
             bundles.Add(new StyleBundle("~/Assets/css").Include(
                       "~/Assets/css/lib/bootstrap.css",
-                      "~/Assets/main.css"));
+                      "~/Assets/css/lib/bootstrap-theme.css",
+                          "~/Assets/css/layout.css"));
+
+            bundles.Add(new StyleBundle("~/Assets/css/index").Include(
+                      "~/Assets/css/index.css"));
         }
     }
 }
