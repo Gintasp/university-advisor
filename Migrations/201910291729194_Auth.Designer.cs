@@ -7,13 +7,13 @@ namespace Advisor.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddFacultyDesc : IMigrationMetadata
+    public sealed partial class Auth : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddFacultyDesc));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Auth));
         
         string IMigrationMetadata.Id
         {
-            get { return "201910011931117_AddFacultyDesc"; }
+            get { return "201910291729194_Auth"; }
         }
         
         string IMigrationMetadata.Source
