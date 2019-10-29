@@ -45,52 +45,52 @@ namespace Advisor.Migrations
 
         private void LoadReviewRelations(DatabaseContext context)
         {
-            //Random r = new Random();
-            //var programs = context.StudyPrograms.ToList();
-            //var courses = context.Courses.ToList();
-            //var lecturers = context.Lecturers.ToList();
-            //var reviews = context.Reviews.ToList();
+            Random r = new Random();
+            var programs = context.StudyPrograms.ToList();
+            var courses = context.Courses.ToList();
+            var lecturers = context.Lecturers.ToList();
+            var reviews = context.Reviews.ToList();
 
-            //foreach (StudyProgram program in programs)
-            //{
-            //    for (int i = 0; i < 10; i++)
-            //    {
-            //        Review review = reviews.ElementAt(r.Next(0, reviews.Count));
-            //        if (review.StudyProgram == null)
-            //        {
-            //            program.Reviews.Add(review);
-            //            context.SaveChanges();
-            //        }
-            //    }
-            //}
+            foreach (StudyProgram program in programs)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    Review review = reviews.ElementAt(r.Next(0, reviews.Count));
+                    if (review.StudyProgram == null)
+                    {
+                        program.Reviews.Add(review);
+                        context.SaveChanges();
+                    }
+                }
+            }
 
-            //for (int i = 0; i < courses.Count; i++)
-            //{
-            //    Course course = courses.ElementAt(r.Next(0, courses.Count));
-            //    for (int j = 0; j < 80; j++)
-            //    {
-            //        Review review = reviews.ElementAt(r.Next(0, reviews.Count));
-            //        if (review.StudyProgram == null && review.Course == null)
-            //        {
-            //            course.Reviews.Add(review);
-            //            context.SaveChanges();
-            //        }
-            //    }
-            //}
+            for (int i = 0; i < courses.Count; i++)
+            {
+                Course course = courses.ElementAt(r.Next(0, courses.Count));
+                for (int j = 0; j < 80; j++)
+                {
+                    Review review = reviews.ElementAt(r.Next(0, reviews.Count));
+                    if (review.StudyProgram == null && review.Course == null)
+                    {
+                        course.Reviews.Add(review);
+                        context.SaveChanges();
+                    }
+                }
+            }
 
-            //for (int i = 0; i < lecturers.Count; i++)
-            //{
-            //    Lecturer lecturer = lecturers.ElementAt(r.Next(0, lecturers.Count));
-            //    for (int j = 0; j < 80; j++)
-            //    {
-            //        Review review = reviews.ElementAt(r.Next(0, reviews.Count));
-            //        if (review.StudyProgram == null && review.Course == null && review.Lecturer == null)
-            //        {
-            //            lecturer.Reviews.Add(review);
-            //            context.SaveChanges();
-            //        }
-            //    }
-            //}
+            for (int i = 0; i < lecturers.Count; i++)
+            {
+                Lecturer lecturer = lecturers.ElementAt(r.Next(0, lecturers.Count));
+                for (int j = 0; j < 80; j++)
+                {
+                    Review review = reviews.ElementAt(r.Next(0, reviews.Count));
+                    if (review.StudyProgram == null && review.Course == null && review.Lecturer == null)
+                    {
+                        lecturer.Reviews.Add(review);
+                        context.SaveChanges();
+                    }
+                }
+            }
         }
 
         private void LoadCourseRelations(DatabaseContext context)
@@ -240,59 +240,62 @@ namespace Advisor.Migrations
 
         private void LoadReviews(DatabaseContext context, string filePath)
         {
-            //List<User> userList = context.Users.ToList();
-            //Random rand = new Random();
+            List<User> userList = context.Users.ToList();
+            Random rand = new Random();
 
-            //var reviews = File.ReadAllLines(filePath).Select(
-            //    line => new Review()
-            //    {
-            //        Text = line.Split(',')[0],
-            //        UserId = int.Parse(userList.ElementAt(rand.Next(0, userList.Count)).Id),
-            //        OveralRating = int.Parse(line.Split(',')[1]),
-            //        Salary = int.Parse(line.Split(',')[2]),
-            //        Difficulty = int.Parse(line.Split(',')[3]),
-            //        Satisfaction = int.Parse(line.Split(',')[4]),
-            //        RelevantIndustry = bool.Parse(line.Split(',')[5]),
-            //        Usefulness = int.Parse(line.Split(',')[6]),
-            //        Interesting = int.Parse(line.Split(',')[7]),
-            //        TheoryPercentage = int.Parse(line.Split(',')[8]),
-            //        PracticePercentage = 100 - int.Parse(line.Split(',')[8]),
-            //        Competence = int.Parse(line.Split(',')[9]),
-            //        Strictness = int.Parse(line.Split(',')[10]),
-            //        Delivery = int.Parse(line.Split(',')[11]),
-            //        Personality = int.Parse(line.Split(',')[12]),
-            //        CareerStartYear = int.Parse(line.Split(',')[13]),
-            //    }
-            //).ToList();
-            //context.Reviews.AddRange(reviews);
-            //context.SaveChanges();
+            var reviews = File.ReadAllLines(filePath).Select(
+                line => new Review()
+                {
+                    Text = line.Split(',')[0],
+                    UserId = userList.ElementAt(rand.Next(0, userList.Count)).Id,
+                    OveralRating = int.Parse(line.Split(',')[1]),
+                    Salary = int.Parse(line.Split(',')[2]),
+                    Difficulty = int.Parse(line.Split(',')[3]),
+                    Satisfaction = int.Parse(line.Split(',')[4]),
+                    RelevantIndustry = bool.Parse(line.Split(',')[5]),
+                    Usefulness = int.Parse(line.Split(',')[6]),
+                    Interesting = int.Parse(line.Split(',')[7]),
+                    TheoryPercentage = int.Parse(line.Split(',')[8]),
+                    PracticePercentage = 100 - int.Parse(line.Split(',')[8]),
+                    Competence = int.Parse(line.Split(',')[9]),
+                    Strictness = int.Parse(line.Split(',')[10]),
+                    Delivery = int.Parse(line.Split(',')[11]),
+                    Personality = int.Parse(line.Split(',')[12]),
+                    CareerStartYear = int.Parse(line.Split(',')[13]),
+                }
+            ).ToList();
+            context.Reviews.AddRange(reviews);
+            context.SaveChanges();
         }
 
         private void LoadUsers(DatabaseContext context, string filePath)
         {
-            //PasswordEncoder encoder = new PasswordEncoder();
-            //var users = File.ReadAllLines(filePath).Select(
-            //    line => new User()
-            //    {
-            //        Name = line.Split(',')[0],
-            //        Email = line.Split(',')[1],
-            //        Password = encoder.Encode("Pass1")
-            //    }
-            //).ToList();
-            //context.Users.AddRange(users);
-            //context.SaveChanges();
+            var lines = File.ReadAllLines(filePath).ToList();
+            foreach (string line in lines)
+            {
+                User user = new User()
+                {
+                    Name = line.Split(',')[0],
+                    Email = line.Split(',')[1],
+                    UserName = line.Split(',')[2],
+                };
+
+                context.Users.Add(user);
+            }
+
+            context.SaveChanges();
         }
 
         private void PurgeDatabase(DatabaseContext context)
         {
             //WARNING: The order of these function calls does matter
+            context.Database.ExecuteSqlCommand("DELETE FROM [Reviews]; DBCC CHECKIDENT ([Reviews], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [AspNetUsers];");
             context.Database.ExecuteSqlCommand("DELETE FROM [Courses]; DBCC CHECKIDENT ([Courses], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Lecturers]; DBCC CHECKIDENT ([Lecturers], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [StudyPrograms]; DBCC CHECKIDENT ([StudyPrograms], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Faculties]; DBCC CHECKIDENT ([Faculties], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Universities]; DBCC CHECKIDENT ([Universities], RESEED, 0)");
-            context.Database.ExecuteSqlCommand("DELETE FROM [Reviews]; DBCC CHECKIDENT ([Reviews], RESEED, 0)");
         }
     }
 

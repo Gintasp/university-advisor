@@ -242,6 +242,10 @@
     <Compile Include="Migrations\201910291729194_Auth.Designer.cs">
       <DependentUpon>201910291729194_Auth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910291850579_IntToString.cs" />
+    <Compile Include="Migrations\201910291850579_IntToString.Designer.cs">
+      <DependentUpon>201910291850579_IntToString.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Course.cs" />
@@ -306,7 +310,6 @@
     <Content Include="Migrations\Data\Review.csv" />
     <Content Include="Migrations\Data\StudyProgram.csv" />
     <Content Include="Migrations\Data\University.csv" />
-    <Content Include="Migrations\Data\User.csv" />
     <Content Include="Assets\css\lib\bootstrap-theme.css.map" />
     <Content Include="Assets\css\lib\bootstrap-theme.min.css.map" />
     <Content Include="Assets\css\lib\bootstrap.css.map" />
@@ -320,6 +323,7 @@
     <Content Include="features.md" />
     <Content Include="LICENSE" />
     <Content Include="README.md" />
+    <Content Include="Migrations\Data\User.csv" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -390,6 +394,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201910291729194_Auth.resx">
       <DependentUpon>201910291729194_Auth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910291850579_IntToString.resx">
+      <DependentUpon>201910291850579_IntToString.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

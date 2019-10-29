@@ -30,7 +30,6 @@ namespace Advisor.Tests
                     new Review()
                     {
                         CareerStartYear = i,
-                        UserId = i,
                         Competence = i,
                         Delivery = i,
                         Difficulty = i,
