@@ -1,23 +1,27 @@
 ﻿using Advisor.Models;
 using System;
-using System.Data.Entity;
+using System.Linq;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace Advisor.Controllers
 {
     public class UniversityListController : Controller, IUniversityListController
     {
-        [Route("universityList")]
         public ActionResult UniversityList()
         {
             ViewBag.universities = LoadUniversityList();
+
             return View();
         }
-        public DbSet<University> LoadUniversityList()
+
+        public List<University> LoadUniversityList()
         {
-            var unis = DB.Instance.Universities;
+            List<University> unis = DB.Instance.Universities.ToList();
+
             return unis;
         }
+
         public void HandleAddUniversityClick()
         {
             //AddFormView = new AddFormView();
@@ -25,6 +29,7 @@ namespace Advisor.Controllers
             //AddFormView.TitleLabel.Text = "Add new university";
             //AddFormView.ShowDialog();
         }
+
         public void HandleAddNewUniversity(object sender, EventArgs e)
         {
             //University uni = new University() {
@@ -36,12 +41,14 @@ namespace Advisor.Controllers
             //HomeView.UniversityList.Items.Add(uni);
             //AddFormView.Close();
         }
+
         public void HandleUniversitySelect(University uni)
         {
             //HomeView.Hide();
             //UniversityView = new UniversityView(new UniversityController(uni));
             //UniversityView.ShowDialog();
         }
+
         public void HandleSearchBoxChange()
         {
             //if (!string.IsNullOrEmpty(HomeView.SearchBox.Text))

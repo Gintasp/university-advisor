@@ -1,6 +1,6 @@
 ﻿using Advisor.Models;
 using System;
-using System.Data.Entity;
+using System.Collections.Generic;
 
 namespace Advisor.Controllers
 {
@@ -8,7 +8,7 @@ namespace Advisor.Controllers
     {
         void HandleAddUniversityClick();
         void HandleAddNewUniversity(object sender, EventArgs e);
-        DbSet<University> LoadUniversityList();
+        List<University> LoadUniversityList();
         void HandleUniversitySelect(University uni);
         void HandleSearchBoxChange();
     }
