@@ -1,11 +1,10 @@
-﻿using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 
 namespace Advisor.Models
 {
-    public class DatabaseContext : DbContext
+    public class DatabaseContext : IdentityDbContext<User>
     {
-        public DbSet<User> Users { get; set; }
         public DbSet<Faculty> Faculties { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<StudyProgram> StudyPrograms { get; set; }
@@ -13,13 +12,13 @@ namespace Advisor.Models
         public DbSet<Course> Courses { get; set; }
         public DbSet<Lecturer> Lecturers { get; set; }
 
-        public DatabaseContext() : base("DatabaseContext")
+        public DatabaseContext() : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        public static DatabaseContext Create()
         {
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            return new DatabaseContext();
         }
     }
 }
