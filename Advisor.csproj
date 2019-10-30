@@ -217,8 +217,8 @@
     <Compile Include="Controllers\Faculty\FacultyController.cs" />
     <Compile Include="Controllers\Faculty\IFacultyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\Home\HomeController.cs" />
-    <Compile Include="Controllers\Home\IHomeController.cs" />
+    <Compile Include="Controllers\UniversityList\UniversityListController.cs" />
+    <Compile Include="Controllers\UniversityList\IUniversityListController.cs" />
     <Compile Include="Controllers\Lecturer\ILecturerController.cs" />
     <Compile Include="Controllers\Lecturer\LecturerController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -279,7 +279,6 @@
     <Compile Include="Tests\StatisticCalculatorTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\css\index.css" />
     <Content Include="Assets\css\lib\bootstrap-theme.css" />
     <Content Include="Assets\css\lib\bootstrap-theme.min.css" />
     <Content Include="Assets\css\lib\bootstrap.css" />
@@ -350,6 +349,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\UniversityList\UniversityList.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
