@@ -1,7 +1,6 @@
 namespace Advisor.Migrations
 {
     using Advisor.Models;
-    using Advisor.Service.Auth;
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
@@ -26,7 +25,7 @@ namespace Advisor.Migrations
 
         private void LoadTestData(DatabaseContext context)
         {
-            string dataFolderPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName + "\\Migrations\\Data\\";
+            string dataFolderPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName + "\\Migrations\\Data\\";
 
             //WARNING: The order of these function calls does matter
             LoadUsers(context, dataFolderPath + "User.csv");
@@ -57,7 +56,7 @@ namespace Advisor.Migrations
                 for (int i = 0; i < 10; i++)
                 {
                     Review review = reviews.ElementAt(r.Next(0, reviews.Count));
-                    if(review.StudyProgram == null)
+                    if (review.StudyProgram == null)
                     {
                         program.Reviews.Add(review);
                         context.SaveChanges();
@@ -100,7 +99,7 @@ namespace Advisor.Migrations
             var courses = context.Courses.ToList();
             var programs = context.StudyPrograms.ToList();
             var lecturers = context.Lecturers.ToList();
-            foreach(Course subject in courses)
+            foreach (Course subject in courses)
             {
                 subject.Lecturer = lecturers.ElementAt(r.Next(0, lecturers.Count));
                 subject.StudyProgram = programs.ElementAt(r.Next(0, programs.Count));
@@ -271,29 +270,32 @@ namespace Advisor.Migrations
 
         private void LoadUsers(DatabaseContext context, string filePath)
         {
-            PasswordEncoder encoder = new PasswordEncoder();
-            var users = File.ReadAllLines(filePath).Select(
-                line => new User()
+            var lines = File.ReadAllLines(filePath).ToList();
+            foreach (string line in lines)
+            {
+                User user = new User()
                 {
                     Name = line.Split(',')[0],
                     Email = line.Split(',')[1],
-                    Password = encoder.Encode("Pass1")
-                }
-            ).ToList();
-            context.Users.AddRange(users);
+                    UserName = line.Split(',')[2],
+                };
+
+                context.Users.Add(user);
+            }
+
             context.SaveChanges();
         }
 
         private void PurgeDatabase(DatabaseContext context)
         {
             //WARNING: The order of these function calls does matter
-            context.Database.ExecuteSqlCommand("DELETE FROM [User]; DBCC CHECKIDENT ([User], RESEED, 0)");
-            context.Database.ExecuteSqlCommand("DELETE FROM [Course]; DBCC CHECKIDENT ([Course], RESEED, 0)");
-            context.Database.ExecuteSqlCommand("DELETE FROM [Lecturer]; DBCC CHECKIDENT ([Lecturer], RESEED, 0)");
-            context.Database.ExecuteSqlCommand("DELETE FROM [StudyProgram]; DBCC CHECKIDENT ([StudyProgram], RESEED, 0)");
-            context.Database.ExecuteSqlCommand("DELETE FROM [Faculty]; DBCC CHECKIDENT ([Faculty], RESEED, 0)");
-            context.Database.ExecuteSqlCommand("DELETE FROM [University]; DBCC CHECKIDENT ([University], RESEED, 0)");
-            context.Database.ExecuteSqlCommand("DELETE FROM [Review]; DBCC CHECKIDENT ([Review], RESEED, 0)");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Reviews]; DBCC CHECKIDENT ([Reviews], RESEED, 0)");
+            context.Database.ExecuteSqlCommand("DELETE FROM [AspNetUsers];");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Courses]; DBCC CHECKIDENT ([Courses], RESEED, 0)");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Lecturers]; DBCC CHECKIDENT ([Lecturers], RESEED, 0)");
+            context.Database.ExecuteSqlCommand("DELETE FROM [StudyPrograms]; DBCC CHECKIDENT ([StudyPrograms], RESEED, 0)");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Faculties]; DBCC CHECKIDENT ([Faculties], RESEED, 0)");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Universities]; DBCC CHECKIDENT ([Universities], RESEED, 0)");
         }
     }
 
@@ -305,3 +307,4 @@ namespace Advisor.Migrations
         public string[] Webpages { get; set; }
     }
 }
+

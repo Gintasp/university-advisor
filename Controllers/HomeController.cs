@@ -4,13 +4,11 @@ namespace Advisor.Controllers
 {
     public class HomeController : Controller
     {
-        [Route("")]
         public ActionResult Index()
         {
             return View();
         }
 
-        [Route("about")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -18,7 +16,6 @@ namespace Advisor.Controllers
             return View();
         }
 
-        [Route("contact")]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

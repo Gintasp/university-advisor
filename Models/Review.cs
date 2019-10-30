@@ -14,7 +14,7 @@
         public int Interesting { get; set; }
         public int TheoryPercentage { get; set; }
         public int PracticePercentage { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public int Competence { get; set; }
         public int Strictness { get; set; }
         public int Delivery { get; set; }
