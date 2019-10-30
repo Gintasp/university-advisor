@@ -24,9 +24,6 @@ namespace Advisor
                       "~/Assets/css/lib/bootstrap.css",
                       "~/Assets/css/lib/bootstrap-theme.css",
                           "~/Assets/css/layout.css"));
-
-            bundles.Add(new StyleBundle("~/Assets/css/index").Include(
-                      "~/Assets/css/index.css"));
         }
     }
 }
