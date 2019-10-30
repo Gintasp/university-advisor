@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Configuration;
 using Advisor.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
+using Microsoft.Owin.Security.Google;
 using Owin;
 
 namespace Advisor
@@ -53,14 +55,14 @@ namespace Advisor
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: ConfigurationManager.AppSettings["Auth:Fb:AppId"],
+               appSecret: ConfigurationManager.AppSettings["Auth:Fb:AppSecret"]);
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
-            //    ClientId = "",
-            //    ClientSecret = ""
+            //    ClientId = ConfigurationManager.AppSettings["Auth:Google:ClientId"],
+            //    ClientSecret = ConfigurationManager.AppSettings["Auth:Google:ClientSecret"]
             //});
         }
     }
