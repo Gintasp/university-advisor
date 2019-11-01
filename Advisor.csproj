@@ -217,8 +217,6 @@
     <Compile Include="Controllers\Faculty\FacultyController.cs" />
     <Compile Include="Controllers\Faculty\IFacultyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\UniversityList\UniversityListController.cs" />
-    <Compile Include="Controllers\UniversityList\IUniversityListController.cs" />
     <Compile Include="Controllers\Lecturer\ILecturerController.cs" />
     <Compile Include="Controllers\Lecturer\LecturerController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -337,7 +335,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\UniversityList\UniversityList.cshtml" />
+    <Content Include="Views\University\UniversityList.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -359,6 +357,8 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
+    <Content Include="Views\University\University.cshtml" />
+    <Content Include="Views\Shared\404.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
