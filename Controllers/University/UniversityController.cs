@@ -24,6 +24,7 @@ namespace Advisor.Controllers
                 }
 
                 ViewBag.University = uni;
+                ViewBag.Faculties = uni.Faculties;
 
                 return View("/Views/University/University.cshtml");
             }
@@ -38,7 +39,6 @@ namespace Advisor.Controllers
 
             return View("/Views/University/UniversityList.cshtml");
         }
-
         public void HandlePreviousButtonClick()
         {
             //UniversityView.Hide();
