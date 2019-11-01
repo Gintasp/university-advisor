@@ -2,10 +2,10 @@
 @{
     ViewBag.Title = "Universities";
 }
+<h1><i class="fas fa-graduation-cap"></i>  @ViewBag.University.Title</h1>
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
-            <h1><i class="fas fa-graduation-cap"></i>  @ViewBag.University.Title</h1>
             <h3>About</h3>
             <div class="about-section">
                 <p>
@@ -17,10 +17,32 @@
                     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
             </div>
+            <h3>Statistics</h3>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row">Overall rating</th>
+                        <td id="Rating">#</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"># of faculties</th>
+                        <td id="facultyCount">#</td>
+                    </tr>
+                    <tr>
+                        <th>Average salary</th>
+                        <td id="salary">#</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="col-sm-6">
-            <h3>  </h3>
+        <div class="col-sm-6" style="margin-top:20px">
+       
             <iframe src="https://maps.google.com/maps?q=mif%20&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+           
         </div>
     </div>
 </div>
