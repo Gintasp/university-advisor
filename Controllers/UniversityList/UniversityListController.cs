@@ -10,7 +10,7 @@ namespace Advisor.Controllers
     {
         public ActionResult UniversityList()
         {
-            ViewBag.universities = LoadUniversityList();
+            ViewBag.Universities = LoadUniversityList();
 
             return View();
         }

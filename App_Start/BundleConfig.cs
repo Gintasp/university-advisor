@@ -6,6 +6,7 @@ namespace Advisor
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
+            // Script bundles
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Assets/js/lib/jquery-{version}.js"));
 
@@ -20,10 +21,13 @@ namespace Advisor
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Assets/js/lib/bootstrap.js"));
 
-            bundles.Add(new StyleBundle("~/Assets/css").Include(
-                      "~/Assets/css/lib/bootstrap.css",
-                      "~/Assets/css/lib/bootstrap-theme.css",
-                          "~/Assets/css/layout.css"));
+            // Style bundles
+            bundles.Add(new StyleBundle("~/bundles/css").Include(
+                  "~/Assets/css/lib/bootstrap.css",
+                  "~/Assets/css/lib/bootstrap-theme.css",
+                  "~/Assets/css/universityList.css",
+                  "~/Assets/css/layout.css"
+            ));
         }
     }
 }
