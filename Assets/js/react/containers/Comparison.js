@@ -18,6 +18,7 @@ class ComparisonContainer extends React.Component {
       filtered: [],
       selectedItem: null,
       searchValue: '',
+      stats: null,
     };
   }
 
@@ -59,19 +60,30 @@ class ComparisonContainer extends React.Component {
 
     switch (item.Type) {
       case TYPE_UNIVERSITY:
-        statsProvider.getUniversityData(item.Id);
+        console.log(statsProvider.getUniversityData(item.Id));
+        this.setState({
+          stats: statsProvider.getUniversityData(item.Id),
+        });
         break;
       case TYPE_FACULTY:
-        statsProvider.getFacultyData(item.Id);
+        this.setState({
+          stats: statsProvider.getFacultyData(item.Id),
+        });
         break;
       case TYPE_PROGRAM:
-        statsProvider.getStudyProgramData(item.Id);
+        this.setState({
+          stats: statsProvider.getStudyProgramData(item.Id),
+        });
         break;
       case TYPE_COURSE:
-        statsProvider.getCourseData(item.Id);
+        this.setState({
+          stats: statsProvider.getCourseData(item.Id),
+        });
         break;
       case TYPE_LECTURER:
-        statsProvider.getLecturerData(item.Id);
+        this.setState({
+          stats: statsProvider.getLecturerData(item.Id),
+        });
         break;
     }
   }
