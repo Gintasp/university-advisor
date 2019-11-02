@@ -7,7 +7,7 @@ import {
   TYPE_PROGRAM,
   TYPE_COURSE,
   TYPE_LECTURER,
-} from '../types';
+} from '../config/types';
 import statsProvider from '../service/statsProvider';
 
 class ComparisonContainer extends React.Component {
@@ -62,16 +62,16 @@ class ComparisonContainer extends React.Component {
         statsProvider.getUniversityData(item.Id);
         break;
       case TYPE_FACULTY:
-        console.log('fac');
+        statsProvider.getFacultyData(item.Id);
         break;
       case TYPE_PROGRAM:
-        console.log('program');
+        statsProvider.getStudyProgramData(item.Id);
         break;
       case TYPE_COURSE:
-        console.log('course');
+        statsProvider.getCourseData(item.Id);
         break;
       case TYPE_LECTURER:
-        console.log('lecturer');
+        statsProvider.getLecturerData(item.Id);
         break;
     }
   }

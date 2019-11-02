@@ -1,5 +1,5 @@
 import React from 'react';
-import { TYPE_UNIVERSITY } from '../types';
+import { TYPE_UNIVERSITY } from '../config/types';
 
 const InputDropdown = ({ items, onItemClick, opened }) => {
   if (!opened) {
