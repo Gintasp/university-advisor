@@ -203,8 +203,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\ApiController.cs" />
-    <Compile Include="Controllers\Auth\AuthController.cs" />
-    <Compile Include="Controllers\Auth\IAuthController.cs" />
     <Compile Include="Controllers\Course\CourseController.cs" />
     <Compile Include="Controllers\Course\ICourseController.cs" />
     <Compile Include="Controllers\Faculty\FacultyController.cs" />

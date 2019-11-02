@@ -39,28 +39,6 @@ namespace Advisor.Controllers
             return View("/Views/University/UniversityList.cshtml");
         }
 
-        public void HandlePreviousButtonClick()
-        {
-            //UniversityView.Hide();
-            //HomeView = new HomeView(new HomeController());
-            //HomeView.ShowDialog();
-        }
-
-        public void HandleFacultySelect(Faculty faculty)
-        {
-            //FacultyView = new FacultyView(new FacultyController(faculty), University);
-            //UniversityView.Hide();
-            //FacultyView.ShowDialog();
-        }
-
-        public void HandleAddFacultyClick()
-        {
-            //AddFormView = new AddFormView();
-            //AddFormView.AddButtonClicked += HandleAddFaculty;
-            //AddFormView.TitleLabel.Text = "Add new faculty";
-            //AddFormView.ShowDialog();
-        }
-
         public void HandleAddFaculty(object sender, EventArgs e)
         {
             //Faculty fac = new Faculty()
@@ -77,46 +55,6 @@ namespace Advisor.Controllers
             //AddFormView.Close();
         }
 
-        public void HandleComparisonButtonClick()
-        {
-            //UniversityView.Hide();
-            //UniversityComparisonView = new UniversityComparisonView(new UniversityComparisonController(), University);
-            //UniversityComparisonView.ShowDialog();
-        }
-
-        private void LoadFacultyList()
-        {
-            //UniversityView.FacultyList.Items.Clear();
-            //List<Faculty> faculties = DB.Instance.Faculties.Where(f => f.University.Id == University.Id).ToList();
-            //faculties.ForEach(faculty => UniversityView.FacultyList.Items.Add(faculty));
-        }
-
-        private void LoadStats()
-        {
-            //StatsData statsData = new StatsData();
-            //StatisticCalculator calculator = new StatisticCalculator();
-            //List<Review> reviews = (from r in DB.Instance.Reviews
-            //                               join p in DB.Instance.StudyPrograms on r.StudyProgram.Id equals p.Id
-            //                               join f in DB.Instance.Faculties on p.Faculty.Id equals f.Id
-            //                               join u in DB.Instance.Universities on f.University.Id equals u.Id
-            //                        where u.Id == University.Id
-            //                        select r).ToList();
-            //statsData.AverageSalary = calculator.CalcReviewAverage(reviews, r => r.Salary, 2);
-            //statsData.OveralRating = calculator.CalcReviewAverage(reviews, r => r.OveralRating, 1);
-            //statsData.FacultyCount = University.Faculties.Count;
-            //statsData.ReviewCount = reviews.Count;
-
-            //UniversityView.StatsData = statsData;
-        }
-
-        public void HandleAddUniversityClick()
-        {
-            //AddFormView = new AddFormView();
-            //AddFormView.AddButtonClicked += HandleAddNewUniversity;
-            //AddFormView.TitleLabel.Text = "Add new university";
-            //AddFormView.ShowDialog();
-        }
-
         public void HandleAddNewUniversity(object sender, EventArgs e)
         {
             //University uni = new University() {
@@ -127,30 +65,6 @@ namespace Advisor.Controllers
             //DB.Instance.SaveChanges();
             //HomeView.UniversityList.Items.Add(uni);
             //AddFormView.Close();
-        }
-
-        public void HandleUniversitySelect(University uni)
-        {
-            //HomeView.Hide();
-            //UniversityView = new UniversityView(new UniversityController(uni));
-            //UniversityView.ShowDialog();
-        }
-
-        public void HandleSearchBoxChange()
-        {
-            //if (!string.IsNullOrEmpty(HomeView.SearchBox.Text))
-            //{
-            //    List<University> unis = DB.Instance.Universities.ToList();
-            //    HomeView.UniversityList.Items.Clear();
-            //    foreach (University uni in unis)
-            //    {
-            //        if (uni.Title.ToLower().Contains(HomeView.SearchBox.Text.ToLower()))
-            //        {
-            //            HomeView.UniversityList.Items.Add(uni); 
-            //        }
-            //    }
-            //}
-            //else LoadUniversityList();
         }
     }
 }
