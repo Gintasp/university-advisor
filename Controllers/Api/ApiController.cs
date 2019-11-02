@@ -30,12 +30,12 @@ namespace Advisor.Controllers
                     new CustomResponse("Not found.", 404), Formatting.Indented
                 );
             }
-            StatsData stats = CalculateStats(uni);
+            StatsData stats = CalculateUniversityStats(uni);
 
             return JsonConvert.SerializeObject(stats, Formatting.Indented);
         }
 
-        private StatsData CalculateStats(University uni)
+        private StatsData CalculateUniversityStats(University uni)
         {
             StatisticCalculator calculator = new StatisticCalculator();
             List<Review> reviews = (from r in DB.Instance.Reviews
