@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Advisor.Models;
-using Advisor.Service.Statistics;
-
-namespace Advisor.Controllers
+﻿namespace Advisor.Controllers
 {
     public class FacultyComparisonController : IFacultyComparisonController
     {
@@ -41,29 +36,6 @@ namespace Advisor.Controllers
             //{
             //    FacultyComparisonView.FacultySelectBox2.Items.Add(fac);
             //}
-        }
-        public StatsData BuildFacultyStats(Faculty faculty)
-        {
-            List<Review> reviews = (from r in DB.Instance.Reviews
-                                    join p in DB.Instance.StudyPrograms on r.StudyProgram.Id equals p.Id
-                                    join f in DB.Instance.Faculties on p.Faculty.Id equals f.Id
-                                    where f.Id == faculty.Id
-                                    select r).ToList();
-            StatisticCalculator calc = new StatisticCalculator();
-            StatsData statsData = new StatsData()
-            {
-                ReviewCount = reviews.Count,
-                OveralRating = calc.CalcReviewAverage(reviews, r=>r.OveralRating,1),
-                Satisfaction = calc.CalcReviewAverage(reviews, r => r.Satisfaction, 1),
-                AverageSalary = calc.CalcReviewAverage(reviews, r=> r.Salary,1),
-                LecturerCount = faculty.Lecturers.Count,
-                StudyProgramCount = faculty.StudyPrograms.Count
-            };
-            if (statsData.ReviewCount != 0)
-                statsData.RelevantIndustryPercentage = reviews.Count(r => r.RelevantIndustry == true) * 100 / statsData.ReviewCount;
-
-
-            return statsData;
         }
     }
 }

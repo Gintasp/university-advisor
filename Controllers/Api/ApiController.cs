@@ -30,12 +30,50 @@ namespace Advisor.Controllers
                     new CustomResponse("Not found.", 404), Formatting.Indented
                 );
             }
-            StatsData stats = CalculateUniversityStats(uni);
+            var stats = CalculateUniversityStats(uni);
 
             return JsonConvert.SerializeObject(stats, Formatting.Indented);
         }
 
-        private StatsData CalculateUniversityStats(University uni)
+        [HttpGet]
+        [Route("api/stats/faculty/{id}")]
+        public string FacultyStats(int id)
+        {
+            Faculty faculty = DB.Instance.Faculties.Where(f => f.Id == id).SingleOrDefault();
+            if (faculty == null)
+            {
+                return JsonConvert.SerializeObject(
+                    new CustomResponse("Not found.", 404), Formatting.Indented
+                );
+            }
+            var stats = CalculateFacultyStats(faculty);
+
+            return JsonConvert.SerializeObject(stats, Formatting.Indented);
+        }
+
+        private dynamic CalculateFacultyStats(Faculty faculty)
+        {
+            List<Review> reviews = (from r in DB.Instance.Reviews
+                                    join p in DB.Instance.StudyPrograms on r.StudyProgram.Id equals p.Id
+                                    join f in DB.Instance.Faculties on p.Faculty.Id equals f.Id
+                                    where f.Id == faculty.Id
+                                    select r).ToList();
+            StatisticCalculator calc = new StatisticCalculator();
+            var response = new
+            {
+                review_count = reviews.Count,
+                overal = calc.CalcReviewAverage(reviews, r => r.OveralRating, 1),
+                satisfaction = calc.CalcReviewAverage(reviews, r => r.Satisfaction, 1),
+                salary = calc.CalcReviewAverage(reviews, r => r.Salary, 1),
+                lecturer_count = faculty.Lecturers.Count,
+                study_program_count = faculty.StudyPrograms.Count,
+                relevant_industry = reviews.Count > 0 ? reviews.Count(r => r.RelevantIndustry == true) * 100 / reviews.Count : 0
+            };
+
+            return response;
+        }
+
+        private dynamic CalculateUniversityStats(University uni)
         {
             StatisticCalculator calculator = new StatisticCalculator();
             List<Review> reviews = (from r in DB.Instance.Reviews
@@ -44,25 +82,21 @@ namespace Advisor.Controllers
                                     join u in DB.Instance.Universities on f.University.Id equals u.Id
                                     where u.Id == uni.Id
                                     select r).ToList();
-            StatsData statsData = new StatsData()
+            List<Faculty> faculties = uni.Faculties.ToList();
+            int programCount = 0;
+            faculties.ForEach(f => programCount += f.StudyPrograms.Count);
+            var response = new
             {
-                AverageSalary = calculator.CalcReviewAverage(reviews, r => r.Salary, 2),
-                OveralRating = calculator.CalcReviewAverage(reviews, r => r.OveralRating, 1),
-                Satisfaction = calculator.CalcReviewAverage(reviews, r => r.Satisfaction, 1),
-                FacultyCount = uni.Faculties.Count,
-                ReviewCount = reviews.Count,
-                StudyProgramCount = 0,
+                salary = calculator.CalcReviewAverage(reviews, r => r.Salary, 2),
+                overal = calculator.CalcReviewAverage(reviews, r => r.OveralRating, 1),
+                satisfaction = calculator.CalcReviewAverage(reviews, r => r.Satisfaction, 1),
+                faculty_count = uni.Faculties.Count,
+                review_count = reviews.Count,
+                study_program_count = programCount,
+                relevant_industry = reviews.Count > 0 ? reviews.Count(r => r.RelevantIndustry == true) * 100 / reviews.Count : 0
             };
-            foreach (Faculty f in uni.Faculties)
-            {
-                statsData.StudyProgramCount += f.StudyPrograms.Count;
-            }
-            if (statsData.ReviewCount != 0)
-            {
-                statsData.RelevantIndustryPercentage = reviews.Count(r => r.RelevantIndustry == true) * 100 / statsData.ReviewCount;
-            }
 
-            return statsData;
+            return response;
         }
 
         private List<object> GetAllItems()
