@@ -1,0 +1,23 @@
+﻿using System.Collections.Generic;
+
+namespace Advisor.Models
+{
+    public class Dormitory
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public virtual University University { get; set; }
+        public virtual ICollection<Address> Addresses { get; set; }
+        public virtual ICollection<Review> Reviews { get; set; }
+
+        public Dormitory()
+        {
+        }
+
+        public override string ToString()
+        {
+            return Title;
+        }
+    }
+}

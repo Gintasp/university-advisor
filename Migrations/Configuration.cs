@@ -30,17 +30,54 @@ namespace Advisor.Migrations
             //WARNING: The order of these function calls does matter
             LoadUsers(context, dataFolderPath + "User.csv");
             LoadReviews(context, dataFolderPath + "Review.csv");
+            LoadAddresses(context, dataFolderPath + "Address.csv");
             LoadCourses(context, dataFolderPath + "Course.csv");
             LoadStudyPrograms(context, dataFolderPath + "StudyProgram.csv");
             LoadLecturers(context, dataFolderPath + "Lecturer.csv");
             LoadUniversities(context, "lithuania");
             LoadFaculties(context, dataFolderPath + "Faculty.csv");
+            LoadDormitories(context, dataFolderPath + "Dormitory.csv");
 
             LoadFacultyUniversityRelations(context);
+            LoadDormitoryUniversityRelations(context);
             LoadLecturerFacultyRelations(context);
             LoadStudyProgramFacultyRelations(context);
             LoadCourseRelations(context);
             LoadReviewRelations(context);
+            LoadAddressRelations(context);
+        }
+
+        private void LoadAddressRelations(DatabaseContext context)
+        {
+            Random r = new Random();
+            var faculties = context.Faculties.ToList();
+            var dorms = context.Dormitories.ToList();
+            var addresses = context.Addresses.ToList();
+
+            foreach(Faculty fac in faculties)
+            {
+                while (fac.Addresses.Count == 0)
+                {
+                    Address address = addresses.ElementAt(r.Next(0, addresses.Count));
+                    if (address.Faculty == null)
+                    {
+                        fac.Addresses.Add(address);
+                        context.SaveChanges();
+                    }
+                }
+            }
+            foreach (Dormitory dorm in dorms)
+            {
+                while (dorm.Addresses.Count == 0)
+                {
+                    Address address = addresses.ElementAt(r.Next(0, addresses.Count));
+                    if (address.Faculty == null && address.Dormitory == null)
+                    {
+                        dorm.Addresses.Add(address);
+                        context.SaveChanges();
+                    }
+                }
+            }
         }
 
         private void LoadReviewRelations(DatabaseContext context)
@@ -49,6 +86,7 @@ namespace Advisor.Migrations
             var programs = context.StudyPrograms.ToList();
             var courses = context.Courses.ToList();
             var lecturers = context.Lecturers.ToList();
+            var dorms = context.Dormitories.ToList();
             var reviews = context.Reviews.ToList();
 
             foreach (StudyProgram program in programs)
@@ -87,6 +125,20 @@ namespace Advisor.Migrations
                     if (review.StudyProgram == null && review.Course == null && review.Lecturer == null)
                     {
                         lecturer.Reviews.Add(review);
+                        context.SaveChanges();
+                    }
+                }
+            }
+
+            for (int i = 0; i < dorms.Count; i++)
+            {
+                Dormitory dorm = dorms.ElementAt(r.Next(0, dorms.Count));
+                for (int j = 0; j < 80; j++)
+                {
+                    Review review = reviews.ElementAt(r.Next(0, reviews.Count));
+                    if (review.StudyProgram == null && review.Course == null && review.Lecturer == null && review.Dormitory == null)
+                    {
+                        dorm.Reviews.Add(review);
                         context.SaveChanges();
                     }
                 }
@@ -131,6 +183,18 @@ namespace Advisor.Migrations
             }
         }
 
+        private void LoadDormitoryUniversityRelations(DatabaseContext context)
+        {
+            Random r = new Random();
+            var dorms = context.Dormitories.ToList();
+            var unis = context.Universities.ToList();
+            foreach (Dormitory dorm in dorms)
+            {
+                dorm.University = unis.ElementAt(r.Next(0, unis.Count));
+                context.SaveChanges();
+            }
+        }
+
         private void LoadFacultyUniversityRelations(DatabaseContext context)
         {
             Random r = new Random();
@@ -141,6 +205,45 @@ namespace Advisor.Migrations
                 fac.University = unis.ElementAt(r.Next(0, unis.Count));
                 context.SaveChanges();
             }
+        }
+
+        private void LoadAddresses(DatabaseContext context, string filePath)
+        {
+            var addressList = File.ReadAllLines(filePath).ToList();
+            List<Address> addressesToWrite = new List<Address>();
+            foreach (string line in addressList)
+            {
+                Address newAddress = new Address()
+                {
+                    City = line.Split(',')[0],
+                    Street = line.Split(',')[1],
+                    Nr = int.Parse(line.Split(',')[2])
+                };
+                addressesToWrite.Add(newAddress);
+            }
+
+            context.Addresses.AddRange(addressesToWrite);
+            context.SaveChanges();
+        }
+
+        private void LoadDormitories(DatabaseContext context, string filePath)
+        {
+            var dormitoryList = File.ReadAllLines(filePath).ToList();
+            List<Dormitory> dormitoriesToWrite = new List<Dormitory>();
+            foreach (string line in dormitoryList)
+            {
+                Dormitory newDormitory = new Dormitory()
+                {
+                    Title = line.Split(',')[0],
+                    Description = line.Split(',')[1],
+                    Reviews = new Collection<Review>(),
+                    Addresses = new Collection<Address>()
+                };
+                dormitoriesToWrite.Add(newDormitory);
+            }
+
+            context.Dormitories.AddRange(dormitoriesToWrite);
+            context.SaveChanges();
         }
 
         private void LoadFaculties(DatabaseContext context, string filePath)
@@ -154,7 +257,8 @@ namespace Advisor.Migrations
                     Title = line.Split(',')[0],
                     Description = line.Split(',')[1],
                     Lecturers = new Collection<Lecturer>(),
-                    StudyPrograms = new Collection<StudyProgram>()
+                    StudyPrograms = new Collection<StudyProgram>(),
+                    Addresses = new Collection<Address>()
                 };
                 facultiesToWrite.Add(newFaculty);
             }
@@ -289,12 +393,14 @@ namespace Advisor.Migrations
         private void PurgeDatabase(DatabaseContext context)
         {
             //WARNING: The order of these function calls does matter
+            context.Database.ExecuteSqlCommand("DELETE FROM [Addresses]; DBCC CHECKIDENT ([Addresses], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Reviews]; DBCC CHECKIDENT ([Reviews], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [AspNetUsers];");
             context.Database.ExecuteSqlCommand("DELETE FROM [Courses]; DBCC CHECKIDENT ([Courses], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Lecturers]; DBCC CHECKIDENT ([Lecturers], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [StudyPrograms]; DBCC CHECKIDENT ([StudyPrograms], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Faculties]; DBCC CHECKIDENT ([Faculties], RESEED, 0)");
+            context.Database.ExecuteSqlCommand("DELETE FROM [Dormitories]; DBCC CHECKIDENT ([Dormitories], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Universities]; DBCC CHECKIDENT ([Universities], RESEED, 0)");
         }
     }

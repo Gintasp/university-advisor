@@ -23,6 +23,7 @@
         public virtual Course Course { get; set; }
         public virtual StudyProgram StudyProgram { get; set; }
         public virtual Lecturer Lecturer { get; set; }
+        public virtual Dormitory Dormitory { get; set; }
 
         public Review()
         {
