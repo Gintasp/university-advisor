@@ -1,6 +1,6 @@
 ﻿using Advisor.Http.Response;
 using Advisor.Models;
-using Advisor.Service.Statistics;
+using Advisor.Services.Statistics;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +10,8 @@ namespace Advisor.Controllers
 {
     public class ApiController : Controller
     {
+        private StatsBuilder StatsBuilder = new StatsBuilder(new StatisticCalculator());
+
         [HttpGet]
         [Route("api/items")]
         public string Index()
@@ -30,7 +32,7 @@ namespace Advisor.Controllers
                     new CustomResponse("Not found.", 404), Formatting.Indented
                 );
             }
-            var stats = CalculateUniversityStats(uni);
+            var stats = StatsBuilder.BuildUniversityStats(uni);
 
             return JsonConvert.SerializeObject(stats, Formatting.Indented);
         }
@@ -46,57 +48,9 @@ namespace Advisor.Controllers
                     new CustomResponse("Not found.", 404), Formatting.Indented
                 );
             }
-            var stats = CalculateFacultyStats(faculty);
+            var stats = StatsBuilder.BuildFacultyStats(faculty);
 
             return JsonConvert.SerializeObject(stats, Formatting.Indented);
-        }
-
-        private dynamic CalculateFacultyStats(Faculty faculty)
-        {
-            List<Review> reviews = (from r in DB.Instance.Reviews
-                                    join p in DB.Instance.StudyPrograms on r.StudyProgram.Id equals p.Id
-                                    join f in DB.Instance.Faculties on p.Faculty.Id equals f.Id
-                                    where f.Id == faculty.Id
-                                    select r).ToList();
-            StatisticCalculator calc = new StatisticCalculator();
-            var response = new
-            {
-                review_count = reviews.Count,
-                overal = calc.CalcReviewAverage(reviews, r => r.OveralRating, 1),
-                satisfaction = calc.CalcReviewAverage(reviews, r => r.Satisfaction, 1),
-                salary = calc.CalcReviewAverage(reviews, r => r.Salary, 1),
-                lecturer_count = faculty.Lecturers.Count,
-                study_program_count = faculty.StudyPrograms.Count,
-                relevant_industry = reviews.Count > 0 ? reviews.Count(r => r.RelevantIndustry == true) * 100 / reviews.Count : 0
-            };
-
-            return response;
-        }
-
-        private dynamic CalculateUniversityStats(University uni)
-        {
-            StatisticCalculator calculator = new StatisticCalculator();
-            List<Review> reviews = (from r in DB.Instance.Reviews
-                                    join p in DB.Instance.StudyPrograms on r.StudyProgram.Id equals p.Id
-                                    join f in DB.Instance.Faculties on p.Faculty.Id equals f.Id
-                                    join u in DB.Instance.Universities on f.University.Id equals u.Id
-                                    where u.Id == uni.Id
-                                    select r).ToList();
-            List<Faculty> faculties = uni.Faculties.ToList();
-            int programCount = 0;
-            faculties.ForEach(f => programCount += f.StudyPrograms.Count);
-            var response = new
-            {
-                salary = calculator.CalcReviewAverage(reviews, r => r.Salary, 2),
-                overal = calculator.CalcReviewAverage(reviews, r => r.OveralRating, 1),
-                satisfaction = calculator.CalcReviewAverage(reviews, r => r.Satisfaction, 1),
-                faculty_count = uni.Faculties.Count,
-                review_count = reviews.Count,
-                study_program_count = programCount,
-                relevant_industry = reviews.Count > 0 ? reviews.Count(r => r.RelevantIndustry == true) * 100 / reviews.Count : 0
-            };
-
-            return response;
         }
 
         private List<object> GetAllItems()

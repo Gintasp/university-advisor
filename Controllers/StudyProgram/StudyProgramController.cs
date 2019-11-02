@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using Advisor.Models;
 using System.Linq;
-using System.Collections.ObjectModel;
-using Advisor.Service.Statistics;
-using Advisor.Service.Validator;
+using Advisor.Services.Statistics;
 
 namespace Advisor.Controllers
 {

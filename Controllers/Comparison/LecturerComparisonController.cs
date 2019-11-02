@@ -2,7 +2,7 @@
 using System.Linq;
 using Advisor.Models;
 using System.Collections.Generic;
-using Advisor.Service.Statistics;
+using Advisor.Services.Statistics;
 
 namespace Advisor.Controllers
 {

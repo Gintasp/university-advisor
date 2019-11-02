@@ -265,6 +265,7 @@
     <Compile Include="Services\Auth\SessionStorage.cs" />
     <Compile Include="Services\Statistics\IStatisticCalculator.cs" />
     <Compile Include="Services\Statistics\StatisticCalculator.cs" />
+    <Compile Include="Services\Statistics\StatsBuilder.cs" />
     <Compile Include="Services\Validator\ILoginDataValidator.cs" />
     <Compile Include="Services\Validator\IReviewValidator.cs" />
     <Compile Include="Services\Validator\ISignupDataValidator.cs" />
