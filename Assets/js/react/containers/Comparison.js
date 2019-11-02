@@ -12,7 +12,11 @@ class ComparisonContainer extends React.Component {
   componentDidMount() {
     axios
       .get('/api/items')
-      .then(res => console.log(res.data))
+      .then(res => {
+        this.setState({
+          items: res.data,
+        });
+      })
       .catch(err => console.log(err));
   }
 
