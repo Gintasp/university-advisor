@@ -6,7 +6,7 @@ var BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 
 module.exports = {
     entry: {
-        app: "./Assets/js/react/app.js"
+        comparison: "./Assets/js/react/comparison.js"
     },
     output: {
         path: path.resolve(__dirname, "./Assets/js/dist/"),

@@ -229,9 +229,9 @@
     <Compile Include="Controllers\Review\StudyProgramReviewController.cs" />
     <Compile Include="Controllers\StudyProgram\IStudyProgramController.cs" />
     <Compile Include="Controllers\StudyProgram\StudyProgramController.cs" />
-    <Compile Include="Controllers\University\IUniversityComparisonController.cs" />
+    <Compile Include="Controllers\Comparison\IUniversityComparisonController.cs" />
     <Compile Include="Controllers\University\IUniversityController.cs" />
-    <Compile Include="Controllers\University\UniversityComparisonController.cs" />
+    <Compile Include="Controllers\Comparison\UniversityComparisonController.cs" />
     <Compile Include="Controllers\University\UniversityController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -287,7 +287,7 @@
     <Content Include="Assets\js\lib\bootstrap.min.js" />
     <Content Include=".gitignore" />
     <Content Include=".babelrc" />
-    <Content Include="Assets\js\react\app.js" />
+    <Content Include="Assets\js\react\comparison.js" />
     <Content Include="webpack.config.js" />
     <None Include="Assets\js\lib\jquery-3.3.1.intellisense.js" />
     <Content Include="Assets\js\lib\jquery-3.3.1.js" />
@@ -362,6 +362,7 @@
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\University\University.cshtml" />
     <Content Include="Views\Shared\404.cshtml" />
+    <Content Include="Views\Comparison\Comparison.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
