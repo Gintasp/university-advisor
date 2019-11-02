@@ -1,17 +1,23 @@
 ﻿using Advisor.Models;
 using System;
+using System.Web.Mvc;
+using System.Collections.Generic;
 
 namespace Advisor.Controllers
 {
-    public class FacultyController : IFacultyController
+    public class FacultyController : Controller, IFacultyController
     {
         public Faculty Faculty { get; set; }
 
-        public FacultyController(Faculty faculty)
+        public FacultyController()
         {
-            Faculty = faculty;
-        }
 
+        }
+        [Route("faculties/{id?}", Name = "faculty_page")]
+        public ActionResult Index(int? id)
+        {
+            return View("/Views/Faculty.cshtml");
+        }
         public void HandlePreviousButtonClick(University uni)
         {
             //FacultyView.Hide();
