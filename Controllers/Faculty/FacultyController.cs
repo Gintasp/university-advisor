@@ -130,7 +130,7 @@ namespace Advisor.Controllers
                                           join f in DB.Instance.Faculties on p.Faculty.Id equals f.Id
                                           where f.Id == Faculty.Id
                                           select r).ToList();
-            statsData.OverallRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
+            statsData.OveralRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
             statsData.StudyProgramCount = Faculty.StudyPrograms.Count;
             statsData.Satisfaction = calculator.CalcReviewAverage(programReviews, r => r.Satisfaction, 1);
             statsData.AverageSalary = calculator.CalcReviewAverage(programReviews, r => r.Salary, 1);
