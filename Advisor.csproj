@@ -278,6 +278,7 @@
     <Compile Include="Tests\StatisticCalculatorTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\comparison.css" />
     <Content Include="Assets\css\lib\bootstrap-theme.css" />
     <Content Include="Assets\css\lib\bootstrap-theme.min.css" />
     <Content Include="Assets\css\lib\bootstrap.css" />
@@ -289,6 +290,7 @@
     <Content Include=".gitignore" />
     <Content Include=".babelrc" />
     <Content Include="Assets\js\react\comparison.js" />
+    <Content Include="Assets\js\react\components\InputDropdown.js" />
     <Content Include="Assets\js\react\containers\Comparison.js" />
     <Content Include="webpack.config.js" />
     <None Include="Assets\js\lib\jquery-3.3.1.intellisense.js" />

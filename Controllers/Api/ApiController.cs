@@ -32,7 +32,7 @@ namespace Advisor.Controllers
                 new { c.Id, c.Title, University = c.StudyProgram.Faculty.University.Title, Type = "Course" }
             );
             var lecturers = DB.Instance.Lecturers.Select(l =>
-                new { l.Id, l.Name, University = l.Faculty.University.Title, Type = "Lecturer" }
+                new { l.Id, Title = l.Name, University = l.Faculty.University.Title, Type = "Lecturer" }
             );
             List<object> items = new List<object>();
             items.AddRange(unis);
