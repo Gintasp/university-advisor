@@ -48,5 +48,27 @@
             <iframe class="faculty-map" src="https://maps.google.com/maps?q=mif%20&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
             <a class="compare-link" href="#"><h4>Compare with other faculties<i class="fas fa-arrow-right"></i></h4></a>
         </div>
+   </div>
+    <div class="row">
+        <h3>Study programs</h3>
+        <div class="d-flex flex-wrap">
+            @for (int i = 0; i < 4; i++)
+            {
+                <div class="studyprogram-container card">
+                    <h4>Title</h4>
+                    <div class="d-flex">
+                        <div class="d-flex mr-5">
+                            <p class="mr-5">
+                                <i class="fas fa-star"></i>
+                            </p>
+                            <p class="mr-5">
+                                Rating #
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
 </div>
 
