@@ -202,6 +202,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\ApiController.cs" />
     <Compile Include="Controllers\Auth\AuthController.cs" />
     <Compile Include="Controllers\Auth\IAuthController.cs" />
     <Compile Include="Controllers\Comparison\CourseComparisonController.cs" />
@@ -288,6 +289,7 @@
     <Content Include=".gitignore" />
     <Content Include=".babelrc" />
     <Content Include="Assets\js\react\comparison.js" />
+    <Content Include="Assets\js\react\containers\Comparison.js" />
     <Content Include="webpack.config.js" />
     <None Include="Assets\js\lib\jquery-3.3.1.intellisense.js" />
     <Content Include="Assets\js\lib\jquery-3.3.1.js" />
@@ -367,6 +369,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Assets\images\" />
+    <Folder Include="Views\Api\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="package.json" />
