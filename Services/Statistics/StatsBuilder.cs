@@ -13,6 +13,23 @@ namespace Advisor.Services.Statistics
             Calculator = statisticCalculator;
         }
 
+        public dynamic BuildCourseStats(Course course)
+        {
+            List<Review> reviews = course.Reviews.ToList();
+            var stats = new
+            {
+                review_count = reviews.Count,
+                satisfaction = Calculator.CalcReviewAverage(reviews, r => r.Satisfaction, 1),
+                difficulty = Calculator.CalcReviewAverage(reviews, r => r.Difficulty, 1),
+                usefulness = Calculator.CalcReviewAverage(reviews, r => r.Usefulness, 1),
+                interesting = Calculator.CalcReviewAverage(reviews, r => r.Interesting, 1),
+                theory = Calculator.CalcReviewAverage(reviews, r => r.TheoryPercentage, 1),
+                practice = Calculator.CalcReviewAverage(reviews, r => r.PracticePercentage, 1)
+            };
+
+            return stats;
+        }
+
         public dynamic BuildStudyProgramStats(StudyProgram program)
         {
             List<Review> programReviews = program.Reviews.ToList();

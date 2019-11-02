@@ -69,6 +69,22 @@ namespace Advisor.Controllers
             return JsonConvert.SerializeObject(stats, Formatting.Indented);
         }
 
+        [HttpGet]
+        [Route("api/stats/course/{id}")]
+        public string CourseStats(int id)
+        {
+            Course course = DB.Instance.Courses.Where(c => c.Id == id).SingleOrDefault();
+            if (course == null)
+            {
+                return JsonConvert.SerializeObject(
+                    new CustomResponse("Not found.", 404), Formatting.Indented
+                );
+            }
+            var stats = StatsBuilder.BuildCourseStats(course);
+
+            return JsonConvert.SerializeObject(stats, Formatting.Indented);
+        }
+
         private List<object> GetAllItems()
         {
             var unis = DB.Instance.Universities.Select(u =>
