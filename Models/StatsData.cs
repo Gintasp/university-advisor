@@ -5,7 +5,7 @@
         public float Usefulness { get; set; }
         public float Satisfaction { get; set; }
         public float Difficulty { get; set; }
-        public float OveralRating { get; set; }
+        public float OverallRating { get; set; }
         public float Interesting { get; set; }
         public float Theory { get; set; }
         public float Practice { get; set; }

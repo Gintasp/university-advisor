@@ -16,7 +16,7 @@ namespace Advisor.Controllers
             //int satisfaction = Convert.ToInt32(CourseReviewView.Satisfaction.Value);
             //int usefulness = Convert.ToInt32(CourseReviewView.Usefulness.Value);
             //int interesting = Convert.ToInt32(CourseReviewView.Interesting.Value);
-            //int overalRating = Convert.ToInt32(CourseReviewView.OveralRating.Value);
+            //int overalRating = Convert.ToInt32(CourseReviewView.OverallRating.Value);
             //int theoryPercentage = Convert.ToInt32(CourseReviewView.TheoryPercentage.Value);
             //int practicePercentage = Convert.ToInt32(CourseReviewView.PracticePercentage.Value);
             //string textReview = CourseReviewView.TextReview.Text;
@@ -27,7 +27,7 @@ namespace Advisor.Controllers
             //    Satisfaction = satisfaction,
             //    Usefulness = usefulness,
             //    Interesting = interesting,
-            //    OveralRating = overalRating,
+            //    OverallRating = overalRating,
             //    TheoryPercentage = theoryPercentage,
             //    PracticePercentage =practicePercentage,
             //    Text = textReview
