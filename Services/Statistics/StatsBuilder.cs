@@ -51,11 +51,11 @@ namespace Advisor.Services.Statistics
             List<Review> programReviews = program.Reviews.ToList();
             var stats = new
             {
-                review_count = programReviews.Count(),
+                review_count = programReviews.Count,
                 overal = Calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1),
                 satisfaction = Calculator.CalcReviewAverage(programReviews, r => r.Satisfaction, 1),
                 salary = Calculator.CalcReviewAverage(programReviews, r => r.Salary, 1),
-                course_count = program.Courses.Count(),
+                course_count = program.Courses.Count,
                 relevant_industry = programReviews.Count > 0 ? programReviews.Count(r => r.RelevantIndustry == true) * 100 / programReviews.Count : 0
             };
 
