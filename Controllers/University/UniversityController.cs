@@ -109,14 +109,6 @@ namespace Advisor.Controllers
             //UniversityView.StatsData = statsData;
         }
 
-        public ActionResult UniversityList()
-        {
-            List<University> unis = DB.Instance.Universities.ToList();
-            ViewBag.Universities = unis;
-
-            return View("/Views/University/UniversityList.cshtml");
-        }
-
         public void HandleAddUniversityClick()
         {
             //AddFormView = new AddFormView();
