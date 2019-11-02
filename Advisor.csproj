@@ -205,8 +205,6 @@
     <Compile Include="Controllers\Api\ApiController.cs" />
     <Compile Include="Controllers\Auth\AuthController.cs" />
     <Compile Include="Controllers\Auth\IAuthController.cs" />
-    <Compile Include="Controllers\Comparison\ILecturerComparisonController.cs" />
-    <Compile Include="Controllers\Comparison\LecturerComparisonController.cs" />
     <Compile Include="Controllers\Course\CourseController.cs" />
     <Compile Include="Controllers\Course\ICourseController.cs" />
     <Compile Include="Controllers\Faculty\FacultyController.cs" />

@@ -85,6 +85,22 @@ namespace Advisor.Controllers
             return JsonConvert.SerializeObject(stats, Formatting.Indented);
         }
 
+        [HttpGet]
+        [Route("api/stats/lecturer/{id}")]
+        public string LecturerStats(int id)
+        {
+            Lecturer lecturer = DB.Instance.Lecturers.Where(l => l.Id == id).SingleOrDefault();
+            if (lecturer == null)
+            {
+                return JsonConvert.SerializeObject(
+                    new CustomResponse("Not found.", 404), Formatting.Indented
+                );
+            }
+            var stats = StatsBuilder.BuildLecturerStats(lecturer);
+
+            return JsonConvert.SerializeObject(stats, Formatting.Indented);
+        }
+
         private List<object> GetAllItems()
         {
             var unis = DB.Instance.Universities.Select(u =>

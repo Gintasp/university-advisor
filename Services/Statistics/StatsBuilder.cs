@@ -30,6 +30,22 @@ namespace Advisor.Services.Statistics
             return stats;
         }
 
+        public dynamic BuildLecturerStats(Lecturer lecturer)
+        {
+            List<Review> reviews = lecturer.Reviews.ToList();
+            var stats = new
+            {
+                review_count = reviews.Count,
+                overal = Calculator.CalcReviewAverage(reviews, r => r.OveralRating, 1),
+                competence = Calculator.CalcReviewAverage(reviews, r => r.Competence, 1),
+                strictness = Calculator.CalcReviewAverage(reviews, r => r.Strictness, 1),
+                delivery = Calculator.CalcReviewAverage(reviews, r => r.Delivery, 1),
+                personality = Calculator.CalcReviewAverage(reviews, r => r.Personality, 1),
+            };
+
+            return stats;
+        }
+
         public dynamic BuildStudyProgramStats(StudyProgram program)
         {
             List<Review> programReviews = program.Reviews.ToList();
