@@ -51,7 +51,7 @@ namespace Advisor.Controllers
             //        Satisfaction = satisfaction,
             //        RelevantIndustry = relevantIndustry,
             //        CareerStartYear = careerStartYear,
-            //        OverallRating = overalRating,
+            //        OveralRating = overalRating,
             //        Text = text
             //    };
             //    SaveReview(review);

@@ -49,7 +49,7 @@ namespace Advisor.Controllers
             statsData.Usefulness = calculator.CalcReviewAverage(courseReviews, r => r.Usefulness, 1);
             statsData.Difficulty = calculator.CalcReviewAverage(courseReviews, r => r.Difficulty, 1);
             statsData.Satisfaction = calculator.CalcReviewAverage(courseReviews, r => r.Satisfaction, 1);
-            statsData.OverallRating = calculator.CalcReviewAverage(courseReviews, r => r.OveralRating, 1);
+            statsData.OveralRating = calculator.CalcReviewAverage(courseReviews, r => r.OveralRating, 1);
             statsData.Theory = calculator.CalcReviewAverage(courseReviews, r => r.TheoryPercentage, 1);
             statsData.Practice = calculator.CalcReviewAverage(courseReviews, r => r.PracticePercentage, 1);
 

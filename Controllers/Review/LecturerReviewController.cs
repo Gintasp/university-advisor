@@ -17,7 +17,7 @@ namespace Advisor.Controllers
             //int delivery = Convert.ToInt32(LecturerReviewView.Delivery.Value);
             //int interesting = Convert.ToInt32(LecturerReviewView.Interesting.Value);
             //int personality = Convert.ToInt32(LecturerReviewView.Personality.Value);
-            //int overalRating = Convert.ToInt32(LecturerReviewView.OverallRating.Value);
+            //int overalRating = Convert.ToInt32(LecturerReviewView.OveralRating.Value);
             //string textReview = LecturerReviewView.TextReview.Text;
             //Review review = new Review
             //{
@@ -26,7 +26,7 @@ namespace Advisor.Controllers
             //    Delivery = delivery,
             //    Interesting = interesting,
             //    Personality = personality,
-            //    OverallRating = overalRating,
+            //    OveralRating = overalRating,
             //    Text = textReview
             //};
 

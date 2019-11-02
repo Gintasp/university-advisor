@@ -56,7 +56,7 @@ namespace Advisor.Controllers
             StatisticCalculator calculator = new StatisticCalculator();
             List<Review> programReviews = program.Reviews.ToList();
             statsData.ReviewCount = programReviews.Count();
-            statsData.OverallRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
+            statsData.OveralRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
             statsData.Satisfaction = calculator.CalcReviewAverage(programReviews, r => r.Satisfaction, 1);
             statsData.AverageSalary = calculator.CalcReviewAverage(programReviews, r => r.Salary, 1);
             statsData.CourseCount = program.Courses.Count();

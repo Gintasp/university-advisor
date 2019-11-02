@@ -41,7 +41,7 @@ namespace Advisor.Controllers
             statsData.AverageSalary = calculator.CalcReviewAverage(programReviews, r => r.Salary, 1);
             statsData.Difficulty = calculator.CalcReviewAverage(programReviews, r => r.Difficulty, 1);
             statsData.Satisfaction = calculator.CalcReviewAverage(programReviews, r => r.Satisfaction, 1);
-            statsData.OverallRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
+            statsData.OveralRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
 
             //StudyProgramView.StatsData = statsData;
         }

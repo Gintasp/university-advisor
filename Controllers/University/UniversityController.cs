@@ -101,7 +101,7 @@ namespace Advisor.Controllers
             //                        where u.Id == University.Id
             //                        select r).ToList();
             //statsData.AverageSalary = calculator.CalcReviewAverage(reviews, r => r.Salary, 2);
-            //statsData.OverallRating = calculator.CalcReviewAverage(reviews, r => r.OverallRating, 1);
+            //statsData.OveralRating = calculator.CalcReviewAverage(reviews, r => r.OveralRating, 1);
             //statsData.FacultyCount = University.Faculties.Count;
             //statsData.ReviewCount = reviews.Count;
 

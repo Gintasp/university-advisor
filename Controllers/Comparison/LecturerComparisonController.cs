@@ -94,7 +94,7 @@ namespace Advisor.Controllers
             StatsData statsData = new StatsData()
             {
                 ReviewCount = reviews.Count,
-                OverallRating = calc.CalcReviewAverage(reviews, r => r.OveralRating, 1),
+                OveralRating = calc.CalcReviewAverage(reviews, r => r.OveralRating, 1),
                 Competence = calc.CalcReviewAverage(reviews, r => r.Competence, 1),
                 Strictness = calc.CalcReviewAverage(reviews, r => r.Strictness, 1),
                 Delivery = calc.CalcReviewAverage(reviews, r => r.Delivery, 1),
