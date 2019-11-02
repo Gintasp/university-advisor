@@ -38,7 +38,6 @@ namespace Advisor.Controllers
 
             return View("/Views/University/UniversityList.cshtml");
         }
-
         public void HandlePreviousButtonClick()
         {
             //UniversityView.Hide();
