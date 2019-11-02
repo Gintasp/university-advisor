@@ -8,6 +8,7 @@ import {
   TYPE_COURSE,
   TYPE_LECTURER,
 } from '../types';
+import statsProvider from '../service/statsProvider';
 
 class ComparisonContainer extends React.Component {
   constructor(props) {
@@ -58,7 +59,7 @@ class ComparisonContainer extends React.Component {
 
     switch (item.Type) {
       case TYPE_UNIVERSITY:
-        console.log('uni');
+        statsProvider.getUniversityData(item.Id);
         break;
       case TYPE_FACULTY:
         console.log('fac');

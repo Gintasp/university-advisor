@@ -1,4 +1,6 @@
-﻿using Advisor.Models;
+﻿using Advisor.Http.Response;
+using Advisor.Models;
+using Advisor.Service.Statistics;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +17,41 @@ namespace Advisor.Controllers
             string json = JsonConvert.SerializeObject(GetAllItems(), Formatting.Indented);
 
             return json;
+        }
+
+        [HttpGet]
+        [Route("api/stats/university/{id}")]
+        public string UniversityStats(int id)
+        {
+            University uni = DB.Instance.Universities.Where(u => u.Id == id).SingleOrDefault();
+            if (uni == null)
+            {
+                return JsonConvert.SerializeObject(
+                    new CustomResponse("Not found.", 404), Formatting.Indented
+                );
+            }
+
+            StatsData statsData = new StatsData();
+            StatisticCalculator calculator = new StatisticCalculator();
+            List<Review> reviews = (from r in DB.Instance.Reviews
+                                    join p in DB.Instance.StudyPrograms on r.StudyProgram.Id equals p.Id
+                                    join f in DB.Instance.Faculties on p.Faculty.Id equals f.Id
+                                    join u in DB.Instance.Universities on f.University.Id equals u.Id
+                                    where u.Id == uni.Id
+                                    select r).ToList();
+            statsData.AverageSalary = calculator.CalcReviewAverage(reviews, r => r.Salary, 2);
+            statsData.OveralRating = calculator.CalcReviewAverage(reviews, r => r.OveralRating, 1);
+            statsData.Satisfaction = calculator.CalcReviewAverage(reviews, r => r.Satisfaction, 1);
+            statsData.FacultyCount = uni.Faculties.Count;
+            statsData.ReviewCount = reviews.Count;
+            statsData.StudyProgramCount = 0;
+            foreach (Faculty f in uni.Faculties)
+            {
+                statsData.StudyProgramCount += f.StudyPrograms.Count;
+            }
+            if (statsData.ReviewCount != 0) statsData.RelevantIndustryPercentage = reviews.Count(r => r.RelevantIndustry == true) * 100 / statsData.ReviewCount;
+            
+            return JsonConvert.SerializeObject(statsData, Formatting.Indented);
         }
 
         private List<object> GetAllItems()
