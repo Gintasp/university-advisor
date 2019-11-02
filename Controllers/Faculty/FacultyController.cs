@@ -1,17 +1,36 @@
 ﻿using Advisor.Models;
 using System;
+using System.Web.Mvc;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Advisor.Controllers
 {
-    public class FacultyController : IFacultyController
+    public class FacultyController : Controller, IFacultyController
     {
         public Faculty Faculty { get; set; }
 
-        public FacultyController(Faculty faculty)
+        public FacultyController()
         {
-            Faculty = faculty;
         }
+        [Route("faculties/{id?}", Name = "faculty_page")]
+        public ActionResult Index(int? id)
+        {
+            if (id != null)
+            {
+                Faculty faculty = DB.Instance.Faculties.Where(u => u.Id == id).SingleOrDefault();
+                if (faculty == null)
+                {
+                    return View("/Views/Shared/404.cshtml");
+                }
 
+                ViewBag.Faculty = faculty;
+
+                return View("/Views/Faculty.cshtml");
+            }
+
+            return View("/Views/Shared/404.cshtml");
+        }
         public void HandlePreviousButtonClick(University uni)
         {
             //FacultyView.Hide();

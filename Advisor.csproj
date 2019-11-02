@@ -277,6 +277,7 @@
     <Compile Include="Tests\StatisticCalculatorTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\faculty.css" />
     <Content Include="Assets\css\lib\bootstrap-theme.css" />
     <Content Include="Assets\css\lib\bootstrap-theme.min.css" />
     <Content Include="Assets\css\lib\bootstrap.css" />
@@ -360,6 +361,7 @@
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\University\University.cshtml" />
     <Content Include="Views\Shared\404.cshtml" />
+    <Content Include="Views\Faculty.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

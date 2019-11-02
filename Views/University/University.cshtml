@@ -17,28 +17,39 @@
                     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
             </div>
+            <a class="compare-link" href="#"><h4>Compare with other universities <i class="fas fa-arrow-right"></i></h4></a>
+        </div>
+        <div class="col-sm-6">
             <h3>Statistics</h3>
             <table class="table">
                 <tbody>
                     <tr>
                         <th scope="row">Overall rating</th>
-                        <td id="Rating">#</td>
+                        <td>#</td>
                     </tr>
                     <tr>
                         <th scope="row"># of faculties</th>
-                        <td id="facultyCount">#</td>
+                        <td>#</td>
                     </tr>
                     <tr>
-                        <th>Average salary</th>
-                        <td id="salary">#</td>
+                        <th># of study programs</th>
+                        <td>#</td>
+                    </tr>
+                    <tr>
+                        <th>Level of satisfaction</th>
+                        <td>#</td>
+                    </tr>
+                    <tr>
+                        <th>Average alumni salary</th>
+                        <td>#</td>
+                    </tr>
+                    <tr>
+                        <th>% of graduates working in relevant industry</th>
+                        <td>#</td>
                     </tr>
                 </tbody>
             </table>
-            <a class="compare-link" href="#"><h4>Compare with other universities <i class="fas fa-arrow-right"></i></h4></a>
         </div>
-            <div class="col-sm-6">
-                <iframe class="university-map" src="https://maps.google.com/maps?q=mif%20&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
-            </div>
         </div>
     <div class="row">
         <div class="col-sm-6">
@@ -49,7 +60,9 @@
                 {
                     <!--TODO: add link to faculty view-->
                 <div class="faculty-container card">
-                    <h4>@faculty.Title</h4>
+                    <a href="@Url.RouteUrl("faculty_page", new { id = faculty.Id})">
+                        <h4>@faculty.Title</h4>
+                    </a>
                     <div class="d-flex">
                         <div class="d-flex mr-5">
                             <p class="mr-5">
