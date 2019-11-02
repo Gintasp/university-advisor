@@ -12,7 +12,6 @@ namespace Advisor.Controllers
 
         public FacultyController()
         {
-
         }
         [Route("faculties/{id?}", Name = "faculty_page")]
         public ActionResult Index(int? id)
@@ -26,8 +25,10 @@ namespace Advisor.Controllers
                 }
 
                 ViewBag.Faculty = faculty;
+
                 return View("/Views/Faculty.cshtml");
             }
+
             return View("/Views/Shared/404.cshtml");
         }
         public void HandlePreviousButtonClick(University uni)
