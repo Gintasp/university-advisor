@@ -36,7 +36,7 @@
             </table>
             <a class="compare-link" href="#"><h4>Compare with other universities <i class="fas fa-arrow-right"></i></h4></a>
         </div>
-            <div class="col-sm-6" style="margin-top:20px">
+            <div class="col-sm-6">
                 <iframe class="university-map" src="https://maps.google.com/maps?q=mif%20&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
             </div>
         </div>
@@ -45,8 +45,9 @@
             <!--TODO: Add method in controller-->
             <h3>Faculties</h3>
             <div class="d-flex flex-wrap">
-                @foreach (Faculty faculty in ViewBag.Faculties)
+                @foreach (Faculty faculty in ViewBag.University.Faculties)
                 {
+                    <!--TODO: add link to faculty view-->
                 <div class="faculty-container card">
                     <h4>@faculty.Title</h4>
                     <div class="d-flex">

@@ -24,7 +24,6 @@ namespace Advisor.Controllers
                 }
 
                 ViewBag.University = uni;
-                ViewBag.Faculties = uni.Faculties;
 
                 return View("/Views/University/University.cshtml");
             }
