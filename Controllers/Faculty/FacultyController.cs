@@ -2,6 +2,7 @@
 using System;
 using System.Web.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Advisor.Controllers
 {
@@ -16,7 +17,18 @@ namespace Advisor.Controllers
         [Route("faculties/{id?}", Name = "faculty_page")]
         public ActionResult Index(int? id)
         {
-            return View("/Views/Faculty.cshtml");
+            if (id != null)
+            {
+                Faculty faculty = DB.Instance.Faculties.Where(u => u.Id == id).SingleOrDefault();
+                if (faculty == null)
+                {
+                    return View("/Views/Shared/404.cshtml");
+                }
+
+                ViewBag.Faculty = faculty;
+                return View("/Views/Faculty.cshtml");
+            }
+            return View("/Views/Shared/404.cshtml");
         }
         public void HandlePreviousButtonClick(University uni)
         {
