@@ -206,13 +206,9 @@
     <Compile Include="Controllers\Auth\AuthController.cs" />
     <Compile Include="Controllers\Auth\IAuthController.cs" />
     <Compile Include="Controllers\Comparison\CourseComparisonController.cs" />
-    <Compile Include="Controllers\Comparison\FacultyComparisonController.cs" />
     <Compile Include="Controllers\Comparison\ICourseComparisonController.cs" />
-    <Compile Include="Controllers\Comparison\IFacultyComparisonController.cs" />
     <Compile Include="Controllers\Comparison\ILecturerComparisonController.cs" />
-    <Compile Include="Controllers\Comparison\IStudyProgramComparisonController.cs" />
     <Compile Include="Controllers\Comparison\LecturerComparisonController.cs" />
-    <Compile Include="Controllers\Comparison\StudyProgramComparisonController.cs" />
     <Compile Include="Controllers\Course\CourseController.cs" />
     <Compile Include="Controllers\Course\ICourseController.cs" />
     <Compile Include="Controllers\Faculty\FacultyController.cs" />
