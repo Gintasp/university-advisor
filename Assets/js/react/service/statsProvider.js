@@ -1,4 +1,5 @@
 import axios from 'axios';
+import '@babel/polyfill';
 import {
   STATS_UNIVERSITY_URL,
   STATS_FACULTY_URL,
@@ -29,10 +30,7 @@ class StatsProvider {
   }
 
   fetchUrl(url) {
-    axios
-      .get(url)
-      .then(res => res.data)
-      .catch(err => console.log(err));
+    return axios.get(url);
   }
 }
 

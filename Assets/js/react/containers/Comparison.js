@@ -9,6 +9,7 @@ import {
   TYPE_LECTURER,
 } from '../config/types';
 import statsProvider from '../service/statsProvider';
+import StatsContainer from '../components/StatsContainer';
 
 class ComparisonContainer extends React.Component {
   constructor(props) {
@@ -51,7 +52,7 @@ class ComparisonContainer extends React.Component {
     }, timeout);
   }
 
-  handleItemClick(item) {
+  async handleItemClick(item) {
     this.setState({
       filtered: [],
       selectedItem: item,
@@ -60,36 +61,40 @@ class ComparisonContainer extends React.Component {
 
     switch (item.Type) {
       case TYPE_UNIVERSITY:
-        console.log(statsProvider.getUniversityData(item.Id));
+        let response = await statsProvider.getUniversityData(item.Id);
         this.setState({
-          stats: statsProvider.getUniversityData(item.Id),
+          stats: response.data,
         });
         break;
       case TYPE_FACULTY:
+        response = await statsProvider.getFacultyData(item.Id);
         this.setState({
-          stats: statsProvider.getFacultyData(item.Id),
+          stats: response.data,
         });
         break;
       case TYPE_PROGRAM:
+        response = await statsProvider.getStudyProgramData(item.Id);
         this.setState({
-          stats: statsProvider.getStudyProgramData(item.Id),
+          stats: response.data,
         });
         break;
       case TYPE_COURSE:
+        response = await statsProvider.getCourseData(item.Id);
         this.setState({
-          stats: statsProvider.getCourseData(item.Id),
+          stats: response.data,
         });
         break;
       case TYPE_LECTURER:
+        response = await statsProvider.getLecturerData(item.Id);
         this.setState({
-          stats: statsProvider.getLecturerData(item.Id),
+          stats: response.data,
         });
         break;
     }
   }
 
   render() {
-    const { filtered, searchValue } = this.state;
+    const { filtered, searchValue, stats, selectedItem } = this.state;
 
     return (
       <React.Fragment>
@@ -100,19 +105,28 @@ class ComparisonContainer extends React.Component {
             courses and lecturers to get valuable insights.
           </p>
         </div>
-        <div>
-          <input
-            className="form-control"
-            placeholder="Search for university, faculty, etc."
-            value={searchValue}
-            onChange={e => this.handleSearchChange(e.target.value, 1500)}
-            onFocus={e => this.handleSearchChange(e.target.value, 0)}
-          />
-          <InputDropdown
-            opened={filtered.length !== 0}
-            items={filtered}
-            onItemClick={item => this.handleItemClick(item)}
-          />
+        <div className="d-flex">
+          <div className="w-50 ph-10">
+            <div>
+              <input
+                className="form-control m-w-unset mb-20"
+                placeholder="Search for university, faculty, etc."
+                value={searchValue}
+                onChange={e => this.handleSearchChange(e.target.value, 1500)}
+                onFocus={e => this.handleSearchChange(e.target.value, 0)}
+              />
+              <InputDropdown
+                opened={filtered.length !== 0}
+                items={filtered}
+                onItemClick={item => this.handleItemClick(item)}
+              />
+            </div>
+            <div>
+              {stats && (
+                <StatsContainer data={stats} type={selectedItem.Type} />
+              )}
+            </div>
+          </div>
         </div>
       </React.Fragment>
     );
