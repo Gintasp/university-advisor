@@ -129,20 +129,6 @@ namespace Advisor.Migrations
                     }
                 }
             }
-
-            for (int i = 0; i < dorms.Count; i++)
-            {
-                Dormitory dorm = dorms.ElementAt(r.Next(0, dorms.Count));
-                for (int j = 0; j < 80; j++)
-                {
-                    Review review = reviews.ElementAt(r.Next(0, reviews.Count));
-                    if (review.StudyProgram == null && review.Course == null && review.Lecturer == null && review.Dormitory == null)
-                    {
-                        dorm.Reviews.Add(review);
-                        context.SaveChanges();
-                    }
-                }
-            }
         }
 
         private void LoadCourseRelations(DatabaseContext context)
@@ -236,7 +222,6 @@ namespace Advisor.Migrations
                 {
                     Title = line.Split(',')[0],
                     Description = line.Split(',')[1],
-                    Reviews = new Collection<Review>(),
                     Addresses = new Collection<Address>()
                 };
                 dormitoriesToWrite.Add(newDormitory);

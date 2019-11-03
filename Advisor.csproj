@@ -248,6 +248,10 @@
     <Compile Include="Migrations\201911022321014_Dormitory_Address.Designer.cs">
       <DependentUpon>201911022321014_Dormitory_Address.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911030953143_RemoveDormReview.cs" />
+    <Compile Include="Migrations\201911030953143_RemoveDormReview.Designer.cs">
+      <DependentUpon>201911030953143_RemoveDormReview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -396,6 +400,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911022321014_Dormitory_Address.resx">
       <DependentUpon>201911022321014_Dormitory_Address.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911030953143_RemoveDormReview.resx">
+      <DependentUpon>201911030953143_RemoveDormReview.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

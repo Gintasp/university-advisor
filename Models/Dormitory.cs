@@ -9,7 +9,6 @@ namespace Advisor.Models
         public string Description { get; set; }
         public virtual University University { get; set; }
         public virtual ICollection<Address> Addresses { get; set; }
-        public virtual ICollection<Review> Reviews { get; set; }
 
         public Dormitory()
         {
