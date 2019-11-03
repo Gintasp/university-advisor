@@ -53,9 +53,9 @@ namespace Advisor.Controllers
             StatsData statsData = new StatsData()
             {
                 ReviewCount = reviews.Count,
-                OveralRating = calc.CalcReviewAverage(reviews, r=>r.OveralRating,1),
+                OveralRating = calc.CalcReviewAverage(reviews, r => r.OveralRating,1),
                 Satisfaction = calc.CalcReviewAverage(reviews, r => r.Satisfaction, 1),
-                AverageSalary = calc.CalcReviewAverage(reviews, r=> r.Salary,1),
+                AverageSalary = calc.CalcReviewAverage(reviews, r => r.Salary,1),
                 LecturerCount = faculty.Lecturers.Count,
                 StudyProgramCount = faculty.StudyPrograms.Count
             };
