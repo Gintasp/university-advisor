@@ -11,6 +11,8 @@ namespace Advisor.Models
         public DbSet<University> Universities { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Lecturer> Lecturers { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Dormitory> Dormitories { get; set; }
 
         public DatabaseContext() : base("DefaultConnection", throwIfV1Schema: false)
         {

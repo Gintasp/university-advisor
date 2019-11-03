@@ -10,6 +10,7 @@ namespace Advisor.Models
         public virtual University University { get; set; }
         public virtual ICollection<StudyProgram> StudyPrograms { get; set; }
         public virtual ICollection<Lecturer> Lecturers { get; set; }
+        public virtual ICollection<Address> Addresses { get; set; }
 
         public Faculty()
         {
