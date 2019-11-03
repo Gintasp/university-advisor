@@ -93,6 +93,12 @@ class ComparisonContainer extends React.Component {
     }
   }
 
+  handleDropdownClose() {
+    this.setState({
+      filtered: [],
+    });
+  }
+
   render() {
     const { filtered, searchValue, stats, selectedItem } = this.state;
 
@@ -119,6 +125,7 @@ class ComparisonContainer extends React.Component {
                 opened={filtered.length !== 0}
                 items={filtered}
                 onItemClick={item => this.handleItemClick(item)}
+                onClose={() => this.handleDropdownClose()}
               />
             </div>
             <div className="mt-20">
