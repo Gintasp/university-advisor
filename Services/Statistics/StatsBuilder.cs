@@ -86,6 +86,11 @@ namespace Advisor.Services.Statistics
 
         public dynamic BuildUniversityStats(University uni)
         {
+            if (uni == null)
+            {
+                throw new System.ArgumentNullException(nameof(uni));
+            }
+
             List<Review> reviews = (from r in DB.Instance.Reviews
                                     join p in DB.Instance.StudyPrograms on r.StudyProgram.Id equals p.Id
                                     join f in DB.Instance.Faculties on p.Faculty.Id equals f.Id

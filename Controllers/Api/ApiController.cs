@@ -2,6 +2,7 @@
 using Advisor.Models;
 using Advisor.Services.Statistics;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
@@ -26,15 +27,18 @@ namespace Advisor.Controllers
         public string UniversityStats(int id)
         {
             University uni = DB.Instance.Universities.Where(u => u.Id == id).SingleOrDefault();
-            if (uni == null)
+            try
+            {
+                var stats = StatsBuilder.BuildUniversityStats(uni);
+
+                return JsonConvert.SerializeObject(stats, Formatting.Indented);
+            }
+            catch (Exception e)
             {
                 return JsonConvert.SerializeObject(
                     new CustomResponse("Not found.", 404), Formatting.Indented
                 );
             }
-            var stats = StatsBuilder.BuildUniversityStats(uni);
-
-            return JsonConvert.SerializeObject(stats, Formatting.Indented);
         }
 
         [HttpGet]
