@@ -9,11 +9,10 @@ namespace Advisor.Controllers
 {
     public class FacultyController : Controller, IFacultyController
     {
-        public Faculty Faculty { get; set; }
-
         public FacultyController()
         {
         }
+
         [Route("faculties/{id?}", Name = "faculty_page")]
         public ActionResult Index(int? id)
         {
@@ -33,12 +32,6 @@ namespace Advisor.Controllers
 
             return View("/Views/Shared/404.cshtml");
         }
-        public void HandlePreviousButtonClick(University uni)
-        {
-            //FacultyView.Hide();
-            //UniversityView = new UniversityView(new UniversityController(uni));
-            //UniversityView.Show();
-        }
 
         public void LoadData()
         {
@@ -50,20 +43,6 @@ namespace Advisor.Controllers
             //programs.ForEach(program => FacultyView.StudyProgramList.Items.Add(program));
             //lecturers.ForEach(lecturer => FacultyView.LecturerList.Items.Add(lecturer));
             //LoadStats();
-        }
-
-        public void HandleStudyProgramSelect(StudyProgram selectedProgram, Faculty faculty, University uni)
-        {
-            //FacultyView.Hide();
-            //StudyProgramView = new StudyProgramView(new StudyProgramController(selectedProgram, faculty, uni));
-            //StudyProgramView.Show();
-        }
-
-        public void HandleLecturerSelect(Lecturer lecturer)
-        {
-            //FacultyView.Hide();
-            //LecturerView = new LecturerView(new LecturerController(lecturer));
-            //LecturerView.Show();
         }
 
         public void HandleAddStudyProgramClick()
@@ -114,11 +93,6 @@ namespace Advisor.Controllers
             //DB.Instance.SaveChanges();
             //FacultyView.StudyProgramList.Items.Add(program);
             //AddFormView.Close();
-        }
-        public void HandleCompareLink()
-        {
-            //FacultyComparisonView = new FacultyComparisonView(new FacultyComparisonController());
-            //FacultyComparisonView.ShowDialog();
         }
 
         private StatsData LoadStats(Faculty faculty)

@@ -4,7 +4,5 @@
     {
         void LoadLecturerData();
         void HandleLeaveReviewClick();
-        void HandlePreviousFormClick();
-        void HandleComparisonButtonClick();
     }
 }

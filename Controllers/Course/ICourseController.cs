@@ -2,9 +2,5 @@
 {
     public interface ICourseController
     {
-        void LoadCourseData();
-        void HandlePreviousClicked();
-        void HandleCompareClick();
-        void HandleLeaveReviewClick();
     }
 }
