@@ -109,7 +109,7 @@ class ComparisonContainer extends React.Component {
           <div className="w-50 ph-10">
             <div>
               <input
-                className="form-control m-w-unset mb-20"
+                className="form-control m-w-unset"
                 placeholder="Search for university, faculty, etc."
                 value={searchValue}
                 onChange={e => this.handleSearchChange(e.target.value, 1500)}
@@ -121,7 +121,7 @@ class ComparisonContainer extends React.Component {
                 onItemClick={item => this.handleItemClick(item)}
               />
             </div>
-            <div>
+            <div className="mt-20">
               {stats && (
                 <StatsContainer data={stats} type={selectedItem.Type} />
               )}
