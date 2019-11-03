@@ -1,17 +1,38 @@
 ﻿using Advisor.Models;
 using System;
+using System.Web.Mvc;
+using System.Collections.Generic;
+using System.Linq;
+using Advisor.Service.Statistics;
 
 namespace Advisor.Controllers
 {
-    public class FacultyController : IFacultyController
+    public class FacultyController : Controller, IFacultyController
     {
         public Faculty Faculty { get; set; }
 
-        public FacultyController(Faculty faculty)
+        public FacultyController()
         {
-            Faculty = faculty;
         }
+        [Route("faculties/{id?}", Name = "faculty_page")]
+        public ActionResult Index(int? id)
+        {
+            if (id != null)
+            {
+                Faculty faculty = DB.Instance.Faculties.Where(u => u.Id == id).SingleOrDefault();
+                if (faculty == null)
+                {
+                    return View("/Views/Shared/404.cshtml");
+                }
 
+                ViewBag.Faculty = faculty;
+                ViewBag.StatsData = LoadStats(faculty);
+
+                return View("/Views/Faculty.cshtml");
+            }
+
+            return View("/Views/Shared/404.cshtml");
+        }
         public void HandlePreviousButtonClick(University uni)
         {
             //FacultyView.Hide();
@@ -100,21 +121,24 @@ namespace Advisor.Controllers
             //FacultyComparisonView.ShowDialog();
         }
 
-        private void LoadStats()
+        private StatsData LoadStats(Faculty faculty)
         {
-            //StatsData statsData = new StatsData();
-            //StatisticCalculator calculator = new StatisticCalculator();
-            //List<Review> programReviews = (from r in DB.Instance.Reviews
-            //                              join p in DB.Instance.StudyPrograms on r.StudyProgram.Id equals p.Id 
-            //                              join f in DB.Instance.Faculties on p.Faculty.Id equals f.Id
-            //                              where f.Id == Faculty.Id
-            //                              select r).ToList();
-            //statsData.AverageSalary = calculator.CalcReviewAverage(programReviews, r => r.Salary, 1);
-            //statsData.Difficulty = calculator.CalcReviewAverage(programReviews, r => r.Difficulty, 1);
-            //statsData.Satisfaction = calculator.CalcReviewAverage(programReviews, r => r.Satisfaction, 1);
-            //statsData.OveralRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
+            StatsData statsData = new StatsData(); 
+            StatisticCalculator calculator = new StatisticCalculator();
+            List<Review> programReviews = (from r in DB.Instance.Reviews
+                                          join p in DB.Instance.StudyPrograms on r.StudyProgram.Id equals p.Id 
+                                          join f in DB.Instance.Faculties on p.Faculty.Id equals f.Id
+                                          where f.Id == faculty.Id
+                                          select r).ToList();
+            statsData.OveralRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
+            statsData.StudyProgramCount = faculty.StudyPrograms.Count;
+            statsData.Satisfaction = calculator.CalcReviewAverage(programReviews, r => r.Satisfaction, 1);
+            statsData.AverageSalary = calculator.CalcReviewAverage(programReviews, r => r.Salary, 1);
+            statsData.ReviewCount = programReviews.Count;
+            if (statsData.ReviewCount != 0)
+                statsData.RelevantIndustryPercentage = programReviews.Count(r => r.RelevantIndustry == true) * 100 / statsData.ReviewCount;
 
-            //FacultyView.StatsData = statsData;
+            return statsData;
         }
     }
 }

@@ -25,7 +25,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44392</IISExpressSSLPort>
+    <IISExpressSSLPort>44308</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -271,11 +271,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\css\comparison.css" />
+    <Content Include="Assets\css\faculty.css" />
     <Content Include="Assets\css\lib\bootstrap-theme.css" />
     <Content Include="Assets\css\lib\bootstrap-theme.min.css" />
     <Content Include="Assets\css\lib\bootstrap.css" />
     <Content Include="Assets\css\lib\bootstrap.min.css" />
     <Content Include="Assets\css\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\css\university.css" />
     <Content Include="Assets\css\universityList.css" />
     <Content Include="Assets\js\lib\bootstrap.js" />
     <Content Include="Assets\js\lib\bootstrap.min.js" />
@@ -368,6 +370,7 @@
     <Content Include="Views\University\University.cshtml" />
     <Content Include="Views\Shared\404.cshtml" />
     <Content Include="Views\Comparison\Comparison.cshtml" />
+    <Content Include="Views\Faculty.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

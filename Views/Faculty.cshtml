@@ -1,0 +1,73 @@
+﻿@using Advisor.Models
+@{
+    ViewBag.Title = "Faculty";
+}
+
+<h2><i class="fas fa-university"></i>  @ViewBag.Faculty.Title</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>About</h3>
+            <div class="about-section">
+                <p>
+                    @ViewBag.Faculty.Description
+                </p>
+            </div>
+            <h3>Statistics</h3>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row">Overall rating</th>
+                        <td>@ViewBag.StatsData.OveralRating</td>
+                    </tr>
+                    <tr>
+                        <th># of study programs</th>
+                        <td>@ViewBag.StatsData.StudyProgramCount</td>
+                    </tr>
+                    <tr>
+                        <th>Level of satisfaction</th>
+                        <td>@ViewBag.StatsData.Satisfaction</td>
+                    </tr>
+                    <tr>
+                        <th>Average alumni salary</th>
+                        <td>@ViewBag.StatsData.AverageSalary</td>
+                    </tr>
+                    <tr>
+                        <th>% of graduates working in relevant industry</th>
+                        <td>@ViewBag.StatsData.RelevantIndustryPercentage</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-6">
+            <iframe class="faculty-map" src="https://maps.google.com/maps?q=mif%20&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
+            <a class="compare-link" href="#"><h4>Compare with other faculties<i class="fas fa-arrow-right"></i></h4></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Study programs</h3>
+            <div class="d-flex flex-wrap">
+                @foreach (StudyProgram studyProgram in ViewBag.Faculty.StudyPrograms)
+                {
+                    <div class="studyprogram-container card">
+                        <a href="#">
+                            <h4>@studyProgram.Title</h4>
+                        </a>
+                        <div class="d-flex">
+                            <div class="d-flex mr-5">
+                                <p class="mr-5">
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <p class="mr-5">
+                                    Rating #
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

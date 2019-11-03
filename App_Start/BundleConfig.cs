@@ -26,8 +26,10 @@ namespace Advisor
                   "~/Assets/css/lib/bootstrap.css",
                   "~/Assets/css/lib/bootstrap-theme.css",
                   "~/Assets/css/universityList.css",
-                  "~/Assets/css/layout.css",
-                  "~/Assets/css/comparison.css"
+                  "~/Assets/css/comparison.css",
+                  "~/Assets/css/university.css",
+                  "~/Assets/css/faculty.css",
+                  "~/Assets/css/layout.css"
             ));
         }
     }
