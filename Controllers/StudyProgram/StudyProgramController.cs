@@ -1,24 +1,41 @@
-﻿using System;
+﻿using Advisor.Models;
+using System;
+using System.Web.Mvc;
 using System.Collections.Generic;
-using Advisor.Models;
 using System.Linq;
-using System.Collections.ObjectModel;
 using Advisor.Service.Statistics;
-using Advisor.Service.Validator;
 
 namespace Advisor.Controllers
 {
-    public class StudyProgramController : IStudyProgramController
+    public class StudyProgramController : Controller, IStudyProgramController
     {
         public StudyProgram StudyProgram { get; set; }
         public Faculty Faculty { get; set; }
         public University University { get; set; }
 
-        public StudyProgramController(StudyProgram studyProgram, Faculty faculty, University uni)
+        public StudyProgramController()
         {
-            StudyProgram = studyProgram;
-            Faculty = faculty;
-            University = uni;
+
+        }
+
+        [Route("study_programs/{id?}", Name = "study_program_page")]
+        public ActionResult Index(int? id)
+        {
+            if (id != null)
+            {
+                StudyProgram studyProgram = DB.Instance.StudyPrograms.Where(s => s.Id == id).SingleOrDefault();
+                if (studyProgram == null)
+                {
+                    return View("/Views/Shared/404.cshtml");
+                }
+
+                ViewBag.StudyProgram = studyProgram;
+                //ViewBag.StatsData = LoadStats(studyProgram);
+
+                return View("/Views/StudyProgram/StudyProgram.cshtml");
+            }
+
+            return View("/Views/Shared/404.cshtml");
         }
 
         public void LoadStudyProgramData()
