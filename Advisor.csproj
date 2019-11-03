@@ -288,13 +288,15 @@
     <Content Include="Assets\js\react\components\FacultyStats.js" />
     <Content Include="Assets\js\react\components\InputDropdown.js" />
     <Content Include="Assets\js\react\components\LecturerStats.js" />
+    <Content Include="Assets\js\react\components\ListItem.js" />
     <Content Include="Assets\js\react\components\StatsContainer.js" />
     <Content Include="Assets\js\react\components\StudyProgramStats.js" />
     <Content Include="Assets\js\react\components\UniversityStats.js" />
     <Content Include="Assets\js\react\config\routes.js" />
     <Content Include="Assets\js\react\config\types.js" />
     <Content Include="Assets\js\react\containers\ComparisonContainer.js" />
-    <Content Include="Assets\js\react\service\statsProvider.js" />
+    <Content Include="Assets\js\react\service\IconClassResolver.js" />
+    <Content Include="Assets\js\react\service\StatsProvider.js" />
     <Content Include="webpack.config.js" />
     <None Include="Assets\js\lib\jquery-3.3.1.intellisense.js" />
     <Content Include="Assets\js\lib\jquery-3.3.1.js" />

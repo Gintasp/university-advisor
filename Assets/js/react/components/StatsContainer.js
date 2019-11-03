@@ -56,6 +56,8 @@ class StatsContainer extends React.PureComponent {
             <LecturerStats stats={stats} />
           </React.Fragment>
         );
+      default:
+        return null;
     }
   }
 }

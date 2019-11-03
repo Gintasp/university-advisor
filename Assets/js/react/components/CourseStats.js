@@ -1,21 +1,34 @@
 import React from 'react';
+import ListItem from './ListItem';
+import {
+  REVIEW_COUNT_TYPE,
+  OVERAL_TYPE,
+  DIFFICULTY_TYPE,
+  SATISFACTION_TYPE,
+  USEFULNESS_TYPE,
+  INTERESTING_TYPE,
+  THEORY_TYPE,
+  PRACTICE_TYPE,
+} from '../config/types';
 
 const CourseStats = ({ stats }) => (
   <div className="list-group">
-    <p className="list-group-item">Reviews: {stats.review_count}</p>
-    <p className="list-group-item">Overal rating: {stats.overal}</p>
-    <p className="list-group-item">Difficulty: {stats.difficulty}</p>
-    <p className="list-group-item">
+    <ListItem type={REVIEW_COUNT_TYPE}>Reviews: {stats.review_count}</ListItem>
+    <ListItem type={OVERAL_TYPE}>Overal rating: {stats.overal}</ListItem>
+    <ListItem type={DIFFICULTY_TYPE}>Difficulty: {stats.difficulty}</ListItem>
+    <ListItem type={SATISFACTION_TYPE}>
       Student satisfaction: {stats.satisfaction}
-    </p>
-    <p className="list-group-item">Usefulness: {stats.usefulness}</p>
-    <p className="list-group-item">Interesting: {stats.interesting}</p>
-    <p className="list-group-item">
+    </ListItem>
+    <ListItem type={USEFULNESS_TYPE}>Usefulness: {stats.usefulness}</ListItem>
+    <ListItem type={INTERESTING_TYPE}>
+      Interesting: {stats.interesting}
+    </ListItem>
+    <ListItem type={THEORY_TYPE}>
       Percent of theory material {stats.theory}%
-    </p>
-    <p className="list-group-item">
+    </ListItem>
+    <ListItem type={PRACTICE_TYPE}>
       Percent of practice material {stats.practice}%
-    </p>
+    </ListItem>
   </div>
 );
 

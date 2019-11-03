@@ -77,6 +77,8 @@ class ComparisonContainer extends React.Component {
           stats: response.data,
         });
         break;
+      default:
+        return null;
     }
   }
 
