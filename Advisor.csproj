@@ -25,7 +25,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44308</IISExpressSSLPort>
+    <IISExpressSSLPort>44392</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -202,16 +202,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\Auth\AuthController.cs" />
-    <Compile Include="Controllers\Auth\IAuthController.cs" />
-    <Compile Include="Controllers\Comparison\CourseComparisonController.cs" />
-    <Compile Include="Controllers\Comparison\FacultyComparisonController.cs" />
-    <Compile Include="Controllers\Comparison\ICourseComparisonController.cs" />
-    <Compile Include="Controllers\Comparison\IFacultyComparisonController.cs" />
-    <Compile Include="Controllers\Comparison\ILecturerComparisonController.cs" />
-    <Compile Include="Controllers\Comparison\IStudyProgramComparisonController.cs" />
-    <Compile Include="Controllers\Comparison\LecturerComparisonController.cs" />
-    <Compile Include="Controllers\Comparison\StudyProgramComparisonController.cs" />
+    <Compile Include="Controllers\Api\ApiController.cs" />
     <Compile Include="Controllers\Course\CourseController.cs" />
     <Compile Include="Controllers\Course\ICourseController.cs" />
     <Compile Include="Controllers\Faculty\FacultyController.cs" />
@@ -229,28 +220,17 @@
     <Compile Include="Controllers\Review\StudyProgramReviewController.cs" />
     <Compile Include="Controllers\StudyProgram\IStudyProgramController.cs" />
     <Compile Include="Controllers\StudyProgram\StudyProgramController.cs" />
-    <Compile Include="Controllers\University\IUniversityComparisonController.cs" />
+    <Compile Include="Controllers\Comparison\IComparisonController.cs" />
     <Compile Include="Controllers\University\IUniversityController.cs" />
-    <Compile Include="Controllers\University\UniversityComparisonController.cs" />
+    <Compile Include="Controllers\Comparison\ComparisonController.cs" />
     <Compile Include="Controllers\University\UniversityController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201910291729194_Auth.cs" />
-    <Compile Include="Migrations\201910291729194_Auth.Designer.cs">
-      <DependentUpon>201910291729194_Auth.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910291850579_IntToString.cs" />
-    <Compile Include="Migrations\201910291850579_IntToString.Designer.cs">
-      <DependentUpon>201910291850579_IntToString.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911022321014_Dormitory_Address.cs" />
-    <Compile Include="Migrations\201911022321014_Dormitory_Address.Designer.cs">
-      <DependentUpon>201911022321014_Dormitory_Address.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911030953143_RemoveDormReview.cs" />
-    <Compile Include="Migrations\201911030953143_RemoveDormReview.Designer.cs">
-      <DependentUpon>201911030953143_RemoveDormReview.cs</DependentUpon>
+    <Compile Include="Http\Response\CustomResponse.cs" />
+    <Compile Include="Migrations\201911031250302_Initial.cs" />
+    <Compile Include="Migrations\201911031250302_Initial.Designer.cs">
+      <DependentUpon>201911031250302_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -273,6 +253,7 @@
     <Compile Include="Services\Auth\SessionStorage.cs" />
     <Compile Include="Services\Statistics\IStatisticCalculator.cs" />
     <Compile Include="Services\Statistics\StatisticCalculator.cs" />
+    <Compile Include="Services\Statistics\StatsBuilder.cs" />
     <Compile Include="Services\Validator\ILoginDataValidator.cs" />
     <Compile Include="Services\Validator\IReviewValidator.cs" />
     <Compile Include="Services\Validator\ISignupDataValidator.cs" />
@@ -287,6 +268,7 @@
     <Compile Include="Tests\StatisticCalculatorTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\comparison.css" />
     <Content Include="Assets\css\faculty.css" />
     <Content Include="Assets\css\lib\bootstrap-theme.css" />
     <Content Include="Assets\css\lib\bootstrap-theme.min.css" />
@@ -298,6 +280,22 @@
     <Content Include="Assets\js\lib\bootstrap.js" />
     <Content Include="Assets\js\lib\bootstrap.min.js" />
     <Content Include=".gitignore" />
+    <Content Include=".babelrc" />
+    <Content Include="Assets\js\react\comparison.js" />
+    <Content Include="Assets\js\react\components\CourseStats.js" />
+    <Content Include="Assets\js\react\components\FacultyStats.js" />
+    <Content Include="Assets\js\react\components\InputDropdown.js" />
+    <Content Include="Assets\js\react\components\LecturerStats.js" />
+    <Content Include="Assets\js\react\components\ListItem.js" />
+    <Content Include="Assets\js\react\components\StatsContainer.js" />
+    <Content Include="Assets\js\react\components\StudyProgramStats.js" />
+    <Content Include="Assets\js\react\components\UniversityStats.js" />
+    <Content Include="Assets\js\react\config\routes.js" />
+    <Content Include="Assets\js\react\config\types.js" />
+    <Content Include="Assets\js\react\containers\ComparisonContainer.js" />
+    <Content Include="Assets\js\react\service\IconClassResolver.js" />
+    <Content Include="Assets\js\react\service\StatsProvider.js" />
+    <Content Include="webpack.config.js" />
     <None Include="Assets\js\lib\jquery-3.3.1.intellisense.js" />
     <Content Include="Assets\js\lib\jquery-3.3.1.js" />
     <Content Include="Assets\js\lib\jquery-3.3.1.min.js" />
@@ -371,14 +369,17 @@
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\University\University.cshtml" />
     <Content Include="Views\Shared\404.cshtml" />
+    <Content Include="Views\Comparison\Comparison.cshtml" />
     <Content Include="Views\Faculty.cshtml" />
     <Content Include="Views\StudyProgram\StudyProgram.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Assets\images\" />
+    <Folder Include="Views\Api\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="package.json" />
     <Content Include="Migrations\Data\Address.csv" />
     <Content Include="Migrations\Data\Dormitory.csv" />
     <None Include="packages.config" />
@@ -396,17 +397,8 @@
     <Analyzer Include="packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910291729194_Auth.resx">
-      <DependentUpon>201910291729194_Auth.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910291850579_IntToString.resx">
-      <DependentUpon>201910291850579_IntToString.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911022321014_Dormitory_Address.resx">
-      <DependentUpon>201911022321014_Dormitory_Address.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911030953143_RemoveDormReview.resx">
-      <DependentUpon>201911030953143_RemoveDormReview.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911031250302_Initial.resx">
+      <DependentUpon>201911031250302_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

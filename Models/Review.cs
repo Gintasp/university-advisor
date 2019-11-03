@@ -1,5 +1,8 @@
-﻿namespace Advisor.Models
+﻿using Newtonsoft.Json;
+
+namespace Advisor.Models
 {
+    [JsonObject(IsReference = true)]
     public class Review
     {
         public int Id { get; set; }

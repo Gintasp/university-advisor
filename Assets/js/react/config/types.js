@@ -1,0 +1,21 @@
+export const TYPE_UNIVERSITY = 'University';
+export const TYPE_FACULTY = 'Faculty';
+export const TYPE_PROGRAM = 'Study program';
+export const TYPE_LECTURER = 'Lecturer';
+export const TYPE_COURSE = 'Course';
+
+export const COUNT_TYPE = 'COUNT_TYPE';
+export const REVIEW_COUNT_TYPE = 'REVIEW_COUNT_TYPE';
+export const DIFFICULTY_TYPE = 'DIFFICULTY_TYPE';
+export const INTERESTING_TYPE = 'INTERESTING_TYPE';
+export const USEFULNESS_TYPE = 'USEFULNESS_TYPE';
+export const THEORY_TYPE = 'THEORY_TYPE';
+export const PRACTICE_TYPE = 'PRACTICE_TYPE';
+export const COMPETENCE_TYPE = 'COMPETENCE_TYPE';
+export const DELIVERY_TYPE = 'DELIVERY_TYPE';
+export const PERSONALITY_TYPE = 'PERSONALITY_TYPE';
+export const STRICTNESS_TYPE = 'STRICTNESS_TYPE';
+export const OVERAL_TYPE = 'OVERAL_TYPE';
+export const SALARY_TYPE = 'SALARY_TYPE';
+export const SATISFACTION_TYPE = 'SATISFACTION_TYPE';
+export const RELEVANT_TYPE = 'RELEVANT_TYPE';

@@ -257,17 +257,34 @@ namespace Advisor.Migrations
             string json = new WebClient().DownloadString("http://universities.hipolabs.com/search?country=" + country);
             List<UniTmp> tmpUnis = JsonConvert.DeserializeObject<List<UniTmp>>(json);
             List<University> unis = new List<University>();
-            tmpUnis.ForEach(tmpUni => unis.Add(
-                new University()
+            tmpUnis.ForEach(tmpUni =>
+            {
+                if (!UniAlreadyInTheList(unis, tmpUni.Title))
                 {
-                    Title = tmpUni.Name,
-                    Website = tmpUni.Webpages[0],
-                    Description = "Lorem ipsum dolor sit amet",
-                    Faculties = new Collection<Faculty>()
+                    unis.Add(new University()
+                    {
+                        Title = tmpUni.Title,
+                        Website = tmpUni.Webpages[0],
+                        Description = "Lorem ipsum dolor sit amet",
+                        Faculties = new Collection<Faculty>()
+                    });
                 }
-            ));
+            });
             context.Universities.AddRange(unis);
             context.SaveChanges();
+        }
+
+        private bool UniAlreadyInTheList(List<University> unis, string title)
+        {
+            foreach (University uni in unis)
+            {
+                if (uni.Title == title)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private void LoadLecturers(DatabaseContext context, string filePath)
@@ -393,7 +410,7 @@ namespace Advisor.Migrations
     internal class UniTmp
     {
         [JsonProperty(PropertyName = "name")]
-        public string Name { get; set; }
+        public string Title { get; set; }
         [JsonProperty(PropertyName = "web_pages")]
         public string[] Webpages { get; set; }
     }

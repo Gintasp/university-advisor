@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Advisor.Service.Statistics
+namespace Advisor.Services.Statistics
 {
     public interface IStatisticCalculator
     {

@@ -1,7 +1,7 @@
 ﻿using Advisor.Models;
 using System.Linq;
 using System.Collections.Generic;
-using Advisor.Service.Statistics;
+using Advisor.Services.Statistics;
 using Advisor.Service.Validator;
 
 namespace Advisor.Controllers

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Advisor.Service.Statistics
+namespace Advisor.Services.Statistics
 {
     public class StatisticCalculator : IStatisticCalculator
     {

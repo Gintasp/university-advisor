@@ -6,3 +6,8 @@
 /Scripts/
 /fonts/
 /Content/
+/node_modules/
+Assets/js/dist/
+yarn-error.log
+/.vs/
+/.vscode/

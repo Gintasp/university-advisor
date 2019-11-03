@@ -1,0 +1,40 @@
+{
+    "name": "university-advisor",
+    "version": "1.0.0",
+    "description": "The aim of this project is to create a comprehensive, intuitive and most importantly handy application for both highschool and university students who wish to learn more about what each university and course has to offer, how they differ from one another and what other people have to say about particular courses, subjects, etc.",
+    "main": "index.js",
+    "scripts": {
+        "dev": "webpack --mode development --watch",
+        "build": "webpack"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Gintasp/university-advisor.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Gintasp/university-advisor/issues"
+    },
+    "homepage": "https://github.com/Gintasp/university-advisor#readme",
+    "devDependencies": {
+        "@babel/cli": "^7.6.4",
+        "@babel/core": "^7.6.4",
+        "@babel/plugin-proposal-class-properties": "^7.5.5",
+        "@babel/preset-env": "^7.6.3",
+        "@babel/preset-react": "^7.6.3",
+        "babel-loader": "^8.0.6",
+        "webpack": "^4.41.2",
+        "webpack-cli": "^3.3.10",
+        "webpack-notifier": "^1.8.0"
+    },
+    "dependencies": {
+        "@babel/polyfill": "^7.6.0",
+        "axios": "^0.19.0",
+        "browser-sync": "^2.26.7",
+        "browser-sync-webpack-plugin": "^2.2.2",
+        "clsx": "^1.0.4",
+        "react": "^16.11.0",
+        "react-dom": "^16.11.0"
+    }
+}

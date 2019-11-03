@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace Advisor.Models
 {
+    [JsonObject(IsReference = true)]
     public class Faculty
     {
         public int Id { get; set; }
@@ -9,6 +11,7 @@ namespace Advisor.Models
         public string Description { get; set; }
         public virtual University University { get; set; }
         public virtual ICollection<StudyProgram> StudyPrograms { get; set; }
+        [JsonIgnore]
         public virtual ICollection<Lecturer> Lecturers { get; set; }
         public virtual ICollection<Address> Addresses { get; set; }
 

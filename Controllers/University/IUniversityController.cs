@@ -1,14 +1,12 @@
-﻿using Advisor.Models;
-using System;
+﻿using System;
+using System.Web.Mvc;
 
 namespace Advisor.Controllers
 {
     public interface IUniversityController
     {
-        void HandlePreviousButtonClick();
-        void HandleFacultySelect(Faculty faculty);
         void HandleAddFaculty(object sender, EventArgs e);
-        void HandleAddFacultyClick();
-        void HandleComparisonButtonClick();
+        void HandleAddNewUniversity(object sender, EventArgs e);
+        ActionResult Index(int? id);
     }
 }
