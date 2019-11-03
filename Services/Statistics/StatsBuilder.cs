@@ -24,7 +24,8 @@ namespace Advisor.Services.Statistics
                 usefulness = Calculator.CalcReviewAverage(reviews, r => r.Usefulness, 1),
                 interesting = Calculator.CalcReviewAverage(reviews, r => r.Interesting, 1),
                 theory = Calculator.CalcReviewAverage(reviews, r => r.TheoryPercentage, 1),
-                practice = Calculator.CalcReviewAverage(reviews, r => r.PracticePercentage, 1)
+                practice = Calculator.CalcReviewAverage(reviews, r => r.PracticePercentage, 1),
+                overal = Calculator.CalcReviewAverage(reviews, r => r.OveralRating, 1)
             };
 
             return stats;
