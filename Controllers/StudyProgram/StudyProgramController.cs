@@ -15,7 +15,6 @@ namespace Advisor.Controllers
 
         public StudyProgramController()
         {
-
         }
 
         [Route("programs/{id?}", Name = "program_page")]
