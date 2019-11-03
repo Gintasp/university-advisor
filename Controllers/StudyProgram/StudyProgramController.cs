@@ -18,7 +18,7 @@ namespace Advisor.Controllers
 
         }
 
-        [Route("study_programs/{id?}", Name = "study_program_page")]
+        [Route("programs/{id?}", Name = "program_page")]
         public ActionResult Index(int? id)
         {
             if (id != null)
@@ -30,7 +30,6 @@ namespace Advisor.Controllers
                 }
 
                 ViewBag.StudyProgram = studyProgram;
-                Console.WriteLine(studyProgram.Description);
                 ViewBag.StatsData = LoadStats(studyProgram);
 
                 return View("/Views/StudyProgram/StudyProgram.cshtml");
