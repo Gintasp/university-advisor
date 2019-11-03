@@ -1,22 +1,59 @@
-﻿using System;
+﻿using Advisor.Models;
+using System;
+using System.Web.Mvc;
 using System.Collections.Generic;
-using Advisor.Models;
 using System.Linq;
 using Advisor.Services.Statistics;
 
 namespace Advisor.Controllers
 {
-    public class StudyProgramController : IStudyProgramController
+    public class StudyProgramController : Controller, IStudyProgramController
     {
         public StudyProgram StudyProgram { get; set; }
         public Faculty Faculty { get; set; }
         public University University { get; set; }
 
-        public StudyProgramController(StudyProgram studyProgram, Faculty faculty, University uni)
+        public StudyProgramController()
         {
-            StudyProgram = studyProgram;
-            Faculty = faculty;
-            University = uni;
+
+        }
+
+        [Route("programs/{id?}", Name = "program_page")]
+        public ActionResult Index(int? id)
+        {
+            if (id != null)
+            {
+                StudyProgram studyProgram = DB.Instance.StudyPrograms.Where(s => s.Id == id).SingleOrDefault();
+                if (studyProgram == null)
+                {
+                    return View("/Views/Shared/404.cshtml");
+                }
+
+                ViewBag.StudyProgram = studyProgram;
+                ViewBag.StatsData = LoadStats(studyProgram);
+
+                return View("/Views/StudyProgram/StudyProgram.cshtml");
+            }
+
+            return View("/Views/Shared/404.cshtml");
+        }
+
+        private StatsData LoadStats(StudyProgram studyProgram)
+        {
+            StatsData statsData = new StatsData();
+            StatisticCalculator calculator = new StatisticCalculator();
+            List<Review> studyProgramReviews = (from r in DB.Instance.Reviews
+                                           join p in DB.Instance.StudyPrograms on r.StudyProgram.Id equals p.Id
+                                           where p.Id == studyProgram.Id
+                                           select r).ToList();
+            statsData.OveralRating = calculator.CalcReviewAverage(studyProgramReviews, r => r.OveralRating, 1);
+            statsData.Satisfaction = calculator.CalcReviewAverage(studyProgramReviews, r => r.Satisfaction, 1);
+            statsData.AverageSalary = calculator.CalcReviewAverage(studyProgramReviews, r => r.Salary, 1);
+            statsData.ReviewCount = studyProgramReviews.Count;
+            if (statsData.ReviewCount != 0)
+                statsData.RelevantIndustryPercentage = studyProgramReviews.Count(r => r.RelevantIndustry == true) * 100 / statsData.ReviewCount;
+
+            return statsData;
         }
 
         public void LoadStudyProgramData()

@@ -371,6 +371,7 @@
     <Content Include="Views\Shared\404.cshtml" />
     <Content Include="Views\Comparison\Comparison.cshtml" />
     <Content Include="Views\Faculty.cshtml" />
+    <Content Include="Views\StudyProgram\StudyProgram.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
