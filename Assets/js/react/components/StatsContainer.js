@@ -1,14 +1,27 @@
 import React from 'react';
-import { TYPE_UNIVERSITY } from '../config/types';
+import { TYPE_UNIVERSITY, TYPE_FACULTY } from '../config/types';
 import UniversityStats from './UniversityStats';
+import FacultyStats from './FacultyStats';
 
 class StatsContainer extends React.PureComponent {
   render() {
-    const { type, data } = this.props;
+    const { item, stats } = this.props;
 
-    switch (type) {
+    switch (item.Type) {
       case TYPE_UNIVERSITY:
-        return <UniversityStats data={data} />;
+        return (
+          <React.Fragment>
+            <h4 className="text-center">{item.Title}</h4>
+            <UniversityStats stats={stats} />
+          </React.Fragment>
+        );
+      case TYPE_FACULTY:
+        return (
+          <React.Fragment>
+            <h4 className="text-center">{item.Title}</h4>
+            <FacultyStats stats={stats} />
+          </React.Fragment>
+        );
     }
   }
 }

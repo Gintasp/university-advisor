@@ -1,8 +1,8 @@
 import React from 'react';
 
-const UniversityStats = ({ stats }) => (
+const FacultyStats = ({ stats }) => (
   <div className="list-group">
-    <p className="list-group-item">Faculty count: {stats.faculty_count}</p>
+    <p className="list-group-item">Lecturers: {stats.lecturer_count}</p>
     <p className="list-group-item">Reviews: {stats.review_count}</p>
     <p className="list-group-item">Overal rating: {stats.overal}</p>
     <p className="list-group-item">Average graduate salary: {stats.salary}</p>
@@ -19,4 +19,4 @@ const UniversityStats = ({ stats }) => (
   </div>
 );
 
-export default UniversityStats;
+export default FacultyStats;

@@ -129,9 +129,7 @@ class ComparisonContainer extends React.Component {
               />
             </div>
             <div className="mt-20">
-              {stats && (
-                <StatsContainer data={stats} type={selectedItem.Type} />
-              )}
+              {stats && <StatsContainer stats={stats} item={selectedItem} />}
             </div>
           </div>
         </div>
