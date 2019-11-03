@@ -1,13 +1,9 @@
-﻿using Advisor.Models;
-namespace Advisor.Controllers
+﻿namespace Advisor.Controllers
 {
     public class LecturerController : ILecturerController
     {
-        public Lecturer Lecturer { get; set; }
-
-        public LecturerController(Lecturer lecturer)
+        public LecturerController()
         {
-            Lecturer = lecturer;
         }
 
         public void LoadLecturerData()
@@ -41,20 +37,6 @@ namespace Advisor.Controllers
             //{
             //    MessageBox.Show("You have already left a review.");
             //}
-        }
-
-        public void HandlePreviousFormClick()
-        {
-            //LecturerView.Hide();
-            //FacultyView = new FacultyView(new FacultyController(Lecturer.Faculty), Lecturer.Faculty.University);
-            //FacultyView.Show();
-        }
-
-        public void HandleComparisonButtonClick()
-        {
-            //LecturerView.Hide();
-            //LecturerComparisonView = new LecturerComparisonView(new LecturerComparisonController(), Lecturer);
-            //LecturerComparisonView.ShowDialog();
         }
     }
 }

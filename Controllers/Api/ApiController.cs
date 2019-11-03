@@ -10,7 +10,12 @@ namespace Advisor.Controllers
 {
     public class ApiController : Controller
     {
-        private StatsBuilder StatsBuilder = new StatsBuilder(new StatisticCalculator());
+        public IStatsBuilder StatsBuilder { get; set; }
+
+        public ApiController(IStatsBuilder statsBuilder)
+        {
+            StatsBuilder = statsBuilder;
+        }
 
         [HttpGet]
         [Route("api/items")]

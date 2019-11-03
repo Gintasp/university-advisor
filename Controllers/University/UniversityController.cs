@@ -9,8 +9,11 @@ namespace Advisor.Controllers
 {
     public class UniversityController : Controller, IUniversityController
     {
-        public UniversityController()
+        public IStatsBuilder StatsBuilder { get; set; }
+
+        public UniversityController(IStatsBuilder statsBuilder)
         {
+            StatsBuilder = statsBuilder;
         }
 
         [Route("universities/{id?}", Name = "universities_page")]
@@ -39,11 +42,10 @@ namespace Advisor.Controllers
 
             return View("/Views/University/UniversityList.cshtml");
         }
-        
+
         private StatsData LoadStats(University uni)
         {
-            StatsBuilder statsBuilder = new StatsBuilder(new StatisticCalculator());
-            var stats = statsBuilder.BuildUniversityStats(uni);
+            var stats = StatsBuilder.BuildUniversityStats(uni);
             StatsData statsData = new StatsData
             {
                 OveralRating = stats.overal,
@@ -53,6 +55,7 @@ namespace Advisor.Controllers
                 AverageSalary = stats.salary,
                 RelevantIndustryPercentage = stats.relevant_industry
             };
+
             return statsData;
         }
 
