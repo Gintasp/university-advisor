@@ -11,6 +11,7 @@ namespace Advisor.Models
         public string Website { get; set; }
         public string Description { get; set; }
         public virtual ICollection<Faculty> Faculties { get; set; }
+        public virtual ICollection<Dormitory> Dormitories { get; set; }
 
         public University()
         {

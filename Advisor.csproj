@@ -228,19 +228,17 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Http\Response\CustomResponse.cs" />
-    <Compile Include="Migrations\201910291729194_Auth.cs" />
-    <Compile Include="Migrations\201910291729194_Auth.Designer.cs">
-      <DependentUpon>201910291729194_Auth.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910291850579_IntToString.cs" />
-    <Compile Include="Migrations\201910291850579_IntToString.Designer.cs">
-      <DependentUpon>201910291850579_IntToString.cs</DependentUpon>
+    <Compile Include="Migrations\201911031250302_Initial.cs" />
+    <Compile Include="Migrations\201911031250302_Initial.Designer.cs">
+      <DependentUpon>201911031250302_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\DB.cs" />
+    <Compile Include="Models\Dormitory.cs" />
     <Compile Include="Models\Faculty.cs" />
     <Compile Include="Models\Lecturer.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -381,6 +379,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="package.json" />
+    <Content Include="Migrations\Data\Address.csv" />
+    <Content Include="Migrations\Data\Dormitory.csv" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -396,11 +396,8 @@
     <Analyzer Include="packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910291729194_Auth.resx">
-      <DependentUpon>201910291729194_Auth.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910291850579_IntToString.resx">
-      <DependentUpon>201910291850579_IntToString.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911031250302_Initial.resx">
+      <DependentUpon>201911031250302_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

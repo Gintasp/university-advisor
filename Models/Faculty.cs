@@ -13,6 +13,7 @@ namespace Advisor.Models
         public virtual ICollection<StudyProgram> StudyPrograms { get; set; }
         [JsonIgnore]
         public virtual ICollection<Lecturer> Lecturers { get; set; }
+        public virtual ICollection<Address> Addresses { get; set; }
 
         public Faculty()
         {
