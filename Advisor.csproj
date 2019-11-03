@@ -244,11 +244,21 @@
     <Compile Include="Migrations\201910291850579_IntToString.Designer.cs">
       <DependentUpon>201910291850579_IntToString.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911022321014_Dormitory_Address.cs" />
+    <Compile Include="Migrations\201911022321014_Dormitory_Address.Designer.cs">
+      <DependentUpon>201911022321014_Dormitory_Address.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911030953143_RemoveDormReview.cs" />
+    <Compile Include="Migrations\201911030953143_RemoveDormReview.Designer.cs">
+      <DependentUpon>201911030953143_RemoveDormReview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\DB.cs" />
+    <Compile Include="Models\Dormitory.cs" />
     <Compile Include="Models\Faculty.cs" />
     <Compile Include="Models\Lecturer.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -368,6 +378,8 @@
     <Folder Include="Assets\images\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Migrations\Data\Address.csv" />
+    <Content Include="Migrations\Data\Dormitory.csv" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -388,6 +400,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910291850579_IntToString.resx">
       <DependentUpon>201910291850579_IntToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911022321014_Dormitory_Address.resx">
+      <DependentUpon>201911022321014_Dormitory_Address.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911030953143_RemoveDormReview.resx">
+      <DependentUpon>201911030953143_RemoveDormReview.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
