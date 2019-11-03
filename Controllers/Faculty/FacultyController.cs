@@ -19,14 +19,14 @@ namespace Advisor.Controllers
         {
             if (id != null)
             {
-                Faculty = DB.Instance.Faculties.Where(u => u.Id == id).SingleOrDefault();
-                if (Faculty == null)
+                Faculty faculty = DB.Instance.Faculties.Where(u => u.Id == id).SingleOrDefault();
+                if (faculty == null)
                 {
                     return View("/Views/Shared/404.cshtml");
                 }
 
-                ViewBag.Faculty = Faculty;
-                ViewBag.StatsData = LoadStats();
+                ViewBag.Faculty = faculty;
+                ViewBag.StatsData = LoadStats(faculty);
 
                 return View("/Views/Faculty.cshtml");
             }
@@ -121,17 +121,17 @@ namespace Advisor.Controllers
             //FacultyComparisonView.ShowDialog();
         }
 
-        private StatsData LoadStats()
+        private StatsData LoadStats(Faculty faculty)
         {
             StatsData statsData = new StatsData(); 
             StatisticCalculator calculator = new StatisticCalculator();
             List<Review> programReviews = (from r in DB.Instance.Reviews
                                           join p in DB.Instance.StudyPrograms on r.StudyProgram.Id equals p.Id 
                                           join f in DB.Instance.Faculties on p.Faculty.Id equals f.Id
-                                          where f.Id == Faculty.Id
+                                          where f.Id == faculty.Id
                                           select r).ToList();
             statsData.OveralRating = calculator.CalcReviewAverage(programReviews, r => r.OveralRating, 1);
-            statsData.StudyProgramCount = Faculty.StudyPrograms.Count;
+            statsData.StudyProgramCount = faculty.StudyPrograms.Count;
             statsData.Satisfaction = calculator.CalcReviewAverage(programReviews, r => r.Satisfaction, 1);
             statsData.AverageSalary = calculator.CalcReviewAverage(programReviews, r => r.Salary, 1);
             statsData.ReviewCount = programReviews.Count;
