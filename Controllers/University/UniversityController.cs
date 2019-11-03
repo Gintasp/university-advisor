@@ -1,4 +1,5 @@
 ﻿using Advisor.Models;
+using Advisor.Services.Statistics;
 using System.Linq;
 using System;
 using System.Web.Mvc;
@@ -24,7 +25,7 @@ namespace Advisor.Controllers
                 }
 
                 ViewBag.University = uni;
-
+                ViewBag.StatsData = LoadStats(uni);
                 return View("/Views/University/University.cshtml");
             }
 
@@ -37,6 +38,22 @@ namespace Advisor.Controllers
             ViewBag.Universities = unis;
 
             return View("/Views/University/UniversityList.cshtml");
+        }
+        
+        private StatsData LoadStats(University uni)
+        {
+            StatsBuilder statsBuilder = new StatsBuilder(new StatisticCalculator());
+            var stats = statsBuilder.BuildUniversityStats(uni);
+            StatsData statsData = new StatsData
+            {
+                OveralRating = stats.overal,
+                FacultyCount = stats.faculty_count,
+                StudyProgramCount = stats.study_program_count,
+                Satisfaction = stats.satisfaction,
+                AverageSalary = stats.salary,
+                RelevantIndustryPercentage = stats.relevant_industry
+            };
+            return statsData;
         }
 
         public void HandleAddFaculty(object sender, EventArgs e)
