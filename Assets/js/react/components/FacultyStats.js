@@ -5,7 +5,7 @@ const FacultyStats = ({ stats }) => (
     <p className="list-group-item">Lecturers: {stats.lecturer_count}</p>
     <p className="list-group-item">Reviews: {stats.review_count}</p>
     <p className="list-group-item">Overal rating: {stats.overal}</p>
-    <p className="list-group-item">Average graduate salary: {stats.salary}</p>
+    <p className="list-group-item">Average graduate salary: {stats.salary} €</p>
     <p className="list-group-item">
       Study programs: {stats.study_program_count}
     </p>

@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 import axios from 'axios';
 import ComparisonContainer from './containers/ComparisonContainer';
 
@@ -43,4 +43,4 @@ class App extends React.Component {
   }
 }
 
-render(<App />, document.getElementById('comparison'));
+ReactDOM.render(<App />, document.getElementById('comparison'));
