@@ -25,7 +25,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44308</IISExpressSSLPort>
+    <IISExpressSSLPort>44392</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -292,8 +292,8 @@
     <Content Include="Assets\js\react\components\StudyProgramStats.js" />
     <Content Include="Assets\js\react\components\UniversityStats.js" />
     <Content Include="Assets\js\react\config\routes.js" />
-    <Content Include="Assets\js\react\containers\Comparison.js" />
     <Content Include="Assets\js\react\config\types.js" />
+    <Content Include="Assets\js\react\containers\ComparisonContainer.js" />
     <Content Include="Assets\js\react\service\statsProvider.js" />
     <Content Include="webpack.config.js" />
     <None Include="Assets\js\lib\jquery-3.3.1.intellisense.js" />
