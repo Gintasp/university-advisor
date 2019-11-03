@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Advisor.Services.Statistics
 {
-    public class StatsBuilder
+    public class StatsBuilder : IStatsBuilder
     {
         public IStatisticCalculator Calculator { get; set; }
 

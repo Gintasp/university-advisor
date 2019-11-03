@@ -1,3 +1,4 @@
+using Advisor.Services.Statistics;
 using System.Web.Mvc;
 using Unity;
 using Unity.Mvc5;
@@ -13,7 +14,8 @@ namespace Advisor
             // register all your components with the container here
             // it is NOT necessary to register your controllers
             
-            // e.g. container.RegisterType<ITestService, TestService>();
+            container.RegisterType<IStatisticCalculator, StatisticCalculator>();
+            container.RegisterType<IStatsBuilder, StatsBuilder>();
             
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
