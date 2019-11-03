@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import InputDropdown from '../components/InputDropdown';
 import {
   TYPE_UNIVERSITY,
@@ -15,7 +14,6 @@ class ComparisonContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: [],
       filtered: [],
       selectedItem: null,
       searchValue: '',
@@ -23,19 +21,8 @@ class ComparisonContainer extends React.Component {
     };
   }
 
-  componentDidMount() {
-    axios
-      .get('/api/items')
-      .then(res => {
-        this.setState({
-          items: res.data,
-        });
-      })
-      .catch(err => console.log(err));
-  }
-
   handleSearchChange(value, timeout) {
-    const { items } = this.state;
+    const { items } = this.props;
     this.setState({ searchValue: value });
     setTimeout(() => {
       if (value !== '') {
@@ -104,33 +91,24 @@ class ComparisonContainer extends React.Component {
 
     return (
       <React.Fragment>
-        <div className="mt-50">
-          <h1>Compare</h1>
-          <p>
-            Choose and compare various universities, faculties, study programs,
-            courses and lecturers to get valuable insights.
-          </p>
-        </div>
-        <div className="d-flex">
-          <div className="w-50 ph-10">
-            <div>
-              <input
-                className="form-control m-w-unset"
-                placeholder="Search for university, faculty, etc."
-                value={searchValue}
-                onChange={e => this.handleSearchChange(e.target.value, 1500)}
-                onFocus={e => this.handleSearchChange(e.target.value, 0)}
-              />
-              <InputDropdown
-                opened={filtered.length !== 0}
-                items={filtered}
-                onItemClick={item => this.handleItemClick(item)}
-                onClose={() => this.handleDropdownClose()}
-              />
-            </div>
-            <div className="mt-20">
-              {stats && <StatsContainer stats={stats} item={selectedItem} />}
-            </div>
+        <div className="w-50 ph-10">
+          <div>
+            <input
+              className="form-control m-w-unset"
+              placeholder="Search for university, faculty, etc."
+              value={searchValue}
+              onChange={e => this.handleSearchChange(e.target.value, 1000)}
+              onFocus={e => this.handleSearchChange(e.target.value, 0)}
+            />
+            <InputDropdown
+              opened={filtered.length !== 0}
+              items={filtered}
+              onItemClick={item => this.handleItemClick(item)}
+              onClose={() => this.handleDropdownClose()}
+            />
+          </div>
+          <div className="mt-20">
+            {stats && <StatsContainer stats={stats} item={selectedItem} />}
           </div>
         </div>
       </React.Fragment>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const UniversityStats = ({ stats }) => (
-  <div className="list-group">
+  <div className="list-group uni-stats">
     <p className="list-group-item">Faculty count: {stats.faculty_count}</p>
     <p className="list-group-item">Reviews: {stats.review_count}</p>
     <p className="list-group-item">Overal rating: {stats.overal}</p>
