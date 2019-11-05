@@ -27,6 +27,7 @@
                         <th scope="row">Overall rating</th>
                         <td>@ViewBag.StatsData.OveralRating/10</td>
                     </tr>
+                    <!-- Consider moving this near faculty label and removing it from here-->
                     <tr>
                         <th scope="row">Number of faculties</th>
                         <td>@ViewBag.StatsData.FacultyCount</td>
@@ -54,11 +55,10 @@
     <div class="row">
         <div class="col-sm-6">
             <!--TODO: Add method in controller-->
-            <h3>Faculties</h3>
+            <h3>Faculties (@ViewBag.StatsData.FacultyCount)</h3>
             <div class="d-flex flex-wrap">
                 @foreach (Faculty faculty in ViewBag.University.Faculties)
                 {
-                    <!--TODO: add link to faculty view-->
                 <div class="faculty-container card">
                     <a href="@Url.RouteUrl("faculty_page", new { id = faculty.Id})">
                         <h4>@faculty.Title</h4>
@@ -79,7 +79,7 @@
         </div>
         <div class="col-sm-6">
             <!--TODO: Add method in controller-->
-            <h3>Dormitories</h3>
+            <h3>Dormitories (#)</h3>
             <div class="d-flex flex-wrap">
                 @for (int i = 0; i < 4; i++)
                 {
