@@ -18,23 +18,24 @@
                 <tbody>
                     <tr>
                         <th scope="row">Overall rating</th>
-                        <td>@ViewBag.StatsData.OveralRating</td>
+                        <td>@ViewBag.StatsData.OveralRating/10</td>
                     </tr>
+                    <!-- Consider moving this near study program label and removing it from here-->
                     <tr>
-                        <th># of study programs</th>
+                        <th>Number of study programs</th>
                         <td>@ViewBag.StatsData.StudyProgramCount</td>
                     </tr>
                     <tr>
                         <th>Level of satisfaction</th>
-                        <td>@ViewBag.StatsData.Satisfaction</td>
+                        <td>@ViewBag.StatsData.Satisfaction/10</td>
                     </tr>
                     <tr>
-                        <th>Average alumni salary</th>
-                        <td>@ViewBag.StatsData.AverageSalary</td>
+                        <th>Average graduate salary</th>
+                        <td>@ViewBag.StatsData.AverageSalary€</td>
                     </tr>
                     <tr>
-                        <th>% of graduates working in relevant industry</th>
-                        <td>@ViewBag.StatsData.RelevantIndustryPercentage</td>
+                        <th>Percentage of graduates working in relevant industry</th>
+                        <td>@ViewBag.StatsData.RelevantIndustryPercentage%</td>
                     </tr>
                 </tbody>
             </table>
@@ -46,7 +47,7 @@
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <h3>Study programs</h3>
+            <h3>Study programs (@ViewBag.StatsData.StudyProgramCount)</h3>
             <div class="d-flex flex-wrap">
                 @foreach (StudyProgram studyProgram in ViewBag.Faculty.StudyPrograms)
                 {
@@ -59,6 +60,7 @@
                                 <p class="mr-5">
                                     <i class="fas fa-star"></i>
                                 </p>
+                                <!-- Add display of rating -->
                                 <p class="mr-5">
                                     Rating #
                                 </p>
