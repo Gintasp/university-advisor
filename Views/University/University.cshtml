@@ -18,6 +18,7 @@
                 </p>
             </div>
             <a class="compare-link" href="@Url.RouteUrl("compare")"><h4>Compare with other universities <i class="fas fa-arrow-right"></i></h4></a>
+            <a class="compare-link" href="@Url.RouteUrl("review_page")"><h4>Leave a review</h4></a>
         </div>
         <div class="col-sm-6">
             <h3>Statistics</h3>
@@ -54,7 +55,6 @@
         </div>
     <div class="row">
         <div class="col-sm-6">
-            <!--TODO: Add method in controller-->
             <h3>Faculties (@ViewBag.StatsData.FacultyCount)</h3>
             <div class="d-flex flex-wrap">
                 @foreach (Faculty faculty in ViewBag.University.Faculties)
@@ -78,7 +78,7 @@
             </div>
         </div>
         <div class="col-sm-6">
-            <!--TODO: Add method in controller-->
+            <!--TODO: Add data-->
             <h3>Dormitories (#)</h3>
             <div class="d-flex flex-wrap">
                 @for (int i = 0; i < 4; i++)
