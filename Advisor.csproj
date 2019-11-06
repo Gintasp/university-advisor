@@ -25,7 +25,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44392</IISExpressSSLPort>
+    <IISExpressSSLPort>44308</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -227,6 +227,7 @@
     <Compile Include="Controllers\Review\IReviewController.cs" />
     <Compile Include="Controllers\Review\IStudyProgramReviewController.cs" />
     <Compile Include="Controllers\Review\LecturerReviewController.cs" />
+    <Compile Include="Controllers\Review\ReviewController.cs" />
     <Compile Include="Controllers\Review\StudyProgramReviewController.cs" />
     <Compile Include="Controllers\StudyProgram\IStudyProgramController.cs" />
     <Compile Include="Controllers\StudyProgram\StudyProgramController.cs" />
@@ -380,6 +381,7 @@
     <Content Include="Views\Comparison\Comparison.cshtml" />
     <Content Include="Views\Faculty.cshtml" />
     <Content Include="Views\StudyProgram\StudyProgram.cshtml" />
+    <Content Include="Views\Review.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
