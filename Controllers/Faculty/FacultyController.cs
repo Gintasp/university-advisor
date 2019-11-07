@@ -26,6 +26,7 @@ namespace Advisor.Controllers
 
                 ViewBag.Faculty = faculty;
                 ViewBag.StatsData = LoadStats(faculty);
+                ViewBag.Address = faculty.Addresses.ToList().ElementAt(0).ToString();
 
                 return View("/Views/Faculty.cshtml");
             }
