@@ -22,60 +22,119 @@
             <div id="studyProgramTab" class="tab-pane active">
                 <div class="container">
                     <div class="form">
-                        <div class="row">
-                            <div class="col-sm-4 mt-20">
-                                <form action="#">
-                                    <div class="form-group">
-                                        <label for="university-select">Select university</label>
-                                        <select class="selectpicker form-control" id="university-select" name="sellist1" onchange="getSelectValue();">
-                                            @foreach (University uni in ViewBag.Universities)
-                                            {
-                                                <option>@uni.Title</option>
-                                            }
-                                        </select>
-                                        <p id="demo"></p>
-
-                                        <label for="faculty-select">Select faculty</label>
-                                        <select class="selectpicker form-control" id="faculty-select" name="sellist1">
-                                            <option>Faculty</option>
-                                            <option>Faculty</option>
-                                            <option>Faculty</option>
-                                        </select>
-                                        <br />
-                                        <label for="studyprogram-select">Select faculty</label>
-                                        <select class="selectpicker form-control" id="studyprogram-select" name="sellist1">
-                                            <option>Study Program</option>
-                                            <option>Study Program</option>
-                                            <option>Study Program</option>
-
-                                        </select>
-                                        <br />
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="col-sm-8 mt-20">
-                                <div class="form-group">
+                        <div class="review-container">
+                            <div class="row">
+                                <div class="col-sm-6 mt-20">
+                                    <form action="#">
+                                        <div class="form-group">
+                                            <label for="university-select">Select university</label>
+                                            <select class="selectpicker form-control" id="university-select" name="sellist1" onchange="getSelectValue();">
+                                                <option value="" selected disabled hidden>Please select</option>
+                                                @foreach (University uni in ViewBag.Universities)
+                                                {
+                                                    <option>@uni.Title</option>
+                                                }
+                                            </select>
+                                            <p id="demo"></p>
+                                            <div class="mt-20">
+                                                <label for="faculty-select">Select faculty</label>
+                                                <select class="selectpicker form-control" id="faculty-select" name="sellist1">
+                                                    <option value="" selected disabled hidden>Please select</option>
+                                                    <!--TODO: add real options-->
+                                                    <option>Faculty</option>
+                                                    <option>Faculty</option>
+                                                    <option>Faculty</option>
+                                                </select>
+                                            </div>
+                                            <div class="mt-20">
+                                                <label for="studyprogram-select">Select faculty</label>
+                                                <select class="selectpicker form-control" id="studyprogram-select" name="sellist1">
+                                                    <option value="" selected disabled hidden>Please select</option>
+                                                    <!--TODO: add real options-->
+                                                    <option>Study Program</option>
+                                                    <option>Study Program</option>
+                                                    <option>Study Program</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <!--Submit button-->
+                                        <button onclick="result()" type="button" class="btn btn-info" id="submit-btn">Submit</button>
+                                    </form>
+                                </div>
+                                <div class="col-sm-6 mt-20">
+                                    <!--Overall rating-->
                                     <div class="form-group">
                                         <label for="stars">Overall rating</label>
                                         <div class="stars">
-                                            <span onmouseover="starmark(this)" onclick="starmark(this)" id="1one" class="fa fa-star checked"></span>
-                                            <span onmouseover="starmark(this)" onclick="starmark(this)" id="2one" class="fa fa-star "></span>
-                                            <span onmouseover="starmark(this)" onclick="starmark(this)" id="3one" class="fa fa-star "></span>
-                                            <span onmouseover="starmark(this)" onclick="starmark(this)" id="4one" class="fa fa-star"></span>
-                                            <span onmouseover="starmark(this)" onclick="starmark(this)" id="5one" class="fa fa-star"></span>
-                                            <br />
-                                            <textarea style="margin-top:5px;" class="form-control" rows="3" id="comment" placeholder="Enter your review"></textarea>
+                                            @for (int i = 0; i < 10; i++)
+                                            {
+                                                <span onmouseover="starmark(this)" onclick="starmark(this)" id="@i+overall" class="fa fa-star "></span>
+                                            }
+
                                         </div>
-                                        <button onclick="result()" type="button" style="margin-top:10px;margin-left:5px;" class="btn btn-lg btn-success">Submit</button>
+                                    </div>
+                                    <!--Difficulty-->
+                                    <div class="form-group">
+                                        <label for="stars">Difficulty</label>
+                                        <div class="stars">
+                                            @for (int i = 0; i < 10; i++)
+                                            {
+                                                <span onmouseover="starmark(this)" onclick="starmark(this)" id="@i+difficulty" class="fa fa-star "></span>
+                                            }
+                                        </div>
+                                        <!--Satisfaction-->
+                                        <div class="mt-20">
+                                            <label for="stars">Satisfaction</label>
+                                            <div class="stars">
+                                                @for (int i = 0; i < 10; i++)
+                                                {
+                                                    <span onmouseover="starmark(this)" onclick="starmark(this)" id="@i+satisfaction" class="fa fa-star "></span>
+                                                }
+
+                                            </div>
+                                        </div>
+
+
+
+                                        <!--Relevant industry-->
+                                        <div class="check mt-20">
+                                            <input type="checkbox" value="" />  I am working in a relevant industry
+                                        </div>
+
+                                        <!--Select start year-->
+                                        <div class="mt-20">
+                                            <label for="startyear-select">Select your start year</label>
+                                            <select class="selectpicker form-control" id="startyear-select">
+                                                <option value="" selected disabled hidden>Please select</option>
+                                                <option>First</option>
+                                                <option>Second</option>
+                                                <option>Third</option>
+                                                <option>Fourth</option>
+                                            </select>
+                                        </div>
+                                        <!--Salary-->
+                                        <div class="mt-20">
+                                            <label for="salary">Salary</label>
+                                            <input type="text" class="form-control" id="salary">
+                                        </div>
                                     </div>
                                 </div>
-                             </div>
-                         </div>
-                    </div>
-                </div>
-             </div>         
+                            </div>
+                        </div>
+                        <div class="review-container">
+                            <div class="row">
+                                <div class="col-sm-12 mt-20">
+                                    <!--Review textarea-->
+                                    <textarea style="margin-top:5px;" class="form-control" rows="3" id="comment" placeholder="Enter your review"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                 </div>       
+            </div>
+        </div>
             <div id="courseTab" class="tab-pane">
-                            <h3>Course</h3>
+                <h3>Course</h3>
+                <input type="checkbox" value="" />
             </div>
             <div id="lecturerTab" class="tab-pane">
                             <h3>Lecturer</h3>
@@ -88,16 +147,18 @@
         var count;
         function starmark(item) {
             count = item.id[0];
-            sessionStorage.starRating = count;
+            sessionStorage.starRating = +count+1;
             var subid = item.id.substring(1);
-            for (var i = 0; i < 5; i++) {
-                if (i < count) {
-                    document.getElementById((i + 1) + subid).style.color = "orange";
+            for (var i = 0; i < 10; i++) {
+                if (i < Number(count) + 1) {
+                    document.getElementById(i + subid).style.color = "orange";
                 }
                 else {
-                    document.getElementById((i + 1) + subid).style.color = "black";
+                    document.getElementById(i + subid).style.color = "black";
                 }
+                
             }
+            
         }
         function result() {
             //Rating : Count
