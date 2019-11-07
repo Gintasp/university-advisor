@@ -108,7 +108,8 @@ namespace Advisor.Services.Statistics
                 faculty_count = uni.Faculties.Count,
                 review_count = reviews.Count,
                 study_program_count = programCount,
-                relevant_industry = reviews.Count > 0 ? reviews.Count(r => r.RelevantIndustry == true) * 100 / reviews.Count : 0
+                relevant_industry = reviews.Count > 0 ? reviews.Count(r => r.RelevantIndustry == true) * 100 / reviews.Count : 0,
+                dormitory_count = uni.Dormitories.Count
             };
 
             return stats;
