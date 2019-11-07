@@ -23,7 +23,7 @@
                 <div class="container">
                     <div class="form">
                         <div class="row">
-                            <div class="col-sm-4">
+                            <div class="col-sm-4 mt-20">
                                 <form action="#">
                                     <div class="form-group">
                                         <label for="university-select">Select university</label>
@@ -35,31 +35,78 @@
                                         </select>
                                         <p id="demo"></p>
 
-
-
                                         <label for="faculty-select">Select faculty</label>
                                         <select class="selectpicker form-control" id="faculty-select" name="sellist1">
                                             <option>Faculty</option>
                                             <option>Faculty</option>
                                             <option>Faculty</option>
                                         </select>
+                                        <br />
+                                        <label for="studyprogram-select">Select faculty</label>
+                                        <select class="selectpicker form-control" id="studyprogram-select" name="sellist1">
+                                            <option>Study Program</option>
+                                            <option>Study Program</option>
+                                            <option>Study Program</option>
 
+                                        </select>
+                                        <br />
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
                             </div>
-                        </div>
-                        </div>
+                            <div class="col-sm-8 mt-20">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="stars">Overall rating</label>
+                                        <div class="stars">
+                                            <span onmouseover="starmark(this)" onclick="starmark(this)" id="1one" class="fa fa-star checked"></span>
+                                            <span onmouseover="starmark(this)" onclick="starmark(this)" id="2one" class="fa fa-star "></span>
+                                            <span onmouseover="starmark(this)" onclick="starmark(this)" id="3one" class="fa fa-star "></span>
+                                            <span onmouseover="starmark(this)" onclick="starmark(this)" id="4one" class="fa fa-star"></span>
+                                            <span onmouseover="starmark(this)" onclick="starmark(this)" id="5one" class="fa fa-star"></span>
+                                            <br />
+                                            <textarea style="margin-top:5px;" class="form-control" rows="3" id="comment" placeholder="Enter your review"></textarea>
+                                        </div>
+                                        <button onclick="result()" type="button" style="margin-top:10px;margin-left:5px;" class="btn btn-lg btn-success">Submit</button>
+                                    </div>
+                                </div>
+                             </div>
+                         </div>
                     </div>
                 </div>
-                        <div id="courseTab" class="tab-pane">
+             </div>         
+            <div id="courseTab" class="tab-pane">
                             <h3>Course</h3>
-                        </div>
-                        <div id="lecturerTab" class="tab-pane">
+            </div>
+            <div id="lecturerTab" class="tab-pane">
                             <h3>Lecturer</h3>
-                        </div>
-                    </div>
+            </div>
+        </div>
 
 </body>
     </html>
+    <script>
+        var count;
+        function starmark(item) {
+            count = item.id[0];
+            sessionStorage.starRating = count;
+            var subid = item.id.substring(1);
+            for (var i = 0; i < 5; i++) {
+                if (i < count) {
+                    document.getElementById((i + 1) + subid).style.color = "orange";
+                }
+                else {
+                    document.getElementById((i + 1) + subid).style.color = "black";
+                }
+            }
+        }
+        function result() {
+            //Rating : Count
+            //Review : Comment(id)
+            alert("Rating : " + count + "\nReview : " + document.getElementById("comment").value);
+        }
+        function getSelectValue() {
+            var selectedValue = document.getElementById("university-select").value;
+            document.getElementById("demo").innerHTML = selectedValue;
+        }
+    </script>
 

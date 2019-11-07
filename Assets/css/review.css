@@ -1,0 +1,13 @@
+﻿ textarea {
+    max-width: 900px !important;
+}
+
+#review-text{
+    width: 500px;
+}
+
+.selectpicker form-control{
+    width: 200px;
+}
+
+
