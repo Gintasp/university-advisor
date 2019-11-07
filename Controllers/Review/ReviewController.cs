@@ -16,6 +16,9 @@ namespace Advisor.Controllers
         [Route("review", Name = "review_page")]
         public ActionResult Review()
         {
+            List<University> unis = DB.Instance.Universities.ToList();
+            ViewBag.Universities = unis;
+
             return View("/Views/Review.cshtml");
         }
 

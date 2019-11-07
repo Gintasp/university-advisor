@@ -1,4 +1,4 @@
-﻿
+﻿@using Advisor.Models
 @{
     ViewBag.Title = "Review";
 }
@@ -20,16 +20,46 @@
 
         <div class="tab-content">
             <div id="studyProgramTab" class="tab-pane active">
-                <h3>Study program</h3>
-            </div>
-            <div id="courseTab" class="tab-pane">
-                <h3>Course</h3>
-            </div>
-            <div id="lecturerTab" class="tab-pane">
-                <h3>Lecturer</h3>
-            </div>
-        </div>
+                <div class="container">
+                    <div class="form">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <form action="#">
+                                    <div class="form-group">
+                                        <label for="university-select">Select university</label>
+                                        <select class="selectpicker form-control" id="university-select" name="sellist1" onchange="getSelectValue();">
+                                            @foreach (University uni in ViewBag.Universities)
+                                            {
+                                                <option>@uni.Title</option>
+                                            }
+                                        </select>
+                                        <p id="demo"></p>
 
-    </body>
+
+
+                                        <label for="faculty-select">Select faculty</label>
+                                        <select class="selectpicker form-control" id="faculty-select" name="sellist1">
+                                            <option>Faculty</option>
+                                            <option>Faculty</option>
+                                            <option>Faculty</option>
+                                        </select>
+
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                        <div id="courseTab" class="tab-pane">
+                            <h3>Course</h3>
+                        </div>
+                        <div id="lecturerTab" class="tab-pane">
+                            <h3>Lecturer</h3>
+                        </div>
+                    </div>
+
+</body>
     </html>
 
