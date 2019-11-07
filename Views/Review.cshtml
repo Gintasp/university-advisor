@@ -72,7 +72,7 @@
                                         <div class="stars">
                                             @for (int i = 0; i < 10; i++)
                                             {
-                                                <span onmouseover="starmark(this)" onclick="starmark(this)" id="@i+overall" class="fa fa-star "></span>
+                                                <span onmouseover="starmark(this)" onclick="starmark(this)" id="@i+overallStudyProgram" class="fa fa-star "></span>
                                             }
 
                                         </div>
@@ -83,7 +83,7 @@
                                         <div class="stars">
                                             @for (int i = 0; i < 10; i++)
                                             {
-                                                <span onmouseover="starmark(this)" onclick="starmark(this)" id="@i+difficulty" class="fa fa-star "></span>
+                                                <span onmouseover="starmark(this)" onclick="starmark(this)" id="@i+difficultyStudyProgram" class="fa fa-star "></span>
                                             }
                                         </div>
                                         <!--Satisfaction-->
@@ -92,7 +92,7 @@
                                             <div class="stars">
                                                 @for (int i = 0; i < 10; i++)
                                                 {
-                                                    <span onmouseover="starmark(this)" onclick="starmark(this)" id="@i+satisfaction" class="fa fa-star "></span>
+                                                    <span onmouseover="starmark(this)" onclick="starmark(this)" id="@i+satisfactionStudyProgram" class="fa fa-star "></span>
                                                 }
 
                                             </div>
@@ -126,9 +126,9 @@
                         <div class="row">
                             <div class="col-sm-12 mt-20">
                                 <!--Review textarea-->
-                                <textarea style="margin-top:5px;" class="form-control" id="review-text" placeholder="Enter your review"></textarea>
+                                <textarea class="review-textarea" id="review-text" placeholder="Enter your review"></textarea>
                                 <!--Submit button-->
-                                <button onclick="result()" type="button" class="btn btn-info" id="submit-btn">Submit</button>
+                                <button onclick="result()" type="button" class="btn btn-info sub" id="submit-btn">Submit</button>
                             </div>
                         </div>
                     </div>
@@ -185,6 +185,71 @@
                                             <option>Course @i</option>
                                         }
                                     </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 mt-20">
+                                <!--Overall rating-->
+                                <label for="stars">Overall rating</label>
+                                <div class="stars">
+                                    @for (int i = 0; i < 10; i++)
+                                    {
+                                        <span onclick="starmark(this)" id="@i+overallCourse" class="fa fa-star "></span>
+                                    }
+                                </div>
+                                <!--Satisfaction-->
+                                <div class="mt-20">
+                                    <label for="stars">Satisfaction level</label>
+                                    <div class="stars">
+                                        @for (int i = 0; i < 10; i++)
+                                        {
+                                            <span onclick="starmark(this)" id="@i+satisfactionCourse" class="fa fa-star "></span>
+                                        }
+                                    </div>
+                                </div>
+                                <!--Usefulness-->
+                                <div class="mt-20">
+                                    <label for="stars">Usefulness</label>
+                                    <div class="stars">
+                                        @for (int i = 0; i < 10; i++)
+                                        {
+                                            <span onclick="starmark(this)" id="@i+usefulnessCourse" class="fa fa-star "></span>
+                                        }
+                                    </div>
+                                </div>
+                                <!--Interesting-->
+                                <div class="mt-20">
+                                    <div class="slidecontainer">
+                                        <span>Uninteresting</span>
+                                        <span style="float:right; padding-bottom:5px;">Interesting</span>
+                                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                                    </div>
+                                </div>
+
+                                <!--Theory-->
+                                <div class="mt-20">
+                                    <div class="slidecontainer">
+                                        <span>Theory</span>
+                                        <span style="float:right; padding-bottom:5px;">Practice</span>
+                                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                                    </div>
+                                </div>
+                                <!--Difficulty-->
+                                <div class="mt-20">
+                                    <div class="slidecontainer">
+                                        <span>Easy</span>
+                                        <span style="float:right; padding-bottom:5px;">Difficult</span>
+                                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-sm-12 mt-20">
+                                <!--Review textarea-->
+                                <textarea class="review-textarea" id="review-text-course" placeholder="Enter your review"></textarea>
+                                <div class="mt-20">
+                                    <!--Submit button-->
+                                    <button type="button" class="btn btn-info sub" id="course-submit-btn">Submit</button>
                                 </div>
                             </div>
                         </div>
