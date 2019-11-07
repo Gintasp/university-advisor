@@ -57,8 +57,6 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <!--Submit button-->
-                                        <button onclick="result()" type="button" class="btn btn-info" id="submit-btn">Submit</button>
                                     </form>
                                 </div>
                                 <div class="col-sm-6 mt-20">
@@ -84,7 +82,7 @@
                                         </div>
                                         <!--Satisfaction-->
                                         <div class="mt-20">
-                                            <label for="stars">Satisfaction</label>
+                                            <label for="stars">Satisfaction level</label>
                                             <div class="stars">
                                                 @for (int i = 0; i < 10; i++)
                                                 {
@@ -93,9 +91,6 @@
 
                                             </div>
                                         </div>
-
-
-
                                         <!--Relevant industry-->
                                         <div class="check mt-20">
                                             <input type="checkbox" value="" />  I am working in a relevant industry
@@ -122,13 +117,15 @@
                             </div>
                         </div>
                         <div class="review-container">
-                            <div class="row">
-                                <div class="col-sm-12 mt-20">
-                                    <!--Review textarea-->
-                                    <textarea style="margin-top:5px;" class="form-control" rows="3" id="comment" placeholder="Enter your review"></textarea>
-                                </div>
+                        <div class="row">
+                            <div class="col-sm-12 mt-20">
+                                <!--Review textarea-->
+                                <textarea style="margin-top:5px;" class="form-control" rows="3" id="comment" placeholder="Enter your review"></textarea>
+                                <!--Submit button-->
+                                <button onclick="result()" type="button" class="btn btn-info" id="submit-btn">Submit</button>
                             </div>
                         </div>
+                    </div>
                  </div>       
             </div>
         </div>
