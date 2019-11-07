@@ -3,9 +3,10 @@
     margin-left:0px;
 }
 
-#comment{
+#review-text {
     height: 190px;
     width: 100%;
+    resize: none;
 }
 
 .selectpicker form-control{
@@ -27,4 +28,8 @@
 
 .review-container{
     margin-left: 100px;
+}
+
+.stars{
+    font-size:20px;
 }
