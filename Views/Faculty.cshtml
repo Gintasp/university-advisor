@@ -41,7 +41,9 @@
             </table>
         </div>
         <div class="col-sm-6">
-            <iframe class="faculty-map" src="https://maps.google.com/maps?q=mif%20&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
+            @{string address = ViewBag.Address.Replace(",", "").Replace(" ", "%20");
+              string str = "https://maps.google.com/maps?q=" +address+ "%20&t=&z=13&ie=UTF8&iwloc=&output=embed";}
+            <iframe class="faculty-map" src=@str allowfullscreen></iframe>
             <a class="compare-link" href="@Url.RouteUrl("compare")"><h4>Compare with other faculties<i class="fas fa-arrow-right"></i></h4></a>
         </div>
     </div>

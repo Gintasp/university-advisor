@@ -16,7 +16,7 @@ namespace Advisor.Models
 
         public override string ToString()
         {
-            return Nr + " " +  Street + ", " + City;
+            return Street + " " + Nr  + ", " + City;
         }
     }
 }
