@@ -37,8 +37,7 @@
                                                 }
                                             </select>
                                             <!--Faculty select-->
-                                            <div class="mt-20">
-                                                <label for="faculty-select">Select faculty</label>
+                                                <label class="mt-20" for="faculty-select">Select faculty</label>
                                                 <select class="selectpicker form-control" id="faculty-select">
                                                     <option value="" selected disabled hidden>Please select</option>
                                                     <!--TODO: add real options-->
@@ -47,10 +46,8 @@
                                                         <option>Faculty @i</option>
                                                     }
                                                 </select>
-                                            </div>
                                             <!--Study program select-->
-                                            <div class="mt-20">
-                                                <label for="studyprogram-select">Select study program</label>
+                                                <label class="mt-20" for="studyprogram-select">Select study program</label>
                                                 <select class="selectpicker form-control" id="studyprogram-select">
                                                     <option value="" selected disabled hidden>Please select</option>
                                                     <!--TODO: add real options-->
@@ -59,7 +56,6 @@
                                                         <option>Study program @i</option>
                                                     }
                                                 </select>
-                                            </div>
                                         </div>
                                     </form>
                                 </div>
@@ -99,10 +95,8 @@
                                         <div class="check mt-20">
                                             <input type="checkbox" value="" />  I am working in a relevant industry
                                         </div>
-
                                         <!--Select start year-->
-                                        <div class="mt-20">
-                                            <label for="startyear-select">Select your start year</label>
+                                            <label class="mt-20" for="startyear-select">Select your start year</label>
                                             <select class="selectpicker form-control" id="startyear-select">
                                                 <option value="" selected disabled hidden>Please select</option>
                                                 <option>First</option>
@@ -110,18 +104,11 @@
                                                 <option>Third</option>
                                                 <option>Fourth</option>
                                             </select>
-                                        </div>
                                         <!--Salary-->
-                                        <div class="mt-20">
-                                            <label for="salary">Salary</label>
+                                            <label class="mt-20" for="salary">Salary</label>
                                             <input type="text" class="form-control" id="salary">
-                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="review-container">
-                            <div class="row">
                                 <div class="col-sm-12 mt-20">
                                     <!--Review textarea-->
                                     <textarea class="review-textarea" id="review-text" placeholder="Enter your review"></textarea>
@@ -173,8 +160,7 @@
                                     </select>
                                 </div>
                                 <!--Course select-->
-                                <div class="mt-20">
-                                    <label for="course-select">Select course</label>
+                                    <label class="mt-20"for="course-select">Select course</label>
                                     <select class="selectpicker form-control" id="course-select">
                                         <option value="" selected disabled hidden>Please select</option>
                                         <!--TODO: add real options-->
@@ -184,7 +170,6 @@
                                         }
                                     </select>
                                 </div>
-                            </div>
                             <div class="col-sm-6 mt-20">
                                 <!--Overall rating-->
                                 <label for="stars">Overall rating</label>
@@ -195,56 +180,44 @@
                                     }
                                 </div>
                                 <!--Satisfaction-->
-                                <div class="mt-20">
-                                    <label for="stars">Satisfaction level</label>
+                                    <label class="mt-20" for="stars">Satisfaction level</label>
                                     <div class="stars">
                                         @for (int i = 0; i < 10; i++)
                                         {
                                             <span onclick="starmark(this)" id="@i+satisfactionCourse" class="fa fa-star "></span>
                                         }
                                     </div>
-                                </div>
                                 <!--Usefulness-->
-                                <div class="mt-20">
-                                    <label for="stars">Usefulness</label>
+                                    <label class="mt-20" for="stars">Usefulness</label>
                                     <div class="stars">
                                         @for (int i = 0; i < 10; i++)
                                         {
                                             <span onclick="starmark(this)" id="@i+usefulnessCourse" class="fa fa-star "></span>
                                         }
                                     </div>
-                                </div>
                                 <!--Interesting-->
-                                <div class="mt-20">
-                                    <div class="slidecontainer">
+                                    <div class="slidecontainer mt-20">
                                         <span class="slider-span">Uninteresting</span>
                                         <span class="slider-span-right" style="float:right">Interesting</span>
                                         <input type="range" min="1" max="100" class="slider">
                                     </div>
-                                </div>
-
                                 <!--Theory-->
-                                <div class="mt-20">
-                                    <div class="slidecontainer">
+                                    <div class="slidecontainer mt-20">
                                         <span class="slider-span">Theory</span>
                                         <span class="slider-span-right" style="float:right;">Practice</span>
                                         <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
                                     </div>
-                                </div>
                                 <!--Difficulty-->
-                                <div class="mt-20">
-                                    <div class="slidecontainer">
-                                        <span class="slider-span">Easy</span>
-                                        <span class="slider-span-right"style="float:right;">Difficult</span>
-                                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                                    </div>
+                                <div class="slidecontainer mt-20">
+                                    <span class="slider-span">Easy</span>
+                                    <span class="slider-span-right"style="float:right;">Difficult</span>
+                                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
                                 </div>
-
 
                             </div>
                             <div class="col-sm-12 mt-20">
                                 <!--Review textarea-->
-                                <textarea class="review-textarea" id="review-text-course" placeholder="Enter your review"></textarea>
+                                <textarea class="review-textarea mt-20" id="review-text-course" placeholder="Enter your review"></textarea>
                                     <!--Submit button-->
                                     <button type="button" class="btn btn-info sub" id="course-submit-btn">Submit</button>
                             </div>
@@ -302,23 +275,23 @@
                                     }
                                 </div>
                                 <!--Personality-->
-                                <label for="stars">Personality</label>
-                                <div class="stars">
-                                    @for (int i = 0; i < 10; i++)
-                                    {
-                                        <span onclick="starmark(this)" id="@i+personalityLecturer" class="fa fa-star "></span>
-                                    }
-                                </div>
+                                    <label class="mt-20" for="stars">Personality</label>
+                                    <div class="stars">
+                                        @for (int i = 0; i < 10; i++)
+                                        {
+                                            <span onclick="starmark(this)" id="@i+personalityLecturer" class="fa fa-star "></span>
+                                        }
+                                    </div>
                                 <!--Competence-->
-                                <label for="stars">Competence</label>
-                                <div class="stars">
-                                    @for (int i = 0; i < 10; i++)
-                                    {
-                                        <span onclick="starmark(this)" id="@i+CompetenceLecturer" class="fa fa-star "></span>
-                                    }
-                                </div>
+                                    <label class="mt-20" for="stars">Competence</label>
+                                    <div class="stars">
+                                        @for (int i = 0; i < 10; i++)
+                                        {
+                                            <span onclick="starmark(this)" id="@i+CompetenceLecturer" class="fa fa-star "></span>
+                                        }
+                                    </div>
                                 <!--Delivery-->
-                                <label for="stars">Delivery</label>
+                                <label class ="mt-20" for="stars">Delivery</label>
                                 <div class="stars">
                                     @for (int i = 0; i < 10; i++)
                                     {
@@ -326,24 +299,24 @@
                                     }
                                 </div>
                                 <!--Interesting-->
-                                <div class="mt-20">
-                                    <div class="slidecontainer">
+                                    <div class="slidecontainer mt-20">
                                         <span class="slider-span">Uninteresting</span>
                                         <span class="slider-span-right" style="float:right">Interesting</span>
                                         <input type="range" min="1" max="100" class="slider">
                                     </div>
-                                </div>
                                 <!--Strictness-->
-                                <div class="mt-20">
-
-                                </div>
+                                        <div class="slidecontainer mt-20">
+                                            <span class="slider-span">Lenient</span>
+                                            <span class="slider-span-right" style="float:right">Strict</span>
+                                            <input type="range" min="1" max="100" class="slider">
+                                        </div>
 
                             </div>
                             <div class="col-sm-12 mt-20">
                                 <!--Review textarea-->
-                                <textarea class="review-textarea" id="review-text-course" placeholder="Enter your review"></textarea>
-                                    <!--Submit button-->
-                                    <button type="button" class="btn btn-info sub" id="course-submit-btn">Submit</button>
+                                <textarea class="review-textarea mt-20" id="review-text-course" placeholder="Enter your review"></textarea>
+                                <!--Submit button-->
+                                <button type="button" class="btn btn-default sub" id="course-submit-btn">Submit</button>
                             </div>
                         </div>
                     </div>
@@ -355,23 +328,18 @@
     <script>
         var count;
         function starmark(item) {
-            count = item.id[0];
-            sessionStorage.starRating = +count+1;
+            count = Number(item.id[0])+1; 
             var subid = item.id.substring(1);
             for (var i = 0; i < 10; i++) {
-                if (i < Number(count) + 1) {
+                if (i < count) {
                     document.getElementById(i + subid).style.color = "orange";
                 }
                 else {
                     document.getElementById(i + subid).style.color = "black";
                 }
-                
-            }
-            
+            }   
         }
         function result() {
-            //Rating : Count
-            //Review : Comment(id)
             alert("Rating : " + count + "\nReview : " + document.getElementById("review-text").value);
         }
         function getSelectValue() {
