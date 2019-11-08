@@ -36,8 +36,6 @@
                                                     <option>@uni.Title</option>
                                                 }
                                             </select>
-                                            <!--check that function works-->
-                                            <p id="demo"></p>
                                             <!--Faculty select-->
                                             <div class="mt-20">
                                                 <label for="faculty-select">Select faculty</label>
@@ -72,7 +70,7 @@
                                         <div class="stars">
                                             @for (int i = 0; i < 10; i++)
                                             {
-                                                <span onmouseover="starmark(this)" onclick="starmark(this)" id="@i+overallStudyProgram" class="fa fa-star "></span>
+                                                <span onclick="starmark(this)" id="@i+overallStudyProgram" class="fa fa-star "></span>
                                             }
 
                                         </div>
@@ -83,7 +81,7 @@
                                         <div class="stars">
                                             @for (int i = 0; i < 10; i++)
                                             {
-                                                <span onmouseover="starmark(this)" onclick="starmark(this)" id="@i+difficultyStudyProgram" class="fa fa-star "></span>
+                                                <span onclick="starmark(this)" id="@i+difficultyStudyProgram" class="fa fa-star "></span>
                                             }
                                         </div>
                                         <!--Satisfaction-->
@@ -92,7 +90,7 @@
                                             <div class="stars">
                                                 @for (int i = 0; i < 10; i++)
                                                 {
-                                                    <span onmouseover="starmark(this)" onclick="starmark(this)" id="@i+satisfactionStudyProgram" class="fa fa-star "></span>
+                                                    <span onclick="starmark(this)" id="@i+satisfactionStudyProgram" class="fa fa-star "></span>
                                                 }
 
                                             </div>
@@ -288,7 +286,7 @@
         }
         function getSelectValue() {
             var selectedValue = document.getElementById("university-select").value;
-            document.getElementById("demo").innerHTML = selectedValue;
+            alert(selectedValue); //testinau ar veikia select
         }
     </script>
 
