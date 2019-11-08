@@ -11,17 +11,7 @@
 
 .review-textarea {
     height: 190px;
-    width: 100%;
     resize: none;
-}
-
-.sub {
-    width: 280px;
-    margin-top: 20px;
-}
-
-.review-container {
-    margin-left: 100px;
 }
 
 .stars {
