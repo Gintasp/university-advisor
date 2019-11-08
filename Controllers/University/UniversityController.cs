@@ -29,6 +29,7 @@ namespace Advisor.Controllers
 
                 ViewBag.University = uni;
                 ViewBag.StatsData = LoadStats(uni);
+
                 return View("/Views/University/University.cshtml");
             }
 
@@ -53,7 +54,8 @@ namespace Advisor.Controllers
                 StudyProgramCount = stats.study_program_count,
                 Satisfaction = stats.satisfaction,
                 AverageSalary = stats.salary,
-                RelevantIndustryPercentage = stats.relevant_industry
+                RelevantIndustryPercentage = stats.relevant_industry,
+                DormitoryCount = stats.dormitory_count
             };
 
             return statsData;

@@ -24,6 +24,10 @@ namespace Advisor.Models
         public int FacultyCount { get; set; }
         [JsonProperty(PropertyName = "lecturer_count")]
         public int LecturerCount { get; set; }
+        [JsonProperty(PropertyName = "dormitory_count")]
+        public int DormitoryCount { get; set; }
+        [JsonProperty(PropertyName = "location_count")]
+        public int LocationCount { get; set; }
         [JsonProperty(PropertyName = "course_count")]
         public int CourseCount { get; set; }
         [JsonProperty(PropertyName = "review_count")]

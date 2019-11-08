@@ -201,9 +201,9 @@ namespace Advisor.Migrations
             {
                 Address newAddress = new Address()
                 {
-                    City = line.Split(',')[0],
-                    Street = line.Split(',')[1],
-                    Nr = int.Parse(line.Split(',')[2])
+                    Street = line.Split(',')[0],
+                    Nr = int.Parse(line.Split(',')[1]),
+                    City = line.Split(',')[2]
                 };
                 addressesToWrite.Add(newAddress);
             }

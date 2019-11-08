@@ -78,7 +78,8 @@ namespace Advisor.Services.Statistics
                 salary = Calculator.CalcReviewAverage(reviews, r => r.Salary, 1),
                 lecturer_count = faculty.Lecturers.Count,
                 study_program_count = faculty.StudyPrograms.Count,
-                relevant_industry = reviews.Count > 0 ? reviews.Count(r => r.RelevantIndustry == true) * 100 / reviews.Count : 0
+                relevant_industry = reviews.Count > 0 ? reviews.Count(r => r.RelevantIndustry == true) * 100 / reviews.Count : 0,
+                location_count = faculty.Addresses.Count
             };
 
             return stats;
@@ -108,7 +109,8 @@ namespace Advisor.Services.Statistics
                 faculty_count = uni.Faculties.Count,
                 review_count = reviews.Count,
                 study_program_count = programCount,
-                relevant_industry = reviews.Count > 0 ? reviews.Count(r => r.RelevantIndustry == true) * 100 / reviews.Count : 0
+                relevant_industry = reviews.Count > 0 ? reviews.Count(r => r.RelevantIndustry == true) * 100 / reviews.Count : 0,
+                dormitory_count = uni.Dormitories.Count
             };
 
             return stats;
