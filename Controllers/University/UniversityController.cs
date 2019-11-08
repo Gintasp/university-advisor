@@ -29,6 +29,7 @@ namespace Advisor.Controllers
 
                 ViewBag.University = uni;
                 ViewBag.StatsData = LoadStats(uni);
+
                 return View("/Views/University/University.cshtml");
             }
 
