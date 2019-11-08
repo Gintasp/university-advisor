@@ -34,7 +34,7 @@
                         <th>Theory percentage</th>
                         <td class="td">
                             <div class="progress">
-                                @{int theoryVal = (int)ViewBag.StatsData.Theory; }
+                                @{int theoryVal = (int) Math.Round(ViewBag.StatsData.Theory); }
                                 <div class="progress-bar" role="progressbar" style="width: @theoryVal%" aria-valuenow="@theoryVal" aria-valuemin="0" aria-valuemax="100">@theoryVal%</div>
                             </div>
                         </td>
@@ -43,7 +43,7 @@
                         <th>Practice percentage</th>
                         <td class="td">
                             <div class="progress">
-                                @{int practiceVal = (int)ViewBag.StatsData.Practice; }
+                                @{int practiceVal = (int) Math.Round(ViewBag.StatsData.Practice); }
                                 <div class="progress-bar" role="progressbar" style="width: @practiceVal%" aria-valuenow="@practiceVal" aria-valuemin="0" aria-valuemax="100">@practiceVal%</div>
                             </div>
                         </td>

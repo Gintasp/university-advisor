@@ -1,7 +1,5 @@
 ﻿using Advisor.Models;
-using System;
 using System.Web.Mvc;
-using System.Collections.Generic;
 using System.Linq;
 using Advisor.Services.Statistics;
 
@@ -15,7 +13,7 @@ namespace Advisor.Controllers
             StatsBuilder = statsBuilder;
         }
 
-        [Route("course/{id?}", Name = "course_page")]
+        [Route("courses/{id?}", Name = "course_page")]
         public ActionResult Index(int? id)
         {
             if (id != null)
@@ -27,14 +25,14 @@ namespace Advisor.Controllers
                 }
 
                 ViewBag.Course = course;
-                ViewBag.StatsData = LoadStats(course);
+                ViewBag.StatsData = GetCourseStats(course);
 
                 return View("/Views/Course/Course.cshtml");
             }
 
             return View("/Views/Shared/404.cshtml");
         }
-        private StatsData LoadStats(Course course)
+        private StatsData GetCourseStats(Course course)
         {
             var stats = StatsBuilder.BuildCourseStats(course);
             StatsData statsData = new StatsData
