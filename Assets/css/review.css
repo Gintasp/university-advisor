@@ -72,3 +72,12 @@
         background: blue;
         cursor: pointer;
     }
+
+.slider-span-right{
+    float: right !important;
+    padding-bottom: 5px;
+}
+
+.slider-span {
+    padding-bottom: 5px;
+}
