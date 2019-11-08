@@ -54,7 +54,7 @@
                                                 <select class="selectpicker form-control" id="studyprogram-select">
                                                     <option value="" selected disabled hidden>Please select</option>
                                                     <!--TODO: add real options-->
-                                                    @for(int i=0; i < 5; i++)
+                                                    @for (int i = 0; i < 5; i++)
                                                     {
                                                         <option>Study program @i</option>
                                                     }
@@ -121,18 +121,18 @@
                             </div>
                         </div>
                         <div class="review-container">
-                        <div class="row">
-                            <div class="col-sm-12 mt-20">
-                                <!--Review textarea-->
-                                <textarea class="review-textarea" id="review-text" placeholder="Enter your review"></textarea>
-                                <!--Submit button-->
-                                <button onclick="result()" type="button" class="btn btn-info sub" id="submit-btn">Submit</button>
+                            <div class="row">
+                                <div class="col-sm-12 mt-20">
+                                    <!--Review textarea-->
+                                    <textarea class="review-textarea" id="review-text" placeholder="Enter your review"></textarea>
+                                    <!--Submit button-->
+                                    <button onclick="result()" type="button" class="btn btn-info sub" id="submit-btn">Submit</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                 </div>       
+                </div>
             </div>
-        </div>
             <!--COURSE TAB-->
             <div id="courseTab" class="tab-pane">
                 <div class="container">
@@ -256,10 +256,50 @@
             </div>
             <!--LECTURER TAB-->
             <div id="lecturerTab" class="tab-pane">
-                            <h3>Lecturer</h3>
+                <div class="container">
+                    <div class="row">
+                        <div class="review-container">
+                            <div class="col-sm-6 mt-20">
+                                <!--University select-->
+                                <label for="university-select-lecturer">Select university</label>
+                                <select class="selectpicker form-control" id="university-select-lecturer">
+                                    <option value="" selected disabled hidden>Please select</option>
+                                    @foreach (University uni in ViewBag.Universities)
+                                    {
+                                        <option>@uni.Title</option>
+                                    }
+                                </select>
+                                <!--Faculty select-->
+                                <div class="mt-20">
+                                    <label for="faculty-select-lecturer">Select faculty</label>
+                                    <select class="selectpicker form-control" id="faculty-select-lecturer">
+                                        <option value="" selected disabled hidden>Please select</option>
+                                        <!--TODO: add real options-->
+                                        @for (int i = 0; i < 5; i++)
+                                        {
+                                            <option>Faculty @i</option>
+                                        }
+                                    </select>
+                                </div>
+                                <!--Lecturer select-->
+                                <div class="mt-20">
+                                    <label for="lecturer-select">Select lecturer</label>
+                                    <select class="selectpicker form-control" id="lecturer-select">
+                                        <option value="" selected disabled hidden>Please select</option>
+                                        <!--TODO: add real options-->
+                                        @for (int i = 0; i < 5; i++)
+                                        {
+                                            <option>Lecturer @i</option>
+                                        }
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
 </body>
     </html>
     <script>
