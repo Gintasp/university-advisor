@@ -11,12 +11,20 @@ namespace Advisor.Controllers
         {
         }
 
+        [HttpGet]
         [Route("review", Name = "review_page")]
         public ActionResult Index()
         {
-            List<University> unis = DB.Instance.Universities.ToList();
-            ViewBag.Universities = unis;
+            ViewBag.Universities = DB.Instance.Universities.ToList();
+            ViewBag.StudyPrograms = DB.Instance.StudyPrograms.ToList();
 
+            return View("/Views/Review/Review.cshtml");
+        }
+
+        [HttpPost]
+        [Route("review")]
+        public ActionResult Index(Review review, int university)
+        {
             return View("/Views/Review/Review.cshtml");
         }
     }
