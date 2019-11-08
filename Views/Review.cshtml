@@ -21,43 +21,40 @@
         <div class="tab-content">
             <div id="studyProgramTab" class="tab-pane active">
                 <div class="container">
-                    <div class="form">
                         <div class="review-container">
                             <div class="row">
                                 <div class="col-sm-6 mt-20">
-                                    <form action="#">
-                                        <div class="form-group">
-                                            <!--University select-->
-                                            <label for="university-select">Select university</label>
-                                            <select class="selectpicker form-control" id="university-select" onchange="getSelectValue();">
-                                                <option value="" selected disabled hidden>Please select</option>
-                                                @foreach (University uni in ViewBag.Universities)
-                                                {
-                                                    <option>@uni.Title</option>
-                                                }
-                                            </select>
-                                            <!--Faculty select-->
-                                                <label class="mt-20" for="faculty-select">Select faculty</label>
-                                                <select class="selectpicker form-control" id="faculty-select">
-                                                    <option value="" selected disabled hidden>Please select</option>
-                                                    <!--TODO: add real options-->
-                                                    @for (int i = 0; i < 5; i++)
-                                                    {
-                                                        <option>Faculty @i</option>
-                                                    }
-                                                </select>
-                                            <!--Study program select-->
-                                                <label class="mt-20" for="studyprogram-select">Select study program</label>
-                                                <select class="selectpicker form-control" id="studyprogram-select">
-                                                    <option value="" selected disabled hidden>Please select</option>
-                                                    <!--TODO: add real options-->
-                                                    @for (int i = 0; i < 5; i++)
-                                                    {
-                                                        <option>Study program @i</option>
-                                                    }
-                                                </select>
-                                        </div>
-                                    </form>
+                                    <div class="form-group">
+                                        <!--University select-->
+                                        <label for="university-select">Select university</label>
+                                        <select class="selectpicker form-control" id="university-select" onchange="getSelectValue();">
+                                            <option value="" selected disabled hidden>Please select</option>
+                                            @foreach (University uni in ViewBag.Universities)
+                                            {
+                                                <option>@uni.Title</option>
+                                            }
+                                        </select>
+                                        <!--Faculty select-->
+                                        <label class="mt-20" for="faculty-select">Select faculty</label>
+                                        <select class="selectpicker form-control" id="faculty-select">
+                                            <option value="" selected disabled hidden>Please select</option>
+                                            <!--TODO: add real options-->
+                                            @for (int i = 0; i < 5; i++)
+                                            {
+                                                <option>Faculty @i</option>
+                                            }
+                                        </select>
+                                    <!--Study program select-->
+                                        <label class="mt-20" for="studyprogram-select">Select study program</label>
+                                        <select class="selectpicker form-control" id="studyprogram-select">
+                                            <option value="" selected disabled hidden>Please select</option>
+                                            <!--TODO: add real options-->
+                                            @for (int i = 0; i < 5; i++)
+                                            {
+                                                <option>Study program @i</option>
+                                            }
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="col-sm-6 mt-20">
                                     <!--Overall rating-->
@@ -96,7 +93,7 @@
                                             <input type="checkbox" value="" />  I am working in a relevant industry
                                         </div>
                                         <!--Select start year-->
-                                            <label class="mt-20" for="startyear-select">Select your start year</label>
+                                        <label class="mt-20" for="startyear-select">Year of first employment</label>
                                             <select class="selectpicker form-control" id="startyear-select">
                                                 <option value="" selected disabled hidden>Please select</option>
                                                 <option>First</option>
@@ -113,11 +110,10 @@
                                     <!--Review textarea-->
                                     <textarea class="review-textarea" id="review-text" placeholder="Enter your review"></textarea>
                                     <!--Submit button-->
-                                    <button onclick="result()" type="button" class="btn btn-info sub">Submit</button>
+                                    <button type="button" class="btn btn-info sub">Submit</button>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
             <!--COURSE TAB-->
@@ -160,7 +156,7 @@
                                     </select>
                                 </div>
                                 <!--Course select-->
-                                    <label class="mt-20"for="course-select">Select course</label>
+                                    <label class="mt-20" for="course-select">Select course</label>
                                     <select class="selectpicker form-control" id="course-select">
                                         <option value="" selected disabled hidden>Please select</option>
                                         <!--TODO: add real options-->
@@ -195,13 +191,13 @@
                                             <span onclick="starmark(this)" id="@i+usefulnessCourse" class="fa fa-star "></span>
                                         }
                                     </div>
-                                <!--Interesting-->
+                                <!--Interesting ...-->
                                     <div class="slidecontainer mt-20">
                                         <span class="slider-span">Uninteresting</span>
                                         <span class="slider-span-right" style="float:right">Interesting</span>
                                         <input type="range" min="1" max="100" class="slider">
                                     </div>
-                                <!--Theory-->
+                                <!--Theory ...-->
                                     <div class="slidecontainer mt-20">
                                         <span class="slider-span">Theory</span>
                                         <span class="slider-span-right" style="float:right;">Practice</span>
@@ -218,8 +214,8 @@
                             <div class="col-sm-12 mt-20">
                                 <!--Review textarea-->
                                 <textarea class="review-textarea mt-20" id="review-text-course" placeholder="Enter your review"></textarea>
-                                    <!--Submit button-->
-                                    <button type="button" class="btn btn-info sub" id="course-submit-btn">Submit</button>
+                                <!--Submit button-->
+                                <button type="button" class="btn btn-info sub" id="course-submit-btn">Submit</button>
                             </div>
                         </div>
                     </div>
@@ -298,7 +294,7 @@
                                         <span onclick="starmark(this)" id="@i+deliveryLecturer" class="fa fa-star "></span>
                                     }
                                 </div>
-                                <!--Interesting-->
+                                <!--Interesting ...-->
                                     <div class="slidecontainer mt-20">
                                         <span class="slider-span">Uninteresting</span>
                                         <span class="slider-span-right" style="float:right">Interesting</span>
@@ -310,13 +306,12 @@
                                             <span class="slider-span-right" style="float:right">Strict</span>
                                             <input type="range" min="1" max="100" class="slider">
                                         </div>
-
                             </div>
                             <div class="col-sm-12 mt-20">
                                 <!--Review textarea-->
                                 <textarea class="review-textarea mt-20" id="review-text-course" placeholder="Enter your review"></textarea>
                                 <!--Submit button-->
-                                <button type="button" class="btn btn-default sub" id="course-submit-btn">Submit</button>
+                                <button type="button" class="btn btn-info sub" id="course-submit-btn">Submit</button>
                             </div>
                         </div>
                     </div>
@@ -338,13 +333,6 @@
                     document.getElementById(i + subid).style.color = "black";
                 }
             }   
-        }
-        function result() {
-            alert("Rating : " + count + "\nReview : " + document.getElementById("review-text").value);
-        }
-        function getSelectValue() {
-            var selectedValue = document.getElementById("university-select").value;
-            alert(selectedValue); //testinau ar veikia select
         }
     </script>
 
