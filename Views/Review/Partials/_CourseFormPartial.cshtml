@@ -1,0 +1,105 @@
+﻿@using Advisor.Models
+
+<div class="container">
+    <div class="row">
+        <div class="review-container">
+            <div class="col-sm-6 mt-20">
+                <!--University select-->
+                <label for="university-select-course">Select university</label>
+                <select class="selectpicker form-control" id="university-select-course">
+                    <option value="" selected disabled hidden>Please select</option>
+                    @foreach (University uni in ViewBag.Universities)
+                    {
+                        <option>@uni.Title</option>
+                    }
+                </select>
+                <!--Faculty select-->
+                <div class="mt-20">
+                    <label for="faculty-select-course">Select faculty</label>
+                    <select class="selectpicker form-control" id="faculty-select-course">
+                        <option value="" selected disabled hidden>Please select</option>
+                        <!--TODO: add real options-->
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            <option>Faculty @i</option>
+                        }
+                    </select>
+                </div>
+                <!--Study Program select-->
+                <div class="mt-20">
+                    <label for="studyprogram-select-course">Select study program</label>
+                    <select class="selectpicker form-control" id="studyprogram-select-course">
+                        <option value="" selected disabled hidden>Please select</option>
+                        <!--TODO: add real options-->
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            <option>Study program @i</option>
+                        }
+                    </select>
+                </div>
+                <!--Course select-->
+                <label class="mt-20" for="course-select">Select course</label>
+                <select class="selectpicker form-control" id="course-select">
+                    <option value="" selected disabled hidden>Please select</option>
+                    <!--TODO: add real options-->
+                    @for (int i = 0; i < 5; i++)
+                    {
+                        <option>Course @i</option>
+                    }
+                </select>
+            </div>
+            <div class="col-sm-6 mt-20">
+                <!--Overall rating-->
+                <label for="stars">Overall rating</label>
+                <div class="stars">
+                    @for (int i = 0; i < 10; i++)
+                    {
+                        <span onclick="starmark(this)" id="@i+overallCourse" class="fa fa-star "></span>
+                    }
+                </div>
+                <!--Satisfaction-->
+                <label class="mt-20" for="stars">Satisfaction level</label>
+                <div class="stars">
+                    @for (int i = 0; i < 10; i++)
+                    {
+                        <span onclick="starmark(this)" id="@i+satisfactionCourse" class="fa fa-star "></span>
+                    }
+                </div>
+                <!--Usefulness-->
+                <label class="mt-20" for="stars">Usefulness</label>
+                <div class="stars">
+                    @for (int i = 0; i < 10; i++)
+                    {
+                        <span onclick="starmark(this)" id="@i+usefulnessCourse" class="fa fa-star "></span>
+                    }
+                </div>
+                <!--Interesting ...-->
+                <div class="slidecontainer mt-20">
+                    <span class="slider-span">Uninteresting</span>
+                    <span class="slider-span-right" style="float:right">Interesting</span>
+                    <input type="range" min="1" max="100" class="slider">
+                </div>
+                <!--Theory ...-->
+                <div class="slidecontainer mt-20">
+                    <span class="slider-span">Theory</span>
+                    <span class="slider-span-right" style="float:right;">Practice</span>
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                </div>
+                <!--Difficulty-->
+                <div class="slidecontainer mt-20">
+                    <span class="slider-span">Easy</span>
+                    <span class="slider-span-right" style="float:right;">Difficult</span>
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                </div>
+
+            </div>
+            <div class="col-sm-12 mt-20">
+                <!--Review textarea-->
+                <textarea class="review-textarea mt-20" id="review-text-course" placeholder="Enter your review"></textarea>
+                <!--Submit button-->
+                <button type="button" class="btn btn-info sub" id="course-submit-btn">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,4 +1,4 @@
-﻿ textarea {
+﻿textarea {
     max-width: 900px !important;
     margin-left: 0px;
 }
@@ -8,14 +8,11 @@
     width: 100%;
     resize: none;
 }
+
 .review-textarea {
     height: 190px;
     width: 100%;
     resize: none;
-}
-
-.selectpicker form-control{
-    width: 200px;
 }
 
 .sub {
@@ -23,15 +20,15 @@
     margin-top: 20px;
 }
 
-.review-container{
+.review-container {
     margin-left: 100px;
 }
 
-.stars{
+.stars {
     font-size: 19px;
 }
 
-.slidecontainer{
+.slidecontainer {
     width: 50%;
     font-weight: bold;
 }
@@ -48,25 +45,25 @@
     transition: opacity .2s;
 }
 
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: black;
-    cursor: pointer;
-}
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: black;
+        cursor: pointer;
+    }
 
-.slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: black;
-    cursor: pointer;
-}
+    .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: black;
+        cursor: pointer;
+    }
 
-.slider-span-right{
+.slider-span-right {
     float: right !important;
     padding-bottom: 5px;
 }
