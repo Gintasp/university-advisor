@@ -25,7 +25,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44392</IISExpressSSLPort>
+    <IISExpressSSLPort>44308</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -277,6 +277,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\css\comparison.css" />
+    <Content Include="Assets\css\course.css" />
     <Content Include="Assets\css\faculty.css" />
     <Content Include="Assets\css\lib\bootstrap-theme.css" />
     <Content Include="Assets\css\lib\bootstrap-theme.min.css" />
@@ -380,6 +381,7 @@
     <Content Include="Views\Comparison\Comparison.cshtml" />
     <Content Include="Views\Faculty.cshtml" />
     <Content Include="Views\StudyProgram\StudyProgram.cshtml" />
+    <Content Include="Views\Course\Course.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
