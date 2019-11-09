@@ -5,7 +5,7 @@
     <div class="col-sm-6 mt-20">
         <div class="form-group">
             <label for="university">Select university</label>
-            <select name="university" class="form-control m-w-unset" id="university">
+            <select name="university" class="university-select form-control m-w-unset" id="university">
                 <option selected disabled hidden>University</option>
                 @foreach (University uni in ViewBag.Universities)
                 {
@@ -16,7 +16,7 @@
 
         <div class="form-group">
             <label for="program">Select study program</label>
-            <select name="program" class="form-control m-w-unset" id="program">
+            <select name="program" class="program-select form-control m-w-unset" id="program">
                 <option selected disabled hidden>Study program</option>
                 @foreach (StudyProgram program in ViewBag.StudyPrograms)
                 {
@@ -85,6 +85,6 @@
 
     <div class="col-sm-12">
         @Html.TextArea("Text", new { @class = "form-control review-textarea w-100 m-w-unset", @placeholder = "Enter your review... ", @rows = 5 })
-        <button id="review-submit" type="submit" class="btn btn-primary mt-20 w-100">Submit</button>
+        <button id="program-review-submit" type="submit" class="btn btn-primary mt-20 w-100">Submit</button>
     </div>
 </form>

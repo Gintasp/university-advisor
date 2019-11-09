@@ -213,6 +213,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\ApiController.cs" />
+    <Compile Include="Controllers\Api\ApiStudyProgramController.cs" />
     <Compile Include="Controllers\Api\ApiUniversityController.cs" />
     <Compile Include="Controllers\Course\CourseController.cs" />
     <Compile Include="Controllers\Course\ICourseController.cs" />
@@ -222,14 +223,8 @@
     <Compile Include="Controllers\Lecturer\ILecturerController.cs" />
     <Compile Include="Controllers\Lecturer\LecturerController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\Review\CourseReviewController.cs" />
-    <Compile Include="Controllers\Review\ICourseReviewController.cs" />
-    <Compile Include="Controllers\Review\ILecturerReviewController.cs" />
     <Compile Include="Controllers\Review\IReviewController.cs" />
-    <Compile Include="Controllers\Review\IStudyProgramReviewController.cs" />
-    <Compile Include="Controllers\Review\LecturerReviewController.cs" />
     <Compile Include="Controllers\Review\ReviewController.cs" />
-    <Compile Include="Controllers\Review\StudyProgramReviewController.cs" />
     <Compile Include="Controllers\StudyProgram\IStudyProgramController.cs" />
     <Compile Include="Controllers\StudyProgram\StudyProgramController.cs" />
     <Compile Include="Controllers\Comparison\IComparisonController.cs" />

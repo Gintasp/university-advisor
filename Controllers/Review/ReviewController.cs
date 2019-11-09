@@ -17,6 +17,7 @@ namespace Advisor.Controllers
         {
             ViewBag.Universities = DB.Instance.Universities.ToList();
             ViewBag.StudyPrograms = DB.Instance.StudyPrograms.ToList();
+            ViewBag.Courses = DB.Instance.Courses.ToList();
 
             return View("/Views/Review/Review.cshtml");
         }
@@ -39,11 +40,12 @@ namespace Advisor.Controllers
         }
 
         [HttpPost]
-        [Route("review/course", Name = "review_courses")]
+        [Route("review/course", Name = "review_course")]
         public ActionResult ReviewCourse(Review review, int? course)
         {
             try
             {
+                review.PracticePercentage = 100 - review.TheoryPercentage;
                 DB.Instance.Courses.Where(c => c.Id == course).SingleOrDefault().Reviews.Add(review);
                 DB.Instance.SaveChanges();
 

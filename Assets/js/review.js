@@ -1,7 +1,5 @@
 ﻿//Populate study program dropdown with selected university programs data from API
-const uniSelect = $('#university');
-
-uniSelect.on('change', e => {
+$('.university-select').on('change', e => {
     $.ajax({
         url: `/university/${e.target.value}/programs`,
         success: data => {
@@ -11,19 +9,38 @@ uniSelect.on('change', e => {
                 optionString += `<option value="${program.Id}">${program.Title}</option>`
             });
 
-            $('#program').html(optionString);
+            $('.program-select').html(optionString);
+        }
+    });
+});
+
+//Populate course dropdown with selected study program courses from API
+$('.program-select').on('change', e => {
+    $.ajax({
+        url: `program/${e.target.value}/courses`,
+        success: data => {
+            let optionString = '<option selected disabled hidden>Course</option>';
+            const responseData = JSON.parse(data);
+            responseData.map(course => {
+                optionString += `<option value="${course.Id}">${course.Title}</option>`
+            });
+
+            $('.course-select').html(optionString);
         }
     });
 });
 
 //Prevent form submit if study program is not selected
-$('#review-submit').on('click', e => {
-    const programSelect = $('#program');
-    const selectedProgramValue = Number(programSelect.find(':selected').val());
-    if (Number.isNaN(selectedProgramValue)) {
+$('#program-review-submit').on('click', e => submitSelected(e, '#program'));
+
+//Generic function to prevent form submit
+const submitSelected = (e, selector) => {
+    const select = $(selector);
+    const selectedValue = Number(select.find(':selected').val());
+    if (Number.isNaN(selectedValue)) {
         e.preventDefault();
     }
-});
+};
 
 //Handle rating stars click
 const TYPE_OVERALL = 'OVERALL';
@@ -59,6 +76,7 @@ const handleRating = (element, type) => {
     }
 }
 
+//Helper to change stars color
 const paintStars = (selector, amount) => {
     for (let i = 1; i <= 10; i++) {
         if (i <= amount) {
@@ -69,6 +87,7 @@ const paintStars = (selector, amount) => {
     }
 }
 
+//Helper to set hidden input's value
 const setInputValue = (selector, amount) => {
     const elements = Object.values(document.querySelectorAll(selector));
     elements.map(el => el.value = amount);
