@@ -51,30 +51,33 @@
     <div class="col-md-6 mt-20">
         <div class="form-group">
             <label for="stars">Overall rating</label>
-            <div class="stars">
+            <div class="stars" id="overall">
+                @Html.TextBoxFor(r => r.OveralRating, new { @type = "hidden", id = "overall-input" })
                 @for (int i = 0; i < 10; i++)
                 {
-                    <span onclick="starmark(this)" id="@i+overallStudyProgram" class="fa fa-star "></span>
+                    <span onclick="handleRating(this, 'OVERALL')" id="@i" class="fa fa-star"></span>
                 }
             </div>
         </div>
 
         <div class="form-group">
-            <label for="stars">Difficulty</label>
-            <div class="stars">
+            <label for="stars">Program difficulty</label>
+            <div class="stars" id="difficulty">
+                @Html.TextBoxFor(r => r.Difficulty, new { @type = "hidden", id = "difficulty-input" })
                 @for (int i = 0; i < 10; i++)
                 {
-                    <span onclick="starmark(this)" id="@i+difficultyStudyProgram" class="fa fa-star"></span>
+                    <span onclick="handleRating(this, 'DIFFICULTY')" id="@i" class="fa fa-star"></span>
                 }
             </div>
         </div>
 
         <div class="form-group mt-20">
-            <label for="stars">Satisfaction level</label>
-            <div class="stars">
+            <label for="stars">Your satisfaction with the program</label>
+            <div class="stars" id="satisfaction">
+                @Html.TextBoxFor(r => r.Satisfaction, new { @type = "hidden", id = "satisfaction-input" })
                 @for (int i = 0; i < 10; i++)
                 {
-                    <span onclick="starmark(this)" id="@i+satisfactionStudyProgram" class="fa fa-star "></span>
+                    <span onclick="handleRating(this, 'SATISFACTION')" id="@i" class="fa fa-star"></span>
                 }
             </div>
         </div>

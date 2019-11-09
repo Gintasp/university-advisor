@@ -1,6 +1,6 @@
-﻿const uniSelect = $('#university');
+﻿//Populate study program dropdown with selected university programs data from API
+const uniSelect = $('#university');
 
-//Populate study program dropdown with selected university programs data from API
 uniSelect.on('change', e => {
     $.ajax({
         url: `/university/${e.target.value}/programs`,
@@ -25,17 +25,36 @@ $('#review-submit').on('click', e => {
     }
 });
 
-let count;
+//Handle rating stars click
+const TYPE_OVERALL = 'OVERALL';
+const TYPE_DIFFICULTY = 'DIFFICULTY';
+const TYPE_SATISFACTION = 'SATISFACTION';
 
-function starmark(item) {
-    count = Number(item.id[0]) + 1;
-    var subid = item.id.substring(1);
-    for (var i = 0; i < 10; i++) {
-        if (i < count) {
-            document.getElementById(i + subid).style.color = "orange";
-        }
-        else {
-            document.getElementById(i + subid).style.color = "black";
+const handleRating = (element, type) => {
+    const selectedStarsAmount = Number(element.id[0]) + 1;
+
+    switch (type) {
+        case TYPE_OVERALL:
+            $('#overall-input').val(selectedStarsAmount);
+            paintStars('#overall span', selectedStarsAmount);
+            break;
+        case TYPE_DIFFICULTY:
+            $('#difficulty-input').val(selectedStarsAmount);
+            paintStars('#difficulty span', selectedStarsAmount);
+            break;
+        case TYPE_SATISFACTION:
+            $('#satisfaction-input').val(selectedStarsAmount);
+            paintStars('#satisfaction span', selectedStarsAmount);
+            break;
+    }
+}
+
+const paintStars = (selector, amount) => {
+    for (let i = 1; i <= 10; i++) {
+        if (i <= amount) {
+            $(selector + `:nth-child(${i + 1})`).css('color', 'orange');
+        } else {
+            $(selector + `:nth-child(${i + 1})`).css('color', '#333');
         }
     }
 }
