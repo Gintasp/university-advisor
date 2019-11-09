@@ -34,7 +34,7 @@ namespace Advisor.Controllers
             }
             catch (Exception e)
             {
-                return View("/Views/Shared/404.cshtml");
+                return View("/Views/Shared/Error.cshtml");
             }
         }
     }
