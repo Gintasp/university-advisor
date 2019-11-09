@@ -14,6 +14,21 @@ $('.university-select').on('change', e => {
     });
 });
 
+$('#lecturer-university').on('change', e => {
+    $.ajax({
+        url: `/university/${e.target.value}/lecturers`,
+        success: data => {
+            let optionString = '<option selected disabled hidden>Lecturer</option>';
+            const responseData = JSON.parse(data);
+            responseData.map(lecturer => {
+                optionString += `<option value="${lecturer.Id}">${lecturer.Title}</option>`
+            });
+
+            $('#lecturer').html(optionString);
+        }
+    });
+})
+
 //Populate course dropdown with selected study program courses from API
 $('.program-select').on('change', e => {
     $.ajax({
@@ -48,6 +63,10 @@ const TYPE_DIFFICULTY = 'DIFFICULTY';
 const TYPE_SATISFACTION = 'SATISFACTION';
 const TYPE_USEFULNESS = 'USEFULNESS';
 const TYPE_INTERESTING = 'INTERESTING';
+const TYPE_DELIVERY = 'DELIVERY';
+const TYPE_PERSONALITY = 'PERSONALITY';
+const TYPE_STRICTNESS = 'STRICTNESS';
+const TYPE_COMPETENCE = 'COMPETENCE';
 
 const handleRating = (element, type) => {
     const selectedStarsAmount = Number(element.id[0]) + 1;
@@ -72,6 +91,22 @@ const handleRating = (element, type) => {
         case TYPE_INTERESTING:
             setInputValue('#interesting-input', selectedStarsAmount);
             paintStars('#interesting span', selectedStarsAmount);
+            break;
+        case TYPE_DELIVERY:
+            setInputValue('#delivery-input', selectedStarsAmount);
+            paintStars('#delivery span', selectedStarsAmount);
+            break;
+        case TYPE_PERSONALITY:
+            setInputValue('#personality-input', selectedStarsAmount);
+            paintStars('#personality span', selectedStarsAmount);
+            break;
+        case TYPE_STRICTNESS:
+            setInputValue('#strictness-input', selectedStarsAmount);
+            paintStars('#strictness span', selectedStarsAmount);
+            break;
+        case TYPE_COMPETENCE:
+            setInputValue('#competence-input', selectedStarsAmount);
+            paintStars('#competence span', selectedStarsAmount);
             break;
     }
 }

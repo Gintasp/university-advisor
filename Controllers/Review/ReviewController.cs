@@ -18,6 +18,7 @@ namespace Advisor.Controllers
             ViewBag.Universities = DB.Instance.Universities.ToList();
             ViewBag.StudyPrograms = DB.Instance.StudyPrograms.ToList();
             ViewBag.Courses = DB.Instance.Courses.ToList();
+            ViewBag.Lecturers = DB.Instance.Lecturers.ToList();
 
             return View("/Views/Review/Review.cshtml");
         }
@@ -47,6 +48,23 @@ namespace Advisor.Controllers
             {
                 review.PracticePercentage = 100 - review.TheoryPercentage;
                 DB.Instance.Courses.Where(c => c.Id == course).SingleOrDefault().Reviews.Add(review);
+                DB.Instance.SaveChanges();
+
+                return RedirectToRoute("review_page");
+            }
+            catch (Exception e)
+            {
+                return View("/Views/Shared/Error.cshtml");
+            }
+        }
+
+        [HttpPost]
+        [Route("review/lecturer", Name = "review_lecturer")]
+        public ActionResult ReviewLecturer(Review review, int? lecturer)
+        {
+            try
+            {
+                DB.Instance.Lecturers.Where(l => l.Id == lecturer).SingleOrDefault().Reviews.Add(review);
                 DB.Instance.SaveChanges();
 
                 return RedirectToRoute("review_page");
