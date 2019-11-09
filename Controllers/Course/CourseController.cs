@@ -2,6 +2,8 @@
 using System.Web.Mvc;
 using System.Linq;
 using Advisor.Services.Statistics;
+using System.Web;
+using System.IO;
 
 namespace Advisor.Controllers
 {
@@ -32,6 +34,30 @@ namespace Advisor.Controllers
 
             return View("/Views/Shared/404.cshtml");
         }
+
+        [HttpPost]
+        [Route("upload", Name = "file_upload")]
+        public ActionResult UploadFile(HttpPostedFileBase file, int course)
+        {
+            if (file.ContentLength > 0)
+            {
+                string fileName = Path.GetFileName(file.FileName);
+                string path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
+                UploadedFile uploadedFile = new UploadedFile
+                {
+                    Course = DB.Instance.Courses.Where(c => c.Id == course).SingleOrDefault(),
+                    FileName = fileName,
+                    FilePath = "~/App_Data/uploads/" + fileName
+                };
+                DB.Instance.UploadedFiles.Add(uploadedFile);
+                DB.Instance.SaveChanges();
+                
+                file.SaveAs(path);
+            }
+
+            return RedirectToRoute("course_page", new { id = course });
+        }
+
         private StatsData GetCourseStats(Course course)
         {
             var stats = StatsBuilder.BuildCourseStats(course);
