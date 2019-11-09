@@ -1,4 +1,6 @@
+using Advisor.Services.IO;
 using Advisor.Services.Statistics;
+using Advisor.Services.Validator;
 using System.Web.Mvc;
 using Unity;
 using Unity.Mvc5;
@@ -16,6 +18,8 @@ namespace Advisor
             
             container.RegisterType<IStatisticCalculator, StatisticCalculator>();
             container.RegisterType<IStatsBuilder, StatsBuilder>();
+            container.RegisterType<IFileUploader, FileUploader>();
+            container.RegisterType<IFileValidator, FileValidator>();
             
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }

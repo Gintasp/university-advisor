@@ -261,20 +261,15 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Auth\SessionStorage.cs" />
+    <Compile Include="Services\IO\FileUploader.cs" />
+    <Compile Include="Services\IO\IFileUploader.cs" />
     <Compile Include="Services\Statistics\IStatisticCalculator.cs" />
     <Compile Include="Services\Statistics\IStatsBuilder.cs" />
     <Compile Include="Services\Statistics\StatisticCalculator.cs" />
     <Compile Include="Services\Statistics\StatsBuilder.cs" />
-    <Compile Include="Services\Validator\ILoginDataValidator.cs" />
-    <Compile Include="Services\Validator\IReviewValidator.cs" />
-    <Compile Include="Services\Validator\ISignupDataValidator.cs" />
-    <Compile Include="Services\Validator\LoginDataValidator.cs" />
-    <Compile Include="Services\Validator\ReviewValidator.cs" />
-    <Compile Include="Services\Validator\SignupDataValidator.cs" />
+    <Compile Include="Services\Validator\FileValidator.cs" />
+    <Compile Include="Services\Validator\IFileValidator.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Tests\LoginDataValidatorTest.cs" />
-    <Compile Include="Tests\SessionStorageTest.cs" />
-    <Compile Include="Tests\SignupDataValidatorTest.cs" />
     <Compile Include="Tests\StatisticCalculatorTest.cs" />
   </ItemGroup>
   <ItemGroup>

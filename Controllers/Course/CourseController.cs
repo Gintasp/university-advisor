@@ -3,16 +3,26 @@ using System.Web.Mvc;
 using System.Linq;
 using Advisor.Services.Statistics;
 using System.Web;
-using System.IO;
+using Advisor.Services.IO;
+using System;
+using Advisor.Services.Validator;
 
 namespace Advisor.Controllers
 {
     public class CourseController : Controller, ICourseController
     {
         public IStatsBuilder StatsBuilder { get; set; }
-        public CourseController(IStatsBuilder statsBuilder)
+        public IFileUploader FileUploader { get; set; }
+        public IFileValidator FileValidator { get; set; }
+        public CourseController(
+            IStatsBuilder statsBuilder,
+            IFileUploader fileUploader,
+            IFileValidator fileValidator
+        )
         {
             StatsBuilder = statsBuilder;
+            FileUploader = fileUploader;
+            FileValidator = fileValidator;
         }
 
         [Route("courses/{id?}", Name = "course_page")]
@@ -39,23 +49,43 @@ namespace Advisor.Controllers
         [Route("upload", Name = "file_upload")]
         public ActionResult UploadFile(HttpPostedFileBase file, int course)
         {
-            if (file.ContentLength > 0)
+            if (FileValidator.Validate(file))
             {
-                string fileName = Path.GetFileName(file.FileName);
-                string path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
+                FileUploader.UploadFile(file);
+            }
+
+            try
+            {
+                SaveFileIntoDB(file, course);
+
+                return RedirectToRoute("course_page", new { id = course });
+            }
+            catch (Exception e)
+            {
+                return View("/Views/Shared/Error.cshtml");
+            }
+        }
+
+        private bool SaveFileIntoDB(HttpPostedFileBase file, int courseId)
+        {
+            try
+            {
                 UploadedFile uploadedFile = new UploadedFile
                 {
-                    Course = DB.Instance.Courses.Where(c => c.Id == course).SingleOrDefault(),
-                    FileName = fileName,
-                    FilePath = "~/App_Data/uploads/" + fileName
+                    Course = DB.Instance.Courses.Where(c => c.Id == courseId).SingleOrDefault(),
+                    FileName = file.FileName,
+                    FilePath = "~/App_Data/uploads/" + file.FileName,
+                    UploadedAt = DateTime.Now
                 };
                 DB.Instance.UploadedFiles.Add(uploadedFile);
                 DB.Instance.SaveChanges();
-                
-                file.SaveAs(path);
-            }
 
-            return RedirectToRoute("course_page", new { id = course });
+                return true;
+            }
+            catch (Exception e)
+            {
+                throw new InvalidOperationException();
+            }
         }
 
         private StatsData GetCourseStats(Course course)
