@@ -1,52 +1,27 @@
-﻿//Populate study program dropdown with selected university programs data from API
-$('.university-select').on('change', e => {
+﻿//Helper to load items into dropdown from REST API
+const loadDropdownItems = (url, selector, placeholder) => {
     $.ajax({
-        url: `/university/${e.target.value}/programs`,
+        url,
         success: data => {
-            let optionString = '<option selected disabled hidden>Study program</option>';
+            let optionString = `<option selected disabled hidden>${placeholder}</option>`;
             const responseData = JSON.parse(data);
-            responseData.map(program => {
-                optionString += `<option value="${program.Id}">${program.Title}</option>`
+            responseData.map(item => {
+                optionString += `<option value="${item.Id}">${item.Title}</option>`
             });
 
-            $('.program-select').html(optionString);
+            $(selector).html(optionString);
         }
     });
-});
+}
 
-$('#lecturer-university').on('change', e => {
-    $.ajax({
-        url: `/university/${e.target.value}/lecturers`,
-        success: data => {
-            let optionString = '<option selected disabled hidden>Lecturer</option>';
-            const responseData = JSON.parse(data);
-            responseData.map(lecturer => {
-                optionString += `<option value="${lecturer.Id}">${lecturer.Title}</option>`
-            });
+//Populate lecturer dropdown with selected univeristy's lecturers from API
+$('#lecturer-university').on('change', e => loadDropdownItems(`/university/${e.target.value}/lecturers`, '#lecturer', 'Lecturer'));
 
-            $('#lecturer').html(optionString);
-        }
-    });
-})
+//Populate study program dropdown with selected university programs data from API
+$('.university-select').on('change', e => loadDropdownItems(`/university/${e.target.value}/programs`, '.program-select', 'Study program'));
 
-//Populate course dropdown with selected study program courses from API
-$('.program-select').on('change', e => {
-    $.ajax({
-        url: `program/${e.target.value}/courses`,
-        success: data => {
-            let optionString = '<option selected disabled hidden>Course</option>';
-            const responseData = JSON.parse(data);
-            responseData.map(course => {
-                optionString += `<option value="${course.Id}">${course.Title}</option>`
-            });
-
-            $('.course-select').html(optionString);
-        }
-    });
-});
-
-//Prevent form submit if study program is not selected
-$('#program-review-submit').on('click', e => submitSelected(e, '#program'));
+//Populate course dropdown with selected study program courses from REST API
+$('.program-select').on('change', e => loadDropdownItems(`/program/${e.target.value}/courses`, '.course-select', 'Course'));
 
 //Generic function to prevent form submit
 const submitSelected = (e, selector) => {
@@ -56,6 +31,9 @@ const submitSelected = (e, selector) => {
         e.preventDefault();
     }
 };
+
+//Prevent form submit if study program is not selected
+$('#program-review-submit').on('click', e => submitSelected(e, '#program'));
 
 //Handle rating stars click
 const TYPE_OVERALL = 'OVERALL';
