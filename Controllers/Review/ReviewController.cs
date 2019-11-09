@@ -1,4 +1,5 @@
 ﻿using Advisor.Models;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -24,7 +25,17 @@ namespace Advisor.Controllers
         [Route("review/program", Name = "review_program")]
         public ActionResult Index(Review review, int? program)
         {
-            return View("/Views/Review/Review.cshtml");
+            try
+            {
+                DB.Instance.StudyPrograms.Where(p => p.Id == program).SingleOrDefault().Reviews.Add(review);
+                DB.Instance.SaveChanges();
+
+                return RedirectToRoute("review_page");
+            }
+            catch (Exception e)
+            {
+                return View("/Views/Shared/404.cshtml");
+            }
         }
     }
 }
