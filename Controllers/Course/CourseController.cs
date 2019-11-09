@@ -49,13 +49,14 @@ namespace Advisor.Controllers
         [Route("upload", Name = "file_upload")]
         public ActionResult UploadFile(HttpPostedFileBase file, int course)
         {
-            if (FileValidator.Validate(file))
+            if (!FileValidator.Validate(file))
             {
-                FileUploader.UploadFile(file);
+                return View("/Views/Shared/Error.cshtml");
             }
 
             try
             {
+                FileUploader.UploadFile(file);
                 SaveFileIntoDB(file, course);
 
                 return RedirectToRoute("course_page", new { id = course });
