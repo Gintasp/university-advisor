@@ -64,7 +64,7 @@
                                 </p>
                                 <!-- Add display of rating -->
                                 <p class="mr-5">
-                                    Rating #
+                                    Overall @Math.Round(studyProgram.Reviews.Average(r => r.OveralRating), 2).ToString()
                                 </p>
                             </div>
                         </div>

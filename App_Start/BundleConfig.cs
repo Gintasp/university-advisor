@@ -20,6 +20,9 @@ namespace Advisor
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Assets/js/lib/bootstrap.js"));
+            
+            bundles.Add(new ScriptBundle("~/bundles/review").Include(
+                      "~/Assets/js/review.js"));
 
             // Style bundles
             bundles.Add(new StyleBundle("~/bundles/css").Include(

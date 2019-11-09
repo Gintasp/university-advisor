@@ -21,18 +21,23 @@
                 @Html.ActionLink("University Advisor", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
+                @Html.Partial("_LoginPartial")
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="@Url.RouteUrl("universities_page")">Universities</a></li>
+                    <li><a href="@Url.RouteUrl("review_page")">Leave a review!</a></li>
                 </ul>
-                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container body-content mt-50">
         @RenderBody()
+    </div>
+    
+    <div class="container body-content">
         <hr />
         @Html.Partial("_FooterPartial")
     </div>
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

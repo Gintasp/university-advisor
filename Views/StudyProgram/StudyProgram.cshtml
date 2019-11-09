@@ -40,61 +40,61 @@
             <a class="compare-link" href="@Url.RouteUrl("review_page")"><h4>Leave a review<i class="fas fa-arrow-right"></i></h4></a>
         </div>
     </div>
-        <div class="row">
-            <div class="col-sm-8">
-                <h3>Reviews (@ViewBag.StatsData.ReviewCount)</h3>
-                <div class="d-flex flex-wrap">
-                    @foreach (Review review in ViewBag.StudyProgram.Reviews)
-                    {
-                        <div class="review-container card">
-                            <h4>@review.User.Name</h4>
-                            <div class="d-flex">
-                                <div class="d-flex mr-5">
-                                    <p class="mr-5">
-                                        <i class="fas fa-star"></i>
-                                    </p>
-                                    <p class="mr-5">
-                                        Rating @review.OveralRating/10
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="d-flex">
-                                <div class="d-flex mr-5">
-                                    @review.Text
-                                </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <h3>Reviews (@ViewBag.StatsData.ReviewCount)</h3>
+            <div class="d-flex flex-wrap">
+                @foreach (Review review in ViewBag.StudyProgram.Reviews)
+                {
+                    <div class="review-container card">
+                        <h4>@review.User.Name</h4>
+                        <div class="d-flex">
+                            <div class="d-flex mr-5">
+                                <p class="mr-5">
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <p class="mr-5">
+                                    Rating @review.OveralRating/10
+                                </p>
                             </div>
                         </div>
-                    }
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <h3>Courses (@ViewBag.StudyProgram.Courses.Count)</h3>
-                <div class="flex-wrap">
-                    @foreach (Course course in ViewBag.StudyProgram.Courses)
-                    {
-                        <div class="course-container card">
-                            <a href="@Url.RouteUrl("course_page", new { id = course.Id })">
-                                <h3>@course.Title</h3>
-                            </a>
-                            <div class="d-flex">
-                                <div class="d-flex mr-5">
-                                    <p class="mr-5">
-                                        <i class="fas fa-star"></i>
-                                    </p>
-                                    <p class="mr-5">Rating #</p>
-                                </div>
-                                <div class="d-flex mr-5">
-                                    <p class="mr-5">
-                                        <i class="fas fa-book-reader"></i>
-                                    </p>
-                                    <p class="mr-5"># files</p>
-                                </div>
+                        <div class="d-flex">
+                            <div class="d-flex mr-5">
+                                @review.Text
                             </div>
                         </div>
-                    }
-                </div>
-                </div>
+                    </div>
+                }
             </div>
+        </div>
+        <div class="col-sm-4">
+            <h3>Courses (@ViewBag.StudyProgram.Courses.Count)</h3>
+            <div class="flex-wrap">
+                @foreach (Course course in ViewBag.StudyProgram.Courses)
+                {
+                    <div class="course-container card">
+                        <a href="@Url.RouteUrl("course_page", new { id = course.Id })">
+                            <h3>@course.Title</h3>
+                        </a>
+                        <div class="d-flex">
+                            <div class="d-flex mr-5">
+                                <p class="mr-5">
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <p class="mr-5">Overall @Math.Round(course.Reviews.Average(r => r.OveralRating), 2).ToString()</p>
+                            </div>
+                            <div class="d-flex mr-5">
+                                <p class="mr-5">
+                                    <i class="fas fa-book-reader"></i>
+                                </p>
+                                <p class="mr-5"># files</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
     </div>
+</div>
 
 

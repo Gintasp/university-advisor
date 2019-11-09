@@ -25,7 +25,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44308</IISExpressSSLPort>
+    <IISExpressSSLPort>44392</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -213,6 +213,8 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\ApiController.cs" />
+    <Compile Include="Controllers\Api\ApiStudyProgramController.cs" />
+    <Compile Include="Controllers\Api\ApiUniversityController.cs" />
     <Compile Include="Controllers\Course\CourseController.cs" />
     <Compile Include="Controllers\Course\ICourseController.cs" />
     <Compile Include="Controllers\Faculty\FacultyController.cs" />
@@ -221,14 +223,8 @@
     <Compile Include="Controllers\Lecturer\ILecturerController.cs" />
     <Compile Include="Controllers\Lecturer\LecturerController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\Review\CourseReviewController.cs" />
-    <Compile Include="Controllers\Review\ICourseReviewController.cs" />
-    <Compile Include="Controllers\Review\ILecturerReviewController.cs" />
     <Compile Include="Controllers\Review\IReviewController.cs" />
-    <Compile Include="Controllers\Review\IStudyProgramReviewController.cs" />
-    <Compile Include="Controllers\Review\LecturerReviewController.cs" />
     <Compile Include="Controllers\Review\ReviewController.cs" />
-    <Compile Include="Controllers\Review\StudyProgramReviewController.cs" />
     <Compile Include="Controllers\StudyProgram\IStudyProgramController.cs" />
     <Compile Include="Controllers\StudyProgram\StudyProgramController.cs" />
     <Compile Include="Controllers\Comparison\IComparisonController.cs" />
@@ -306,6 +302,7 @@
     <Content Include="Assets\js\react\containers\ComparisonContainer.js" />
     <Content Include="Assets\js\react\service\IconClassResolver.js" />
     <Content Include="Assets\js\react\service\StatsProvider.js" />
+    <Content Include="Assets\js\review.js" />
     <Content Include="webpack.config.js" />
     <None Include="Assets\js\lib\jquery-3.3.1.intellisense.js" />
     <Content Include="Assets\js\lib\jquery-3.3.1.js" />
@@ -383,13 +380,15 @@
     <Content Include="Views\Comparison\Comparison.cshtml" />
     <Content Include="Views\Faculty.cshtml" />
     <Content Include="Views\StudyProgram\StudyProgram.cshtml" />
-    <Content Include="Views\Review.cshtml" />
+    <Content Include="Views\Review\Review.cshtml" />
     <Content Include="Views\Course\Course.cshtml" />
+    <Content Include="Views\Review\Partials\_StudyProgramFormPartial.cshtml" />
+    <Content Include="Views\Review\Partials\_CourseFormPartial.cshtml" />
+    <Content Include="Views\Review\Partials\_LecturerFormPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Assets\images\" />
-    <Folder Include="Views\Api\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="package.json" />

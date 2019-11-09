@@ -26,6 +26,10 @@ textarea {
     max-width: 280px;
 }
 
+.mt-5 {
+    margin-top: 5px;
+}
+
 .mt-20 {
     margin-top: 20px;
 }
@@ -50,8 +54,16 @@ textarea {
     width: 50%;
 }
 
+.w-100 {
+    width: 100%;
+}
+
 .m-w-unset {
     max-width: unset;
+}
+
+.m-w-300 {
+    max-width: 300px;
 }
 
 .m-auto {
@@ -81,6 +93,10 @@ textarea {
 
 .justify-content-center {
     justify-content: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
 }
 
 .align-items-center {
