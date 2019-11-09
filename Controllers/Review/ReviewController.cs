@@ -23,11 +23,28 @@ namespace Advisor.Controllers
 
         [HttpPost]
         [Route("review/program", Name = "review_program")]
-        public ActionResult Index(Review review, int? program)
+        public ActionResult ReviewStudyProgram(Review review, int? program)
         {
             try
             {
                 DB.Instance.StudyPrograms.Where(p => p.Id == program).SingleOrDefault().Reviews.Add(review);
+                DB.Instance.SaveChanges();
+
+                return RedirectToRoute("review_page");
+            }
+            catch (Exception e)
+            {
+                return View("/Views/Shared/Error.cshtml");
+            }
+        }
+
+        [HttpPost]
+        [Route("review/course", Name = "review_courses")]
+        public ActionResult ReviewCourse(Review review, int? course)
+        {
+            try
+            {
+                DB.Instance.Courses.Where(c => c.Id == course).SingleOrDefault().Reviews.Add(review);
                 DB.Instance.SaveChanges();
 
                 return RedirectToRoute("review_page");
