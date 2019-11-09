@@ -389,7 +389,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Assets\images\" />
-    <Folder Include="Views\Api\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="package.json" />
