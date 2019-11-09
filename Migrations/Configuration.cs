@@ -54,7 +54,7 @@ namespace Advisor.Migrations
             var dorms = context.Dormitories.ToList();
             var addresses = context.Addresses.ToList();
 
-            foreach(Faculty fac in faculties)
+            foreach (Faculty fac in faculties)
             {
                 while (fac.Addresses.Count == 0)
                 {
@@ -335,7 +335,8 @@ namespace Advisor.Migrations
                 Course newCourse = new Course()
                 {
                     Title = course,
-                    Reviews = new Collection<Review>()
+                    Reviews = new Collection<Review>(),
+                    UploadedFiles = new Collection<UploadedFile>()
                 };
                 coursesToWrite.Add(newCourse);
             }

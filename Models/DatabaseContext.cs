@@ -13,6 +13,7 @@ namespace Advisor.Models
         public DbSet<Lecturer> Lecturers { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Dormitory> Dormitories { get; set; }
+        public DbSet<UploadedFile> UploadedFiles { get; set; }
 
         public DatabaseContext() : base("DefaultConnection", throwIfV1Schema: false)
         {

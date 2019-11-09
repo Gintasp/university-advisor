@@ -11,6 +11,7 @@ namespace Advisor.Models
         public virtual StudyProgram StudyProgram { get; set; }
         public virtual Lecturer Lecturer { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<UploadedFile> UploadedFiles { get; set; }
 
         public Course()
         {
