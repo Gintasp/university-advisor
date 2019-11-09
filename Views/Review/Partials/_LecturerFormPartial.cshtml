@@ -4,7 +4,7 @@
 <form method="post" action="@Url.RouteUrl("review_lecturer")">
     <div class="col-sm-6 mt-20">
         <div class="form-group">
-            <label for="university">Select university</label>
+            <label for="university">Select your university</label>
             <select name="university" class="form-control m-w-unset" id="lecturer-university">
                 <option selected disabled hidden>University</option>
                 @foreach (University uni in ViewBag.Universities)

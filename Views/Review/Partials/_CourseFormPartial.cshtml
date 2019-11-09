@@ -4,7 +4,7 @@
 <form method="post" action="@Url.RouteUrl("review_course")">
     <div class="col-sm-6 mt-20">
         <div class="form-group">
-            <label for="university">Select university</label>
+            <label for="university">Select your university</label>
             <select class="form-control m-w-unset university-select" id="university">
                 <option selected disabled hidden>University</option>
                 @foreach (University uni in ViewBag.Universities)
@@ -15,7 +15,7 @@
         </div>
 
         <div class="form-group">
-            <label for="program">Select study program</label>
+            <label for="program">Select your study program</label>
             <select class="form-control m-w-unset program-select" id="program">
                 <option selected disabled hidden>Study program</option>
                 @foreach (StudyProgram program in ViewBag.StudyPrograms)
