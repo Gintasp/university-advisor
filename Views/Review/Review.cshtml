@@ -29,23 +29,8 @@
         @Html.Partial("Partials/_LecturerFormPartial")
     </div>
 </div>
+
 @section scripts
 {
-    <script>
-        let count;
-
-        function starmark(item) {
-            console.log(item.id);
-            count = Number(item.id[0]) + 1;
-            var subid = item.id.substring(1);
-            for (var i = 0; i < 10; i++) {
-                if (i < count) {
-                    document.getElementById(i + subid).style.color = "orange";
-                }
-                else {
-                    document.getElementById(i + subid).style.color = "black";
-                }
-            }
-        }
-    </script>
+    @Scripts.Render("~/bundles/review")
 }

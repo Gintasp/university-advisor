@@ -1,7 +1,6 @@
 ﻿using Advisor.Models;
 using System.Linq;
 using System.Web.Mvc;
-using System.Collections.Generic;
 
 namespace Advisor.Controllers
 {
@@ -22,8 +21,8 @@ namespace Advisor.Controllers
         }
 
         [HttpPost]
-        [Route("review")]
-        public ActionResult Index(Review review, int university)
+        [Route("review/program", Name = "review_program")]
+        public ActionResult Index(Review review, int? program)
         {
             return View("/Views/Review/Review.cshtml");
         }

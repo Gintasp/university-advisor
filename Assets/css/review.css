@@ -1,9 +1,4 @@
-﻿textarea {
-    max-width: 900px !important;
-    margin-left: 0px;
-}
-
-#review-text {
+﻿#review-text {
     height: 190px;
     width: 100%;
     resize: none;
