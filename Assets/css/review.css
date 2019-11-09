@@ -13,8 +13,7 @@
     font-size: 19px;
 }
 
-.slidecontainer {
-    width: 50%;
+.slider-container {
     font-weight: bold;
 }
 
@@ -48,11 +47,3 @@
         cursor: pointer;
     }
 
-.slider-span-right {
-    float: right !important;
-    padding-bottom: 5px;
-}
-
-.slider-span {
-    padding-bottom: 5px;
-}

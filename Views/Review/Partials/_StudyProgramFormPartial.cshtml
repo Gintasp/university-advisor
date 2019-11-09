@@ -36,7 +36,7 @@
         </div>
 
         <div class="form-group">
-            <label for="salary">Salary</label>
+            <label for="salary">How much $ are you making?</label>
             @Html.TextBoxFor(
                 r => r.Salary,
                 new { @type = "number", @class = "form-control m-w-unset", @placeholder = "My current salary is..." }
@@ -50,7 +50,7 @@
     </div>
     <div class="col-sm-6 mt-20">
         <div class="form-group">
-            <label for="stars">Overall rating</label>
+            <label for="overall-input">Overall rating</label>
             <div class="stars" id="overall">
                 @Html.TextBoxFor(r => r.OveralRating, new { @type = "hidden", id = "overall-input" })
                 @for (int i = 0; i < 10; i++)
@@ -61,7 +61,7 @@
         </div>
 
         <div class="form-group">
-            <label for="stars">Program difficulty</label>
+            <label for="difficulty-input">Program difficulty</label>
             <div class="stars" id="difficulty">
                 @Html.TextBoxFor(r => r.Difficulty, new { @type = "hidden", id = "difficulty-input" })
                 @for (int i = 0; i < 10; i++)
@@ -72,7 +72,7 @@
         </div>
 
         <div class="form-group mt-20">
-            <label for="stars">Your satisfaction with the program</label>
+            <label for="satisfaction-input">Your satisfaction with the program</label>
             <div class="stars" id="satisfaction">
                 @Html.TextBoxFor(r => r.Satisfaction, new { @type = "hidden", id = "satisfaction-input" })
                 @for (int i = 0; i < 10; i++)

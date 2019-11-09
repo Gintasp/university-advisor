@@ -1,105 +1,109 @@
 ﻿@using Advisor.Models
+@model Review
 
-<div class="container">
-    <div class="row">
-        <div class="review-container">
-            <div class="col-sm-6 mt-20">
-                <!--University select-->
-                <label for="university-select-course">Select university</label>
-                <select class="selectpicker form-control" id="university-select-course">
-                    <option value="" selected disabled hidden>Please select</option>
-                    @foreach (University uni in ViewBag.Universities)
-                    {
-                        <option>@uni.Title</option>
-                    }
-                </select>
-                <!--Faculty select-->
-                <div class="mt-20">
-                    <label for="faculty-select-course">Select faculty</label>
-                    <select class="selectpicker form-control" id="faculty-select-course">
-                        <option value="" selected disabled hidden>Please select</option>
-                        <!--TODO: add real options-->
-                        @for (int i = 0; i < 5; i++)
-                        {
-                            <option>Faculty @i</option>
-                        }
-                    </select>
-                </div>
-                <!--Study Program select-->
-                <div class="mt-20">
-                    <label for="studyprogram-select-course">Select study program</label>
-                    <select class="selectpicker form-control" id="studyprogram-select-course">
-                        <option value="" selected disabled hidden>Please select</option>
-                        <!--TODO: add real options-->
-                        @for (int i = 0; i < 5; i++)
-                        {
-                            <option>Study program @i</option>
-                        }
-                    </select>
-                </div>
-                <!--Course select-->
-                <label class="mt-20" for="course-select">Select course</label>
-                <select class="selectpicker form-control" id="course-select">
-                    <option value="" selected disabled hidden>Please select</option>
-                    <!--TODO: add real options-->
-                    @for (int i = 0; i < 5; i++)
-                    {
-                        <option>Course @i</option>
-                    }
-                </select>
-            </div>
-            <div class="col-sm-6 mt-20">
-                <!--Overall rating-->
-                <label for="stars">Overall rating</label>
-                <div class="stars">
-                    @for (int i = 0; i < 10; i++)
-                    {
-                        <span onclick="starmark(this)" id="@i+overallCourse" class="fa fa-star "></span>
-                    }
-                </div>
-                <!--Satisfaction-->
-                <label class="mt-20" for="stars">Satisfaction level</label>
-                <div class="stars">
-                    @for (int i = 0; i < 10; i++)
-                    {
-                        <span onclick="starmark(this)" id="@i+satisfactionCourse" class="fa fa-star "></span>
-                    }
-                </div>
-                <!--Usefulness-->
-                <label class="mt-20" for="stars">Usefulness</label>
-                <div class="stars">
-                    @for (int i = 0; i < 10; i++)
-                    {
-                        <span onclick="starmark(this)" id="@i+usefulnessCourse" class="fa fa-star "></span>
-                    }
-                </div>
-                <!--Interesting ...-->
-                <div class="slidecontainer mt-20">
-                    <span class="slider-span">Uninteresting</span>
-                    <span class="slider-span-right" style="float:right">Interesting</span>
-                    <input type="range" min="1" max="100" class="slider">
-                </div>
-                <!--Theory ...-->
-                <div class="slidecontainer mt-20">
-                    <span class="slider-span">Theory</span>
-                    <span class="slider-span-right" style="float:right;">Practice</span>
-                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                </div>
-                <!--Difficulty-->
-                <div class="slidecontainer mt-20">
-                    <span class="slider-span">Easy</span>
-                    <span class="slider-span-right" style="float:right;">Difficult</span>
-                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                </div>
+<form method="post">
+    <div class="col-sm-6 mt-20">
+        <div class="form-group">
+            <label for="university">Select university</label>
+            <select class="form-control m-w-unset" id="university">
+                <option selected disabled hidden>University</option>
+                @foreach (University uni in ViewBag.Universities)
+                {
+                    <option value="@uni.Id">@uni.Title</option>
+                }
+            </select>
+        </div>
 
+        <div class="form-group">
+            <label for="program">Select study program</label>
+            <select class="form-control m-w-unset" id="program">
+                <option selected disabled hidden>Study program</option>
+                @foreach (StudyProgram program in ViewBag.StudyPrograms)
+                {
+                    <option value="@program.Id">@program.Title</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="course">Select course</label>
+            <select class="form-control m-w-unset" id="course">
+                <option selected disabled hidden>Course</option>
+                @for (int i = 0; i < 5; i++)
+                {
+                    <option>Course @i</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="col-sm-6 mt-20">
+        <div class="form-group">
+            <label for="overall-input">Overall rating</label>
+            <div class="stars" id="overall">
+                @Html.TextBoxFor(r => r.OveralRating, new { @type = "hidden", id = "overall-input" })
+                @for (int i = 0; i < 10; i++)
+                {
+                    <span onclick="handleRating(this, 'OVERALL')" id="@i" class="fa fa-star"></span>
+                }
             </div>
-            <div class="col-sm-12 mt-20">
-                <!--Review textarea-->
-                <textarea class="review-textarea mt-20" id="review-text-course" placeholder="Enter your review"></textarea>
-                <!--Submit button-->
-                <button type="button" class="btn btn-info sub" id="course-submit-btn">Submit</button>
+        </div>
+
+        <div class="form-group">
+            <label for="satisfaction-input">Your satisfaction with the course</label>
+            <div class="stars" id="satisfaction">
+                @Html.TextBoxFor(r => r.Satisfaction, new { @type = "hidden", id = "satisfaction-input" })
+                @for (int i = 0; i < 10; i++)
+                {
+                    <span onclick="handleRating(this, 'SATISFACTION')" id="@i" class="fa fa-star"></span>
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="usefulness-input">Course usefulness</label>
+            <div class="stars" id="usefulness">
+                @Html.TextBoxFor(r => r.Usefulness, new { @type = "hidden", id = "usefulness-input" })
+                @for (int i = 0; i < 10; i++)
+                {
+                    <span onclick="handleRating(this, 'USEFULNESS')" id="@i" class="fa fa-star"></span>
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="interesting-input">How interesting was the course?</label>
+            <div class="stars" id="interesting">
+                @Html.TextBoxFor(r => r.Interesting, new { @type = "hidden", id = "interesting-input" })
+                @for (int i = 0; i < 10; i++)
+                {
+                    <span onclick="handleRating(this, 'INTERESTING')" id="@i" class="fa fa-star"></span>
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="difficulty-input">How difficult was the course?</label>
+            <div class="stars" id="difficulty">
+                @Html.TextBoxFor(r => r.Difficulty, new { @type = "hidden", id = "difficulty-input" })
+                @for (int i = 0; i < 10; i++)
+                {
+                    <span onclick="handleRating(this, 'DIFFICULTY')" id="@i" class="fa fa-star"></span>
+                }
+            </div>
+        </div>
+
+        <div class="form-group slider-container mt-20">
+            <div class="d-flex justify-content-between">
+                <p class="slider-span m-0">Theory</p>
+                <p class="slider-span m-0">Practice</p>
+            </div>
+            <div>
+                @Html.TextBoxFor(r => r.TheoryPercentage, new { @type = "range", @class = "slider m-w-unset", @min = 0, @max = 100 })
             </div>
         </div>
     </div>
-</div>
-
+    <div class="col-sm-12">
+        @Html.TextArea("Text", new { @class = "form-control review-textarea w-100 m-w-unset", @placeholder = "Enter your review... ", @rows = 5 })
+        <button id="review-submit" type="submit" class="btn btn-primary mt-20 w-100">Submit</button>
+    </div>
+</form>

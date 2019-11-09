@@ -29,22 +29,32 @@ $('#review-submit').on('click', e => {
 const TYPE_OVERALL = 'OVERALL';
 const TYPE_DIFFICULTY = 'DIFFICULTY';
 const TYPE_SATISFACTION = 'SATISFACTION';
+const TYPE_USEFULNESS = 'USEFULNESS';
+const TYPE_INTERESTING = 'INTERESTING';
 
 const handleRating = (element, type) => {
     const selectedStarsAmount = Number(element.id[0]) + 1;
 
     switch (type) {
         case TYPE_OVERALL:
-            $('#overall-input').val(selectedStarsAmount);
+            setInputValue('#overall-input', selectedStarsAmount);
             paintStars('#overall span', selectedStarsAmount);
             break;
         case TYPE_DIFFICULTY:
-            $('#difficulty-input').val(selectedStarsAmount);
+            setInputValue('#difficulty-input', selectedStarsAmount);
             paintStars('#difficulty span', selectedStarsAmount);
             break;
         case TYPE_SATISFACTION:
-            $('#satisfaction-input').val(selectedStarsAmount);
+            setInputValue('#satisfaction-input', selectedStarsAmount);
             paintStars('#satisfaction span', selectedStarsAmount);
+            break;
+        case TYPE_USEFULNESS:
+            setInputValue('#usefulness-input', selectedStarsAmount);
+            paintStars('#usefulness span', selectedStarsAmount);
+            break;
+        case TYPE_INTERESTING:
+            setInputValue('#interesting-input', selectedStarsAmount);
+            paintStars('#interesting span', selectedStarsAmount);
             break;
     }
 }
@@ -57,4 +67,9 @@ const paintStars = (selector, amount) => {
             $(selector + `:nth-child(${i + 1})`).css('color', '#333');
         }
     }
+}
+
+const setInputValue = (selector, amount) => {
+    const elements = Object.values(document.querySelectorAll(selector));
+    elements.map(el => el.value = amount);
 }
