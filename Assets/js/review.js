@@ -15,13 +15,16 @@ const loadDropdownItems = (url, selector, placeholder) => {
 }
 
 //Populate lecturer dropdown with selected univeristy's lecturers from API
-$('#lecturer-university').on('change', e => loadDropdownItems(`/university/${e.target.value}/lecturers`, '#lecturer', 'Lecturer'));
+$('#lecturer-university')
+    .on('change', e => loadDropdownItems(`/university/${e.target.value}/lecturers`, '#lecturer', 'Lecturer'));
 
 //Populate study program dropdown with selected university programs data from API
-$('.university-select').on('change', e => loadDropdownItems(`/university/${e.target.value}/programs`, '.program-select', 'Study program'));
+$('.university-select')
+    .on('change', e => loadDropdownItems(`/university/${e.target.value}/programs`, '.program-select', 'Study program'));
 
 //Populate course dropdown with selected study program courses from REST API
-$('.program-select').on('change', e => loadDropdownItems(`/program/${e.target.value}/courses`, '.course-select', 'Course'));
+$('.program-select')
+    .on('change', e => loadDropdownItems(`/program/${e.target.value}/courses`, '.course-select', 'Course'));
 
 //Generic function to prevent form submit
 const submitSelected = (e, selector) => {
