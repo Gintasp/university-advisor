@@ -215,13 +215,14 @@
     <Compile Include="Controllers\Api\ApiController.cs" />
     <Compile Include="Controllers\Api\ApiStudyProgramController.cs" />
     <Compile Include="Controllers\Api\ApiUniversityController.cs" />
+    <Compile Include="Controllers\Api\IApiController.cs" />
+    <Compile Include="Controllers\Api\IApiStudyProgramController.cs" />
+    <Compile Include="Controllers\Api\IApiUniversityController.cs" />
     <Compile Include="Controllers\Course\CourseController.cs" />
     <Compile Include="Controllers\Course\ICourseController.cs" />
     <Compile Include="Controllers\Faculty\FacultyController.cs" />
     <Compile Include="Controllers\Faculty\IFacultyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\Lecturer\ILecturerController.cs" />
-    <Compile Include="Controllers\Lecturer\LecturerController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\Review\IReviewController.cs" />
     <Compile Include="Controllers\Review\ReviewController.cs" />

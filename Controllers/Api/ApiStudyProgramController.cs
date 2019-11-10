@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace Advisor.Controllers.Api
 {
-    public class ApiStudyProgramController : Controller
+    public class ApiStudyProgramController : Controller, IApiStudyProgramController
     {
         public ApiStudyProgramController()
         {
