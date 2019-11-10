@@ -15,9 +15,15 @@ namespace Advisor.Services.IO
                 return false;
             }
 
+            string basePath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).FullName + "\\App_Data\\uploads\\";
+
+            if (!Directory.Exists(basePath))
+            {
+                Directory.CreateDirectory(basePath);
+            }
+
             string fileName = Path.GetFileName(file.FileName);
-            string path = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).FullName + "\\App_Data\\uploads\\" + fileName;
-            file.SaveAs(path);
+            file.SaveAs(basePath + fileName);
 
             return true;
         }

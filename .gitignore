@@ -11,3 +11,4 @@ Assets/js/dist/
 yarn-error.log
 /.vs/
 /.vscode/
+App_Data/uploads/*
