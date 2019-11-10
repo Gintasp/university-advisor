@@ -399,6 +399,7 @@ namespace Advisor.Migrations
             context.Database.ExecuteSqlCommand("DELETE FROM [Addresses]; DBCC CHECKIDENT ([Addresses], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Reviews]; DBCC CHECKIDENT ([Reviews], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [AspNetUsers];");
+            context.Database.ExecuteSqlCommand("DELETE FROM [UploadedFiles]; DBCC CHECKIDENT ([UploadedFiles], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Courses]; DBCC CHECKIDENT ([Courses], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Lecturers]; DBCC CHECKIDENT ([Lecturers], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [StudyPrograms]; DBCC CHECKIDENT ([StudyPrograms], RESEED, 0)");
