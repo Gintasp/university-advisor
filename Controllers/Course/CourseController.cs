@@ -50,22 +50,27 @@ namespace Advisor.Controllers
         [Route("upload", Name = "file_upload")]
         public ActionResult UploadFile(HttpPostedFileBase file, int course)
         {
-            if (!FileValidator.Validate(file))
-            {
-                return View("/Views/Shared/Error.cshtml");
-            }
+            //if (!FileValidator.Validate(file))
+            //{
+            //    return View("/Views/Shared/Error.cshtml");
+            //}
 
-            try
-            {
-                FileManager.UploadFile(file);
-                SaveFileIntoDB(file, course);
+            //try
+            //{
+            //    FileManager.UploadFile(file);
+            //    SaveFileIntoDB(file, course);
 
-                return RedirectToRoute("course_page", new { id = course });
-            }
-            catch (Exception e)
-            {
-                return View("/Views/Shared/Error.cshtml");
-            }
+            //    return RedirectToRoute("course_page", new { id = course });
+            //}
+            //catch (Exception e)
+            //{
+            //    return View("/Views/Shared/Error.cshtml");
+            //}
+
+            FileManager.UploadFile(file);
+            SaveFileIntoDB(file, course);
+
+            return RedirectToRoute("course_page", new { id = course });
         }
 
         [HttpGet]
