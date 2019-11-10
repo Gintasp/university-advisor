@@ -18,7 +18,7 @@ namespace Advisor
             
             container.RegisterType<IStatisticCalculator, StatisticCalculator>();
             container.RegisterType<IStatsBuilder, StatsBuilder>();
-            container.RegisterType<IFileUploader, FileUploader>();
+            container.RegisterType<IFileManager, FileManager>();
             container.RegisterType<IFileValidator, FileValidator>();
             
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));

@@ -83,7 +83,9 @@
                 @foreach (UploadedFile file in ViewBag.Course.UploadedFiles)
                 {
                     <div class="d-flex justify-content-between">
-                        <p class="mr-5">@file.FileName</p>
+                        <p class="mr-5">
+                            <a href="@Url.RouteUrl("file_download", new { id = file.Id })" target="_blank">@file.FileName</a>
+                        </p>
                         <p class="gray">@file.UploadedAt.ToString("yyyy/MM/dd")</p>
                     </div>
                 }

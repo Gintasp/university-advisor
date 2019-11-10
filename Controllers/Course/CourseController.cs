@@ -6,22 +6,23 @@ using System.Web;
 using Advisor.Services.IO;
 using System;
 using Advisor.Services.Validator;
+using System.IO;
 
 namespace Advisor.Controllers
 {
     public class CourseController : Controller, ICourseController
     {
         public IStatsBuilder StatsBuilder { get; set; }
-        public IFileUploader FileUploader { get; set; }
+        public IFileManager FileManager { get; set; }
         public IFileValidator FileValidator { get; set; }
         public CourseController(
             IStatsBuilder statsBuilder,
-            IFileUploader fileUploader,
+            IFileManager fileManager,
             IFileValidator fileValidator
         )
         {
             StatsBuilder = statsBuilder;
-            FileUploader = fileUploader;
+            FileManager = fileManager;
             FileValidator = fileValidator;
         }
 
@@ -56,12 +57,30 @@ namespace Advisor.Controllers
 
             try
             {
-                FileUploader.UploadFile(file);
+                FileManager.UploadFile(file);
                 SaveFileIntoDB(file, course);
 
                 return RedirectToRoute("course_page", new { id = course });
             }
             catch (Exception e)
+            {
+                return View("/Views/Shared/Error.cshtml");
+            }
+        }
+
+        [HttpGet]
+        [Route("download/{id:int}", Name = "file_download")]
+        public ActionResult DownloadFile(int? id)
+        {
+            UploadedFile uploadedFile = DB.Instance.UploadedFiles.Where(f => f.Id == id).SingleOrDefault();
+
+            try
+            {
+                FileResult fileResponse = FileManager.DownloadFile(uploadedFile);
+
+                return fileResponse;
+            }
+            catch(Exception e)
             {
                 return View("/Views/Shared/Error.cshtml");
             }

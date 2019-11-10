@@ -262,8 +262,8 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Auth\SessionStorage.cs" />
-    <Compile Include="Services\IO\FileUploader.cs" />
-    <Compile Include="Services\IO\IFileUploader.cs" />
+    <Compile Include="Services\IO\FileManager.cs" />
+    <Compile Include="Services\IO\IFileManager.cs" />
     <Compile Include="Services\Statistics\IStatisticCalculator.cs" />
     <Compile Include="Services\Statistics\IStatsBuilder.cs" />
     <Compile Include="Services\Statistics\StatisticCalculator.cs" />
