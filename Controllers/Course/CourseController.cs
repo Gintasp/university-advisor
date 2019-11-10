@@ -94,7 +94,6 @@ namespace Advisor.Controllers
                 {
                     Course = DB.Instance.Courses.Where(c => c.Id == courseId).SingleOrDefault(),
                     FileName = file.FileName,
-                    FilePath = "~/App_Data/uploads/" + file.FileName,
                     UploadedAt = DateTime.Now
                 };
                 DB.Instance.UploadedFiles.Add(uploadedFile);
