@@ -79,7 +79,7 @@
         </div>
         <div class="col-sm-6">
             <h3>Student uploaded course material (@ViewBag.Course.UploadedFiles.Count files)</h3>
-            <div>
+            <div class="m-w-400">
                 @foreach (UploadedFile file in ViewBag.Course.UploadedFiles)
                 {
                     <div class="d-flex justify-content-between">
@@ -95,7 +95,7 @@
                     <label for="file">Upload your course material</label>
                     <input class="mt-5" type="file" name="file" id="file" />
                     <input class="mt-5" value="@ViewBag.Course.Id" type="hidden" name="course" id="course" />
-                    <button class="mt-20 btn btn-primary" type="submit">Submit</button>
+                    <button class="mt-20 btn btn-primary" type="submit">Upload</button>
                 </form>
             </div>
         </div>
