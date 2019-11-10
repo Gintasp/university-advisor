@@ -1,9 +1,9 @@
-﻿namespace Advisor.Controllers
+﻿using System.Web.Mvc;
+
+namespace Advisor.Controllers
 {
     public interface IFacultyController
     {
-        void LoadData();
-        void HandleAddStudyProgramClick();
-        void HandleAddLecturerClick();
+        ActionResult Index(int? id);
     }
 }

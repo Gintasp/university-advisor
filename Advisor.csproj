@@ -215,13 +215,14 @@
     <Compile Include="Controllers\Api\ApiController.cs" />
     <Compile Include="Controllers\Api\ApiStudyProgramController.cs" />
     <Compile Include="Controllers\Api\ApiUniversityController.cs" />
+    <Compile Include="Controllers\Api\IApiController.cs" />
+    <Compile Include="Controllers\Api\IApiStudyProgramController.cs" />
+    <Compile Include="Controllers\Api\IApiUniversityController.cs" />
     <Compile Include="Controllers\Course\CourseController.cs" />
     <Compile Include="Controllers\Course\ICourseController.cs" />
     <Compile Include="Controllers\Faculty\FacultyController.cs" />
     <Compile Include="Controllers\Faculty\IFacultyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\Lecturer\ILecturerController.cs" />
-    <Compile Include="Controllers\Lecturer\LecturerController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\Review\IReviewController.cs" />
     <Compile Include="Controllers\Review\ReviewController.cs" />
@@ -239,6 +240,14 @@
     <Compile Include="Migrations\201911031250302_Initial.Designer.cs">
       <DependentUpon>201911031250302_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911092006295_AddFile.cs" />
+    <Compile Include="Migrations\201911092006295_AddFile.Designer.cs">
+      <DependentUpon>201911092006295_AddFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911101001549_RemovePath.cs" />
+    <Compile Include="Migrations\201911101001549_RemovePath.Designer.cs">
+      <DependentUpon>201911101001549_RemovePath.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -247,6 +256,7 @@
     <Compile Include="Models\DB.cs" />
     <Compile Include="Models\Dormitory.cs" />
     <Compile Include="Models\Faculty.cs" />
+    <Compile Include="Models\UploadedFile.cs" />
     <Compile Include="Models\Lecturer.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Review.cs" />
@@ -256,20 +266,15 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Auth\SessionStorage.cs" />
+    <Compile Include="Services\IO\FileManager.cs" />
+    <Compile Include="Services\IO\IFileManager.cs" />
     <Compile Include="Services\Statistics\IStatisticCalculator.cs" />
     <Compile Include="Services\Statistics\IStatsBuilder.cs" />
     <Compile Include="Services\Statistics\StatisticCalculator.cs" />
     <Compile Include="Services\Statistics\StatsBuilder.cs" />
-    <Compile Include="Services\Validator\ILoginDataValidator.cs" />
-    <Compile Include="Services\Validator\IReviewValidator.cs" />
-    <Compile Include="Services\Validator\ISignupDataValidator.cs" />
-    <Compile Include="Services\Validator\LoginDataValidator.cs" />
-    <Compile Include="Services\Validator\ReviewValidator.cs" />
-    <Compile Include="Services\Validator\SignupDataValidator.cs" />
+    <Compile Include="Services\Validator\FileValidator.cs" />
+    <Compile Include="Services\Validator\IFileValidator.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Tests\LoginDataValidatorTest.cs" />
-    <Compile Include="Tests\SessionStorageTest.cs" />
-    <Compile Include="Tests\SignupDataValidatorTest.cs" />
     <Compile Include="Tests\StatisticCalculatorTest.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -387,7 +392,7 @@
     <Content Include="Views\Review\Partials\_LecturerFormPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\uploads\" />
     <Folder Include="Assets\images\" />
   </ItemGroup>
   <ItemGroup>
@@ -411,6 +416,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201911031250302_Initial.resx">
       <DependentUpon>201911031250302_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911092006295_AddFile.resx">
+      <DependentUpon>201911092006295_AddFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911101001549_RemovePath.resx">
+      <DependentUpon>201911101001549_RemovePath.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

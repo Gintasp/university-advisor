@@ -1,10 +1,9 @@
-﻿using System;
+﻿using System.Web.Mvc;
 
 namespace Advisor.Controllers
 {
     public interface IStudyProgramController
     {
-        void HandleAddCourse(object sender, EventArgs e);
-        void HandleLeaveReviewClick();
+        ActionResult Index(int? id);
     }
 }

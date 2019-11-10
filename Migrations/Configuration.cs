@@ -54,7 +54,7 @@ namespace Advisor.Migrations
             var dorms = context.Dormitories.ToList();
             var addresses = context.Addresses.ToList();
 
-            foreach(Faculty fac in faculties)
+            foreach (Faculty fac in faculties)
             {
                 while (fac.Addresses.Count == 0)
                 {
@@ -335,7 +335,8 @@ namespace Advisor.Migrations
                 Course newCourse = new Course()
                 {
                     Title = course,
-                    Reviews = new Collection<Review>()
+                    Reviews = new Collection<Review>(),
+                    UploadedFiles = new Collection<UploadedFile>()
                 };
                 coursesToWrite.Add(newCourse);
             }
@@ -398,6 +399,7 @@ namespace Advisor.Migrations
             context.Database.ExecuteSqlCommand("DELETE FROM [Addresses]; DBCC CHECKIDENT ([Addresses], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Reviews]; DBCC CHECKIDENT ([Reviews], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [AspNetUsers];");
+            context.Database.ExecuteSqlCommand("DELETE FROM [UploadedFiles]; DBCC CHECKIDENT ([UploadedFiles], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Courses]; DBCC CHECKIDENT ([Courses], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Lecturers]; DBCC CHECKIDENT ([Lecturers], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [StudyPrograms]; DBCC CHECKIDENT ([StudyPrograms], RESEED, 0)");

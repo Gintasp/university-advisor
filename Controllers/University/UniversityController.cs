@@ -1,7 +1,6 @@
 ﻿using Advisor.Models;
 using Advisor.Services.Statistics;
 using System.Linq;
-using System;
 using System.Web.Mvc;
 using System.Collections.Generic;
 
@@ -59,34 +58,6 @@ namespace Advisor.Controllers
             };
 
             return statsData;
-        }
-
-        public void HandleAddFaculty(object sender, EventArgs e)
-        {
-            //Faculty fac = new Faculty()
-            //{
-            //    Title = AddFormView.TitleInput.Text,
-            //    Description = AddFormView.DescriptionInput.Text,
-            //    University = University,
-            //    StudyPrograms = new Collection<StudyProgram>(),
-            //    Lecturers = new Collection<Lecturer>()
-            //};
-            //DB.Instance.Faculties.Add(fac);
-            //DB.Instance.SaveChanges();
-            //UniversityView.FacultyList.Items.Add(fac);
-            //AddFormView.Close();
-        }
-
-        public void HandleAddNewUniversity(object sender, EventArgs e)
-        {
-            //University uni = new University() {
-            //    Title = AddFormView.TitleInput.Text,
-            //    Description = AddFormView.DescriptionInput.Text
-            //};
-            //DB.Instance.Universities.Add(uni);
-            //DB.Instance.SaveChanges();
-            //HomeView.UniversityList.Items.Add(uni);
-            //AddFormView.Close();
         }
     }
 }

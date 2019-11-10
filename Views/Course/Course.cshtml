@@ -6,7 +6,7 @@
 <h2><i class="fas fa-book"></i>  @ViewBag.Course.Title</h2>
 <div class="container">
     <div class="row">
-        <div class="col-sm-5">
+        <div class="col-sm-6">
             <h3>Statistics</h3>
             <table class="table">
                 <tbody>
@@ -34,7 +34,7 @@
                         <th>Theory percentage</th>
                         <td class="td">
                             <div class="progress">
-                                @{int theoryVal = (int) Math.Round(ViewBag.StatsData.Theory); }
+                                @{int theoryVal = (int)Math.Round(ViewBag.StatsData.Theory); }
                                 <div class="progress-bar" role="progressbar" style="width: @theoryVal%" aria-valuenow="@theoryVal" aria-valuemin="0" aria-valuemax="100">@theoryVal%</div>
                             </div>
                         </td>
@@ -43,7 +43,7 @@
                         <th>Practice percentage</th>
                         <td class="td">
                             <div class="progress">
-                                @{int practiceVal = (int) Math.Round(ViewBag.StatsData.Practice); }
+                                @{int practiceVal = (int)Math.Round(ViewBag.StatsData.Practice); }
                                 <div class="progress-bar" role="progressbar" style="width: @practiceVal%" aria-valuenow="@practiceVal" aria-valuemin="0" aria-valuemax="100">@practiceVal%</div>
                             </div>
                         </td>
@@ -51,11 +51,7 @@
 
                 </tbody>
             </table>
-            <h3>Files (#)</h3
-            <!--Add files-->
 
-        </div>
-        <div class="col-sm-7">
             <h3>Reviews (@ViewBag.StatsData.ReviewCount)</h3>
             <div class="d-flex flex-wrap">
                 @foreach (Review review in ViewBag.Course.Reviews)
@@ -81,5 +77,27 @@
                 }
             </div>
         </div>
-    </div>    
+        <div class="col-sm-6">
+            <h3>Student uploaded course material (@ViewBag.Course.UploadedFiles.Count files)</h3>
+            <div class="m-w-400">
+                @foreach (UploadedFile file in ViewBag.Course.UploadedFiles)
+                {
+                    <div class="d-flex justify-content-between">
+                        <p class="mr-5">
+                            <a href="@Url.RouteUrl("file_download", new { id = file.Id })" target="_blank">@file.FileName</a>
+                        </p>
+                        <p class="gray">@file.UploadedAt.ToString("yyyy/MM/dd")</p>
+                    </div>
+                }
+            </div>
+            <div>
+                <form class="mt-20" method="post" enctype="multipart/form-data" action="@Url.RouteUrl("file_upload")">
+                    <label for="file">Upload your course material</label>
+                    <input class="mt-5" type="file" name="file" id="file" />
+                    <input class="mt-5" value="@ViewBag.Course.Id" type="hidden" name="course" id="course" />
+                    <button class="mt-20 btn btn-primary" type="submit">Upload</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>

@@ -2,15 +2,28 @@
 using System.Web.Mvc;
 using System.Linq;
 using Advisor.Services.Statistics;
+using System.Web;
+using Advisor.Services.IO;
+using System;
+using Advisor.Services.Validator;
+using System.IO;
 
 namespace Advisor.Controllers
 {
     public class CourseController : Controller, ICourseController
     {
         public IStatsBuilder StatsBuilder { get; set; }
-        public CourseController(IStatsBuilder statsBuilder)
+        public IFileManager FileManager { get; set; }
+        public IFileValidator FileValidator { get; set; }
+        public CourseController(
+            IStatsBuilder statsBuilder,
+            IFileManager fileManager,
+            IFileValidator fileValidator
+        )
         {
             StatsBuilder = statsBuilder;
+            FileManager = fileManager;
+            FileValidator = fileValidator;
         }
 
         [Route("courses/{id?}", Name = "course_page")]
@@ -32,6 +45,68 @@ namespace Advisor.Controllers
 
             return View("/Views/Shared/404.cshtml");
         }
+
+        [HttpPost]
+        [Route("upload", Name = "file_upload")]
+        public ActionResult UploadFile(HttpPostedFileBase file, int course)
+        {
+            if (!FileValidator.Validate(file))
+            {
+                return View("/Views/Shared/Error.cshtml");
+            }
+
+            try
+            {
+                FileManager.UploadFile(file);
+                SaveFileIntoDB(file, course);
+
+                return RedirectToRoute("course_page", new { id = course });
+            }
+            catch (Exception e)
+            {
+                return View("/Views/Shared/Error.cshtml");
+            }
+        }
+
+        [HttpGet]
+        [Route("download/{id:int}", Name = "file_download")]
+        public ActionResult DownloadFile(int? id)
+        {
+            UploadedFile uploadedFile = DB.Instance.UploadedFiles.Where(f => f.Id == id).SingleOrDefault();
+
+            try
+            {
+                FileResult fileResponse = FileManager.DownloadFile(uploadedFile);
+
+                return fileResponse;
+            }
+            catch(Exception e)
+            {
+                return View("/Views/Shared/Error.cshtml");
+            }
+        }
+
+        private bool SaveFileIntoDB(HttpPostedFileBase file, int courseId)
+        {
+            try
+            {
+                UploadedFile uploadedFile = new UploadedFile
+                {
+                    Course = DB.Instance.Courses.Where(c => c.Id == courseId).SingleOrDefault(),
+                    FileName = file.FileName,
+                    UploadedAt = DateTime.Now
+                };
+                DB.Instance.UploadedFiles.Add(uploadedFile);
+                DB.Instance.SaveChanges();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                throw new InvalidOperationException();
+            }
+        }
+
         private StatsData GetCourseStats(Course course)
         {
             var stats = StatsBuilder.BuildCourseStats(course);
