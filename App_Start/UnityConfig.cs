@@ -1,8 +1,10 @@
+using Advisor.Controllers;
 using Advisor.Services.IO;
 using Advisor.Services.Statistics;
 using Advisor.Services.Validator;
 using System.Web.Mvc;
 using Unity;
+using Unity.Injection;
 using Unity.Mvc5;
 
 namespace Advisor
@@ -20,7 +22,9 @@ namespace Advisor
             container.RegisterType<IStatsBuilder, StatsBuilder>();
             container.RegisterType<IFileManager, FileManager>();
             container.RegisterType<IFileValidator, FileValidator>();
-            
+            container.RegisterType<AccountController>(new InjectionConstructor());
+            container.RegisterType<ManageController>(new InjectionConstructor());
+
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }
