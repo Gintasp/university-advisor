@@ -3,5 +3,26 @@
     ViewBag.Title = "_UniversityFormPartial";
 }
 
-<h2>_UniversityFormPartial</h2>
+<button class="open-button" onclick="openForm(addUniversity)">Add university</button>
 
+<div class="form-popup" id="addUniversity">
+    <form class="form-container">
+        <h1>Add university</h1>
+
+        <label for="university"><b>Enter university title</b></label>
+        <input type="text" name="university" required>
+
+        <button type="submit" class="btn">Add</button>
+        <button type="button" class="btn cancel" onclick="closeForm(addUniversity)">Cancel</button>
+    </form>
+</div>
+
+<script>
+function openForm(item) {
+  document.getElementById(item.id).style.display = "block";
+}
+
+function closeForm(item) {
+  document.getElementById(item.id).style.display = "none";
+}
+</script>
