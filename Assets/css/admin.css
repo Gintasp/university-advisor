@@ -4,7 +4,8 @@
 .university-list {
     width: 100%;
     height: 400px;
-    overflow: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .university-table-container {
@@ -18,4 +19,8 @@
 
 .add-link:hover {
     color: #333;
+}
+
+.wider {
+    width: 1060px;
 }

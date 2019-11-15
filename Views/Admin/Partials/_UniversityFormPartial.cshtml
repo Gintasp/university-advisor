@@ -6,7 +6,7 @@
     <div class="university-table-container mt-20">
         <h2>Universities</h2>
         <div class="university-list">
-            <table class="table">
+            <table class="table wider">
                 <tbody>
                     @foreach (University uni in ViewBag.Universities)
                     {
@@ -21,7 +21,7 @@
                 </tbody>
             </table>
         </div>
-        <a class="add-link" data-target="#addUniversityModal" data-toggle="modal"><h3>Add University</h3> </a>
+        <button class="btn btn-primary mt-20" data-target="#addUniversityModal" data-toggle="modal">Add University</button>
     </div>
  
 <div class="modal fade" tabindex="-1" id="addUniversityModal"
