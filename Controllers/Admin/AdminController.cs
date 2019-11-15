@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Advisor.Models;
+using Advisor.Services.Statistics;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using System.Collections.Generic;
 
 namespace Advisor.Controllers
 {
@@ -11,7 +11,8 @@ namespace Advisor.Controllers
         [Route("admin", Name = "admin_page")]
         public ActionResult Index()
         {
-
+            List<University> unis = DB.Instance.Universities.ToList();
+            ViewBag.Universities = unis;
             return View("/Views/Admin/Admin.cshtml");
         }
 

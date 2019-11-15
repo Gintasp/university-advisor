@@ -1,2 +1,21 @@
 ﻿body {
 }
+
+.university-list {
+    width: 100%;
+    height: 400px;
+    overflow: auto;
+}
+
+.university-table-container {
+    margin: auto;
+    width: 1000px;
+}
+
+.add-link {
+    color: #333;
+}
+
+.add-link:hover {
+    color: #333;
+}
