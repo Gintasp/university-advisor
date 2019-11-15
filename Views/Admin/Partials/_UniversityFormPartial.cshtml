@@ -3,26 +3,26 @@
     ViewBag.Title = "_UniversityFormPartial";
 }
 
-    <div class="table-container mt-20">
-        <h2>Universities</h2>
-        <div class="list mt-20">
-            <table class="table wider">
-                <tbody>
-                    @foreach (University uni in ViewBag.Universities)
-                    {
-                        <tr>
-                            <th scope="row">@uni.Title</th>
-                            <td>
-                                <span data-target="#editUniversityModal" data-toggle="modal"><i class="fas fa-edit"></i></span>
-                                <span><i class="fas fa-trash-alt"></i></span>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-        <button class="btn btn-primary mt-20" data-target="#addUniversityModal" data-toggle="modal">Add University</button>
+<div class="admin-container mt-20">
+    <h2>Universities</h2>
+    <div class="list mt-20">
+        <table class="table">
+            <tbody>
+                @foreach (University uni in ViewBag.Universities)
+                {
+                    <tr>
+                        <th scope="row" class="admin-listItem-wider">@uni.Title</th>
+                        <td class="admin-icons-wider">
+                            <span data-target="#editUniversityModal" data-toggle="modal"><i class="fas fa-edit"></i></span>
+                            <span><i class="fas fa-trash-alt"></i></span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
+    <button class="btn btn-primary mt-20" data-target="#addUniversityModal" data-toggle="modal">Add University</button>
+</div>
  
 <div class="modal fade" tabindex="-1" id="addUniversityModal"
      data-keyboard="false" data-backdrop="static">

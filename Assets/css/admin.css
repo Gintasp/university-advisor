@@ -13,18 +13,6 @@
     width: 1000px;
 }
 
-.add-link {
-    color: #333;
-}
-
-.add-link:hover {
-    color: #333;
-}
-
-.wider {
-    width: 1060px;
-}
-
 .table-container-course{
     margin: auto;
     width: 800px;
@@ -35,4 +23,25 @@
     height: 400px;
     overflow-y: scroll;
     overflow-x: hidden;
+}
+
+.admin-container {
+    margin: auto;
+    width: 1000px;
+}
+
+.admin-icons {
+    width: 10%;
+}
+
+.admin-listItem {
+    width: 90%;
+}
+
+.admin-icons-wider {
+    width: 6%;
+}
+
+.admin-listItem-wider{
+    width: 94%;
 }

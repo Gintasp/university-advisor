@@ -3,65 +3,71 @@
     ViewBag.Title = "_LecturerFormPartial";
 }
 
-    <div class="table-container mt-20">
-        <div class="form-group">
-            <label for="admin-university">Select university</label>
-            <select class="university-select form-control" id="admin-university">
-                <option selected disabled hidden>University</option>
-                @foreach (University uni in ViewBag.Universities)
-                {
-                    <option value="@uni.Id">@uni.Title</option>
-                }
-            </select>
+    <div class="admin-container">
+        <div class="row">
+            <div class="col-sm-4 mt-20">
+                <div class="form-group">
+                    <label for="admin-university">Select university</label>
+                    <select class="form-control" id="admin-university">
+                        <option selected disabled hidden>University</option>
+                        @foreach (University uni in ViewBag.Universities)
+                        {
+                            <option value="@uni.Id">@uni.Title</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="admin-faculty">Select faculty</label>
+                    <select class="form-control" id="admin-faculty">
+                        <option selected disabled hidden>Faculty</option>
+                        @for (int i = 0; i < 20; i++)
+                        {
+                            <option>Faculty</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="admin-studyprogram">Select study program</label>
+                    <select class="form-control" id="admin-studyprogram">
+                        <option selected disabled hidden>Study Program</option>
+                        @for (int i = 0; i < 20; i++)
+                        {
+                            <option>Study Program</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="admin-course">Select Course</label>
+                    <select class="form-control" id="admin-course">
+                        <option selected disabled hidden>Course</option>
+                        @for (int i = 0; i < 20; i++)
+                        {
+                            <option>Courses</option>
+                        }
+                    </select>
+                </div>
+                <button class="btn btn-primary mt-20" data-target="#addLecturerModal" data-toggle="modal">Add Lecturer</button>
+            </div>
+            <div class="col-sm-8">
+                <h2>Lecturers</h2>
+                <div class="list">
+                    <table class="table">
+                        <tbody>
+                            @for (int i = 0; i < 20; i++)
+                            {
+                                <tr>
+                                    <th scope="row" class="admin-listItem">Lecturer</th>
+                                    <td class="admin-icons">
+                                        <span data-target="#editLecturerModal" data-toggle="modal"><i class="fas fa-edit"></i></span>
+                                        <span><i class="fas fa-trash-alt"></i></span>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="admin-faculty">Select faculty</label>
-            <select class="faculty-select form-control" id="admin-faculty">
-                <option selected disabled hidden>Faculty</option>
-                @for (int i = 0; i < 20; i++)
-                {
-                    <option>Faculty</option>
-                }
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="admin-studyprogram">Select study program</label>
-            <select class="faculty-select form-control" id="admin-studyprogram">
-                <option selected disabled hidden>Study Program</option>
-                @for (int i = 0; i < 20; i++)
-                {
-                    <option>Study Program</option>
-                }
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="admin-course">Select Course</label>
-            <select class="faculty-select form-control" id="admin-course">
-                <option selected disabled hidden>Course</option>
-                @for (int i = 0; i < 20; i++)
-                {
-                    <option>Courses</option>
-                }
-            </select>
-        </div>
-        <h2>Universities</h2>
-        <div class="list mt-20">
-            <table class="table wider">
-                <tbody>
-                    @for(int i = 0; i < 20; i++)
-                    {
-                        <tr>
-                            <th scope="row">Lecturer</th>
-                            <td>
-                                <span data-target="#editLecturerModal" data-toggle="modal"><i class="fas fa-edit"></i></span>
-                                <span><i class="fas fa-trash-alt"></i></span>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-        <button class="btn btn-primary mt-20" data-target="#addLecturerModal" data-toggle="modal">Add Course</button>
     </div>
 
 <div class="modal fade" tabindex="-1" id="addLecturerModal"
@@ -148,8 +154,8 @@
                 <form>
 
                     <div class="form-group">
-                        <label for="lecturer-name">Lecturer name/surname</label>
-                        <input class="form-control" placeholder="Enter lecturer name and surname"
+                        <label for="lecturer-name">Lecturer's name/surname</label>
+                        <input class="form-control" placeholder="Enter lecturer's name and surname"
                                type="text" id="lecturer-name" />
                     </div>
                 </form>

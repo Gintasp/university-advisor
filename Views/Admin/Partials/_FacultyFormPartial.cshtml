@@ -3,36 +3,36 @@
     ViewBag.Title = "_FacultyFormPartial";
 }
 
-    <div class="table-container mt-20">
-        <div class="form-group">
-            <label for="admin-university">Select university</label>
-            <select name="university" class="university-select form-control" id="admin-university">
-                <option selected disabled hidden>University</option>
-                @foreach (University uni in ViewBag.Universities)
-                {
-                    <option value="@uni.Id">@uni.Title</option>
-                }
-            </select>
-        </div>
-        <h2>Faculties</h2>
-        <div class="list">
-            <table class="table wider">
-                <tbody>
-                    @for (int i = 0; i < 20; i++)
-                    {
-                        <tr>
-                            <th scope="row">Faculty of something and something</th>
-                            <td>
-                                <span data-target="#editFacultyModal" data-toggle="modal"><i class="fas fa-edit"></i></span>
-                                <span><i class="fas fa-trash-alt"></i></span>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-        <button class="btn btn-primary mt-20" data-target="#addFacultyModal" data-toggle="modal">Add Faculty</button>
+<div class="admin-container mt-20">
+    <div class="form-group">
+        <label for="adminFaculties-university">Select university</label>
+        <select class="form-control" id="adminFaculties-university">
+            <option selected disabled hidden>University</option>
+            @foreach (University uni in ViewBag.Universities)
+            {
+                <option value="@uni.Id">@uni.Title</option>
+            }
+        </select>
     </div>
+    <h2>Faculties</h2>
+    <div class="list">
+        <table class="table">
+            <tbody>
+                @for (int i = 0; i < 20; i++)
+                {
+                    <tr>
+                        <th scope="row" class="admin-listItem-wider">Faculty of something and something</th>
+                        <td class="admin-icons-wider">
+                            <span data-target="#editFacultyModal" data-toggle="modal"><i class="fas fa-edit"></i></span>
+                            <span><i class="fas fa-trash-alt"></i></span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <button class="btn btn-primary mt-20" data-target="#addFacultyModal" data-toggle="modal">Add Faculty</button>
+</div>
 <div class="modal fade" tabindex="-1" id="addFacultyModal"
      data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-sm">
@@ -46,8 +46,8 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <label for="admin-university">Select university</label>
-                        <select name="university" class="university-select form-control" id="admin-university">
+                        <label for="addFaculty-university">Select university</label>
+                        <select class="form-control" id="addFaculty-university">
                             <option selected disabled hidden>University</option>
                             @foreach (University uni in ViewBag.Universities)
                             {
