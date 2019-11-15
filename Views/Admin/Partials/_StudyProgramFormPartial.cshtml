@@ -4,7 +4,6 @@
 }
 
     <div class="table-container mt-20">
-        <h2>Faculties</h2>
         <div class="form-group">
             <label for="admin-university">Select university</label>
             <select class="university-select form-control" id="admin-university">
@@ -19,13 +18,14 @@
             <label for="admin-faculty">Select faculty</label>
             <select class="faculty-select form-control" id="admin-faculty">
                 <option selected disabled hidden>Faculty</option>
-                @for(int i = 0; i < 20; i++)
+                @for (int i = 0; i < 20; i++)
                 {
                     <option>Faculty</option>
                 }
             </select>
         </div>
-        <div class="university-list">
+        <h2>Study Programs</h2>
+        <div class="list">
             <table class="table wider">
                 <tbody>
                     @for (int i = 0; i < 20; i++)
@@ -74,11 +74,6 @@
                                 <option>Faculty</option>
                             }
                         </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="studyProgramTitle">Study program title</label>
-                        <input class="form-control" placeholder="Enter study program title"
-                               type="text" id="studyProgramTitle" />
                     </div>
                 </form>
             </div>
