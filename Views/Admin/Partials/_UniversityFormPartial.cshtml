@@ -3,26 +3,43 @@
     ViewBag.Title = "_UniversityFormPartial";
 }
 
-<button class="open-button" onclick="openForm(addUniversity)">Add university</button>
-
-<div class="form-popup" id="addUniversity">
-    <form class="form-container">
-        <h1>Add university</h1>
-
-        <label for="university"><b>Enter university title</b></label>
-        <input type="text" name="university" required>
-
-        <button type="submit" class="btn">Add</button>
-        <button type="button" class="btn cancel" onclick="closeForm(addUniversity)">Cancel</button>
-    </form>
+<div class="mt-20">
+    <ul class="list-group">
+        <li class="list-group-item">
+            First item <span onclick="openForm(addUniversity)"><i class="fas fa-edit"></i></span>
+        </li>
+        <li class="list-group-item">Second item</li>
+        <li class="list-group-item">Third item</li>
+    </ul>
 </div>
 
-<script>
-function openForm(item) {
-  document.getElementById(item.id).style.display = "block";
-}
-
-function closeForm(item) {
-  document.getElementById(item.id).style.display = "none";
-}
-</script>
+<a data-target="#addUniversityModal" data-toggle="modal"><h3>Add University</h3> </a>
+<div class="modal fade" tabindex="-1" id="addUniversityModal"
+     data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    &times;
+                </button>
+                <h4 class="modal-title">Add University</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="universityTitle">University Title</label>
+                        <input class="form-control" placeholder="Enter university title"
+                               type="text" id="universityTitle" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-primary"
+                        data-dismiss="modal">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
