@@ -1,7 +1,104 @@
-﻿
+﻿@using Advisor.Models
 @{
     ViewBag.Title = "_FacultyFormPartial";
 }
 
-<h2>_FacultyFormPartial</h2>
+    <div class="table-container mt-20">
+        <h2>Faculties</h2>
+        <div class="form-group">
+            <label for="admin-university">Select university</label>
+            <select name="university" class="university-select form-control" id="admin-university">
+                <option selected disabled hidden>University</option>
+                @foreach (University uni in ViewBag.Universities)
+                {
+                    <option value="@uni.Id">@uni.Title</option>
+                }
+            </select>
+        </div>
+        <div class="university-list">
+            <table class="table wider">
+                <tbody>
+                    @for (int i = 0; i < 20; i++)
+                    {
+                        <tr>
+                            <th scope="row">Faculty of something and something</th>
+                            <td>
+                                <span data-target="#editFacultyModal" data-toggle="modal"><i class="fas fa-edit"></i></span>
+                                <span><i class="fas fa-trash-alt"></i></span>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <button class="btn btn-primary mt-20" data-target="#addFacultyModal" data-toggle="modal">Add Faculty</button>
+    </div>
+<div class="modal fade" tabindex="-1" id="addFacultyModal"
+     data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    &times;
+                </button>
+                <h4 class="modal-title">Add Faculty</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="admin-university">Select university</label>
+                        <select name="university" class="university-select form-control" id="admin-university">
+                            <option selected disabled hidden>University</option>
+                            @foreach (University uni in ViewBag.Universities)
+                            {
+                                <option value="@uni.Id">@uni.Title</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="facultyTitle">Faculty title</label>
+                        <input class="form-control" placeholder="Enter faculty title"
+                               type="text" id="facultyTitle" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-primary"
+                        data-dismiss="modal">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
+<div class="modal fade" tabindex="-1" id="editFacultyModal"
+     data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    &times;
+                </button>
+                <h4 class="modal-title">Edit Faculty</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="editFacultyTitle">Faculty Title</label>
+                        <input class="form-control" placeholder="Enter faculty title"
+                               type="text" id="editFacultyTitle" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-primary"
+                        data-dismiss="modal">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
