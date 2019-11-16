@@ -15,6 +15,11 @@ namespace Advisor.Controllers
         [Route("review", Name = "review_page")]
         public ActionResult Index()
         {
+            if (!User.IsInRole("User"))
+            {
+                return RedirectToRoute("login");
+            }
+
             ViewBag.Universities = DB.Instance.Universities.ToList();
             ViewBag.StudyPrograms = DB.Instance.StudyPrograms.ToList();
             ViewBag.Courses = DB.Instance.Courses.ToList();

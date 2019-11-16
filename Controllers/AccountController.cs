@@ -49,8 +49,8 @@ namespace Advisor.Controllers
             }
         }
 
-        //
-        // GET: /Account/Login
+        [HttpGet]
+        [Route("login", Name = "login")]
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
@@ -63,6 +63,7 @@ namespace Advisor.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [Route("login")]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
@@ -131,9 +132,9 @@ namespace Advisor.Controllers
             }
         }
 
-        //
-        // GET: /Account/Register
+        [HttpGet]
         [AllowAnonymous]
+        [Route("register", Name = "register")]
         public ActionResult Register()
         {
             return View();
@@ -144,6 +145,7 @@ namespace Advisor.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [Route("register")]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
