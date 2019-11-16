@@ -50,6 +50,11 @@ namespace Advisor.Controllers
         [Route("upload", Name = "file_upload")]
         public ActionResult UploadFile(HttpPostedFileBase file, int course)
         {
+            if (!User.IsInRole("User"))
+            {
+                return RedirectToRoute("login");
+            }
+
             if (!FileValidator.Validate(file))
             {
                 return View("/Views/Shared/Error.cshtml");
@@ -62,7 +67,7 @@ namespace Advisor.Controllers
 
                 return RedirectToRoute("course_page", new { id = course });
             }
-            catch (Exception e)
+            catch
             {
                 return View("/Views/Shared/Error.cshtml");
             }
@@ -80,7 +85,7 @@ namespace Advisor.Controllers
 
                 return fileResponse;
             }
-            catch(Exception e)
+            catch
             {
                 return View("/Views/Shared/Error.cshtml");
             }
@@ -101,7 +106,7 @@ namespace Advisor.Controllers
 
                 return true;
             }
-            catch (Exception e)
+            catch
             {
                 throw new InvalidOperationException();
             }

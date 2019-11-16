@@ -32,6 +32,11 @@ namespace Advisor.Controllers
         [Route("review/program", Name = "review_program")]
         public ActionResult ReviewStudyProgram(Review review, int? program)
         {
+            if (!User.IsInRole("User"))
+            {
+                return RedirectToRoute("login");
+            }
+
             try
             {
                 DB.Instance.StudyPrograms.Where(p => p.Id == program).SingleOrDefault().Reviews.Add(review);
@@ -49,6 +54,11 @@ namespace Advisor.Controllers
         [Route("review/course", Name = "review_course")]
         public ActionResult ReviewCourse(Review review, int? course)
         {
+            if (!User.IsInRole("User"))
+            {
+                return RedirectToRoute("login");
+            }
+
             try
             {
                 review.PracticePercentage = 100 - review.TheoryPercentage;
@@ -67,6 +77,11 @@ namespace Advisor.Controllers
         [Route("review/lecturer", Name = "review_lecturer")]
         public ActionResult ReviewLecturer(Review review, int? lecturer)
         {
+            if (!User.IsInRole("User"))
+            {
+                return RedirectToRoute("login");
+            }
+
             try
             {
                 DB.Instance.Lecturers.Where(l => l.Id == lecturer).SingleOrDefault().Reviews.Add(review);
