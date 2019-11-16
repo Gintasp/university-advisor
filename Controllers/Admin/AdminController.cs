@@ -1,5 +1,4 @@
 ﻿using Advisor.Models;
-using Advisor.Services.Statistics;
 using System.Linq;
 using System.Web.Mvc;
 using System.Collections.Generic;
@@ -8,6 +7,10 @@ namespace Advisor.Controllers
 {
     public class AdminController: Controller
     {
+        public AdminController()
+        {
+        }
+
         [Route("admin", Name = "admin_page")]
         public ActionResult Index()
         {
@@ -15,6 +18,5 @@ namespace Advisor.Controllers
             ViewBag.Universities = unis;
             return View("/Views/Admin/Admin.cshtml");
         }
-
     }
 }
