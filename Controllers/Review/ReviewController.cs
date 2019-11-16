@@ -15,7 +15,7 @@ namespace Advisor.Controllers
         [Route("review", Name = "review_page")]
         public ActionResult Index()
         {
-            if (!User.IsInRole("User"))
+            if (!User.IsInRole("user"))
             {
                 return RedirectToRoute("login");
             }
