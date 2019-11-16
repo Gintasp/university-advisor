@@ -1,25 +1,5 @@
-﻿body {
-}
-
-.list {
+﻿.list {
     width: 100%;
-    height: 400px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
-.table-container {
-    margin: auto;
-    width: 1000px;
-}
-
-.table-container-course{
-    margin: auto;
-    width: 800px;
-}
-
-.course-list {
-    width: 1000px;
     height: 400px;
     overflow-y: scroll;
     overflow-x: hidden;
