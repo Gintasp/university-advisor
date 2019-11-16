@@ -15,7 +15,7 @@ namespace Advisor.Controllers
         [Route("review", Name = "review_page")]
         public ActionResult Index()
         {
-            if (!User.IsInRole("user"))
+            if (!User.IsInRole("User"))
             {
                 return RedirectToRoute("login");
             }
@@ -37,6 +37,7 @@ namespace Advisor.Controllers
                 return RedirectToRoute("login");
             }
 
+            review.User = GetCurrentUser();
             try
             {
                 DB.Instance.StudyPrograms.Where(p => p.Id == program).SingleOrDefault().Reviews.Add(review);
@@ -59,6 +60,7 @@ namespace Advisor.Controllers
                 return RedirectToRoute("login");
             }
 
+            review.User = GetCurrentUser();
             try
             {
                 review.PracticePercentage = 100 - review.TheoryPercentage;
@@ -82,6 +84,7 @@ namespace Advisor.Controllers
                 return RedirectToRoute("login");
             }
 
+            review.User = GetCurrentUser();
             try
             {
                 DB.Instance.Lecturers.Where(l => l.Id == lecturer).SingleOrDefault().Reviews.Add(review);
@@ -92,6 +95,18 @@ namespace Advisor.Controllers
             catch (Exception e)
             {
                 return View("/Views/Shared/Error.cshtml");
+            }
+        }
+
+        private User GetCurrentUser()
+        {
+            try
+            {
+                return DB.Instance.Users.Where(u => u.Email == User.Identity.Name).SingleOrDefault();
+            }
+            catch
+            {
+                throw new Exception();
             }
         }
     }
