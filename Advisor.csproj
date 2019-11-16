@@ -25,7 +25,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44392</IISExpressSSLPort>
+    <IISExpressSSLPort>44308</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -212,6 +212,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Admin\AdminController.cs" />
     <Compile Include="Controllers\Api\ApiController.cs" />
     <Compile Include="Controllers\Api\ApiStudyProgramController.cs" />
     <Compile Include="Controllers\Api\ApiUniversityController.cs" />
@@ -278,6 +279,7 @@
     <Compile Include="Tests\StatisticCalculatorTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\admin.css" />
     <Content Include="Assets\css\comparison.css" />
     <Content Include="Assets\css\course.css" />
     <Content Include="Assets\css\faculty.css" />
@@ -390,6 +392,12 @@
     <Content Include="Views\Review\Partials\_StudyProgramFormPartial.cshtml" />
     <Content Include="Views\Review\Partials\_CourseFormPartial.cshtml" />
     <Content Include="Views\Review\Partials\_LecturerFormPartial.cshtml" />
+    <Content Include="Views\Admin\Admin.cshtml" />
+    <Content Include="Views\Admin\Partials\_UniversityFormPartial.cshtml" />
+    <Content Include="Views\Admin\Partials\_FacultyFormPartial.cshtml" />
+    <Content Include="Views\Admin\Partials\_StudyProgramFormPartial.cshtml" />
+    <Content Include="Views\Admin\Partials\_CourseFormPartial.cshtml" />
+    <Content Include="Views\Admin\Partials\_LecturerFormPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\uploads\" />

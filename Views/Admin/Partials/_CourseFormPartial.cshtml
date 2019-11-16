@@ -1,0 +1,143 @@
+﻿@using Advisor.Models
+@{
+    ViewBag.Title = "_CourseFormPartial";
+}
+    <div class="admin-container">
+        <div class="row">
+            <div class="col-sm-12 mt-20">
+                <div class="col-sm-4 form-group">
+                    <label for="adminCourses-university">Select university</label>
+                    <select class="form-control" id="adminCourses-university">
+                        <option selected disabled hidden>University</option>
+                        @foreach (University uni in ViewBag.Universities)
+                        {
+                            <option value="@uni.Id">@uni.Title</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label for="adminCourses-faculty">Select faculty</label>
+                    <select class="form-control" id="adminCourses-faculty">
+                        <option selected disabled hidden>Faculty</option>
+                        @for (int i = 0; i < 20; i++)
+                        {
+                            <option>Faculty</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label for="adminCourses-studyprogram">Select study program</label>
+                    <select class="form-control" id="adminCourses-studyprogram">
+                        <option selected disabled hidden>Study Program</option>
+                        @for (int i = 0; i < 20; i++)
+                        {
+                            <option>Study Program</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <h2>Courses</h2>
+                <div class="list">
+                    <table class="table">
+                        <tbody>
+                            @for (int i = 0; i < 20; i++)
+                            {
+                                <tr>
+                                    <th scope="row" class="admin-listItem-wider">Course</th>
+                                    <td class="admin-icons-wider">
+                                        <span data-target="#editCourseModal" data-toggle="modal"><i class="fas fa-edit"></i></span>
+                                        <span><i class="fas fa-trash-alt"></i></span>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn btn-primary mt-20" data-target="#addCourseModal" data-toggle="modal">Add Course</button>
+            </div>
+        </div>
+    </div>
+<div class="modal fade" tabindex="-1" id="addCourseModal"
+     data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    &times;
+                </button>
+                <h4 class="modal-title">Add Course</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="addCourse-university">Select university</label>
+                        <select class="form-control" id="addCourse-university">
+                            <option selected disabled hidden>University</option>
+                            @foreach (University uni in ViewBag.Universities)
+                            {
+                                <option value="@uni.Id">@uni.Title</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="addCourse-faculty">Select faculty</label>
+                        <select class="form-control" id="addCourse-faculty">
+                            <option selected disabled hidden>Faculty</option>
+                            @for (int i = 0; i < 20; i++)
+                            {
+                                <option>Faculty</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="addCourse-studyprogram">Select study program</label>
+                        <select class="form-control" id="addCourse-studyprogram">
+                            <option selected disabled hidden>Study Program</option>
+                            @for (int i = 0; i < 10; i++)
+                            {
+                                <option>Study Program</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="courseTitle">Course title</label>
+                        <input class="form-control" placeholder="Enter course title"
+                               type="text" id="courseTitle" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" id="editCourseModal"
+     data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    &times;
+                </button>
+                <h4 class="modal-title">Edit Course</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="editCourseTitle">Course Title</label>
+                        <input class="form-control" type="text" id="editCourseTitle" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
