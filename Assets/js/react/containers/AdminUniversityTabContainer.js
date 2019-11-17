@@ -4,6 +4,7 @@ import AdminItemList from '../components/AdminItemList';
 import {
   ALL_UNIVERSITIES_URL,
   EDIT_UNIVERSITY_URL,
+  ADD_UNIVERSITY_URL,
 } from '../config/adminRoutes';
 
 class AdminUniversityTabContainer extends React.Component {
@@ -13,6 +14,7 @@ class AdminUniversityTabContainer extends React.Component {
       universities: [],
       editingId: '',
       editingTitle: '',
+      newUniversityTitle: '',
     };
   }
 
@@ -69,6 +71,33 @@ class AdminUniversityTabContainer extends React.Component {
     });
   }
 
+  handleNewUniversityTitle(e) {
+    this.setState({
+      newUniversityTitle: e.target.value,
+    });
+  }
+
+  handleNewUniversitySubmit() {
+    if (!this.state.newUniversityTitle) {
+      return;
+    }
+
+    axios
+      .post(ADD_UNIVERSITY_URL, {
+        Title: this.state.newUniversityTitle,
+      })
+      .then(res => {
+        this.setState({
+          universities: res.data,
+          newUniversityTitle: '',
+        });
+        $('#addUniversityModal').css('display', 'none');
+        $('.modal-backdrop').remove();
+        $('#addUniversityModal').removeClass('in');
+      })
+      .catch(err => console.log(err));
+  }
+
   render() {
     const { universities, editingTitle } = this.state;
 
@@ -105,20 +134,24 @@ class AdminUniversityTabContainer extends React.Component {
                 <h4 className="modal-title">Add University</h4>
               </div>
               <div className="modal-body">
-                <form>
-                  <div className="form-group">
-                    <label htmlFor="universityTitle">University Title</label>
-                    <input
-                      className="form-control"
-                      placeholder="Enter university title"
-                      type="text"
-                      id="universityTitle"
-                    />
-                  </div>
-                </form>
+                <div className="form-group">
+                  <label htmlFor="universityTitle">University Title</label>
+                  <input
+                    className="form-control"
+                    placeholder="Enter university title"
+                    value={this.state.newUniversityTitle}
+                    onChange={e => this.handleNewUniversityTitle(e)}
+                    type="text"
+                    id="universityTitle"
+                  />
+                </div>
               </div>
               <div className="modal-footer">
-                <button type="submit" className="btn btn-primary">
+                <button
+                  onClick={() => this.handleNewUniversitySubmit()}
+                  type="submit"
+                  className="btn btn-primary"
+                >
                   Submit
                 </button>
                 <button

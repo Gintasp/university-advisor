@@ -60,5 +60,23 @@ namespace Advisor.Controllers.Api
 
             return Universities();
         }
+
+        [HttpPost]
+        [Route("api/universities/add")]
+        public string UniversityAdd(BasicModel data)
+        {
+            if (data == null || data.Id == null)
+            {
+                return JsonConvert.SerializeObject(new CustomResponse("Bad request.", 400));
+            }
+            University uni = new University
+            {
+                Title = data.Title
+            };
+            DB.Instance.Universities.Add(uni);
+            DB.Instance.SaveChanges();
+
+            return Universities();
+        }
     }
 }
