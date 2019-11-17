@@ -82,14 +82,15 @@
                 @foreach (Dormitory dormitory in ViewBag.University.Dormitories)
                 {
                     <div class="dorms-container card">
-                        <h4>@dormitory.Title</h4>
-                        <div class="d-flex flex-wrap">
-                            <div class="col-sm-12">
-                                @foreach (Address address in dormitory.Addresses)
-                                {
-                                    <p>@address.ToString()</p>
-                                }
-                            </div>
+                        <div class="col-sm-12">
+                            <h4><i class="fas fa-home"></i> @dormitory.Title</h4>
+                            <p>@dormitory.Description</p>
+                        </div>
+                        <div class="col-sm-12">
+                            @{string adr = dormitory.Addresses.ElementAt(0).ToString(); }
+                            @{string addr = adr.Replace(",", "").Replace(" ", "%20");
+                                string str = "https://maps.google.com/maps?q=" + addr + "%20&t=&z=13&ie=UTF8&iwloc=&output=embed";}
+                            <iframe class="dorm-map" src=@str allowfullscreen></iframe>
                         </div>
                     </div>
                 }

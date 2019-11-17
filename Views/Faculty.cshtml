@@ -77,9 +77,7 @@
             <div class="d-flex flex-wrap">
                 @foreach (Address a in ViewBag.Faculty.Addresses)
                 {
-                    <div class="location-container card">
-                        <h4>@a.ToString()</h4>
-                    </div>
+                    <h3><i class="fas fa-map-marker-alt"></i> @a.ToString()</h3>
                 }
             </div>
         </div>
