@@ -15,6 +15,11 @@ namespace Advisor.Controllers
         [Route("review", Name = "review_page")]
         public ActionResult Index()
         {
+            if (!User.IsInRole("User"))
+            {
+                return RedirectToRoute("login");
+            }
+
             ViewBag.Universities = DB.Instance.Universities.ToList();
             ViewBag.StudyPrograms = DB.Instance.StudyPrograms.ToList();
             ViewBag.Courses = DB.Instance.Courses.ToList();
@@ -27,6 +32,12 @@ namespace Advisor.Controllers
         [Route("review/program", Name = "review_program")]
         public ActionResult ReviewStudyProgram(Review review, int? program)
         {
+            if (!User.IsInRole("User"))
+            {
+                return RedirectToRoute("login");
+            }
+
+            review.User = GetCurrentUser();
             try
             {
                 DB.Instance.StudyPrograms.Where(p => p.Id == program).SingleOrDefault().Reviews.Add(review);
@@ -44,6 +55,12 @@ namespace Advisor.Controllers
         [Route("review/course", Name = "review_course")]
         public ActionResult ReviewCourse(Review review, int? course)
         {
+            if (!User.IsInRole("User"))
+            {
+                return RedirectToRoute("login");
+            }
+
+            review.User = GetCurrentUser();
             try
             {
                 review.PracticePercentage = 100 - review.TheoryPercentage;
@@ -62,6 +79,12 @@ namespace Advisor.Controllers
         [Route("review/lecturer", Name = "review_lecturer")]
         public ActionResult ReviewLecturer(Review review, int? lecturer)
         {
+            if (!User.IsInRole("User"))
+            {
+                return RedirectToRoute("login");
+            }
+
+            review.User = GetCurrentUser();
             try
             {
                 DB.Instance.Lecturers.Where(l => l.Id == lecturer).SingleOrDefault().Reviews.Add(review);
@@ -72,6 +95,18 @@ namespace Advisor.Controllers
             catch (Exception e)
             {
                 return View("/Views/Shared/Error.cshtml");
+            }
+        }
+
+        private User GetCurrentUser()
+        {
+            try
+            {
+                return DB.Instance.Users.Where(u => u.Email == User.Identity.Name).SingleOrDefault();
+            }
+            catch
+            {
+                throw new Exception();
             }
         }
     }

@@ -81,14 +81,17 @@
                     </div>
                 }
             </div>
-            <div>
-                <form class="mt-20" method="post" enctype="multipart/form-data" action="@Url.RouteUrl("file_upload")">
-                    <label for="file">Upload your course material</label>
-                    <input class="mt-5" type="file" name="file" id="file" />
-                    <input class="mt-5" value="@ViewBag.Course.Id" type="hidden" name="course" id="course" />
-                    <button class="mt-20 btn btn-primary" type="submit">Upload</button>
-                </form>
-            </div>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div>
+                    <form class="mt-20" method="post" enctype="multipart/form-data" action="@Url.RouteUrl("file_upload")">
+                        <label for="file">Upload your course material</label>
+                        <input class="mt-5" type="file" name="file" id="file" />
+                        <input class="mt-5" value="@ViewBag.Course.Id" type="hidden" name="course" id="course" />
+                        <button class="mt-20 btn btn-primary" type="submit">Upload</button>
+                    </form>
+                </div>
+            }
         </div>
     </div>
 </div>
