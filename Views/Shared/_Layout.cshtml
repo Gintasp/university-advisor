@@ -25,7 +25,10 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="@Url.RouteUrl("universities_page")">Universities</a></li>
                     <li><a href="@Url.RouteUrl("review_page")">Leave a review!</a></li>
-                    <li><a href="@Url.RouteUrl("admin_page")">Admin</a></li> <!--laikinai-->
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li><a href="@Url.RouteUrl("admin_page")">Admin</a></li>
+                    }
                 </ul>
             </div>
         </div>

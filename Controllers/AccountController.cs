@@ -49,8 +49,8 @@ namespace Advisor.Controllers
             }
         }
 
-        //
-        // GET: /Account/Login
+        [HttpGet]
+        [Route("login", Name = "login")]
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
@@ -63,6 +63,7 @@ namespace Advisor.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [Route("login")]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
@@ -131,9 +132,9 @@ namespace Advisor.Controllers
             }
         }
 
-        //
-        // GET: /Account/Register
+        [HttpGet]
         [AllowAnonymous]
+        [Route("register", Name = "register")]
         public ActionResult Register()
         {
             return View();
@@ -144,14 +145,21 @@ namespace Advisor.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [Route("register")]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
                 var user = new User { UserName = model.Email, Email = model.Email };
-                var result = await UserManager.CreateAsync(user, model.Password);
+                var result =  UserManager.Create(user, model.Password);
                 if (result.Succeeded)
                 {
+                    UserManager.AddToRole(user.Id, "User");
+
+                    if (model.Email.Equals("admin@advisor.com"))
+                    {
+                        UserManager.AddToRole(user.Id, "Admin");
+                    }
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
