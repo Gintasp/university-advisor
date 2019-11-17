@@ -2,6 +2,8 @@
 using System.Web.Mvc;
 using System.Linq;
 using Newtonsoft.Json;
+using Advisor.Models.JSON;
+using Advisor.Http.Response;
 
 namespace Advisor.Controllers.Api
 {
@@ -9,6 +11,15 @@ namespace Advisor.Controllers.Api
     {
         public ApiUniversityController()
         {
+        }
+
+        [HttpGet]
+        [Route("api/universities")]
+        public string Universities()
+        {
+            var unis = DB.Instance.Universities.Select(u => new { u.Id, u.Title }).ToList();
+
+            return JsonConvert.SerializeObject(unis, Formatting.Indented);
         }
 
         [HttpGet]
@@ -33,6 +44,21 @@ namespace Advisor.Controllers.Api
                 .ToList();
 
             return JsonConvert.SerializeObject(lecturers, Formatting.Indented);
+        }
+
+        [HttpPost]
+        [Route("api/universities/edit")]
+        public string UniversityEdit(BasicModel data)
+        {
+            if (data == null || data.Id == null)
+            {
+                return JsonConvert.SerializeObject(new CustomResponse("Bad request.", 400));
+            }
+            var uni = DB.Instance.Universities.Where(u => u.Id == data.Id).SingleOrDefault();
+            uni.Title = data.Title;
+            DB.Instance.SaveChanges();
+
+            return Universities();
         }
     }
 }

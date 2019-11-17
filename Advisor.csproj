@@ -25,7 +25,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44308</IISExpressSSLPort>
+    <IISExpressSSLPort>44392</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -257,6 +257,7 @@
     <Compile Include="Models\DB.cs" />
     <Compile Include="Models\Dormitory.cs" />
     <Compile Include="Models\Faculty.cs" />
+    <Compile Include="Models\JSON\BasicModel.cs" />
     <Compile Include="Models\UploadedFile.cs" />
     <Compile Include="Models\Lecturer.cs" />
     <Compile Include="Models\ManageViewModels.cs" />

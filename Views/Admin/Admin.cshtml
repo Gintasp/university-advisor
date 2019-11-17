@@ -22,9 +22,7 @@
 </ul>
 
 <div class="tab-content">
-    <div id="universityTab" class="tab-pane active">
-        @Html.Partial("Partials/_UniversityFormPartial")
-    </div>
+    <div id="universityTab" class="tab-pane active"></div>
 
     <div id="facultyTab" class="tab-pane">
         @Html.Partial("Partials/_FacultyFormPartial")
@@ -41,3 +39,7 @@
     </div>
 </div>
 
+@section scripts
+{
+    <script src="~/Assets/js/dist/admin.js"></script>
+}

@@ -2,11 +2,12 @@
 using System.Linq;
 using System.Web.Mvc;
 using System.Collections.Generic;
+using System;
 
 namespace Advisor.Controllers
 {
-    [Authorize(Roles = "Admin")]
-    public class AdminController: Controller
+    //[Authorize(Roles = "Admin")]
+    public class AdminController : Controller
     {
         public AdminController()
         {

@@ -14,7 +14,7 @@
                         <th scope="row" class="admin-listItem-wider">@uni.Title</th>
                         <td class="admin-icons-wider">
                             <span data-target="#editUniversityModal" data-toggle="modal"><i class="fas fa-edit"></i></span>
-                            <span><i class="fas fa-trash-alt"></i></span>
+                            <span onclick="removeUniversity(@uni.Id)"><i class="fas fa-trash-alt"></i></span>
                         </td>
                     </tr>
                 }
@@ -24,8 +24,7 @@
     <button class="btn btn-primary mt-20" data-target="#addUniversityModal" data-toggle="modal">Add University</button>
 </div>
  
-<div class="modal fade" tabindex="-1" id="addUniversityModal"
-     data-keyboard="false" data-backdrop="static">
+<div class="modal fade" tabindex="-1" id="addUniversityModal" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
@@ -38,8 +37,7 @@
                 <form>
                     <div class="form-group">
                         <label for="universityTitle">University Title</label>
-                        <input class="form-control" placeholder="Enter university title"
-                               type="text" id="universityTitle" />
+                        <input class="form-control" placeholder="Enter university title" type="text" id="universityTitle" />
                     </div>
                 </form>
             </div>
@@ -51,8 +49,7 @@
     </div>
 </div>
 
-<div class="modal fade" tabindex="-1" id="editUniversityModal"
-     data-keyboard="false" data-backdrop="static">
+<div class="modal fade" tabindex="-1" id="editUniversityModal" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
