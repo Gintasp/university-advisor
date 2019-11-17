@@ -11,22 +11,11 @@ class AdminUniversityTabContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      universities: [],
+      universities: this.props.universities,
       editingId: '',
       editingTitle: '',
       newUniversityTitle: '',
     };
-  }
-
-  componentDidMount() {
-    axios
-      .get(ALL_UNIVERSITIES_URL)
-      .then(res => {
-        this.setState({
-          universities: res.data,
-        });
-      })
-      .catch(err => console.log(err.response));
   }
 
   handleUniversityDelete(id) {
@@ -57,9 +46,7 @@ class AdminUniversityTabContainer extends React.Component {
         this.setState({
           universities: res.data,
         });
-        $('#editUniversityModal').css('display', 'none');
-        $('.modal-backdrop').remove();
-        $('#editUniversityModal').removeClass('in');
+        $('.close').trigger('click');
       })
       .catch(err => console.log(err));
   }
@@ -91,9 +78,7 @@ class AdminUniversityTabContainer extends React.Component {
           universities: res.data,
           newUniversityTitle: '',
         });
-        $('#addUniversityModal').css('display', 'none');
-        $('.modal-backdrop').remove();
-        $('#addUniversityModal').removeClass('in');
+        $('.close').trigger('click');
       })
       .catch(err => console.log(err));
   }
@@ -105,6 +90,7 @@ class AdminUniversityTabContainer extends React.Component {
       <React.Fragment>
         <div className="admin-container mt-20">
           <AdminItemList
+            target="#editUniversityModal"
             items={universities}
             title="Universities"
             onEditSelect={item => this.handleEditUniversitySelect(item)}

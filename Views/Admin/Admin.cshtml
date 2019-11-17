@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Admin";
 }
 <h2>Admin Dashboard</h2>
@@ -23,20 +22,10 @@
 
 <div class="tab-content">
     <div id="universityTab" class="tab-pane active"></div>
-
-    <div id="facultyTab" class="tab-pane">
-        @Html.Partial("Partials/_FacultyFormPartial")
-    </div>
-    <div id="studyProgramTab" class="tab-pane">
-        @Html.Partial("Partials/_StudyProgramFormPartial")
-    </div>
-
-    <div id="courseTab" class="tab-pane">
-        @Html.Partial("Partials/_CourseFormPartial")
-    </div>
-    <div id="lecturerTab" class="tab-pane">
-        @Html.Partial("Partials/_LecturerFormPartial")
-    </div>
+    <div id="facultyTab" class="tab-pane"></div>
+    <div id="studyProgramTab" class="tab-pane"></div>
+    <div id="courseTab" class="tab-pane"></div>
+    <div id="lecturerTab" class="tab-pane"></div>
 </div>
 
 @section scripts

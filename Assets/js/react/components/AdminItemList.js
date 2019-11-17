@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AdminItemList = ({ items, title, onDelete, onEditSelect }) => {
+const AdminItemList = ({ items, title, onDelete, onEditSelect, target }) => {
   return (
     <React.Fragment>
       <h2>{title}</h2>
@@ -15,7 +15,7 @@ const AdminItemList = ({ items, title, onDelete, onEditSelect }) => {
                 <td className="admin-icons-wider">
                   <span
                     onClick={() => onEditSelect(item)}
-                    data-target="#editUniversityModal"
+                    data-target={target}
                     data-toggle="modal"
                   >
                     <i className="fas fa-edit mr-5"></i>
