@@ -1,6 +1,8 @@
 namespace Advisor.Migrations
 {
     using Advisor.Models;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
@@ -28,6 +30,7 @@ namespace Advisor.Migrations
             string dataFolderPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName + "\\Migrations\\Data\\";
 
             //WARNING: The order of these function calls does matter
+            LoadRoles(context);
             LoadUsers(context, dataFolderPath + "User.csv");
             LoadReviews(context, dataFolderPath + "Review.csv");
             LoadAddresses(context, dataFolderPath + "Address.csv");
@@ -45,6 +48,14 @@ namespace Advisor.Migrations
             LoadCourseRelations(context);
             LoadReviewRelations(context);
             LoadAddressRelations(context);
+        }
+
+        private void LoadRoles(DatabaseContext context)
+        {
+            context.Roles.Add(new IdentityRole("User"));
+            context.Roles.Add(new IdentityRole("Admin"));
+
+            context.SaveChanges();
         }
 
         private void LoadAddressRelations(DatabaseContext context)
@@ -86,7 +97,6 @@ namespace Advisor.Migrations
             var programs = context.StudyPrograms.ToList();
             var courses = context.Courses.ToList();
             var lecturers = context.Lecturers.ToList();
-            var dorms = context.Dormitories.ToList();
             var reviews = context.Reviews.ToList();
 
             foreach (StudyProgram program in programs)
@@ -377,17 +387,31 @@ namespace Advisor.Migrations
 
         private void LoadUsers(DatabaseContext context, string filePath)
         {
+            var userManager = new UserManager<User>(new UserStore<User>(context));
+
             var lines = File.ReadAllLines(filePath).ToList();
             foreach (string line in lines)
             {
-                User user = new User()
+                User user = new User
                 {
                     Name = line.Split(',')[0],
                     Email = line.Split(',')[1],
                     UserName = line.Split(',')[2],
+                    EmailConfirmed = true
                 };
 
-                context.Users.Add(user);
+                var result = userManager.Create(user, "Password1!");
+                context.SaveChanges();
+
+                var userFromDB = DB.Instance.Users.Where(u => u.Email == user.Email).SingleOrDefault();
+                if (userFromDB.Email.Equals("admin@advisor.com"))
+                {
+                    userManager.AddToRoles(userFromDB.Id, new string[] { "Admin", "User" });
+                }
+                else
+                {
+                    userManager.AddToRole(userFromDB.Id, "User");
+                }
             }
 
             context.SaveChanges();
@@ -398,6 +422,7 @@ namespace Advisor.Migrations
             //WARNING: The order of these function calls does matter
             context.Database.ExecuteSqlCommand("DELETE FROM [Addresses]; DBCC CHECKIDENT ([Addresses], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Reviews]; DBCC CHECKIDENT ([Reviews], RESEED, 0)");
+            context.Database.ExecuteSqlCommand("DELETE FROM [AspNetRoles]");
             context.Database.ExecuteSqlCommand("DELETE FROM [AspNetUsers];");
             context.Database.ExecuteSqlCommand("DELETE FROM [UploadedFiles]; DBCC CHECKIDENT ([UploadedFiles], RESEED, 0)");
             context.Database.ExecuteSqlCommand("DELETE FROM [Courses]; DBCC CHECKIDENT ([Courses], RESEED, 0)");
