@@ -108,10 +108,3 @@ const setInputValue = (selector, amount) => {
     const elements = Object.values(document.querySelectorAll(selector));
     elements.map(el => el.value = amount);
 }
-
-$(function () {
-    $('[data-toggle="tooltip"]').tooltip({
-        animation: true,
-        delay: {hide: 600}
-    });
-});
