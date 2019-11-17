@@ -43,7 +43,7 @@ class AdminFacultyTabContainer extends React.Component {
       .catch(err => console.log(err.response));
   }
 
-  handleUniversityDelete(id) {
+  handleFacultyDelete(id) {
     const { faculties: universities } = this.state;
     const uniTitle = universities.filter(uni => uni.Id === id)[0].Title;
     if (confirm(`Are you sure you want to delete ${uniTitle}?`)) {
@@ -162,7 +162,7 @@ class AdminFacultyTabContainer extends React.Component {
           <AdminItemList
             target="#editFacultyModal"
             title="Faculties"
-            onDelete={id => this.handleUniversityDelete(id)}
+            onDelete={id => this.handleFacultyDelete(id)}
             onEditSelect={item => this.handleEditUniversitySelect(item)}
             items={this.state.faculties}
           />

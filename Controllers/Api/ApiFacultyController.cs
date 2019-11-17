@@ -14,6 +14,18 @@ namespace Advisor.Controllers.Api
         }
 
         [HttpGet]
+        [Route("api/faculties/{id:int}")]
+        public string FacultyByUniId(int id)
+        {
+            var faculties = DB.Instance.Faculties
+                .Select(f => new { f.Id, f.Title, UniversityId = f.University.Id })
+                .Where(f => f.UniversityId == id)
+                .ToList();
+
+            return JsonConvert.SerializeObject(faculties, Formatting.Indented);
+        }
+
+        [HttpGet]
         [Route("api/faculties")]
         public string Faculties()
         {
