@@ -404,14 +404,7 @@ namespace Advisor.Migrations
                 context.SaveChanges();
 
                 var userFromDB = DB.Instance.Users.Where(u => u.Email == user.Email).SingleOrDefault();
-                if (userFromDB.Email.Equals("admin@advisor.com"))
-                {
-                    userManager.AddToRoles(userFromDB.Id, new string[] { "Admin", "User" });
-                }
-                else
-                {
-                    userManager.AddToRole(userFromDB.Id, "User");
-                }
+                userManager.AddToRole(userFromDB.Id, "User");
             }
 
             context.SaveChanges();
