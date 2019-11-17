@@ -214,6 +214,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Admin\AdminController.cs" />
     <Compile Include="Controllers\Api\ApiController.cs" />
+    <Compile Include="Controllers\Api\ApiCourseController.cs" />
     <Compile Include="Controllers\Api\ApiFacultyController.cs" />
     <Compile Include="Controllers\Api\ApiStudyProgramController.cs" />
     <Compile Include="Controllers\Api\ApiUniversityController.cs" />
@@ -397,7 +398,6 @@
     <Content Include="Views\Review\Partials\_CourseFormPartial.cshtml" />
     <Content Include="Views\Review\Partials\_LecturerFormPartial.cshtml" />
     <Content Include="Views\Admin\Admin.cshtml" />
-    <Content Include="Views\Admin\Partials\_CourseFormPartial.cshtml" />
     <Content Include="Views\Admin\Partials\_LecturerFormPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
