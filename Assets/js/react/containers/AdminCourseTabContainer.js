@@ -74,7 +74,7 @@ class AdminCourseTabContainer extends React.Component {
       })
       .then(res => {
         this.setState({
-          programs: res.data,
+          courses: res.data,
         });
         $('.close').trigger('click');
       })
@@ -347,19 +347,23 @@ class AdminCourseTabContainer extends React.Component {
                 <h4 className="modal-title">Edit Course</h4>
               </div>
               <div className="modal-body">
-                <form>
-                  <div className="form-group">
-                    <label htmlFor="editCourseTitle">Course Title</label>
-                    <input
-                      className="form-control"
-                      type="text"
-                      id="editCourseTitle"
-                    />
-                  </div>
-                </form>
+                <div className="form-group">
+                  <label htmlFor="editCourseTitle">Course Title</label>
+                  <input
+                    value={this.state.editingTitle}
+                    className="form-control"
+                    type="text"
+                    id="editCourseTitle"
+                    onChange={e => this.handleTitleChange(e)}
+                  />
+                </div>
               </div>
               <div className="modal-footer">
-                <button type="submit" className="btn btn-primary">
+                <button
+                  onClick={() => this.handleEditSubmit()}
+                  type="submit"
+                  className="btn btn-primary"
+                >
                   Submit
                 </button>
                 <button

@@ -12,3 +12,4 @@ export const ADD_PROGRAM_URL = '/api/programs/add';
 export const EDIT_PROGRAM_URL = '/api/programs/edit';
 
 export const ALL_COURSES_URL = '/api/courses';
+export const EDIT_COURSE_URL = '/api/courses/edit';
