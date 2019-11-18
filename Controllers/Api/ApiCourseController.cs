@@ -62,5 +62,26 @@ namespace Advisor.Controllers.Api
 
             return Courses();
         }
+
+        [HttpGet]
+        [Route("api/courses/faculty/{id:int}")]
+        public string CoursesByFaculty(int id)
+        {
+            using (DatabaseContext context = new DatabaseContext())
+            {
+                var courses = context.Courses
+                .Select(c => new
+                {
+                    c.Id,
+                    c.Title,
+                    FacultyId = c.StudyProgram.Faculty.Id,
+                    UniversityId = c.StudyProgram.Faculty.University.Id
+                })
+                .Where(c => c.FacultyId == id)
+                .ToList();
+
+                return JsonConvert.SerializeObject(courses, Formatting.Indented);
+            }
+        }
     }
 }

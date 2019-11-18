@@ -15,3 +15,8 @@ export const PROGRAM_BY_UNI_URL = '/api/programs/uni';
 export const ALL_COURSES_URL = '/api/courses';
 export const EDIT_COURSE_URL = '/api/courses/edit';
 export const ADD_COURSE_URL = '/api/courses/add';
+export const COURSES_BY_FACULTY_URL = '/api/courses/faculty';
+
+export const ALL_LECTURERS_URL = '/api/lecturers';
+export const EDIT_LECTURER_URL = '/api/lecturers/edit';
+export const ADD_LECTURER_URL = '/api/lecturers/add';

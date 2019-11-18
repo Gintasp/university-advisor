@@ -8,14 +8,17 @@ import {
   ALL_FACULTIES_URL,
   ALL_PROGRAMS_URL,
   ALL_COURSES_URL,
+  ALL_LECTURERS_URL,
 } from './config/adminRoutes';
 import AdminStudyProgramTabContainer from './containers/AdminStudyProgramTabContainer';
 import AdminCourseTabContainer from './containers/AdminCourseTabContainer';
+import AdminLecturerTabContainer from './containers/AdminLecturerTabContainer';
 
 let universities = [];
 let faculties = [];
 let programs = [];
 let courses = [];
+let lecturers = [];
 
 axios
   .get(ALL_UNIVERSITIES_URL)
@@ -60,6 +63,20 @@ axios
               />,
               document.getElementById('courseTab')
             );
+
+            axios.get(ALL_LECTURERS_URL).then(res => {
+              lecturers = res.data;
+              ReactDOM.render(
+                <AdminLecturerTabContainer
+                  courses={courses}
+                  programs={programs}
+                  faculties={faculties}
+                  universities={universities}
+                  lecturers={lecturers}
+                />,
+                document.getElementById('lecturerTab')
+              );
+            });
           });
         });
       })
