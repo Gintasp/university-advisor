@@ -304,6 +304,7 @@
     <Compile Include="Services\Validator\IFileValidator.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Tests\FileManagerTests.cs" />
+    <Compile Include="Tests\FileValidatorTests.cs" />
     <Compile Include="Tests\StatisticCalculatorTest.cs" />
   </ItemGroup>
   <ItemGroup>
