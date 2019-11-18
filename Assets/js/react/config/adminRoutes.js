@@ -10,6 +10,8 @@ export const FACULTY_BY_UNI_URL = '/api/faculties';
 export const ALL_PROGRAMS_URL = '/api/programs';
 export const ADD_PROGRAM_URL = '/api/programs/add';
 export const EDIT_PROGRAM_URL = '/api/programs/edit';
+export const PROGRAM_BY_UNI_URL = '/api/programs/uni';
 
 export const ALL_COURSES_URL = '/api/courses';
 export const EDIT_COURSE_URL = '/api/courses/edit';
+export const ADD_COURSE_URL = '/api/courses/add';

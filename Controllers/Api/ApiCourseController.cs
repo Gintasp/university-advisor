@@ -17,11 +17,20 @@ namespace Advisor.Controllers.Api
         [Route("api/courses")]
         public string Courses()
         {
-            var courses = DB.Instance.Courses
-                .Select(c => new { c.Id, c.Title, FacultyId = c.StudyProgram.Faculty.Id })
+            using (DatabaseContext context = new DatabaseContext())
+            {
+                var courses = context.Courses
+                .Select(c => new
+                {
+                    c.Id,
+                    c.Title,
+                    FacultyId = c.StudyProgram.Faculty.Id,
+                    UniversityId = c.StudyProgram.Faculty.University.Id
+                })
                 .ToList();
 
-            return JsonConvert.SerializeObject(courses, Formatting.Indented);
+                return JsonConvert.SerializeObject(courses, Formatting.Indented);
+            }
         }
 
         [HttpPost]
@@ -34,6 +43,21 @@ namespace Advisor.Controllers.Api
             }
             var course = DB.Instance.Courses.Where(c => c.Id == data.Id).SingleOrDefault();
             course.Title = data.Title;
+            DB.Instance.SaveChanges();
+
+            return Courses();
+        }
+
+        [HttpPost]
+        [Route("api/courses/add")]
+        public string CourseAdd(BasicModel data)
+        {
+            if (data == null || data.Id == null)
+            {
+                return JsonConvert.SerializeObject(new CustomResponse("Bad request.", 400));
+            }
+            var program = DB.Instance.StudyPrograms.Where(p => p.Id == data.Id).SingleOrDefault();
+            program.Courses.Add(new Course { Title = data.Title });
             DB.Instance.SaveChanges();
 
             return Courses();

@@ -36,6 +36,18 @@ namespace Advisor.Controllers.Api
             return JsonConvert.SerializeObject(programs, Formatting.Indented);
         }
 
+        [HttpGet]
+        [Route("api/programs/uni/{id:int}")]
+        public string ProgramsByUni(int id)
+        {
+            var programs = DB.Instance.StudyPrograms
+                .Select(p => new { p.Id, p.Title, UniversityId = p.Faculty.University.Id, FacultyId = p.Faculty.Id })
+                .Where(p => p.UniversityId == id)
+                .ToList();
+
+            return JsonConvert.SerializeObject(programs, Formatting.Indented);
+        }
+
         [HttpPost]
         [Route("api/programs/edit")]
         public string ProgramEdit(BasicModel data)

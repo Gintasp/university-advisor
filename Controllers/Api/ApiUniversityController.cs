@@ -18,9 +18,12 @@ namespace Advisor.Controllers.Api
         [Route("api/universities")]
         public string Universities()
         {
-            var unis = DB.Instance.Universities.Select(u => new { u.Id, u.Title }).ToList();
+            using (DatabaseContext context = new DatabaseContext())
+            {
+                var unis = context.Universities.Select(u => new { u.Id, u.Title }).ToList();
 
-            return JsonConvert.SerializeObject(unis, Formatting.Indented);
+                return JsonConvert.SerializeObject(unis, Formatting.Indented);
+            }
         }
 
         [HttpGet]

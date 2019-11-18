@@ -4,6 +4,7 @@ using System.Web.Mvc;
 using System.Linq;
 using Advisor.Models.JSON;
 using Advisor.Http.Response;
+using System;
 
 namespace Advisor.Controllers.Api
 {
@@ -17,12 +18,15 @@ namespace Advisor.Controllers.Api
         [Route("api/faculties/{id:int}")]
         public string FacultyByUniId(int id)
         {
-            var faculties = DB.Instance.Faculties
-                .Select(f => new { f.Id, f.Title, UniversityId = f.University.Id })
-                .Where(f => f.UniversityId == id)
-                .ToList();
+            using (DatabaseContext context = new DatabaseContext())
+            {
+                var faculties = context.Faculties
+               .Select(f => new { f.Id, f.Title, UniversityId = f.University.Id })
+               .Where(f => f.UniversityId == id)
+               .ToList();
 
-            return JsonConvert.SerializeObject(faculties, Formatting.Indented);
+                return JsonConvert.SerializeObject(faculties, Formatting.Indented);
+            }
         }
 
         [HttpGet]
@@ -30,7 +34,7 @@ namespace Advisor.Controllers.Api
         public string Faculties()
         {
             var faculties = DB.Instance.Faculties.Select(f => new { f.Id, f.Title, UniversityId = f.University.Id }).ToList();
-            
+
             return JsonConvert.SerializeObject(faculties, Formatting.Indented);
         }
 

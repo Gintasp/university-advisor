@@ -3,14 +3,14 @@ import axios from 'axios';
 import AdminItemList from '../components/AdminItemList';
 import {
   ALL_UNIVERSITIES_URL,
-  ADD_FACULTY_URL,
   EDIT_FACULTY_URL,
   ALL_FACULTIES_URL,
-  ALL_PROGRAMS_URL,
   FACULTY_BY_UNI_URL,
   ADD_PROGRAM_URL,
+  ALL_COURSES_URL,
+  ADD_COURSE_URL,
+  PROGRAM_BY_UNI_URL,
 } from '../config/adminRoutes';
-import AdminFacultyTabContainer from './AdminFacultyTabContainer';
 
 class AdminCourseTabContainer extends React.Component {
   constructor(props) {
@@ -24,8 +24,7 @@ class AdminCourseTabContainer extends React.Component {
       editingTitle: '',
       newItem: {
         Title: '',
-        UniversityId: '',
-        FacultyId: '',
+        Id: '',
       },
     };
   }
@@ -92,27 +91,27 @@ class AdminCourseTabContainer extends React.Component {
     this.setState({
       newItem: {
         Title: e.target.value,
-        FacultyId: this.state.newItem.FacultyId,
-        UniversityId: this.state.newItem.UniversityId,
+        Id: this.state.newItem.Id,
       },
     });
   }
 
   handleAddSubmit() {
-    if (!this.state.newItem.Title || !this.state.newItem.FacultyId) {
+    if (!this.state.newItem.Title || !this.state.newItem.Id) {
       return;
     }
 
     axios
-      .post(ADD_PROGRAM_URL, {
+      .post(ADD_COURSE_URL, {
         Title: this.state.newItem.Title,
-        FacultyId: this.state.newItem.FacultyId,
+        Id: this.state.newItem.Id,
       })
       .then(res => {
         this.setState({
-          programs: res.data,
+          courses: res.data,
           newItem: {
             Title: '',
+            Id: '',
           },
         });
         $('.close').trigger('click');
@@ -123,11 +122,11 @@ class AdminCourseTabContainer extends React.Component {
 
   handleUniversitySelectChange(id) {
     axios
-      .get(ALL_PROGRAMS_URL)
+      .get(ALL_COURSES_URL)
       .then(res => {
         this.setState({
-          programs: res.data.filter(
-            program => program.UniversityId === Number(id)
+          courses: res.data.filter(
+            course => course.UniversityId === Number(id)
           ),
         });
       })
@@ -145,12 +144,10 @@ class AdminCourseTabContainer extends React.Component {
 
   handleFacultySelectChange(id) {
     axios
-      .get(ALL_PROGRAMS_URL)
+      .get(ALL_COURSES_URL)
       .then(res => {
         this.setState({
-          programs: res.data.filter(
-            program => program.FacultyId === Number(id)
-          ),
+          courses: res.data.filter(course => course.FacultyId === Number(id)),
         });
       })
       .catch(err => console.log(err.response));
@@ -158,15 +155,15 @@ class AdminCourseTabContainer extends React.Component {
 
   handleFilterReset() {
     axios
-      .get(ALL_FACULTIES_URL)
+      .get(ALL_COURSES_URL)
       .then(res => {
         this.setState({
-          faculties: res.data,
+          courses: res.data,
         });
         axios
-          .get(ALL_PROGRAMS_URL)
+          .get(ALL_FACULTIES_URL)
           .then(res => {
-            this.setState({ programs: res.data });
+            this.setState({ faculties: res.data });
             this.fetchUniversities();
           })
           .catch(err => console.log(err));
@@ -174,25 +171,25 @@ class AdminCourseTabContainer extends React.Component {
       .catch(err => console.log(err.response));
   }
 
-  handleAddUniSelect(e) {
-    this.handleUniversitySelectChange(e.target.value);
+  handleAddProgramSelect(id) {
     this.setState({
       newItem: {
-        UniversityId: e.target.value,
-        FacultyId: this.state.newItem.FacultyId,
+        Id: id,
         Title: this.state.newItem.Title,
       },
     });
   }
 
-  handleAddFacultySelect(e) {
-    this.setState({
-      newItem: {
-        FacultyId: e.target.value,
-        UniversityId: this.state.newItem.UniversityId,
-        Title: this.state.newItem.Title,
-      },
-    });
+  handleAddUniversityChange(id) {
+    this.handleUniversitySelectChange(id);
+    axios
+      .get(`${PROGRAM_BY_UNI_URL}/${id}`)
+      .then(res => {
+        this.setState({
+          programs: res.data,
+        });
+      })
+      .catch(err => console.log(err));
   }
 
   render() {
@@ -205,7 +202,13 @@ class AdminCourseTabContainer extends React.Component {
                 <label htmlFor="adminCourses-university">
                   Select university
                 </label>
-                <select className="form-control" id="adminCourses-university">
+                <select
+                  onChange={e =>
+                    this.handleUniversitySelectChange(e.target.value)
+                  }
+                  className="form-control"
+                  id="adminCourses-university"
+                >
                   <option defaultChecked disabled hidden>
                     University
                   </option>
@@ -229,6 +232,12 @@ class AdminCourseTabContainer extends React.Component {
                   ))}
                 </select>
               </div>
+              <button
+                className="btn btn-primary mt-20"
+                onClick={() => this.handleFilterReset()}
+              >
+                Reset
+              </button>
             </div>
             <div className="col-sm-12">
               <AdminItemList
@@ -267,7 +276,13 @@ class AdminCourseTabContainer extends React.Component {
                   <label htmlFor="addCourse-university">
                     Select university
                   </label>
-                  <select className="form-control" id="addCourse-university">
+                  <select
+                    onChange={e =>
+                      this.handleAddUniversityChange(e.target.value)
+                    }
+                    className="form-control"
+                    id="addCourse-university"
+                  >
                     <option defaultChecked disabled hidden>
                       University
                     </option>
@@ -279,23 +294,14 @@ class AdminCourseTabContainer extends React.Component {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="addCourse-faculty">Select faculty</label>
-                  <select className="form-control" id="addCourse-faculty">
-                    <option defaultChecked disabled hidden>
-                      Faculty
-                    </option>
-                    {this.state.faculties.map(faculty => (
-                      <option key={faculty.Id} value={faculty.Id}>
-                        {faculty.Title}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                <div className="form-group">
                   <label htmlFor="addCourse-studyprogram">
                     Select study program
                   </label>
-                  <select className="form-control" id="addCourse-studyprogram">
+                  <select
+                    onChange={e => this.handleAddProgramSelect(e.target.value)}
+                    className="form-control"
+                    id="addCourse-studyprogram"
+                  >
                     <option defaultChecked disabled hidden>
                       Study Program
                     </option>
@@ -309,6 +315,8 @@ class AdminCourseTabContainer extends React.Component {
                 <div className="form-group">
                   <label htmlFor="courseTitle">Course title</label>
                   <input
+                    value={this.state.newItem.Title}
+                    onChange={e => this.handleAddTitleChange(e)}
                     className="form-control"
                     placeholder="Enter course title"
                     type="text"
@@ -317,7 +325,11 @@ class AdminCourseTabContainer extends React.Component {
                 </div>
               </div>
               <div className="modal-footer">
-                <button type="submit" className="btn btn-primary">
+                <button
+                  onClick={() => this.handleAddSubmit()}
+                  type="submit"
+                  className="btn btn-primary"
+                >
                   Submit
                 </button>
                 <button
