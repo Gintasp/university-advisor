@@ -41,6 +41,14 @@ Services used in the project include:
    * Statistic calculator for calculating the average values of a given reviews list
    * Statistic builder for storing calculated data within a single, easily accessible and manipulable object
  - Validator, which handles checking whether the uploaded file is of supported formats
+ 
+ #### Rest API Endpoints
+End points in ApiUniversityController:
+ - `api/universities` - Fetch universities (GET)
+ - `university/{id:int}/programs` - Fetch university programs (GET)
+ - `university/{id:int}/lecturers` - Fetch university lecturers (GET)
+ - `api/universities/edit` - Edit university (POST)
+ - `api/universities/add` - Add new university (POST)
 
 ### Git guidelines
 1. We use git flow in this project.
