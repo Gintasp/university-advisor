@@ -1,8 +1,7 @@
-### Project feature roadmap
+## Project feature roadmap
+This file describes various features to be implemented into the project by splitting them into 3 project stages: `core`, `minimum`, `medium` and `maximum`.
 
-This file describes various features to be implemented into the project by splitting them into 3 project stages: core, minimum, medium and maximum.
-
-##### Features:
+#### Features:
 1. Core: 
 	* Lists of universities, lectures, study programs and courses
 	* Written reviews of universities/lectures
