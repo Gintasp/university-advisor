@@ -8,15 +8,18 @@ namespace Advisor.Controllers
 {
     public class StudyProgramController : Controller, IStudyProgramController
     {
-        public IStatisticCalculator StatisticCalculator { get; set; }
+
+        private delegate StatsData Delegate(StudyProgram program);
+        private event Delegate MyEvenet;
+        public IStatsBuilder StatsBuilder { get; set; }
 
         public StudyProgramController()
         {
         }
 
-        public StudyProgramController(IStatisticCalculator statisticCalculator)
+        public StudyProgramController(IStatsBuilder statsBuilder)
         {
-            StatisticCalculator = statisticCalculator;
+            StatsBuilder = statsBuilder;
         }
 
         [Route("programs/{id?}", Name = "program_page")]
@@ -31,7 +34,8 @@ namespace Advisor.Controllers
                 }
 
                 ViewBag.StudyProgram = studyProgram;
-                ViewBag.StatsData = LoadStats(studyProgram);
+                MyEvenet += new Delegate(LoadStats);
+                ViewBag.StatsData = MyEvenet(studyProgram);
 
                 return View("/Views/StudyProgram/StudyProgram.cshtml");
             }
@@ -41,20 +45,16 @@ namespace Advisor.Controllers
 
         private StatsData LoadStats(StudyProgram studyProgram)
         {
-            StatsData statsData = new StatsData();
-            List<Review> studyProgramReviews = (from r in DB.Instance.Reviews
-                                                join p in DB.Instance.StudyPrograms on r.StudyProgram.Id equals p.Id
-                                                where p.Id == studyProgram.Id
-                                                select r).ToList();
-            statsData.OveralRating = StatisticCalculator.CalcReviewAverage(studyProgramReviews, r => r.OveralRating, 1);
-            statsData.Satisfaction = StatisticCalculator.CalcReviewAverage(studyProgramReviews, r => r.Satisfaction, 1);
-            statsData.AverageSalary = StatisticCalculator.CalcReviewAverage(studyProgramReviews, r => r.Salary, 1);
-            statsData.ReviewCount = studyProgramReviews.Count;
-            if (statsData.ReviewCount != 0)
+            var stats = StatsBuilder.BuildStudyProgramStats(studyProgram);
+            StatsData statsData = new StatsData
             {
-                statsData.RelevantIndustryPercentage = studyProgramReviews
-                    .Count(r => r.RelevantIndustry == true) * 100 / statsData.ReviewCount;
-            }
+                ReviewCount = stats.review_count,
+                OveralRating = stats.overal,
+                Satisfaction = stats.satisfaction,
+                AverageSalary = stats.salary,
+                CourseCount = stats.course_count,
+                RelevantIndustryPercentage = stats.relevant_industry
+            };
 
             return statsData;
         }
