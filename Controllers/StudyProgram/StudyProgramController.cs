@@ -1,6 +1,5 @@
 ﻿using Advisor.Models;
 using System.Web.Mvc;
-using System.Collections.Generic;
 using System.Linq;
 using Advisor.Services.Statistics;
 
