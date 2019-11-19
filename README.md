@@ -55,7 +55,33 @@ This project is written using ASP.NET MVC framework, Bootstrap style library jQu
 
 #### Rest API
 The project includes REST API for manipulating main entity data inside DB using AJAX (ReactJS and jQuery). Endpoints:
-
+* `api/courses` - fetch courses (GET)
+* `api/courses/edit` - submit edited course data (POST)
+* `api/courses/add` - submit new course (POST)
+* `api/courses/faculty/{facultyId}` - get all courses of given faculty (GET)
+* `api/faculties/{universityId}` - get all faculties by university (GET)
+* `api/faculties` - fetch faculties (GET)
+* `api/faculties/edit` - submit edited faculty data (POST)
+* `api/faculties/add` - submit new faculty (POST)
+* `api/lecturers` - fetch all lecturers (GET)
+* `api/lecturers/edit` - submit edited lecturer data (POST)
+* `api/lecturers/add` - submit new lecturer (POST)
+* `api/items` - fetch ids ands titles of all universities, faculties, study programs, courses, lecturers (GET)
+* `api/stats/university/{id}` - get stats of given university (GET)
+* `api/stats/faculty/{id}` - get stats of given faculty (GET)
+* `api/stats/program/{id}` - get stats of given study program (GET)
+* `api/stats/course/{id}` - get stats of given course (GET)
+* `api/stats/lecturer/{id}` - get stats of given lecturer (GET)
+* `api/programs/add` - submit new study program (POST)
+* `api/programs/edit` - submit edited study program data (POST)
+* `api/programs/uni/{universityId}` - fetch all study programs of given university (GET)
+* `api/programs` - fetch all study programs (GET)
+* `program/{programId}/courses` - fetch all courses of given study program (GET)
+* `api/universities/add` - submit new university (POST)
+* `api/universities/edit` - submit edited university data (POST)
+* `university/{universityId}/lecturers` - fetch all lecturers of given university (GET)
+* `university/{universityId}/programs` - fetch all study programs of given university (GET)
+* `api/universities` - fetch all universities (GET)
 
 #### Team members
 - [Gintautas Plonis](https://github.com/Gintasp)
