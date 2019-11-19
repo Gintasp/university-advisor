@@ -16,7 +16,16 @@ The aim of this project is to create a comprehensive, intuitive and most importa
 - Povilas Stašys
 - Marius Rimdžius
 
-#### Git guidelines
+### Project documentation
+#### Installation and launching from repository files
+To launch this project from the files in the repository you will need to install these third party programs:
+- Microsoft Visual Studio(with NuGet Package Manager add-on)
+- MSSQL server management studio
+- Yarn
+
+Prior to running the project you must first install yarn in the project directory via git bash (type `yarn install` then `yarn build` and finally `yarn dev`) then launch MSSQL server management studio and connect to your local database (enter `(LocalDB)\MSSQLLocalDB` in the server name and keep default settings everywhere else) and lastly when you open the project in Microsoft Visual studio open NuGet Package Manager Console from `Tools->NuGet Package Manager->NuGet Package Manager Console` and type `update-database` and the local database will create and fill tables with data via migrations and data files located in the `Migrations` folder.
+
+### Git guidelines
 1. We use git flow in this project.
 2. Each time before starting work, `git checkout master` and `git pull`.
 3. Checkout to new branch from master for your task `git checkout -b branch#<trello-card-number>`.
