@@ -46,6 +46,10 @@ textarea {
     margin-bottom: 20px;
 }
 
+.mb-50 {
+    margin-bottom: 50px;
+}
+
 .mr-5 {
     margin-right: 5px;
 }
@@ -68,6 +72,10 @@ textarea {
 
 .m-w-400 {
     max-width: 400px;
+}
+
+.m-h-400 {
+    max-height: 400px;
 }
 
 .m-auto {
