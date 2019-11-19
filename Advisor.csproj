@@ -213,13 +213,13 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Admin\AdminController.cs" />
-    <Compile Include="Controllers\Api\ApiController.cs" />
+    <Compile Include="Controllers\Api\ApiStatsController.cs" />
     <Compile Include="Controllers\Api\ApiCourseController.cs" />
     <Compile Include="Controllers\Api\ApiFacultyController.cs" />
     <Compile Include="Controllers\Api\ApiLecturerController.cs" />
     <Compile Include="Controllers\Api\ApiStudyProgramController.cs" />
     <Compile Include="Controllers\Api\ApiUniversityController.cs" />
-    <Compile Include="Controllers\Api\IApiController.cs" />
+    <Compile Include="Controllers\Api\IApiStatsController.cs" />
     <Compile Include="Controllers\Api\IApiStudyProgramController.cs" />
     <Compile Include="Controllers\Api\IApiUniversityController.cs" />
     <Compile Include="Controllers\Course\CourseController.cs" />
