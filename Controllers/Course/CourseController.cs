@@ -56,7 +56,7 @@ namespace Advisor.Controllers
                 return RedirectToRoute("login");
             }
 
-            if (!FileValidator.Validate(file))
+            if (file == null || !FileValidator.Validate(file))
             {
                 return View("/Views/Shared/Error.cshtml");
             }

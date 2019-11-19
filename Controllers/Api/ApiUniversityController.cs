@@ -2,6 +2,10 @@
 using System.Web.Mvc;
 using System.Linq;
 using Newtonsoft.Json;
+using Advisor.Models.JSON;
+using Advisor.Http.Response;
+using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace Advisor.Controllers.Api
 {
@@ -9,6 +13,18 @@ namespace Advisor.Controllers.Api
     {
         public ApiUniversityController()
         {
+        }
+
+        [HttpGet]
+        [Route("api/universities")]
+        public string Universities()
+        {
+            using (DatabaseContext context = new DatabaseContext())
+            {
+                var unis = context.Universities.Select(u => new { u.Id, u.Title }).ToList();
+
+                return JsonConvert.SerializeObject(unis, Formatting.Indented);
+            }
         }
 
         [HttpGet]
@@ -33,6 +49,41 @@ namespace Advisor.Controllers.Api
                 .ToList();
 
             return JsonConvert.SerializeObject(lecturers, Formatting.Indented);
+        }
+
+        [HttpPost]
+        [Route("api/universities/edit")]
+        public string UniversityEdit(BasicModel data)
+        {
+            if (data == null || data.Id == null)
+            {
+                return JsonConvert.SerializeObject(new CustomResponse("Bad request.", 400));
+            }
+            var uni = DB.Instance.Universities.Where(u => u.Id == data.Id).SingleOrDefault();
+            uni.Title = data.Title;
+            DB.Instance.SaveChanges();
+
+            return Universities();
+        }
+
+        [HttpPost]
+        [Route("api/universities/add")]
+        public string UniversityAdd(BasicModel data)
+        {
+            if (data == null || data.Id == null)
+            {
+                return JsonConvert.SerializeObject(new CustomResponse("Bad request.", 400));
+            }
+            University uni = new University
+            {
+                Title = data.Title,
+                Dormitories = new Collection<Dormitory>(),
+                Faculties = new Collection<Faculty>()
+            };
+            DB.Instance.Universities.Add(uni);
+            DB.Instance.SaveChanges();
+
+            return Universities();
         }
     }
 }

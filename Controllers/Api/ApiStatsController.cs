@@ -9,11 +9,11 @@ using System.Web.Mvc;
 
 namespace Advisor.Controllers
 {
-    public class ApiController : Controller, IApiController
+    public class ApiStatsController : Controller, IApiStatsController
     {
         public IStatsBuilder StatsBuilder { get; set; }
 
-        public ApiController(IStatsBuilder statsBuilder)
+        public ApiStatsController(IStatsBuilder statsBuilder)
         {
             StatsBuilder = statsBuilder;
         }

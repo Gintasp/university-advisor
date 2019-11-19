@@ -26,12 +26,22 @@ namespace Advisor.Controllers
 
                 ViewBag.Faculty = faculty;
                 ViewBag.StatsData = LoadStats(faculty);
-                ViewBag.Address = faculty.Addresses.ToList().ElementAt(0).ToString();
+                ViewBag.Address = ResolveAddress(faculty);
 
                 return View("/Views/Faculty.cshtml");
             }
 
             return View("/Views/Shared/404.cshtml");
+        }
+
+        private string ResolveAddress(Faculty faculty)
+        {
+            if (faculty.Addresses.Count > 0)
+            {
+                return faculty.Addresses.ToList().ElementAt(0).ToString();
+            }
+
+            return "";
         }
 
         private StatsData LoadStats(Faculty faculty)

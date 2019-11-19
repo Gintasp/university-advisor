@@ -1,6 +1,6 @@
 ﻿namespace Advisor.Controllers
 {
-    public interface IApiController
+    public interface IApiStatsController
     {
         string Index();
         string UniversityStats(int id);
