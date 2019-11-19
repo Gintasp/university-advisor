@@ -10,7 +10,7 @@ namespace Advisor.Controllers
     {
 
         private delegate StatsData Delegate(StudyProgram program);
-        private event Delegate MyEvenet;
+        private event Delegate MyEvent;
         public IStatsBuilder StatsBuilder { get; set; }
 
         public StudyProgramController()
@@ -34,8 +34,8 @@ namespace Advisor.Controllers
                 }
 
                 ViewBag.StudyProgram = studyProgram;
-                MyEvenet += new Delegate(LoadStats);
-                ViewBag.StatsData = MyEvenet(studyProgram);
+                MyEvent += new Delegate(LoadStats);
+                ViewBag.StatsData = MyEvent(studyProgram);
 
                 return View("/Views/StudyProgram/StudyProgram.cshtml");
             }
