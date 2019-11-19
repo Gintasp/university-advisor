@@ -4,6 +4,7 @@ using System.Linq;
 using Newtonsoft.Json;
 using Advisor.Models.JSON;
 using Advisor.Http.Response;
+using System.Collections.ObjectModel;
 
 namespace Advisor.Controllers.Api
 {
@@ -58,7 +59,12 @@ namespace Advisor.Controllers.Api
             }
             var course = DB.Instance.Courses.Where(c => c.Id == data.Id).SingleOrDefault();
             var faculty = DB.Instance.Faculties.Where(f => f.Id == data.FacultyId).SingleOrDefault();
-            course.Lecturer = new Lecturer { Name = data.Title, Faculty = faculty };
+            course.Lecturer = new Lecturer {
+                Name = data.Title,
+                Faculty = faculty,
+                Courses = new Collection<Course>(),
+                Reviews = new Collection<Review>(),
+            };
             DB.Instance.SaveChanges();
 
             return Lecturers();

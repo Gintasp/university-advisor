@@ -4,7 +4,7 @@ using System.Web.Mvc;
 using System.Linq;
 using Advisor.Models.JSON;
 using Advisor.Http.Response;
-using System;
+using System.Collections.ObjectModel;
 
 namespace Advisor.Controllers.Api
 {
@@ -63,9 +63,12 @@ namespace Advisor.Controllers.Api
             }
             Faculty faculty = new Faculty
             {
-                Title = data.Title
+                Title = data.Title,
+                Addresses = new Collection<Address>(),
+                StudyPrograms = new Collection<StudyProgram>(),
+                Lecturers = new Collection<Lecturer>(),
+                University = DB.Instance.Universities.Where(u => u.Id == data.UniversityId).SingleOrDefault()
             };
-            faculty.University = DB.Instance.Universities.Where(u => u.Id == data.UniversityId).SingleOrDefault();
             DB.Instance.Faculties.Add(faculty);
             DB.Instance.SaveChanges();
 

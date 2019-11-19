@@ -4,6 +4,7 @@ using System.Linq;
 using Newtonsoft.Json;
 using Advisor.Http.Response;
 using Advisor.Models.JSON;
+using System.Collections.ObjectModel;
 
 namespace Advisor.Controllers.Api
 {
@@ -73,7 +74,9 @@ namespace Advisor.Controllers.Api
             }
             StudyProgram program = new StudyProgram
             {
-                Title = data.Title
+                Title = data.Title,
+                Courses = new Collection<Course>(),
+                Reviews = new Collection<Review>(),
             };
             program.Faculty = DB.Instance.Faculties.Where(u => u.Id == data.FacultyId).SingleOrDefault();
             DB.Instance.StudyPrograms.Add(program);

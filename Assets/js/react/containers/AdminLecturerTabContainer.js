@@ -230,7 +230,7 @@ class AdminLecturerTabContainer extends React.Component {
                   className="form-control"
                   id="adminLecturers-university"
                 >
-                  <option defaultChecked disabled hidden>
+                  <option defaultChecked hidden>
                     University
                   </option>
                   {this.state.universities.map(uni => (
@@ -247,7 +247,7 @@ class AdminLecturerTabContainer extends React.Component {
                   className="form-control"
                   id="adminLecturers-faculty"
                 >
-                  <option defaultChecked disabled hidden>
+                  <option defaultChecked hidden>
                     Faculty
                   </option>
                   {this.state.faculties.map(faculty => (
@@ -309,7 +309,7 @@ class AdminLecturerTabContainer extends React.Component {
                     className="university-select form-control"
                     id="addLecturer-university"
                   >
-                    <option defaultChecked disabled hidden>
+                    <option defaultChecked hidden>
                       University
                     </option>
                     {this.state.universities.map(uni => (
@@ -326,7 +326,7 @@ class AdminLecturerTabContainer extends React.Component {
                     className="form-control"
                     id="addLecturer-faculty"
                   >
-                    <option defaultChecked disabled hidden>
+                    <option defaultChecked hidden>
                       Faculty
                     </option>
                     {this.state.faculties.map(faculty => (
@@ -343,7 +343,7 @@ class AdminLecturerTabContainer extends React.Component {
                     className="faculty-select form-control"
                     id="addLecturer-course"
                   >
-                    <option defaultChecked disabled hidden>
+                    <option defaultChecked hidden>
                       Course
                     </option>
                     {this.state.courses.map(course => (

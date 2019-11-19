@@ -209,7 +209,7 @@ class AdminStudyProgramTabContainer extends React.Component {
                 className="university-select form-control"
                 id="adminStudyPrograms-university"
               >
-                <option defaultChecked disabled hidden>
+                <option defaultChecked hidden>
                   University
                 </option>
                 {this.state.universities.map(uni => (
@@ -226,7 +226,7 @@ class AdminStudyProgramTabContainer extends React.Component {
                 className="faculty-select form-control"
                 id="adminStudyPrograms-faculty"
               >
-                <option defaultChecked disabled hidden>
+                <option defaultChecked hidden>
                   Faculty
                 </option>
                 {this.state.faculties.map(faculty => (
@@ -283,7 +283,7 @@ class AdminStudyProgramTabContainer extends React.Component {
                       className="form-control"
                       id="addStudyProgram-university"
                     >
-                      <option defaultChecked disabled hidden>
+                      <option defaultChecked hidden>
                         University
                       </option>
                       {this.state.universities.map(uni => (
@@ -302,7 +302,7 @@ class AdminStudyProgramTabContainer extends React.Component {
                       className="form-control"
                       id="addStudyProgram-faculty"
                     >
-                      <option defaultChecked disabled hidden>
+                      <option defaultChecked hidden>
                         Faculty
                       </option>
                       {this.state.faculties.map(faculty => (

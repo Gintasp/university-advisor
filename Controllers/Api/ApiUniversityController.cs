@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using Advisor.Models.JSON;
 using Advisor.Http.Response;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace Advisor.Controllers.Api
 {
@@ -75,7 +76,9 @@ namespace Advisor.Controllers.Api
             }
             University uni = new University
             {
-                Title = data.Title
+                Title = data.Title,
+                Dormitories = new Collection<Dormitory>(),
+                Faculties = new Collection<Faculty>()
             };
             DB.Instance.Universities.Add(uni);
             DB.Instance.SaveChanges();

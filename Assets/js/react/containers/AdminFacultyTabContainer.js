@@ -97,7 +97,7 @@ class AdminFacultyTabContainer extends React.Component {
     axios
       .post(ADD_FACULTY_URL, {
         Title: this.state.newFacultyTitle,
-        UniversityId: this.state.addSelectedUni,
+        UniversityId: Number(this.state.addSelectedUni),
       })
       .then(res => {
         this.setState({
@@ -143,7 +143,7 @@ class AdminFacultyTabContainer extends React.Component {
               className="form-control"
               id="adminFaculties-university"
             >
-              <option defaultChecked disabled hidden>
+              <option defaultChecked hidden>
                 University
               </option>
               {this.state.universities.map(uni => (
@@ -199,7 +199,7 @@ class AdminFacultyTabContainer extends React.Component {
                     className="form-control"
                     id="addFaculty-university"
                   >
-                    <option defaultChecked disabled hidden>
+                    <option defaultChecked hidden>
                       University
                     </option>
                     {this.state.universities.map(uni => (

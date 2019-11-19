@@ -209,7 +209,7 @@ class AdminCourseTabContainer extends React.Component {
                   className="form-control"
                   id="adminCourses-university"
                 >
-                  <option defaultChecked disabled hidden>
+                  <option defaultChecked hidden>
                     University
                   </option>
                   {this.state.universities.map(uni => (
@@ -222,7 +222,7 @@ class AdminCourseTabContainer extends React.Component {
               <div className="col-sm-4 form-group">
                 <label htmlFor="adminCourses-faculty">Select faculty</label>
                 <select className="form-control" id="adminCourses-faculty">
-                  <option defaultChecked disabled hidden>
+                  <option defaultChecked hidden>
                     Faculty
                   </option>
                   {this.state.faculties.map(faculty => (
@@ -283,7 +283,7 @@ class AdminCourseTabContainer extends React.Component {
                     className="form-control"
                     id="addCourse-university"
                   >
-                    <option defaultChecked disabled hidden>
+                    <option defaultChecked hidden>
                       University
                     </option>
                     {this.state.universities.map(uni => (
@@ -302,7 +302,7 @@ class AdminCourseTabContainer extends React.Component {
                     className="form-control"
                     id="addCourse-studyprogram"
                   >
-                    <option defaultChecked disabled hidden>
+                    <option defaultChecked hidden>
                       Study Program
                     </option>
                     {this.state.programs.map(program => (

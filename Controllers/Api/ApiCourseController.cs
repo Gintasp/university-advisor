@@ -4,6 +4,7 @@ using System.Linq;
 using Newtonsoft.Json;
 using Advisor.Models.JSON;
 using Advisor.Http.Response;
+using System.Collections.ObjectModel;
 
 namespace Advisor.Controllers.Api
 {
@@ -57,7 +58,14 @@ namespace Advisor.Controllers.Api
                 return JsonConvert.SerializeObject(new CustomResponse("Bad request.", 400));
             }
             var program = DB.Instance.StudyPrograms.Where(p => p.Id == data.Id).SingleOrDefault();
-            program.Courses.Add(new Course { Title = data.Title });
+            program.Courses.Add(
+                new Course
+                {
+                    Title = data.Title,
+                    Reviews = new Collection<Review>(),
+                    UploadedFiles = new Collection<UploadedFile>()
+                }
+            );
             DB.Instance.SaveChanges();
 
             return Courses();
