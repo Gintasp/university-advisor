@@ -6,12 +6,12 @@ using System.Web;
 using Advisor.Services.IO;
 using System;
 using Advisor.Services.Validator;
-using System.IO;
 
 namespace Advisor.Controllers
 {
     public class CourseController : Controller, ICourseController
-    {
+    {        
+        private delegate StatsData Delegate<T>(T item);
         public IStatsBuilder StatsBuilder { get; set; }
         public IFileManager FileManager { get; set; }
         public IFileValidator FileValidator { get; set; }
@@ -38,7 +38,8 @@ namespace Advisor.Controllers
                 }
 
                 ViewBag.Course = course;
-                ViewBag.StatsData = GetCourseStats(course);
+                Delegate<Course> del = GetCourseStats;
+                ViewBag.StatsData = del(course);
 
                 return View("/Views/Course/Course.cshtml");
             }
@@ -55,7 +56,7 @@ namespace Advisor.Controllers
                 return RedirectToRoute("login");
             }
 
-            if (!FileValidator.Validate(file))
+            if (file == null || !FileValidator.Validate(file))
             {
                 return View("/Views/Shared/Error.cshtml");
             }

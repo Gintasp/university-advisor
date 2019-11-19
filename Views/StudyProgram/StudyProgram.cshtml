@@ -69,20 +69,20 @@
                             <h3>@course.Title</h3>
                         </a>
                         <div class="d-flex">
-                            <div class="d-flex mr-5">
-                                <p class="mr-5">
-                                    <i class="fas fa-star"></i>
-                                </p>
-                                @if (course.Reviews.Count > 0)
-                                {
+                            @if (course.Reviews.Count > 0)
+                            {
+                                <div class="d-flex mr-5">
+                                    <p class="mr-5">
+                                        <i class="fas fa-star"></i>
+                                    </p>
                                     <p class="mr-5">Overall @Math.Round(course.Reviews.Average(r => r.OveralRating), 2).ToString()</p>
-                                }
-                            </div>
+                                </div>
+                            }
                             <div class="d-flex mr-5">
                                 <p class="mr-5">
                                     <i class="fas fa-book-reader"></i>
                                 </p>
-                                <p class="mr-5"># files</p>
+                                <p class="mr-5">@course.UploadedFiles.Count files</p>
                             </div>
                         </div>
                     </div>

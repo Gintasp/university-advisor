@@ -213,10 +213,13 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Admin\AdminController.cs" />
-    <Compile Include="Controllers\Api\ApiController.cs" />
+    <Compile Include="Controllers\Api\ApiStatsController.cs" />
+    <Compile Include="Controllers\Api\ApiCourseController.cs" />
+    <Compile Include="Controllers\Api\ApiFacultyController.cs" />
+    <Compile Include="Controllers\Api\ApiLecturerController.cs" />
     <Compile Include="Controllers\Api\ApiStudyProgramController.cs" />
     <Compile Include="Controllers\Api\ApiUniversityController.cs" />
-    <Compile Include="Controllers\Api\IApiController.cs" />
+    <Compile Include="Controllers\Api\IApiStatsController.cs" />
     <Compile Include="Controllers\Api\IApiStudyProgramController.cs" />
     <Compile Include="Controllers\Api\IApiUniversityController.cs" />
     <Compile Include="Controllers\Course\CourseController.cs" />
@@ -257,6 +260,10 @@
     <Compile Include="Models\DB.cs" />
     <Compile Include="Models\Dormitory.cs" />
     <Compile Include="Models\Faculty.cs" />
+    <Compile Include="Models\JSON\BasicModel.cs" />
+    <Compile Include="Models\JSON\FacultyDataModel.cs" />
+    <Compile Include="Models\JSON\LecturerDataModel.cs" />
+    <Compile Include="Models\JSON\StudyProgramDataModel.cs" />
     <Compile Include="Models\UploadedFile.cs" />
     <Compile Include="Models\Lecturer.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -392,11 +399,6 @@
     <Content Include="Views\Review\Partials\_CourseFormPartial.cshtml" />
     <Content Include="Views\Review\Partials\_LecturerFormPartial.cshtml" />
     <Content Include="Views\Admin\Admin.cshtml" />
-    <Content Include="Views\Admin\Partials\_UniversityFormPartial.cshtml" />
-    <Content Include="Views\Admin\Partials\_FacultyFormPartial.cshtml" />
-    <Content Include="Views\Admin\Partials\_StudyProgramFormPartial.cshtml" />
-    <Content Include="Views\Admin\Partials\_CourseFormPartial.cshtml" />
-    <Content Include="Views\Admin\Partials\_LecturerFormPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\uploads\" />
