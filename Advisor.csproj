@@ -306,6 +306,7 @@
     <Compile Include="Tests\FileManagerTests.cs" />
     <Compile Include="Tests\FileValidatorTests.cs" />
     <Compile Include="Tests\StatisticCalculatorTest.cs" />
+    <Compile Include="Tests\StatsBuilderTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\css\admin.css" />

@@ -13,6 +13,7 @@ namespace Advisor.Tests
         [Fact]
         public void UploadFile_ValidSize()
         {
+            //Arrange
             Mock<HttpPostedFileBase> fileMock = new Mock<HttpPostedFileBase>();
             FileManager fileManager = new FileManager();
             var expected = true;
@@ -35,6 +36,7 @@ namespace Advisor.Tests
         [Fact]
         public void UploadFile_InvalidSize()
         {
+            //Arrange
             Mock<HttpPostedFileBase> fileMock = new Mock<HttpPostedFileBase>();
             FileManager fileManager = new FileManager();
             var expected = false;
