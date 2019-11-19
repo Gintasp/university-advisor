@@ -53,6 +53,10 @@ This project is written using ASP.NET MVC framework, Bootstrap style library jQu
     * You can now `git push` your work to remote repository.
 6. After your work is merged into `master`, you can safely `git branch -D branch#<merged-branch-number>` to keep your local branch list clean.
 
+#### Rest API
+The project includes REST API for manipulating main entity data inside DB using AJAX (ReactJS and jQuery). Endpoints:
+
+
 #### Team members
 - [Gintautas Plonis](https://github.com/Gintasp)
 - [Gabrielė Širvinskytė](https://github.com/sirvinskyte)
