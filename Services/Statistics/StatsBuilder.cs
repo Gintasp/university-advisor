@@ -19,7 +19,7 @@ namespace Advisor.Services.Statistics
             var stats = new
             {
                 review_count = reviews.Count,
-                satisfaction = Calculator.CalcReviewAverage(reviews, r => r.Satisfaction, 1),
+                satisfaction = Calculator.CalcReviewAverage(reviews, delegate (Review r) { return r.Satisfaction; }, 1),
                 difficulty = Calculator.CalcReviewAverage(reviews, r => r.Difficulty, 1),
                 usefulness = Calculator.CalcReviewAverage(reviews, r => r.Usefulness, 1),
                 interesting = Calculator.CalcReviewAverage(reviews, r => r.Interesting, 1),
