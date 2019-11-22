@@ -59,11 +59,11 @@ namespace Advisor
                appId: ConfigurationManager.AppSettings["Auth:Fb:AppId"],
                appSecret: ConfigurationManager.AppSettings["Auth:Fb:AppSecret"]);
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = ConfigurationManager.AppSettings["Auth:Google:ClientId"],
-            //    ClientSecret = ConfigurationManager.AppSettings["Auth:Google:ClientSecret"]
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = ConfigurationManager.AppSettings["Auth:Google:ClientId"],
+                ClientSecret = ConfigurationManager.AppSettings["Auth:Google:ClientSecret"]
+            });
         }
     }
 }
