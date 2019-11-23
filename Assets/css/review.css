@@ -29,7 +29,7 @@
     transition: opacity .2s;
 }
 
-    .slider::-webkit-slider-thumb {
+.slider::-webkit-slider-thumb {
         -webkit-appearance: none;
         appearance: none;
         width: 25px;
@@ -37,13 +37,36 @@
         border-radius: 50%;
         background: black;
         cursor: pointer;
-    }
+ }
 
-    .slider::-moz-range-thumb {
+.slider::-moz-range-thumb {
         width: 25px;
         height: 25px;
         border-radius: 50%;
         background: black;
         cursor: pointer;
+}
+
+@media only screen and (max-width: 750px) {
+    .slider {
+        min-width: 100%;
     }
+
+    .stars {
+        font-size: 23px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .stars {
+        font-size: 19px;
+    }
+}
+
+@media only screen and (max-width: 325px) {
+    .stars {
+        font-size: 16px;
+    }
+}
+
 
