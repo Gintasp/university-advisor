@@ -44,13 +44,15 @@
             @{string address = ViewBag.Address.Replace(",", "").Replace(" ", "%20");
                 string str = "https://maps.google.com/maps?q=" + address + "%20&t=&z=13&ie=UTF8&iwloc=&output=embed";}
             <iframe class="faculty-map" src=@str allowfullscreen></iframe>
-            <a class="compare-link" href="@Url.RouteUrl("compare")"><h4>Compare with other faculties<i class="fas fa-arrow-right"></i></h4></a>
+            <div class="sm-mt-20">
+                <a class="compare-link" href="@Url.RouteUrl("compare")"><h4>Compare with other faculties<i class="fas fa-arrow-right"></i></h4></a>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-6">
             <h3>Study programs (@ViewBag.StatsData.StudyProgramCount)</h3>
-            <div class="d-flex flex-wrap">
+            <div class="flex-wrap">
                 @foreach (StudyProgram studyProgram in ViewBag.Faculty.StudyPrograms)
                 {
                     <div class="card">

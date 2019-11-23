@@ -182,10 +182,10 @@ word-wrap: break-word;
     .item{
         height: 400px;
     }
-        .item > img {
+    .item > img {
             min-width: 100%;
             min-height: 100%;
-        }
+    }
 }
 
 @media only screen and (max-width: 400px){
