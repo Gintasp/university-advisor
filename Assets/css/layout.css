@@ -122,6 +122,10 @@ textarea {
     box-shadow: 3px 5px 15px 2px rgba(0, 0, 0, 0.1);
 }
 
+.card-text {
+word-wrap: break-word;
+}
+
 .card:hover {
     background: #f7f7f7;
     box-shadow: 3px 5px 15px 2px rgba(0, 0, 0, 0.3);
@@ -163,4 +167,10 @@ textarea {
     border-bottom: 1px solid #c4c4c4;
     margin: 0;
     padding: 18px 16px 10px;
+}
+
+@media only screen and (max-width: 786px){
+    .card{
+        width: 100%;
+    }
 }
