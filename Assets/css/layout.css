@@ -169,23 +169,40 @@ word-wrap: break-word;
     padding: 18px 16px 10px;
 }
 
-@media only screen and (max-width: 786px){
-    .card{
-        width: 100%;
-    }
-}
-
 @media only screen and (max-width: 1200px) {
     .carousel-w {
         max-width: 80%;
     }
-    .item{
+    .item {
         height: 400px;
     }
     .item > img {
             min-width: 100%;
             min-height: 100%;
     }
+}
+
+@media only screen and (max-width: 786px) {
+    .card {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 650px) {
+    .item {
+        height: 215px;
+    }
+
+    .item > img {
+            min-width: 100%;
+            min-height: 100%;
+    }
+
+    .compare-link {
+        display: none;
+    }
+
 }
 
 @media only screen and (max-width: 400px){
