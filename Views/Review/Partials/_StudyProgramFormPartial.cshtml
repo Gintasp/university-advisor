@@ -2,7 +2,7 @@
 @model Review
 
 <form method="post" action="@Url.RouteUrl("review_program")">
-    <div class="col-sm-6 mt-20">
+    <div class="col-lg-6 mt-20">
         <div class="form-group">
             <label for="university">Select your university</label>
             <select name="university" class="university-select form-control m-w-unset" id="university">
@@ -48,7 +48,7 @@
             <label for="RelevantIndustry">I am working in a relevant industry</label>
         </div>
     </div>
-    <div class="col-sm-6 mt-20">
+    <div class="col-lg-6 mt-20">
         <div class="form-group">
             <label for="overall-input">Overall rating</label>
             <div class="stars" id="overall">
@@ -83,7 +83,7 @@
         </div>
     </div>
 
-    <div class="col-sm-12">
+    <div class="col-lg-12">
         @Html.TextArea("Text", new { @class = "form-control review-textarea w-100 m-w-unset", @placeholder = "Enter your review... ", @rows = 5 })
         <button id="program-review-submit" type="submit" class="btn btn-primary mt-20 w-100">Submit</button>
     </div>
