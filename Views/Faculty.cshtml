@@ -53,7 +53,7 @@
             <div class="d-flex flex-wrap">
                 @foreach (StudyProgram studyProgram in ViewBag.Faculty.StudyPrograms)
                 {
-                    <div class="studyprogram-container card">
+                    <div class="card">
                         <a href="@Url.RouteUrl("program_page", new { id = studyProgram.Id})">
                             <h4>@studyProgram.Title</h4>
                         </a>
