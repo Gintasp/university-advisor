@@ -29,6 +29,10 @@
         margin: auto auto;
     }
 
+    .carousel-inner .item.narrow {
+        height: 200px;
+    }
+
 .navbar-brand {
     display: flex;
     align-items: center;
