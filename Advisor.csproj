@@ -315,6 +315,7 @@
     <Compile Include="Tests\StatsBuilderTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\account.css" />
     <Content Include="Assets\css\admin.css" />
     <Content Include="Assets\css\comparison.css" />
     <Content Include="Assets\css\course.css" />
