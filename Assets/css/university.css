@@ -5,16 +5,38 @@
     box-shadow: 3px 5px 15px 2px rgba(0,0,0,0.1);
 }
 
-.compare-link{
+.compare-link {
     color: #333;
 }
 
-.compare-link:hover{
-    color: #333;
-}
+    .compare-link:hover {
+        color: #333;
+    }
 
-.dorm-map{
+.dorm-map {
     width: 100%;
     border: 0;
     margin-top: 10px;
+}
+
+.university-container {
+    width: 45%;
+    max-width: 500px;
+}
+
+.uni-info {
+    display: flex;
+}
+
+@media only screen and (max-width: 1024px) {
+    .university-container {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .uni-info {
+        flex-direction: column;
+    }
 }

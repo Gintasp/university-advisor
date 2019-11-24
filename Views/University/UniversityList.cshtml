@@ -2,35 +2,35 @@
 @{
     ViewBag.Title = "Universities";
 }
-<div class="container-fluid">
+<div class="container container-fluid">
     <h2 class="mb-20">Which university are you interested in at the moment?</h2>
     <div class="d-flex flex-wrap mt-50">
         @foreach (University uni in ViewBag.Universities)
         {
-        <div class="university-container card">
-            <div class="card-text">
-                <a href="@Url.RouteUrl("universities_page", new { id = uni.Id })">
-                    <h3>@uni.Title</h3>
-                </a>
-                <div class="d-flex">
-                    <div class="d-flex mr-5">
+            <div class="university-container card">
+                <div class="card-text">
+                    <a href="@Url.RouteUrl("universities_page", new { id = uni.Id })">
+                        <h3 class="font-light">@uni.Title</h3>
+                    </a>
+                    <div class="uni-info">
+                        <div class="d-flex mr-5">
                             <p class="mr-5 web-page">
                                 <i class="fas fa-globe"></i>
                             </p>
                             <p class="mr-5 web-page">
                                 <a target="_blank" href="@uni.Website">@uni.Website</a>
                             </p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="mr-5">
+                                <i class="fas fa-graduation-cap"></i>
+                            </p>
+                            <p>@uni.Faculties.Count faculties</p>
+                        </div>
                     </div>
-                    <div class="d-flex">
-                        <p class="mr-5">
-                            <i class="fas fa-graduation-cap"></i>
-                        </p>
-                        <p>@uni.Faculties.Count faculties</p>
-                    </div>
+                    <p>@uni.Description</p>
                 </div>
-                <p>@uni.Description</p>
             </div>
-        </div>
         }
     </div>
 </div>

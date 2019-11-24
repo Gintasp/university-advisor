@@ -66,6 +66,14 @@
             background: rgba(0, 0, 0, 0.9);
         }
 
+.navbar-toggle {
+    margin-top: 14px;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: white;
+}
+
 @media only screen and (max-width: 992px) {
     .home-image {
         margin-top: 30px;

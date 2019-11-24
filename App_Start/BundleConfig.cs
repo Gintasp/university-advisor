@@ -28,7 +28,6 @@ namespace Advisor
             bundles.Add(new StyleBundle("~/bundles/css").Include(
                   "~/Assets/css/lib/bootstrap.css",
                   "~/Assets/css/lib/bootstrap-theme.css",
-                  "~/Assets/css/universityList.css",
                   "~/Assets/css/comparison.css",
                   "~/Assets/css/university.css",
                   "~/Assets/css/faculty.css",
