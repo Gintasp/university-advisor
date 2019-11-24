@@ -17,7 +17,9 @@
                     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
             </div>
-            <a class="compare-link" href="@Url.RouteUrl("compare")"><h4>Compare with other universities <i class="fas fa-arrow-right"></i></h4></a>
+            <div class="sm-mt-20">
+                <a class="compare-link" href="@Url.RouteUrl("compare")"><h4>Compare with other universities <i class="fas fa-arrow-right"></i></h4></a>
+            </div>
         </div>
         <div class="col-sm-6">
             <h3>Statistics</h3>
@@ -55,23 +57,24 @@
     <div class="row">
         <div class="col-sm-6">
             <h3>Faculties (@ViewBag.StatsData.FacultyCount)</h3>
-            <div class="d-flex flex-wrap">
+            <div class="flex-wrap">
                 @foreach (Faculty faculty in ViewBag.University.Faculties)
                 {
-                    <div class="faculty-container card">
-                        <a href="@Url.RouteUrl("faculty_page", new { id = faculty.Id})">
-                            <h4>@faculty.Title</h4>
-                        </a>
-                        <div class="d-flex">
-                            <div class="d-flex mr-5">
-                                <p class="mr-5">
-                                    <i class="fas fa-book-open"></i>
-                                </p>
-                                <p class="mr-5">
-                                    @faculty.StudyPrograms.Count study programs
-                                </p>
-                            </div>
+                <div class="card">
+                   
+                    <a href="@Url.RouteUrl("faculty_page", new { id = faculty.Id})">
+                        <h4>@faculty.Title</h4>
+                    </a>
+                    <div class="d-flex">
+                        <div class="d-flex mr-5">
+                            <p class="mr-5">
+                                <i class="fas fa-book-open"></i>
+                            </p>
+                            <p class="mr-5">
+                                @faculty.StudyPrograms.Count study programs
+                            </p>
                         </div>
+                    </div>
                     </div>
                 }
             </div>
@@ -81,7 +84,7 @@
             <div class="d-flex flex-wrap">
                 @foreach (Dormitory dormitory in ViewBag.University.Dormitories)
                 {
-                    <div class="dorms-container card">
+                    <div class="card">
                         <div class="col-sm-12">
                             <h4><i class="fas fa-home"></i> @dormitory.Title</h4>
                             <p>@dormitory.Description</p>
