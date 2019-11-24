@@ -4,6 +4,6 @@ namespace Advisor.Controllers
 {
     public interface IUniversityController
     {
-        ActionResult Index(int? id);
+        ActionResult Index();
     }
 }

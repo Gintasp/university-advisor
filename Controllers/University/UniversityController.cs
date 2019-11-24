@@ -16,26 +16,23 @@ namespace Advisor.Controllers
         }
 
         [Route("universities/{id?}", Name = "universities_page")]
-        public ActionResult Index(int? id)
+        public ActionResult Individual(int? id)
         {
-            if (id != null)
-            {
-                University uni = DB.Instance.Universities.Where(u => u.Id == id).SingleOrDefault();
-                if (uni == null)
-                {
-                    return View("/Views/Shared/404.cshtml");
-                }
+            University uni = DB.Instance.Universities.Where(u => u.Id == id).SingleOrDefault(); 
+            if (uni == null)
+            { 
+                return View("/Views/Shared/404.cshtml");
 
-                ViewBag.University = uni;
-                ViewBag.StatsData = LoadStats(uni);
-
-                return View("/Views/University/University.cshtml");
             }
 
-            return List();
+            ViewBag.University = uni; 
+            ViewBag.StatsData = LoadStats(uni);
+
+            return View("/Views/University/University.cshtml");
         }
 
-        private ActionResult List()
+        [Route("universities", Name = "universities_list")]
+        public ActionResult Index()
         {
             List<University> unis = DB.Instance.Universities.ToList();
             ViewBag.Universities = unis;
