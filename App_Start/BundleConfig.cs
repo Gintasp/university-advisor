@@ -35,7 +35,8 @@ namespace Advisor
                   "~/Assets/css/review.css",
                   "~/Assets/css/course.css",
                   "~/Assets/css/admin.css",
-                  "~/Assets/css/layout.css"
+                  "~/Assets/css/layout.css",
+                  "~/Assets/css/home.css"
             ));
         }
     }
