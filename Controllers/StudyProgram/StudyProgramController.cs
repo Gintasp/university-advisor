@@ -36,7 +36,7 @@ namespace Advisor.Controllers
                 MyEvent += new Delegate(LoadStats);
                 ViewBag.StatsData = MyEvent(studyProgram);
 
-                return View("/Views/StudyProgram/StudyProgram.cshtml");
+                return View("/Views/Advisor/StudyProgram.cshtml");
             }
 
             return View("/Views/Shared/404.cshtml");

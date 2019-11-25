@@ -25,7 +25,7 @@ namespace Advisor.Controllers
             ViewBag.Courses = DB.Instance.Courses.ToList();
             ViewBag.Lecturers = DB.Instance.Lecturers.ToList();
 
-            return View("/Views/Review/Review.cshtml");
+            return View("/Views/Advisor/Review/Review.cshtml");
         }
 
         [HttpPost]

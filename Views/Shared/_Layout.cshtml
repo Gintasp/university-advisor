@@ -79,7 +79,10 @@
             </a>
         </div>
     }
-    else if (Request.Url.AbsolutePath != "/login" && Request.Url.AbsolutePath != "/register" && Request.Url.AbsolutePath != "/Account/ExternalLoginCallback")
+    else if (Request.Url.AbsolutePath != "/login"
+        && Request.Url.AbsolutePath != "/register"
+        && Request.Url.AbsolutePath != "/Account/ExternalLoginCallback"
+        && Request.Url.AbsolutePath != "/admin")
     {
         <div id="carousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">

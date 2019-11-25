@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Review";
+}
+<div class="container container-fluid">
+    <h2 class="mt-50">Leave a review</h2>
+    <p>Your reviews help fellow students evaluate their future choices.</p>
+    
+    <ul class="nav nav-tabs mt-20">
+        <li class="active">
+            <a href="#studyProgramTab" data-toggle="tab">Study Program</a>
+        </li>
+        <li>
+            <a href="#courseTab" data-toggle="tab">Course</a>
+        </li>
+        <li>
+            <a href="#lecturerTab" data-toggle="tab">Lecturer</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="studyProgramTab" class="tab-pane active">
+            @Html.Partial("/Views/Advisor/Review/Partials/_StudyProgramFormPartial.cshtml")
+        </div>
+
+        <div id="courseTab" class="tab-pane">
+            @Html.Partial("/Views/Advisor/Review/Partials/_CourseFormPartial.cshtml")
+        </div>
+
+        <div id="lecturerTab" class="tab-pane">
+            @Html.Partial("/Views/Advisor/Review/Partials/_LecturerFormPartial.cshtml")
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/review")
+}

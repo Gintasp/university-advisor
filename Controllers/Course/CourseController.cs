@@ -41,7 +41,7 @@ namespace Advisor.Controllers
                 Delegate<Course> del = GetCourseStats;
                 ViewBag.StatsData = del(course);
 
-                return View("/Views/Course/Course.cshtml");
+                return View("/Views/Advisor/Course.cshtml");
             }
 
             return View("/Views/Shared/404.cshtml");

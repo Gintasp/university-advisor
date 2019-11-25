@@ -28,7 +28,7 @@ namespace Advisor.Controllers
             ViewBag.University = uni; 
             ViewBag.StatsData = LoadStats(uni);
 
-            return View("/Views/University/University.cshtml");
+            return View("/Views/Advisor/University.cshtml");
         }
 
         [Route("universities", Name = "universities_list")]
@@ -37,7 +37,7 @@ namespace Advisor.Controllers
             List<University> unis = DB.Instance.Universities.ToList();
             ViewBag.Universities = unis;
 
-            return View("/Views/University/UniversityList.cshtml");
+            return View("/Views/Advisor/UniversityList.cshtml");
         }
 
         private StatsData LoadStats(University uni)

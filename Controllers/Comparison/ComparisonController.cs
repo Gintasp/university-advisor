@@ -11,7 +11,7 @@ namespace Advisor.Controllers
         [Route("compare", Name = "compare")]
         public ActionResult Show()
         {
-            return View("/Views/Comparison/Comparison.cshtml");
+            return View("/Views/Advisor/Comparison.cshtml");
         }
     }
 }

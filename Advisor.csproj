@@ -397,7 +397,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\University\UniversityList.cshtml" />
+    <Content Include="Views\Advisor\UniversityList.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -419,17 +419,17 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
-    <Content Include="Views\University\University.cshtml" />
+    <Content Include="Views\Advisor\University.cshtml" />
     <Content Include="Views\Shared\404.cshtml" />
-    <Content Include="Views\Comparison\Comparison.cshtml" />
-    <Content Include="Views\Faculty.cshtml" />
-    <Content Include="Views\StudyProgram\StudyProgram.cshtml" />
-    <Content Include="Views\Review\Review.cshtml" />
-    <Content Include="Views\Course\Course.cshtml" />
-    <Content Include="Views\Review\Partials\_StudyProgramFormPartial.cshtml" />
-    <Content Include="Views\Review\Partials\_CourseFormPartial.cshtml" />
-    <Content Include="Views\Review\Partials\_LecturerFormPartial.cshtml" />
-    <Content Include="Views\Admin\Admin.cshtml" />
+    <Content Include="Views\Advisor\Comparison.cshtml" />
+    <Content Include="Views\Advisor\Faculty.cshtml" />
+    <Content Include="Views\Advisor\StudyProgram.cshtml" />
+    <Content Include="Views\Advisor\Review\Review.cshtml" />
+    <Content Include="Views\Advisor\Course.cshtml" />
+    <Content Include="Views\Advisor\Review\Partials\_StudyProgramFormPartial.cshtml" />
+    <Content Include="Views\Advisor\Review\Partials\_CourseFormPartial.cshtml" />
+    <Content Include="Views\Advisor\Review\Partials\_LecturerFormPartial.cshtml" />
+    <Content Include="Views\Advisor\Admin.cshtml" />
     <Content Include="Views\Shared\_CompareButton.cshtml" />
   </ItemGroup>
   <ItemGroup>
