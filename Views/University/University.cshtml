@@ -14,11 +14,7 @@
                     <p>@ViewBag.University.Description</p>
                 </div>
                 <div class="mt-20">
-                    <a class="compare-link compare-arrow-parrent" href="@Url.RouteUrl("compare")">
-                        <h4>
-                            Compare with other universities <i class="fas fa-arrow-right ml-10 compare-arrow"></i>
-                        </h4>
-                    </a>
+                    @Html.Partial("_CompareButton")
                 </div>
             </div>
             <div class="col-sm-6">
