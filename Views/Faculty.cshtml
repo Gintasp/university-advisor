@@ -52,61 +52,7 @@
                 {
                     <div class="card">
                         <a href="@Url.RouteUrl("program_page", new { id = studyProgram.Id})">
-                            <h4>@studyProgram.Title</h4>
-                        </a>
-                        @if (studyProgram.Reviews.Count > 0)
-                        {
-                            <div class="d-flex">
-                                <div class="d-flex mr-5">
-                                    <p class="mr-5">
-                                        <i class="fas fa-star"></i>
-                                    </p>
-                                    <p class="mr-5">
-                                        Overal @Math.Round(studyProgram.Reviews.Average(r => r.OveralRating), 2).ToString()
-                                    </p>
-                                </div>
-                                <div class="d-flex mr-5">
-                                    <p class="mr-5">
-                                        <i class="fas fa-pencil-alt"></i>
-                                    </p>
-                                    <p class="mr-5">
-                                        Reviews: @studyProgram.Reviews.Count.ToString()
-                                    </p>
-                                </div>
-                            </div>
-                        }
-                    </div>
-
-                    <div class="card">
-                        <a href="@Url.RouteUrl("program_page", new { id = studyProgram.Id})">
-                            <h4>@studyProgram.Title</h4>
-                        </a>
-                        @if (studyProgram.Reviews.Count > 0)
-                        {
-                            <div class="d-flex">
-                                <div class="d-flex mr-5">
-                                    <p class="mr-5">
-                                        <i class="fas fa-star"></i>
-                                    </p>
-                                    <p class="mr-5">
-                                        Overal @Math.Round(studyProgram.Reviews.Average(r => r.OveralRating), 2).ToString()
-                                    </p>
-                                </div>
-                                <div class="d-flex mr-5">
-                                    <p class="mr-5">
-                                        <i class="fas fa-pencil-alt"></i>
-                                    </p>
-                                    <p class="mr-5">
-                                        Reviews: @studyProgram.Reviews.Count.ToString()
-                                    </p>
-                                </div>
-                            </div>
-                        }
-                    </div>
-
-                    <div class="card">
-                        <a href="@Url.RouteUrl("program_page", new { id = studyProgram.Id})">
-                            <h4>@studyProgram.Title</h4>
+                            <h4 class="font-light">@studyProgram.Title</h4>
                         </a>
                         @if (studyProgram.Reviews.Count > 0)
                         {
