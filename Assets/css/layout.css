@@ -192,6 +192,24 @@ textarea {
         background: black;
     }
 
+    .button a {
+        color: white;
+    }
+
+        .button a:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+    .button.compare-arrow-parrent {
+        transition: all .2s;
+    }
+
+        .button.compare-arrow-parrent:hover {
+            padding-right: 50px;
+            transform-origin: left;
+        }
+
 .cloud-tag {
     padding: 10px 15px;
     border-radius: 20px;
@@ -215,6 +233,19 @@ textarea {
         color: white;
         text-decoration: none;
     }
+
+.compare-arrow {
+    transition: all .2s;
+}
+
+.compare-arrow-parrent:hover .compare-arrow {
+    transform: translateX(10px);
+}
+
+.table > tbody > tr > th {
+    width: 75%;
+}
+
 
 @media only screen and (max-width: 1200px) {
     .item {

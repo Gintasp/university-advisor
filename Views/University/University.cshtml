@@ -1,6 +1,6 @@
 ﻿@using Advisor.Models
 @{
-    ViewBag.Title = "Universities";
+    ViewBag.Title = ViewBag.University.Title;
 }
 <div class="container container-fluid" ">
     <h1>
@@ -14,9 +14,9 @@
                     <p>@ViewBag.University.Description</p>
                 </div>
                 <div class="mt-20">
-                    <a class="compare-link" href="@Url.RouteUrl("compare")">
+                    <a class="compare-link compare-arrow-parrent" href="@Url.RouteUrl("compare")">
                         <h4>
-                            Compare with other universities <i class="fas fa-arrow-right ml-10"></i>
+                            Compare with other universities <i class="fas fa-arrow-right ml-10 compare-arrow"></i>
                         </h4>
                     </a>
                 </div>
