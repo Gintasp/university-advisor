@@ -1,69 +1,51 @@
 ﻿@using Advisor.Models
 @{
-    ViewBag.Title = "Study Program";
+    ViewBag.Title = ViewBag.StudyProgram.Title;
 }
-
-<h2><i class="fas fa-book"></i>  @ViewBag.StudyProgram.Title</h2>
-<div class="container">
+<div class="container container-fluid">
+    <h2>
+        <i class="fas fa-book"></i>  @ViewBag.StudyProgram.Title
+    </h2>
     <div class="row">
         <div class="col-sm-6">
-            <h3>Description</h3>
+            <h3 class="font-light">About</h3>
             <div class="about-section">
                 <p>
                     @ViewBag.StudyProgram.Description
                 </p>
             </div>
-            <div class="sm-mt-20">
-                <a class="compare-link" href="@Url.RouteUrl("compare")"><h4>Compare with other study programs<i class="fas fa-arrow-right"></i></h4></a>
+            <div class="mt-20">
+                @Html.Partial("_CompareButton", new ViewDataDictionary { { "Text", "Compare with other study programs" } })
             </div>
         </div>
         <div class="col-sm-6">
-            <h3>Statistics</h3>
+            <h3 class="font-light">Statistics</h3>
             <table class="table">
                 <tbody>
                     <tr>
-                        <th scope="row">Overall rating</th>
-                        <td>@ViewBag.StatsData.OveralRating/10</td>
+                        <th scope="row">Overal rating</th>
+                        <td>@ViewBag.StatsData.OveralRating / 10</td>
                     </tr>
                     <tr>
                         <th>Level of satisfaction</th>
-                        <td>@ViewBag.StatsData.Satisfaction/10</td>
+                        <td>@ViewBag.StatsData.Satisfaction / 10</td>
                     </tr>
                     <tr>
                         <th>Average graduate salary</th>
-                        <td>@ViewBag.StatsData.AverageSalary€</td>
+                        <td>@ViewBag.StatsData.AverageSalary €</td>
                     </tr>
                     <tr>
                         <th>Percentage of graduates working in relevant industry</th>
-                        <td>@ViewBag.StatsData.RelevantIndustryPercentage%</td>
+                        <td>@ViewBag.StatsData.RelevantIndustryPercentage %</td>
                     </tr>
                 </tbody>
             </table>
-            <a class="compare-link" href="@Url.RouteUrl("review_page")"><h4>Leave a review<i class="fas fa-arrow-right"></i></h4></a>
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-6">
-            <h3>Reviews (@ViewBag.StatsData.ReviewCount)</h3>
-            <div class="review-list">
-                @foreach (Review review in ViewBag.StudyProgram.Reviews)
-                {
-                    <div class="review-container">
-                        <div class="row">
-                            <i class="fas fa-user-circle fa-5x col-md-2"></i>
-                            <div class="review-details col-sm-10">
-                                <h5>@review.User.Name</h5>
-                                <i class="fas fa-star"></i> Rating @review.OveralRating/10
-                                <p>@review.Text</p>
-                            </div>
-                        </div>
-                    </div>
-                }
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <h3>Courses (@ViewBag.StudyProgram.Courses.Count)</h3>
-            <div class="flex-wrap">
+        <div class="col-md-12 mt-20">
+            <h3 class="font-light mb-20">Courses (@ViewBag.StudyProgram.Courses.Count)</h3>
+            <div class="programs-container">
                 @foreach (Course course in ViewBag.StudyProgram.Courses)
                 {
                     <div class="course-container card">
@@ -77,7 +59,7 @@
                                     <p class="mr-5">
                                         <i class="fas fa-star"></i>
                                     </p>
-                                    <p class="mr-5">Overall @Math.Round(course.Reviews.Average(r => r.OveralRating), 2).ToString()</p>
+                                    <p class="mr-5">Overal: @Math.Round(course.Reviews.Average(r => r.OveralRating), 2).ToString()</p>
                                 </div>
                             }
                             <div class="d-flex mr-5">
@@ -86,6 +68,24 @@
                                 </p>
                                 <p class="mr-5">@course.UploadedFiles.Count files</p>
                             </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 mt-20">
+            <h3 class="font-light mb-20">Reviews (@ViewBag.StatsData.ReviewCount)</h3>
+            <div class="review-list">
+                @foreach (Review review in ViewBag.StudyProgram.Reviews)
+                {
+                    <div class="review-container">
+                        <img src="https://eu.ui-avatars.com/api/?name=@review.User.Name&background=bfbfbf&color=FFFFFF" />
+                        <div>
+                            <h4>@review.User.Name</h4>
+                            <i class="fas fa-star"></i> Rating @review.OveralRating / 10
+                            <p>@review.Text</p>
                         </div>
                     </div>
                 }

@@ -150,12 +150,7 @@ textarea {
 }
 
 .review-list {
-    background: #f8f8f8;
     width: 100%;
-    border-right: 1px solid #c4c4c4;
-    height: 500px;
-    overflow-y: scroll;
-    box-shadow: 3px 5px 15px 2px rgba(0, 0, 0, 0.1);
 }
 
 .review-details h5 {
@@ -169,10 +164,28 @@ textarea {
 }
 
 .review-container {
-    border-bottom: 1px solid #c4c4c4;
-    margin: 0;
-    padding: 18px 16px 10px;
+    border: 1px solid #c4c4c4;
+    margin: 15px 0;
+    display: flex;
+    border-radius: 10px
 }
+
+    .review-container > div {
+        padding: 10px 15px;
+        flex: 3;
+    }
+
+    .review-container > img {
+        flex: 1;
+        border-radius: 10px;
+        max-height: 100%;
+        max-width: 115px;
+    }
+
+    .review-container .avatar {
+        background: url("https://eu.ui-avatars.com/api/?name=@review.User.Name&background=bfbfbf&color=FFFFFF") center no-repeat;
+        background-size: cover;
+    }
 
 .font-light {
     font-weight: 300;

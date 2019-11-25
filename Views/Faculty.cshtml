@@ -43,7 +43,7 @@
             </div>
 
             <div class="mt-20">
-                @Html.Partial("_CompareButton")
+                @Html.Partial("_CompareButton", new ViewDataDictionary { { "Text", "Compare with other faculties" } })
             </div>
 
             <h3 class="font-light mt-20">Study programs (@ViewBag.StatsData.StudyProgramCount)</h3>

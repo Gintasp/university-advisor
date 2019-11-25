@@ -14,7 +14,7 @@
                     <p>@ViewBag.University.Description</p>
                 </div>
                 <div class="mt-20">
-                    @Html.Partial("_CompareButton")
+                    @Html.Partial("_CompareButton", new ViewDataDictionary { { "Text", "Compare with other universities" } })
                 </div>
             </div>
             <div class="col-sm-6">
