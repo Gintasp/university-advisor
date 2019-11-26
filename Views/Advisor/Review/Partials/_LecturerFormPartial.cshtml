@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="col-lg-6 mt-20">
             <div class="form-group">
-                <label for="university">Select your university</label>
+                <label class="font-light" for="university">Select your university</label>
                 <select name="university" class="form-control m-w-unset" id="lecturer-university">
                     <option selected disabled hidden>University</option>
                     @foreach (University uni in ViewBag.Universities)
@@ -16,7 +16,7 @@
             </div>
 
             <div class="form-group">
-                <label for="lecturer">Select lecturer</label>
+                <label class="font-light" for="lecturer">Select lecturer</label>
                 <select name="lecturer" class="form-control m-w-unset" id="lecturer">
                     <option selected disabled hidden>Lecturer</option>
                     @foreach (Lecturer lecturer in ViewBag.Lecturers)
@@ -28,7 +28,7 @@
         </div>
         <div class="col-lg-6 mt-20">
             <div class="form-group">
-                <label for="overall-input">Overall rating</label>
+                <label class="font-light" for="overall-input">Overal rating</label>
                 <div class="stars" id="overall">
                     @Html.TextBoxFor(r => r.OveralRating, new { @type = "hidden", id = "overall-input" })
                     @for (int i = 0; i < 10; i++)
@@ -39,7 +39,7 @@
             </div>
 
             <div class="form-group">
-                <label for="personality-input">Personality</label>
+                <label class="font-light" for="personality-input">Personality</label>
                 <div class="stars" id="personality">
                     @Html.TextBoxFor(r => r.Personality, new { @type = "hidden", id = "personality-input" })
                     @for (int i = 0; i < 10; i++)
@@ -50,7 +50,7 @@
             </div>
 
             <div class="form-group">
-                <label for="competence-input">How competent is the lecturer?</label>
+                <label class="font-light" for="competence-input">How competent is the lecturer?</label>
                 <div class="stars" id="competence">
                     @Html.TextBoxFor(r => r.Competence, new { @type = "hidden", id = "competence-input" })
                     @for (int i = 0; i < 10; i++)
@@ -61,7 +61,7 @@
             </div>
 
             <div class="form-group">
-                <label for="delivery-input">How well lecturer delivers information?</label>
+                <label class="font-light" for="delivery-input">How well lecturer delivers information?</label>
                 <div class="stars" id="delivery">
                     @Html.TextBoxFor(r => r.Delivery, new { @type = "hidden", id = "delivery-input" })
                     @for (int i = 0; i < 10; i++)
@@ -72,7 +72,7 @@
             </div>
 
             <div class="form-group">
-                <label for="strictness-input">How strict is the lecturer?</label>
+                <label class="font-light" for="strictness-input">How strict is the lecturer?</label>
                 <div class="stars" id="strictness">
                     @Html.TextBoxFor(r => r.Strictness, new { @type = "hidden", id = "strictness-input" })
                     @for (int i = 0; i < 10; i++)
@@ -85,7 +85,7 @@
 
         <div class="col-lg-12">
             @Html.TextArea("Text", new { @class = "form-control review-textarea w-100 m-w-unset", @placeholder = "Enter your review... ", @rows = 5 })
-            <button id="lecturer-review-submit" type="submit" class="btn btn-primary mt-20 w-100">Submit</button>
+            <button id="lecturer-review-submit" type="submit" class="button mt-20 w-100">Submit</button>
         </div>
     </div>
 </form>
