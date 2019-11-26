@@ -21,6 +21,18 @@
     width: 6%;
 }
 
-.admin-listItem-wider{
+.admin-listItem-wider {
     width: 94%;
+}
+
+.fas.fa-trash-alt:hover {
+    color: var(--color-danger);
+    transition: color .2s;
+    cursor: pointer;
+}
+
+.fas.fa-edit:hover {
+    color: var(--color-info);
+    transition: color .2s;
+    cursor: pointer;
 }

@@ -1,20 +1,61 @@
 ﻿.about-section {
-    height: 165px;
-    overflow-y: auto;
-    padding: 6px;
+    padding: 12px 10px;
     box-shadow: 3px 5px 15px 2px rgba(0,0,0,0.1);
+    min-height: 100px;
 }
 
-.compare-link{
+.compare-link {
     color: #333;
 }
 
-.compare-link:hover{
-    color: #333;
-}
+    .compare-link:hover {
+        color: #333;
+    }
 
-.dorm-map{
+.dorm-map {
     width: 100%;
     border: 0;
     margin-top: 10px;
+    position: relative;
+    bottom: -6px;
+}
+
+.university-container {
+    width: 45%;
+    max-width: 500px;
+}
+
+.uni-info {
+    display: flex;
+}
+
+.dormitory-container {
+    border-radius: 3px;
+    margin: 10px;
+    box-shadow: 3px 5px 15px 2px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+    .dormitory-container > div:first-child {
+        padding: 15px 20px 0 20px;
+    }
+
+@media only screen and (max-width: 1024px) {
+    .university-container {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .dormitory-container {
+        max-width: unset;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .uni-info {
+        flex-direction: column;
+    }
 }

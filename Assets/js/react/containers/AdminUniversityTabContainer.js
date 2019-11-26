@@ -97,7 +97,7 @@ class AdminUniversityTabContainer extends React.Component {
             onDelete={id => this.handleUniversityDelete(id)}
           />
           <button
-            className="btn btn-primary mt-20"
+            className="button mt-20"
             data-target="#addUniversityModal"
             data-toggle="modal"
           >
@@ -136,13 +136,13 @@ class AdminUniversityTabContainer extends React.Component {
                 <button
                   onClick={() => this.handleNewUniversitySubmit()}
                   type="submit"
-                  className="btn btn-primary"
+                  className="button mr-10"
                 >
                   Submit
                 </button>
                 <button
                   type="button"
-                  className="btn btn-primary"
+                  className="button button-danger"
                   data-dismiss="modal"
                 >
                   Cancel
@@ -182,13 +182,13 @@ class AdminUniversityTabContainer extends React.Component {
                 <button
                   onClick={() => this.handleUniversityEditSubmit()}
                   type="submit"
-                  className="btn btn-primary"
+                  className="button mr-10"
                 >
                   Submit
                 </button>
                 <button
                   type="button"
-                  className="btn btn-primary"
+                  className="button button-danger"
                   data-dismiss="modal"
                 >
                   Cancel

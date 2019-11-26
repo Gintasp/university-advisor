@@ -1,0 +1,86 @@
+﻿@using Advisor.Models
+@{
+    ViewBag.Title = ViewBag.University.Title;
+}
+<div class="container container-fluid" ">
+    <h1>
+        <i class="fas fa-graduation-cap"></i>  @ViewBag.University.Title
+    </h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="font-light">About</h3>
+                <div class="about-section">
+                    <p>@ViewBag.University.Description</p>
+                </div>
+                <div class="mt-20">
+                    @Html.Partial("_CompareButton", new ViewDataDictionary { { "Text", "Compare with other universities" } })
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h3 class="font-light">Statistics</h3>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Overall rating</th>
+                            <td>@ViewBag.StatsData.OveralRating / 10</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Number of faculties</th>
+                            <td>@ViewBag.StatsData.FacultyCount</td>
+                        </tr>
+                        <tr>
+                            <th>Number of study programs</th>
+                            <td>@ViewBag.StatsData.StudyProgramCount</td>
+                        </tr>
+                        <tr>
+                            <th>Level of satisfaction</th>
+                            <td>@ViewBag.StatsData.Satisfaction / 10</td>
+                        </tr>
+                        <tr>
+                            <th>Average graduate salary</th>
+                            <td>@ViewBag.StatsData.AverageSalary €</td>
+                        </tr>
+                        <tr>
+                            <th>Percentage of graduates working in relevant industry</th>
+                            <td>@ViewBag.StatsData.RelevantIndustryPercentage %</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="font-light mb-20">Faculties (@ViewBag.StatsData.FacultyCount)</h3>
+                <div class="flex-wrap">
+                    @foreach (Faculty faculty in ViewBag.University.Faculties)
+                    {
+                        <a class="cloud-tag" href="@Url.RouteUrl("faculty_page", new { id = faculty.Id})">
+                            @faculty.Title
+                        </a>
+                    }
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h3 class="font-light">Dormitories (@ViewBag.StatsData.DormitoryCount)</h3>
+                <div class="d-flex flex-wrap">
+                    @foreach (Dormitory dormitory in ViewBag.University.Dormitories)
+                    {
+                        <div class="dormitory-container">
+                            <div>
+                                <h4><i class="fas fa-home"></i> @dormitory.Title</h4>
+                                <p>@dormitory.Description</p>
+                            </div>
+                            @{string adr = dormitory.Addresses.ElementAt(0).ToString(); }
+                            @{
+                                string addr = adr.Replace(",", "").Replace(" ", "%20");
+                                string str = "https://maps.google.com/maps?q=" + addr + "%20&t=&z=13&ie=UTF8&iwloc=&output=embed";
+                            }
+                            <iframe class="dorm-map" src=@str allowfullscreen></iframe>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

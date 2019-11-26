@@ -153,7 +153,7 @@ class AdminFacultyTabContainer extends React.Component {
               ))}
             </select>
             <button
-              className="btn btn-primary mt-20"
+              className="button mt-20"
               onClick={() => this.handleFilterReset()}
             >
               Reset
@@ -167,7 +167,7 @@ class AdminFacultyTabContainer extends React.Component {
             items={this.state.faculties}
           />
           <button
-            className="btn btn-primary mt-20"
+            className="button mt-20"
             data-target="#addFacultyModal"
             data-toggle="modal"
           >
@@ -225,13 +225,13 @@ class AdminFacultyTabContainer extends React.Component {
                 <button
                   onClick={() => this.handleNewSubmit()}
                   type="submit"
-                  className="btn btn-primary"
+                  className="button mr-10"
                 >
                   Submit
                 </button>
                 <button
                   type="button"
-                  className="btn btn-primary"
+                  className="button button-danger"
                   data-dismiss="modal"
                 >
                   Cancel
@@ -271,13 +271,13 @@ class AdminFacultyTabContainer extends React.Component {
                 <button
                   onClick={() => this.handleEditSubmit()}
                   type="submit"
-                  className="btn btn-primary"
+                  className="button mr-10"
                 >
                   Submit
                 </button>
                 <button
                   type="button"
-                  className="btn btn-primary"
+                  className="button button-danger"
                   data-dismiss="modal"
                 >
                   Cancel

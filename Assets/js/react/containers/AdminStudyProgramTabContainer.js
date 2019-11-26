@@ -236,12 +236,14 @@ class AdminStudyProgramTabContainer extends React.Component {
                 ))}
               </select>
             </div>
-            <button
-              className="btn btn-primary mt-20"
-              onClick={() => this.handleFilterReset()}
-            >
-              Reset
-            </button>
+            <div className="col-sm-4 form-group">
+                <button
+                    className="button mt-20"
+                    onClick={() => this.handleFilterReset()}
+                >
+                Reset
+                </button>
+            </div>
             <div className="col-sm-12">
               <AdminItemList
                 onEditSelect={program => this.handleEditClick(program)}
@@ -251,7 +253,7 @@ class AdminStudyProgramTabContainer extends React.Component {
                 items={this.state.programs}
               />
               <button
-                className="btn btn-primary mt-20"
+                className="button mt-20"
                 data-target="#addStudyProgramModal"
                 data-toggle="modal"
               >
@@ -330,13 +332,13 @@ class AdminStudyProgramTabContainer extends React.Component {
                   <button
                     onClick={() => this.handleAddSubmit()}
                     type="submit"
-                    className="btn btn-primary"
+                    className="button mr-10"
                   >
                     Submit
                   </button>
                   <button
                     type="button"
-                    className="btn btn-primary"
+                    className="button button-danger"
                     data-dismiss="modal"
                   >
                     Cancel
@@ -379,13 +381,13 @@ class AdminStudyProgramTabContainer extends React.Component {
                 <button
                   onClick={() => this.handleEditSubmit()}
                   type="submit"
-                  className="btn btn-primary"
+                  className="button mr-10"
                 >
                   Submit
                 </button>
                 <button
                   type="button"
-                  className="btn btn-primary"
+                  className="button button-danger"
                   data-dismiss="modal"
                 >
                   Cancel

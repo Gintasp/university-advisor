@@ -28,7 +28,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <div className="mt-50">
-          <h1>Compare</h1>
+          <h1 className="font-light">Compare</h1>
           <p className="mt-20">
             Choose and compare various universities, faculties, study programs,
             courses and lecturers to get valuable insights.

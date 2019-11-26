@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Admin";
+}
+
+<div class="container container-fluid">
+    <h2>Admin Dashboard</h2>
+    <ul class="nav nav-tabs mt-20">
+        <li class="active">
+            <a href="#universityTab" data-toggle="tab">Universities</a>
+        </li>
+        <li>
+            <a href="#facultyTab" data-toggle="tab">Faculties</a>
+        </li>
+        <li>
+            <a href="#studyProgramTab" data-toggle="tab">Study Programs</a>
+        </li>
+        <li>
+            <a href="#courseTab" data-toggle="tab">Courses</a>
+        </li>
+        <li>
+            <a href="#lecturerTab" data-toggle="tab">Lecturers</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="universityTab" class="tab-pane active"></div>
+        <div id="facultyTab" class="tab-pane"></div>
+        <div id="studyProgramTab" class="tab-pane"></div>
+        <div id="courseTab" class="tab-pane"></div>
+        <div id="lecturerTab" class="tab-pane"></div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="~/Assets/js/dist/admin.js"></script>
+}

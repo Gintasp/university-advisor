@@ -28,7 +28,7 @@ namespace Advisor.Controllers
                 ViewBag.StatsData = LoadStats(faculty);
                 ViewBag.Address = ResolveAddress(faculty);
 
-                return View("/Views/Faculty.cshtml");
+                return View("/Views/Advisor/Faculty.cshtml");
             }
 
             return View("/Views/Shared/404.cshtml");

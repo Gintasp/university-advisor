@@ -13,7 +13,7 @@ namespace Advisor.Controllers
         [Route("admin", Name = "admin_page")]
         public ActionResult Index()
         {
-            return View("/Views/Admin/Admin.cshtml");
+            return View("/Views/Advisor/Admin.cshtml");
         }
     }
 }
