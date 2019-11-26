@@ -8,11 +8,11 @@ namespace Advisor.Services.IO
 {
     public class FileManager : IFileManager
     {
-        public bool UploadFile(HttpPostedFileBase file)
+        public string? UploadFile(HttpPostedFileBase file)
         {
             if (file.ContentLength < 0)
             {
-                return false;
+                return null;
             }
 
             string basePath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).FullName + "\\App_Data\\uploads\\";
@@ -22,17 +22,18 @@ namespace Advisor.Services.IO
                 Directory.CreateDirectory(basePath);
             }
 
-            string fileName = Path.GetFileName(file.FileName);
-            file.SaveAs(basePath + fileName);
+            string fileTimestamp = DateTime.Now.ToFileTime().ToString();
+            string extension = Path.GetExtension(file.FileName);
+            file.SaveAs(basePath + fileTimestamp + extension);
 
-            return true;
+            return fileTimestamp;
         }
 
         public FileResult DownloadFile(UploadedFile file)
         {
             try
             {
-                string filePath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).FullName + "\\App_Data\\uploads\\" + file.FileName;
+                string filePath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).FullName + "\\App_Data\\uploads\\" + file.Hash;
                 byte[] fileBytes = File.ReadAllBytes(filePath);
                 var fileResponse = new FileContentResult(fileBytes, "application/octet-stream")
                 {

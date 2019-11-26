@@ -13,7 +13,6 @@ namespace Advisor.Tests
             //Arrange
             Mock<HttpPostedFileBase> fileMock = new Mock<HttpPostedFileBase>();
             FileManager fileManager = new FileManager();
-            var expected = true;
 
             fileMock
                 .Setup(f => f.ContentLength)
@@ -27,7 +26,8 @@ namespace Advisor.Tests
             var actual = fileManager.UploadFile(fileMock.Object);
             
             //Assert
-            Assert.Equal(expected, actual);
+            Assert.NotNull(actual);
+            Assert.IsType<string>(actual);
         }
 
         [Fact]
@@ -36,7 +36,6 @@ namespace Advisor.Tests
             //Arrange
             Mock<HttpPostedFileBase> fileMock = new Mock<HttpPostedFileBase>();
             FileManager fileManager = new FileManager();
-            var expected = false;
 
             fileMock
                 .Setup(f => f.ContentLength)
@@ -50,7 +49,7 @@ namespace Advisor.Tests
             var actual = fileManager.UploadFile(fileMock.Object);
 
             //Assert
-            Assert.Equal(expected, actual);
+            Assert.Null(actual);
         }
 
         [Fact]
@@ -59,7 +58,6 @@ namespace Advisor.Tests
             //Arrange
             Mock<HttpPostedFileBase> fileMock = new Mock<HttpPostedFileBase>();
             FileManager fileManager = new FileManager();
-            var expected = true;
 
             fileMock
                 .Setup(f => f.ContentLength)
@@ -73,7 +71,8 @@ namespace Advisor.Tests
             var actual = fileManager.UploadFile(fileMock.Object);
 
             //Assert
-            Assert.Equal(expected, actual);
+            Assert.NotNull(actual);
+            Assert.IsType<string>(actual);
         }
     }
 }

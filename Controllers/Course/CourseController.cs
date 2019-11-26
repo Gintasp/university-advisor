@@ -6,11 +6,12 @@ using System.Web;
 using Advisor.Services.IO;
 using System;
 using Advisor.Services.Validator;
+using System.IO;
 
 namespace Advisor.Controllers
 {
     public class CourseController : Controller, ICourseController
-    {        
+    {
         private delegate StatsData Delegate<T>(T item);
         public IStatsBuilder StatsBuilder { get; set; }
         public IFileManager FileManager { get; set; }
@@ -63,8 +64,11 @@ namespace Advisor.Controllers
 
             try
             {
-                FileManager.UploadFile(file);
-                SaveFileIntoDB(file, course);
+                string hash = FileManager.UploadFile(file);
+                if (hash != null)
+                {
+                    SaveFileIntoDB(file, hash, course);
+                }
 
                 return RedirectToRoute("course_page", new { id = course });
             }
@@ -92,7 +96,7 @@ namespace Advisor.Controllers
             }
         }
 
-        private bool SaveFileIntoDB(HttpPostedFileBase file, int courseId)
+        private bool SaveFileIntoDB(HttpPostedFileBase file, string hash, int courseId)
         {
             try
             {
@@ -100,6 +104,7 @@ namespace Advisor.Controllers
                 {
                     Course = DB.Instance.Courses.Where(c => c.Id == courseId).SingleOrDefault(),
                     FileName = file.FileName,
+                    Hash = hash + Path.GetExtension(file.FileName),
                     UploadedAt = DateTime.Now
                 };
                 DB.Instance.UploadedFiles.Add(uploadedFile);
