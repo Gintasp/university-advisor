@@ -27,6 +27,11 @@ textarea {
     max-width: 280px;
 }
 
+:root {
+    --color-danger: #ca0000;
+    --color-info: #288fff;
+}
+
 .mt-5 {
     margin-top: 5px;
 }
@@ -53,6 +58,10 @@ textarea {
 
 .mr-5 {
     margin-right: 5px;
+}
+
+.mr-10 {
+    margin-right: 10px;
 }
 
 .ml-10 {
@@ -223,6 +232,10 @@ textarea {
             transform-origin: left;
         }
 
+    .button.button-danger {
+        background: var(--color-danger);
+    }
+
 .cloud-tag {
     padding: 10px 15px;
     border-radius: 20px;
@@ -258,7 +271,6 @@ textarea {
 .table > tbody > tr > th {
     width: 75%;
 }
-
 
 @media only screen and (max-width: 1200px) {
     .item {

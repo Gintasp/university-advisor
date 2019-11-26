@@ -332,7 +332,9 @@
     <Content Include="Assets\js\lib\bootstrap.min.js" />
     <Content Include=".gitignore" />
     <Content Include=".babelrc" />
+    <Content Include="Assets\js\react\admin.js" />
     <Content Include="Assets\js\react\comparison.js" />
+    <Content Include="Assets\js\react\components\AdminItemList.js" />
     <Content Include="Assets\js\react\components\CourseStats.js" />
     <Content Include="Assets\js\react\components\FacultyStats.js" />
     <Content Include="Assets\js\react\components\InputDropdown.js" />
@@ -341,8 +343,14 @@
     <Content Include="Assets\js\react\components\StatsContainer.js" />
     <Content Include="Assets\js\react\components\StudyProgramStats.js" />
     <Content Include="Assets\js\react\components\UniversityStats.js" />
+    <Content Include="Assets\js\react\config\adminRoutes.js" />
     <Content Include="Assets\js\react\config\routes.js" />
     <Content Include="Assets\js\react\config\types.js" />
+    <Content Include="Assets\js\react\containers\AdminCourseTabContainer.js" />
+    <Content Include="Assets\js\react\containers\AdminFacultyTabContainer.js" />
+    <Content Include="Assets\js\react\containers\AdminLecturerTabContainer.js" />
+    <Content Include="Assets\js\react\containers\AdminStudyProgramTabContainer.js" />
+    <Content Include="Assets\js\react\containers\AdminUniversityTabContainer.js" />
     <Content Include="Assets\js\react\containers\ComparisonContainer.js" />
     <Content Include="Assets\js\react\service\IconClassResolver.js" />
     <Content Include="Assets\js\react\service\StatsProvider.js" />
