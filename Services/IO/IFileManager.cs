@@ -6,7 +6,7 @@ namespace Advisor.Services.IO
 {
     public interface IFileManager
     {
-        bool UploadFile(HttpPostedFileBase file);
+        string? UploadFile(HttpPostedFileBase file);
         FileResult DownloadFile(UploadedFile file);
     }
 }
