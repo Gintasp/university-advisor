@@ -1,25 +1,15 @@
-﻿
+﻿@using Advisor.Models
 @{
     ViewBag.Title = "Ratings";
 }
-
     <div class="container container-fluid">
-        <h2>Rating page</h2>
+        <h1>Ratings</h1>
         <ul class="nav nav-tabs mt-20">
             <li class="active">
-                <a href="#universitiesRatingsTab" data-toggle="tab">Universities</a>
+                <a href="#universitiesRatingsTab" data-toggle="tab">Top 10 Universities</a>
             </li>
             <li>
-                <a href="#facultiesRatingsTab" data-toggle="tab">Faculties</a>
-            </li>
-            <li>
-                <a href="#studyProgramsRatingsTab" data-toggle="tab">Study Programs</a>
-            </li>
-            <li>
-                <a href="#coursesRatingsTab" data-toggle="tab">Courses</a>
-            </li>
-            <li>
-                <a href="#lecturersRatingsTab" data-toggle="tab">Lecturers</a>
+                <a href="#studyProgramsRatingsTab" data-toggle="tab">Top 10 Study Programs</a>
             </li>
         </ul>
 
@@ -28,17 +18,8 @@
                 @Html.Partial("/Views/Advisor/Ratings/Partials/_UniversitiesPartial.cshtml")
 
             </div>
-            <div id="facultiesRatingsTab" class="tab-pane">
-                @Html.Partial("/Views/Advisor/Ratings/Partials/_FacultiesPartial.cshtml")
-            </div>
             <div id="studyProgramsRatingsTab" class="tab-pane">
                 @Html.Partial("/Views/Advisor/Ratings/Partials/_StudyProgramsPartial.cshtml")
-            </div>
-            <div id="coursesRatingsTab" class="tab-pane">
-                @Html.Partial("/Views/Advisor/Ratings/Partials/_CoursesPartial.cshtml")
-            </div>
-            <div id="lecturersRatingsTab" class="tab-pane">
-                @Html.Partial("/Views/Advisor/Ratings/Partials/_LecturersPartial.cshtml")
             </div>
         </div>
     </div>

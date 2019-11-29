@@ -3,5 +3,20 @@
     ViewBag.Title = "_StudyProgramsPartial";
 }
 
-<h2>_StudyProgramsPartial</h2>
-
+<div class="container-fluid mt-20 w-80">
+    @for (int i = 1; i <= 10; i++)
+    {
+        <div class="card">
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="num mt-20"> #@i</div>
+                </div>
+                <div class="col-xs-8">
+                    <a href="#"><h3>Study program</h3></a>
+                    <p><i class="fas fa-graduation-cap"></i> University of...</p>
+                    <p> <i class="fas fa-star"></i> 10 / 10</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>

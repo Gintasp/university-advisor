@@ -333,6 +333,7 @@
     <Content Include="Assets\css\lib\bootstrap.css" />
     <Content Include="Assets\css\lib\bootstrap.min.css" />
     <Content Include="Assets\css\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\css\ratings.css" />
     <Content Include="Assets\css\review.css" />
     <Content Include="Assets\css\university.css" />
     <Content Include="Assets\js\lib\bootstrap.js" />
@@ -448,10 +449,7 @@
     <Content Include="Views\Shared\_CompareButton.cshtml" />
     <Content Include="Views\Advisor\Ratings\Ratings.cshtml" />
     <Content Include="Views\Advisor\Ratings\Partials\_UniversitiesPartial.cshtml" />
-    <Content Include="Views\Advisor\Ratings\Partials\_FacultiesPartial.cshtml" />
     <Content Include="Views\Advisor\Ratings\Partials\_StudyProgramsPartial.cshtml" />
-    <Content Include="Views\Advisor\Ratings\Partials\_CoursesPartial.cshtml" />
-    <Content Include="Views\Advisor\Ratings\Partials\_LecturersPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\uploads\" />
