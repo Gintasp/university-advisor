@@ -3,12 +3,12 @@
     ViewBag.Title = "_UniversitiesPartial";
 }
     <div class="container-fluid mt-20 w-80">
-        @for (int i = 1; i <= 10; i++)
+        @for (int i = 0; i < 10; i++)
         {
             <div class="card">
                 <div class="row">
                     <div class="col-xs-3">
-                        <div class="num mt-20"> #@i</div>
+                        <div class="num mt-20"> #@(i+1)</div>
                     </div>
                     <div class="col-xs-9">
                         <a href="@Url.RouteUrl("universities_page", new { id = ViewBag.Universities[i].Id })">
