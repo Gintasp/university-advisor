@@ -7,28 +7,39 @@
         <h2>Rating page</h2>
         <ul class="nav nav-tabs mt-20">
             <li class="active">
-                <a href="#universityRatingsTab" data-toggle="tab">Universities</a>
+                <a href="#universitiesRatingsTab" data-toggle="tab">Universities</a>
             </li>
             <li>
-                <a href="#facultyRatingsTab" data-toggle="tab">Faculties</a>
+                <a href="#facultiesRatingsTab" data-toggle="tab">Faculties</a>
             </li>
             <li>
-                <a href="#studyProgramRatingsTab" data-toggle="tab">Study Programs</a>
+                <a href="#studyProgramsRatingsTab" data-toggle="tab">Study Programs</a>
             </li>
             <li>
-                <a href="#courseRatingsTab" data-toggle="tab">Courses</a>
+                <a href="#coursesRatingsTab" data-toggle="tab">Courses</a>
             </li>
             <li>
-                <a href="#lecturersTab" data-toggle="tab">Lecturers</a>
+                <a href="#lecturersRatingsTab" data-toggle="tab">Lecturers</a>
             </li>
         </ul>
 
         <div class="tab-content">
-            <div id="universityTab" class="tab-pane active"></div>
-            <div id="facultyTab" class="tab-pane"></div>
-            <div id="studyProgramTab" class="tab-pane"></div>
-            <div id="courseTab" class="tab-pane"></div>
-            <div id="lecturerTab" class="tab-pane"></div>
+            <div id="universitiesRatingsTab" class="tab-pane active">
+                @Html.Partial("/Views/Advisor/Ratings/Partials/_UniversitiesPartial.cshtml")
+
+            </div>
+            <div id="facultiesRatingsTab" class="tab-pane">
+                @Html.Partial("/Views/Advisor/Ratings/Partials/_FacultiesPartial.cshtml")
+            </div>
+            <div id="studyProgramsRatingsTab" class="tab-pane">
+                @Html.Partial("/Views/Advisor/Ratings/Partials/_StudyProgramsPartial.cshtml")
+            </div>
+            <div id="coursesRatingsTab" class="tab-pane">
+                @Html.Partial("/Views/Advisor/Ratings/Partials/_CoursesPartial.cshtml")
+            </div>
+            <div id="lecturersRatingsTab" class="tab-pane">
+                @Html.Partial("/Views/Advisor/Ratings/Partials/_LecturersPartial.cshtml")
+            </div>
         </div>
     </div>
 
