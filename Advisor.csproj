@@ -25,7 +25,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44392</IISExpressSSLPort>
+    <IISExpressSSLPort>44308</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -257,6 +257,7 @@
     <Compile Include="Controllers\Faculty\IFacultyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RatingsController.cs" />
     <Compile Include="Controllers\Review\IReviewController.cs" />
     <Compile Include="Controllers\Review\ReviewController.cs" />
     <Compile Include="Controllers\StudyProgram\IStudyProgramController.cs" />
@@ -332,6 +333,7 @@
     <Content Include="Assets\css\lib\bootstrap.css" />
     <Content Include="Assets\css\lib\bootstrap.min.css" />
     <Content Include="Assets\css\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\css\ratings.css" />
     <Content Include="Assets\css\review.css" />
     <Content Include="Assets\css\university.css" />
     <Content Include="Assets\js\lib\bootstrap.js" />
@@ -445,6 +447,9 @@
     <Content Include="Views\Advisor\Review\Partials\_LecturerFormPartial.cshtml" />
     <Content Include="Views\Advisor\Admin.cshtml" />
     <Content Include="Views\Shared\_CompareButton.cshtml" />
+    <Content Include="Views\Advisor\Ratings\Ratings.cshtml" />
+    <Content Include="Views\Advisor\Ratings\Partials\_UniversitiesPartial.cshtml" />
+    <Content Include="Views\Advisor\Ratings\Partials\_StudyProgramsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\uploads\" />

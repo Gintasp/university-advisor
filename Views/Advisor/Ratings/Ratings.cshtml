@@ -1,0 +1,26 @@
+﻿@using Advisor.Models
+@{
+    ViewBag.Title = "Ratings";
+}
+    <div class="container container-fluid">
+        <h1>Ratings</h1>
+        <ul class="nav nav-tabs mt-20">
+            <li class="active">
+                <a href="#universitiesRatingsTab" data-toggle="tab">Top 10 Universities</a>
+            </li>
+            <li>
+                <a href="#studyProgramsRatingsTab" data-toggle="tab">Top 10 Study Programs</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="universitiesRatingsTab" class="tab-pane active">
+                @Html.Partial("/Views/Advisor/Ratings/Partials/_UniversitiesPartial.cshtml")
+
+            </div>
+            <div id="studyProgramsRatingsTab" class="tab-pane">
+                @Html.Partial("/Views/Advisor/Ratings/Partials/_StudyProgramsPartial.cshtml")
+            </div>
+        </div>
+    </div>
+

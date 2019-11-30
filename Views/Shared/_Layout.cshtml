@@ -27,6 +27,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="@Url.RouteUrl("universities_list")">Universities</a></li>
                 <li><a href="@Url.RouteUrl("review_page")">Leave a review!</a></li>
+                <li><a href="@Url.RouteUrl("ratings_page")">Ratings</a></li>
                 @if (User.IsInRole("Admin"))
                 {
                     <li><a href="@Url.RouteUrl("admin_page")">Admin</a></li>
