@@ -20,10 +20,11 @@ namespace Advisor.Controllers
         [Route("universities/{id?}", Name = "universities_page")]
         public ActionResult Individual(int? id)
         {
-            University uni = DB.Instance.Universities.Where(u => u.Id == id).SingleOrDefault(); 
+            University uni = DB.Instance.Universities.Where(u => u.Id == id).SingleOrDefault();
+
+            //************************************************ Data Adapter Use (pretty much unnecessary as linq queries do this better) ************************************************
             University uniInfo = new University();
 
-            //************************************************ Data Adapter Use ************************************************
             DataSet dataSet = new DataSet("University");
             //Create a SqlConnection to the database.
             using (SqlConnection connection =
@@ -36,7 +37,7 @@ namespace Advisor.Controllers
                 // Open the connection.
                 connection.Open();
 
-                // Create a SqlCommand to retrieve Suppliers data.
+                // Create a SqlCommand (aka query) to retrieve data
                 SqlCommand command = new SqlCommand(
                     "SELECT Id, Title, Description, Website FROM Advisor.dbo.Universities WHERE Id=" + id +";", connection);
                 command.CommandType = CommandType.Text;
@@ -62,6 +63,8 @@ namespace Advisor.Controllers
             uniInfo.Website = (string)dataSet.Tables[0].Rows[0]["Website"]; //probably unneccesary
 
             ViewBag.UniversityInfo = uniInfo;
+            //************************************************ End of Data Adapter Use ************************************************
+
             ViewBag.University = uni; 
             ViewBag.StatsData = LoadStats(uni);
 
