@@ -3,6 +3,8 @@ using Advisor.Services.Statistics;
 using System.Linq;
 using System.Web.Mvc;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Advisor.Controllers
 {
@@ -19,12 +21,47 @@ namespace Advisor.Controllers
         public ActionResult Individual(int? id)
         {
             University uni = DB.Instance.Universities.Where(u => u.Id == id).SingleOrDefault(); 
+            University uniInfo = new University();
+
+            //************************************************ Data Adapter Use ************************************************
+            DataSet dataSet = new DataSet("University");
+            //Create a SqlConnection to the database.
+            using (SqlConnection connection =
+                       new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
+            {
+                //Create a SqlDataAdapter for the Universities table.
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.TableMappings.Add("Table", "University");
+
+                // Open the connection.
+                connection.Open();
+
+                // Create a SqlCommand to retrieve Suppliers data.
+                SqlCommand command = new SqlCommand(
+                    "SELECT Id, Title, Description, Website FROM Advisor.dbo.Universities WHERE Id=" + id +";", connection);
+                command.CommandType = CommandType.Text;
+
+                // Set the SqlDataAdapter's SelectCommand.
+                adapter.SelectCommand = command;
+
+                // Fill the DataSet.
+                adapter.Fill(dataSet);
+
+                // Close the connection.
+                connection.Close();
+            }
+
             if (uni == null)
             { 
                 return View("/Views/Shared/404.cshtml");
-
             }
 
+            uniInfo.Id = (int)dataSet.Tables[0].Rows[0]["Id"];              //probably unnecessary
+            uniInfo.Title = (string)dataSet.Tables[0].Rows[0]["Title"];
+            uniInfo.Description = (string)dataSet.Tables[0].Rows[0]["Description"];
+            uniInfo.Website = (string)dataSet.Tables[0].Rows[0]["Website"]; //probably unneccesary
+
+            ViewBag.UniversityInfo = uniInfo;
             ViewBag.University = uni; 
             ViewBag.StatsData = LoadStats(uni);
 

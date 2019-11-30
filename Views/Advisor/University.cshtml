@@ -1,17 +1,17 @@
 ﻿@using Advisor.Models
 @{
-    ViewBag.Title = ViewBag.University.Title;
+    ViewBag.Title = ViewBag.UniversityInfo.Title;
 }
 <div class="container container-fluid" ">
     <h1>
-        <i class="fas fa-graduation-cap"></i>  @ViewBag.University.Title
+        <i class="fas fa-graduation-cap"></i>  @ViewBag.UniversityInfo.Title
     </h1>
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
                 <h3 class="font-light">About</h3>
                 <div class="about-section">
-                    <p>@ViewBag.University.Description</p>
+                    <p>@ViewBag.UniversityInfo.Description</p>
                 </div>
                 <div class="mt-20">
                     @Html.Partial("_CompareButton", new ViewDataDictionary { { "Text", "Compare with other universities" } })
