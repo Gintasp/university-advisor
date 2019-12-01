@@ -5,6 +5,7 @@ using System.Web.Mvc;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Advisor.Controllers
 {
@@ -20,52 +21,40 @@ namespace Advisor.Controllers
         [Route("universities/{id?}", Name = "universities_page")]
         public ActionResult Individual(int? id)
         {
+            //Retrieve faculties using LINQ since data adapter makes it more complicated
             University uni = DB.Instance.Universities.Where(u => u.Id == id).SingleOrDefault();
 
-            //************************************************ Data Adapter Use (pretty much unnecessary as linq queries do this better) ************************************************
+            //Data Adapter Use
             University uniInfo = new University();
-
             DataSet dataSet = new DataSet("University");
-            //Create a SqlConnection to the database.
-            using (SqlConnection connection =
-                       new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString))
             {
                 //Create a SqlDataAdapter for the Universities table.
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.TableMappings.Add("Table", "University");
-
-                // Open the connection.
                 connection.Open();
-
-                // Create a SqlCommand (aka query) to retrieve data
+                // Create sql query to retrieve data
                 SqlCommand command = new SqlCommand(
-                    "SELECT Id, Title, Description, Website FROM Advisor.dbo.Universities WHERE Id=" + id +";", connection);
+                    "SELECT Id, Title, Description, Website FROM Advisor.dbo.Universities WHERE Id=" + id + ";", connection);
                 command.CommandType = CommandType.Text;
-
                 // Set the SqlDataAdapter's SelectCommand.
                 adapter.SelectCommand = command;
-
-                // Fill the DataSet.
                 adapter.Fill(dataSet);
-
-                // Close the connection.
                 connection.Close();
             }
 
             if (uni == null)
-            { 
+            {
                 return View("/Views/Shared/404.cshtml");
             }
 
-            uniInfo.Id = (int)dataSet.Tables[0].Rows[0]["Id"];              //probably unnecessary
+            uniInfo.Id = (int)dataSet.Tables[0].Rows[0]["Id"];
             uniInfo.Title = (string)dataSet.Tables[0].Rows[0]["Title"];
             uniInfo.Description = (string)dataSet.Tables[0].Rows[0]["Description"];
-            uniInfo.Website = (string)dataSet.Tables[0].Rows[0]["Website"]; //probably unneccesary
+            uniInfo.Website = (string)dataSet.Tables[0].Rows[0]["Website"];
 
             ViewBag.UniversityInfo = uniInfo;
-            //************************************************ End of Data Adapter Use ************************************************
-
-            ViewBag.University = uni; 
+            ViewBag.University = uni;
             ViewBag.StatsData = LoadStats(uni);
 
             return View("/Views/Advisor/University.cshtml");
