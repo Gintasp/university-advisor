@@ -3,6 +3,9 @@ using Advisor.Services.Statistics;
 using System.Linq;
 using System.Web.Mvc;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Advisor.Controllers
 {
@@ -18,14 +21,40 @@ namespace Advisor.Controllers
         [Route("universities/{id?}", Name = "universities_page")]
         public ActionResult Individual(int? id)
         {
-            University uni = DB.Instance.Universities.Where(u => u.Id == id).SingleOrDefault(); 
-            if (uni == null)
-            { 
-                return View("/Views/Shared/404.cshtml");
+            //Retrieve faculties using LINQ since data adapter makes it more complicated
+            University uni = DB.Instance.Universities.Where(u => u.Id == id).SingleOrDefault();
 
+            //Data Adapter Use
+            University uniInfo = new University();
+            DataSet dataSet = new DataSet("University");
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString))
+            {
+                //Create a SqlDataAdapter for the Universities table.
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.TableMappings.Add("Table", "University");
+                connection.Open();
+                // Create sql query to retrieve data
+                SqlCommand command = new SqlCommand(
+                    "SELECT Id, Title, Description, Website FROM Advisor.dbo.Universities WHERE Id=" + id + ";", connection);
+                command.CommandType = CommandType.Text;
+                // Set the SqlDataAdapter's SelectCommand.
+                adapter.SelectCommand = command;
+                adapter.Fill(dataSet);
+                connection.Close();
             }
 
-            ViewBag.University = uni; 
+            if (uni == null)
+            {
+                return View("/Views/Shared/404.cshtml");
+            }
+
+            uniInfo.Id = (int)dataSet.Tables[0].Rows[0]["Id"];
+            uniInfo.Title = (string)dataSet.Tables[0].Rows[0]["Title"];
+            uniInfo.Description = (string)dataSet.Tables[0].Rows[0]["Description"];
+            uniInfo.Website = (string)dataSet.Tables[0].Rows[0]["Website"];
+
+            ViewBag.UniversityInfo = uniInfo;
+            ViewBag.University = uni;
             ViewBag.StatsData = LoadStats(uni);
 
             return View("/Views/Advisor/University.cshtml");
