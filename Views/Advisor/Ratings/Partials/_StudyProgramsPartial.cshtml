@@ -8,11 +8,11 @@
         <div class="card">
             <div class="row">
                 <div class="col-xs-2">
-                    <div class="num mt-20"> #@(i+1)</div>
+                    <div class="num mt-20"> #@(i + 1)</div>
                 </div>
                 <div class="col-xs-10">
                     <a href="@Url.RouteUrl("program_page", new { id = ViewBag.StudyPrograms[i].StudyProgram.Id})">
-                        <h3>@ViewBag.StudyPrograms[i].StudyProgram</h3>
+                        <h3 class="font-light">@ViewBag.StudyPrograms[i].StudyProgram</h3>
                     </a>
                     <p><i class="fas fa-graduation-cap"></i> @ViewBag.StudyPrograms[i].University</p>
                     <p> <i class="fas fa-star"></i> @ViewBag.StudyPrograms[i].Overal.ToString() / 10</p>

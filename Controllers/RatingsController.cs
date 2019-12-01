@@ -16,17 +16,20 @@ namespace Advisor.Controllers
             public University University { get; set; }
             public double Overal { get; set; }
         }
+
         public struct UniversityInformation
         {
             public University University { get; set; }
             public double Overal { get; set; }
         }
+
         public RatingsController(IStatsBuilder statsBuilder)
         {
             StatsBuilder = statsBuilder;
         }
 
-        // GET: Ratings
+
+        [HttpGet]
         [Route("ratings", Name = "ratings_page")]
         public ActionResult Index()
         {
@@ -35,6 +38,7 @@ namespace Advisor.Controllers
 
             return View("/Views/Advisor/Ratings/Ratings.cshtml");
         }
+
         private List<UniversityInformation> GetUnis()
         {
             List<University> unis = DB.Instance.Universities.ToList();
@@ -61,6 +65,7 @@ namespace Advisor.Controllers
                 };
                 list.Add(info);
             }
+
             return list;
         }
 
@@ -73,8 +78,8 @@ namespace Advisor.Controllers
             for (int i = 0; i < programs.Count; i++)
             {
                 for (int j = i + 1; j < programs.Count; j++)
-                { 
-                    if (Math.Round(programs[i].Reviews.Average(r => r.OveralRating), 2) < 
+                {
+                    if (Math.Round(programs[i].Reviews.Average(r => r.OveralRating), 2) <
                         Math.Round(programs[j].Reviews.Average(r => r.OveralRating), 2))
                     {
                         temp = programs[i];
@@ -95,6 +100,7 @@ namespace Advisor.Controllers
                 };
                 list.Add(info);
             }
+
             return list;
         }
     }
