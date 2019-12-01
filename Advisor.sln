@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advisor", "Advisor.csproj", "{25BE52DB-B741-4C38-BB68-07338CDC9073}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advisor-Bot", "Advisor-Bot\Advisor-Bot.csproj", "{EDC24983-D8E3-4B66-A31C-91854A379EF4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{25BE52DB-B741-4C38-BB68-07338CDC9073} = {25BE52DB-B741-4C38-BB68-07338CDC9073}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +20,10 @@ Global
 		{25BE52DB-B741-4C38-BB68-07338CDC9073}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25BE52DB-B741-4C38-BB68-07338CDC9073}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25BE52DB-B741-4C38-BB68-07338CDC9073}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDC24983-D8E3-4B66-A31C-91854A379EF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDC24983-D8E3-4B66-A31C-91854A379EF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDC24983-D8E3-4B66-A31C-91854A379EF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDC24983-D8E3-4B66-A31C-91854A379EF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

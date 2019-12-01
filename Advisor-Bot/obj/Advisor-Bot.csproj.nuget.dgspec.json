@@ -1,0 +1,91 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\gplon\\OneDrive\\Documents\\CODING\\Univershitty\\TOP\\university-advisor\\Advisor-Bot\\Advisor-Bot.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\gplon\\OneDrive\\Documents\\CODING\\Univershitty\\TOP\\university-advisor\\Advisor-Bot\\Advisor-Bot.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\gplon\\OneDrive\\Documents\\CODING\\Univershitty\\TOP\\university-advisor\\Advisor-Bot\\Advisor-Bot.csproj",
+        "projectName": "Advisor-Bot",
+        "projectPath": "C:\\Users\\gplon\\OneDrive\\Documents\\CODING\\Univershitty\\TOP\\university-advisor\\Advisor-Bot\\Advisor-Bot.csproj",
+        "packagesPath": "C:\\Users\\gplon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gplon\\OneDrive\\Documents\\CODING\\Univershitty\\TOP\\university-advisor\\Advisor-Bot\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\gplon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Users\\gplon\\OneDrive\\Documents\\CODING\\Univershitty\\TOP\\university-advisor\\Advisor.csproj": {
+                "projectPath": "C:\\Users\\gplon\\OneDrive\\Documents\\CODING\\Univershitty\\TOP\\university-advisor\\Advisor.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.Bot.Builder.Integration.AspNet.Core": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\gplon\\OneDrive\\Documents\\CODING\\Univershitty\\TOP\\university-advisor\\Advisor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\gplon\\OneDrive\\Documents\\CODING\\Univershitty\\TOP\\university-advisor\\Advisor.csproj",
+        "projectName": "Advisor",
+        "projectPath": "C:\\Users\\gplon\\OneDrive\\Documents\\CODING\\Univershitty\\TOP\\university-advisor\\Advisor.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    }
+  }
+}
