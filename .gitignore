@@ -12,5 +12,6 @@ yarn-error.log
 /.vs/
 /.vscode/
 App_Data/uploads/*
+ConnStrings.config
 Advisor-Bot/bin/
 Advisor-Bot/obj/
