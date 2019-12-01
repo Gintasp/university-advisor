@@ -12,3 +12,5 @@ yarn-error.log
 /.vs/
 /.vscode/
 App_Data/uploads/*
+Advisor-Bot/bin/
+Advisor-Bot/obj/
