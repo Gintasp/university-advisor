@@ -9,7 +9,7 @@ namespace Advisor.Controllers
 {
     public class RatingsController : Controller
     {
-        public IStatsBuilder StatsBuilder { get; set; }
+        private IStatsBuilder StatsBuilder { get; set; }
         public struct StudyProgramInformation
         {
             public StudyProgram StudyProgram { get; set; }
@@ -63,6 +63,7 @@ namespace Advisor.Controllers
             }
             return list;
         }
+
         private List<StudyProgramInformation> GetStudyPrograms()
         {
             List<StudyProgram> programs = DB.Instance.StudyPrograms.ToList();
