@@ -25,7 +25,6 @@ namespace Advisor.Controllers
             University uni = DB.Instance.Universities.Where(u => u.Id == id).SingleOrDefault();
 
             //Data Adapter Use
-            University uniInfo = new University();
             DataSet dataSet = new DataSet("University");
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString))
             {
@@ -48,12 +47,7 @@ namespace Advisor.Controllers
                 return View("/Views/Shared/404.cshtml");
             }
 
-            uniInfo.Id = (int)dataSet.Tables[0].Rows[0]["Id"];
-            uniInfo.Title = (string)dataSet.Tables[0].Rows[0]["Title"];
-            uniInfo.Description = (string)dataSet.Tables[0].Rows[0]["Description"];
-            uniInfo.Website = (string)dataSet.Tables[0].Rows[0]["Website"];
-
-            ViewBag.UniversityInfo = uniInfo;
+            ViewBag.UniversityInfo = GetUniInfoData(dataSet);
             ViewBag.University = uni;
             ViewBag.StatsData = LoadStats(uni);
 
@@ -84,6 +78,22 @@ namespace Advisor.Controllers
             };
 
             return statsData;
+        }
+
+        private University GetUniInfoData(DataSet dataSet)
+        {
+            University uniInfo = new University();
+            uniInfo.Id = GetDataSetRow<int>(dataSet, "Id");
+            uniInfo.Title = GetDataSetRow<string>(dataSet, "Title");
+            uniInfo.Description = GetDataSetRow<string>(dataSet, "Description");
+            uniInfo.Website = GetDataSetRow<string>(dataSet, "Website");
+
+            return uniInfo;
+        }
+
+        private T GetDataSetRow<T>(DataSet dataSet, string columnName)
+        {
+            return (T)dataSet.Tables[0].Rows[0][columnName];
         }
     }
 }
