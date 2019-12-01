@@ -25,7 +25,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44308</IISExpressSSLPort>
+    <IISExpressSSLPort>44392</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -459,6 +459,7 @@
     <Content Include="package.json" />
     <Content Include="Migrations\Data\Address.csv" />
     <Content Include="Migrations\Data\Dormitory.csv" />
+    <Content Include="ConnStrings.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
