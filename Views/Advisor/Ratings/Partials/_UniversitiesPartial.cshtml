@@ -1,30 +1,29 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "_UniversitiesPartial";
 }
-    <div class="container-fluid mt-20 w-80">
-        @for (int i = 0; i < 10; i++)
-        {
-            <div class="card">
-                <div class="row">
-                    <div class="col-xs-2">
-                        <div class="num mt-20"> #@(i+1)</div>
+<div class="container-fluid mt-20 w-80">
+    @for (int i = 0; i < 10; i++)
+    {
+        <div class="card">
+            <div class="row">
+                <div class="col-xs-2">
+                    <div class="num mt-20"> #@(i + 1)</div>
+                </div>
+                <div class="col-xs-10">
+                    <a href="@Url.RouteUrl("universities_page", new { id = ViewBag.Universities[i].University.Id })">
+                        <h3 class="font-light"> @ViewBag.Universities[i].University</h3>
+                    </a>
+                    <div class="d-flex">
+                        <p class="mr-5">
+                            <i class="fas fa-globe"></i>
+                        </p>
+                        <p>
+                            <a target="_blank" href="@ViewBag.Universities[i].University.Website"> @ViewBag.Universities[i].University.Website</a>
+                        </p>
                     </div>
-                    <div class="col-xs-10">
-                        <a href="@Url.RouteUrl("universities_page", new { id = ViewBag.Universities[i].Id })">
-                            <h3> @ViewBag.Universities[i]</h3>
-                        </a>
-                        <div class="d-flex">
-                            <p class="mr-5">
-                                <i class="fas fa-globe"></i>
-                            </p>
-                            <p>
-                                <a target="_blank" href="@ViewBag.Universities[i].Website"> @ViewBag.Universities[i].Website</a>
-                            </p>
-                        </div>
-                        <p><i class="fas fa-star"></i> 10 / 10</p>
-                    </div>
+                    <p><i class="fas fa-star"></i> @ViewBag.Universities[i].Overal / 10</p>
                 </div>
             </div>
-        }
-    </div>
+        </div>
+    }
+</div>
