@@ -56,12 +56,13 @@ namespace Advisor.Controllers
                         temp = unis[i];
                         unis[i] = unis[j];
                         unis[j] = temp;
+                        statsI = StatsBuilder.BuildUniversityStats(unis[i]);
                     }
                 }
                 UniversityInformation info = new UniversityInformation
                 {
                     University = unis[i],
-                    Overal = Math.Round(statsI.overal, 2)
+                    Overal = Math.Round(statsI.overal, 1)
                 };
                 list.Add(info);
             }
@@ -91,7 +92,7 @@ namespace Advisor.Controllers
                 StudyProgramInformation info = new StudyProgramInformation
                 {
                     StudyProgram = programs[i],
-                    Overal = Math.Round(programs[i].Reviews.Average(r => r.OveralRating), 2),
+                    Overal = Math.Round(programs[i].Reviews.Average(r => r.OveralRating), 1),
                     University = (from p in DB.Instance.StudyPrograms
                                   join f in DB.Instance.Faculties on p.Faculty.Id equals f.Id
                                   join u in DB.Instance.Universities on f.University.Id equals u.Id
