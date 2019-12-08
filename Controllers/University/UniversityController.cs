@@ -21,8 +21,13 @@ namespace Advisor.Controllers
         [Route("universities/{id?}", Name = "universities_page")]
         public ActionResult Individual(int? id)
         {
-            //Retrieve faculties using LINQ since data adapter makes it more complicated
-            University uni = DB.Instance.Universities.Where(u => u.Id == id).SingleOrDefault();
+            University uni = new University();
+
+            //Check if id in page route is not null because it otherwise breaks sql query
+            if (id == null)
+            {
+                return View("/Views/Shared/404.cshtml");
+            }
 
             //Data Adapter Use
             DataSet dataSet = new DataSet("University");
@@ -42,12 +47,18 @@ namespace Advisor.Controllers
                 connection.Close();
             }
 
-            if (uni == null)
+            if (dataSet.Tables[0].Rows.Count == 0)
             {
                 return View("/Views/Shared/404.cshtml");
             }
 
-            ViewBag.UniversityInfo = GetUniInfoData(dataSet);
+            uni = GetUniInfoData(dataSet);
+
+            if (uni == null)
+            {
+                return View("/Views/Shared/404.cshtml");
+            }
+            
             ViewBag.University = uni;
             ViewBag.StatsData = LoadStats(uni);
 
@@ -82,13 +93,23 @@ namespace Advisor.Controllers
 
         private University GetUniInfoData(DataSet dataSet)
         {
-            University uniInfo = new University();
-            uniInfo.Id = GetDataSetRow<int>(dataSet, "Id");
-            uniInfo.Title = GetDataSetRow<string>(dataSet, "Title");
-            uniInfo.Description = GetDataSetRow<string>(dataSet, "Description");
-            uniInfo.Website = GetDataSetRow<string>(dataSet, "Website");
+            University uni = new University();
+            uni.Id = GetDataSetRow<int>(dataSet, "Id");
+            uni.Title = GetDataSetRow<string>(dataSet, "Title");
+            uni.Description = GetDataSetRow<string>(dataSet, "Description");
+            uni.Website = GetDataSetRow<string>(dataSet, "Website");
 
-            return uniInfo;
+            uni.Faculties = (from  f in DB.Instance.Faculties
+                             join u in DB.Instance.Universities on f.University.Id equals u.Id
+                             where u.Id == uni.Id
+                             select f).ToList();
+
+            uni.Dormitories = (from d in DB.Instance.Dormitories
+                               join u in DB.Instance.Universities on d.University.Id equals u.Id
+                               where u.Id == uni.Id
+                               select d).ToList();
+
+            return uni;
         }
 
         private T GetDataSetRow<T>(DataSet dataSet, string columnName)
