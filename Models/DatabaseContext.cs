@@ -15,7 +15,7 @@ namespace Advisor.Models
         public DbSet<Dormitory> Dormitories { get; set; }
         public DbSet<UploadedFile> UploadedFiles { get; set; }
 
-        public DatabaseContext() : base("DefaultConnection", throwIfV1Schema: false)
+        public DatabaseContext() : base("LocalConnection", throwIfV1Schema: false)
         {
         }
 
