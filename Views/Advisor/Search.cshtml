@@ -4,18 +4,14 @@
     ViewBag.Title = "Universities";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Search results for '@ViewBag.SearchPhrase'</h2>
-<h3>found @ViewBag.Universities.Count</h3>
-
-<ur>
-    @foreach (University university in ViewBag.Universities)
-    {
-        <li>
-            <a href="@Url.RouteUrl("universities_page", new {id = university.Id})">
-                <h1>@university.Title</h1>
-            </a>
-        </li>
-    }
-</ur>
-
+    <div class="container container-fluid">
+        <h2 class="mb-20">Search results (@ViewBag.Universities.Count) for '@ViewBag.SearchPhrase'</h2>
+        @foreach (University university in ViewBag.Universities)
+            {
+                <div class="university-container card">
+                    <a href="@Url.RouteUrl("universities_page", new {id = university.Id})">
+                        <h3 class="font-light">@university.Title</h3>
+                    </a>
+                </div>
+            }
+    </div>

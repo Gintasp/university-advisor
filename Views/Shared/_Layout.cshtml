@@ -24,15 +24,10 @@
         </div>
         <div class="navbar-collapse collapse">
             @Html.Partial("_LoginPartial")
-            <ul class="nav navbar-nav navbar-right">
-                
-                <li>
-                    @using (Html.BeginForm("SearchResult", "Search", FormMethod.Post)) 
-                    {
-                        <input type="text" name="searchString" id="searchString" placeholder="Search for universities"/>
-                    }
-                </li>
 
+
+
+            <ul class="nav navbar-nav navbar-right">
                 <li><a href="@Url.RouteUrl("universities_list")">Universities</a></li>
                 <li><a href="@Url.RouteUrl("review_page")">Leave a review!</a></li>
                 <li><a href="@Url.RouteUrl("ratings_page")">Ratings</a></li>
@@ -41,6 +36,12 @@
                     <li><a href="@Url.RouteUrl("admin_page")">Admin</a></li>
                 }
             </ul>
+            <div class="navbar-nav navbar-right"style="margin-top: 18px; margin-right: 10px; max-height: 30px;">
+                @using (Html.BeginForm("SearchResult", "Search", FormMethod.Post))
+                {
+                    <input type="text" name="searchString" id="searchString" placeholder="Search for universities"/>
+                }
+            </div>
         </div>
     </div>
     @if (Request.Url.AbsolutePath == "/")
