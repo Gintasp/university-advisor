@@ -6,10 +6,6 @@
     border-radius: 10px;
 }
 
-.stats-container {
-    background: rgba(255, 255, 255, .5);
-}
-
 .faculty-container {
     padding: 0 40px;
     max-width: 1500px;
@@ -22,7 +18,7 @@
     flex-wrap: wrap;
 }
 
-    .programs-container .card {
+    .programs-container .new-card {
         flex-grow: 1;
     }
 

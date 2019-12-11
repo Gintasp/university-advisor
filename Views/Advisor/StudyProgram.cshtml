@@ -48,7 +48,7 @@
             <div class="programs-container">
                 @foreach (Course course in ViewBag.StudyProgram.Courses)
                 {
-                    <div class="course-container card">
+                    <div class="course-container new-card">
                         <a href="@Url.RouteUrl("course_page", new { id = course.Id })">
                             <h3 class="font-light">@course.Title</h3>
                         </a>
