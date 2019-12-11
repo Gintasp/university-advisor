@@ -260,6 +260,7 @@
     <Compile Include="Controllers\RatingsController.cs" />
     <Compile Include="Controllers\Review\IReviewController.cs" />
     <Compile Include="Controllers\Review\ReviewController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\StudyProgram\IStudyProgramController.cs" />
     <Compile Include="Controllers\StudyProgram\StudyProgramController.cs" />
     <Compile Include="Controllers\Comparison\IComparisonController.cs" />
@@ -450,6 +451,7 @@
     <Content Include="Views\Advisor\Ratings\Ratings.cshtml" />
     <Content Include="Views\Advisor\Ratings\Partials\_UniversitiesPartial.cshtml" />
     <Content Include="Views\Advisor\Ratings\Partials\_StudyProgramsPartial.cshtml" />
+    <Content Include="Views\Advisor\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\uploads\" />
