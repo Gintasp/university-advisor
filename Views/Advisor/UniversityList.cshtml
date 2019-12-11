@@ -7,7 +7,7 @@
     <div class="d-flex flex-wrap mt-50">
         @foreach (University uni in ViewBag.Universities)
         {
-            <div class="university-container card">
+            <div class="university-container new-card">
                 <div class="card-text">
                     <a href="@Url.RouteUrl("universities_page", new { id = uni.Id })">
                         <h3 class="font-light">@uni.Title</h3>

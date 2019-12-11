@@ -8,7 +8,6 @@
             <h2>
                 <i class="fas fa-university"></i>  @ViewBag.Faculty.Title
             </h2>
-            <div class="stats-container mt-50">
                 <h3 class="font-light">About</h3>
                 <div class="about-section">
                     <p>
@@ -40,7 +39,6 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
 
             <div class="mt-20">
                 @Html.Partial("_CompareButton", new ViewDataDictionary { { "Text", "Compare with other faculties" } })
@@ -50,7 +48,7 @@
             <div class="programs-container">
                 @foreach (StudyProgram studyProgram in ViewBag.Faculty.StudyPrograms)
                 {
-                    <div class="card">
+                    <div class="new-card">
                         <a href="@Url.RouteUrl("program_page", new { id = studyProgram.Id})">
                             <h4 class="font-light">@studyProgram.Title</h4>
                         </a>
