@@ -25,6 +25,14 @@
         <div class="navbar-collapse collapse">
             @Html.Partial("_LoginPartial")
             <ul class="nav navbar-nav navbar-right">
+                
+                <li>
+                    @using (Html.BeginForm("SearchResult", "Search", FormMethod.Post)) 
+                    {
+                        <input type="text" name="searchString" id="searchString" placeholder="Search for universities"/>
+                    }
+                </li>
+
                 <li><a href="@Url.RouteUrl("universities_list")">Universities</a></li>
                 <li><a href="@Url.RouteUrl("review_page")">Leave a review!</a></li>
                 <li><a href="@Url.RouteUrl("ratings_page")">Ratings</a></li>

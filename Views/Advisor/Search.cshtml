@@ -1,0 +1,21 @@
+﻿@using Advisor.Models
+
+@{
+    ViewBag.Title = "Universities";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Search results for '@ViewBag.SearchPhrase'</h2>
+<h3>found @ViewBag.Universities.Count</h3>
+
+<ur>
+    @foreach (University university in ViewBag.Universities)
+    {
+        <li>
+            <a href="@Url.RouteUrl("universities_page", new {id = university.Id})">
+                <h1>@university.Title</h1>
+            </a>
+        </li>
+    }
+</ur>
+
